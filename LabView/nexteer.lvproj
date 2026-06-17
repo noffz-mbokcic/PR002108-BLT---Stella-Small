@@ -94,6 +94,7 @@
 			<Item Name="Delete Alarm archive and Create Header for new one Alarm archive.vi" Type="VI" URL="../Station/Delete Alarm archive and Create Header for new one Alarm archive.vi"/>
 			<Item Name="Get Error Message.vi" Type="VI" URL="../Station/Get Error Message.vi"/>
 			<Item Name="Get Failure set to write.vi" Type="VI" URL="../Station/Get Failure set to write.vi"/>
+			<Item Name="Get Section 4 data.vi" Type="VI" URL="../Station/Get Section 4 data.vi"/>
 			<Item Name="Kill UTP TEF.vi" Type="VI" URL="../Station/Kill UTP TEF.vi"/>
 			<Item Name="Update Operating Mode.vi" Type="VI" URL="../Station/Update Operating Mode.vi"/>
 		</Item>
@@ -101,6 +102,7 @@
 			<Item Name="TDK20-38 API.lvlib" Type="Library" URL="../TDK_20_38/TDK20-38 API.lvlib"/>
 		</Item>
 		<Item Name="DUT DO channels.ctl" Type="VI" URL="../Station/Controls/DUT DO channels.ctl"/>
+		<Item Name="Section4 variables.ctl" Type="VI" URL="../Station/Controls/Section4 variables.ctl"/>
 		<Item Name="Dependencies" Type="Dependencies"/>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
