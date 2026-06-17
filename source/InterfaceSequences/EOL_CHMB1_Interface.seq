@@ -7882,14 +7882,6 @@ DI = Num
 [DEF, SF.Seq[3].Locals.Automated]
 ACK_Button = Bool
 DrawerClosed = Bool
-CHMB1_DRAWER_LOCKER_Error = Bool
-CHMB1_DRAWER_LOCKER_ErrorCode = Num
-CHMB1_DRAWER_LOCKER_ErrorText = Str
-CHMB1_DRAWER_LOCKER_Result = Num
-CHMB1_TOP_PLATE_Error = Bool
-CHMB1_TOP_PLATE_ErrorCode = Num
-CHMB1_TOP_PLATE_ErrorText = Str
-CHMB1_TOP_PLATE_Result = Num
 NOK_Box_HP = Bool
 Locker = Obj
 FixtureClosed = Bool
@@ -11757,6 +11749,7 @@ FailureAction = Num
 [SF.Seq[5]]
 %FLG: Parameters = 4456448
 %FLG: Locals = 4194304
+%HI: Main = [1]
 %FLG: Main = 4194304
 %FLG: Setup = 4194304
 %FLG: Cleanup = 4194304
@@ -11773,6 +11766,26 @@ ResultList = Objs
 
 [DEF, SF.Seq[5].Locals.ResultList]
 %EPTYPE = TEResult
+
+[DEF, SF.Seq[5].Main]
+%[0] = Step
+%TYPE: %[0] = "Statement"
+%[1] = Step
+%TYPE: %[1] = "Statement"
+
+[SF.Seq[5].Main[0].TS]
+Id = "ID#:S9U1M1Vq8RGN2qQctBT8oA"
+PostExpr = "StationGlobals.StationGlobals.Testing.Communication_Engine.CHMB1_DUT1 = False"
+
+[DEF, SF.Seq[5].Main[0]]
+%NAME = "Stop Communication Handle CHMB1 DUT1"
+
+[SF.Seq[5].Main[1].TS]
+Id = "ID#:TNU1M1Vq8RGN2qQctBT8oA"
+PostExpr = "StationGlobals.StationGlobals.Testing.Communication_Engine.CHMB1_DUT2 = False"
+
+[DEF, SF.Seq[5].Main[1]]
+%NAME = "Stop Communication Handle CHMB1 DUT2"
 
 [DEF, SF.Seq[5].RTS]
 Type = Num

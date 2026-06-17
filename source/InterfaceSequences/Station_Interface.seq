@@ -3403,7 +3403,7 @@ SkippedItems = "TYPE, SequenceArgument"
 
 [SF.Seq[0].Setup[0].TS.SData.ActualArgs.ConfigFilePath]
 UseDef = False
-Expr = "\"C:\\\\UTP\\\\config\\\\UTP IO\\\\NIDEC_NEXTEER.pool\""
+Expr = "\"C:\\\\UTP\\\\config\\\\UTP IO\\\\StellaSmall.pool\""
 ParamType = 2
 Flags = 0
 
@@ -3461,6 +3461,7 @@ SessionHandle = Num
 
 [SF.Seq[0].Setup[2].TS]
 Id = "ID#:7G0eXLr17xG519Qli0T1uC"
+Mode = "Skip"
 
 [DEF, SF.Seq[0].Setup[2].TS]
 SData = "TYPE, SeqCallStepAdditions"
