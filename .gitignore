@@ -21,3 +21,6 @@ config/
 !config/Motors/.gitkeep
 !config/System data/.gitkeep
 !config/UTP Variant Editor/.gitkeep
+reports/
+logs/
+docs/
