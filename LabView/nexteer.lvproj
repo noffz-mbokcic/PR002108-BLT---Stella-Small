@@ -45,6 +45,7 @@
 				<Item Name="Convert payload to float.vi" Type="VI" URL="../Communication Handle/Converters/Convert payload to float.vi"/>
 				<Item Name="Convert SN bytes to SN data.vi" Type="VI" URL="../Communication Handle/Converters/Convert SN bytes to SN data.vi"/>
 				<Item Name="Convert SN data to SN bytes.vi" Type="VI" URL="../Communication Handle/Converters/Convert SN data to SN bytes.vi"/>
+				<Item Name="Get Offset Values.vi" Type="VI" URL="../Communication Handle/Converters/Get Offset Values.vi"/>
 			</Item>
 			<Item Name="SubVis" Type="Folder">
 				<Item Name="Find correct message in buffer.vi" Type="VI" URL="../Communication Handle/SubVIs/Find correct message in buffer.vi"/>
@@ -86,6 +87,7 @@
 			<Item Name="Controls" Type="Folder">
 				<Item Name="CHMB_Relays.ctl" Type="VI" URL="../Station/Controls/CHMB_Relays.ctl"/>
 				<Item Name="DUT_Relays.ctl" Type="VI" URL="../Station/Controls/DUT_Relays.ctl"/>
+				<Item Name="Offset_Values.ctl" Type="VI" URL="../Station/Controls/Offset_Values.ctl"/>
 				<Item Name="Relays.ctl" Type="VI" URL="../Station/Controls/Relays.ctl"/>
 			</Item>
 			<Item Name="Add alarm to archive.vi" Type="VI" URL="../Station/Add alarm to archive.vi"/>
