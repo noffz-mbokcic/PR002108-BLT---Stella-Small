@@ -43,7 +43,6 @@
 		<Item Name="Communication Handle.vi" Type="VI" URL="../Communication Handle.vi"/>
 		<Item Name="Message handle.vi" Type="VI" URL="../API/Message handle.vi"/>
 		<Item Name="Notifier Data.ctl" Type="VI" URL="../API/Notifier Data.ctl"/>
-		<Item Name="PCAN API.lvlib" Type="Library" URL="../PCAN2023/PCAN API.lvlib"/>
 		<Item Name="Dependencies" Type="Dependencies"/>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
