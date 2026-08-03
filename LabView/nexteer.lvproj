@@ -94,9 +94,10 @@
 			<Item Name="Convert Array of Bytes to String (RX and TX).vi" Type="VI" URL="../Station/Convert Array of Bytes to String (RX and TX).vi"/>
 			<Item Name="Convert CAN message to String (RX and TX).vi" Type="VI" URL="../Station/Convert CAN message to String (RX and TX).vi"/>
 			<Item Name="Delete Alarm archive and Create Header for new one Alarm archive.vi" Type="VI" URL="../Station/Delete Alarm archive and Create Header for new one Alarm archive.vi"/>
+			<Item Name="Get cassette coding.vi" Type="VI" URL="../Station/Get cassette coding.vi"/>
 			<Item Name="Get Error Message.vi" Type="VI" URL="../Station/Get Error Message.vi"/>
 			<Item Name="Get Failure set to write.vi" Type="VI" URL="../Station/Get Failure set to write.vi"/>
-			<Item Name="Get Section 4 data.vi" Type="VI" URL="../Station/Get Section 4 data.vi"/>
+			<Item Name="Get Section 4 data and HW PN.vi" Type="VI" URL="../Station/Get Section 4 data and HW PN.vi"/>
 			<Item Name="Kill UTP TEF.vi" Type="VI" URL="../Station/Kill UTP TEF.vi"/>
 			<Item Name="Update Operating Mode.vi" Type="VI" URL="../Station/Update Operating Mode.vi"/>
 		</Item>

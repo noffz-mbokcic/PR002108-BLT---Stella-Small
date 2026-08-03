@@ -16351,7 +16351,9 @@ PostExpr Line0005 = "SValueSet[Parameters.ValidResults] = Parameters.CurrentTest
 Id = "ID#:4eZM0Yr67xG53dQli0T1uC"
 
 [SF.Seq[11].Main[2]]
-ConditionExpr = "Parameters.CurrentTest.Comp == \"GELE\""
+ConditionExpr Line0001 = "(Parameters.CurrentTest.Comp == \"GELE\") || (Parameters.CurrentTest.Comp == \"GTLT\") || (Parameters.CurrentTest.Comp ="
+ConditionExpr Line0002 = "= \"GELT\") || (Parameters.CurrentTest.Comp == \"GTLE\") || (Parameters.CurrentTest.Comp == \"LTGT\") || (Parameters.Cur"
+ConditionExpr Line0003 = "rentTest.Comp == \"LEGE\") || (Parameters.CurrentTest.Comp == \"LTGE\")"
 %COMMENT = "Check Comparison Type"
 
 [DEF, SF.Seq[11].Main[2]]
@@ -16363,7 +16365,7 @@ PostExpr Line0001 = "Parameters.TSLowerToleranceSet[Parameters.ValidResults] = P
 PostExpr Line0002 = "eSet[Parameters.ValidResults] = Parameters.CurrentTest.Limits.High"
 
 [DEF, SF.Seq[11].Main[3]]
-%NAME = "Assign Limits If \"GELE\""
+%NAME = "Assign Limits If \"GELE\", GTLT,GELT,GTLE,LTGT,LEGE,LTGE"
 
 [SF.Seq[11].Main[4].TS]
 Id = "ID#:4+ZM0Yr67xG53dQli0T1uC"
@@ -16441,8 +16443,10 @@ PostExpr Line0002 = "alidResults] +\" = \" + Str(Parameters.CurrentTest.Numeric)
 Id = "ID#:7OZM0Yr67xG53dQli0T1uC"
 
 [SF.Seq[11].Main[13]]
-ConditionExpr = "Parameters.CurrentTest.Comp == \"GELE\""
-%COMMENT = "Check Comparison Type"
+ConditionExpr Line0001 = "(Parameters.CurrentTest.Comp == \"GELE\") || (Parameters.CurrentTest.Comp == \"GTLT\") || (Parameters.CurrentTest.Comp ="
+ConditionExpr Line0002 = "= \"GELT\") || (Parameters.CurrentTest.Comp == \"GTLE\") || (Parameters.CurrentTest.Comp == \"LTGT\") || (Parameters.Cur"
+ConditionExpr Line0003 = "rentTest.Comp == \"LEGE\") || (Parameters.CurrentTest.Comp == \"LTGE\")"
+%COMMENT = "Check Comparison Type\n\"GELE\", GTLT,GELT,GTLE,LTGT,LEGE,LTGE"
 
 [DEF, SF.Seq[11].Main[13]]
 %NAME = "If"

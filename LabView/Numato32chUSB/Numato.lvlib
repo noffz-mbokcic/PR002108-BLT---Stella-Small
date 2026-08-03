@@ -1,7 +1,6 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
 <Library LVVersion="23008000">
 	<Property Name="NI.Lib.Icon" Type="Bin">)Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!*"!!!*Q(C=\&gt;5^4C."%)&lt;BD^5'J!\)M1-EIJ7WLO$)R,Z#Z2MZ*&lt;3&amp;/%!&gt;98U&amp;8['OY#PY#M0&lt;\@*I733=!%+)(L=:@`XXO'=]3,V=3D]VH#N8LZ&lt;?0L48[;W@^$K-\=090F4&lt;M&gt;^Y.ITDR[\0WJ`0@W4^VXZVSF[/@^6`JOC\@*?P8?\0`AD?`8&gt;QI@9AIC9VK%YVN77(*%`S*%`S*%`S)!`S)!`S)!^S*X&gt;S*X&gt;S*X&gt;S)T&gt;S)T&gt;S)T@S@J#,8/1CBZ1MHCS54*J-E(3'IO1N]33?R*.Y_+D%EXA34_**0(22YEE]C3@R*"['+@%EHM34?")05X6*^I-=4_*B?A7?Q".Y!E`A95E&amp;HA!1,":-(%Q#1U&amp;D="*Y!E`AY63"*`!%HM!4?'B7Y!E]A3@Q""['^&amp;W*LGE(/2[GE?.R0)\(]4A?JJ&lt;D=4S/R`%Y(J;4YX%]$M*:U*E=AJR"4A@HA_.R00S2YX%]DM@R/"[;_B8SPD..UQZS0)&lt;(]"A?QW.YG%+'R`!9(M.D?*B7BM@Q'"\$9XB93I&lt;(]"A?!W)MSP)S*D-''JW-Q0$Q[H?,^;M587,^E/LG6&gt;W5KJN.&gt;2/J&lt;A\626&gt;&gt;4.6&amp;5GW_;F.6G[8;".785[&amp;6'.5CKM'NIQ[]\[E\[J;[JK[I3_K=/K./WN!X\HAY(,4@\\8&lt;\&lt;4&gt;&lt;L6?L\6;L&lt;2=,D7@TT7&lt;T43:4-&lt;(Q$8(_%!Y0J@O/&gt;]M&lt;PY]XPHU9@&amp;XOFH]GGZ_XUZ&lt;`A(`HT`"MV%`^/];\.%4YV&amp;.6!!!!!!</Property>
-	<Property Name="NI.Lib.SourceVersion" Type="Int">587235328</Property>
 	<Property Name="NI.Lib.Version" Type="Str">1.0.0.0</Property>
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">true</Property>
 	<Property Name="NI.SortType" Type="Int">3</Property>
@@ -16,4 +15,10 @@
 	<Item Name="Write base.vi" Type="VI" URL="../Write base.vi"/>
 	<Item Name="Test.vi" Type="VI" URL="../Test.vi"/>
 	<Item Name="Read base.vi" Type="VI" URL="../Read base.vi"/>
+	<Item Name="Write multiple relays.vi" Type="VI" URL="../Write multiple relays.vi"/>
+	<Item Name="Multi Relay command set.vi" Type="VI" URL="../Multi Relay command set.vi"/>
+	<Item Name="Test multiple relays.vi" Type="VI" URL="../Test multiple relays.vi"/>
+	<Item Name="Gpio.vi" Type="VI" URL="../Gpio.vi"/>
+	<Item Name="ConfigureInputGpio.vi" Type="VI" URL="../ConfigureInputGpio.vi"/>
+	<Item Name="ReadDOPin.vi" Type="VI" URL="../ReadDOPin.vi"/>
 </Library>
