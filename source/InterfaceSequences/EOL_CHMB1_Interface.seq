@@ -3191,7 +3191,7 @@ FailureAction = Num
 [SF.Seq[2]]
 %FLG: Parameters = 4456448
 %FLG: Locals = 4194304
-%HI: Main = [108]
+%HI: Main = [117]
 %FLG: Main = 4194304
 %HI: Setup = [15]
 %FLG: Setup = 4194304
@@ -3476,6 +3476,24 @@ Max_Test = Bool
 %TYPE: %[107] = "Label"
 %[108] = Step
 %TYPE: %[108] = "Label"
+%[109] = Step
+%TYPE: %[109] = "NoffzUTP_TEF_Model_Station_GetOperationMode"
+%[110] = Step
+%TYPE: %[110] = "NI_Flow_If"
+%[111] = Step
+%TYPE: %[111] = "NI_Flow_If"
+%[112] = Step
+%TYPE: %[112] = "Statement"
+%[113] = Step
+%TYPE: %[113] = "NI_Flow_ElseIf"
+%[114] = Step
+%TYPE: %[114] = "Statement"
+%[115] = Step
+%TYPE: %[115] = "NI_Flow_End"
+%[116] = Step
+%TYPE: %[116] = "NI_Flow_End"
+%[117] = Step
+%TYPE: %[117] = "Label"
 
 [SF.Seq[2].Main[0].TS]
 Id = "ID#:8fv6ndr17xG519Qli0T1uC"
@@ -3686,7 +3704,7 @@ StatusExpr = "\"\""
 %FLG: %[65] = 67108864
 %FLG: %[106] = 67108864
 %FLG: %[107] = 67108864
-%FLG: %[108] = 67108864
+%FLG: %[117] = 67108864
 
 [SF.Seq[2].Main[6].TS]
 Id = "ID#:E8GH7JFo8RGN16QctBT8oA"
@@ -7942,6 +7960,100 @@ StatusExpr = "\"\""
 %FLG: StatusExpr = 1
 
 [SF.Seq[2].Main[108].TS]
+Id = "ID#:8pssdNuQ8RGwe0ypVBlBxD"
+
+[DEF, SF.Seq[2].Main[108]]
+%NAME = "First Time to make sure it is set for later"
+
+[SF.Seq[2].Main[109].TS]
+Id = "ID#:tBTv89qQ8RGwe0ypVBlBxD"
+
+[DEF, SF.Seq[2].Main[109].TS]
+SData = "TYPE, SeqCallStepAdditions"
+
+[SF.Seq[2].Main[109].TS.SData]
+SFPath = "Noffz.UTP.TEF.API.seq"
+SeqName = "Model.Station.GetOperationMode"
+CustomThreadAffinity = "-1"
+Trace = "Off"
+
+[DEF, SF.Seq[2].Main[109].TS.SData]
+ActualArgs = Arguments
+Prototype = Obj
+
+[DEF, SF.Seq[2].Main[109].TS.SData.ActualArgs]
+OperationMode = "TYPE, SequenceArgument"
+
+[SF.Seq[2].Main[109].TS.SData.ActualArgs.OperationMode]
+UseDef = False
+Expr = "Locals.OperationMode"
+ParamType = 2
+
+[DEF, SF.Seq[2].Main[109].TS.SData.Prototype]
+OperationMode = Str
+
+[SF.Seq[2].Main[109].TS.SData.Prototype]
+%FLG: OperationMode = 4
+
+[DEF, SF.Seq[2].Main[109]]
+%NAME = "Model.Station.GetOperationMode"
+
+[SF.Seq[2].Main[110].TS]
+Id = "ID#:tRTv89qQ8RGwe0ypVBlBxD"
+
+[SF.Seq[2].Main[110]]
+ConditionExpr = "Locals.OperationMode == \"MSA\""
+
+[DEF, SF.Seq[2].Main[110]]
+%NAME = "If"
+
+[SF.Seq[2].Main[111].TS]
+Id = "ID#:txTv89qQ8RGwe0ypVBlBxD"
+
+[SF.Seq[2].Main[111]]
+ConditionExpr = "(Locals.CHMB == \"CHMB1\") && (StationGlobals.Testing.MSA_Counter[RunState.TestSockets.MyIndex] == 50)"
+
+[DEF, SF.Seq[2].Main[111]]
+%NAME = "If"
+
+[SF.Seq[2].Main[112].TS]
+Id = "ID#:uBTv89qQ8RGwe0ypVBlBxD"
+PostExpr Line0001 = "StationGlobals.Automation.SystemControl.CHMB1.MSA.Ready = False,\nStationGlobals.Automation.SystemControl.CHMB1.MSA.Runn"
+PostExpr Line0002 = "ing = True// Running until end is reached"
+
+[DEF, SF.Seq[2].Main[112]]
+%NAME = "Set MSA status CHMB1"
+
+[SF.Seq[2].Main[113].TS]
+Id = "ID#:uRTv89qQ8RGwe0ypVBlBxD"
+
+[SF.Seq[2].Main[113]]
+ConditionExpr = "(Locals.CHMB == \"CHMB2\")&& (StationGlobals.Testing.MSA_Counter[RunState.TestSockets.MyIndex] == 50)"
+
+[DEF, SF.Seq[2].Main[113]]
+%NAME = "Else If"
+
+[SF.Seq[2].Main[114].TS]
+Id = "ID#:uhTv89qQ8RGwe0ypVBlBxD"
+PostExpr Line0001 = "StationGlobals.Automation.SystemControl.CHMB2.MSA.Ready = False,\nStationGlobals.Automation.SystemControl.CHMB2.MSA.Runn"
+PostExpr Line0002 = "ing = True // Running until end is reached"
+
+[DEF, SF.Seq[2].Main[114]]
+%NAME = "Set MSA status CHMB2"
+
+[SF.Seq[2].Main[115].TS]
+Id = "ID#:uxTv89qQ8RGwe0ypVBlBxD"
+
+[DEF, SF.Seq[2].Main[115]]
+%NAME = "End"
+
+[SF.Seq[2].Main[116].TS]
+Id = "ID#:vBTv89qQ8RGwe0ypVBlBxD"
+
+[DEF, SF.Seq[2].Main[116]]
+%NAME = "End"
+
+[SF.Seq[2].Main[117].TS]
 Id = "ID#:nRwGBf7t7xG4Y1B7nf4f8B"
 Icon = "ni_blank.ico"
 StatusExpr = "\"\""
@@ -10763,8 +10875,8 @@ ConditionExpr = "Locals.CHMB == \"CHMB2\""
 Id = "ID#:lghgQtqQ8RGwe0ypVBlBxD"
 PostExpr Line0001 = "StationGlobals.Automation.SystemControl.CHMB2.MSA.Ready = False,\nStationGlobals.Automation.SystemControl.CHMB2.MSA.Runn"
 PostExpr Line0002 = "ing = StationGlobals.Testing.MSA_Counter[RunState.TestSockets.MyIndex] > 1 // Running until end is reached\n// Running w"
-PostExpr Line0003 = "ill not be set to true if at least once test was not performed because this step will not be reached(Counter ==50 is not"
-PostExpr Line0004 = " a problem)"
+PostExpr Line0003 = "ill not be set to true if at least once test was not performed because this step will not be reached (Counter ==50 is no"
+PostExpr Line0004 = "t a problem)"
 
 [DEF, SF.Seq[3].Main[71]]
 %NAME = "Set MSA status CHMB2"
@@ -10878,8 +10990,9 @@ ConditionExpr Line0001 = "(StationGlobals.Testing.MSA_Counter[0] == 1 && Station
 ConditionExpr Line0002 = "Counter[2] == 1 && StationGlobals.Testing.MSA_Counter[3] == 1) || (StationGlobals.Testing.MSA_Counter[0] == 1 && Station"
 ConditionExpr Line0003 = "Globals.Testing.MSA_Counter[1] == 1 && StationGlobals.Testing.MSA_Counter[2] == 50 && StationGlobals.Testing.MSA_Counter"
 ConditionExpr Line0004 = "[3] == 50) || (StationGlobals.Testing.MSA_Counter[0] == 50 && StationGlobals.Testing.MSA_Counter[1] == 50 && StationGlob"
-ConditionExpr Line0005 = "als.Testing.MSA_Counter[2] == 1 && StationGlobals.Testing.MSA_Counter[3] == 1) \n\n// If MSA is finished on both chamber"
-ConditionExpr Line0006 = "s or if it was not started on other chamber"
+ConditionExpr Line0005 = "als.Testing.MSA_Counter[2] == 1 && StationGlobals.Testing.MSA_Counter[3] == 1) && \n!(StationGlobals.Automation.SystemCo"
+ConditionExpr Line0006 = "ntrol.CHMB1.MSA.Running || StationGlobals.Automation.SystemControl.CHMB1.MSA.Running)\n\n// If MSA is finished on both c"
+ConditionExpr Line0007 = "hambers or if it was not started on other chamber"
 
 [DEF, SF.Seq[3].Main[79]]
 %NAME = "If"
