@@ -69,14 +69,12 @@ PreSubstep = StepType
 NI_LV_RunVIAsynchronously = StepType
 NoffzUTP_TEF_UI_Station_Statistic_Reset = StepType
 NoffzUTP_TEF_UI_TestSocket_Statistic_Reset = StepType
-NoffzUTP_IOPLCVariableI16Read = StepType
 NI_Wait = StepType
 NI_Flow_While = StepType
 NI_Flow_ElseIf = StepType
 NI_Flow_For = StepType
 NoffzUTP_TEF_Model_Station_GetProductsAndVariants = StepType
 NoffzUTP_TEF_Model_Station_SetProductsAndVariants = StepType
-NoffzUTP_IOPLCVariableBooleanWrite = StepType
 Station_Relays = Obj
 Relays_DUT = Obj
 Relays_CHMB = Obj
@@ -167,7 +165,7 @@ FailureAction = Num
 %FLG: Locals = 4194304
 %HI: Main = [71]
 %FLG: Main = 4194304
-%HI: Setup = [16]
+%HI: Setup = [15]
 %FLG: Setup = 4194304
 %HI: Cleanup = [0]
 %FLG: Cleanup = 4194304
@@ -3358,27 +3356,25 @@ StatusExpr = "\"\""
 %[5] = Step
 %TYPE: %[5] = "Statement"
 %[6] = Step
-%TYPE: %[6] = "Statement"
+%TYPE: %[6] = "NoffzUTP_TEF_UI_Station_ShowPopupMessageDialog"
 %[7] = Step
-%TYPE: %[7] = "NoffzUTP_TEF_UI_Station_ShowPopupMessageDialog"
+%TYPE: %[7] = "Label"
 %[8] = Step
-%TYPE: %[8] = "Label"
+%TYPE: %[8] = "SequenceCall"
 %[9] = Step
-%TYPE: %[9] = "SequenceCall"
+%TYPE: %[9] = "Action"
 %[10] = Step
 %TYPE: %[10] = "Action"
 %[11] = Step
 %TYPE: %[11] = "Action"
 %[12] = Step
-%TYPE: %[12] = "Action"
+%TYPE: %[12] = "Statement"
 %[13] = Step
-%TYPE: %[13] = "Statement"
+%TYPE: %[13] = "SequenceCall"
 %[14] = Step
-%TYPE: %[14] = "SequenceCall"
+%TYPE: %[14] = "Label"
 %[15] = Step
-%TYPE: %[15] = "Label"
-%[16] = Step
-%TYPE: %[16] = "Statement"
+%TYPE: %[15] = "Statement"
 
 [SF.Seq[0].Setup[0].TS]
 Id = "ID#:PBUsQ7b17xG519Qli0T1uC"
@@ -3722,40 +3718,34 @@ DisplayType = "ASCII String"
 %NAME = "Get CHMBs for testing"
 
 [SF.Seq[0].Setup[5].TS]
-Id = "ID#:D/FTqx5q8RGN2aQctBT8oA"
-
-[DEF, SF.Seq[0].Setup[5]]
-%NAME = "Get number of "
-
-[SF.Seq[0].Setup[6].TS]
 Id = "ID#:FxThyuiO8BGJ3syCf5KpWB"
 Mode = "Skip"
 PostExpr = "StationGlobals.System.TestCHMB1 = True,\nStationGlobals.System.TestCHMB2 = True"
 
-[DEF, SF.Seq[0].Setup[6]]
+[DEF, SF.Seq[0].Setup[5]]
 %NAME = "Both chaimbers are tested "
 
-[SF.Seq[0].Setup[7].TS]
+[SF.Seq[0].Setup[6].TS]
 Id = "ID#:1wweGUVA8BG4sVB7nf4f8B"
 PreCond Line0001 = "! (StationGlobals.Automation.SystemControl.CHMB1.TestCHMB1 ||  StationGlobals.Automation.SystemControl.CHMB2.TestCHMB2 )"
 PreCond Line0002 = " // NONE OF THE CHMBs ARE TRUE"
 PassAct = "Goto"
 PassActTarget = "\"ID#:mxlywERA8BG4sVB7nf4f8B\""
 
-[DEF, SF.Seq[0].Setup[7].TS]
+[DEF, SF.Seq[0].Setup[6].TS]
 SData = "TYPE, SeqCallStepAdditions"
 
-[SF.Seq[0].Setup[7].TS.SData]
+[SF.Seq[0].Setup[6].TS.SData]
 SFPath = "Noffz.UTP.TEF.API.seq"
 SeqName = "UI.Station.ShowPopupMessageDialog"
 CustomThreadAffinity = "-1"
 Trace = "Off"
 
-[DEF, SF.Seq[0].Setup[7].TS.SData]
+[DEF, SF.Seq[0].Setup[6].TS.SData]
 ActualArgs = Arguments
 Prototype = Obj
 
-[DEF, SF.Seq[0].Setup[7].TS.SData.ActualArgs]
+[DEF, SF.Seq[0].Setup[6].TS.SData.ActualArgs]
 Message = "TYPE, SequenceArgument"
 Title = "TYPE, SequenceArgument"
 CenterPosition = "TYPE, SequenceArgument"
@@ -3768,57 +3758,57 @@ DialogTimeout = "TYPE, SequenceArgument"
 OkButtonPressed = "TYPE, SequenceArgument"
 CancelButtonPressed = "TYPE, SequenceArgument"
 
-[SF.Seq[0].Setup[7].TS.SData.ActualArgs.Message]
+[SF.Seq[0].Setup[6].TS.SData.ActualArgs.Message]
 UseDef = False
 Expr = "\"You do not have any chaimber selected for testing, please change the configuration file\""
 ParamType = 2
 Flags = 0
 
-[SF.Seq[0].Setup[7].TS.SData.ActualArgs.Title]
+[SF.Seq[0].Setup[6].TS.SData.ActualArgs.Title]
 ParamType = 2
 Flags = 0
 
-[SF.Seq[0].Setup[7].TS.SData.ActualArgs.CenterPosition]
+[SF.Seq[0].Setup[6].TS.SData.ActualArgs.CenterPosition]
 ParamType = 16
 Flags = 0
 
-[SF.Seq[0].Setup[7].TS.SData.ActualArgs.XPosition]
+[SF.Seq[0].Setup[6].TS.SData.ActualArgs.XPosition]
 ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[SF.Seq[0].Setup[7].TS.SData.ActualArgs.YPosition]
+[SF.Seq[0].Setup[6].TS.SData.ActualArgs.YPosition]
 ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[SF.Seq[0].Setup[7].TS.SData.ActualArgs.IsModal]
+[SF.Seq[0].Setup[6].TS.SData.ActualArgs.IsModal]
 ParamType = 16
 Flags = 0
 
-[SF.Seq[0].Setup[7].TS.SData.ActualArgs.ShowOkButton]
+[SF.Seq[0].Setup[6].TS.SData.ActualArgs.ShowOkButton]
 Expr = "True"
 ParamType = 16
 Flags = 0
 
-[SF.Seq[0].Setup[7].TS.SData.ActualArgs.ShowCancelButton]
+[SF.Seq[0].Setup[6].TS.SData.ActualArgs.ShowCancelButton]
 Expr = "False"
 ParamType = 16
 Flags = 0
 
-[SF.Seq[0].Setup[7].TS.SData.ActualArgs.DialogTimeout]
+[SF.Seq[0].Setup[6].TS.SData.ActualArgs.DialogTimeout]
 Expr = "0"
 ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[SF.Seq[0].Setup[7].TS.SData.ActualArgs.OkButtonPressed]
+[SF.Seq[0].Setup[6].TS.SData.ActualArgs.OkButtonPressed]
 ParamType = 16
 
-[SF.Seq[0].Setup[7].TS.SData.ActualArgs.CancelButtonPressed]
+[SF.Seq[0].Setup[6].TS.SData.ActualArgs.CancelButtonPressed]
 ParamType = 16
 
-[DEF, SF.Seq[0].Setup[7].TS.SData.Prototype]
+[DEF, SF.Seq[0].Setup[6].TS.SData.Prototype]
 Message = Str
 Title = Str
 CenterPosition = Bool
@@ -3831,89 +3821,89 @@ DialogTimeout = Num
 OkButtonPressed = Bool
 CancelButtonPressed = Bool
 
-[SF.Seq[0].Setup[7].TS.SData.Prototype.Message]
+[SF.Seq[0].Setup[6].TS.SData.Prototype.Message]
 %COMMENT = "Message to show."
 
-[SF.Seq[0].Setup[7].TS.SData.Prototype.Title]
+[SF.Seq[0].Setup[6].TS.SData.Prototype.Title]
 %COMMENT = "Dialog title. (Default: Empty)"
 
-[SF.Seq[0].Setup[7].TS.SData.Prototype]
+[SF.Seq[0].Setup[6].TS.SData.Prototype]
 CenterPosition = True
 ShowOkButton = True
 %FLG: OkButtonPressed = 4
 %FLG: CancelButtonPressed = 4
 
-[SF.Seq[0].Setup[7].TS.SData.Prototype.CenterPosition]
+[SF.Seq[0].Setup[6].TS.SData.Prototype.CenterPosition]
 %COMMENT = "If True, the dialog is positioned in the center of the screen. (Default: True)"
 
-[SF.Seq[0].Setup[7].TS.SData.Prototype.XPosition]
+[SF.Seq[0].Setup[6].TS.SData.Prototype.XPosition]
 %COMMENT = "Position of the dialog, X coordinate. Parameter is ignored, if CenterPosition is True. (Default: 0)."
 
-[SF.Seq[0].Setup[7].TS.SData.Prototype.YPosition]
+[SF.Seq[0].Setup[6].TS.SData.Prototype.YPosition]
 %COMMENT = "Position of the dialog, Y coordinate. Parameter is ignored, if CenterPosition is True. (Default: 0)."
 
-[SF.Seq[0].Setup[7].TS.SData.Prototype.IsModal]
+[SF.Seq[0].Setup[6].TS.SData.Prototype.IsModal]
 %COMMENT = "If True, the dialog is modal to UTP TEF or Sequence Editor. (Default: False)"
 
-[SF.Seq[0].Setup[7].TS.SData.Prototype.ShowOkButton]
+[SF.Seq[0].Setup[6].TS.SData.Prototype.ShowOkButton]
 %COMMENT = "Show OK button in the dialog. (Default: True)"
 
-[SF.Seq[0].Setup[7].TS.SData.Prototype.ShowCancelButton]
+[SF.Seq[0].Setup[6].TS.SData.Prototype.ShowCancelButton]
 %COMMENT = "Show Cancel button in the dialog. (Default: False)"
 
-[SF.Seq[0].Setup[7].TS.SData.Prototype.DialogTimeout]
+[SF.Seq[0].Setup[6].TS.SData.Prototype.DialogTimeout]
 %COMMENT Line0001 = "Optional. Dialog timeout in seconds. If 0, the timeout is not used and the dialog is shown until operator press a button"
 %COMMENT Line0002 = ". (Default: 0)"
 
-[SF.Seq[0].Setup[7].TS.SData.Prototype.OkButtonPressed]
+[SF.Seq[0].Setup[6].TS.SData.Prototype.OkButtonPressed]
 %COMMENT = "Returns True, if OK button was pressed."
 
-[SF.Seq[0].Setup[7].TS.SData.Prototype.CancelButtonPressed]
+[SF.Seq[0].Setup[6].TS.SData.Prototype.CancelButtonPressed]
 %COMMENT = "Returns True, if Cancel button was pressed."
 
-[SF.Seq[0].Setup[7]]
+[SF.Seq[0].Setup[6]]
 %COMMENT = "No chaimber selected for testing"
 
-[DEF, SF.Seq[0].Setup[7]]
+[DEF, SF.Seq[0].Setup[6]]
 %NAME = "No testing"
 
-[SF.Seq[0].Setup[8].TS]
+[SF.Seq[0].Setup[7].TS]
 Id = "ID#:VhgaOSeV8BGJ68yCf5KpWB"
 
-[DEF, SF.Seq[0].Setup[8]]
+[DEF, SF.Seq[0].Setup[7]]
 %NAME = "Initialization of instruments"
 
-[SF.Seq[0].Setup[9].TS]
+[SF.Seq[0].Setup[8].TS]
 Id = "ID#:MUhdUuRN8RGwIEypVBlBxD"
 
-[DEF, SF.Seq[0].Setup[9].TS]
+[DEF, SF.Seq[0].Setup[8].TS]
 SData = "TYPE, SeqCallStepAdditions"
 
-[SF.Seq[0].Setup[9].TS.SData]
+[SF.Seq[0].Setup[8].TS.SData]
 SeqName = "Initialize Instruments"
 UseCurFile = True
 
-[DEF, SF.Seq[0].Setup[9]]
+[DEF, SF.Seq[0].Setup[8]]
 %NAME = "Configure instruments"
 
-[SF.Seq[0].Setup[10].TS]
+[SF.Seq[0].Setup[9].TS]
 Id = "ID#:8ROgN3pP8RGwLkypVBlBxD"
 
-[DEF, SF.Seq[0].Setup[10].TS]
+[DEF, SF.Seq[0].Setup[9].TS]
 SData = "TYPE, FlexGStepAdditions"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall]
+[SF.Seq[0].Setup[9].TS.SData.ViCall]
 ProjectPath = "..\\..\\LabView\\nexteer.lvproj"
 VIPath = "My Computer\\Numato - Relays\\Read_Numato_Relays.vi"
 TDChecksum = -2009824345
 %HI: Parms = [2]
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms]
 %[0] = "TYPE, VIParameter"
 %[1] = "TYPE, VIParameter"
 %[2] = "TYPE, VIParameter"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[0]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[0]]
 Label = "error in (no error)"
 Type = 3
 WireRequirement = 1
@@ -3922,12 +3912,12 @@ UseDefaultValues = True
 %HI: ArrayClusterEls = [2]
 ConnectorNumber = 8
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[0].ArrayClusterEls]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[0].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[0].ArrayClusterEls[0]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[0].ArrayClusterEls[0]]
 Label = "status"
 ArgVal = "False"
 Type = 2
@@ -3935,10 +3925,10 @@ WireRequirement = 1
 DisplayType = "Boolean"
 UseDefaultValues = True
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[0].ArrayClusterEls[0]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[0].ArrayClusterEls[0]]
 %NAME = "status"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[0].ArrayClusterEls[1]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[0].ArrayClusterEls[1]]
 Label = "code"
 ArgVal = "0"
 Type = 0
@@ -3947,10 +3937,10 @@ NumType = 4
 DisplayType = "Number (I32)"
 UseDefaultValues = True
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[0].ArrayClusterEls[1]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[0].ArrayClusterEls[1]]
 %NAME = "code"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[0].ArrayClusterEls[2]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[0].ArrayClusterEls[2]]
 Label = "source"
 ArgVal = "\"\""
 Type = 1
@@ -3958,13 +3948,13 @@ WireRequirement = 1
 DisplayType = "ASCII String"
 UseDefaultValues = True
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[0].ArrayClusterEls[2]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[0].ArrayClusterEls[2]]
 %NAME = "source"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[0]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[0]]
 %NAME = "error in (no error)"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1]]
 Label = "Relays"
 ArgVal = "StationGlobals.Testing.Relays"
 Type = 3
@@ -3974,7 +3964,7 @@ DisplayType = "Container"
 Direction = 1
 ConnectorNumber = 3
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
@@ -3982,7 +3972,7 @@ ConnectorNumber = 3
 %[4] = "TYPE, VIParameterElement"
 %[5] = "TYPE, VIParameterElement"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[0]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[0]]
 Label = "CHMB1"
 ArgVal = "StationGlobals.Testing.Relays.CHMB1"
 Type = 3
@@ -3990,13 +3980,13 @@ WireRequirement = 1
 DisplayType = "Container"
 %HI: ArrayClusterEls = [3]
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[0].ArrayClusterEls]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[0].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
 %[3] = "TYPE, VIParameterElement"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[0].ArrayClusterEls[0]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[0].ArrayClusterEls[0]]
 Label = "Magnetic_CW_1"
 ArgVal = "StationGlobals.Testing.Relays.CHMB1.Magnetic_CW_1"
 Type = 0
@@ -4004,10 +3994,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[0].ArrayClusterEls[0]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[0].ArrayClusterEls[0]]
 %NAME = "Magnetic_CW_1"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[0].ArrayClusterEls[1]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[0].ArrayClusterEls[1]]
 Label = "Magnetic_CCW_1"
 ArgVal = "StationGlobals.Testing.Relays.CHMB1.Magnetic_CCW_1"
 Type = 0
@@ -4015,10 +4005,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[0].ArrayClusterEls[1]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[0].ArrayClusterEls[1]]
 %NAME = "Magnetic_CCW_1"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[0].ArrayClusterEls[2]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[0].ArrayClusterEls[2]]
 Label = "Magnetic_CW_2"
 ArgVal = "StationGlobals.Testing.Relays.CHMB1.Magnetic_CW_2"
 Type = 0
@@ -4026,10 +4016,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[0].ArrayClusterEls[2]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[0].ArrayClusterEls[2]]
 %NAME = "Magnetic_CW_2"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[0].ArrayClusterEls[3]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[0].ArrayClusterEls[3]]
 Label = "Magnetic_CCW_2"
 ArgVal = "StationGlobals.Testing.Relays.CHMB1.Magnetic_CCW_2"
 Type = 0
@@ -4037,13 +4027,13 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[0].ArrayClusterEls[3]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[0].ArrayClusterEls[3]]
 %NAME = "Magnetic_CCW_2"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[0]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[0]]
 %NAME = "CHMB1"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[1]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[1]]
 Label = "CHMB2"
 ArgVal = "StationGlobals.Testing.Relays.CHMB2"
 Type = 3
@@ -4051,13 +4041,13 @@ WireRequirement = 1
 DisplayType = "Container"
 %HI: ArrayClusterEls = [3]
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[1].ArrayClusterEls]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[1].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
 %[3] = "TYPE, VIParameterElement"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[1].ArrayClusterEls[0]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[1].ArrayClusterEls[0]]
 Label = "Magnetic_CW_1"
 ArgVal = "StationGlobals.Testing.Relays.CHMB2.Magnetic_CW_1"
 Type = 0
@@ -4065,10 +4055,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[1].ArrayClusterEls[0]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[1].ArrayClusterEls[0]]
 %NAME = "Magnetic_CW_1"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[1].ArrayClusterEls[1]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[1].ArrayClusterEls[1]]
 Label = "Magnetic_CCW_1"
 ArgVal = "StationGlobals.Testing.Relays.CHMB2.Magnetic_CCW_1"
 Type = 0
@@ -4076,10 +4066,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[1].ArrayClusterEls[1]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[1].ArrayClusterEls[1]]
 %NAME = "Magnetic_CCW_1"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[1].ArrayClusterEls[2]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[1].ArrayClusterEls[2]]
 Label = "Magnetic_CW_2"
 ArgVal = "StationGlobals.Testing.Relays.CHMB2.Magnetic_CW_2"
 Type = 0
@@ -4087,10 +4077,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[1].ArrayClusterEls[2]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[1].ArrayClusterEls[2]]
 %NAME = "Magnetic_CW_2"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[1].ArrayClusterEls[3]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[1].ArrayClusterEls[3]]
 Label = "Magnetic_CCW_2"
 ArgVal = "StationGlobals.Testing.Relays.CHMB2.Magnetic_CCW_2"
 Type = 0
@@ -4098,13 +4088,13 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[1].ArrayClusterEls[3]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[1].ArrayClusterEls[3]]
 %NAME = "Magnetic_CCW_2"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[1]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[1]]
 %NAME = "CHMB2"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[2]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[2]]
 Label = "DUT1"
 ArgVal = "StationGlobals.Testing.Relays.DUT1"
 Type = 3
@@ -4112,7 +4102,7 @@ WireRequirement = 1
 DisplayType = "Container"
 %HI: ArrayClusterEls = [13]
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
@@ -4128,7 +4118,7 @@ DisplayType = "Container"
 %[12] = "TYPE, VIParameterElement"
 %[13] = "TYPE, VIParameterElement"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[0]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[0]]
 Label = "DMM_LO_BAT_Minus"
 ArgVal = "StationGlobals.Testing.Relays.DUT1.DMM_LO_BAT_Minus"
 Type = 0
@@ -4136,10 +4126,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[0]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[0]]
 %NAME = "DMM_LO_BAT_Minus"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[1]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[1]]
 Label = "DMM_HI_BAT_Plus"
 ArgVal = "StationGlobals.Testing.Relays.DUT1.DMM_HI_BAT_Plus"
 Type = 0
@@ -4147,10 +4137,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[1]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[1]]
 %NAME = "DMM_HI_BAT_Plus"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[2]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[2]]
 Label = "DMM_HI_VS5N"
 ArgVal = "StationGlobals.Testing.Relays.DUT1.DMM_HI_VS5N"
 Type = 0
@@ -4158,10 +4148,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[2]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[2]]
 %NAME = "DMM_HI_VS5N"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[3]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[3]]
 Label = "DMM_HI_CANL"
 ArgVal = "StationGlobals.Testing.Relays.DUT1.DMM_HI_CANL"
 Type = 0
@@ -4169,10 +4159,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[3]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[3]]
 %NAME = "DMM_HI_CANL"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[4]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[4]]
 Label = "DMM_HI_CANH"
 ArgVal = "StationGlobals.Testing.Relays.DUT1.DMM_HI_CANH"
 Type = 0
@@ -4180,10 +4170,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[4]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[4]]
 %NAME = "DMM_HI_CANH"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[5]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[5]]
 Label = "DMM_I_BAT"
 ArgVal = "StationGlobals.Testing.Relays.DUT1.DMM_I_BAT"
 Type = 0
@@ -4191,10 +4181,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[5]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[5]]
 %NAME = "DMM_I_BAT"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[6]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[6]]
 Label = "CANL"
 ArgVal = "StationGlobals.Testing.Relays.DUT1.CANL"
 Type = 0
@@ -4202,10 +4192,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[6]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[6]]
 %NAME = "CANL"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[7]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[7]]
 Label = "CANH"
 ArgVal = "StationGlobals.Testing.Relays.DUT1.CANH"
 Type = 0
@@ -4213,10 +4203,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[7]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[7]]
 %NAME = "CANH"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[8]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[8]]
 Label = "CAL_PS_Plus"
 ArgVal = "StationGlobals.Testing.Relays.DUT1.CAL_PS_Plus"
 Type = 0
@@ -4224,10 +4214,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[8]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[8]]
 %NAME = "CAL_PS_Plus"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[9]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[9]]
 Label = "CAL_PS_Minus"
 ArgVal = "StationGlobals.Testing.Relays.DUT1.CAL_PS_Minus"
 Type = 0
@@ -4235,10 +4225,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[9]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[9]]
 %NAME = "CAL_PS_Minus"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[10]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[10]]
 Label = "Resistor_Capacitor_Discharge"
 ArgVal = "StationGlobals.Testing.Relays.DUT1.Resistor_Capacitor_Discharge"
 Type = 0
@@ -4246,10 +4236,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[10]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[10]]
 %NAME = "Resistor_Capacitor_Discharge"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[11]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[11]]
 Label = "Sense_Plus"
 ArgVal = "StationGlobals.Testing.Relays.DUT1.Sense_Plus"
 Type = 0
@@ -4257,10 +4247,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[11]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[11]]
 %NAME = "Sense_Plus"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[12]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[12]]
 Label = "Sense_Minus"
 ArgVal = "StationGlobals.Testing.Relays.DUT1.Sense_Minus"
 Type = 0
@@ -4268,10 +4258,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[12]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[12]]
 %NAME = "Sense_Minus"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[13]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[13]]
 Label = "Fan"
 ArgVal = "StationGlobals.Testing.Relays.DUT1.Fan"
 Type = 0
@@ -4279,13 +4269,13 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[13]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[2].ArrayClusterEls[13]]
 %NAME = "Fan"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[2]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[2]]
 %NAME = "DUT1"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[3]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[3]]
 Label = "DUT2"
 ArgVal = "StationGlobals.Testing.Relays.DUT2"
 Type = 3
@@ -4293,7 +4283,7 @@ WireRequirement = 1
 DisplayType = "Container"
 %HI: ArrayClusterEls = [13]
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
@@ -4309,7 +4299,7 @@ DisplayType = "Container"
 %[12] = "TYPE, VIParameterElement"
 %[13] = "TYPE, VIParameterElement"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[0]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[0]]
 Label = "DMM_LO_BAT_Minus"
 ArgVal = "StationGlobals.Testing.Relays.DUT2.DMM_LO_BAT_Minus"
 Type = 0
@@ -4317,10 +4307,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[0]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[0]]
 %NAME = "DMM_LO_BAT_Minus"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[1]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[1]]
 Label = "DMM_HI_BAT_Plus"
 ArgVal = "StationGlobals.Testing.Relays.DUT2.DMM_HI_BAT_Plus"
 Type = 0
@@ -4328,10 +4318,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[1]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[1]]
 %NAME = "DMM_HI_BAT_Plus"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[2]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[2]]
 Label = "DMM_HI_VS5N"
 ArgVal = "StationGlobals.Testing.Relays.DUT2.DMM_HI_VS5N"
 Type = 0
@@ -4339,10 +4329,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[2]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[2]]
 %NAME = "DMM_HI_VS5N"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[3]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[3]]
 Label = "DMM_HI_CANL"
 ArgVal = "StationGlobals.Testing.Relays.DUT2.DMM_HI_CANL"
 Type = 0
@@ -4350,10 +4340,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[3]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[3]]
 %NAME = "DMM_HI_CANL"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[4]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[4]]
 Label = "DMM_HI_CANH"
 ArgVal = "StationGlobals.Testing.Relays.DUT2.DMM_HI_CANH"
 Type = 0
@@ -4361,10 +4351,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[4]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[4]]
 %NAME = "DMM_HI_CANH"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[5]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[5]]
 Label = "DMM_I_BAT"
 ArgVal = "StationGlobals.Testing.Relays.DUT2.DMM_I_BAT"
 Type = 0
@@ -4372,10 +4362,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[5]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[5]]
 %NAME = "DMM_I_BAT"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[6]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[6]]
 Label = "CANL"
 ArgVal = "StationGlobals.Testing.Relays.DUT2.CANL"
 Type = 0
@@ -4383,10 +4373,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[6]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[6]]
 %NAME = "CANL"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[7]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[7]]
 Label = "CANH"
 ArgVal = "StationGlobals.Testing.Relays.DUT2.CANH"
 Type = 0
@@ -4394,10 +4384,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[7]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[7]]
 %NAME = "CANH"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[8]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[8]]
 Label = "CAL_PS_Plus"
 ArgVal = "StationGlobals.Testing.Relays.DUT2.CAL_PS_Plus"
 Type = 0
@@ -4405,10 +4395,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[8]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[8]]
 %NAME = "CAL_PS_Plus"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[9]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[9]]
 Label = "CAL_PS_Minus"
 ArgVal = "StationGlobals.Testing.Relays.DUT2.CAL_PS_Minus"
 Type = 0
@@ -4416,10 +4406,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[9]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[9]]
 %NAME = "CAL_PS_Minus"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[10]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[10]]
 Label = "Resistor_Capacitor_Discharge"
 ArgVal = "StationGlobals.Testing.Relays.DUT2.Resistor_Capacitor_Discharge"
 Type = 0
@@ -4427,10 +4417,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[10]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[10]]
 %NAME = "Resistor_Capacitor_Discharge"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[11]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[11]]
 Label = "Sense_Plus"
 ArgVal = "StationGlobals.Testing.Relays.DUT2.Sense_Plus"
 Type = 0
@@ -4438,10 +4428,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[11]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[11]]
 %NAME = "Sense_Plus"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[12]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[12]]
 Label = "Sense_Minus"
 ArgVal = "StationGlobals.Testing.Relays.DUT2.Sense_Minus"
 Type = 0
@@ -4449,10 +4439,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[12]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[12]]
 %NAME = "Sense_Minus"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[13]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[13]]
 Label = "Fan"
 ArgVal = "StationGlobals.Testing.Relays.DUT2.Fan"
 Type = 0
@@ -4460,13 +4450,13 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[13]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[3].ArrayClusterEls[13]]
 %NAME = "Fan"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[3]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[3]]
 %NAME = "DUT2"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[4]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[4]]
 Label = "DUT3"
 ArgVal = "StationGlobals.Testing.Relays.DUT3"
 Type = 3
@@ -4474,7 +4464,7 @@ WireRequirement = 1
 DisplayType = "Container"
 %HI: ArrayClusterEls = [13]
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
@@ -4490,7 +4480,7 @@ DisplayType = "Container"
 %[12] = "TYPE, VIParameterElement"
 %[13] = "TYPE, VIParameterElement"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[0]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[0]]
 Label = "DMM_LO_BAT_Minus"
 ArgVal = "StationGlobals.Testing.Relays.DUT3.DMM_LO_BAT_Minus"
 Type = 0
@@ -4498,10 +4488,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[0]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[0]]
 %NAME = "DMM_LO_BAT_Minus"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[1]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[1]]
 Label = "DMM_HI_BAT_Plus"
 ArgVal = "StationGlobals.Testing.Relays.DUT3.DMM_HI_BAT_Plus"
 Type = 0
@@ -4509,10 +4499,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[1]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[1]]
 %NAME = "DMM_HI_BAT_Plus"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[2]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[2]]
 Label = "DMM_HI_VS5N"
 ArgVal = "StationGlobals.Testing.Relays.DUT3.DMM_HI_VS5N"
 Type = 0
@@ -4520,10 +4510,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[2]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[2]]
 %NAME = "DMM_HI_VS5N"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[3]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[3]]
 Label = "DMM_HI_CANL"
 ArgVal = "StationGlobals.Testing.Relays.DUT3.DMM_HI_CANL"
 Type = 0
@@ -4531,10 +4521,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[3]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[3]]
 %NAME = "DMM_HI_CANL"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[4]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[4]]
 Label = "DMM_HI_CANH"
 ArgVal = "StationGlobals.Testing.Relays.DUT3.DMM_HI_CANH"
 Type = 0
@@ -4542,10 +4532,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[4]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[4]]
 %NAME = "DMM_HI_CANH"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[5]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[5]]
 Label = "DMM_I_BAT"
 ArgVal = "StationGlobals.Testing.Relays.DUT3.DMM_I_BAT"
 Type = 0
@@ -4553,10 +4543,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[5]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[5]]
 %NAME = "DMM_I_BAT"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[6]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[6]]
 Label = "CANL"
 ArgVal = "StationGlobals.Testing.Relays.DUT3.CANL"
 Type = 0
@@ -4564,10 +4554,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[6]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[6]]
 %NAME = "CANL"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[7]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[7]]
 Label = "CANH"
 ArgVal = "StationGlobals.Testing.Relays.DUT3.CANH"
 Type = 0
@@ -4575,10 +4565,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[7]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[7]]
 %NAME = "CANH"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[8]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[8]]
 Label = "CAL_PS_Plus"
 ArgVal = "StationGlobals.Testing.Relays.DUT3.CAL_PS_Plus"
 Type = 0
@@ -4586,10 +4576,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[8]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[8]]
 %NAME = "CAL_PS_Plus"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[9]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[9]]
 Label = "CAL_PS_Minus"
 ArgVal = "StationGlobals.Testing.Relays.DUT3.CAL_PS_Minus"
 Type = 0
@@ -4597,10 +4587,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[9]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[9]]
 %NAME = "CAL_PS_Minus"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[10]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[10]]
 Label = "Resistor_Capacitor_Discharge"
 ArgVal = "StationGlobals.Testing.Relays.DUT3.Resistor_Capacitor_Discharge"
 Type = 0
@@ -4608,10 +4598,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[10]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[10]]
 %NAME = "Resistor_Capacitor_Discharge"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[11]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[11]]
 Label = "Sense_Plus"
 ArgVal = "StationGlobals.Testing.Relays.DUT3.Sense_Plus"
 Type = 0
@@ -4619,10 +4609,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[11]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[11]]
 %NAME = "Sense_Plus"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[12]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[12]]
 Label = "Sense_Minus"
 ArgVal = "StationGlobals.Testing.Relays.DUT3.Sense_Minus"
 Type = 0
@@ -4630,10 +4620,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[12]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[12]]
 %NAME = "Sense_Minus"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[13]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[13]]
 Label = "Fan"
 ArgVal = "StationGlobals.Testing.Relays.DUT3.Fan"
 Type = 0
@@ -4641,13 +4631,13 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[13]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[4].ArrayClusterEls[13]]
 %NAME = "Fan"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[4]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[4]]
 %NAME = "DUT3"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[5]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[5]]
 Label = "DUT4"
 ArgVal = "StationGlobals.Testing.Relays.DUT4"
 Type = 3
@@ -4655,7 +4645,7 @@ WireRequirement = 1
 DisplayType = "Container"
 %HI: ArrayClusterEls = [13]
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
@@ -4671,7 +4661,7 @@ DisplayType = "Container"
 %[12] = "TYPE, VIParameterElement"
 %[13] = "TYPE, VIParameterElement"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[0]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[0]]
 Label = "DMM_LO_BAT_Minus"
 ArgVal = "StationGlobals.Testing.Relays.DUT4.DMM_LO_BAT_Minus"
 Type = 0
@@ -4679,10 +4669,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[0]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[0]]
 %NAME = "DMM_LO_BAT_Minus"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[1]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[1]]
 Label = "DMM_HI_BAT_Plus"
 ArgVal = "StationGlobals.Testing.Relays.DUT4.DMM_HI_BAT_Plus"
 Type = 0
@@ -4690,10 +4680,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[1]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[1]]
 %NAME = "DMM_HI_BAT_Plus"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[2]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[2]]
 Label = "DMM_HI_VS5N"
 ArgVal = "StationGlobals.Testing.Relays.DUT4.DMM_HI_VS5N"
 Type = 0
@@ -4701,10 +4691,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[2]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[2]]
 %NAME = "DMM_HI_VS5N"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[3]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[3]]
 Label = "DMM_HI_CANL"
 ArgVal = "StationGlobals.Testing.Relays.DUT4.DMM_HI_CANL"
 Type = 0
@@ -4712,10 +4702,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[3]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[3]]
 %NAME = "DMM_HI_CANL"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[4]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[4]]
 Label = "DMM_HI_CANH"
 ArgVal = "StationGlobals.Testing.Relays.DUT4.DMM_HI_CANH"
 Type = 0
@@ -4723,10 +4713,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[4]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[4]]
 %NAME = "DMM_HI_CANH"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[5]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[5]]
 Label = "DMM_I_BAT"
 ArgVal = "StationGlobals.Testing.Relays.DUT4.DMM_I_BAT"
 Type = 0
@@ -4734,10 +4724,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[5]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[5]]
 %NAME = "DMM_I_BAT"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[6]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[6]]
 Label = "CANL"
 ArgVal = "StationGlobals.Testing.Relays.DUT4.CANL"
 Type = 0
@@ -4745,10 +4735,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[6]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[6]]
 %NAME = "CANL"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[7]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[7]]
 Label = "CANH"
 ArgVal = "StationGlobals.Testing.Relays.DUT4.CANH"
 Type = 0
@@ -4756,10 +4746,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[7]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[7]]
 %NAME = "CANH"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[8]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[8]]
 Label = "CAL_PS_Plus"
 ArgVal = "StationGlobals.Testing.Relays.DUT4.CAL_PS_Plus"
 Type = 0
@@ -4767,10 +4757,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[8]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[8]]
 %NAME = "CAL_PS_Plus"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[9]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[9]]
 Label = "CAL_PS_Minus"
 ArgVal = "StationGlobals.Testing.Relays.DUT4.CAL_PS_Minus"
 Type = 0
@@ -4778,10 +4768,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[9]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[9]]
 %NAME = "CAL_PS_Minus"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[10]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[10]]
 Label = "Resistor_Capacitor_Discharge"
 ArgVal = "StationGlobals.Testing.Relays.DUT4.Resistor_Capacitor_Discharge"
 Type = 0
@@ -4789,10 +4779,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[10]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[10]]
 %NAME = "Resistor_Capacitor_Discharge"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[11]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[11]]
 Label = "Sense_Plus"
 ArgVal = "StationGlobals.Testing.Relays.DUT4.Sense_Plus"
 Type = 0
@@ -4800,10 +4790,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[11]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[11]]
 %NAME = "Sense_Plus"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[12]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[12]]
 Label = "Sense_Minus"
 ArgVal = "StationGlobals.Testing.Relays.DUT4.Sense_Minus"
 Type = 0
@@ -4811,10 +4801,10 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[12]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[12]]
 %NAME = "Sense_Minus"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[13]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[13]]
 Label = "Fan"
 ArgVal = "StationGlobals.Testing.Relays.DUT4.Fan"
 Type = 0
@@ -4822,16 +4812,16 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[13]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[5].ArrayClusterEls[13]]
 %NAME = "Fan"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1].ArrayClusterEls[5]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1].ArrayClusterEls[5]]
 %NAME = "DUT4"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[1]]
 %NAME = "Relays"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[2]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[2]]
 Label = "error out"
 ArgVal = "Step.Result.Error"
 Type = 3
@@ -4842,22 +4832,22 @@ Direction = 1
 ConnectorNumber = 0
 LegacyClusterType = 2
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[2].ArrayClusterEls]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[2].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[2].ArrayClusterEls[0]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[2].ArrayClusterEls[0]]
 Label = "status"
 ArgVal = "Step.Result.Error.Occurred"
 Type = 2
 WireRequirement = 1
 DisplayType = "Boolean"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[2].ArrayClusterEls[0]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[2].ArrayClusterEls[0]]
 %NAME = "status"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[2].ArrayClusterEls[1]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[2].ArrayClusterEls[1]]
 Label = "code"
 ArgVal = "Step.Result.Error.Code"
 Type = 0
@@ -4865,41 +4855,101 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[2].ArrayClusterEls[1]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[2].ArrayClusterEls[1]]
 %NAME = "code"
 
-[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[2].ArrayClusterEls[2]]
+[SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[2].ArrayClusterEls[2]]
 Label = "source"
 ArgVal = "Step.Result.Error.Msg"
 Type = 1
 WireRequirement = 1
 DisplayType = "ASCII String"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[2].ArrayClusterEls[2]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[2].ArrayClusterEls[2]]
 %NAME = "source"
 
-[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[2]]
+[DEF, SF.Seq[0].Setup[9].TS.SData.ViCall.Parms[2]]
 %NAME = "error out"
 
-[DEF, SF.Seq[0].Setup[10]]
+[DEF, SF.Seq[0].Setup[9]]
 %NAME = "Get List of Relays"
 
-[SF.Seq[0].Setup[11].TS]
+[SF.Seq[0].Setup[10].TS]
 Id = "ID#:5W4qShmO8BGJ2cyCf5KpWB"
+
+[DEF, SF.Seq[0].Setup[10].TS]
+SData = "TYPE, FlexGStepAdditions"
+
+[SF.Seq[0].Setup[10].TS.SData.ViCall]
+ProjectPath = "..\\..\\LabView\\nexteer.lvproj"
+VIPath = "My Computer\\Sequence SubVIs\\Get IPs.vi"
+TDChecksum = -1157463201
+%HI: Parms = [2]
+
+[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms]
+%[0] = "TYPE, VIParameter"
+%[1] = "TYPE, VIParameter"
+%[2] = "TYPE, VIParameter"
+
+[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[0]]
+Label = "configuration file path"
+ArgVal = "\"C:\\\\UTP\\\\config\\\\Configuration.ini\""
+Type = 1
+WireRequirement = 1
+StrPass = 2
+DisplayType = "Path"
+ConnectorNumber = 11
+
+[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[0]]
+%NAME = "configuration file path"
+
+[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1]]
+Label = "IPs"
+ArgVal = "Locals.Automation.IPs"
+Type = 5
+WireRequirement = 1
+ArrayType = 51
+DisplayType = "1D Array (ASCII String)"
+Direction = 1
+ConnectorNumber = 3
+
+[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[1]]
+%NAME = "IPs"
+
+[SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[2]]
+Label = "Devices"
+ArgVal = "Locals.Automation.IP_devices"
+Type = 5
+WireRequirement = 1
+ArrayType = 51
+DisplayType = "1D Array (ASCII String)"
+Direction = 1
+ConnectorNumber = 2
+
+[DEF, SF.Seq[0].Setup[10].TS.SData.ViCall.Parms[2]]
+%NAME = "Devices"
+
+[DEF, SF.Seq[0].Setup[10]]
+%NAME = "Get IPs"
+
+[SF.Seq[0].Setup[11].TS]
+Id = "ID#:miQpWfCO8BGJ3syCf5KpWB"
 
 [DEF, SF.Seq[0].Setup[11].TS]
 SData = "TYPE, FlexGStepAdditions"
 
 [SF.Seq[0].Setup[11].TS.SData.ViCall]
 ProjectPath = "..\\..\\LabView\\nexteer.lvproj"
-VIPath = "My Computer\\Sequence SubVIs\\Get IPs.vi"
-TDChecksum = -1157463201
-%HI: Parms = [2]
+VIPath = "My Computer\\Sequence SubVIs\\Get Ports.vi"
+TDChecksum = -946559657
+%HI: Parms = [4]
 
 [DEF, SF.Seq[0].Setup[11].TS.SData.ViCall.Parms]
 %[0] = "TYPE, VIParameter"
 %[1] = "TYPE, VIParameter"
 %[2] = "TYPE, VIParameter"
+%[3] = "TYPE, VIParameter"
+%[4] = "TYPE, VIParameter"
 
 [SF.Seq[0].Setup[11].TS.SData.ViCall.Parms[0]]
 Label = "configuration file path"
@@ -4914,66 +4964,6 @@ ConnectorNumber = 11
 %NAME = "configuration file path"
 
 [SF.Seq[0].Setup[11].TS.SData.ViCall.Parms[1]]
-Label = "IPs"
-ArgVal = "Locals.Automation.IPs"
-Type = 5
-WireRequirement = 1
-ArrayType = 51
-DisplayType = "1D Array (ASCII String)"
-Direction = 1
-ConnectorNumber = 3
-
-[DEF, SF.Seq[0].Setup[11].TS.SData.ViCall.Parms[1]]
-%NAME = "IPs"
-
-[SF.Seq[0].Setup[11].TS.SData.ViCall.Parms[2]]
-Label = "Devices"
-ArgVal = "Locals.Automation.IP_devices"
-Type = 5
-WireRequirement = 1
-ArrayType = 51
-DisplayType = "1D Array (ASCII String)"
-Direction = 1
-ConnectorNumber = 2
-
-[DEF, SF.Seq[0].Setup[11].TS.SData.ViCall.Parms[2]]
-%NAME = "Devices"
-
-[DEF, SF.Seq[0].Setup[11]]
-%NAME = "Get IPs"
-
-[SF.Seq[0].Setup[12].TS]
-Id = "ID#:miQpWfCO8BGJ3syCf5KpWB"
-
-[DEF, SF.Seq[0].Setup[12].TS]
-SData = "TYPE, FlexGStepAdditions"
-
-[SF.Seq[0].Setup[12].TS.SData.ViCall]
-ProjectPath = "..\\..\\LabView\\nexteer.lvproj"
-VIPath = "My Computer\\Sequence SubVIs\\Get Ports.vi"
-TDChecksum = -946559657
-%HI: Parms = [4]
-
-[DEF, SF.Seq[0].Setup[12].TS.SData.ViCall.Parms]
-%[0] = "TYPE, VIParameter"
-%[1] = "TYPE, VIParameter"
-%[2] = "TYPE, VIParameter"
-%[3] = "TYPE, VIParameter"
-%[4] = "TYPE, VIParameter"
-
-[SF.Seq[0].Setup[12].TS.SData.ViCall.Parms[0]]
-Label = "configuration file path"
-ArgVal = "\"C:\\\\UTP\\\\config\\\\Configuration.ini\""
-Type = 1
-WireRequirement = 1
-StrPass = 2
-DisplayType = "Path"
-ConnectorNumber = 11
-
-[DEF, SF.Seq[0].Setup[12].TS.SData.ViCall.Parms[0]]
-%NAME = "configuration file path"
-
-[SF.Seq[0].Setup[12].TS.SData.ViCall.Parms[1]]
 Label = "error in (no error)"
 Type = 3
 WireRequirement = 1
@@ -4982,12 +4972,12 @@ UseDefaultValues = True
 %HI: ArrayClusterEls = [2]
 ConnectorNumber = 8
 
-[DEF, SF.Seq[0].Setup[12].TS.SData.ViCall.Parms[1].ArrayClusterEls]
+[DEF, SF.Seq[0].Setup[11].TS.SData.ViCall.Parms[1].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
 
-[SF.Seq[0].Setup[12].TS.SData.ViCall.Parms[1].ArrayClusterEls[0]]
+[SF.Seq[0].Setup[11].TS.SData.ViCall.Parms[1].ArrayClusterEls[0]]
 Label = "status"
 ArgVal = "False"
 Type = 2
@@ -4995,10 +4985,10 @@ WireRequirement = 1
 DisplayType = "Boolean"
 UseDefaultValues = True
 
-[DEF, SF.Seq[0].Setup[12].TS.SData.ViCall.Parms[1].ArrayClusterEls[0]]
+[DEF, SF.Seq[0].Setup[11].TS.SData.ViCall.Parms[1].ArrayClusterEls[0]]
 %NAME = "status"
 
-[SF.Seq[0].Setup[12].TS.SData.ViCall.Parms[1].ArrayClusterEls[1]]
+[SF.Seq[0].Setup[11].TS.SData.ViCall.Parms[1].ArrayClusterEls[1]]
 Label = "code"
 ArgVal = "0"
 Type = 0
@@ -5007,10 +4997,10 @@ NumType = 4
 DisplayType = "Number (I32)"
 UseDefaultValues = True
 
-[DEF, SF.Seq[0].Setup[12].TS.SData.ViCall.Parms[1].ArrayClusterEls[1]]
+[DEF, SF.Seq[0].Setup[11].TS.SData.ViCall.Parms[1].ArrayClusterEls[1]]
 %NAME = "code"
 
-[SF.Seq[0].Setup[12].TS.SData.ViCall.Parms[1].ArrayClusterEls[2]]
+[SF.Seq[0].Setup[11].TS.SData.ViCall.Parms[1].ArrayClusterEls[2]]
 Label = "source"
 ArgVal = "\"\""
 Type = 1
@@ -5018,13 +5008,13 @@ WireRequirement = 1
 DisplayType = "ASCII String"
 UseDefaultValues = True
 
-[DEF, SF.Seq[0].Setup[12].TS.SData.ViCall.Parms[1].ArrayClusterEls[2]]
+[DEF, SF.Seq[0].Setup[11].TS.SData.ViCall.Parms[1].ArrayClusterEls[2]]
 %NAME = "source"
 
-[DEF, SF.Seq[0].Setup[12].TS.SData.ViCall.Parms[1]]
+[DEF, SF.Seq[0].Setup[11].TS.SData.ViCall.Parms[1]]
 %NAME = "error in (no error)"
 
-[SF.Seq[0].Setup[12].TS.SData.ViCall.Parms[2]]
+[SF.Seq[0].Setup[11].TS.SData.ViCall.Parms[2]]
 Label = "Ports"
 ArgVal = "Locals.Automation.Ports"
 Type = 5
@@ -5034,10 +5024,10 @@ DisplayType = "1D Array (U32)"
 Direction = 1
 ConnectorNumber = 3
 
-[DEF, SF.Seq[0].Setup[12].TS.SData.ViCall.Parms[2]]
+[DEF, SF.Seq[0].Setup[11].TS.SData.ViCall.Parms[2]]
 %NAME = "Ports"
 
-[SF.Seq[0].Setup[12].TS.SData.ViCall.Parms[3]]
+[SF.Seq[0].Setup[11].TS.SData.ViCall.Parms[3]]
 Label = "Devices"
 ArgVal = "Locals.Automation.Port_Devices"
 Type = 5
@@ -5047,10 +5037,10 @@ DisplayType = "1D Array (ASCII String)"
 Direction = 1
 ConnectorNumber = 2
 
-[DEF, SF.Seq[0].Setup[12].TS.SData.ViCall.Parms[3]]
+[DEF, SF.Seq[0].Setup[11].TS.SData.ViCall.Parms[3]]
 %NAME = "Devices"
 
-[SF.Seq[0].Setup[12].TS.SData.ViCall.Parms[4]]
+[SF.Seq[0].Setup[11].TS.SData.ViCall.Parms[4]]
 Label = "error out"
 ArgVal = "Step.Result.Error"
 Type = 3
@@ -5061,22 +5051,22 @@ Direction = 1
 ConnectorNumber = 0
 LegacyClusterType = 2
 
-[DEF, SF.Seq[0].Setup[12].TS.SData.ViCall.Parms[4].ArrayClusterEls]
+[DEF, SF.Seq[0].Setup[11].TS.SData.ViCall.Parms[4].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
 
-[SF.Seq[0].Setup[12].TS.SData.ViCall.Parms[4].ArrayClusterEls[0]]
+[SF.Seq[0].Setup[11].TS.SData.ViCall.Parms[4].ArrayClusterEls[0]]
 Label = "status"
 ArgVal = "Step.Result.Error.Occurred"
 Type = 2
 WireRequirement = 1
 DisplayType = "Boolean"
 
-[DEF, SF.Seq[0].Setup[12].TS.SData.ViCall.Parms[4].ArrayClusterEls[0]]
+[DEF, SF.Seq[0].Setup[11].TS.SData.ViCall.Parms[4].ArrayClusterEls[0]]
 %NAME = "status"
 
-[SF.Seq[0].Setup[12].TS.SData.ViCall.Parms[4].ArrayClusterEls[1]]
+[SF.Seq[0].Setup[11].TS.SData.ViCall.Parms[4].ArrayClusterEls[1]]
 Label = "code"
 ArgVal = "Step.Result.Error.Code"
 Type = 0
@@ -5084,70 +5074,70 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[0].Setup[12].TS.SData.ViCall.Parms[4].ArrayClusterEls[1]]
+[DEF, SF.Seq[0].Setup[11].TS.SData.ViCall.Parms[4].ArrayClusterEls[1]]
 %NAME = "code"
 
-[SF.Seq[0].Setup[12].TS.SData.ViCall.Parms[4].ArrayClusterEls[2]]
+[SF.Seq[0].Setup[11].TS.SData.ViCall.Parms[4].ArrayClusterEls[2]]
 Label = "source"
 ArgVal = "Step.Result.Error.Msg"
 Type = 1
 WireRequirement = 1
 DisplayType = "ASCII String"
 
-[DEF, SF.Seq[0].Setup[12].TS.SData.ViCall.Parms[4].ArrayClusterEls[2]]
+[DEF, SF.Seq[0].Setup[11].TS.SData.ViCall.Parms[4].ArrayClusterEls[2]]
 %NAME = "source"
 
-[DEF, SF.Seq[0].Setup[12].TS.SData.ViCall.Parms[4]]
+[DEF, SF.Seq[0].Setup[11].TS.SData.ViCall.Parms[4]]
 %NAME = "error out"
 
-[DEF, SF.Seq[0].Setup[12]]
+[DEF, SF.Seq[0].Setup[11]]
 %NAME = "Get Ports"
 
-[SF.Seq[0].Setup[13].TS]
+[SF.Seq[0].Setup[12].TS]
 Id = "ID#:gKsBvfio8BGJ/MyCf5KpWB"
 PostExpr = "StationGlobals.Automation.NOK_Counter = 0"
 
-[DEF, SF.Seq[0].Setup[13]]
+[DEF, SF.Seq[0].Setup[12]]
 %NAME = "Reset NOK counter"
 
-[SF.Seq[0].Setup[14].TS]
+[SF.Seq[0].Setup[13].TS]
 Id = "ID#:M9bPFe828BGtlMyCf35SiD"
 
-[DEF, SF.Seq[0].Setup[14].TS]
+[DEF, SF.Seq[0].Setup[13].TS]
 SData = "TYPE, SeqCallStepAdditions"
 
-[SF.Seq[0].Setup[14].TS.SData]
+[SF.Seq[0].Setup[13].TS.SData]
 SeqName = "Initialize Keyence"
 UseCurFile = True
 
-[DEF, SF.Seq[0].Setup[14].TS.SData]
+[DEF, SF.Seq[0].Setup[13].TS.SData]
 ActualArgs = Arguments
 
-[DEF, SF.Seq[0].Setup[14].TS.SData.ActualArgs]
+[DEF, SF.Seq[0].Setup[13].TS.SData.ActualArgs]
 Ports = "TYPE, SequenceArgument"
 IPs = "TYPE, SequenceArgument"
 
-[SF.Seq[0].Setup[14].TS.SData.ActualArgs.Ports]
+[SF.Seq[0].Setup[13].TS.SData.ActualArgs.Ports]
 UseDef = False
 Expr = "Locals.Automation.Ports[0..3]"
 ParamType = 512
 ParamRepresentation = 1
 
-[SF.Seq[0].Setup[14].TS.SData.ActualArgs.IPs]
+[SF.Seq[0].Setup[13].TS.SData.ActualArgs.IPs]
 UseDef = False
 Expr = "Locals.Automation.IPs[3..6]"
 ParamType = 256
 
-[DEF, SF.Seq[0].Setup[14]]
+[DEF, SF.Seq[0].Setup[13]]
 %NAME = "Initialize HoneyWell Scanners"
 
-[SF.Seq[0].Setup[15].TS]
+[SF.Seq[0].Setup[14].TS]
 Id = "ID#:WBgaOSeV8BGJ68yCf5KpWB"
 
-[DEF, SF.Seq[0].Setup[15]]
+[DEF, SF.Seq[0].Setup[14]]
 %NAME = "Initialization of instruments end"
 
-[SF.Seq[0].Setup[16].TS]
+[SF.Seq[0].Setup[15].TS]
 Id = "ID#:s08b8uzt7xG4Y1B7nf4f8B"
 PostExpr Line0001 = "StationGlobals.Automation.SystemControl.CHMB1.NumberOfDUTs = 0,\nStationGlobals.Automation.SystemControl.CHMB2.NumberOfD"
 PostExpr Line0002 = "UTs = 0,\nStationGlobals.Automation.SystemControl.CHMB1.Error == False ,\nStationGlobals.Automation.SystemControl.CHMB2."
@@ -5156,7 +5146,7 @@ PostExpr Line0004 = "ums.SEQUENCE_STATES.READY,\nStationGlobals.SequenceStates[2
 PostExpr Line0005 = "es[3] = Enums.SEQUENCE_STATES.READY,\nStationGlobals.Automation.SystemControl.LightOn = True,\n\nStationGlobals.Rigol.Co"
 PostExpr Line0006 = "ilUsed = {False,False,False,False}\n"
 
-[DEF, SF.Seq[0].Setup[16]]
+[DEF, SF.Seq[0].Setup[15]]
 %NAME = "Initialize variables"
 
 [DEF, SF.Seq[0].Cleanup]
@@ -5234,7 +5224,7 @@ FailureAction = Num
 %FLG: Locals = 4194304
 %FLG: Main = 4194304
 %FLG: Setup = 4194304
-%HI: Cleanup = [28]
+%HI: Cleanup = [20]
 %FLG: Cleanup = 4194304
 %FLG: RecordResults = 4194312
 %FLG: RTS = 4456456
@@ -5292,25 +5282,9 @@ TestSocket = Num
 %[18] = Step
 %TYPE: %[18] = "Action"
 %[19] = Step
-%TYPE: %[19] = "NoffzUTP_IOPLCVariableBooleanWrite"
+%TYPE: %[19] = "Action"
 %[20] = Step
-%TYPE: %[20] = "NoffzUTP_IOPLCVariableBooleanWrite"
-%[21] = Step
-%TYPE: %[21] = "NoffzUTP_IOPLCVariableBooleanWrite"
-%[22] = Step
-%TYPE: %[22] = "NoffzUTP_IOPLCVariableBooleanWrite"
-%[23] = Step
-%TYPE: %[23] = "NoffzUTP_IOPLCVariableBooleanWrite"
-%[24] = Step
-%TYPE: %[24] = "NoffzUTP_IOPLCVariableI16Read"
-%[25] = Step
-%TYPE: %[25] = "NoffzUTP_IOPLCVariableI16Read"
-%[26] = Step
-%TYPE: %[26] = "Action"
-%[27] = Step
-%TYPE: %[27] = "NoffzUTP_TEF_UI_Station_ShowMessage"
-%[28] = Step
-%TYPE: %[28] = "Statement"
+%TYPE: %[20] = "NoffzUTP_TEF_UI_Station_ShowMessage"
 
 [SF.Seq[1].Cleanup[0].TS]
 Id = "ID#:n/vZbJJo8RGN16QctBT8oA"
@@ -7266,52 +7240,29 @@ DisplayType = "ASCII String"
 %NAME = "Deinitialize Relay Board for CHMB2"
 
 [SF.Seq[1].Cleanup[19].TS]
-Id = "ID#:NACh7T2V8BGJ68yCf5KpWB"
+Id = "ID#:UquzafWp8BGJ/cyCf5KpWB"
+Mode = "Skip"
 
 [DEF, SF.Seq[1].Cleanup[19].TS]
-SData = "TYPE, SeqCallStepAdditions"
+SData = "TYPE, FlexGStepAdditions"
 
-[SF.Seq[1].Cleanup[19].TS.SData]
-SFPath = "Noffz.UTP.IO.seq"
-SeqName = "UTP.IO.PLC.Variable.Boolean.Write"
-Trace = "Off"
-
-[DEF, SF.Seq[1].Cleanup[19].TS.SData]
-ActualArgs = Arguments
-Prototype = Obj
-
-[DEF, SF.Seq[1].Cleanup[19].TS.SData.ActualArgs]
-VariableValue = "TYPE, SequenceArgument"
-VariableName = "TYPE, SequenceArgument"
-
-[SF.Seq[1].Cleanup[19].TS.SData.ActualArgs.VariableValue]
-UseDef = False
-Expr = "False"
-ParamType = 16
-Flags = 0
-
-[SF.Seq[1].Cleanup[19].TS.SData.ActualArgs.VariableName]
-UseDef = False
-Expr = "\"IOs_DQ_SIGNALS_TO_MASTER_PLC_CHMB1_Ready\""
-ParamType = 2
-Flags = 0
-
-[DEF, SF.Seq[1].Cleanup[19].TS.SData.Prototype]
-VariableValue = Bool
-VariableName = Str
+[SF.Seq[1].Cleanup[19].TS.SData.ViCall]
+VIPath = "..\\..\\LabView\\Station\\Kill UTP TEF.vi"
+TDChecksum = 111761007
 
 [DEF, SF.Seq[1].Cleanup[19]]
-%NAME = "Set Ready CHMB1 Signal to False"
+%NAME = "Kill UTP"
 
 [SF.Seq[1].Cleanup[20].TS]
-Id = "ID#:sRiB9T2V8BGJ68yCf5KpWB"
+Id = "ID#:/SFme32r8BGKAcyCf5KpWB"
 
 [DEF, SF.Seq[1].Cleanup[20].TS]
 SData = "TYPE, SeqCallStepAdditions"
 
 [SF.Seq[1].Cleanup[20].TS.SData]
-SFPath = "Noffz.UTP.IO.seq"
-SeqName = "UTP.IO.PLC.Variable.Boolean.Write"
+SFPath = "Noffz.UTP.TEF.API.seq"
+SeqName = "UI.Station.ShowMessage"
+CustomThreadAffinity = "-1"
 Trace = "Off"
 
 [DEF, SF.Seq[1].Cleanup[20].TS.SData]
@@ -7319,294 +7270,40 @@ ActualArgs = Arguments
 Prototype = Obj
 
 [DEF, SF.Seq[1].Cleanup[20].TS.SData.ActualArgs]
-VariableValue = "TYPE, SequenceArgument"
-VariableName = "TYPE, SequenceArgument"
-
-[SF.Seq[1].Cleanup[20].TS.SData.ActualArgs.VariableValue]
-UseDef = False
-Expr = "False"
-ParamType = 16
-Flags = 0
-
-[SF.Seq[1].Cleanup[20].TS.SData.ActualArgs.VariableName]
-UseDef = False
-Expr = "\"IOs_DQ_SIGNALS_TO_MASTER_PLC_CHMB2_Ready\""
-ParamType = 2
-Flags = 0
-
-[DEF, SF.Seq[1].Cleanup[20].TS.SData.Prototype]
-VariableValue = Bool
-VariableName = Str
-
-[DEF, SF.Seq[1].Cleanup[20]]
-%NAME = "Set Ready CHMB2 Signal to False"
-
-[SF.Seq[1].Cleanup[21].TS]
-Id = "ID#:eIIrBz6V8BGJ68yCf5KpWB"
-
-[DEF, SF.Seq[1].Cleanup[21].TS]
-SData = "TYPE, SeqCallStepAdditions"
-
-[SF.Seq[1].Cleanup[21].TS.SData]
-SFPath = "Noffz.UTP.IO.seq"
-SeqName = "UTP.IO.PLC.Variable.Boolean.Write"
-Trace = "Off"
-
-[DEF, SF.Seq[1].Cleanup[21].TS.SData]
-ActualArgs = Arguments
-Prototype = Obj
-
-[DEF, SF.Seq[1].Cleanup[21].TS.SData.ActualArgs]
-VariableValue = "TYPE, SequenceArgument"
-VariableName = "TYPE, SequenceArgument"
-
-[SF.Seq[1].Cleanup[21].TS.SData.ActualArgs.VariableValue]
-UseDef = False
-Expr = "False"
-ParamType = 16
-Flags = 0
-
-[SF.Seq[1].Cleanup[21].TS.SData.ActualArgs.VariableName]
-UseDef = False
-Expr = "\"IOs_DQ_SIGNALS_TO_MASTER_PLC_CHMB1_Running\""
-ParamType = 2
-Flags = 0
-
-[DEF, SF.Seq[1].Cleanup[21].TS.SData.Prototype]
-VariableValue = Bool
-VariableName = Str
-
-[DEF, SF.Seq[1].Cleanup[21]]
-%NAME = "Set Running CHMB1 Signal to False"
-
-[SF.Seq[1].Cleanup[22].TS]
-Id = "ID#:eYIrBz6V8BGJ68yCf5KpWB"
-
-[DEF, SF.Seq[1].Cleanup[22].TS]
-SData = "TYPE, SeqCallStepAdditions"
-
-[SF.Seq[1].Cleanup[22].TS.SData]
-SFPath = "Noffz.UTP.IO.seq"
-SeqName = "UTP.IO.PLC.Variable.Boolean.Write"
-Trace = "Off"
-
-[DEF, SF.Seq[1].Cleanup[22].TS.SData]
-ActualArgs = Arguments
-Prototype = Obj
-
-[DEF, SF.Seq[1].Cleanup[22].TS.SData.ActualArgs]
-VariableValue = "TYPE, SequenceArgument"
-VariableName = "TYPE, SequenceArgument"
-
-[SF.Seq[1].Cleanup[22].TS.SData.ActualArgs.VariableValue]
-UseDef = False
-Expr = "False"
-ParamType = 16
-Flags = 0
-
-[SF.Seq[1].Cleanup[22].TS.SData.ActualArgs.VariableName]
-UseDef = False
-Expr = "\"IOs_DQ_SIGNALS_TO_MASTER_PLC_CHMB2_Running\""
-ParamType = 2
-Flags = 0
-
-[DEF, SF.Seq[1].Cleanup[22].TS.SData.Prototype]
-VariableValue = Bool
-VariableName = Str
-
-[DEF, SF.Seq[1].Cleanup[22]]
-%NAME = "Set Running CHMB2 Signal to False"
-
-[SF.Seq[1].Cleanup[23].TS]
-Id = "ID#:I5zn1T2V8BGJ68yCf5KpWB"
-
-[DEF, SF.Seq[1].Cleanup[23].TS]
-SData = "TYPE, SeqCallStepAdditions"
-
-[SF.Seq[1].Cleanup[23].TS.SData]
-SFPath = "Noffz.UTP.IO.seq"
-SeqName = "UTP.IO.PLC.Variable.Boolean.Write"
-Trace = "Off"
-
-[DEF, SF.Seq[1].Cleanup[23].TS.SData]
-ActualArgs = Arguments
-Prototype = Obj
-
-[DEF, SF.Seq[1].Cleanup[23].TS.SData.ActualArgs]
-VariableValue = "TYPE, SequenceArgument"
-VariableName = "TYPE, SequenceArgument"
-
-[SF.Seq[1].Cleanup[23].TS.SData.ActualArgs.VariableValue]
-UseDef = False
-Expr = "False"
-ParamType = 16
-Flags = 0
-
-[SF.Seq[1].Cleanup[23].TS.SData.ActualArgs.VariableName]
-UseDef = False
-Expr = "\"IOs_DQ_SIGNALS_TO_MASTER_PLC_SYSTEM_InitOK\""
-ParamType = 2
-Flags = 0
-
-[DEF, SF.Seq[1].Cleanup[23].TS.SData.Prototype]
-VariableValue = Bool
-VariableName = Str
-
-[DEF, SF.Seq[1].Cleanup[23]]
-%NAME = "Send signal that system is not initialized"
-
-[SF.Seq[1].Cleanup[24].TS]
-Id = "ID#:3gnOk4s88BGtmcyCf35SiD"
-PreCond = "StationGlobals.Automation.SystemControl.CHMB1.TestCHMB1"
-
-[DEF, SF.Seq[1].Cleanup[24].TS]
-SData = "TYPE, SeqCallStepAdditions"
-
-[SF.Seq[1].Cleanup[24].TS.SData]
-SFPath = "Noffz.UTP.IO.seq"
-SeqName = "UTP.IO.PLC.Variable.I16.Write"
-Trace = "Off"
-
-[DEF, SF.Seq[1].Cleanup[24].TS.SData]
-ActualArgs = Arguments
-Prototype = Obj
-
-[DEF, SF.Seq[1].Cleanup[24].TS.SData.ActualArgs]
-VariableValue = "TYPE, SequenceArgument"
-VariableName = "TYPE, SequenceArgument"
-
-[SF.Seq[1].Cleanup[24].TS.SData.ActualArgs.VariableValue]
-UseDef = False
-Expr = "0"
-ParamType = 4
-ParamRepresentation = 1
-Flags = 0
-
-[SF.Seq[1].Cleanup[24].TS.SData.ActualArgs.VariableName]
-UseDef = False
-Expr = "\"SYSTEM_MOSI.LampsCHMB1\""
-ParamType = 2
-Flags = 0
-
-[DEF, SF.Seq[1].Cleanup[24].TS.SData.Prototype]
-VariableValue = Num
-VariableName = Str
-
-[DEF, SF.Seq[1].Cleanup[24]]
-%NAME = "Turn off All CHMB1"
-
-[SF.Seq[1].Cleanup[25].TS]
-Id = "ID#:KbjxOUdA8BG4sVB7nf4f8B"
-PreCond = "StationGlobals.Automation.SystemControl.CHMB2.TestCHMB2"
-
-[DEF, SF.Seq[1].Cleanup[25].TS]
-SData = "TYPE, SeqCallStepAdditions"
-
-[SF.Seq[1].Cleanup[25].TS.SData]
-SFPath = "Noffz.UTP.IO.seq"
-SeqName = "UTP.IO.PLC.Variable.I16.Write"
-Trace = "Off"
-
-[DEF, SF.Seq[1].Cleanup[25].TS.SData]
-ActualArgs = Arguments
-Prototype = Obj
-
-[DEF, SF.Seq[1].Cleanup[25].TS.SData.ActualArgs]
-VariableValue = "TYPE, SequenceArgument"
-VariableName = "TYPE, SequenceArgument"
-
-[SF.Seq[1].Cleanup[25].TS.SData.ActualArgs.VariableValue]
-UseDef = False
-Expr = "0"
-ParamType = 4
-ParamRepresentation = 1
-Flags = 0
-
-[SF.Seq[1].Cleanup[25].TS.SData.ActualArgs.VariableName]
-UseDef = False
-Expr = "\"SYSTEM_MOSI.LampsCHMB2\""
-ParamType = 2
-Flags = 0
-
-[DEF, SF.Seq[1].Cleanup[25].TS.SData.Prototype]
-VariableValue = Num
-VariableName = Str
-
-[DEF, SF.Seq[1].Cleanup[25]]
-%NAME = "Turn off All CHMB2"
-
-[SF.Seq[1].Cleanup[26].TS]
-Id = "ID#:UquzafWp8BGJ/cyCf5KpWB"
-Mode = "Skip"
-
-[DEF, SF.Seq[1].Cleanup[26].TS]
-SData = "TYPE, FlexGStepAdditions"
-
-[SF.Seq[1].Cleanup[26].TS.SData.ViCall]
-VIPath = "..\\..\\LabView\\Station\\Kill UTP TEF.vi"
-TDChecksum = 111761007
-
-[DEF, SF.Seq[1].Cleanup[26]]
-%NAME = "Kill UTP"
-
-[SF.Seq[1].Cleanup[27].TS]
-Id = "ID#:/SFme32r8BGKAcyCf5KpWB"
-
-[DEF, SF.Seq[1].Cleanup[27].TS]
-SData = "TYPE, SeqCallStepAdditions"
-
-[SF.Seq[1].Cleanup[27].TS.SData]
-SFPath = "Noffz.UTP.TEF.API.seq"
-SeqName = "UI.Station.ShowMessage"
-CustomThreadAffinity = "-1"
-Trace = "Off"
-
-[DEF, SF.Seq[1].Cleanup[27].TS.SData]
-ActualArgs = Arguments
-Prototype = Obj
-
-[DEF, SF.Seq[1].Cleanup[27].TS.SData.ActualArgs]
 Message = "TYPE, SequenceArgument"
 Color = "TYPE, SequenceArgument"
 FontSize = "TYPE, SequenceArgument"
 
-[SF.Seq[1].Cleanup[27].TS.SData.ActualArgs.Message]
+[SF.Seq[1].Cleanup[20].TS.SData.ActualArgs.Message]
 UseDef = False
 Expr = "\"Please close the program\""
 ParamType = 2
 Flags = 0
 
-[SF.Seq[1].Cleanup[27].TS.SData.ActualArgs.Color]
+[SF.Seq[1].Cleanup[20].TS.SData.ActualArgs.Color]
 ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[SF.Seq[1].Cleanup[27].TS.SData.ActualArgs.FontSize]
+[SF.Seq[1].Cleanup[20].TS.SData.ActualArgs.FontSize]
 ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[DEF, SF.Seq[1].Cleanup[27].TS.SData.Prototype]
+[DEF, SF.Seq[1].Cleanup[20].TS.SData.Prototype]
 Message = Str
 Color = Num
 FontSize = Num
 
-[SF.Seq[1].Cleanup[27].TS.SData.Prototype]
+[SF.Seq[1].Cleanup[20].TS.SData.Prototype]
 Color = Nan
 FontSize = Nan
 
-[SF.Seq[1].Cleanup[27].TS.SData.Prototype.Color]
+[SF.Seq[1].Cleanup[20].TS.SData.Prototype.Color]
 %NUMFMT = "%#x"
 
-[DEF, SF.Seq[1].Cleanup[27]]
+[DEF, SF.Seq[1].Cleanup[20]]
 %NAME = "UI.Station.ShowMessage"
-
-[SF.Seq[1].Cleanup[28].TS]
-Id = "ID#:eUwLY5Jo8RGN16QctBT8oA"
-PostExpr = "StationGlobals.Automation.SystemControl.Light_State = Enums.Light_States.None"
-
-[DEF, SF.Seq[1].Cleanup[28]]
-%NAME = "Set light tower to off"
 
 [DEF, SF.Seq[1].RTS]
 Type = Num
@@ -20458,14 +20155,12 @@ PreSubstep = "PreSubstep"
 NI_LV_RunVIAsynchronously = "NI_LV_RunVIAsynchronously"
 NoffzUTP_TEF_UI_Station_Statistic_Reset = "NoffzUTP_TEF_UI_Station_Statistic_Reset"
 NoffzUTP_TEF_UI_TestSocket_Statistic_Reset = "NoffzUTP_TEF_UI_TestSocket_Statistic_Reset"
-NoffzUTP_IOPLCVariableI16Read = "NoffzUTP_IOPLCVariableI16Read"
 NI_Wait = "NI_Wait"
 NI_Flow_While = "NI_Flow_While"
 NI_Flow_ElseIf = "NI_Flow_ElseIf"
 NI_Flow_For = "NI_Flow_For"
 NoffzUTP_TEF_Model_Station_GetProductsAndVariants = "NoffzUTP_TEF_Model_Station_GetProductsAndVariants"
 NoffzUTP_TEF_Model_Station_SetProductsAndVariants = "NoffzUTP_TEF_Model_Station_SetProductsAndVariants"
-NoffzUTP_IOPLCVariableBooleanWrite = "NoffzUTP_IOPLCVariableBooleanWrite"
 Station_Relays = "Station_Relays"
 Relays_DUT = "Relays_DUT"
 Relays_CHMB = "Relays_CHMB"
@@ -26762,139 +26457,6 @@ Common = "TYPE, CommonResults"
 %INSTFLG: ReportText = 4194304
 %INSTOVRD: Common = 4194304
 
-[DEF, NoffzUTP_IOPLCVariableI16Read]
-%LOCATION = "StepTypes"
-Substeps = "TYPE, StepTypeSubstepsArray"
-DescriptionFormat = "TYPE, Expression"
-%FLG: DescriptionFormat = 524288
-DefaultNameFormat = "TYPE, Expression"
-%FLG: DefaultNameFormat = 524288
-Menu = "TYPE, StepTypeMenu"
-AdditionalResultsHints = Objs
-%FLG: AdditionalResultsHints = 524288
-TS = "TYPE, TEInf"
-NI_Data = "TYPE, StepTypeNIData"
-Result = Obj
-CodeTemplates = Str
-%FLG: CodeTemplates = 524288
-BlockStartTypes = Str
-%FLG: BlockStartTypes = 524288
-BlockEndTypes = Str
-%FLG: BlockEndTypes = 524288
-AppliesToBlockStructure = Bool
-%FLG: AppliesToBlockStructure = 524288
-CanEncapsulate = Bool
-%FLG: CanEncapsulate = 524288
-%ROOT_TYPE = True
-
-[NoffzUTP_IOPLCVariableI16Read]
-%INSTFLG: Substeps = 524312
-%INSTOVRD: Substeps = 655384
-DescriptionFormat = "\"%ModuleDescription\""
-%FLG: DescriptionFormat = 4194328
-%INSTFLG: DescriptionFormat = 4718616
-%INSTOVRD: DescriptionFormat = 4718616
-DefaultNameFormat = "\"PLC.Variable.I16.Read\""
-%FLG: DefaultNameFormat = 4194328
-%INSTFLG: DefaultNameFormat = 4718616
-%INSTOVRD: DefaultNameFormat = 4718616
-%INSTFLG: Menu = 524312
-%INSTOVRD: Menu = 524312
-%FLG: AdditionalResultsHints = 4194328
-%INSTFLG: TS = 262168
-%INSTOVRD: TS = 4456472
-%FLG: Result = 4194304
-%INSTFLG: Result = 4194304
-%FLG: CodeTemplates = 4194328
-%FLG: BlockStartTypes = 4194328
-%FLG: BlockEndTypes = 4194328
-%FLG: AppliesToBlockStructure = 4194328
-%FLG: CanEncapsulate = 4194328
-%TIMESTAMP = 1515759322
-%VERSION = "14.0.0.41"
-%TYPELASTMOD = "4.5.1.134"
-%TYPE_FLG = 2
-
-[NoffzUTP_IOPLCVariableI16Read.Menu]
-ItemName = "\"PLC.Variable.I16.Read\""
-Group = "UTP IO"
-
-[DEF, NoffzUTP_IOPLCVariableI16Read.AdditionalResultsHints]
-%EPTYPE = "TYPE, NI_CustomResult"
-
-[NoffzUTP_IOPLCVariableI16Read.TS]
-Icon = "Noffz\\UTP IO PLC.ico"
-%INSTFLG: SData = 2097152
-%INSTOVRD: SData = 7274521
-StatusExpr Line0001 = "(Step.Result.Status == \"Done\" && (Step.TS.SData.ThreadOpt == 0 || Step.TS.SData.ThreadOpt == 3)) ? \"Passed\" : Step.R"
-StatusExpr Line0002 = "esult.Status"
-%INSTFLG: StatusExpr = 1
-%INSTOVRD: StatusExpr = 5046297
-%FLG: Requirements = 1
-%INSTFLG: Requirements = 1
-
-[DEF, NoffzUTP_IOPLCVariableI16Read.TS]
-SData = "TYPE, SeqCallStepAdditions"
-%FLG: SData = 2097152
-Requirements = Obj
-%FLG: Requirements = 2097152
-
-[NoffzUTP_IOPLCVariableI16Read.TS.SData]
-SFPath = "Noffz.UTP.IO.seq"
-SeqName = "UTP.IO.PLC.Variable.I16.Read"
-Trace = "Off"
-
-[DEF, NoffzUTP_IOPLCVariableI16Read.TS.SData]
-ActualArgs = Arguments
-%FLG: ActualArgs = 2097152
-Prototype = Obj
-%FLG: Prototype = 2097152
-
-[DEF, NoffzUTP_IOPLCVariableI16Read.TS.SData.ActualArgs]
-VariableValue = "TYPE, SequenceArgument"
-VariableName = "TYPE, SequenceArgument"
-
-[NoffzUTP_IOPLCVariableI16Read.TS.SData.ActualArgs.VariableValue]
-UseDef = False
-ParamType = 4
-ParamRepresentation = 1
-
-[NoffzUTP_IOPLCVariableI16Read.TS.SData.ActualArgs.VariableName]
-UseDef = False
-ParamType = 2
-Flags = 0
-
-[DEF, NoffzUTP_IOPLCVariableI16Read.TS.SData.Prototype]
-VariableValue = Num
-VariableName = Str
-
-[NoffzUTP_IOPLCVariableI16Read.TS.SData.Prototype]
-%FLG: VariableValue = 4
-
-[DEF, NoffzUTP_IOPLCVariableI16Read.TS.Requirements]
-Links = Strs
-
-[NoffzUTP_IOPLCVariableI16Read.TS.Requirements]
-%FLG: Links = 71303168
-%INSTFLG: Links = 71303168
-%INSTOVRD: Links = 72286233
-
-[DEF, NoffzUTP_IOPLCVariableI16Read.Result]
-Error = "TYPE, Error"
-Status = Str
-ReportText = Str
-Common = "TYPE, CommonResults"
-
-[NoffzUTP_IOPLCVariableI16Read.Result]
-%FLG: Error = 4194304
-%INSTFLG: Error = 4194304
-%INSTOVRD: Error = 4194304
-%FLG: Status = 4194304
-%INSTFLG: Status = 4194304
-%FLG: ReportText = 4194304
-%INSTFLG: ReportText = 4194304
-%INSTOVRD: Common = 4194304
-
 [DEF, NI_Wait]
 %LOCATION = "StepTypes"
 DescriptionFormat = "TYPE, Expression"
@@ -28192,136 +27754,6 @@ ReportText = Str
 Common = "TYPE, CommonResults"
 
 [NoffzUTP_TEF_Model_Station_SetProductsAndVariants.Result]
-%FLG: Error = 4194304
-%INSTFLG: Error = 4194304
-%INSTOVRD: Error = 4194304
-%FLG: Status = 4194304
-%INSTFLG: Status = 4194304
-%FLG: ReportText = 4194304
-%INSTFLG: ReportText = 4194304
-%INSTOVRD: Common = 4194304
-
-[DEF, NoffzUTP_IOPLCVariableBooleanWrite]
-%LOCATION = "StepTypes"
-Substeps = "TYPE, StepTypeSubstepsArray"
-DescriptionFormat = "TYPE, Expression"
-%FLG: DescriptionFormat = 524288
-DefaultNameFormat = "TYPE, Expression"
-%FLG: DefaultNameFormat = 524288
-Menu = "TYPE, StepTypeMenu"
-AdditionalResultsHints = Objs
-%FLG: AdditionalResultsHints = 524288
-TS = "TYPE, TEInf"
-NI_Data = "TYPE, StepTypeNIData"
-Result = Obj
-CodeTemplates = Str
-%FLG: CodeTemplates = 524288
-BlockStartTypes = Str
-%FLG: BlockStartTypes = 524288
-BlockEndTypes = Str
-%FLG: BlockEndTypes = 524288
-AppliesToBlockStructure = Bool
-%FLG: AppliesToBlockStructure = 524288
-CanEncapsulate = Bool
-%FLG: CanEncapsulate = 524288
-%ROOT_TYPE = True
-
-[NoffzUTP_IOPLCVariableBooleanWrite]
-%INSTFLG: Substeps = 524312
-%INSTOVRD: Substeps = 655384
-DescriptionFormat = "\"%ModuleDescription\""
-%FLG: DescriptionFormat = 4194328
-%INSTFLG: DescriptionFormat = 4718616
-%INSTOVRD: DescriptionFormat = 4718616
-DefaultNameFormat = "\"PLC.Variable.Boolean.Write\""
-%FLG: DefaultNameFormat = 4194328
-%INSTFLG: DefaultNameFormat = 4718616
-%INSTOVRD: DefaultNameFormat = 4718616
-%INSTFLG: Menu = 524312
-%INSTOVRD: Menu = 524312
-%FLG: AdditionalResultsHints = 4194328
-%INSTFLG: TS = 262168
-%INSTOVRD: TS = 4456472
-%FLG: Result = 4194304
-%INSTFLG: Result = 4194304
-%FLG: CodeTemplates = 4194328
-%FLG: BlockStartTypes = 4194328
-%FLG: BlockEndTypes = 4194328
-%FLG: AppliesToBlockStructure = 4194328
-%FLG: CanEncapsulate = 4194328
-%TIMESTAMP = 1515759319
-%VERSION = "14.0.0.41"
-%TYPELASTMOD = "4.5.1.134"
-%TYPE_FLG = 2
-
-[NoffzUTP_IOPLCVariableBooleanWrite.Menu]
-ItemName = "\"PLC.Variable.Boolean.Write\""
-Group = "UTP IO"
-
-[DEF, NoffzUTP_IOPLCVariableBooleanWrite.AdditionalResultsHints]
-%EPTYPE = "TYPE, NI_CustomResult"
-
-[NoffzUTP_IOPLCVariableBooleanWrite.TS]
-Icon = "Noffz\\UTP IO PLC.ico"
-%INSTFLG: SData = 2097152
-%INSTOVRD: SData = 7274521
-StatusExpr Line0001 = "(Step.Result.Status == \"Done\" && (Step.TS.SData.ThreadOpt == 0 || Step.TS.SData.ThreadOpt == 3)) ? \"Passed\" : Step.R"
-StatusExpr Line0002 = "esult.Status"
-%INSTFLG: StatusExpr = 1
-%INSTOVRD: StatusExpr = 5046297
-%FLG: Requirements = 1
-%INSTFLG: Requirements = 1
-
-[DEF, NoffzUTP_IOPLCVariableBooleanWrite.TS]
-SData = "TYPE, SeqCallStepAdditions"
-%FLG: SData = 2097152
-Requirements = Obj
-%FLG: Requirements = 2097152
-
-[NoffzUTP_IOPLCVariableBooleanWrite.TS.SData]
-SFPath = "Noffz.UTP.IO.seq"
-SeqName = "UTP.IO.PLC.Variable.Boolean.Write"
-Trace = "Off"
-
-[DEF, NoffzUTP_IOPLCVariableBooleanWrite.TS.SData]
-ActualArgs = Arguments
-%FLG: ActualArgs = 2097152
-Prototype = Obj
-%FLG: Prototype = 2097152
-
-[DEF, NoffzUTP_IOPLCVariableBooleanWrite.TS.SData.ActualArgs]
-VariableValue = "TYPE, SequenceArgument"
-VariableName = "TYPE, SequenceArgument"
-
-[NoffzUTP_IOPLCVariableBooleanWrite.TS.SData.ActualArgs.VariableValue]
-UseDef = False
-ParamType = 16
-Flags = 0
-
-[NoffzUTP_IOPLCVariableBooleanWrite.TS.SData.ActualArgs.VariableName]
-UseDef = False
-ParamType = 2
-Flags = 0
-
-[DEF, NoffzUTP_IOPLCVariableBooleanWrite.TS.SData.Prototype]
-VariableValue = Bool
-VariableName = Str
-
-[DEF, NoffzUTP_IOPLCVariableBooleanWrite.TS.Requirements]
-Links = Strs
-
-[NoffzUTP_IOPLCVariableBooleanWrite.TS.Requirements]
-%FLG: Links = 71303168
-%INSTFLG: Links = 71303168
-%INSTOVRD: Links = 72286233
-
-[DEF, NoffzUTP_IOPLCVariableBooleanWrite.Result]
-Error = "TYPE, Error"
-Status = Str
-ReportText = Str
-Common = "TYPE, CommonResults"
-
-[NoffzUTP_IOPLCVariableBooleanWrite.Result]
 %FLG: Error = 4194304
 %INSTFLG: Error = 4194304
 %INSTOVRD: Error = 4194304
