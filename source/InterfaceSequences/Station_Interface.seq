@@ -19393,7 +19393,7 @@ FailureAction = Num
 [SF.Seq[18]]
 %FLG: Parameters = 4456448
 %FLG: Locals = 4194304
-%HI: Main = [3]
+%HI: Main = [5]
 %FLG: Main = 4194304
 %FLG: Setup = 4194304
 %FLG: Cleanup = 4194304
@@ -19417,9 +19417,13 @@ ResultList = Objs
 %[1] = Step
 %TYPE: %[1] = "NoffzUTP_TEF_UI_Station_OperationMode_SetValue"
 %[2] = Step
-%TYPE: %[2] = "Label"
+%TYPE: %[2] = "Action"
 %[3] = Step
-%TYPE: %[3] = "NoffzUTP_DataManager_Station_SetDatabaseConnectionName"
+%TYPE: %[3] = "Statement"
+%[4] = Step
+%TYPE: %[4] = "Label"
+%[5] = Step
+%TYPE: %[5] = "NoffzUTP_DataManager_Station_SetDatabaseConnectionName"
 
 [SF.Seq[18].Main[0].TS]
 Id = "ID#:Aq0LMcXr1UeTOwrEoY/4YA"
@@ -19503,43 +19507,249 @@ Color = 16777215
 %NAME = "UI.Station.OperationMode.SetValue"
 
 [SF.Seq[18].Main[2].TS]
+Id = "ID#:gKhd8tSQ8RGwe0ypVBlBxD"
+
+[DEF, SF.Seq[18].Main[2].TS]
+SData = "TYPE, FlexGStepAdditions"
+
+[SF.Seq[18].Main[2].TS.SData.ViCall]
+VIPath = "..\\..\\LabView\\Station\\Get ini file value.vi"
+TDChecksum = 311681705
+%HI: Parms = [7]
+
+[DEF, SF.Seq[18].Main[2].TS.SData.ViCall.Parms]
+%[0] = "TYPE, VIParameter"
+%[1] = "TYPE, VIParameter"
+%[2] = "TYPE, VIParameter"
+%[3] = "TYPE, VIParameter"
+%[4] = "TYPE, VIParameter"
+%[5] = "TYPE, VIParameter"
+%[6] = "TYPE, VIParameter"
+%[7] = "TYPE, VIParameter"
+
+[SF.Seq[18].Main[2].TS.SData.ViCall.Parms[0]]
+Label = "configuration file path"
+ArgVal Line0001 = "\"C:\\Users\\mbokcic\\Documents\\Projekti\\Projects Client\\Projects - SW\\PR002108-BLT_Stella_Small\\misc\\Testing_Data"
+ArgVal Line0002 = ".ini\""
+Type = 1
+WireRequirement = 1
+StrPass = 2
+DisplayType = "Path"
+ConnectorNumber = 0
+
+[DEF, SF.Seq[18].Main[2].TS.SData.ViCall.Parms[0]]
+%NAME = "configuration file path"
+
+[SF.Seq[18].Main[2].TS.SData.ViCall.Parms[1]]
+Label = "section"
+ArgVal = "\"System\""
+Type = 1
+WireRequirement = 1
+DisplayType = "ASCII String"
+ConnectorNumber = 5
+
+[DEF, SF.Seq[18].Main[2].TS.SData.ViCall.Parms[1]]
+%NAME = "section"
+
+[SF.Seq[18].Main[2].TS.SData.ViCall.Parms[2]]
+Label = "key"
+ArgVal = "\"MSA_Number_Of_Repeats\""
+Type = 1
+WireRequirement = 1
+DisplayType = "ASCII String"
+ConnectorNumber = 7
+
+[DEF, SF.Seq[18].Main[2].TS.SData.ViCall.Parms[2]]
+%NAME = "key"
+
+[SF.Seq[18].Main[2].TS.SData.ViCall.Parms[3]]
+Label = "String/Number"
+ArgVal = "False"
+Type = 2
+WireRequirement = 1
+DisplayType = "Boolean"
+ConnectorNumber = 9
+
+[DEF, SF.Seq[18].Main[2].TS.SData.ViCall.Parms[3]]
+%NAME = "String/Number"
+
+[SF.Seq[18].Main[2].TS.SData.ViCall.Parms[4]]
+Label = "error in (no error)"
+Type = 3
+WireRequirement = 1
+DisplayType = "Container"
+UseDefaultValues = True
+%HI: ArrayClusterEls = [2]
+ConnectorNumber = 11
+
+[DEF, SF.Seq[18].Main[2].TS.SData.ViCall.Parms[4].ArrayClusterEls]
+%[0] = "TYPE, VIParameterElement"
+%[1] = "TYPE, VIParameterElement"
+%[2] = "TYPE, VIParameterElement"
+
+[SF.Seq[18].Main[2].TS.SData.ViCall.Parms[4].ArrayClusterEls[0]]
+Label = "status"
+ArgVal = "False"
+Type = 2
+WireRequirement = 1
+DisplayType = "Boolean"
+UseDefaultValues = True
+
+[DEF, SF.Seq[18].Main[2].TS.SData.ViCall.Parms[4].ArrayClusterEls[0]]
+%NAME = "status"
+
+[SF.Seq[18].Main[2].TS.SData.ViCall.Parms[4].ArrayClusterEls[1]]
+Label = "code"
+ArgVal = "0"
+Type = 0
+WireRequirement = 1
+NumType = 4
+DisplayType = "Number (I32)"
+UseDefaultValues = True
+
+[DEF, SF.Seq[18].Main[2].TS.SData.ViCall.Parms[4].ArrayClusterEls[1]]
+%NAME = "code"
+
+[SF.Seq[18].Main[2].TS.SData.ViCall.Parms[4].ArrayClusterEls[2]]
+Label = "source"
+ArgVal = "\"\""
+Type = 1
+WireRequirement = 1
+DisplayType = "ASCII String"
+UseDefaultValues = True
+
+[DEF, SF.Seq[18].Main[2].TS.SData.ViCall.Parms[4].ArrayClusterEls[2]]
+%NAME = "source"
+
+[DEF, SF.Seq[18].Main[2].TS.SData.ViCall.Parms[4]]
+%NAME = "error in (no error)"
+
+[SF.Seq[18].Main[2].TS.SData.ViCall.Parms[5]]
+Label = "String value"
+Type = 1
+WireRequirement = 1
+DisplayType = "ASCII String"
+Direction = 1
+ConnectorNumber = 4
+
+[DEF, SF.Seq[18].Main[2].TS.SData.ViCall.Parms[5]]
+%NAME = "String value"
+
+[SF.Seq[18].Main[2].TS.SData.ViCall.Parms[6]]
+Label = "Numeric value"
+ArgVal = "StationGlobals.Testing.MSA_Testing_Number"
+Type = 0
+WireRequirement = 1
+NumType = 5
+DisplayType = "Number (U32)"
+Direction = 1
+ConnectorNumber = 6
+
+[DEF, SF.Seq[18].Main[2].TS.SData.ViCall.Parms[6]]
+%NAME = "Numeric value"
+
+[SF.Seq[18].Main[2].TS.SData.ViCall.Parms[7]]
+Label = "error out"
+ArgVal = "Step.Result.Error"
+Type = 3
+WireRequirement = 1
+DisplayType = "Container"
+%HI: ArrayClusterEls = [2]
+Direction = 1
+ConnectorNumber = 15
+LegacyClusterType = 2
+
+[DEF, SF.Seq[18].Main[2].TS.SData.ViCall.Parms[7].ArrayClusterEls]
+%[0] = "TYPE, VIParameterElement"
+%[1] = "TYPE, VIParameterElement"
+%[2] = "TYPE, VIParameterElement"
+
+[SF.Seq[18].Main[2].TS.SData.ViCall.Parms[7].ArrayClusterEls[0]]
+Label = "status"
+ArgVal = "Step.Result.Error.Occurred"
+Type = 2
+WireRequirement = 1
+DisplayType = "Boolean"
+
+[DEF, SF.Seq[18].Main[2].TS.SData.ViCall.Parms[7].ArrayClusterEls[0]]
+%NAME = "status"
+
+[SF.Seq[18].Main[2].TS.SData.ViCall.Parms[7].ArrayClusterEls[1]]
+Label = "code"
+ArgVal = "Step.Result.Error.Code"
+Type = 0
+WireRequirement = 1
+NumType = 4
+DisplayType = "Number (I32)"
+
+[DEF, SF.Seq[18].Main[2].TS.SData.ViCall.Parms[7].ArrayClusterEls[1]]
+%NAME = "code"
+
+[SF.Seq[18].Main[2].TS.SData.ViCall.Parms[7].ArrayClusterEls[2]]
+Label = "source"
+ArgVal = "Step.Result.Error.Msg"
+Type = 1
+WireRequirement = 1
+DisplayType = "ASCII String"
+
+[DEF, SF.Seq[18].Main[2].TS.SData.ViCall.Parms[7].ArrayClusterEls[2]]
+%NAME = "source"
+
+[DEF, SF.Seq[18].Main[2].TS.SData.ViCall.Parms[7]]
+%NAME = "error out"
+
+[DEF, SF.Seq[18].Main[2]]
+%NAME = "Get number of repeating for MSA testing"
+
+[SF.Seq[18].Main[3].TS]
+Id = "ID#:a1akrNSQ8RGwe0ypVBlBxD"
+PostExpr Line0001 = "StationGlobals.Testing.MSA_Counter = {StationGlobals.Testing.MSA_Testing_Number,StationGlobals.Testing.MSA_Testing_Numbe"
+PostExpr Line0002 = "r,StationGlobals.Testing.MSA_Testing_Number,StationGlobals.Testing.MSA_Testing_Number},\nStationGlobals.Automation.Syste"
+PostExpr Line0003 = "mControl.CHMB1.MSA.Ready = True,\nStationGlobals.Automation.SystemControl.CHMB1.MSA.Running = False,\nStationGlobals.Aut"
+PostExpr Line0004 = "omation.SystemControl.CHMB2.MSA.Ready = True,\nStationGlobals.Automation.SystemControl.CHMB12.MSA.Running = False\n\n//R"
+PostExpr Line0005 = "eady True until first test and Running is False until first test and it is True while test is performed"
+
+[DEF, SF.Seq[18].Main[3]]
+%NAME = "Set counters"
+
+[SF.Seq[18].Main[4].TS]
 Id = "ID#:+QPGnHnzWkOylh6OL2CMUA"
 Icon = "ni_blank.ico"
 StatusExpr = "\"\""
 %FLG: StatusExpr = 1
 
 [SF.Seq[18].Main]
-%FLG: %[2] = 67108864
+%FLG: %[4] = 67108864
 
-[SF.Seq[18].Main[3].TS]
+[SF.Seq[18].Main[5].TS]
 Id = "ID#:L4h5Eikuwk+FOoqwIzU/ED"
 
-[DEF, SF.Seq[18].Main[3].TS]
+[DEF, SF.Seq[18].Main[5].TS]
 SData = "TYPE, SeqCallStepAdditions"
 
-[SF.Seq[18].Main[3].TS.SData]
+[SF.Seq[18].Main[5].TS.SData]
 SFPath = "Noffz.UTP.DataManager.TestStandPlugin.API.seq"
 SeqName = "Station.SetDatabaseConnectionName"
 CustomThreadAffinity = "-1"
 Trace = "Off"
 
-[DEF, SF.Seq[18].Main[3].TS.SData]
+[DEF, SF.Seq[18].Main[5].TS.SData]
 ActualArgs = Arguments
 Prototype = Obj
 
-[DEF, SF.Seq[18].Main[3].TS.SData.ActualArgs]
+[DEF, SF.Seq[18].Main[5].TS.SData.ActualArgs]
 ConnectionName = "TYPE, SequenceArgument"
 
-[SF.Seq[18].Main[3].TS.SData.ActualArgs.ConnectionName]
+[SF.Seq[18].Main[5].TS.SData.ActualArgs.ConnectionName]
 UseDef = False
 Expr = "\"MSA\""
 ParamType = 2
 Flags = 0
 
-[DEF, SF.Seq[18].Main[3].TS.SData.Prototype]
+[DEF, SF.Seq[18].Main[5].TS.SData.Prototype]
 ConnectionName = Str
 
-[DEF, SF.Seq[18].Main[3]]
+[DEF, SF.Seq[18].Main[5]]
 %NAME = "Station.SetDatabaseConnectionName"
 
 [DEF, SF.Seq[18].RTS]
