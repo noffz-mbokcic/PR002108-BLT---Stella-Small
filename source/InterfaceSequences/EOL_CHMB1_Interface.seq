@@ -10165,7 +10165,7 @@ Id = "ID#:8ORfLpyQ8RGwe0ypVBlBxD"
 
 [SF.Seq[3].Main[37].TS]
 Id = "ID#:dDoC8/io8BGJ/MyCf5KpWB"
-PostExpr = "StationGlobals.Automation.NOK_Counter[RunState.TestSockets.MyIndex]  ++\n//StationGlobals.Automation.NOK_Counter ++\n"
+PostExpr = "StationGlobals.Automation.NOK_Counter[RunState.TestSockets.MyIndex]++\n//StationGlobals.Automation.NOK_Counter ++\n"
 
 [DEF, SF.Seq[3].Main[37]]
 %NAME = "Increase NOK counter"
@@ -10218,8 +10218,9 @@ ConditionExpr = "Parameters.UUTStatus == \"Passed\""
 
 [SF.Seq[3].Main[43].TS]
 Id = "ID#:kW6kS72J8RGwckypVBlBxD"
-PostExpr Line0001 = "Locals.NumberOfFails = FileGlobals.DUT_TestingData.NumberOfFailed[RunState.TestSockets.MyIndex] ,\nLocals.NumberOfPass ="
-PostExpr Line0002 = " FileGlobals.DUT_TestingData.NumberOfPasses[RunState.TestSockets.MyIndex] +1"
+PostExpr Line0001 = "FileGlobals.DUT_TestingData.NumberOfFailed[RunState.TestSockets.MyIndex] = FileGlobals.DUT_TestingData.NumberOfFailed[Ru"
+PostExpr Line0002 = "nState.TestSockets.MyIndex] ,\nFileGlobals.DUT_TestingData.NumberOfPasses[RunState.TestSockets.MyIndex] = FileGlobals.DU"
+PostExpr Line0003 = "T_TestingData.NumberOfPasses[RunState.TestSockets.MyIndex] +1"
 
 [DEF, SF.Seq[3].Main[43]]
 %NAME = "Set Number of Fails and Passes"
