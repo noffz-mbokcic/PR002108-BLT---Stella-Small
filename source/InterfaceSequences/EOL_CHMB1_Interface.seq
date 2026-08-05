@@ -8854,6 +8854,7 @@ FailureAction = 2
 %COMMENT Line0002 = "s like disconnecting power from UUT, printing a label, displaying test result, generating test report."
 
 [DEF, SF.Seq[3].Locals]
+NOK_Counter = Num
 ResultList = Objs
 OperationMode = Str
 Product = Str
@@ -8895,6 +8896,8 @@ Reference = Num
 Channel = Num
 
 [DEF, SF.Seq[3].Locals.Report]
+MaxRetestCount = Num
+Status = Str
 FailureSet = Strs
 ResultPrint = Strs
 SetpointPrint = Strs
@@ -10162,7 +10165,7 @@ Id = "ID#:8ORfLpyQ8RGwe0ypVBlBxD"
 
 [SF.Seq[3].Main[37].TS]
 Id = "ID#:dDoC8/io8BGJ/MyCf5KpWB"
-PostExpr = "StationGlobals.Automation.NOK_Counter  ++"
+PostExpr = "StationGlobals.Automation.NOK_Counter[RunState.TestSockets.MyIndex]  ++\n//StationGlobals.Automation.NOK_Counter ++\n"
 
 [DEF, SF.Seq[3].Main[37]]
 %NAME = "Increase NOK counter"
@@ -10171,14 +10174,14 @@ PostExpr = "StationGlobals.Automation.NOK_Counter  ++"
 Id = "ID#:Syh1//io8BGJ/MyCf5KpWB"
 
 [SF.Seq[3].Main[38]]
-ConditionExpr = "StationGlobals.Automation.NOK_Counter > 4"
+ConditionExpr = "StationGlobals.Automation.NOK_Counter[RunState.TestSockets.MyIndex] > 4\n//StationGlobals.Automation.NOK_Counter>4"
 
 [DEF, SF.Seq[3].Main[38]]
 %NAME = "If"
 
 [SF.Seq[3].Main[39].TS]
 Id = "ID#:AYfHOvmo8BGJ/MyCf5KpWB"
-PostExpr = "StationGlobals.Automation.NOK_Counter = 0"
+PostExpr = "StationGlobals.Automation.NOK_Counter[RunState.TestSockets.MyIndex] = 0\n//StationGlobals.Automation.NOK_Counter=0\n"
 
 [DEF, SF.Seq[3].Main[39]]
 %NAME = "Reset NOK counter"
@@ -12470,10 +12473,16 @@ Requirements = Obj
 FailureAction = Num
 %NAME = "MES NTC ERROR HANDLE - Failed device"
 
+[DEF, SF.Seq[4].Parameters]
+NTC_Critical = Bool
+
+[SF.Seq[4].Parameters]
+%FLG: NTC_Critical = 4
+
 [SF.Seq[4]]
 %FLG: Parameters = 4456448
 %FLG: Locals = 4194304
-%HI: Main = [26]
+%HI: Main = [23]
 %FLG: Main = 4194304
 %FLG: Setup = 4194304
 %FLG: Cleanup = 4194304
@@ -12516,39 +12525,33 @@ NTC_Critical = Bool
 %[9] = Step
 %TYPE: %[9] = "NI_Flow_ElseIf"
 %[10] = Step
-%TYPE: %[10] = "NoffzUTP_TEF_UI_TestSocket_ShowMessageDialog"
+%TYPE: %[10] = "NoffzUTP_TEF_UI_TestSocket_ShowMessage"
 %[11] = Step
-%TYPE: %[11] = "Statement"
+%TYPE: %[11] = "NI_Flow_ElseIf"
 %[12] = Step
-%TYPE: %[12] = "NI_Flow_ElseIf"
+%TYPE: %[12] = "NoffzUTP_TEF_UI_TestSocket_ShowMessageDialog"
 %[13] = Step
-%TYPE: %[13] = "NoffzUTP_TEF_UI_TestSocket_ShowMessage"
+%TYPE: %[13] = "NI_Flow_ElseIf"
 %[14] = Step
-%TYPE: %[14] = "NI_Flow_ElseIf"
+%TYPE: %[14] = "NI_Flow_If"
 %[15] = Step
 %TYPE: %[15] = "NoffzUTP_TEF_UI_TestSocket_ShowMessageDialog"
 %[16] = Step
-%TYPE: %[16] = "NI_Flow_ElseIf"
+%TYPE: %[16] = "Statement"
 %[17] = Step
-%TYPE: %[17] = "NI_Flow_If"
+%TYPE: %[17] = "NI_Flow_Else"
 %[18] = Step
-%TYPE: %[18] = "NoffzUTP_TEF_UI_TestSocket_ShowMessageDialog"
+%TYPE: %[18] = "NoffzUTP_TEF_UI_TestSocket_ShowMessage"
 %[19] = Step
 %TYPE: %[19] = "Statement"
 %[20] = Step
-%TYPE: %[20] = "NI_Flow_Else"
+%TYPE: %[20] = "NI_Flow_End"
 %[21] = Step
-%TYPE: %[21] = "NoffzUTP_TEF_UI_TestSocket_ShowMessage"
+%TYPE: %[21] = "NI_Flow_ElseIf"
 %[22] = Step
-%TYPE: %[22] = "Statement"
+%TYPE: %[22] = "NoffzUTP_TEF_UI_TestSocket_ShowMessage"
 %[23] = Step
 %TYPE: %[23] = "NI_Flow_End"
-%[24] = Step
-%TYPE: %[24] = "NI_Flow_ElseIf"
-%[25] = Step
-%TYPE: %[25] = "NoffzUTP_TEF_UI_TestSocket_ShowMessage"
-%[26] = Step
-%TYPE: %[26] = "NI_Flow_End"
 
 [SF.Seq[4].Main[0].TS]
 Id = "ID#:M6AqVVGK8RGwc0ypVBlBxD"
@@ -12913,23 +12916,23 @@ PostExpr = "FileGlobals.DUT_TestingData.ErrorCode[RunState.TestSockets.MyIndex] 
 %NAME = "Change Error code to 8"
 
 [SF.Seq[4].Main[9].TS]
-Id = "ID#:z21ealKK8RGwc0ypVBlBxD"
+Id = "ID#:c4XW/FKK8RGwc0ypVBlBxD"
 
 [SF.Seq[4].Main[9]]
-ConditionExpr = "FileGlobals.DUT_TestingData.ErrorCode[RunState.TestSockets.MyIndex] == 5"
+ConditionExpr = "FileGlobals.DUT_TestingData.ErrorCode[RunState.TestSockets.MyIndex] == 6"
 
 [DEF, SF.Seq[4].Main[9]]
 %NAME = "Else If"
 
 [SF.Seq[4].Main[10].TS]
-Id = "ID#:0G1ealKK8RGwc0ypVBlBxD"
+Id = "ID#:VmL0k1OK8RGwc0ypVBlBxD"
 
 [DEF, SF.Seq[4].Main[10].TS]
 SData = "TYPE, SeqCallStepAdditions"
 
 [SF.Seq[4].Main[10].TS.SData]
 SFPath = "Noffz.UTP.TEF.API.seq"
-SeqName = "UI.TestSocket.ShowMessageDialog"
+SeqName = "UI.TestSocket.ShowMessage"
 CustomThreadAffinity = "-1"
 Trace = "Off"
 
@@ -12942,11 +12945,6 @@ TestSocket = "TYPE, SequenceArgument"
 Message = "TYPE, SequenceArgument"
 Color = "TYPE, SequenceArgument"
 FontSize = "TYPE, SequenceArgument"
-ShowOkButton = "TYPE, SequenceArgument"
-ShowCancelButton = "TYPE, SequenceArgument"
-DialogTimeout = "TYPE, SequenceArgument"
-OkButtonPressed = "TYPE, SequenceArgument"
-CancelButtonPressed = "TYPE, SequenceArgument"
 
 [SF.Seq[4].Main[10].TS.SData.ActualArgs.TestSocket]
 ParamType = 4
@@ -12955,7 +12953,7 @@ Flags = 0
 
 [SF.Seq[4].Main[10].TS.SData.ActualArgs.Message]
 UseDef = False
-Expr = "ResStr(\"MES_ERRORS\", \"ERROR_DISABLE_TEST\")"
+Expr = "ResStr(\"MES_ERRORS\", \"FAIL_RESTEST\")"
 ParamType = 2
 Flags = 0
 
@@ -12971,29 +12969,115 @@ ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[SF.Seq[4].Main[10].TS.SData.ActualArgs.ShowOkButton]
+[DEF, SF.Seq[4].Main[10].TS.SData.Prototype]
+TestSocket = Num
+Message = Str
+Color = Num
+FontSize = Num
+
+[SF.Seq[4].Main[10].TS.SData.Prototype]
+TestSocket = Nan
+Color = Nan
+FontSize = Nan
+
+[SF.Seq[4].Main[10].TS.SData.Prototype.TestSocket]
+%COMMENT = "Test Socket number. (Default: Current Test Socket Index)"
+
+[SF.Seq[4].Main[10].TS.SData.Prototype.Message]
+%COMMENT = "Message to show."
+
+[SF.Seq[4].Main[10].TS.SData.Prototype.Color]
+%COMMENT = "Background color of the Test Socket Message Area. (Default: StationGlobals.TEF.Colors.DialogInfo)"
+%NUMFMT = "%#x"
+
+[SF.Seq[4].Main[10].TS.SData.Prototype.FontSize]
+%COMMENT = "Size of the Font. (Default: Configuration parameter 'DialogTextBox' from Noffz.UTP.TEF.config)"
+
+[DEF, SF.Seq[4].Main[10]]
+%NAME = "FAIL_RESTEST"
+
+[SF.Seq[4].Main[11].TS]
+Id = "ID#:dIXW/FKK8RGwc0ypVBlBxD"
+
+[SF.Seq[4].Main[11]]
+ConditionExpr = "FileGlobals.DUT_TestingData.ErrorCode[RunState.TestSockets.MyIndex] == 7"
+
+[DEF, SF.Seq[4].Main[11]]
+%NAME = "Else If"
+
+[SF.Seq[4].Main[12].TS]
+Id = "ID#:9X0e2lOK8RGwc0ypVBlBxD"
+
+[DEF, SF.Seq[4].Main[12].TS]
+SData = "TYPE, SeqCallStepAdditions"
+
+[SF.Seq[4].Main[12].TS.SData]
+SFPath = "Noffz.UTP.TEF.API.seq"
+SeqName = "UI.TestSocket.ShowMessageDialog"
+CustomThreadAffinity = "-1"
+Trace = "Off"
+
+[DEF, SF.Seq[4].Main[12].TS.SData]
+ActualArgs = Arguments
+Prototype = Obj
+
+[DEF, SF.Seq[4].Main[12].TS.SData.ActualArgs]
+TestSocket = "TYPE, SequenceArgument"
+Message = "TYPE, SequenceArgument"
+Color = "TYPE, SequenceArgument"
+FontSize = "TYPE, SequenceArgument"
+ShowOkButton = "TYPE, SequenceArgument"
+ShowCancelButton = "TYPE, SequenceArgument"
+DialogTimeout = "TYPE, SequenceArgument"
+OkButtonPressed = "TYPE, SequenceArgument"
+CancelButtonPressed = "TYPE, SequenceArgument"
+
+[SF.Seq[4].Main[12].TS.SData.ActualArgs.TestSocket]
+ParamType = 4
+ParamRepresentation = 1
+Flags = 0
+
+[SF.Seq[4].Main[12].TS.SData.ActualArgs.Message]
+UseDef = False
+Expr = "ResStr(\"MES_ERRORS\", \"ERROR7_PreUUT\")"
+ParamType = 2
+Flags = 0
+
+[SF.Seq[4].Main[12].TS.SData.ActualArgs.Color]
+UseDef = False
+Expr = "StationGlobals.TEF.Colors.StatusFailed"
+ParamType = 4
+ParamRepresentation = 1
+Flags = 0
+
+[SF.Seq[4].Main[12].TS.SData.ActualArgs.FontSize]
+ParamType = 4
+ParamRepresentation = 1
+Flags = 0
+
+[SF.Seq[4].Main[12].TS.SData.ActualArgs.ShowOkButton]
 Expr = "True"
 ParamType = 16
 Flags = 0
 
-[SF.Seq[4].Main[10].TS.SData.ActualArgs.ShowCancelButton]
+[SF.Seq[4].Main[12].TS.SData.ActualArgs.ShowCancelButton]
 Expr = "False"
 ParamType = 16
 Flags = 0
 
-[SF.Seq[4].Main[10].TS.SData.ActualArgs.DialogTimeout]
+[SF.Seq[4].Main[12].TS.SData.ActualArgs.DialogTimeout]
 Expr = "0"
 ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[SF.Seq[4].Main[10].TS.SData.ActualArgs.OkButtonPressed]
+[SF.Seq[4].Main[12].TS.SData.ActualArgs.OkButtonPressed]
 ParamType = 16
 
-[SF.Seq[4].Main[10].TS.SData.ActualArgs.CancelButtonPressed]
+[SF.Seq[4].Main[12].TS.SData.ActualArgs.CancelButtonPressed]
 ParamType = 16
 
-[DEF, SF.Seq[4].Main[10].TS.SData.Prototype]
+[DEF, SF.Seq[4].Main[12].TS.SData.Prototype]
 TestSocket = Num
 Message = Str
 Color = Num
@@ -13004,144 +13088,66 @@ DialogTimeout = Num
 OkButtonPressed = Bool
 CancelButtonPressed = Bool
 
-[SF.Seq[4].Main[10].TS.SData.Prototype]
+[SF.Seq[4].Main[12].TS.SData.Prototype]
 TestSocket = Nan
 Color = Nan
 FontSize = Nan
 %FLG: OkButtonPressed = 4
 %FLG: CancelButtonPressed = 4
 
-[SF.Seq[4].Main[10].TS.SData.Prototype.TestSocket]
+[SF.Seq[4].Main[12].TS.SData.Prototype.TestSocket]
 %COMMENT = "Test Socket number. (Default: Current Test Socket Index)"
 
-[SF.Seq[4].Main[10].TS.SData.Prototype.Message]
+[SF.Seq[4].Main[12].TS.SData.Prototype.Message]
 %COMMENT = "Message to show."
 
-[SF.Seq[4].Main[10].TS.SData.Prototype.Color]
+[SF.Seq[4].Main[12].TS.SData.Prototype.Color]
 %COMMENT = "Background color of the Station Message Area. (Default: StationGlobals.TEF.Colors.DialogWaiting)"
 %NUMFMT = "%#x"
 
-[SF.Seq[4].Main[10].TS.SData.Prototype.FontSize]
+[SF.Seq[4].Main[12].TS.SData.Prototype.FontSize]
 %COMMENT = "Size of the Font. (Default: 'DialogTextBox' from Noffz.UTP.TEF.config)."
 
-[SF.Seq[4].Main[10].TS.SData.Prototype.ShowOkButton]
+[SF.Seq[4].Main[12].TS.SData.Prototype.ShowOkButton]
 %COMMENT = "Show OK button in the dialog. (Default: True)"
 
-[SF.Seq[4].Main[10].TS.SData.Prototype.ShowCancelButton]
+[SF.Seq[4].Main[12].TS.SData.Prototype.ShowCancelButton]
 %COMMENT = "Show Cancel button in the dialog. (Default: False)"
 
-[SF.Seq[4].Main[10].TS.SData.Prototype.DialogTimeout]
+[SF.Seq[4].Main[12].TS.SData.Prototype.DialogTimeout]
 %COMMENT Line0001 = "Optional. Dialog timeout in seconds. If 0, the timeout is not used and the dialog is shown until operator press a button"
 %COMMENT Line0002 = ". (Default: 0)"
 
-[SF.Seq[4].Main[10].TS.SData.Prototype.OkButtonPressed]
+[SF.Seq[4].Main[12].TS.SData.Prototype.OkButtonPressed]
 %COMMENT = "Returns True, if OK button was pressed."
 
-[SF.Seq[4].Main[10].TS.SData.Prototype.CancelButtonPressed]
+[SF.Seq[4].Main[12].TS.SData.Prototype.CancelButtonPressed]
 %COMMENT = "Returns True, if Cancel button was pressed."
 
-[DEF, SF.Seq[4].Main[10]]
-%NAME = "ERROR_DISABLE_TEST"
-
-[SF.Seq[4].Main[11].TS]
-Id = "ID#:yQP1rlSK8RGwc0ypVBlBxD"
-PostExpr = "FileGlobals.DUT_TestingData.ErrorCode[RunState.TestSockets.MyIndex] = 8"
-
-[DEF, SF.Seq[4].Main[11]]
-%NAME = "Change Error code to 8"
-
-[SF.Seq[4].Main[12].TS]
-Id = "ID#:c4XW/FKK8RGwc0ypVBlBxD"
-
-[SF.Seq[4].Main[12]]
-ConditionExpr = "FileGlobals.DUT_TestingData.ErrorCode[RunState.TestSockets.MyIndex] == 6"
-
 [DEF, SF.Seq[4].Main[12]]
-%NAME = "Else If"
+%NAME = "ERROR7_PreUUT"
 
 [SF.Seq[4].Main[13].TS]
-Id = "ID#:VmL0k1OK8RGwc0ypVBlBxD"
+Id = "ID#:LIkQG1OK8RGwc0ypVBlBxD"
 
-[DEF, SF.Seq[4].Main[13].TS]
-SData = "TYPE, SeqCallStepAdditions"
-
-[SF.Seq[4].Main[13].TS.SData]
-SFPath = "Noffz.UTP.TEF.API.seq"
-SeqName = "UI.TestSocket.ShowMessage"
-CustomThreadAffinity = "-1"
-Trace = "Off"
-
-[DEF, SF.Seq[4].Main[13].TS.SData]
-ActualArgs = Arguments
-Prototype = Obj
-
-[DEF, SF.Seq[4].Main[13].TS.SData.ActualArgs]
-TestSocket = "TYPE, SequenceArgument"
-Message = "TYPE, SequenceArgument"
-Color = "TYPE, SequenceArgument"
-FontSize = "TYPE, SequenceArgument"
-
-[SF.Seq[4].Main[13].TS.SData.ActualArgs.TestSocket]
-ParamType = 4
-ParamRepresentation = 1
-Flags = 0
-
-[SF.Seq[4].Main[13].TS.SData.ActualArgs.Message]
-UseDef = False
-Expr = "ResStr(\"MES_ERRORS\", \"FAIL_RESTEST\")"
-ParamType = 2
-Flags = 0
-
-[SF.Seq[4].Main[13].TS.SData.ActualArgs.Color]
-UseDef = False
-Expr = "StationGlobals.TEF.Colors.StatusFailed"
-ParamType = 4
-ParamRepresentation = 1
-Flags = 0
-
-[SF.Seq[4].Main[13].TS.SData.ActualArgs.FontSize]
-ParamType = 4
-ParamRepresentation = 1
-Flags = 0
-
-[DEF, SF.Seq[4].Main[13].TS.SData.Prototype]
-TestSocket = Num
-Message = Str
-Color = Num
-FontSize = Num
-
-[SF.Seq[4].Main[13].TS.SData.Prototype]
-TestSocket = Nan
-Color = Nan
-FontSize = Nan
-
-[SF.Seq[4].Main[13].TS.SData.Prototype.TestSocket]
-%COMMENT = "Test Socket number. (Default: Current Test Socket Index)"
-
-[SF.Seq[4].Main[13].TS.SData.Prototype.Message]
-%COMMENT = "Message to show."
-
-[SF.Seq[4].Main[13].TS.SData.Prototype.Color]
-%COMMENT = "Background color of the Test Socket Message Area. (Default: StationGlobals.TEF.Colors.DialogInfo)"
-%NUMFMT = "%#x"
-
-[SF.Seq[4].Main[13].TS.SData.Prototype.FontSize]
-%COMMENT = "Size of the Font. (Default: Configuration parameter 'DialogTextBox' from Noffz.UTP.TEF.config)"
+[SF.Seq[4].Main[13]]
+ConditionExpr Line0001 = "(FileGlobals.DUT_TestingData.ErrorCode[RunState.TestSockets.MyIndex] == 1) || (FileGlobals.DUT_TestingData.ErrorCode[Run"
+ConditionExpr Line0002 = "State.TestSockets.MyIndex] == 0)"
 
 [DEF, SF.Seq[4].Main[13]]
-%NAME = "FAIL_RESTEST"
-
-[SF.Seq[4].Main[14].TS]
-Id = "ID#:dIXW/FKK8RGwc0ypVBlBxD"
-
-[SF.Seq[4].Main[14]]
-ConditionExpr = "FileGlobals.DUT_TestingData.ErrorCode[RunState.TestSockets.MyIndex] == 7"
-
-[DEF, SF.Seq[4].Main[14]]
 %NAME = "Else If"
 
+[SF.Seq[4].Main[14].TS]
+Id = "ID#:Ss8QBVSK8RGwc0ypVBlBxD"
+
+[SF.Seq[4].Main[14]]
+ConditionExpr = "Parameters.NTC_Critical"
+
+[DEF, SF.Seq[4].Main[14]]
+%NAME = "If"
+
 [SF.Seq[4].Main[15].TS]
-Id = "ID#:9X0e2lOK8RGwc0ypVBlBxD"
+Id = "ID#:8m47WVSK8RGwc0ypVBlBxD"
 
 [DEF, SF.Seq[4].Main[15].TS]
 SData = "TYPE, SeqCallStepAdditions"
@@ -13174,7 +13180,7 @@ Flags = 0
 
 [SF.Seq[4].Main[15].TS.SData.ActualArgs.Message]
 UseDef = False
-Expr = "ResStr(\"MES_ERRORS\", \"ERROR7_PreUUT\")"
+Expr = "ResStr(\"MES_ERRORS\", \"ERROR2_PostUUT\")"
 ParamType = 2
 Flags = 0
 
@@ -13260,36 +13266,30 @@ FontSize = Nan
 %COMMENT = "Returns True, if Cancel button was pressed."
 
 [DEF, SF.Seq[4].Main[15]]
-%NAME = "ERROR7_PreUUT"
+%NAME = "ERROR2_PostUUT"
 
 [SF.Seq[4].Main[16].TS]
-Id = "ID#:LIkQG1OK8RGwc0ypVBlBxD"
-
-[SF.Seq[4].Main[16]]
-ConditionExpr Line0001 = "(FileGlobals.DUT_TestingData.ErrorCode[RunState.TestSockets.MyIndex] == 1) || (FileGlobals.DUT_TestingData.ErrorCode[Run"
-ConditionExpr Line0002 = "State.TestSockets.MyIndex] == 0)"
+Id = "ID#:qxcHiVSK8RGwc0ypVBlBxD"
+PostExpr = "FileGlobals.DUT_TestingData.ErrorCode[RunState.TestSockets.MyIndex] = 2\n"
 
 [DEF, SF.Seq[4].Main[16]]
-%NAME = "Else If"
+%NAME = "Change Error code to 2"
 
 [SF.Seq[4].Main[17].TS]
-Id = "ID#:Ss8QBVSK8RGwc0ypVBlBxD"
-
-[SF.Seq[4].Main[17]]
-ConditionExpr = "Locals.NTC_Critical"
+Id = "ID#:CmXxGlSK8RGwc0ypVBlBxD"
 
 [DEF, SF.Seq[4].Main[17]]
-%NAME = "If"
+%NAME = "Else"
 
 [SF.Seq[4].Main[18].TS]
-Id = "ID#:8m47WVSK8RGwc0ypVBlBxD"
+Id = "ID#:P8ynIlSK8RGwc0ypVBlBxD"
 
 [DEF, SF.Seq[4].Main[18].TS]
 SData = "TYPE, SeqCallStepAdditions"
 
 [SF.Seq[4].Main[18].TS.SData]
 SFPath = "Noffz.UTP.TEF.API.seq"
-SeqName = "UI.TestSocket.ShowMessageDialog"
+SeqName = "UI.TestSocket.ShowMessage"
 CustomThreadAffinity = "-1"
 Trace = "Off"
 
@@ -13302,11 +13302,6 @@ TestSocket = "TYPE, SequenceArgument"
 Message = "TYPE, SequenceArgument"
 Color = "TYPE, SequenceArgument"
 FontSize = "TYPE, SequenceArgument"
-ShowOkButton = "TYPE, SequenceArgument"
-ShowCancelButton = "TYPE, SequenceArgument"
-DialogTimeout = "TYPE, SequenceArgument"
-OkButtonPressed = "TYPE, SequenceArgument"
-CancelButtonPressed = "TYPE, SequenceArgument"
 
 [SF.Seq[4].Main[18].TS.SData.ActualArgs.TestSocket]
 ParamType = 4
@@ -13315,7 +13310,7 @@ Flags = 0
 
 [SF.Seq[4].Main[18].TS.SData.ActualArgs.Message]
 UseDef = False
-Expr = "ResStr(\"MES_ERRORS\", \"ERROR2_PostUUT\")"
+Expr = "ResStr(\"MES_ERRORS\", \"FAIL_RESTEST\")"
 ParamType = 2
 Flags = 0
 
@@ -13331,45 +13326,16 @@ ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[SF.Seq[4].Main[18].TS.SData.ActualArgs.ShowOkButton]
-Expr = "True"
-ParamType = 16
-Flags = 0
-
-[SF.Seq[4].Main[18].TS.SData.ActualArgs.ShowCancelButton]
-Expr = "False"
-ParamType = 16
-Flags = 0
-
-[SF.Seq[4].Main[18].TS.SData.ActualArgs.DialogTimeout]
-Expr = "0"
-ParamType = 4
-ParamRepresentation = 1
-Flags = 0
-
-[SF.Seq[4].Main[18].TS.SData.ActualArgs.OkButtonPressed]
-ParamType = 16
-
-[SF.Seq[4].Main[18].TS.SData.ActualArgs.CancelButtonPressed]
-ParamType = 16
-
 [DEF, SF.Seq[4].Main[18].TS.SData.Prototype]
 TestSocket = Num
 Message = Str
 Color = Num
 FontSize = Num
-ShowOkButton = Bool
-ShowCancelButton = Bool
-DialogTimeout = Num
-OkButtonPressed = Bool
-CancelButtonPressed = Bool
 
 [SF.Seq[4].Main[18].TS.SData.Prototype]
 TestSocket = Nan
 Color = Nan
 FontSize = Nan
-%FLG: OkButtonPressed = 4
-%FLG: CancelButtonPressed = 4
 
 [SF.Seq[4].Main[18].TS.SData.Prototype.TestSocket]
 %COMMENT = "Test Socket number. (Default: Current Test Socket Index)"
@@ -13378,213 +13344,112 @@ FontSize = Nan
 %COMMENT = "Message to show."
 
 [SF.Seq[4].Main[18].TS.SData.Prototype.Color]
-%COMMENT = "Background color of the Station Message Area. (Default: StationGlobals.TEF.Colors.DialogWaiting)"
-%NUMFMT = "%#x"
-
-[SF.Seq[4].Main[18].TS.SData.Prototype.FontSize]
-%COMMENT = "Size of the Font. (Default: 'DialogTextBox' from Noffz.UTP.TEF.config)."
-
-[SF.Seq[4].Main[18].TS.SData.Prototype.ShowOkButton]
-%COMMENT = "Show OK button in the dialog. (Default: True)"
-
-[SF.Seq[4].Main[18].TS.SData.Prototype.ShowCancelButton]
-%COMMENT = "Show Cancel button in the dialog. (Default: False)"
-
-[SF.Seq[4].Main[18].TS.SData.Prototype.DialogTimeout]
-%COMMENT Line0001 = "Optional. Dialog timeout in seconds. If 0, the timeout is not used and the dialog is shown until operator press a button"
-%COMMENT Line0002 = ". (Default: 0)"
-
-[SF.Seq[4].Main[18].TS.SData.Prototype.OkButtonPressed]
-%COMMENT = "Returns True, if OK button was pressed."
-
-[SF.Seq[4].Main[18].TS.SData.Prototype.CancelButtonPressed]
-%COMMENT = "Returns True, if Cancel button was pressed."
-
-[DEF, SF.Seq[4].Main[18]]
-%NAME = "ERROR2_PostUUT"
-
-[SF.Seq[4].Main[19].TS]
-Id = "ID#:qxcHiVSK8RGwc0ypVBlBxD"
-PostExpr = "FileGlobals.DUT_TestingData.ErrorCode[RunState.TestSockets.MyIndex] = 2"
-
-[DEF, SF.Seq[4].Main[19]]
-%NAME = "Change Error code to 2"
-
-[SF.Seq[4].Main[20].TS]
-Id = "ID#:CmXxGlSK8RGwc0ypVBlBxD"
-
-[DEF, SF.Seq[4].Main[20]]
-%NAME = "Else"
-
-[SF.Seq[4].Main[21].TS]
-Id = "ID#:P8ynIlSK8RGwc0ypVBlBxD"
-
-[DEF, SF.Seq[4].Main[21].TS]
-SData = "TYPE, SeqCallStepAdditions"
-
-[SF.Seq[4].Main[21].TS.SData]
-SFPath = "Noffz.UTP.TEF.API.seq"
-SeqName = "UI.TestSocket.ShowMessage"
-CustomThreadAffinity = "-1"
-Trace = "Off"
-
-[DEF, SF.Seq[4].Main[21].TS.SData]
-ActualArgs = Arguments
-Prototype = Obj
-
-[DEF, SF.Seq[4].Main[21].TS.SData.ActualArgs]
-TestSocket = "TYPE, SequenceArgument"
-Message = "TYPE, SequenceArgument"
-Color = "TYPE, SequenceArgument"
-FontSize = "TYPE, SequenceArgument"
-
-[SF.Seq[4].Main[21].TS.SData.ActualArgs.TestSocket]
-ParamType = 4
-ParamRepresentation = 1
-Flags = 0
-
-[SF.Seq[4].Main[21].TS.SData.ActualArgs.Message]
-UseDef = False
-Expr = "ResStr(\"MES_ERRORS\", \"FAIL_RESTEST\")"
-ParamType = 2
-Flags = 0
-
-[SF.Seq[4].Main[21].TS.SData.ActualArgs.Color]
-UseDef = False
-Expr = "StationGlobals.TEF.Colors.StatusFailed"
-ParamType = 4
-ParamRepresentation = 1
-Flags = 0
-
-[SF.Seq[4].Main[21].TS.SData.ActualArgs.FontSize]
-ParamType = 4
-ParamRepresentation = 1
-Flags = 0
-
-[DEF, SF.Seq[4].Main[21].TS.SData.Prototype]
-TestSocket = Num
-Message = Str
-Color = Num
-FontSize = Num
-
-[SF.Seq[4].Main[21].TS.SData.Prototype]
-TestSocket = Nan
-Color = Nan
-FontSize = Nan
-
-[SF.Seq[4].Main[21].TS.SData.Prototype.TestSocket]
-%COMMENT = "Test Socket number. (Default: Current Test Socket Index)"
-
-[SF.Seq[4].Main[21].TS.SData.Prototype.Message]
-%COMMENT = "Message to show."
-
-[SF.Seq[4].Main[21].TS.SData.Prototype.Color]
 %COMMENT = "Background color of the Test Socket Message Area. (Default: StationGlobals.TEF.Colors.DialogInfo)"
 %NUMFMT = "%#x"
 
-[SF.Seq[4].Main[21].TS.SData.Prototype.FontSize]
+[SF.Seq[4].Main[18].TS.SData.Prototype.FontSize]
 %COMMENT = "Size of the Font. (Default: Configuration parameter 'DialogTextBox' from Noffz.UTP.TEF.config)"
 
-[DEF, SF.Seq[4].Main[21]]
+[DEF, SF.Seq[4].Main[18]]
 %NAME = "FAIL_RESTEST"
 
-[SF.Seq[4].Main[22].TS]
+[SF.Seq[4].Main[19].TS]
 Id = "ID#:Qg6SnFSK8RGwc0ypVBlBxD"
 PostExpr = "FileGlobals.DUT_TestingData.ErrorCode[RunState.TestSockets.MyIndex] = 6"
 
-[DEF, SF.Seq[4].Main[22]]
+[DEF, SF.Seq[4].Main[19]]
 %NAME = "Change Error code to 6"
 
-[SF.Seq[4].Main[23].TS]
+[SF.Seq[4].Main[20].TS]
 Id = "ID#:TM8QBVSK8RGwc0ypVBlBxD"
 
-[DEF, SF.Seq[4].Main[23]]
+[DEF, SF.Seq[4].Main[20]]
 %NAME = "End"
 
-[SF.Seq[4].Main[24].TS]
+[SF.Seq[4].Main[21].TS]
 Id = "ID#:VjJ18lKK8RGwc0ypVBlBxD"
 
-[SF.Seq[4].Main[24]]
+[SF.Seq[4].Main[21]]
 ConditionExpr = "FileGlobals.DUT_TestingData.ErrorCode[RunState.TestSockets.MyIndex] == 2"
 
-[DEF, SF.Seq[4].Main[24]]
+[DEF, SF.Seq[4].Main[21]]
 %NAME = "Else If"
 
-[SF.Seq[4].Main[25].TS]
+[SF.Seq[4].Main[22].TS]
 Id = "ID#:Tvc3eFSK8RGwc0ypVBlBxD"
 
-[DEF, SF.Seq[4].Main[25].TS]
+[DEF, SF.Seq[4].Main[22].TS]
 SData = "TYPE, SeqCallStepAdditions"
 
-[SF.Seq[4].Main[25].TS.SData]
+[SF.Seq[4].Main[22].TS.SData]
 SFPath = "Noffz.UTP.TEF.API.seq"
 SeqName = "UI.TestSocket.ShowMessage"
 CustomThreadAffinity = "-1"
 Trace = "Off"
 
-[DEF, SF.Seq[4].Main[25].TS.SData]
+[DEF, SF.Seq[4].Main[22].TS.SData]
 ActualArgs = Arguments
 Prototype = Obj
 
-[DEF, SF.Seq[4].Main[25].TS.SData.ActualArgs]
+[DEF, SF.Seq[4].Main[22].TS.SData.ActualArgs]
 TestSocket = "TYPE, SequenceArgument"
 Message = "TYPE, SequenceArgument"
 Color = "TYPE, SequenceArgument"
 FontSize = "TYPE, SequenceArgument"
 
-[SF.Seq[4].Main[25].TS.SData.ActualArgs.TestSocket]
+[SF.Seq[4].Main[22].TS.SData.ActualArgs.TestSocket]
 ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[SF.Seq[4].Main[25].TS.SData.ActualArgs.Message]
+[SF.Seq[4].Main[22].TS.SData.ActualArgs.Message]
 UseDef = False
 Expr = "ResStr(\"MES_ERRORS\", \"ERROR2_PreUUT\")"
 ParamType = 2
 Flags = 0
 
-[SF.Seq[4].Main[25].TS.SData.ActualArgs.Color]
+[SF.Seq[4].Main[22].TS.SData.ActualArgs.Color]
 Expr = "StationGlobals.TEF.Colors.StatusFailed"
 ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[SF.Seq[4].Main[25].TS.SData.ActualArgs.FontSize]
+[SF.Seq[4].Main[22].TS.SData.ActualArgs.FontSize]
 ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[DEF, SF.Seq[4].Main[25].TS.SData.Prototype]
+[DEF, SF.Seq[4].Main[22].TS.SData.Prototype]
 TestSocket = Num
 Message = Str
 Color = Num
 FontSize = Num
 
-[SF.Seq[4].Main[25].TS.SData.Prototype]
+[SF.Seq[4].Main[22].TS.SData.Prototype]
 TestSocket = Nan
 Color = Nan
 FontSize = Nan
 
-[SF.Seq[4].Main[25].TS.SData.Prototype.TestSocket]
+[SF.Seq[4].Main[22].TS.SData.Prototype.TestSocket]
 %COMMENT = "Test Socket number. (Default: Current Test Socket Index)"
 
-[SF.Seq[4].Main[25].TS.SData.Prototype.Message]
+[SF.Seq[4].Main[22].TS.SData.Prototype.Message]
 %COMMENT = "Message to show."
 
-[SF.Seq[4].Main[25].TS.SData.Prototype.Color]
+[SF.Seq[4].Main[22].TS.SData.Prototype.Color]
 %COMMENT = "Background color of the Test Socket Message Area. (Default: StationGlobals.TEF.Colors.DialogInfo)"
 %NUMFMT = "%#x"
 
-[SF.Seq[4].Main[25].TS.SData.Prototype.FontSize]
+[SF.Seq[4].Main[22].TS.SData.Prototype.FontSize]
 %COMMENT = "Size of the Font. (Default: Configuration parameter 'DialogTextBox' from Noffz.UTP.TEF.config)"
 
-[DEF, SF.Seq[4].Main[25]]
+[DEF, SF.Seq[4].Main[22]]
 %NAME = "ERROR2_PreUUT"
 
-[SF.Seq[4].Main[26].TS]
+[SF.Seq[4].Main[23].TS]
 Id = "ID#:MqAqVVGK8RGwc0ypVBlBxD"
 
-[DEF, SF.Seq[4].Main[26]]
+[DEF, SF.Seq[4].Main[23]]
 %NAME = "End"
 
 [DEF, SF.Seq[4].RTS]
