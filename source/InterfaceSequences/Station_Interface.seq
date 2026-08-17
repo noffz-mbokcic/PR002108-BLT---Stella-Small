@@ -7367,7 +7367,7 @@ FailureAction = Num
 [SF.Seq[2]]
 %FLG: Parameters = 4456448
 %FLG: Locals = 4194304
-%HI: Main = [168]
+%HI: Main = [178]
 %FLG: Main = 4194304
 %FLG: Setup = 4194304
 %FLG: Cleanup = 4194304
@@ -7401,43 +7401,43 @@ Fast = Num
 %[3] = Step
 %TYPE: %[3] = "NI_Flow_Case"
 %[4] = Step
-%TYPE: %[4] = "Label"
+%TYPE: %[4] = "SequenceCall"
 %[5] = Step
-%TYPE: %[5] = "NI_Flow_If"
+%TYPE: %[5] = "NI_Flow_End"
 %[6] = Step
-%TYPE: %[6] = "Label"
+%TYPE: %[6] = "NI_Flow_Case"
 %[7] = Step
-%TYPE: %[7] = "NI_Flow_Else"
+%TYPE: %[7] = "Label"
 %[8] = Step
-%TYPE: %[8] = "NI_Flow_Select"
+%TYPE: %[8] = "NI_Flow_If"
 %[9] = Step
-%TYPE: %[9] = "NI_Flow_Case"
+%TYPE: %[9] = "Label"
 %[10] = Step
-%TYPE: %[10] = "SequenceCall"
+%TYPE: %[10] = "NI_Flow_Else"
 %[11] = Step
-%TYPE: %[11] = "NI_Flow_Break"
+%TYPE: %[11] = "SequenceCall"
 %[12] = Step
-%TYPE: %[12] = "NI_Flow_End"
+%TYPE: %[12] = "NI_Flow_Break"
 %[13] = Step
-%TYPE: %[13] = "NI_Flow_Case"
+%TYPE: %[13] = "NI_Flow_End"
 %[14] = Step
-%TYPE: %[14] = "SequenceCall"
+%TYPE: %[14] = "NI_Flow_End"
 %[15] = Step
-%TYPE: %[15] = "NI_Flow_Break"
+%TYPE: %[15] = "NI_Flow_Case"
 %[16] = Step
-%TYPE: %[16] = "NI_Flow_End"
+%TYPE: %[16] = "Label"
 %[17] = Step
-%TYPE: %[17] = "NI_Flow_Case"
+%TYPE: %[17] = "NI_Flow_If"
 %[18] = Step
-%TYPE: %[18] = "SequenceCall"
+%TYPE: %[18] = "Label"
 %[19] = Step
-%TYPE: %[19] = "NI_Flow_Break"
+%TYPE: %[19] = "NI_Flow_Else"
 %[20] = Step
-%TYPE: %[20] = "NI_Flow_End"
+%TYPE: %[20] = "SequenceCall"
 %[21] = Step
-%TYPE: %[21] = "NI_Flow_Case"
+%TYPE: %[21] = "NI_Flow_Break"
 %[22] = Step
-%TYPE: %[22] = "SequenceCall"
+%TYPE: %[22] = "NI_Flow_End"
 %[23] = Step
 %TYPE: %[23] = "NI_Flow_Break"
 %[24] = Step
@@ -7445,295 +7445,315 @@ Fast = Num
 %[25] = Step
 %TYPE: %[25] = "NI_Flow_Case"
 %[26] = Step
-%TYPE: %[26] = "SequenceCall"
+%TYPE: %[26] = "Label"
 %[27] = Step
-%TYPE: %[27] = "NI_Flow_Break"
+%TYPE: %[27] = "NI_Flow_If"
 %[28] = Step
-%TYPE: %[28] = "NI_Flow_End"
+%TYPE: %[28] = "Label"
 %[29] = Step
-%TYPE: %[29] = "NI_Flow_End"
+%TYPE: %[29] = "NI_Flow_Else"
 %[30] = Step
-%TYPE: %[30] = "NI_Flow_Break"
+%TYPE: %[30] = "SequenceCall"
 %[31] = Step
-%TYPE: %[31] = "NI_Flow_End"
+%TYPE: %[31] = "NI_Flow_Break"
 %[32] = Step
 %TYPE: %[32] = "NI_Flow_End"
 %[33] = Step
-%TYPE: %[33] = "NI_Flow_Case"
+%TYPE: %[33] = "NI_Flow_End"
 %[34] = Step
-%TYPE: %[34] = "NI_Flow_If"
+%TYPE: %[34] = "NI_Flow_Case"
 %[35] = Step
 %TYPE: %[35] = "Label"
 %[36] = Step
 %TYPE: %[36] = "NI_Flow_If"
 %[37] = Step
-%TYPE: %[37] = "Statement"
+%TYPE: %[37] = "Label"
 %[38] = Step
-%TYPE: %[38] = "Action"
+%TYPE: %[38] = "NI_Flow_Else"
 %[39] = Step
-%TYPE: %[39] = "Statement"
+%TYPE: %[39] = "SequenceCall"
 %[40] = Step
-%TYPE: %[40] = "NI_Flow_Else"
+%TYPE: %[40] = "NI_Flow_Break"
 %[41] = Step
-%TYPE: %[41] = "Statement"
+%TYPE: %[41] = "NI_Flow_End"
 %[42] = Step
 %TYPE: %[42] = "NI_Flow_End"
 %[43] = Step
-%TYPE: %[43] = "NI_Flow_Else"
+%TYPE: %[43] = "NI_Flow_Case"
 %[44] = Step
-%TYPE: %[44] = "SequenceCall"
+%TYPE: %[44] = "NI_Flow_If"
 %[45] = Step
-%TYPE: %[45] = "Statement"
+%TYPE: %[45] = "Label"
 %[46] = Step
-%TYPE: %[46] = "NI_Flow_End"
+%TYPE: %[46] = "NI_Flow_If"
 %[47] = Step
-%TYPE: %[47] = "NI_Flow_Break"
+%TYPE: %[47] = "Statement"
 %[48] = Step
-%TYPE: %[48] = "NI_Flow_End"
+%TYPE: %[48] = "Action"
 %[49] = Step
-%TYPE: %[49] = "NI_Flow_Case"
+%TYPE: %[49] = "Statement"
 %[50] = Step
-%TYPE: %[50] = "NI_Flow_If"
+%TYPE: %[50] = "NI_Flow_Else"
 %[51] = Step
-%TYPE: %[51] = "Label"
+%TYPE: %[51] = "Statement"
 %[52] = Step
-%TYPE: %[52] = "NI_Flow_If"
+%TYPE: %[52] = "NI_Flow_End"
 %[53] = Step
-%TYPE: %[53] = "Statement"
+%TYPE: %[53] = "NI_Flow_Else"
 %[54] = Step
-%TYPE: %[54] = "Action"
+%TYPE: %[54] = "SequenceCall"
 %[55] = Step
 %TYPE: %[55] = "Statement"
 %[56] = Step
-%TYPE: %[56] = "NI_Flow_Else"
+%TYPE: %[56] = "NI_Flow_End"
 %[57] = Step
-%TYPE: %[57] = "Statement"
+%TYPE: %[57] = "NI_Flow_Break"
 %[58] = Step
 %TYPE: %[58] = "NI_Flow_End"
 %[59] = Step
-%TYPE: %[59] = "NI_Flow_Else"
+%TYPE: %[59] = "NI_Flow_Case"
 %[60] = Step
-%TYPE: %[60] = "SequenceCall"
+%TYPE: %[60] = "NI_Flow_If"
 %[61] = Step
-%TYPE: %[61] = "Statement"
+%TYPE: %[61] = "Label"
 %[62] = Step
-%TYPE: %[62] = "NI_Flow_End"
+%TYPE: %[62] = "NI_Flow_If"
 %[63] = Step
-%TYPE: %[63] = "NI_Flow_Break"
+%TYPE: %[63] = "Statement"
 %[64] = Step
-%TYPE: %[64] = "NI_Flow_End"
+%TYPE: %[64] = "Action"
 %[65] = Step
-%TYPE: %[65] = "NI_Flow_Case"
+%TYPE: %[65] = "Statement"
 %[66] = Step
-%TYPE: %[66] = "NI_Flow_If"
+%TYPE: %[66] = "NI_Flow_Else"
 %[67] = Step
-%TYPE: %[67] = "Label"
+%TYPE: %[67] = "Statement"
 %[68] = Step
-%TYPE: %[68] = "NI_Flow_If"
+%TYPE: %[68] = "NI_Flow_End"
 %[69] = Step
-%TYPE: %[69] = "Statement"
+%TYPE: %[69] = "NI_Flow_Else"
 %[70] = Step
-%TYPE: %[70] = "Action"
+%TYPE: %[70] = "SequenceCall"
 %[71] = Step
 %TYPE: %[71] = "Statement"
 %[72] = Step
-%TYPE: %[72] = "NI_Flow_Else"
+%TYPE: %[72] = "NI_Flow_End"
 %[73] = Step
-%TYPE: %[73] = "Statement"
+%TYPE: %[73] = "NI_Flow_Break"
 %[74] = Step
 %TYPE: %[74] = "NI_Flow_End"
 %[75] = Step
-%TYPE: %[75] = "NI_Flow_Else"
+%TYPE: %[75] = "NI_Flow_Case"
 %[76] = Step
-%TYPE: %[76] = "SequenceCall"
+%TYPE: %[76] = "NI_Flow_If"
 %[77] = Step
-%TYPE: %[77] = "Statement"
+%TYPE: %[77] = "Label"
 %[78] = Step
-%TYPE: %[78] = "NI_Flow_End"
+%TYPE: %[78] = "NI_Flow_If"
 %[79] = Step
-%TYPE: %[79] = "NI_Flow_Break"
+%TYPE: %[79] = "Statement"
 %[80] = Step
-%TYPE: %[80] = "NI_Flow_End"
+%TYPE: %[80] = "Action"
 %[81] = Step
-%TYPE: %[81] = "NI_Flow_Case"
+%TYPE: %[81] = "Statement"
 %[82] = Step
-%TYPE: %[82] = "NI_Flow_If"
+%TYPE: %[82] = "NI_Flow_Else"
 %[83] = Step
-%TYPE: %[83] = "Label"
+%TYPE: %[83] = "Statement"
 %[84] = Step
-%TYPE: %[84] = "NI_Flow_If"
+%TYPE: %[84] = "NI_Flow_End"
 %[85] = Step
-%TYPE: %[85] = "Statement"
+%TYPE: %[85] = "NI_Flow_Else"
 %[86] = Step
-%TYPE: %[86] = "Action"
+%TYPE: %[86] = "SequenceCall"
 %[87] = Step
-%TYPE: %[87] = "Action"
+%TYPE: %[87] = "Statement"
 %[88] = Step
-%TYPE: %[88] = "Action"
+%TYPE: %[88] = "NI_Flow_End"
 %[89] = Step
-%TYPE: %[89] = "Statement"
+%TYPE: %[89] = "NI_Flow_Break"
 %[90] = Step
-%TYPE: %[90] = "NI_Flow_Else"
+%TYPE: %[90] = "NI_Flow_End"
 %[91] = Step
-%TYPE: %[91] = "Statement"
+%TYPE: %[91] = "NI_Flow_Case"
 %[92] = Step
-%TYPE: %[92] = "NI_Flow_End"
+%TYPE: %[92] = "NI_Flow_If"
 %[93] = Step
-%TYPE: %[93] = "NI_Flow_Else"
+%TYPE: %[93] = "Label"
 %[94] = Step
-%TYPE: %[94] = "SequenceCall"
+%TYPE: %[94] = "NI_Flow_If"
 %[95] = Step
 %TYPE: %[95] = "Statement"
 %[96] = Step
-%TYPE: %[96] = "NI_Flow_End"
+%TYPE: %[96] = "Action"
 %[97] = Step
-%TYPE: %[97] = "NI_Flow_Break"
+%TYPE: %[97] = "Action"
 %[98] = Step
-%TYPE: %[98] = "NI_Flow_End"
+%TYPE: %[98] = "Action"
 %[99] = Step
-%TYPE: %[99] = "NI_Flow_Case"
+%TYPE: %[99] = "Statement"
 %[100] = Step
-%TYPE: %[100] = "NI_Flow_If"
+%TYPE: %[100] = "NI_Flow_Else"
 %[101] = Step
-%TYPE: %[101] = "Label"
+%TYPE: %[101] = "Statement"
 %[102] = Step
-%TYPE: %[102] = "NI_Flow_If"
+%TYPE: %[102] = "NI_Flow_End"
 %[103] = Step
-%TYPE: %[103] = "Statement"
+%TYPE: %[103] = "NI_Flow_Else"
 %[104] = Step
-%TYPE: %[104] = "Action"
+%TYPE: %[104] = "SequenceCall"
 %[105] = Step
 %TYPE: %[105] = "Statement"
 %[106] = Step
-%TYPE: %[106] = "NI_Flow_Else"
+%TYPE: %[106] = "NI_Flow_End"
 %[107] = Step
-%TYPE: %[107] = "Statement"
+%TYPE: %[107] = "NI_Flow_Break"
 %[108] = Step
 %TYPE: %[108] = "NI_Flow_End"
 %[109] = Step
-%TYPE: %[109] = "NI_Flow_Else"
+%TYPE: %[109] = "NI_Flow_Case"
 %[110] = Step
-%TYPE: %[110] = "SequenceCall"
+%TYPE: %[110] = "NI_Flow_If"
 %[111] = Step
-%TYPE: %[111] = "Statement"
+%TYPE: %[111] = "Label"
 %[112] = Step
-%TYPE: %[112] = "NI_Flow_End"
+%TYPE: %[112] = "NI_Flow_If"
 %[113] = Step
-%TYPE: %[113] = "NI_Flow_Break"
+%TYPE: %[113] = "Statement"
 %[114] = Step
-%TYPE: %[114] = "NI_Flow_End"
+%TYPE: %[114] = "Action"
 %[115] = Step
-%TYPE: %[115] = "NI_Flow_Case"
+%TYPE: %[115] = "Statement"
 %[116] = Step
-%TYPE: %[116] = "NI_Flow_If"
+%TYPE: %[116] = "NI_Flow_Else"
 %[117] = Step
-%TYPE: %[117] = "Label"
+%TYPE: %[117] = "Statement"
 %[118] = Step
-%TYPE: %[118] = "NI_Flow_If"
+%TYPE: %[118] = "NI_Flow_End"
 %[119] = Step
-%TYPE: %[119] = "Statement"
+%TYPE: %[119] = "NI_Flow_Else"
 %[120] = Step
-%TYPE: %[120] = "Action"
+%TYPE: %[120] = "SequenceCall"
 %[121] = Step
 %TYPE: %[121] = "Statement"
 %[122] = Step
-%TYPE: %[122] = "NI_Flow_Else"
+%TYPE: %[122] = "NI_Flow_End"
 %[123] = Step
-%TYPE: %[123] = "Statement"
+%TYPE: %[123] = "NI_Flow_Break"
 %[124] = Step
 %TYPE: %[124] = "NI_Flow_End"
 %[125] = Step
-%TYPE: %[125] = "NI_Flow_Else"
+%TYPE: %[125] = "NI_Flow_Case"
 %[126] = Step
-%TYPE: %[126] = "SequenceCall"
+%TYPE: %[126] = "NI_Flow_If"
 %[127] = Step
-%TYPE: %[127] = "Statement"
+%TYPE: %[127] = "Label"
 %[128] = Step
-%TYPE: %[128] = "NI_Flow_End"
+%TYPE: %[128] = "NI_Flow_If"
 %[129] = Step
-%TYPE: %[129] = "NI_Flow_Break"
+%TYPE: %[129] = "Statement"
 %[130] = Step
-%TYPE: %[130] = "NI_Flow_End"
+%TYPE: %[130] = "Action"
 %[131] = Step
-%TYPE: %[131] = "NI_Flow_Case"
+%TYPE: %[131] = "Statement"
 %[132] = Step
-%TYPE: %[132] = "NI_Flow_If"
+%TYPE: %[132] = "NI_Flow_Else"
 %[133] = Step
-%TYPE: %[133] = "Label"
+%TYPE: %[133] = "Statement"
 %[134] = Step
-%TYPE: %[134] = "NI_Flow_If"
+%TYPE: %[134] = "NI_Flow_End"
 %[135] = Step
-%TYPE: %[135] = "Statement"
+%TYPE: %[135] = "NI_Flow_Else"
 %[136] = Step
-%TYPE: %[136] = "Action"
+%TYPE: %[136] = "SequenceCall"
 %[137] = Step
 %TYPE: %[137] = "Statement"
 %[138] = Step
-%TYPE: %[138] = "NI_Flow_Else"
+%TYPE: %[138] = "NI_Flow_End"
 %[139] = Step
-%TYPE: %[139] = "Statement"
+%TYPE: %[139] = "NI_Flow_Break"
 %[140] = Step
 %TYPE: %[140] = "NI_Flow_End"
 %[141] = Step
-%TYPE: %[141] = "NI_Flow_Else"
+%TYPE: %[141] = "NI_Flow_Case"
 %[142] = Step
-%TYPE: %[142] = "SequenceCall"
+%TYPE: %[142] = "NI_Flow_If"
 %[143] = Step
-%TYPE: %[143] = "Statement"
+%TYPE: %[143] = "Label"
 %[144] = Step
-%TYPE: %[144] = "NI_Flow_End"
+%TYPE: %[144] = "NI_Flow_If"
 %[145] = Step
-%TYPE: %[145] = "NI_Flow_Break"
+%TYPE: %[145] = "Statement"
 %[146] = Step
-%TYPE: %[146] = "NI_Flow_End"
+%TYPE: %[146] = "Action"
 %[147] = Step
-%TYPE: %[147] = "NI_Flow_Case"
+%TYPE: %[147] = "Statement"
 %[148] = Step
-%TYPE: %[148] = "NI_Flow_If"
+%TYPE: %[148] = "NI_Flow_Else"
 %[149] = Step
-%TYPE: %[149] = "Label"
+%TYPE: %[149] = "Statement"
 %[150] = Step
-%TYPE: %[150] = "NI_Flow_If"
+%TYPE: %[150] = "NI_Flow_End"
 %[151] = Step
-%TYPE: %[151] = "Statement"
+%TYPE: %[151] = "NI_Flow_Else"
 %[152] = Step
-%TYPE: %[152] = "Action"
+%TYPE: %[152] = "SequenceCall"
 %[153] = Step
-%TYPE: %[153] = "Action"
+%TYPE: %[153] = "Statement"
 %[154] = Step
-%TYPE: %[154] = "Action"
+%TYPE: %[154] = "NI_Flow_End"
 %[155] = Step
-%TYPE: %[155] = "Statement"
+%TYPE: %[155] = "NI_Flow_Break"
 %[156] = Step
-%TYPE: %[156] = "NI_Flow_Else"
+%TYPE: %[156] = "NI_Flow_End"
 %[157] = Step
-%TYPE: %[157] = "Statement"
+%TYPE: %[157] = "NI_Flow_Case"
 %[158] = Step
-%TYPE: %[158] = "NI_Flow_End"
+%TYPE: %[158] = "NI_Flow_If"
 %[159] = Step
-%TYPE: %[159] = "NI_Flow_Else"
+%TYPE: %[159] = "Label"
 %[160] = Step
-%TYPE: %[160] = "SequenceCall"
+%TYPE: %[160] = "NI_Flow_If"
 %[161] = Step
 %TYPE: %[161] = "Statement"
 %[162] = Step
-%TYPE: %[162] = "NI_Flow_End"
+%TYPE: %[162] = "Action"
 %[163] = Step
-%TYPE: %[163] = "NI_Flow_Break"
+%TYPE: %[163] = "Action"
 %[164] = Step
-%TYPE: %[164] = "NI_Flow_End"
+%TYPE: %[164] = "Action"
 %[165] = Step
-%TYPE: %[165] = "NI_Flow_End"
+%TYPE: %[165] = "Statement"
 %[166] = Step
-%TYPE: %[166] = "Statement"
+%TYPE: %[166] = "NI_Flow_Else"
 %[167] = Step
-%TYPE: %[167] = "NI_Wait"
+%TYPE: %[167] = "Statement"
 %[168] = Step
 %TYPE: %[168] = "NI_Flow_End"
+%[169] = Step
+%TYPE: %[169] = "NI_Flow_Else"
+%[170] = Step
+%TYPE: %[170] = "SequenceCall"
+%[171] = Step
+%TYPE: %[171] = "Statement"
+%[172] = Step
+%TYPE: %[172] = "NI_Flow_End"
+%[173] = Step
+%TYPE: %[173] = "NI_Flow_Break"
+%[174] = Step
+%TYPE: %[174] = "NI_Flow_End"
+%[175] = Step
+%TYPE: %[175] = "NI_Flow_End"
+%[176] = Step
+%TYPE: %[176] = "Statement"
+%[177] = Step
+%TYPE: %[177] = "NI_Wait"
+%[178] = Step
+%TYPE: %[178] = "NI_Flow_End"
 
 [SF.Seq[2].Main[0].TS]
 Id = "ID#:J3Ecgbxg8RGN0qQctBT8oA"
-PostExpr = "Locals.Counter = 0,\nLocals.ToggleValue = False,\nLocals.Slow = 10,\nLocals.Fast = 5"
+PostExpr = "Locals.Counter = 0,\nLocals.ToggleValue = False,\nLocals.Slow = 6,\nLocals.Fast = 3"
 
 [DEF, SF.Seq[2].Main[0]]
 %NAME = "Set counter and toggle variables"
@@ -7757,684 +7777,448 @@ ItemExpr = "StationGlobals.Automation.SystemControl.Light_State"
 %NAME = "Select"
 
 [SF.Seq[2].Main[3].TS]
-Id = "ID#:YP+9cI9o8RGN16QctBT8oA"
+Id = "ID#:6cPaTC6a8RGN6qQctBT8oA"
 
 [SF.Seq[2].Main[3]]
-ItemExpr Line0001 = "Enums.Light_States.None, Enums.Light_States.Green , Enums.Light_States.Yellow, Enums.Light_States.Red , Enums.Light_Stat"
-ItemExpr Line0002 = "es.All"
+ItemExpr = "Enums.Light_States.None"
+%COMMENT Line0001 = "Enums.Light_States.None, Enums.Light_States.Green , Enums.Light_States.Yellow, Enums.Light_States.Red , Enums.Light_Stat"
+%COMMENT Line0002 = "es.All"
 
 [DEF, SF.Seq[2].Main[3]]
 %NAME = "Case"
 
 [SF.Seq[2].Main[4].TS]
-Id = "ID#:2J9M6Y9o8RGN16QctBT8oA"
-
-[DEF, SF.Seq[2].Main[4]]
-%NAME = "For these states - set lights only once"
-
-[SF.Seq[2].Main[5].TS]
-Id = "ID#:WVEPmLtg8RGN0qQctBT8oA"
-
-[SF.Seq[2].Main[5]]
-ConditionExpr = "StationGlobals.Automation.SystemControl.Previous_Light_State == StationGlobals.Automation.SystemControl.Light_State"
-
-[DEF, SF.Seq[2].Main[5]]
-%NAME = "If"
-
-[SF.Seq[2].Main[6].TS]
-Id = "ID#:lFyhqbtg8RGN0qQctBT8oA"
-
-[DEF, SF.Seq[2].Main[6]]
-%NAME = "Don't do anything, light is already set"
-
-[SF.Seq[2].Main[7].TS]
-Id = "ID#:4Rp2s7tg8RGN0qQctBT8oA"
-
-[DEF, SF.Seq[2].Main[7]]
-%NAME = "Else"
-
-[SF.Seq[2].Main[8].TS]
-Id = "ID#:9z85iI9o8RGN16QctBT8oA"
-
-[SF.Seq[2].Main[8]]
-ItemExpr = "StationGlobals.Automation.SystemControl.Light_State"
-
-[DEF, SF.Seq[2].Main[8]]
-%NAME = "Select"
-
-[SF.Seq[2].Main[9].TS]
-Id = "ID#:5O/XD7pg8RGN0qQctBT8oA"
-
-[SF.Seq[2].Main[9]]
-ItemExpr = "Enums.Light_States.None"
-
-[DEF, SF.Seq[2].Main[9]]
-%NAME = "Case"
-
-[SF.Seq[2].Main[10].TS]
 Id = "ID#:rwO4meNg8RGN0qQctBT8oA"
 
-[DEF, SF.Seq[2].Main[10].TS]
+[DEF, SF.Seq[2].Main[4].TS]
 SData = "TYPE, SeqCallStepAdditions"
 
-[SF.Seq[2].Main[10].TS.SData]
+[SF.Seq[2].Main[4].TS.SData]
 SeqName = "Set all colors"
 UseCurFile = True
 
-[DEF, SF.Seq[2].Main[10].TS.SData]
+[DEF, SF.Seq[2].Main[4].TS.SData]
 ActualArgs = Arguments
 
-[DEF, SF.Seq[2].Main[10].TS.SData.ActualArgs]
+[DEF, SF.Seq[2].Main[4].TS.SData.ActualArgs]
 ToggleValue = "TYPE, SequenceArgument"
 LampState = "TYPE, SequenceArgument"
 
-[SF.Seq[2].Main[10].TS.SData.ActualArgs.ToggleValue]
+[SF.Seq[2].Main[4].TS.SData.ActualArgs.ToggleValue]
 UseDef = False
 Expr = "Locals.ToggleValue"
 ParamType = 16
 
-[SF.Seq[2].Main[10].TS.SData.ActualArgs.LampState]
+[SF.Seq[2].Main[4].TS.SData.ActualArgs.LampState]
 UseDef = False
 Expr = "{False,False,False} // RD YE GN"
 ParamType = 1024
 
-[DEF, SF.Seq[2].Main[10]]
+[DEF, SF.Seq[2].Main[4]]
 %NAME = "Set colors - All off"
 
+[SF.Seq[2].Main[5].TS]
+Id = "ID#:6sPaTC6a8RGN6qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[5]]
+%NAME = "End"
+
+[SF.Seq[2].Main[6].TS]
+Id = "ID#:bGyYQC6a8RGN6qQctBT8oA"
+
+[SF.Seq[2].Main[6]]
+ItemExpr = "Enums.Light_States.All"
+
+[DEF, SF.Seq[2].Main[6]]
+%NAME = "Case"
+
+[SF.Seq[2].Main[7].TS]
+Id = "ID#:2J9M6Y9o8RGN16QctBT8oA"
+
+[DEF, SF.Seq[2].Main[7]]
+%NAME = "For these states - set lights only once"
+
+[SF.Seq[2].Main[8].TS]
+Id = "ID#:WVEPmLtg8RGN0qQctBT8oA"
+
+[SF.Seq[2].Main[8]]
+ConditionExpr = "StationGlobals.Automation.SystemControl.Previous_Light_State == StationGlobals.Automation.SystemControl.Light_State"
+
+[DEF, SF.Seq[2].Main[8]]
+%NAME = "If"
+
+[SF.Seq[2].Main[9].TS]
+Id = "ID#:lFyhqbtg8RGN0qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[9]]
+%NAME = "Don't do anything, light is already set"
+
+[SF.Seq[2].Main[10].TS]
+Id = "ID#:4Rp2s7tg8RGN0qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[10]]
+%NAME = "Else"
+
 [SF.Seq[2].Main[11].TS]
-Id = "ID#:ivH5/o9o8RGN16QctBT8oA"
+Id = "ID#:s4XTYeNg8RGN0qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[11].TS]
+SData = "TYPE, SeqCallStepAdditions"
+
+[SF.Seq[2].Main[11].TS.SData]
+SeqName = "Set all colors"
+UseCurFile = True
+
+[DEF, SF.Seq[2].Main[11].TS.SData]
+ActualArgs = Arguments
+
+[DEF, SF.Seq[2].Main[11].TS.SData.ActualArgs]
+ToggleValue = "TYPE, SequenceArgument"
+LampState = "TYPE, SequenceArgument"
+
+[SF.Seq[2].Main[11].TS.SData.ActualArgs.ToggleValue]
+UseDef = False
+Expr = "Locals.ToggleValue"
+ParamType = 16
+
+[SF.Seq[2].Main[11].TS.SData.ActualArgs.LampState]
+UseDef = False
+Expr = "{True,True,True} // RD YE GN"
+ParamType = 1024
 
 [DEF, SF.Seq[2].Main[11]]
-%NAME = "Break"
+%NAME = "Set colors - All on"
 
 [SF.Seq[2].Main[12].TS]
-Id = "ID#:4+/XD7pg8RGN0qQctBT8oA"
+Id = "ID#:gcGxCJBo8RGN16QctBT8oA"
 
 [DEF, SF.Seq[2].Main[12]]
-%NAME = "End"
+%NAME = "Break"
 
 [SF.Seq[2].Main[13].TS]
-Id = "ID#:7QN74bpg8RGN0qQctBT8oA"
-
-[SF.Seq[2].Main[13]]
-ItemExpr = "Enums.Light_States.Green"
+Id = "ID#:ifH5/o9o8RGN16QctBT8oA"
 
 [DEF, SF.Seq[2].Main[13]]
-%NAME = "Case"
+%NAME = "End"
 
 [SF.Seq[2].Main[14].TS]
-Id = "ID#:YJWpkONg8RGN0qQctBT8oA"
-
-[DEF, SF.Seq[2].Main[14].TS]
-SData = "TYPE, SeqCallStepAdditions"
-
-[SF.Seq[2].Main[14].TS.SData]
-SeqName = "Set all colors"
-UseCurFile = True
-
-[DEF, SF.Seq[2].Main[14].TS.SData]
-ActualArgs = Arguments
-
-[DEF, SF.Seq[2].Main[14].TS.SData.ActualArgs]
-ToggleValue = "TYPE, SequenceArgument"
-LampState = "TYPE, SequenceArgument"
-
-[SF.Seq[2].Main[14].TS.SData.ActualArgs.ToggleValue]
-UseDef = False
-Expr = "Locals.ToggleValue"
-ParamType = 16
-
-[SF.Seq[2].Main[14].TS.SData.ActualArgs.LampState]
-UseDef = False
-Expr = "{False,False,True} // RD YE GN"
-ParamType = 1024
+Id = "ID#:vx0OlZBo8RGN16QctBT8oA"
 
 [DEF, SF.Seq[2].Main[14]]
-%NAME = "Set colors - GN on"
+%NAME = "End"
 
 [SF.Seq[2].Main[15].TS]
-Id = "ID#:ijmW9o1o8RGN16QctBT8oA"
+Id = "ID#:oTdvTS+a8RGN6qQctBT8oA"
 
-[DEF, SF.Seq[2].Main[15]]
-%NAME = "Break"
-
-[SF.Seq[2].Main[16].TS]
-Id = "ID#:7gN74bpg8RGN0qQctBT8oA"
-
-[DEF, SF.Seq[2].Main[16]]
-%NAME = "End"
-
-[SF.Seq[2].Main[17].TS]
-Id = "ID#:9AN74bpg8RGN0qQctBT8oA"
-
-[SF.Seq[2].Main[17]]
-ItemExpr = "Enums.Light_States.Yellow"
-
-[DEF, SF.Seq[2].Main[17]]
-%NAME = "Case"
-
-[SF.Seq[2].Main[18].TS]
-Id = "ID#:me8Qd+Ng8RGN0qQctBT8oA"
-
-[DEF, SF.Seq[2].Main[18].TS]
-SData = "TYPE, SeqCallStepAdditions"
-
-[SF.Seq[2].Main[18].TS.SData]
-SeqName = "Set all colors"
-UseCurFile = True
-
-[DEF, SF.Seq[2].Main[18].TS.SData]
-ActualArgs = Arguments
-
-[DEF, SF.Seq[2].Main[18].TS.SData.ActualArgs]
-ToggleValue = "TYPE, SequenceArgument"
-LampState = "TYPE, SequenceArgument"
-
-[SF.Seq[2].Main[18].TS.SData.ActualArgs.ToggleValue]
-UseDef = False
-Expr = "Locals.ToggleValue"
-ParamType = 16
-
-[SF.Seq[2].Main[18].TS.SData.ActualArgs.LampState]
-UseDef = False
-Expr = "{False,True,False} // RD YE GN"
-ParamType = 1024
-
-[DEF, SF.Seq[2].Main[18]]
-%NAME = "Set colors - YE on"
-
-[SF.Seq[2].Main[19].TS]
-Id = "ID#:izmW9o1o8RGN16QctBT8oA"
-
-[DEF, SF.Seq[2].Main[19]]
-%NAME = "Break"
-
-[SF.Seq[2].Main[20].TS]
-Id = "ID#:PJvoKrxg8RGN0qQctBT8oA"
-
-[DEF, SF.Seq[2].Main[20]]
-%NAME = "End"
-
-[SF.Seq[2].Main[21].TS]
-Id = "ID#:+wN74bpg8RGN0qQctBT8oA"
-
-[SF.Seq[2].Main[21]]
+[SF.Seq[2].Main[15]]
 ItemExpr = "Enums.Light_States.Red"
 
-[DEF, SF.Seq[2].Main[21]]
+[DEF, SF.Seq[2].Main[15]]
 %NAME = "Case"
 
-[SF.Seq[2].Main[22].TS]
-Id = "ID#:aOEAquNg8RGN0qQctBT8oA"
+[SF.Seq[2].Main[16].TS]
+Id = "ID#:ojdvTS+a8RGN6qQctBT8oA"
 
-[DEF, SF.Seq[2].Main[22].TS]
+[DEF, SF.Seq[2].Main[16]]
+%NAME = "For these states - set lights only once"
+
+[SF.Seq[2].Main[17].TS]
+Id = "ID#:ozdvTS+a8RGN6qQctBT8oA"
+
+[SF.Seq[2].Main[17]]
+ConditionExpr = "StationGlobals.Automation.SystemControl.Previous_Light_State == StationGlobals.Automation.SystemControl.Light_State"
+
+[DEF, SF.Seq[2].Main[17]]
+%NAME = "If"
+
+[SF.Seq[2].Main[18].TS]
+Id = "ID#:pDdvTS+a8RGN6qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[18]]
+%NAME = "Don't do anything, light is already set"
+
+[SF.Seq[2].Main[19].TS]
+Id = "ID#:pTdvTS+a8RGN6qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[19]]
+%NAME = "Else"
+
+[SF.Seq[2].Main[20].TS]
+Id = "ID#:sDdvTS+a8RGN6qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[20].TS]
 SData = "TYPE, SeqCallStepAdditions"
 
-[SF.Seq[2].Main[22].TS.SData]
+[SF.Seq[2].Main[20].TS.SData]
 SeqName = "Set all colors"
 UseCurFile = True
 
-[DEF, SF.Seq[2].Main[22].TS.SData]
+[DEF, SF.Seq[2].Main[20].TS.SData]
 ActualArgs = Arguments
 
-[DEF, SF.Seq[2].Main[22].TS.SData.ActualArgs]
+[DEF, SF.Seq[2].Main[20].TS.SData.ActualArgs]
 ToggleValue = "TYPE, SequenceArgument"
 LampState = "TYPE, SequenceArgument"
 
-[SF.Seq[2].Main[22].TS.SData.ActualArgs.ToggleValue]
+[SF.Seq[2].Main[20].TS.SData.ActualArgs.ToggleValue]
 UseDef = False
 Expr = "Locals.ToggleValue"
 ParamType = 16
 
-[SF.Seq[2].Main[22].TS.SData.ActualArgs.LampState]
+[SF.Seq[2].Main[20].TS.SData.ActualArgs.LampState]
 UseDef = False
 Expr = "{True,False,False} // RD YE GN"
 ParamType = 1024
 
-[DEF, SF.Seq[2].Main[22]]
+[DEF, SF.Seq[2].Main[20]]
 %NAME = "Set colors - RD on"
 
+[SF.Seq[2].Main[21].TS]
+Id = "ID#:sTdvTS+a8RGN6qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[21]]
+%NAME = "Break"
+
+[SF.Seq[2].Main[22].TS]
+Id = "ID#:tzdvTS+a8RGN6qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[22]]
+%NAME = "End"
+
 [SF.Seq[2].Main[23].TS]
-Id = "ID#:jDmW9o1o8RGN16QctBT8oA"
+Id = "ID#:uDdvTS+a8RGN6qQctBT8oA"
 
 [DEF, SF.Seq[2].Main[23]]
 %NAME = "Break"
 
 [SF.Seq[2].Main[24].TS]
-Id = "ID#:H+AzP7xg8RGN0qQctBT8oA"
+Id = "ID#:ujdvTS+a8RGN6qQctBT8oA"
 
 [DEF, SF.Seq[2].Main[24]]
 %NAME = "End"
 
 [SF.Seq[2].Main[25].TS]
-Id = "ID#:AgR74bpg8RGN0qQctBT8oA"
+Id = "ID#:uaRYJC+a8RGN6qQctBT8oA"
 
 [SF.Seq[2].Main[25]]
-ItemExpr = "Enums.Light_States.All"
+ItemExpr = "Enums.Light_States.Yellow"
 
 [DEF, SF.Seq[2].Main[25]]
 %NAME = "Case"
 
 [SF.Seq[2].Main[26].TS]
-Id = "ID#:s4XTYeNg8RGN0qQctBT8oA"
+Id = "ID#:uqRYJC+a8RGN6qQctBT8oA"
 
-[DEF, SF.Seq[2].Main[26].TS]
+[DEF, SF.Seq[2].Main[26]]
+%NAME = "For these states - set lights only once"
+
+[SF.Seq[2].Main[27].TS]
+Id = "ID#:u6RYJC+a8RGN6qQctBT8oA"
+
+[SF.Seq[2].Main[27]]
+ConditionExpr = "StationGlobals.Automation.SystemControl.Previous_Light_State == StationGlobals.Automation.SystemControl.Light_State"
+
+[DEF, SF.Seq[2].Main[27]]
+%NAME = "If"
+
+[SF.Seq[2].Main[28].TS]
+Id = "ID#:vKRYJC+a8RGN6qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[28]]
+%NAME = "Don't do anything, light is already set"
+
+[SF.Seq[2].Main[29].TS]
+Id = "ID#:vaRYJC+a8RGN6qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[29]]
+%NAME = "Else"
+
+[SF.Seq[2].Main[30].TS]
+Id = "ID#:xKRYJC+a8RGN6qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[30].TS]
 SData = "TYPE, SeqCallStepAdditions"
 
-[SF.Seq[2].Main[26].TS.SData]
+[SF.Seq[2].Main[30].TS.SData]
 SeqName = "Set all colors"
 UseCurFile = True
 
-[DEF, SF.Seq[2].Main[26].TS.SData]
+[DEF, SF.Seq[2].Main[30].TS.SData]
 ActualArgs = Arguments
 
-[DEF, SF.Seq[2].Main[26].TS.SData.ActualArgs]
+[DEF, SF.Seq[2].Main[30].TS.SData.ActualArgs]
 ToggleValue = "TYPE, SequenceArgument"
 LampState = "TYPE, SequenceArgument"
 
-[SF.Seq[2].Main[26].TS.SData.ActualArgs.ToggleValue]
+[SF.Seq[2].Main[30].TS.SData.ActualArgs.ToggleValue]
 UseDef = False
 Expr = "Locals.ToggleValue"
 ParamType = 16
 
-[SF.Seq[2].Main[26].TS.SData.ActualArgs.LampState]
+[SF.Seq[2].Main[30].TS.SData.ActualArgs.LampState]
 UseDef = False
-Expr = "{True,True,True} // RD YE GN"
+Expr = "{False,True,False} // RD YE GN"
 ParamType = 1024
 
-[DEF, SF.Seq[2].Main[26]]
-%NAME = "Set colors - All on"
-
-[SF.Seq[2].Main[27].TS]
-Id = "ID#:37qu/I1o8RGN16QctBT8oA"
-
-[DEF, SF.Seq[2].Main[27]]
-%NAME = "Break"
-
-[SF.Seq[2].Main[28].TS]
-Id = "ID#:Ou3aT7xg8RGN0qQctBT8oA"
-
-[DEF, SF.Seq[2].Main[28]]
-%NAME = "End"
-
-[SF.Seq[2].Main[29].TS]
-Id = "ID#:9QN74bpg8RGN0qQctBT8oA"
-
-[DEF, SF.Seq[2].Main[29]]
-%NAME = "End"
-
-[SF.Seq[2].Main[30].TS]
-Id = "ID#:gcGxCJBo8RGN16QctBT8oA"
-
 [DEF, SF.Seq[2].Main[30]]
-%NAME = "Break"
+%NAME = "Set colors - YE on"
 
 [SF.Seq[2].Main[31].TS]
-Id = "ID#:ifH5/o9o8RGN16QctBT8oA"
+Id = "ID#:0KRYJC+a8RGN6qQctBT8oA"
 
 [DEF, SF.Seq[2].Main[31]]
-%NAME = "End"
+%NAME = "Break"
 
 [SF.Seq[2].Main[32].TS]
-Id = "ID#:vx0OlZBo8RGN16QctBT8oA"
+Id = "ID#:0aRYJC+a8RGN6qQctBT8oA"
 
 [DEF, SF.Seq[2].Main[32]]
 %NAME = "End"
 
 [SF.Seq[2].Main[33].TS]
-Id = "ID#:CQR74bpg8RGN0qQctBT8oA"
-
-[SF.Seq[2].Main[33]]
-ItemExpr = "Enums.Light_States.Green_Blink_Slow"
+Id = "ID#:0qRYJC+a8RGN6qQctBT8oA"
 
 [DEF, SF.Seq[2].Main[33]]
-%NAME = "Case"
+%NAME = "End"
 
 [SF.Seq[2].Main[34].TS]
-Id = "ID#:cj2/9rxg8RGN0qQctBT8oA"
+Id = "ID#:vVVYWS+a8RGN6qQctBT8oA"
 
 [SF.Seq[2].Main[34]]
-ConditionExpr = "StationGlobals.Automation.SystemControl.Previous_Light_State == StationGlobals.Automation.SystemControl.Light_State"
+ItemExpr = "Enums.Light_States.Green"
 
 [DEF, SF.Seq[2].Main[34]]
-%NAME = "If"
+%NAME = "Case"
 
 [SF.Seq[2].Main[35].TS]
-Id = "ID#:cz2/9rxg8RGN0qQctBT8oA"
+Id = "ID#:vlVYWS+a8RGN6qQctBT8oA"
 
 [DEF, SF.Seq[2].Main[35]]
-%NAME = "Other lights are set, only toggle wanted light"
+%NAME = "For these states - set lights only once"
 
 [SF.Seq[2].Main[36].TS]
-Id = "ID#:OjVPsrxg8RGN0qQctBT8oA"
+Id = "ID#:v1VYWS+a8RGN6qQctBT8oA"
 
 [SF.Seq[2].Main[36]]
-ConditionExpr = "Locals.Counter == Locals.Slow"
+ConditionExpr = "StationGlobals.Automation.SystemControl.Previous_Light_State == StationGlobals.Automation.SystemControl.Light_State"
 
 [DEF, SF.Seq[2].Main[36]]
 %NAME = "If"
 
 [SF.Seq[2].Main[37].TS]
-Id = "ID#:F5BT2rxg8RGN0qQctBT8oA"
-PostExpr = "Locals.Counter = 0"
+Id = "ID#:wFVYWS+a8RGN6qQctBT8oA"
 
 [DEF, SF.Seq[2].Main[37]]
-%NAME = "Reset Counter"
+%NAME = "Don't do anything, light is already set"
 
 [SF.Seq[2].Main[38].TS]
-Id = "ID#:jzeQ5eFg8RGN0qQctBT8oA"
-
-[DEF, SF.Seq[2].Main[38].TS]
-SData = "TYPE, FlexGStepAdditions"
-
-[SF.Seq[2].Main[38].TS.SData.ViCall]
-ProjectPath = "..\\..\\LabView\\nexteer.lvproj"
-VIPath = "My Computer\\DIO\\DIO.lvlib\\Set Output.vi"
-Namespace = "DIO.lvlib"
-TDChecksum = -1657651955
-%HI: Parms = [5]
-
-[DEF, SF.Seq[2].Main[38].TS.SData.ViCall.Parms]
-%[0] = "TYPE, VIParameter"
-%[1] = "TYPE, VIParameter"
-%[2] = "TYPE, VIParameter"
-%[3] = "TYPE, VIParameter"
-%[4] = "TYPE, VIParameter"
-%[5] = "TYPE, VIParameter"
-
-[SF.Seq[2].Main[38].TS.SData.ViCall.Parms[0]]
-Label = "task in"
-ArgVal = "StationGlobals.Automation.Lamp.GN.Reference"
-Type = 0
-WireRequirement = 1
-NumType = 4
-DisplayType = "Number (I32)"
-ConnectorNumber = 11
-
-[DEF, SF.Seq[2].Main[38].TS.SData.ViCall.Parms[0]]
-%NAME = "task in"
-
-[SF.Seq[2].Main[38].TS.SData.ViCall.Parms[1]]
-Label = "portBit"
-ArgVal = "StationGlobals.Automation.Lamp.GN.Channel"
-Type = 0
-WireRequirement = 1
-NumType = 4
-DisplayType = "Number (I32)"
-ConnectorNumber = 10
-
-[DEF, SF.Seq[2].Main[38].TS.SData.ViCall.Parms[1]]
-%NAME = "portBit"
-
-[SF.Seq[2].Main[38].TS.SData.ViCall.Parms[2]]
-Label = "State"
-ArgVal = "Locals.ToggleValue"
-Type = 2
-WireRequirement = 1
-DisplayType = "Boolean"
-ConnectorNumber = 9
-
-[DEF, SF.Seq[2].Main[38].TS.SData.ViCall.Parms[2]]
-%NAME = "State"
-
-[SF.Seq[2].Main[38].TS.SData.ViCall.Parms[3]]
-Label = "error in "
-Type = 3
-WireRequirement = 1
-DisplayType = "Container"
-UseDefaultValues = True
-%HI: ArrayClusterEls = [2]
-ConnectorNumber = 8
-
-[DEF, SF.Seq[2].Main[38].TS.SData.ViCall.Parms[3].ArrayClusterEls]
-%[0] = "TYPE, VIParameterElement"
-%[1] = "TYPE, VIParameterElement"
-%[2] = "TYPE, VIParameterElement"
-
-[SF.Seq[2].Main[38].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
-Label = "status"
-ArgVal = "False"
-Type = 2
-WireRequirement = 1
-DisplayType = "Boolean"
-UseDefaultValues = True
-
-[DEF, SF.Seq[2].Main[38].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
-%NAME = "status"
-
-[SF.Seq[2].Main[38].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
-Label = "code"
-ArgVal = "0"
-Type = 0
-WireRequirement = 1
-NumType = 4
-DisplayType = "Number (I32)"
-UseDefaultValues = True
-
-[DEF, SF.Seq[2].Main[38].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
-%NAME = "code"
-
-[SF.Seq[2].Main[38].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
-Label = "source"
-ArgVal = "\"\""
-Type = 1
-WireRequirement = 1
-DisplayType = "ASCII String"
-UseDefaultValues = True
-
-[DEF, SF.Seq[2].Main[38].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
-%NAME = "source"
-
-[DEF, SF.Seq[2].Main[38].TS.SData.ViCall.Parms[3]]
-%NAME = "error in "
-
-[SF.Seq[2].Main[38].TS.SData.ViCall.Parms[4]]
-Label = "task out"
-ArgVal = "StationGlobals.Automation.Lamp.GN.Reference"
-Type = 0
-WireRequirement = 1
-NumType = 4
-DisplayType = "Number (I32)"
-Direction = 1
-ConnectorNumber = 3
-
-[DEF, SF.Seq[2].Main[38].TS.SData.ViCall.Parms[4]]
-%NAME = "task out"
-
-[SF.Seq[2].Main[38].TS.SData.ViCall.Parms[5]]
-Label = "error out"
-ArgVal = "Step.Result.Error"
-Type = 3
-WireRequirement = 1
-DisplayType = "Container"
-%HI: ArrayClusterEls = [2]
-Direction = 1
-ConnectorNumber = 0
-LegacyClusterType = 2
-
-[DEF, SF.Seq[2].Main[38].TS.SData.ViCall.Parms[5].ArrayClusterEls]
-%[0] = "TYPE, VIParameterElement"
-%[1] = "TYPE, VIParameterElement"
-%[2] = "TYPE, VIParameterElement"
-
-[SF.Seq[2].Main[38].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
-Label = "status"
-ArgVal = "Step.Result.Error.Occurred"
-Type = 2
-WireRequirement = 1
-DisplayType = "Boolean"
-
-[DEF, SF.Seq[2].Main[38].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
-%NAME = "status"
-
-[SF.Seq[2].Main[38].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
-Label = "code"
-ArgVal = "Step.Result.Error.Code"
-Type = 0
-WireRequirement = 1
-NumType = 4
-DisplayType = "Number (I32)"
-
-[DEF, SF.Seq[2].Main[38].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
-%NAME = "code"
-
-[SF.Seq[2].Main[38].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
-Label = "source"
-ArgVal = "Step.Result.Error.Msg"
-Type = 1
-WireRequirement = 1
-DisplayType = "ASCII String"
-
-[DEF, SF.Seq[2].Main[38].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
-%NAME = "source"
-
-[DEF, SF.Seq[2].Main[38].TS.SData.ViCall.Parms[5]]
-%NAME = "error out"
+Id = "ID#:wVVYWS+a8RGN6qQctBT8oA"
 
 [DEF, SF.Seq[2].Main[38]]
-%NAME = "Set Green signal"
-
-[SF.Seq[2].Main[39].TS]
-Id = "ID#:rDfrV71g8RGN0qQctBT8oA"
-PostExpr = "Locals.ToggleValue = !Locals.ToggleValue"
-
-[DEF, SF.Seq[2].Main[39]]
-%NAME = "Set toggle value"
-
-[SF.Seq[2].Main[40].TS]
-Id = "ID#:FZBT2rxg8RGN0qQctBT8oA"
-
-[DEF, SF.Seq[2].Main[40]]
 %NAME = "Else"
 
+[SF.Seq[2].Main[39].TS]
+Id = "ID#:xFVYWS+a8RGN6qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[39].TS]
+SData = "TYPE, SeqCallStepAdditions"
+
+[SF.Seq[2].Main[39].TS.SData]
+SeqName = "Set all colors"
+UseCurFile = True
+
+[DEF, SF.Seq[2].Main[39].TS.SData]
+ActualArgs = Arguments
+
+[DEF, SF.Seq[2].Main[39].TS.SData.ActualArgs]
+ToggleValue = "TYPE, SequenceArgument"
+LampState = "TYPE, SequenceArgument"
+
+[SF.Seq[2].Main[39].TS.SData.ActualArgs.ToggleValue]
+UseDef = False
+Expr = "Locals.ToggleValue"
+ParamType = 16
+
+[SF.Seq[2].Main[39].TS.SData.ActualArgs.LampState]
+UseDef = False
+Expr = "{False,False,True} // RD YE GN"
+ParamType = 1024
+
+[DEF, SF.Seq[2].Main[39]]
+%NAME = "Set colors - GN on"
+
+[SF.Seq[2].Main[40].TS]
+Id = "ID#:xVVYWS+a8RGN6qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[40]]
+%NAME = "Break"
+
 [SF.Seq[2].Main[41].TS]
-Id = "ID#:5rdC5bxg8RGN0qQctBT8oA"
-PostExpr = "Locals.Counter ++"
+Id = "ID#:01VYWS+a8RGN6qQctBT8oA"
 
 [DEF, SF.Seq[2].Main[41]]
-%NAME = "Increase Counter"
+%NAME = "End"
 
 [SF.Seq[2].Main[42].TS]
-Id = "ID#:PDVPsrxg8RGN0qQctBT8oA"
+Id = "ID#:1lVYWS+a8RGN6qQctBT8oA"
 
 [DEF, SF.Seq[2].Main[42]]
 %NAME = "End"
 
 [SF.Seq[2].Main[43].TS]
-Id = "ID#:dD2/9rxg8RGN0qQctBT8oA"
+Id = "ID#:CQR74bpg8RGN0qQctBT8oA"
+
+[SF.Seq[2].Main[43]]
+ItemExpr = "Enums.Light_States.Green_Blink_Slow"
 
 [DEF, SF.Seq[2].Main[43]]
-%NAME = "Else"
+%NAME = "Case"
 
 [SF.Seq[2].Main[44].TS]
-Id = "ID#:DNdw8+Jg8RGN0qQctBT8oA"
+Id = "ID#:cj2/9rxg8RGN0qQctBT8oA"
 
-[DEF, SF.Seq[2].Main[44].TS]
-SData = "TYPE, SeqCallStepAdditions"
-
-[SF.Seq[2].Main[44].TS.SData]
-SeqName = "Set all colors"
-UseCurFile = True
-
-[DEF, SF.Seq[2].Main[44].TS.SData]
-ActualArgs = Arguments
-
-[DEF, SF.Seq[2].Main[44].TS.SData.ActualArgs]
-ToggleValue = "TYPE, SequenceArgument"
-LampState = "TYPE, SequenceArgument"
-
-[SF.Seq[2].Main[44].TS.SData.ActualArgs.ToggleValue]
-UseDef = False
-Expr = "Locals.ToggleValue"
-ParamType = 16
-
-[SF.Seq[2].Main[44].TS.SData.ActualArgs.LampState]
-UseDef = False
-Expr = "{False,False,True} // RD YE GN"
-ParamType = 1024
+[SF.Seq[2].Main[44]]
+ConditionExpr = "StationGlobals.Automation.SystemControl.Previous_Light_State == StationGlobals.Automation.SystemControl.Light_State"
 
 [DEF, SF.Seq[2].Main[44]]
-%NAME = "Set colors"
+%NAME = "If"
 
 [SF.Seq[2].Main[45].TS]
-Id = "ID#:ffnEko5o8RGN16QctBT8oA"
-PostExpr = "Locals.Counter = 0"
+Id = "ID#:cz2/9rxg8RGN0qQctBT8oA"
 
 [DEF, SF.Seq[2].Main[45]]
-%NAME = "Reset Counter"
+%NAME = "Other lights are set, only toggle wanted light"
 
 [SF.Seq[2].Main[46].TS]
-Id = "ID#:ej2/9rxg8RGN0qQctBT8oA"
+Id = "ID#:OjVPsrxg8RGN0qQctBT8oA"
+
+[SF.Seq[2].Main[46]]
+ConditionExpr = "Locals.Counter == Locals.Slow"
 
 [DEF, SF.Seq[2].Main[46]]
-%NAME = "End"
+%NAME = "If"
 
 [SF.Seq[2].Main[47].TS]
-Id = "ID#:4Lqu/I1o8RGN16QctBT8oA"
+Id = "ID#:F5BT2rxg8RGN0qQctBT8oA"
+PostExpr = "Locals.Counter = 0"
 
 [DEF, SF.Seq[2].Main[47]]
-%NAME = "Break"
+%NAME = "Reset Counter"
 
 [SF.Seq[2].Main[48].TS]
-Id = "ID#:CgR74bpg8RGN0qQctBT8oA"
+Id = "ID#:jzeQ5eFg8RGN0qQctBT8oA"
 
-[DEF, SF.Seq[2].Main[48]]
-%NAME = "End"
-
-[SF.Seq[2].Main[49].TS]
-Id = "ID#:EAR74bpg8RGN0qQctBT8oA"
-
-[SF.Seq[2].Main[49]]
-ItemExpr = "Enums.Light_States.Yellow_Blink_Slow"
-
-[DEF, SF.Seq[2].Main[49]]
-%NAME = "Case"
-
-[SF.Seq[2].Main[50].TS]
-Id = "ID#:BRCot+Bg8RGN0qQctBT8oA"
-
-[SF.Seq[2].Main[50]]
-ConditionExpr = "StationGlobals.Automation.SystemControl.Previous_Light_State == StationGlobals.Automation.SystemControl.Light_State"
-
-[DEF, SF.Seq[2].Main[50]]
-%NAME = "If"
-
-[SF.Seq[2].Main[51].TS]
-Id = "ID#:BhCot+Bg8RGN0qQctBT8oA"
-
-[DEF, SF.Seq[2].Main[51]]
-%NAME = "Other lights are set, only toggle wanted light"
-
-[SF.Seq[2].Main[52].TS]
-Id = "ID#:BxCot+Bg8RGN0qQctBT8oA"
-
-[SF.Seq[2].Main[52]]
-ConditionExpr = "Locals.Counter == Locals.Slow"
-
-[DEF, SF.Seq[2].Main[52]]
-%NAME = "If"
-
-[SF.Seq[2].Main[53].TS]
-Id = "ID#:CBCot+Bg8RGN0qQctBT8oA"
-PostExpr = "Locals.Counter = 0"
-
-[DEF, SF.Seq[2].Main[53]]
-%NAME = "Reset Counter"
-
-[SF.Seq[2].Main[54].TS]
-Id = "ID#:bahj3eFg8RGN0qQctBT8oA"
-
-[DEF, SF.Seq[2].Main[54].TS]
+[DEF, SF.Seq[2].Main[48].TS]
 SData = "TYPE, FlexGStepAdditions"
 
-[SF.Seq[2].Main[54].TS.SData.ViCall]
+[SF.Seq[2].Main[48].TS.SData.ViCall]
 ProjectPath = "..\\..\\LabView\\nexteer.lvproj"
 VIPath = "My Computer\\DIO\\DIO.lvlib\\Set Output.vi"
 Namespace = "DIO.lvlib"
 TDChecksum = -1657651955
 %HI: Parms = [5]
 
-[DEF, SF.Seq[2].Main[54].TS.SData.ViCall.Parms]
+[DEF, SF.Seq[2].Main[48].TS.SData.ViCall.Parms]
 %[0] = "TYPE, VIParameter"
 %[1] = "TYPE, VIParameter"
 %[2] = "TYPE, VIParameter"
@@ -8442,607 +8226,7 @@ TDChecksum = -1657651955
 %[4] = "TYPE, VIParameter"
 %[5] = "TYPE, VIParameter"
 
-[SF.Seq[2].Main[54].TS.SData.ViCall.Parms[0]]
-Label = "task in"
-ArgVal = "StationGlobals.Automation.Lamp.YE.Reference"
-Type = 0
-WireRequirement = 1
-NumType = 4
-DisplayType = "Number (I32)"
-ConnectorNumber = 11
-
-[DEF, SF.Seq[2].Main[54].TS.SData.ViCall.Parms[0]]
-%NAME = "task in"
-
-[SF.Seq[2].Main[54].TS.SData.ViCall.Parms[1]]
-Label = "portBit"
-ArgVal = "StationGlobals.Automation.Lamp.YE.Channel"
-Type = 0
-WireRequirement = 1
-NumType = 4
-DisplayType = "Number (I32)"
-ConnectorNumber = 10
-
-[DEF, SF.Seq[2].Main[54].TS.SData.ViCall.Parms[1]]
-%NAME = "portBit"
-
-[SF.Seq[2].Main[54].TS.SData.ViCall.Parms[2]]
-Label = "State"
-ArgVal = "Locals.ToggleValue"
-Type = 2
-WireRequirement = 1
-DisplayType = "Boolean"
-ConnectorNumber = 9
-
-[DEF, SF.Seq[2].Main[54].TS.SData.ViCall.Parms[2]]
-%NAME = "State"
-
-[SF.Seq[2].Main[54].TS.SData.ViCall.Parms[3]]
-Label = "error in "
-Type = 3
-WireRequirement = 1
-DisplayType = "Container"
-UseDefaultValues = True
-%HI: ArrayClusterEls = [2]
-ConnectorNumber = 8
-
-[DEF, SF.Seq[2].Main[54].TS.SData.ViCall.Parms[3].ArrayClusterEls]
-%[0] = "TYPE, VIParameterElement"
-%[1] = "TYPE, VIParameterElement"
-%[2] = "TYPE, VIParameterElement"
-
-[SF.Seq[2].Main[54].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
-Label = "status"
-ArgVal = "False"
-Type = 2
-WireRequirement = 1
-DisplayType = "Boolean"
-UseDefaultValues = True
-
-[DEF, SF.Seq[2].Main[54].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
-%NAME = "status"
-
-[SF.Seq[2].Main[54].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
-Label = "code"
-ArgVal = "0"
-Type = 0
-WireRequirement = 1
-NumType = 4
-DisplayType = "Number (I32)"
-UseDefaultValues = True
-
-[DEF, SF.Seq[2].Main[54].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
-%NAME = "code"
-
-[SF.Seq[2].Main[54].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
-Label = "source"
-ArgVal = "\"\""
-Type = 1
-WireRequirement = 1
-DisplayType = "ASCII String"
-UseDefaultValues = True
-
-[DEF, SF.Seq[2].Main[54].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
-%NAME = "source"
-
-[DEF, SF.Seq[2].Main[54].TS.SData.ViCall.Parms[3]]
-%NAME = "error in "
-
-[SF.Seq[2].Main[54].TS.SData.ViCall.Parms[4]]
-Label = "task out"
-ArgVal = "StationGlobals.Automation.Lamp.YE.Reference"
-Type = 0
-WireRequirement = 1
-NumType = 4
-DisplayType = "Number (I32)"
-Direction = 1
-ConnectorNumber = 3
-
-[DEF, SF.Seq[2].Main[54].TS.SData.ViCall.Parms[4]]
-%NAME = "task out"
-
-[SF.Seq[2].Main[54].TS.SData.ViCall.Parms[5]]
-Label = "error out"
-ArgVal = "Step.Result.Error"
-Type = 3
-WireRequirement = 1
-DisplayType = "Container"
-%HI: ArrayClusterEls = [2]
-Direction = 1
-ConnectorNumber = 0
-LegacyClusterType = 2
-
-[DEF, SF.Seq[2].Main[54].TS.SData.ViCall.Parms[5].ArrayClusterEls]
-%[0] = "TYPE, VIParameterElement"
-%[1] = "TYPE, VIParameterElement"
-%[2] = "TYPE, VIParameterElement"
-
-[SF.Seq[2].Main[54].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
-Label = "status"
-ArgVal = "Step.Result.Error.Occurred"
-Type = 2
-WireRequirement = 1
-DisplayType = "Boolean"
-
-[DEF, SF.Seq[2].Main[54].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
-%NAME = "status"
-
-[SF.Seq[2].Main[54].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
-Label = "code"
-ArgVal = "Step.Result.Error.Code"
-Type = 0
-WireRequirement = 1
-NumType = 4
-DisplayType = "Number (I32)"
-
-[DEF, SF.Seq[2].Main[54].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
-%NAME = "code"
-
-[SF.Seq[2].Main[54].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
-Label = "source"
-ArgVal = "Step.Result.Error.Msg"
-Type = 1
-WireRequirement = 1
-DisplayType = "ASCII String"
-
-[DEF, SF.Seq[2].Main[54].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
-%NAME = "source"
-
-[DEF, SF.Seq[2].Main[54].TS.SData.ViCall.Parms[5]]
-%NAME = "error out"
-
-[DEF, SF.Seq[2].Main[54]]
-%NAME = "Set Yellow signal"
-
-[SF.Seq[2].Main[55].TS]
-Id = "ID#:ChCot+Bg8RGN0qQctBT8oA"
-PostExpr = "Locals.ToggleValue = !Locals.ToggleValue"
-
-[DEF, SF.Seq[2].Main[55]]
-%NAME = "Set toggle value"
-
-[SF.Seq[2].Main[56].TS]
-Id = "ID#:CxCot+Bg8RGN0qQctBT8oA"
-
-[DEF, SF.Seq[2].Main[56]]
-%NAME = "Else"
-
-[SF.Seq[2].Main[57].TS]
-Id = "ID#:DBCot+Bg8RGN0qQctBT8oA"
-PostExpr = "Locals.Counter ++"
-
-[DEF, SF.Seq[2].Main[57]]
-%NAME = "Increase Counter"
-
-[SF.Seq[2].Main[58].TS]
-Id = "ID#:DRCot+Bg8RGN0qQctBT8oA"
-
-[DEF, SF.Seq[2].Main[58]]
-%NAME = "End"
-
-[SF.Seq[2].Main[59].TS]
-Id = "ID#:DhCot+Bg8RGN0qQctBT8oA"
-
-[DEF, SF.Seq[2].Main[59]]
-%NAME = "Else"
-
-[SF.Seq[2].Main[60].TS]
-Id = "ID#:B9dw8+Jg8RGN0qQctBT8oA"
-
-[DEF, SF.Seq[2].Main[60].TS]
-SData = "TYPE, SeqCallStepAdditions"
-
-[SF.Seq[2].Main[60].TS.SData]
-SeqName = "Set all colors"
-UseCurFile = True
-
-[DEF, SF.Seq[2].Main[60].TS.SData]
-ActualArgs = Arguments
-
-[DEF, SF.Seq[2].Main[60].TS.SData.ActualArgs]
-ToggleValue = "TYPE, SequenceArgument"
-LampState = "TYPE, SequenceArgument"
-
-[SF.Seq[2].Main[60].TS.SData.ActualArgs.ToggleValue]
-UseDef = False
-Expr = "Locals.ToggleValue"
-ParamType = 16
-
-[SF.Seq[2].Main[60].TS.SData.ActualArgs.LampState]
-UseDef = False
-Expr = "{False,True,False} // RD YE GN"
-ParamType = 1024
-
-[DEF, SF.Seq[2].Main[60]]
-%NAME = "Set colors"
-
-[SF.Seq[2].Main[61].TS]
-Id = "ID#:fvnEko5o8RGN16QctBT8oA"
-PostExpr = "Locals.Counter = 0"
-
-[DEF, SF.Seq[2].Main[61]]
-%NAME = "Reset Counter"
-
-[SF.Seq[2].Main[62].TS]
-Id = "ID#:FRCot+Bg8RGN0qQctBT8oA"
-
-[DEF, SF.Seq[2].Main[62]]
-%NAME = "End"
-
-[SF.Seq[2].Main[63].TS]
-Id = "ID#:4bqu/I1o8RGN16QctBT8oA"
-
-[DEF, SF.Seq[2].Main[63]]
-%NAME = "Break"
-
-[SF.Seq[2].Main[64].TS]
-Id = "ID#:EQR74bpg8RGN0qQctBT8oA"
-
-[DEF, SF.Seq[2].Main[64]]
-%NAME = "End"
-
-[SF.Seq[2].Main[65].TS]
-Id = "ID#:FwR74bpg8RGN0qQctBT8oA"
-
-[SF.Seq[2].Main[65]]
-ItemExpr = "Enums.Light_States.Red_Blink_Slow"
-
-[DEF, SF.Seq[2].Main[65]]
-%NAME = "Case"
-
-[SF.Seq[2].Main[66].TS]
-Id = "ID#:BRCot+Bg8RGN0qQctBT8oA"
-
-[SF.Seq[2].Main[66]]
-ConditionExpr = "StationGlobals.Automation.SystemControl.Previous_Light_State == StationGlobals.Automation.SystemControl.Light_State"
-
-[DEF, SF.Seq[2].Main[66]]
-%NAME = "If"
-
-[SF.Seq[2].Main[67].TS]
-Id = "ID#:BhCot+Bg8RGN0qQctBT8oA"
-
-[DEF, SF.Seq[2].Main[67]]
-%NAME = "Other lights are set, only toggle wanted light"
-
-[SF.Seq[2].Main[68].TS]
-Id = "ID#:BxCot+Bg8RGN0qQctBT8oA"
-
-[SF.Seq[2].Main[68]]
-ConditionExpr = "Locals.Counter == Locals.Slow"
-
-[DEF, SF.Seq[2].Main[68]]
-%NAME = "If"
-
-[SF.Seq[2].Main[69].TS]
-Id = "ID#:CBCot+Bg8RGN0qQctBT8oA"
-PostExpr = "Locals.Counter = 0"
-
-[DEF, SF.Seq[2].Main[69]]
-%NAME = "Reset Counter"
-
-[SF.Seq[2].Main[70].TS]
-Id = "ID#:smd20uFg8RGN0qQctBT8oA"
-
-[DEF, SF.Seq[2].Main[70].TS]
-SData = "TYPE, FlexGStepAdditions"
-
-[SF.Seq[2].Main[70].TS.SData.ViCall]
-ProjectPath = "..\\..\\LabView\\nexteer.lvproj"
-VIPath = "My Computer\\DIO\\DIO.lvlib\\Set Output.vi"
-Namespace = "DIO.lvlib"
-TDChecksum = -1657651955
-%HI: Parms = [5]
-
-[DEF, SF.Seq[2].Main[70].TS.SData.ViCall.Parms]
-%[0] = "TYPE, VIParameter"
-%[1] = "TYPE, VIParameter"
-%[2] = "TYPE, VIParameter"
-%[3] = "TYPE, VIParameter"
-%[4] = "TYPE, VIParameter"
-%[5] = "TYPE, VIParameter"
-
-[SF.Seq[2].Main[70].TS.SData.ViCall.Parms[0]]
-Label = "task in"
-ArgVal = "StationGlobals.Automation.Lamp.RD.Reference"
-Type = 0
-WireRequirement = 1
-NumType = 4
-DisplayType = "Number (I32)"
-ConnectorNumber = 11
-
-[DEF, SF.Seq[2].Main[70].TS.SData.ViCall.Parms[0]]
-%NAME = "task in"
-
-[SF.Seq[2].Main[70].TS.SData.ViCall.Parms[1]]
-Label = "portBit"
-ArgVal = "StationGlobals.Automation.Lamp.RD.Channel"
-Type = 0
-WireRequirement = 1
-NumType = 4
-DisplayType = "Number (I32)"
-ConnectorNumber = 10
-
-[DEF, SF.Seq[2].Main[70].TS.SData.ViCall.Parms[1]]
-%NAME = "portBit"
-
-[SF.Seq[2].Main[70].TS.SData.ViCall.Parms[2]]
-Label = "State"
-ArgVal = "Locals.ToggleValue"
-Type = 2
-WireRequirement = 1
-DisplayType = "Boolean"
-ConnectorNumber = 9
-
-[DEF, SF.Seq[2].Main[70].TS.SData.ViCall.Parms[2]]
-%NAME = "State"
-
-[SF.Seq[2].Main[70].TS.SData.ViCall.Parms[3]]
-Label = "error in "
-Type = 3
-WireRequirement = 1
-DisplayType = "Container"
-UseDefaultValues = True
-%HI: ArrayClusterEls = [2]
-ConnectorNumber = 8
-
-[DEF, SF.Seq[2].Main[70].TS.SData.ViCall.Parms[3].ArrayClusterEls]
-%[0] = "TYPE, VIParameterElement"
-%[1] = "TYPE, VIParameterElement"
-%[2] = "TYPE, VIParameterElement"
-
-[SF.Seq[2].Main[70].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
-Label = "status"
-ArgVal = "False"
-Type = 2
-WireRequirement = 1
-DisplayType = "Boolean"
-UseDefaultValues = True
-
-[DEF, SF.Seq[2].Main[70].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
-%NAME = "status"
-
-[SF.Seq[2].Main[70].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
-Label = "code"
-ArgVal = "0"
-Type = 0
-WireRequirement = 1
-NumType = 4
-DisplayType = "Number (I32)"
-UseDefaultValues = True
-
-[DEF, SF.Seq[2].Main[70].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
-%NAME = "code"
-
-[SF.Seq[2].Main[70].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
-Label = "source"
-ArgVal = "\"\""
-Type = 1
-WireRequirement = 1
-DisplayType = "ASCII String"
-UseDefaultValues = True
-
-[DEF, SF.Seq[2].Main[70].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
-%NAME = "source"
-
-[DEF, SF.Seq[2].Main[70].TS.SData.ViCall.Parms[3]]
-%NAME = "error in "
-
-[SF.Seq[2].Main[70].TS.SData.ViCall.Parms[4]]
-Label = "task out"
-ArgVal = "StationGlobals.Automation.Lamp.YE.Reference"
-Type = 0
-WireRequirement = 1
-NumType = 4
-DisplayType = "Number (I32)"
-Direction = 1
-ConnectorNumber = 3
-
-[DEF, SF.Seq[2].Main[70].TS.SData.ViCall.Parms[4]]
-%NAME = "task out"
-
-[SF.Seq[2].Main[70].TS.SData.ViCall.Parms[5]]
-Label = "error out"
-ArgVal = "Step.Result.Error"
-Type = 3
-WireRequirement = 1
-DisplayType = "Container"
-%HI: ArrayClusterEls = [2]
-Direction = 1
-ConnectorNumber = 0
-LegacyClusterType = 2
-
-[DEF, SF.Seq[2].Main[70].TS.SData.ViCall.Parms[5].ArrayClusterEls]
-%[0] = "TYPE, VIParameterElement"
-%[1] = "TYPE, VIParameterElement"
-%[2] = "TYPE, VIParameterElement"
-
-[SF.Seq[2].Main[70].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
-Label = "status"
-ArgVal = "Step.Result.Error.Occurred"
-Type = 2
-WireRequirement = 1
-DisplayType = "Boolean"
-
-[DEF, SF.Seq[2].Main[70].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
-%NAME = "status"
-
-[SF.Seq[2].Main[70].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
-Label = "code"
-ArgVal = "Step.Result.Error.Code"
-Type = 0
-WireRequirement = 1
-NumType = 4
-DisplayType = "Number (I32)"
-
-[DEF, SF.Seq[2].Main[70].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
-%NAME = "code"
-
-[SF.Seq[2].Main[70].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
-Label = "source"
-ArgVal = "Step.Result.Error.Msg"
-Type = 1
-WireRequirement = 1
-DisplayType = "ASCII String"
-
-[DEF, SF.Seq[2].Main[70].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
-%NAME = "source"
-
-[DEF, SF.Seq[2].Main[70].TS.SData.ViCall.Parms[5]]
-%NAME = "error out"
-
-[DEF, SF.Seq[2].Main[70]]
-%NAME = "Set Red signal"
-
-[SF.Seq[2].Main[71].TS]
-Id = "ID#:ChCot+Bg8RGN0qQctBT8oA"
-PostExpr = "Locals.ToggleValue = !Locals.ToggleValue"
-
-[DEF, SF.Seq[2].Main[71]]
-%NAME = "Set toggle value"
-
-[SF.Seq[2].Main[72].TS]
-Id = "ID#:CxCot+Bg8RGN0qQctBT8oA"
-
-[DEF, SF.Seq[2].Main[72]]
-%NAME = "Else"
-
-[SF.Seq[2].Main[73].TS]
-Id = "ID#:DBCot+Bg8RGN0qQctBT8oA"
-PostExpr = "Locals.Counter ++"
-
-[DEF, SF.Seq[2].Main[73]]
-%NAME = "Increase Counter"
-
-[SF.Seq[2].Main[74].TS]
-Id = "ID#:DRCot+Bg8RGN0qQctBT8oA"
-
-[DEF, SF.Seq[2].Main[74]]
-%NAME = "End"
-
-[SF.Seq[2].Main[75].TS]
-Id = "ID#:DhCot+Bg8RGN0qQctBT8oA"
-
-[DEF, SF.Seq[2].Main[75]]
-%NAME = "Else"
-
-[SF.Seq[2].Main[76].TS]
-Id = "ID#:rHvfhOJg8RGN0qQctBT8oA"
-
-[DEF, SF.Seq[2].Main[76].TS]
-SData = "TYPE, SeqCallStepAdditions"
-
-[SF.Seq[2].Main[76].TS.SData]
-SeqName = "Set all colors"
-UseCurFile = True
-
-[DEF, SF.Seq[2].Main[76].TS.SData]
-ActualArgs = Arguments
-
-[DEF, SF.Seq[2].Main[76].TS.SData.ActualArgs]
-ToggleValue = "TYPE, SequenceArgument"
-LampState = "TYPE, SequenceArgument"
-
-[SF.Seq[2].Main[76].TS.SData.ActualArgs.ToggleValue]
-UseDef = False
-Expr = "Locals.ToggleValue"
-ParamType = 16
-
-[SF.Seq[2].Main[76].TS.SData.ActualArgs.LampState]
-UseDef = False
-Expr = "{True,False,False} // RD YE GN"
-ParamType = 1024
-
-[DEF, SF.Seq[2].Main[76]]
-%NAME = "Set colors"
-
-[SF.Seq[2].Main[77].TS]
-Id = "ID#:f/nEko5o8RGN16QctBT8oA"
-PostExpr = "Locals.Counter = 0"
-
-[DEF, SF.Seq[2].Main[77]]
-%NAME = "Reset Counter"
-
-[SF.Seq[2].Main[78].TS]
-Id = "ID#:FRCot+Bg8RGN0qQctBT8oA"
-
-[DEF, SF.Seq[2].Main[78]]
-%NAME = "End"
-
-[SF.Seq[2].Main[79].TS]
-Id = "ID#:l0OyA45o8RGN16QctBT8oA"
-
-[DEF, SF.Seq[2].Main[79]]
-%NAME = "Break"
-
-[SF.Seq[2].Main[80].TS]
-Id = "ID#:GAR74bpg8RGN0qQctBT8oA"
-
-[DEF, SF.Seq[2].Main[80]]
-%NAME = "End"
-
-[SF.Seq[2].Main[81].TS]
-Id = "ID#:HgR74bpg8RGN0qQctBT8oA"
-
-[SF.Seq[2].Main[81]]
-ItemExpr = "Enums.Light_States.All_Blink_Slow"
-
-[DEF, SF.Seq[2].Main[81]]
-%NAME = "Case"
-
-[SF.Seq[2].Main[82].TS]
-Id = "ID#:gH2h9eNg8RGN0qQctBT8oA"
-
-[SF.Seq[2].Main[82]]
-ConditionExpr = "StationGlobals.Automation.SystemControl.Previous_Light_State == StationGlobals.Automation.SystemControl.Light_State"
-
-[DEF, SF.Seq[2].Main[82]]
-%NAME = "If"
-
-[SF.Seq[2].Main[83].TS]
-Id = "ID#:gX2h9eNg8RGN0qQctBT8oA"
-
-[DEF, SF.Seq[2].Main[83]]
-%NAME = "Other lights are set, only toggle wanted light"
-
-[SF.Seq[2].Main[84].TS]
-Id = "ID#:gn2h9eNg8RGN0qQctBT8oA"
-
-[SF.Seq[2].Main[84]]
-ConditionExpr = "Locals.Counter == Locals.Slow"
-
-[DEF, SF.Seq[2].Main[84]]
-%NAME = "If"
-
-[SF.Seq[2].Main[85].TS]
-Id = "ID#:g32h9eNg8RGN0qQctBT8oA"
-PostExpr = "Locals.Counter = 0"
-
-[DEF, SF.Seq[2].Main[85]]
-%NAME = "Reset Counter"
-
-[SF.Seq[2].Main[86].TS]
-Id = "ID#:SS2uyI5o8RGN16QctBT8oA"
-
-[DEF, SF.Seq[2].Main[86].TS]
-SData = "TYPE, FlexGStepAdditions"
-
-[SF.Seq[2].Main[86].TS.SData.ViCall]
-ProjectPath = "..\\..\\LabView\\nexteer.lvproj"
-VIPath = "My Computer\\DIO\\DIO.lvlib\\Set Output.vi"
-Namespace = "DIO.lvlib"
-TDChecksum = -1657651955
-%HI: Parms = [5]
-
-[DEF, SF.Seq[2].Main[86].TS.SData.ViCall.Parms]
-%[0] = "TYPE, VIParameter"
-%[1] = "TYPE, VIParameter"
-%[2] = "TYPE, VIParameter"
-%[3] = "TYPE, VIParameter"
-%[4] = "TYPE, VIParameter"
-%[5] = "TYPE, VIParameter"
-
-[SF.Seq[2].Main[86].TS.SData.ViCall.Parms[0]]
+[SF.Seq[2].Main[48].TS.SData.ViCall.Parms[0]]
 Label = "task in"
 ArgVal = "StationGlobals.Automation.Lamp.GN.Reference"
 Type = 0
@@ -9051,10 +8235,10 @@ NumType = 4
 DisplayType = "Number (I32)"
 ConnectorNumber = 11
 
-[DEF, SF.Seq[2].Main[86].TS.SData.ViCall.Parms[0]]
+[DEF, SF.Seq[2].Main[48].TS.SData.ViCall.Parms[0]]
 %NAME = "task in"
 
-[SF.Seq[2].Main[86].TS.SData.ViCall.Parms[1]]
+[SF.Seq[2].Main[48].TS.SData.ViCall.Parms[1]]
 Label = "portBit"
 ArgVal = "StationGlobals.Automation.Lamp.GN.Channel"
 Type = 0
@@ -9063,10 +8247,10 @@ NumType = 4
 DisplayType = "Number (I32)"
 ConnectorNumber = 10
 
-[DEF, SF.Seq[2].Main[86].TS.SData.ViCall.Parms[1]]
+[DEF, SF.Seq[2].Main[48].TS.SData.ViCall.Parms[1]]
 %NAME = "portBit"
 
-[SF.Seq[2].Main[86].TS.SData.ViCall.Parms[2]]
+[SF.Seq[2].Main[48].TS.SData.ViCall.Parms[2]]
 Label = "State"
 ArgVal = "Locals.ToggleValue"
 Type = 2
@@ -9074,10 +8258,10 @@ WireRequirement = 1
 DisplayType = "Boolean"
 ConnectorNumber = 9
 
-[DEF, SF.Seq[2].Main[86].TS.SData.ViCall.Parms[2]]
+[DEF, SF.Seq[2].Main[48].TS.SData.ViCall.Parms[2]]
 %NAME = "State"
 
-[SF.Seq[2].Main[86].TS.SData.ViCall.Parms[3]]
+[SF.Seq[2].Main[48].TS.SData.ViCall.Parms[3]]
 Label = "error in "
 Type = 3
 WireRequirement = 1
@@ -9086,12 +8270,12 @@ UseDefaultValues = True
 %HI: ArrayClusterEls = [2]
 ConnectorNumber = 8
 
-[DEF, SF.Seq[2].Main[86].TS.SData.ViCall.Parms[3].ArrayClusterEls]
+[DEF, SF.Seq[2].Main[48].TS.SData.ViCall.Parms[3].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
 
-[SF.Seq[2].Main[86].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
+[SF.Seq[2].Main[48].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
 Label = "status"
 ArgVal = "False"
 Type = 2
@@ -9099,10 +8283,10 @@ WireRequirement = 1
 DisplayType = "Boolean"
 UseDefaultValues = True
 
-[DEF, SF.Seq[2].Main[86].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
+[DEF, SF.Seq[2].Main[48].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
 %NAME = "status"
 
-[SF.Seq[2].Main[86].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
+[SF.Seq[2].Main[48].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
 Label = "code"
 ArgVal = "0"
 Type = 0
@@ -9111,10 +8295,10 @@ NumType = 4
 DisplayType = "Number (I32)"
 UseDefaultValues = True
 
-[DEF, SF.Seq[2].Main[86].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
+[DEF, SF.Seq[2].Main[48].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
 %NAME = "code"
 
-[SF.Seq[2].Main[86].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
+[SF.Seq[2].Main[48].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
 Label = "source"
 ArgVal = "\"\""
 Type = 1
@@ -9122,13 +8306,13 @@ WireRequirement = 1
 DisplayType = "ASCII String"
 UseDefaultValues = True
 
-[DEF, SF.Seq[2].Main[86].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
+[DEF, SF.Seq[2].Main[48].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
 %NAME = "source"
 
-[DEF, SF.Seq[2].Main[86].TS.SData.ViCall.Parms[3]]
+[DEF, SF.Seq[2].Main[48].TS.SData.ViCall.Parms[3]]
 %NAME = "error in "
 
-[SF.Seq[2].Main[86].TS.SData.ViCall.Parms[4]]
+[SF.Seq[2].Main[48].TS.SData.ViCall.Parms[4]]
 Label = "task out"
 ArgVal = "StationGlobals.Automation.Lamp.GN.Reference"
 Type = 0
@@ -9138,10 +8322,10 @@ DisplayType = "Number (I32)"
 Direction = 1
 ConnectorNumber = 3
 
-[DEF, SF.Seq[2].Main[86].TS.SData.ViCall.Parms[4]]
+[DEF, SF.Seq[2].Main[48].TS.SData.ViCall.Parms[4]]
 %NAME = "task out"
 
-[SF.Seq[2].Main[86].TS.SData.ViCall.Parms[5]]
+[SF.Seq[2].Main[48].TS.SData.ViCall.Parms[5]]
 Label = "error out"
 ArgVal = "Step.Result.Error"
 Type = 3
@@ -9152,22 +8336,22 @@ Direction = 1
 ConnectorNumber = 0
 LegacyClusterType = 2
 
-[DEF, SF.Seq[2].Main[86].TS.SData.ViCall.Parms[5].ArrayClusterEls]
+[DEF, SF.Seq[2].Main[48].TS.SData.ViCall.Parms[5].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
 
-[SF.Seq[2].Main[86].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+[SF.Seq[2].Main[48].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
 Label = "status"
 ArgVal = "Step.Result.Error.Occurred"
 Type = 2
 WireRequirement = 1
 DisplayType = "Boolean"
 
-[DEF, SF.Seq[2].Main[86].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+[DEF, SF.Seq[2].Main[48].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
 %NAME = "status"
 
-[SF.Seq[2].Main[86].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+[SF.Seq[2].Main[48].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
 Label = "code"
 ArgVal = "Step.Result.Error.Code"
 Type = 0
@@ -9175,39 +8359,166 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[2].Main[86].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+[DEF, SF.Seq[2].Main[48].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
 %NAME = "code"
 
-[SF.Seq[2].Main[86].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+[SF.Seq[2].Main[48].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
 Label = "source"
 ArgVal = "Step.Result.Error.Msg"
 Type = 1
 WireRequirement = 1
 DisplayType = "ASCII String"
 
-[DEF, SF.Seq[2].Main[86].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+[DEF, SF.Seq[2].Main[48].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
 %NAME = "source"
 
-[DEF, SF.Seq[2].Main[86].TS.SData.ViCall.Parms[5]]
+[DEF, SF.Seq[2].Main[48].TS.SData.ViCall.Parms[5]]
 %NAME = "error out"
 
-[DEF, SF.Seq[2].Main[86]]
+[DEF, SF.Seq[2].Main[48]]
 %NAME = "Set Green signal"
 
-[SF.Seq[2].Main[87].TS]
-Id = "ID#:hH2h9eNg8RGN0qQctBT8oA"
+[SF.Seq[2].Main[49].TS]
+Id = "ID#:rDfrV71g8RGN0qQctBT8oA"
+PostExpr = "Locals.ToggleValue = !Locals.ToggleValue"
 
-[DEF, SF.Seq[2].Main[87].TS]
+[DEF, SF.Seq[2].Main[49]]
+%NAME = "Set toggle value"
+
+[SF.Seq[2].Main[50].TS]
+Id = "ID#:FZBT2rxg8RGN0qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[50]]
+%NAME = "Else"
+
+[SF.Seq[2].Main[51].TS]
+Id = "ID#:5rdC5bxg8RGN0qQctBT8oA"
+PostExpr = "Locals.Counter ++"
+
+[DEF, SF.Seq[2].Main[51]]
+%NAME = "Increase Counter"
+
+[SF.Seq[2].Main[52].TS]
+Id = "ID#:PDVPsrxg8RGN0qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[52]]
+%NAME = "End"
+
+[SF.Seq[2].Main[53].TS]
+Id = "ID#:dD2/9rxg8RGN0qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[53]]
+%NAME = "Else"
+
+[SF.Seq[2].Main[54].TS]
+Id = "ID#:DNdw8+Jg8RGN0qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[54].TS]
+SData = "TYPE, SeqCallStepAdditions"
+
+[SF.Seq[2].Main[54].TS.SData]
+SeqName = "Set all colors"
+UseCurFile = True
+
+[DEF, SF.Seq[2].Main[54].TS.SData]
+ActualArgs = Arguments
+
+[DEF, SF.Seq[2].Main[54].TS.SData.ActualArgs]
+ToggleValue = "TYPE, SequenceArgument"
+LampState = "TYPE, SequenceArgument"
+
+[SF.Seq[2].Main[54].TS.SData.ActualArgs.ToggleValue]
+UseDef = False
+Expr = "Locals.ToggleValue"
+ParamType = 16
+
+[SF.Seq[2].Main[54].TS.SData.ActualArgs.LampState]
+UseDef = False
+Expr = "{False,False,True} // RD YE GN"
+ParamType = 1024
+
+[DEF, SF.Seq[2].Main[54]]
+%NAME = "Set colors"
+
+[SF.Seq[2].Main[55].TS]
+Id = "ID#:ffnEko5o8RGN16QctBT8oA"
+PostExpr = "Locals.Counter = 0"
+
+[DEF, SF.Seq[2].Main[55]]
+%NAME = "Reset Counter"
+
+[SF.Seq[2].Main[56].TS]
+Id = "ID#:ej2/9rxg8RGN0qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[56]]
+%NAME = "End"
+
+[SF.Seq[2].Main[57].TS]
+Id = "ID#:4Lqu/I1o8RGN16QctBT8oA"
+
+[DEF, SF.Seq[2].Main[57]]
+%NAME = "Break"
+
+[SF.Seq[2].Main[58].TS]
+Id = "ID#:CgR74bpg8RGN0qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[58]]
+%NAME = "End"
+
+[SF.Seq[2].Main[59].TS]
+Id = "ID#:EAR74bpg8RGN0qQctBT8oA"
+
+[SF.Seq[2].Main[59]]
+ItemExpr = "Enums.Light_States.Yellow_Blink_Slow"
+
+[DEF, SF.Seq[2].Main[59]]
+%NAME = "Case"
+
+[SF.Seq[2].Main[60].TS]
+Id = "ID#:BRCot+Bg8RGN0qQctBT8oA"
+
+[SF.Seq[2].Main[60]]
+ConditionExpr = "StationGlobals.Automation.SystemControl.Previous_Light_State == StationGlobals.Automation.SystemControl.Light_State"
+
+[DEF, SF.Seq[2].Main[60]]
+%NAME = "If"
+
+[SF.Seq[2].Main[61].TS]
+Id = "ID#:BhCot+Bg8RGN0qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[61]]
+%NAME = "Other lights are set, only toggle wanted light"
+
+[SF.Seq[2].Main[62].TS]
+Id = "ID#:BxCot+Bg8RGN0qQctBT8oA"
+
+[SF.Seq[2].Main[62]]
+ConditionExpr = "Locals.Counter == Locals.Slow"
+
+[DEF, SF.Seq[2].Main[62]]
+%NAME = "If"
+
+[SF.Seq[2].Main[63].TS]
+Id = "ID#:CBCot+Bg8RGN0qQctBT8oA"
+PostExpr = "Locals.Counter = 0"
+
+[DEF, SF.Seq[2].Main[63]]
+%NAME = "Reset Counter"
+
+[SF.Seq[2].Main[64].TS]
+Id = "ID#:bahj3eFg8RGN0qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[64].TS]
 SData = "TYPE, FlexGStepAdditions"
 
-[SF.Seq[2].Main[87].TS.SData.ViCall]
+[SF.Seq[2].Main[64].TS.SData.ViCall]
 ProjectPath = "..\\..\\LabView\\nexteer.lvproj"
 VIPath = "My Computer\\DIO\\DIO.lvlib\\Set Output.vi"
 Namespace = "DIO.lvlib"
 TDChecksum = -1657651955
 %HI: Parms = [5]
 
-[DEF, SF.Seq[2].Main[87].TS.SData.ViCall.Parms]
+[DEF, SF.Seq[2].Main[64].TS.SData.ViCall.Parms]
 %[0] = "TYPE, VIParameter"
 %[1] = "TYPE, VIParameter"
 %[2] = "TYPE, VIParameter"
@@ -9215,7 +8526,7 @@ TDChecksum = -1657651955
 %[4] = "TYPE, VIParameter"
 %[5] = "TYPE, VIParameter"
 
-[SF.Seq[2].Main[87].TS.SData.ViCall.Parms[0]]
+[SF.Seq[2].Main[64].TS.SData.ViCall.Parms[0]]
 Label = "task in"
 ArgVal = "StationGlobals.Automation.Lamp.YE.Reference"
 Type = 0
@@ -9224,10 +8535,10 @@ NumType = 4
 DisplayType = "Number (I32)"
 ConnectorNumber = 11
 
-[DEF, SF.Seq[2].Main[87].TS.SData.ViCall.Parms[0]]
+[DEF, SF.Seq[2].Main[64].TS.SData.ViCall.Parms[0]]
 %NAME = "task in"
 
-[SF.Seq[2].Main[87].TS.SData.ViCall.Parms[1]]
+[SF.Seq[2].Main[64].TS.SData.ViCall.Parms[1]]
 Label = "portBit"
 ArgVal = "StationGlobals.Automation.Lamp.YE.Channel"
 Type = 0
@@ -9236,10 +8547,10 @@ NumType = 4
 DisplayType = "Number (I32)"
 ConnectorNumber = 10
 
-[DEF, SF.Seq[2].Main[87].TS.SData.ViCall.Parms[1]]
+[DEF, SF.Seq[2].Main[64].TS.SData.ViCall.Parms[1]]
 %NAME = "portBit"
 
-[SF.Seq[2].Main[87].TS.SData.ViCall.Parms[2]]
+[SF.Seq[2].Main[64].TS.SData.ViCall.Parms[2]]
 Label = "State"
 ArgVal = "Locals.ToggleValue"
 Type = 2
@@ -9247,10 +8558,10 @@ WireRequirement = 1
 DisplayType = "Boolean"
 ConnectorNumber = 9
 
-[DEF, SF.Seq[2].Main[87].TS.SData.ViCall.Parms[2]]
+[DEF, SF.Seq[2].Main[64].TS.SData.ViCall.Parms[2]]
 %NAME = "State"
 
-[SF.Seq[2].Main[87].TS.SData.ViCall.Parms[3]]
+[SF.Seq[2].Main[64].TS.SData.ViCall.Parms[3]]
 Label = "error in "
 Type = 3
 WireRequirement = 1
@@ -9259,12 +8570,12 @@ UseDefaultValues = True
 %HI: ArrayClusterEls = [2]
 ConnectorNumber = 8
 
-[DEF, SF.Seq[2].Main[87].TS.SData.ViCall.Parms[3].ArrayClusterEls]
+[DEF, SF.Seq[2].Main[64].TS.SData.ViCall.Parms[3].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
 
-[SF.Seq[2].Main[87].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
+[SF.Seq[2].Main[64].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
 Label = "status"
 ArgVal = "False"
 Type = 2
@@ -9272,10 +8583,10 @@ WireRequirement = 1
 DisplayType = "Boolean"
 UseDefaultValues = True
 
-[DEF, SF.Seq[2].Main[87].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
+[DEF, SF.Seq[2].Main[64].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
 %NAME = "status"
 
-[SF.Seq[2].Main[87].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
+[SF.Seq[2].Main[64].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
 Label = "code"
 ArgVal = "0"
 Type = 0
@@ -9284,10 +8595,10 @@ NumType = 4
 DisplayType = "Number (I32)"
 UseDefaultValues = True
 
-[DEF, SF.Seq[2].Main[87].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
+[DEF, SF.Seq[2].Main[64].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
 %NAME = "code"
 
-[SF.Seq[2].Main[87].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
+[SF.Seq[2].Main[64].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
 Label = "source"
 ArgVal = "\"\""
 Type = 1
@@ -9295,13 +8606,13 @@ WireRequirement = 1
 DisplayType = "ASCII String"
 UseDefaultValues = True
 
-[DEF, SF.Seq[2].Main[87].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
+[DEF, SF.Seq[2].Main[64].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
 %NAME = "source"
 
-[DEF, SF.Seq[2].Main[87].TS.SData.ViCall.Parms[3]]
+[DEF, SF.Seq[2].Main[64].TS.SData.ViCall.Parms[3]]
 %NAME = "error in "
 
-[SF.Seq[2].Main[87].TS.SData.ViCall.Parms[4]]
+[SF.Seq[2].Main[64].TS.SData.ViCall.Parms[4]]
 Label = "task out"
 ArgVal = "StationGlobals.Automation.Lamp.YE.Reference"
 Type = 0
@@ -9311,10 +8622,10 @@ DisplayType = "Number (I32)"
 Direction = 1
 ConnectorNumber = 3
 
-[DEF, SF.Seq[2].Main[87].TS.SData.ViCall.Parms[4]]
+[DEF, SF.Seq[2].Main[64].TS.SData.ViCall.Parms[4]]
 %NAME = "task out"
 
-[SF.Seq[2].Main[87].TS.SData.ViCall.Parms[5]]
+[SF.Seq[2].Main[64].TS.SData.ViCall.Parms[5]]
 Label = "error out"
 ArgVal = "Step.Result.Error"
 Type = 3
@@ -9325,22 +8636,22 @@ Direction = 1
 ConnectorNumber = 0
 LegacyClusterType = 2
 
-[DEF, SF.Seq[2].Main[87].TS.SData.ViCall.Parms[5].ArrayClusterEls]
+[DEF, SF.Seq[2].Main[64].TS.SData.ViCall.Parms[5].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
 
-[SF.Seq[2].Main[87].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+[SF.Seq[2].Main[64].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
 Label = "status"
 ArgVal = "Step.Result.Error.Occurred"
 Type = 2
 WireRequirement = 1
 DisplayType = "Boolean"
 
-[DEF, SF.Seq[2].Main[87].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+[DEF, SF.Seq[2].Main[64].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
 %NAME = "status"
 
-[SF.Seq[2].Main[87].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+[SF.Seq[2].Main[64].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
 Label = "code"
 ArgVal = "Step.Result.Error.Code"
 Type = 0
@@ -9348,39 +8659,166 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[2].Main[87].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+[DEF, SF.Seq[2].Main[64].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
 %NAME = "code"
 
-[SF.Seq[2].Main[87].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+[SF.Seq[2].Main[64].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
 Label = "source"
 ArgVal = "Step.Result.Error.Msg"
 Type = 1
 WireRequirement = 1
 DisplayType = "ASCII String"
 
-[DEF, SF.Seq[2].Main[87].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+[DEF, SF.Seq[2].Main[64].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
 %NAME = "source"
 
-[DEF, SF.Seq[2].Main[87].TS.SData.ViCall.Parms[5]]
+[DEF, SF.Seq[2].Main[64].TS.SData.ViCall.Parms[5]]
 %NAME = "error out"
 
-[DEF, SF.Seq[2].Main[87]]
+[DEF, SF.Seq[2].Main[64]]
 %NAME = "Set Yellow signal"
 
-[SF.Seq[2].Main[88].TS]
-Id = "ID#:WFrx245o8RGN16QctBT8oA"
+[SF.Seq[2].Main[65].TS]
+Id = "ID#:ChCot+Bg8RGN0qQctBT8oA"
+PostExpr = "Locals.ToggleValue = !Locals.ToggleValue"
 
-[DEF, SF.Seq[2].Main[88].TS]
+[DEF, SF.Seq[2].Main[65]]
+%NAME = "Set toggle value"
+
+[SF.Seq[2].Main[66].TS]
+Id = "ID#:CxCot+Bg8RGN0qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[66]]
+%NAME = "Else"
+
+[SF.Seq[2].Main[67].TS]
+Id = "ID#:DBCot+Bg8RGN0qQctBT8oA"
+PostExpr = "Locals.Counter ++"
+
+[DEF, SF.Seq[2].Main[67]]
+%NAME = "Increase Counter"
+
+[SF.Seq[2].Main[68].TS]
+Id = "ID#:DRCot+Bg8RGN0qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[68]]
+%NAME = "End"
+
+[SF.Seq[2].Main[69].TS]
+Id = "ID#:DhCot+Bg8RGN0qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[69]]
+%NAME = "Else"
+
+[SF.Seq[2].Main[70].TS]
+Id = "ID#:B9dw8+Jg8RGN0qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[70].TS]
+SData = "TYPE, SeqCallStepAdditions"
+
+[SF.Seq[2].Main[70].TS.SData]
+SeqName = "Set all colors"
+UseCurFile = True
+
+[DEF, SF.Seq[2].Main[70].TS.SData]
+ActualArgs = Arguments
+
+[DEF, SF.Seq[2].Main[70].TS.SData.ActualArgs]
+ToggleValue = "TYPE, SequenceArgument"
+LampState = "TYPE, SequenceArgument"
+
+[SF.Seq[2].Main[70].TS.SData.ActualArgs.ToggleValue]
+UseDef = False
+Expr = "Locals.ToggleValue"
+ParamType = 16
+
+[SF.Seq[2].Main[70].TS.SData.ActualArgs.LampState]
+UseDef = False
+Expr = "{False,True,False} // RD YE GN"
+ParamType = 1024
+
+[DEF, SF.Seq[2].Main[70]]
+%NAME = "Set colors"
+
+[SF.Seq[2].Main[71].TS]
+Id = "ID#:fvnEko5o8RGN16QctBT8oA"
+PostExpr = "Locals.Counter = 0"
+
+[DEF, SF.Seq[2].Main[71]]
+%NAME = "Reset Counter"
+
+[SF.Seq[2].Main[72].TS]
+Id = "ID#:FRCot+Bg8RGN0qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[72]]
+%NAME = "End"
+
+[SF.Seq[2].Main[73].TS]
+Id = "ID#:4bqu/I1o8RGN16QctBT8oA"
+
+[DEF, SF.Seq[2].Main[73]]
+%NAME = "Break"
+
+[SF.Seq[2].Main[74].TS]
+Id = "ID#:EQR74bpg8RGN0qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[74]]
+%NAME = "End"
+
+[SF.Seq[2].Main[75].TS]
+Id = "ID#:FwR74bpg8RGN0qQctBT8oA"
+
+[SF.Seq[2].Main[75]]
+ItemExpr = "Enums.Light_States.Red_Blink_Slow"
+
+[DEF, SF.Seq[2].Main[75]]
+%NAME = "Case"
+
+[SF.Seq[2].Main[76].TS]
+Id = "ID#:BRCot+Bg8RGN0qQctBT8oA"
+
+[SF.Seq[2].Main[76]]
+ConditionExpr = "StationGlobals.Automation.SystemControl.Previous_Light_State == StationGlobals.Automation.SystemControl.Light_State"
+
+[DEF, SF.Seq[2].Main[76]]
+%NAME = "If"
+
+[SF.Seq[2].Main[77].TS]
+Id = "ID#:BhCot+Bg8RGN0qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[77]]
+%NAME = "Other lights are set, only toggle wanted light"
+
+[SF.Seq[2].Main[78].TS]
+Id = "ID#:BxCot+Bg8RGN0qQctBT8oA"
+
+[SF.Seq[2].Main[78]]
+ConditionExpr = "Locals.Counter == Locals.Slow"
+
+[DEF, SF.Seq[2].Main[78]]
+%NAME = "If"
+
+[SF.Seq[2].Main[79].TS]
+Id = "ID#:CBCot+Bg8RGN0qQctBT8oA"
+PostExpr = "Locals.Counter = 0"
+
+[DEF, SF.Seq[2].Main[79]]
+%NAME = "Reset Counter"
+
+[SF.Seq[2].Main[80].TS]
+Id = "ID#:smd20uFg8RGN0qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[80].TS]
 SData = "TYPE, FlexGStepAdditions"
 
-[SF.Seq[2].Main[88].TS.SData.ViCall]
+[SF.Seq[2].Main[80].TS.SData.ViCall]
 ProjectPath = "..\\..\\LabView\\nexteer.lvproj"
 VIPath = "My Computer\\DIO\\DIO.lvlib\\Set Output.vi"
 Namespace = "DIO.lvlib"
 TDChecksum = -1657651955
 %HI: Parms = [5]
 
-[DEF, SF.Seq[2].Main[88].TS.SData.ViCall.Parms]
+[DEF, SF.Seq[2].Main[80].TS.SData.ViCall.Parms]
 %[0] = "TYPE, VIParameter"
 %[1] = "TYPE, VIParameter"
 %[2] = "TYPE, VIParameter"
@@ -9388,7 +8826,7 @@ TDChecksum = -1657651955
 %[4] = "TYPE, VIParameter"
 %[5] = "TYPE, VIParameter"
 
-[SF.Seq[2].Main[88].TS.SData.ViCall.Parms[0]]
+[SF.Seq[2].Main[80].TS.SData.ViCall.Parms[0]]
 Label = "task in"
 ArgVal = "StationGlobals.Automation.Lamp.RD.Reference"
 Type = 0
@@ -9397,10 +8835,10 @@ NumType = 4
 DisplayType = "Number (I32)"
 ConnectorNumber = 11
 
-[DEF, SF.Seq[2].Main[88].TS.SData.ViCall.Parms[0]]
+[DEF, SF.Seq[2].Main[80].TS.SData.ViCall.Parms[0]]
 %NAME = "task in"
 
-[SF.Seq[2].Main[88].TS.SData.ViCall.Parms[1]]
+[SF.Seq[2].Main[80].TS.SData.ViCall.Parms[1]]
 Label = "portBit"
 ArgVal = "StationGlobals.Automation.Lamp.RD.Channel"
 Type = 0
@@ -9409,10 +8847,10 @@ NumType = 4
 DisplayType = "Number (I32)"
 ConnectorNumber = 10
 
-[DEF, SF.Seq[2].Main[88].TS.SData.ViCall.Parms[1]]
+[DEF, SF.Seq[2].Main[80].TS.SData.ViCall.Parms[1]]
 %NAME = "portBit"
 
-[SF.Seq[2].Main[88].TS.SData.ViCall.Parms[2]]
+[SF.Seq[2].Main[80].TS.SData.ViCall.Parms[2]]
 Label = "State"
 ArgVal = "Locals.ToggleValue"
 Type = 2
@@ -9420,10 +8858,10 @@ WireRequirement = 1
 DisplayType = "Boolean"
 ConnectorNumber = 9
 
-[DEF, SF.Seq[2].Main[88].TS.SData.ViCall.Parms[2]]
+[DEF, SF.Seq[2].Main[80].TS.SData.ViCall.Parms[2]]
 %NAME = "State"
 
-[SF.Seq[2].Main[88].TS.SData.ViCall.Parms[3]]
+[SF.Seq[2].Main[80].TS.SData.ViCall.Parms[3]]
 Label = "error in "
 Type = 3
 WireRequirement = 1
@@ -9432,12 +8870,12 @@ UseDefaultValues = True
 %HI: ArrayClusterEls = [2]
 ConnectorNumber = 8
 
-[DEF, SF.Seq[2].Main[88].TS.SData.ViCall.Parms[3].ArrayClusterEls]
+[DEF, SF.Seq[2].Main[80].TS.SData.ViCall.Parms[3].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
 
-[SF.Seq[2].Main[88].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
+[SF.Seq[2].Main[80].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
 Label = "status"
 ArgVal = "False"
 Type = 2
@@ -9445,10 +8883,10 @@ WireRequirement = 1
 DisplayType = "Boolean"
 UseDefaultValues = True
 
-[DEF, SF.Seq[2].Main[88].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
+[DEF, SF.Seq[2].Main[80].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
 %NAME = "status"
 
-[SF.Seq[2].Main[88].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
+[SF.Seq[2].Main[80].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
 Label = "code"
 ArgVal = "0"
 Type = 0
@@ -9457,10 +8895,10 @@ NumType = 4
 DisplayType = "Number (I32)"
 UseDefaultValues = True
 
-[DEF, SF.Seq[2].Main[88].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
+[DEF, SF.Seq[2].Main[80].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
 %NAME = "code"
 
-[SF.Seq[2].Main[88].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
+[SF.Seq[2].Main[80].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
 Label = "source"
 ArgVal = "\"\""
 Type = 1
@@ -9468,13 +8906,13 @@ WireRequirement = 1
 DisplayType = "ASCII String"
 UseDefaultValues = True
 
-[DEF, SF.Seq[2].Main[88].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
+[DEF, SF.Seq[2].Main[80].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
 %NAME = "source"
 
-[DEF, SF.Seq[2].Main[88].TS.SData.ViCall.Parms[3]]
+[DEF, SF.Seq[2].Main[80].TS.SData.ViCall.Parms[3]]
 %NAME = "error in "
 
-[SF.Seq[2].Main[88].TS.SData.ViCall.Parms[4]]
+[SF.Seq[2].Main[80].TS.SData.ViCall.Parms[4]]
 Label = "task out"
 ArgVal = "StationGlobals.Automation.Lamp.YE.Reference"
 Type = 0
@@ -9484,10 +8922,10 @@ DisplayType = "Number (I32)"
 Direction = 1
 ConnectorNumber = 3
 
-[DEF, SF.Seq[2].Main[88].TS.SData.ViCall.Parms[4]]
+[DEF, SF.Seq[2].Main[80].TS.SData.ViCall.Parms[4]]
 %NAME = "task out"
 
-[SF.Seq[2].Main[88].TS.SData.ViCall.Parms[5]]
+[SF.Seq[2].Main[80].TS.SData.ViCall.Parms[5]]
 Label = "error out"
 ArgVal = "Step.Result.Error"
 Type = 3
@@ -9498,22 +8936,22 @@ Direction = 1
 ConnectorNumber = 0
 LegacyClusterType = 2
 
-[DEF, SF.Seq[2].Main[88].TS.SData.ViCall.Parms[5].ArrayClusterEls]
+[DEF, SF.Seq[2].Main[80].TS.SData.ViCall.Parms[5].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
 
-[SF.Seq[2].Main[88].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+[SF.Seq[2].Main[80].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
 Label = "status"
 ArgVal = "Step.Result.Error.Occurred"
 Type = 2
 WireRequirement = 1
 DisplayType = "Boolean"
 
-[DEF, SF.Seq[2].Main[88].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+[DEF, SF.Seq[2].Main[80].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
 %NAME = "status"
 
-[SF.Seq[2].Main[88].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+[SF.Seq[2].Main[80].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
 Label = "code"
 ArgVal = "Step.Result.Error.Code"
 Type = 0
@@ -9521,166 +8959,166 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[2].Main[88].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+[DEF, SF.Seq[2].Main[80].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
 %NAME = "code"
 
-[SF.Seq[2].Main[88].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+[SF.Seq[2].Main[80].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
 Label = "source"
 ArgVal = "Step.Result.Error.Msg"
 Type = 1
 WireRequirement = 1
 DisplayType = "ASCII String"
 
-[DEF, SF.Seq[2].Main[88].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+[DEF, SF.Seq[2].Main[80].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
 %NAME = "source"
 
-[DEF, SF.Seq[2].Main[88].TS.SData.ViCall.Parms[5]]
+[DEF, SF.Seq[2].Main[80].TS.SData.ViCall.Parms[5]]
 %NAME = "error out"
 
-[DEF, SF.Seq[2].Main[88]]
+[DEF, SF.Seq[2].Main[80]]
 %NAME = "Set Red signal"
 
-[SF.Seq[2].Main[89].TS]
-Id = "ID#:hX2h9eNg8RGN0qQctBT8oA"
+[SF.Seq[2].Main[81].TS]
+Id = "ID#:ChCot+Bg8RGN0qQctBT8oA"
 PostExpr = "Locals.ToggleValue = !Locals.ToggleValue"
 
-[DEF, SF.Seq[2].Main[89]]
+[DEF, SF.Seq[2].Main[81]]
 %NAME = "Set toggle value"
 
-[SF.Seq[2].Main[90].TS]
-Id = "ID#:hn2h9eNg8RGN0qQctBT8oA"
+[SF.Seq[2].Main[82].TS]
+Id = "ID#:CxCot+Bg8RGN0qQctBT8oA"
 
-[DEF, SF.Seq[2].Main[90]]
+[DEF, SF.Seq[2].Main[82]]
 %NAME = "Else"
 
-[SF.Seq[2].Main[91].TS]
-Id = "ID#:h32h9eNg8RGN0qQctBT8oA"
+[SF.Seq[2].Main[83].TS]
+Id = "ID#:DBCot+Bg8RGN0qQctBT8oA"
 PostExpr = "Locals.Counter ++"
 
-[DEF, SF.Seq[2].Main[91]]
+[DEF, SF.Seq[2].Main[83]]
 %NAME = "Increase Counter"
 
-[SF.Seq[2].Main[92].TS]
-Id = "ID#:iH2h9eNg8RGN0qQctBT8oA"
+[SF.Seq[2].Main[84].TS]
+Id = "ID#:DRCot+Bg8RGN0qQctBT8oA"
 
-[DEF, SF.Seq[2].Main[92]]
+[DEF, SF.Seq[2].Main[84]]
 %NAME = "End"
 
-[SF.Seq[2].Main[93].TS]
-Id = "ID#:iX2h9eNg8RGN0qQctBT8oA"
+[SF.Seq[2].Main[85].TS]
+Id = "ID#:DhCot+Bg8RGN0qQctBT8oA"
 
-[DEF, SF.Seq[2].Main[93]]
+[DEF, SF.Seq[2].Main[85]]
 %NAME = "Else"
 
-[SF.Seq[2].Main[94].TS]
-Id = "ID#:in2h9eNg8RGN0qQctBT8oA"
+[SF.Seq[2].Main[86].TS]
+Id = "ID#:rHvfhOJg8RGN0qQctBT8oA"
 
-[DEF, SF.Seq[2].Main[94].TS]
+[DEF, SF.Seq[2].Main[86].TS]
 SData = "TYPE, SeqCallStepAdditions"
 
-[SF.Seq[2].Main[94].TS.SData]
+[SF.Seq[2].Main[86].TS.SData]
 SeqName = "Set all colors"
 UseCurFile = True
 
-[DEF, SF.Seq[2].Main[94].TS.SData]
+[DEF, SF.Seq[2].Main[86].TS.SData]
 ActualArgs = Arguments
 
-[DEF, SF.Seq[2].Main[94].TS.SData.ActualArgs]
+[DEF, SF.Seq[2].Main[86].TS.SData.ActualArgs]
 ToggleValue = "TYPE, SequenceArgument"
 LampState = "TYPE, SequenceArgument"
 
-[SF.Seq[2].Main[94].TS.SData.ActualArgs.ToggleValue]
+[SF.Seq[2].Main[86].TS.SData.ActualArgs.ToggleValue]
 UseDef = False
 Expr = "Locals.ToggleValue"
 ParamType = 16
 
-[SF.Seq[2].Main[94].TS.SData.ActualArgs.LampState]
+[SF.Seq[2].Main[86].TS.SData.ActualArgs.LampState]
 UseDef = False
-Expr = "{True,True,True} // RD YE GN"
+Expr = "{True,False,False} // RD YE GN"
 ParamType = 1024
 
-[DEF, SF.Seq[2].Main[94]]
+[DEF, SF.Seq[2].Main[86]]
 %NAME = "Set colors"
 
+[SF.Seq[2].Main[87].TS]
+Id = "ID#:f/nEko5o8RGN16QctBT8oA"
+PostExpr = "Locals.Counter = 0"
+
+[DEF, SF.Seq[2].Main[87]]
+%NAME = "Reset Counter"
+
+[SF.Seq[2].Main[88].TS]
+Id = "ID#:FRCot+Bg8RGN0qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[88]]
+%NAME = "End"
+
+[SF.Seq[2].Main[89].TS]
+Id = "ID#:l0OyA45o8RGN16QctBT8oA"
+
+[DEF, SF.Seq[2].Main[89]]
+%NAME = "Break"
+
+[SF.Seq[2].Main[90].TS]
+Id = "ID#:GAR74bpg8RGN0qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[90]]
+%NAME = "End"
+
+[SF.Seq[2].Main[91].TS]
+Id = "ID#:HgR74bpg8RGN0qQctBT8oA"
+
+[SF.Seq[2].Main[91]]
+ItemExpr = "Enums.Light_States.All_Blink_Slow"
+
+[DEF, SF.Seq[2].Main[91]]
+%NAME = "Case"
+
+[SF.Seq[2].Main[92].TS]
+Id = "ID#:gH2h9eNg8RGN0qQctBT8oA"
+
+[SF.Seq[2].Main[92]]
+ConditionExpr = "StationGlobals.Automation.SystemControl.Previous_Light_State == StationGlobals.Automation.SystemControl.Light_State"
+
+[DEF, SF.Seq[2].Main[92]]
+%NAME = "If"
+
+[SF.Seq[2].Main[93].TS]
+Id = "ID#:gX2h9eNg8RGN0qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[93]]
+%NAME = "Other lights are set, only toggle wanted light"
+
+[SF.Seq[2].Main[94].TS]
+Id = "ID#:gn2h9eNg8RGN0qQctBT8oA"
+
+[SF.Seq[2].Main[94]]
+ConditionExpr = "Locals.Counter == Locals.Slow"
+
+[DEF, SF.Seq[2].Main[94]]
+%NAME = "If"
+
 [SF.Seq[2].Main[95].TS]
-Id = "ID#:gPnEko5o8RGN16QctBT8oA"
+Id = "ID#:g32h9eNg8RGN0qQctBT8oA"
 PostExpr = "Locals.Counter = 0"
 
 [DEF, SF.Seq[2].Main[95]]
 %NAME = "Reset Counter"
 
 [SF.Seq[2].Main[96].TS]
-Id = "ID#:i32h9eNg8RGN0qQctBT8oA"
+Id = "ID#:SS2uyI5o8RGN16QctBT8oA"
 
-[DEF, SF.Seq[2].Main[96]]
-%NAME = "End"
-
-[SF.Seq[2].Main[97].TS]
-Id = "ID#:mEOyA45o8RGN16QctBT8oA"
-
-[DEF, SF.Seq[2].Main[97]]
-%NAME = "Break"
-
-[SF.Seq[2].Main[98].TS]
-Id = "ID#:HwR74bpg8RGN0qQctBT8oA"
-
-[DEF, SF.Seq[2].Main[98]]
-%NAME = "End"
-
-[SF.Seq[2].Main[99].TS]
-Id = "ID#:JQR74bpg8RGN0qQctBT8oA"
-
-[SF.Seq[2].Main[99]]
-ItemExpr = "Enums.Light_States.Green_Blink_Fast"
-
-[DEF, SF.Seq[2].Main[99]]
-%NAME = "Case"
-
-[SF.Seq[2].Main[100].TS]
-Id = "ID#:9ZI/eeRg8RGN0qQctBT8oA"
-
-[SF.Seq[2].Main[100]]
-ConditionExpr = "StationGlobals.Automation.SystemControl.Previous_Light_State == StationGlobals.Automation.SystemControl.Light_State"
-
-[DEF, SF.Seq[2].Main[100]]
-%NAME = "If"
-
-[SF.Seq[2].Main[101].TS]
-Id = "ID#:9pI/eeRg8RGN0qQctBT8oA"
-
-[DEF, SF.Seq[2].Main[101]]
-%NAME = "Other lights are set, only toggle wanted light"
-
-[SF.Seq[2].Main[102].TS]
-Id = "ID#:95I/eeRg8RGN0qQctBT8oA"
-
-[SF.Seq[2].Main[102]]
-ConditionExpr = "Locals.Counter == Locals.Fast"
-
-[DEF, SF.Seq[2].Main[102]]
-%NAME = "If"
-
-[SF.Seq[2].Main[103].TS]
-Id = "ID#:+JI/eeRg8RGN0qQctBT8oA"
-PostExpr = "Locals.Counter = 0"
-
-[DEF, SF.Seq[2].Main[103]]
-%NAME = "Reset Counter"
-
-[SF.Seq[2].Main[104].TS]
-Id = "ID#:AAxlso5o8RGN16QctBT8oA"
-
-[DEF, SF.Seq[2].Main[104].TS]
+[DEF, SF.Seq[2].Main[96].TS]
 SData = "TYPE, FlexGStepAdditions"
 
-[SF.Seq[2].Main[104].TS.SData.ViCall]
+[SF.Seq[2].Main[96].TS.SData.ViCall]
 ProjectPath = "..\\..\\LabView\\nexteer.lvproj"
 VIPath = "My Computer\\DIO\\DIO.lvlib\\Set Output.vi"
 Namespace = "DIO.lvlib"
 TDChecksum = -1657651955
 %HI: Parms = [5]
 
-[DEF, SF.Seq[2].Main[104].TS.SData.ViCall.Parms]
+[DEF, SF.Seq[2].Main[96].TS.SData.ViCall.Parms]
 %[0] = "TYPE, VIParameter"
 %[1] = "TYPE, VIParameter"
 %[2] = "TYPE, VIParameter"
@@ -9688,7 +9126,7 @@ TDChecksum = -1657651955
 %[4] = "TYPE, VIParameter"
 %[5] = "TYPE, VIParameter"
 
-[SF.Seq[2].Main[104].TS.SData.ViCall.Parms[0]]
+[SF.Seq[2].Main[96].TS.SData.ViCall.Parms[0]]
 Label = "task in"
 ArgVal = "StationGlobals.Automation.Lamp.GN.Reference"
 Type = 0
@@ -9697,10 +9135,10 @@ NumType = 4
 DisplayType = "Number (I32)"
 ConnectorNumber = 11
 
-[DEF, SF.Seq[2].Main[104].TS.SData.ViCall.Parms[0]]
+[DEF, SF.Seq[2].Main[96].TS.SData.ViCall.Parms[0]]
 %NAME = "task in"
 
-[SF.Seq[2].Main[104].TS.SData.ViCall.Parms[1]]
+[SF.Seq[2].Main[96].TS.SData.ViCall.Parms[1]]
 Label = "portBit"
 ArgVal = "StationGlobals.Automation.Lamp.GN.Channel"
 Type = 0
@@ -9709,10 +9147,10 @@ NumType = 4
 DisplayType = "Number (I32)"
 ConnectorNumber = 10
 
-[DEF, SF.Seq[2].Main[104].TS.SData.ViCall.Parms[1]]
+[DEF, SF.Seq[2].Main[96].TS.SData.ViCall.Parms[1]]
 %NAME = "portBit"
 
-[SF.Seq[2].Main[104].TS.SData.ViCall.Parms[2]]
+[SF.Seq[2].Main[96].TS.SData.ViCall.Parms[2]]
 Label = "State"
 ArgVal = "Locals.ToggleValue"
 Type = 2
@@ -9720,10 +9158,10 @@ WireRequirement = 1
 DisplayType = "Boolean"
 ConnectorNumber = 9
 
-[DEF, SF.Seq[2].Main[104].TS.SData.ViCall.Parms[2]]
+[DEF, SF.Seq[2].Main[96].TS.SData.ViCall.Parms[2]]
 %NAME = "State"
 
-[SF.Seq[2].Main[104].TS.SData.ViCall.Parms[3]]
+[SF.Seq[2].Main[96].TS.SData.ViCall.Parms[3]]
 Label = "error in "
 Type = 3
 WireRequirement = 1
@@ -9732,12 +9170,12 @@ UseDefaultValues = True
 %HI: ArrayClusterEls = [2]
 ConnectorNumber = 8
 
-[DEF, SF.Seq[2].Main[104].TS.SData.ViCall.Parms[3].ArrayClusterEls]
+[DEF, SF.Seq[2].Main[96].TS.SData.ViCall.Parms[3].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
 
-[SF.Seq[2].Main[104].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
+[SF.Seq[2].Main[96].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
 Label = "status"
 ArgVal = "False"
 Type = 2
@@ -9745,10 +9183,10 @@ WireRequirement = 1
 DisplayType = "Boolean"
 UseDefaultValues = True
 
-[DEF, SF.Seq[2].Main[104].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
+[DEF, SF.Seq[2].Main[96].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
 %NAME = "status"
 
-[SF.Seq[2].Main[104].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
+[SF.Seq[2].Main[96].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
 Label = "code"
 ArgVal = "0"
 Type = 0
@@ -9757,10 +9195,10 @@ NumType = 4
 DisplayType = "Number (I32)"
 UseDefaultValues = True
 
-[DEF, SF.Seq[2].Main[104].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
+[DEF, SF.Seq[2].Main[96].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
 %NAME = "code"
 
-[SF.Seq[2].Main[104].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
+[SF.Seq[2].Main[96].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
 Label = "source"
 ArgVal = "\"\""
 Type = 1
@@ -9768,13 +9206,13 @@ WireRequirement = 1
 DisplayType = "ASCII String"
 UseDefaultValues = True
 
-[DEF, SF.Seq[2].Main[104].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
+[DEF, SF.Seq[2].Main[96].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
 %NAME = "source"
 
-[DEF, SF.Seq[2].Main[104].TS.SData.ViCall.Parms[3]]
+[DEF, SF.Seq[2].Main[96].TS.SData.ViCall.Parms[3]]
 %NAME = "error in "
 
-[SF.Seq[2].Main[104].TS.SData.ViCall.Parms[4]]
+[SF.Seq[2].Main[96].TS.SData.ViCall.Parms[4]]
 Label = "task out"
 ArgVal = "StationGlobals.Automation.Lamp.GN.Reference"
 Type = 0
@@ -9784,10 +9222,10 @@ DisplayType = "Number (I32)"
 Direction = 1
 ConnectorNumber = 3
 
-[DEF, SF.Seq[2].Main[104].TS.SData.ViCall.Parms[4]]
+[DEF, SF.Seq[2].Main[96].TS.SData.ViCall.Parms[4]]
 %NAME = "task out"
 
-[SF.Seq[2].Main[104].TS.SData.ViCall.Parms[5]]
+[SF.Seq[2].Main[96].TS.SData.ViCall.Parms[5]]
 Label = "error out"
 ArgVal = "Step.Result.Error"
 Type = 3
@@ -9798,22 +9236,22 @@ Direction = 1
 ConnectorNumber = 0
 LegacyClusterType = 2
 
-[DEF, SF.Seq[2].Main[104].TS.SData.ViCall.Parms[5].ArrayClusterEls]
+[DEF, SF.Seq[2].Main[96].TS.SData.ViCall.Parms[5].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
 
-[SF.Seq[2].Main[104].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+[SF.Seq[2].Main[96].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
 Label = "status"
 ArgVal = "Step.Result.Error.Occurred"
 Type = 2
 WireRequirement = 1
 DisplayType = "Boolean"
 
-[DEF, SF.Seq[2].Main[104].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+[DEF, SF.Seq[2].Main[96].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
 %NAME = "status"
 
-[SF.Seq[2].Main[104].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+[SF.Seq[2].Main[96].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
 Label = "code"
 ArgVal = "Step.Result.Error.Code"
 Type = 0
@@ -9821,166 +9259,512 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[2].Main[104].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+[DEF, SF.Seq[2].Main[96].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
 %NAME = "code"
 
-[SF.Seq[2].Main[104].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+[SF.Seq[2].Main[96].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
 Label = "source"
 ArgVal = "Step.Result.Error.Msg"
 Type = 1
 WireRequirement = 1
 DisplayType = "ASCII String"
 
-[DEF, SF.Seq[2].Main[104].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+[DEF, SF.Seq[2].Main[96].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
 %NAME = "source"
 
-[DEF, SF.Seq[2].Main[104].TS.SData.ViCall.Parms[5]]
+[DEF, SF.Seq[2].Main[96].TS.SData.ViCall.Parms[5]]
 %NAME = "error out"
 
-[DEF, SF.Seq[2].Main[104]]
+[DEF, SF.Seq[2].Main[96]]
 %NAME = "Set Green signal"
 
-[SF.Seq[2].Main[105].TS]
-Id = "ID#:+pI/eeRg8RGN0qQctBT8oA"
+[SF.Seq[2].Main[97].TS]
+Id = "ID#:hH2h9eNg8RGN0qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[97].TS]
+SData = "TYPE, FlexGStepAdditions"
+
+[SF.Seq[2].Main[97].TS.SData.ViCall]
+ProjectPath = "..\\..\\LabView\\nexteer.lvproj"
+VIPath = "My Computer\\DIO\\DIO.lvlib\\Set Output.vi"
+Namespace = "DIO.lvlib"
+TDChecksum = -1657651955
+%HI: Parms = [5]
+
+[DEF, SF.Seq[2].Main[97].TS.SData.ViCall.Parms]
+%[0] = "TYPE, VIParameter"
+%[1] = "TYPE, VIParameter"
+%[2] = "TYPE, VIParameter"
+%[3] = "TYPE, VIParameter"
+%[4] = "TYPE, VIParameter"
+%[5] = "TYPE, VIParameter"
+
+[SF.Seq[2].Main[97].TS.SData.ViCall.Parms[0]]
+Label = "task in"
+ArgVal = "StationGlobals.Automation.Lamp.YE.Reference"
+Type = 0
+WireRequirement = 1
+NumType = 4
+DisplayType = "Number (I32)"
+ConnectorNumber = 11
+
+[DEF, SF.Seq[2].Main[97].TS.SData.ViCall.Parms[0]]
+%NAME = "task in"
+
+[SF.Seq[2].Main[97].TS.SData.ViCall.Parms[1]]
+Label = "portBit"
+ArgVal = "StationGlobals.Automation.Lamp.YE.Channel"
+Type = 0
+WireRequirement = 1
+NumType = 4
+DisplayType = "Number (I32)"
+ConnectorNumber = 10
+
+[DEF, SF.Seq[2].Main[97].TS.SData.ViCall.Parms[1]]
+%NAME = "portBit"
+
+[SF.Seq[2].Main[97].TS.SData.ViCall.Parms[2]]
+Label = "State"
+ArgVal = "Locals.ToggleValue"
+Type = 2
+WireRequirement = 1
+DisplayType = "Boolean"
+ConnectorNumber = 9
+
+[DEF, SF.Seq[2].Main[97].TS.SData.ViCall.Parms[2]]
+%NAME = "State"
+
+[SF.Seq[2].Main[97].TS.SData.ViCall.Parms[3]]
+Label = "error in "
+Type = 3
+WireRequirement = 1
+DisplayType = "Container"
+UseDefaultValues = True
+%HI: ArrayClusterEls = [2]
+ConnectorNumber = 8
+
+[DEF, SF.Seq[2].Main[97].TS.SData.ViCall.Parms[3].ArrayClusterEls]
+%[0] = "TYPE, VIParameterElement"
+%[1] = "TYPE, VIParameterElement"
+%[2] = "TYPE, VIParameterElement"
+
+[SF.Seq[2].Main[97].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
+Label = "status"
+ArgVal = "False"
+Type = 2
+WireRequirement = 1
+DisplayType = "Boolean"
+UseDefaultValues = True
+
+[DEF, SF.Seq[2].Main[97].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
+%NAME = "status"
+
+[SF.Seq[2].Main[97].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
+Label = "code"
+ArgVal = "0"
+Type = 0
+WireRequirement = 1
+NumType = 4
+DisplayType = "Number (I32)"
+UseDefaultValues = True
+
+[DEF, SF.Seq[2].Main[97].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
+%NAME = "code"
+
+[SF.Seq[2].Main[97].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
+Label = "source"
+ArgVal = "\"\""
+Type = 1
+WireRequirement = 1
+DisplayType = "ASCII String"
+UseDefaultValues = True
+
+[DEF, SF.Seq[2].Main[97].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
+%NAME = "source"
+
+[DEF, SF.Seq[2].Main[97].TS.SData.ViCall.Parms[3]]
+%NAME = "error in "
+
+[SF.Seq[2].Main[97].TS.SData.ViCall.Parms[4]]
+Label = "task out"
+ArgVal = "StationGlobals.Automation.Lamp.YE.Reference"
+Type = 0
+WireRequirement = 1
+NumType = 4
+DisplayType = "Number (I32)"
+Direction = 1
+ConnectorNumber = 3
+
+[DEF, SF.Seq[2].Main[97].TS.SData.ViCall.Parms[4]]
+%NAME = "task out"
+
+[SF.Seq[2].Main[97].TS.SData.ViCall.Parms[5]]
+Label = "error out"
+ArgVal = "Step.Result.Error"
+Type = 3
+WireRequirement = 1
+DisplayType = "Container"
+%HI: ArrayClusterEls = [2]
+Direction = 1
+ConnectorNumber = 0
+LegacyClusterType = 2
+
+[DEF, SF.Seq[2].Main[97].TS.SData.ViCall.Parms[5].ArrayClusterEls]
+%[0] = "TYPE, VIParameterElement"
+%[1] = "TYPE, VIParameterElement"
+%[2] = "TYPE, VIParameterElement"
+
+[SF.Seq[2].Main[97].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+Label = "status"
+ArgVal = "Step.Result.Error.Occurred"
+Type = 2
+WireRequirement = 1
+DisplayType = "Boolean"
+
+[DEF, SF.Seq[2].Main[97].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+%NAME = "status"
+
+[SF.Seq[2].Main[97].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+Label = "code"
+ArgVal = "Step.Result.Error.Code"
+Type = 0
+WireRequirement = 1
+NumType = 4
+DisplayType = "Number (I32)"
+
+[DEF, SF.Seq[2].Main[97].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+%NAME = "code"
+
+[SF.Seq[2].Main[97].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+Label = "source"
+ArgVal = "Step.Result.Error.Msg"
+Type = 1
+WireRequirement = 1
+DisplayType = "ASCII String"
+
+[DEF, SF.Seq[2].Main[97].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+%NAME = "source"
+
+[DEF, SF.Seq[2].Main[97].TS.SData.ViCall.Parms[5]]
+%NAME = "error out"
+
+[DEF, SF.Seq[2].Main[97]]
+%NAME = "Set Yellow signal"
+
+[SF.Seq[2].Main[98].TS]
+Id = "ID#:WFrx245o8RGN16QctBT8oA"
+
+[DEF, SF.Seq[2].Main[98].TS]
+SData = "TYPE, FlexGStepAdditions"
+
+[SF.Seq[2].Main[98].TS.SData.ViCall]
+ProjectPath = "..\\..\\LabView\\nexteer.lvproj"
+VIPath = "My Computer\\DIO\\DIO.lvlib\\Set Output.vi"
+Namespace = "DIO.lvlib"
+TDChecksum = -1657651955
+%HI: Parms = [5]
+
+[DEF, SF.Seq[2].Main[98].TS.SData.ViCall.Parms]
+%[0] = "TYPE, VIParameter"
+%[1] = "TYPE, VIParameter"
+%[2] = "TYPE, VIParameter"
+%[3] = "TYPE, VIParameter"
+%[4] = "TYPE, VIParameter"
+%[5] = "TYPE, VIParameter"
+
+[SF.Seq[2].Main[98].TS.SData.ViCall.Parms[0]]
+Label = "task in"
+ArgVal = "StationGlobals.Automation.Lamp.RD.Reference"
+Type = 0
+WireRequirement = 1
+NumType = 4
+DisplayType = "Number (I32)"
+ConnectorNumber = 11
+
+[DEF, SF.Seq[2].Main[98].TS.SData.ViCall.Parms[0]]
+%NAME = "task in"
+
+[SF.Seq[2].Main[98].TS.SData.ViCall.Parms[1]]
+Label = "portBit"
+ArgVal = "StationGlobals.Automation.Lamp.RD.Channel"
+Type = 0
+WireRequirement = 1
+NumType = 4
+DisplayType = "Number (I32)"
+ConnectorNumber = 10
+
+[DEF, SF.Seq[2].Main[98].TS.SData.ViCall.Parms[1]]
+%NAME = "portBit"
+
+[SF.Seq[2].Main[98].TS.SData.ViCall.Parms[2]]
+Label = "State"
+ArgVal = "Locals.ToggleValue"
+Type = 2
+WireRequirement = 1
+DisplayType = "Boolean"
+ConnectorNumber = 9
+
+[DEF, SF.Seq[2].Main[98].TS.SData.ViCall.Parms[2]]
+%NAME = "State"
+
+[SF.Seq[2].Main[98].TS.SData.ViCall.Parms[3]]
+Label = "error in "
+Type = 3
+WireRequirement = 1
+DisplayType = "Container"
+UseDefaultValues = True
+%HI: ArrayClusterEls = [2]
+ConnectorNumber = 8
+
+[DEF, SF.Seq[2].Main[98].TS.SData.ViCall.Parms[3].ArrayClusterEls]
+%[0] = "TYPE, VIParameterElement"
+%[1] = "TYPE, VIParameterElement"
+%[2] = "TYPE, VIParameterElement"
+
+[SF.Seq[2].Main[98].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
+Label = "status"
+ArgVal = "False"
+Type = 2
+WireRequirement = 1
+DisplayType = "Boolean"
+UseDefaultValues = True
+
+[DEF, SF.Seq[2].Main[98].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
+%NAME = "status"
+
+[SF.Seq[2].Main[98].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
+Label = "code"
+ArgVal = "0"
+Type = 0
+WireRequirement = 1
+NumType = 4
+DisplayType = "Number (I32)"
+UseDefaultValues = True
+
+[DEF, SF.Seq[2].Main[98].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
+%NAME = "code"
+
+[SF.Seq[2].Main[98].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
+Label = "source"
+ArgVal = "\"\""
+Type = 1
+WireRequirement = 1
+DisplayType = "ASCII String"
+UseDefaultValues = True
+
+[DEF, SF.Seq[2].Main[98].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
+%NAME = "source"
+
+[DEF, SF.Seq[2].Main[98].TS.SData.ViCall.Parms[3]]
+%NAME = "error in "
+
+[SF.Seq[2].Main[98].TS.SData.ViCall.Parms[4]]
+Label = "task out"
+ArgVal = "StationGlobals.Automation.Lamp.YE.Reference"
+Type = 0
+WireRequirement = 1
+NumType = 4
+DisplayType = "Number (I32)"
+Direction = 1
+ConnectorNumber = 3
+
+[DEF, SF.Seq[2].Main[98].TS.SData.ViCall.Parms[4]]
+%NAME = "task out"
+
+[SF.Seq[2].Main[98].TS.SData.ViCall.Parms[5]]
+Label = "error out"
+ArgVal = "Step.Result.Error"
+Type = 3
+WireRequirement = 1
+DisplayType = "Container"
+%HI: ArrayClusterEls = [2]
+Direction = 1
+ConnectorNumber = 0
+LegacyClusterType = 2
+
+[DEF, SF.Seq[2].Main[98].TS.SData.ViCall.Parms[5].ArrayClusterEls]
+%[0] = "TYPE, VIParameterElement"
+%[1] = "TYPE, VIParameterElement"
+%[2] = "TYPE, VIParameterElement"
+
+[SF.Seq[2].Main[98].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+Label = "status"
+ArgVal = "Step.Result.Error.Occurred"
+Type = 2
+WireRequirement = 1
+DisplayType = "Boolean"
+
+[DEF, SF.Seq[2].Main[98].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+%NAME = "status"
+
+[SF.Seq[2].Main[98].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+Label = "code"
+ArgVal = "Step.Result.Error.Code"
+Type = 0
+WireRequirement = 1
+NumType = 4
+DisplayType = "Number (I32)"
+
+[DEF, SF.Seq[2].Main[98].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+%NAME = "code"
+
+[SF.Seq[2].Main[98].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+Label = "source"
+ArgVal = "Step.Result.Error.Msg"
+Type = 1
+WireRequirement = 1
+DisplayType = "ASCII String"
+
+[DEF, SF.Seq[2].Main[98].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+%NAME = "source"
+
+[DEF, SF.Seq[2].Main[98].TS.SData.ViCall.Parms[5]]
+%NAME = "error out"
+
+[DEF, SF.Seq[2].Main[98]]
+%NAME = "Set Red signal"
+
+[SF.Seq[2].Main[99].TS]
+Id = "ID#:hX2h9eNg8RGN0qQctBT8oA"
 PostExpr = "Locals.ToggleValue = !Locals.ToggleValue"
 
-[DEF, SF.Seq[2].Main[105]]
+[DEF, SF.Seq[2].Main[99]]
 %NAME = "Set toggle value"
 
-[SF.Seq[2].Main[106].TS]
-Id = "ID#:+5I/eeRg8RGN0qQctBT8oA"
+[SF.Seq[2].Main[100].TS]
+Id = "ID#:hn2h9eNg8RGN0qQctBT8oA"
 
-[DEF, SF.Seq[2].Main[106]]
+[DEF, SF.Seq[2].Main[100]]
 %NAME = "Else"
 
-[SF.Seq[2].Main[107].TS]
-Id = "ID#:/JI/eeRg8RGN0qQctBT8oA"
+[SF.Seq[2].Main[101].TS]
+Id = "ID#:h32h9eNg8RGN0qQctBT8oA"
 PostExpr = "Locals.Counter ++"
 
-[DEF, SF.Seq[2].Main[107]]
+[DEF, SF.Seq[2].Main[101]]
 %NAME = "Increase Counter"
 
+[SF.Seq[2].Main[102].TS]
+Id = "ID#:iH2h9eNg8RGN0qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[102]]
+%NAME = "End"
+
+[SF.Seq[2].Main[103].TS]
+Id = "ID#:iX2h9eNg8RGN0qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[103]]
+%NAME = "Else"
+
+[SF.Seq[2].Main[104].TS]
+Id = "ID#:in2h9eNg8RGN0qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[104].TS]
+SData = "TYPE, SeqCallStepAdditions"
+
+[SF.Seq[2].Main[104].TS.SData]
+SeqName = "Set all colors"
+UseCurFile = True
+
+[DEF, SF.Seq[2].Main[104].TS.SData]
+ActualArgs = Arguments
+
+[DEF, SF.Seq[2].Main[104].TS.SData.ActualArgs]
+ToggleValue = "TYPE, SequenceArgument"
+LampState = "TYPE, SequenceArgument"
+
+[SF.Seq[2].Main[104].TS.SData.ActualArgs.ToggleValue]
+UseDef = False
+Expr = "Locals.ToggleValue"
+ParamType = 16
+
+[SF.Seq[2].Main[104].TS.SData.ActualArgs.LampState]
+UseDef = False
+Expr = "{True,True,True} // RD YE GN"
+ParamType = 1024
+
+[DEF, SF.Seq[2].Main[104]]
+%NAME = "Set colors"
+
+[SF.Seq[2].Main[105].TS]
+Id = "ID#:gPnEko5o8RGN16QctBT8oA"
+PostExpr = "Locals.Counter = 0"
+
+[DEF, SF.Seq[2].Main[105]]
+%NAME = "Reset Counter"
+
+[SF.Seq[2].Main[106].TS]
+Id = "ID#:i32h9eNg8RGN0qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[106]]
+%NAME = "End"
+
+[SF.Seq[2].Main[107].TS]
+Id = "ID#:mEOyA45o8RGN16QctBT8oA"
+
+[DEF, SF.Seq[2].Main[107]]
+%NAME = "Break"
+
 [SF.Seq[2].Main[108].TS]
-Id = "ID#:/ZI/eeRg8RGN0qQctBT8oA"
+Id = "ID#:HwR74bpg8RGN0qQctBT8oA"
 
 [DEF, SF.Seq[2].Main[108]]
 %NAME = "End"
 
 [SF.Seq[2].Main[109].TS]
-Id = "ID#:/pI/eeRg8RGN0qQctBT8oA"
+Id = "ID#:JQR74bpg8RGN0qQctBT8oA"
+
+[SF.Seq[2].Main[109]]
+ItemExpr = "Enums.Light_States.Green_Blink_Fast"
 
 [DEF, SF.Seq[2].Main[109]]
-%NAME = "Else"
+%NAME = "Case"
 
 [SF.Seq[2].Main[110].TS]
-Id = "ID#:/5I/eeRg8RGN0qQctBT8oA"
+Id = "ID#:9ZI/eeRg8RGN0qQctBT8oA"
 
-[DEF, SF.Seq[2].Main[110].TS]
-SData = "TYPE, SeqCallStepAdditions"
-
-[SF.Seq[2].Main[110].TS.SData]
-SeqName = "Set all colors"
-UseCurFile = True
-
-[DEF, SF.Seq[2].Main[110].TS.SData]
-ActualArgs = Arguments
-
-[DEF, SF.Seq[2].Main[110].TS.SData.ActualArgs]
-ToggleValue = "TYPE, SequenceArgument"
-LampState = "TYPE, SequenceArgument"
-
-[SF.Seq[2].Main[110].TS.SData.ActualArgs.ToggleValue]
-UseDef = False
-Expr = "Locals.ToggleValue"
-ParamType = 16
-
-[SF.Seq[2].Main[110].TS.SData.ActualArgs.LampState]
-UseDef = False
-Expr = "{False,False,True}  // RD YE GN"
-ParamType = 1024
+[SF.Seq[2].Main[110]]
+ConditionExpr = "StationGlobals.Automation.SystemControl.Previous_Light_State == StationGlobals.Automation.SystemControl.Light_State"
 
 [DEF, SF.Seq[2].Main[110]]
-%NAME = "Set colors"
+%NAME = "If"
 
 [SF.Seq[2].Main[111].TS]
-Id = "ID#:JWOLdo5o8RGN16QctBT8oA"
-PostExpr = "Locals.Counter = 0"
+Id = "ID#:9pI/eeRg8RGN0qQctBT8oA"
 
 [DEF, SF.Seq[2].Main[111]]
-%NAME = "Reset Counter"
+%NAME = "Other lights are set, only toggle wanted light"
 
 [SF.Seq[2].Main[112].TS]
-Id = "ID#:AJM/eeRg8RGN0qQctBT8oA"
+Id = "ID#:95I/eeRg8RGN0qQctBT8oA"
+
+[SF.Seq[2].Main[112]]
+ConditionExpr = "Locals.Counter == Locals.Fast"
 
 [DEF, SF.Seq[2].Main[112]]
-%NAME = "End"
+%NAME = "If"
 
 [SF.Seq[2].Main[113].TS]
-Id = "ID#:mUOyA45o8RGN16QctBT8oA"
+Id = "ID#:+JI/eeRg8RGN0qQctBT8oA"
+PostExpr = "Locals.Counter = 0"
 
 [DEF, SF.Seq[2].Main[113]]
-%NAME = "Break"
+%NAME = "Reset Counter"
 
 [SF.Seq[2].Main[114].TS]
-Id = "ID#:JgR74bpg8RGN0qQctBT8oA"
+Id = "ID#:AAxlso5o8RGN16QctBT8oA"
 
-[DEF, SF.Seq[2].Main[114]]
-%NAME = "End"
-
-[SF.Seq[2].Main[115].TS]
-Id = "ID#:E23oA7tg8RGN0qQctBT8oA"
-
-[SF.Seq[2].Main[115]]
-ItemExpr = "Enums.Light_States.Yellow_Blink_Fast"
-
-[DEF, SF.Seq[2].Main[115]]
-%NAME = "Case"
-
-[SF.Seq[2].Main[116].TS]
-Id = "ID#:fHvTbI5o8RGN16QctBT8oA"
-
-[SF.Seq[2].Main[116]]
-ConditionExpr = "StationGlobals.Automation.SystemControl.Previous_Light_State == StationGlobals.Automation.SystemControl.Light_State"
-
-[DEF, SF.Seq[2].Main[116]]
-%NAME = "If"
-
-[SF.Seq[2].Main[117].TS]
-Id = "ID#:fXvTbI5o8RGN16QctBT8oA"
-
-[DEF, SF.Seq[2].Main[117]]
-%NAME = "Other lights are set, only toggle wanted light"
-
-[SF.Seq[2].Main[118].TS]
-Id = "ID#:fnvTbI5o8RGN16QctBT8oA"
-
-[SF.Seq[2].Main[118]]
-ConditionExpr = "Locals.Counter == Locals.Fast"
-
-[DEF, SF.Seq[2].Main[118]]
-%NAME = "If"
-
-[SF.Seq[2].Main[119].TS]
-Id = "ID#:f3vTbI5o8RGN16QctBT8oA"
-PostExpr = "Locals.Counter = 0"
-
-[DEF, SF.Seq[2].Main[119]]
-%NAME = "Reset Counter"
-
-[SF.Seq[2].Main[120].TS]
-Id = "ID#:Z6vUWY9o8RGN16QctBT8oA"
-
-[DEF, SF.Seq[2].Main[120].TS]
+[DEF, SF.Seq[2].Main[114].TS]
 SData = "TYPE, FlexGStepAdditions"
 
-[SF.Seq[2].Main[120].TS.SData.ViCall]
+[SF.Seq[2].Main[114].TS.SData.ViCall]
 ProjectPath = "..\\..\\LabView\\nexteer.lvproj"
 VIPath = "My Computer\\DIO\\DIO.lvlib\\Set Output.vi"
 Namespace = "DIO.lvlib"
 TDChecksum = -1657651955
 %HI: Parms = [5]
 
-[DEF, SF.Seq[2].Main[120].TS.SData.ViCall.Parms]
+[DEF, SF.Seq[2].Main[114].TS.SData.ViCall.Parms]
 %[0] = "TYPE, VIParameter"
 %[1] = "TYPE, VIParameter"
 %[2] = "TYPE, VIParameter"
@@ -9988,607 +9772,7 @@ TDChecksum = -1657651955
 %[4] = "TYPE, VIParameter"
 %[5] = "TYPE, VIParameter"
 
-[SF.Seq[2].Main[120].TS.SData.ViCall.Parms[0]]
-Label = "task in"
-ArgVal = "StationGlobals.Automation.Lamp.YE.Reference"
-Type = 0
-WireRequirement = 1
-NumType = 4
-DisplayType = "Number (I32)"
-ConnectorNumber = 11
-
-[DEF, SF.Seq[2].Main[120].TS.SData.ViCall.Parms[0]]
-%NAME = "task in"
-
-[SF.Seq[2].Main[120].TS.SData.ViCall.Parms[1]]
-Label = "portBit"
-ArgVal = "StationGlobals.Automation.Lamp.YE.Channel"
-Type = 0
-WireRequirement = 1
-NumType = 4
-DisplayType = "Number (I32)"
-ConnectorNumber = 10
-
-[DEF, SF.Seq[2].Main[120].TS.SData.ViCall.Parms[1]]
-%NAME = "portBit"
-
-[SF.Seq[2].Main[120].TS.SData.ViCall.Parms[2]]
-Label = "State"
-ArgVal = "Locals.ToggleValue"
-Type = 2
-WireRequirement = 1
-DisplayType = "Boolean"
-ConnectorNumber = 9
-
-[DEF, SF.Seq[2].Main[120].TS.SData.ViCall.Parms[2]]
-%NAME = "State"
-
-[SF.Seq[2].Main[120].TS.SData.ViCall.Parms[3]]
-Label = "error in "
-Type = 3
-WireRequirement = 1
-DisplayType = "Container"
-UseDefaultValues = True
-%HI: ArrayClusterEls = [2]
-ConnectorNumber = 8
-
-[DEF, SF.Seq[2].Main[120].TS.SData.ViCall.Parms[3].ArrayClusterEls]
-%[0] = "TYPE, VIParameterElement"
-%[1] = "TYPE, VIParameterElement"
-%[2] = "TYPE, VIParameterElement"
-
-[SF.Seq[2].Main[120].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
-Label = "status"
-ArgVal = "False"
-Type = 2
-WireRequirement = 1
-DisplayType = "Boolean"
-UseDefaultValues = True
-
-[DEF, SF.Seq[2].Main[120].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
-%NAME = "status"
-
-[SF.Seq[2].Main[120].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
-Label = "code"
-ArgVal = "0"
-Type = 0
-WireRequirement = 1
-NumType = 4
-DisplayType = "Number (I32)"
-UseDefaultValues = True
-
-[DEF, SF.Seq[2].Main[120].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
-%NAME = "code"
-
-[SF.Seq[2].Main[120].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
-Label = "source"
-ArgVal = "\"\""
-Type = 1
-WireRequirement = 1
-DisplayType = "ASCII String"
-UseDefaultValues = True
-
-[DEF, SF.Seq[2].Main[120].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
-%NAME = "source"
-
-[DEF, SF.Seq[2].Main[120].TS.SData.ViCall.Parms[3]]
-%NAME = "error in "
-
-[SF.Seq[2].Main[120].TS.SData.ViCall.Parms[4]]
-Label = "task out"
-ArgVal = "StationGlobals.Automation.Lamp.YE.Reference"
-Type = 0
-WireRequirement = 1
-NumType = 4
-DisplayType = "Number (I32)"
-Direction = 1
-ConnectorNumber = 3
-
-[DEF, SF.Seq[2].Main[120].TS.SData.ViCall.Parms[4]]
-%NAME = "task out"
-
-[SF.Seq[2].Main[120].TS.SData.ViCall.Parms[5]]
-Label = "error out"
-ArgVal = "Step.Result.Error"
-Type = 3
-WireRequirement = 1
-DisplayType = "Container"
-%HI: ArrayClusterEls = [2]
-Direction = 1
-ConnectorNumber = 0
-LegacyClusterType = 2
-
-[DEF, SF.Seq[2].Main[120].TS.SData.ViCall.Parms[5].ArrayClusterEls]
-%[0] = "TYPE, VIParameterElement"
-%[1] = "TYPE, VIParameterElement"
-%[2] = "TYPE, VIParameterElement"
-
-[SF.Seq[2].Main[120].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
-Label = "status"
-ArgVal = "Step.Result.Error.Occurred"
-Type = 2
-WireRequirement = 1
-DisplayType = "Boolean"
-
-[DEF, SF.Seq[2].Main[120].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
-%NAME = "status"
-
-[SF.Seq[2].Main[120].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
-Label = "code"
-ArgVal = "Step.Result.Error.Code"
-Type = 0
-WireRequirement = 1
-NumType = 4
-DisplayType = "Number (I32)"
-
-[DEF, SF.Seq[2].Main[120].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
-%NAME = "code"
-
-[SF.Seq[2].Main[120].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
-Label = "source"
-ArgVal = "Step.Result.Error.Msg"
-Type = 1
-WireRequirement = 1
-DisplayType = "ASCII String"
-
-[DEF, SF.Seq[2].Main[120].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
-%NAME = "source"
-
-[DEF, SF.Seq[2].Main[120].TS.SData.ViCall.Parms[5]]
-%NAME = "error out"
-
-[DEF, SF.Seq[2].Main[120]]
-%NAME = "Set Yellow signal"
-
-[SF.Seq[2].Main[121].TS]
-Id = "ID#:gXvTbI5o8RGN16QctBT8oA"
-PostExpr = "Locals.ToggleValue = !Locals.ToggleValue"
-
-[DEF, SF.Seq[2].Main[121]]
-%NAME = "Set toggle value"
-
-[SF.Seq[2].Main[122].TS]
-Id = "ID#:gnvTbI5o8RGN16QctBT8oA"
-
-[DEF, SF.Seq[2].Main[122]]
-%NAME = "Else"
-
-[SF.Seq[2].Main[123].TS]
-Id = "ID#:g3vTbI5o8RGN16QctBT8oA"
-PostExpr = "Locals.Counter ++"
-
-[DEF, SF.Seq[2].Main[123]]
-%NAME = "Increase Counter"
-
-[SF.Seq[2].Main[124].TS]
-Id = "ID#:hHvTbI5o8RGN16QctBT8oA"
-
-[DEF, SF.Seq[2].Main[124]]
-%NAME = "End"
-
-[SF.Seq[2].Main[125].TS]
-Id = "ID#:hXvTbI5o8RGN16QctBT8oA"
-
-[DEF, SF.Seq[2].Main[125]]
-%NAME = "Else"
-
-[SF.Seq[2].Main[126].TS]
-Id = "ID#:hnvTbI5o8RGN16QctBT8oA"
-
-[DEF, SF.Seq[2].Main[126].TS]
-SData = "TYPE, SeqCallStepAdditions"
-
-[SF.Seq[2].Main[126].TS.SData]
-SeqName = "Set all colors"
-UseCurFile = True
-
-[DEF, SF.Seq[2].Main[126].TS.SData]
-ActualArgs = Arguments
-
-[DEF, SF.Seq[2].Main[126].TS.SData.ActualArgs]
-ToggleValue = "TYPE, SequenceArgument"
-LampState = "TYPE, SequenceArgument"
-
-[SF.Seq[2].Main[126].TS.SData.ActualArgs.ToggleValue]
-UseDef = False
-Expr = "Locals.ToggleValue"
-ParamType = 16
-
-[SF.Seq[2].Main[126].TS.SData.ActualArgs.LampState]
-UseDef = False
-Expr = "{True,False, False}  // RD YE GN"
-ParamType = 1024
-
-[DEF, SF.Seq[2].Main[126]]
-%NAME = "Set colors"
-
-[SF.Seq[2].Main[127].TS]
-Id = "ID#:JmOLdo5o8RGN16QctBT8oA"
-PostExpr = "Locals.Counter = 0"
-
-[DEF, SF.Seq[2].Main[127]]
-%NAME = "Reset Counter"
-
-[SF.Seq[2].Main[128].TS]
-Id = "ID#:h3vTbI5o8RGN16QctBT8oA"
-
-[DEF, SF.Seq[2].Main[128]]
-%NAME = "End"
-
-[SF.Seq[2].Main[129].TS]
-Id = "ID#:mkOyA45o8RGN16QctBT8oA"
-
-[DEF, SF.Seq[2].Main[129]]
-%NAME = "Break"
-
-[SF.Seq[2].Main[130].TS]
-Id = "ID#:FG3oA7tg8RGN0qQctBT8oA"
-
-[DEF, SF.Seq[2].Main[130]]
-%NAME = "End"
-
-[SF.Seq[2].Main[131].TS]
-Id = "ID#:Gm3oA7tg8RGN0qQctBT8oA"
-
-[SF.Seq[2].Main[131]]
-ItemExpr = "Enums.Light_States.Red_Blink_Fast"
-
-[DEF, SF.Seq[2].Main[131]]
-%NAME = "Case"
-
-[SF.Seq[2].Main[132].TS]
-Id = "ID#:bVxuCo9o8RGN16QctBT8oA"
-
-[SF.Seq[2].Main[132]]
-ConditionExpr = "StationGlobals.Automation.SystemControl.Previous_Light_State == StationGlobals.Automation.SystemControl.Light_State"
-
-[DEF, SF.Seq[2].Main[132]]
-%NAME = "If"
-
-[SF.Seq[2].Main[133].TS]
-Id = "ID#:blxuCo9o8RGN16QctBT8oA"
-
-[DEF, SF.Seq[2].Main[133]]
-%NAME = "Other lights are set, only toggle wanted light"
-
-[SF.Seq[2].Main[134].TS]
-Id = "ID#:b1xuCo9o8RGN16QctBT8oA"
-
-[SF.Seq[2].Main[134]]
-ConditionExpr = "Locals.Counter == Locals.Fast"
-
-[DEF, SF.Seq[2].Main[134]]
-%NAME = "If"
-
-[SF.Seq[2].Main[135].TS]
-Id = "ID#:cFxuCo9o8RGN16QctBT8oA"
-PostExpr = "Locals.Counter = 0"
-
-[DEF, SF.Seq[2].Main[135]]
-%NAME = "Reset Counter"
-
-[SF.Seq[2].Main[136].TS]
-Id = "ID#:ZtJaNY9o8RGN16QctBT8oA"
-
-[DEF, SF.Seq[2].Main[136].TS]
-SData = "TYPE, FlexGStepAdditions"
-
-[SF.Seq[2].Main[136].TS.SData.ViCall]
-ProjectPath = "..\\..\\LabView\\nexteer.lvproj"
-VIPath = "My Computer\\DIO\\DIO.lvlib\\Set Output.vi"
-Namespace = "DIO.lvlib"
-TDChecksum = -1657651955
-%HI: Parms = [5]
-
-[DEF, SF.Seq[2].Main[136].TS.SData.ViCall.Parms]
-%[0] = "TYPE, VIParameter"
-%[1] = "TYPE, VIParameter"
-%[2] = "TYPE, VIParameter"
-%[3] = "TYPE, VIParameter"
-%[4] = "TYPE, VIParameter"
-%[5] = "TYPE, VIParameter"
-
-[SF.Seq[2].Main[136].TS.SData.ViCall.Parms[0]]
-Label = "task in"
-ArgVal = "StationGlobals.Automation.Lamp.RD.Reference"
-Type = 0
-WireRequirement = 1
-NumType = 4
-DisplayType = "Number (I32)"
-ConnectorNumber = 11
-
-[DEF, SF.Seq[2].Main[136].TS.SData.ViCall.Parms[0]]
-%NAME = "task in"
-
-[SF.Seq[2].Main[136].TS.SData.ViCall.Parms[1]]
-Label = "portBit"
-ArgVal = "StationGlobals.Automation.Lamp.RD.Channel"
-Type = 0
-WireRequirement = 1
-NumType = 4
-DisplayType = "Number (I32)"
-ConnectorNumber = 10
-
-[DEF, SF.Seq[2].Main[136].TS.SData.ViCall.Parms[1]]
-%NAME = "portBit"
-
-[SF.Seq[2].Main[136].TS.SData.ViCall.Parms[2]]
-Label = "State"
-ArgVal = "Locals.ToggleValue"
-Type = 2
-WireRequirement = 1
-DisplayType = "Boolean"
-ConnectorNumber = 9
-
-[DEF, SF.Seq[2].Main[136].TS.SData.ViCall.Parms[2]]
-%NAME = "State"
-
-[SF.Seq[2].Main[136].TS.SData.ViCall.Parms[3]]
-Label = "error in "
-Type = 3
-WireRequirement = 1
-DisplayType = "Container"
-UseDefaultValues = True
-%HI: ArrayClusterEls = [2]
-ConnectorNumber = 8
-
-[DEF, SF.Seq[2].Main[136].TS.SData.ViCall.Parms[3].ArrayClusterEls]
-%[0] = "TYPE, VIParameterElement"
-%[1] = "TYPE, VIParameterElement"
-%[2] = "TYPE, VIParameterElement"
-
-[SF.Seq[2].Main[136].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
-Label = "status"
-ArgVal = "False"
-Type = 2
-WireRequirement = 1
-DisplayType = "Boolean"
-UseDefaultValues = True
-
-[DEF, SF.Seq[2].Main[136].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
-%NAME = "status"
-
-[SF.Seq[2].Main[136].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
-Label = "code"
-ArgVal = "0"
-Type = 0
-WireRequirement = 1
-NumType = 4
-DisplayType = "Number (I32)"
-UseDefaultValues = True
-
-[DEF, SF.Seq[2].Main[136].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
-%NAME = "code"
-
-[SF.Seq[2].Main[136].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
-Label = "source"
-ArgVal = "\"\""
-Type = 1
-WireRequirement = 1
-DisplayType = "ASCII String"
-UseDefaultValues = True
-
-[DEF, SF.Seq[2].Main[136].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
-%NAME = "source"
-
-[DEF, SF.Seq[2].Main[136].TS.SData.ViCall.Parms[3]]
-%NAME = "error in "
-
-[SF.Seq[2].Main[136].TS.SData.ViCall.Parms[4]]
-Label = "task out"
-ArgVal = "StationGlobals.Automation.Lamp.YE.Reference"
-Type = 0
-WireRequirement = 1
-NumType = 4
-DisplayType = "Number (I32)"
-Direction = 1
-ConnectorNumber = 3
-
-[DEF, SF.Seq[2].Main[136].TS.SData.ViCall.Parms[4]]
-%NAME = "task out"
-
-[SF.Seq[2].Main[136].TS.SData.ViCall.Parms[5]]
-Label = "error out"
-ArgVal = "Step.Result.Error"
-Type = 3
-WireRequirement = 1
-DisplayType = "Container"
-%HI: ArrayClusterEls = [2]
-Direction = 1
-ConnectorNumber = 0
-LegacyClusterType = 2
-
-[DEF, SF.Seq[2].Main[136].TS.SData.ViCall.Parms[5].ArrayClusterEls]
-%[0] = "TYPE, VIParameterElement"
-%[1] = "TYPE, VIParameterElement"
-%[2] = "TYPE, VIParameterElement"
-
-[SF.Seq[2].Main[136].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
-Label = "status"
-ArgVal = "Step.Result.Error.Occurred"
-Type = 2
-WireRequirement = 1
-DisplayType = "Boolean"
-
-[DEF, SF.Seq[2].Main[136].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
-%NAME = "status"
-
-[SF.Seq[2].Main[136].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
-Label = "code"
-ArgVal = "Step.Result.Error.Code"
-Type = 0
-WireRequirement = 1
-NumType = 4
-DisplayType = "Number (I32)"
-
-[DEF, SF.Seq[2].Main[136].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
-%NAME = "code"
-
-[SF.Seq[2].Main[136].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
-Label = "source"
-ArgVal = "Step.Result.Error.Msg"
-Type = 1
-WireRequirement = 1
-DisplayType = "ASCII String"
-
-[DEF, SF.Seq[2].Main[136].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
-%NAME = "source"
-
-[DEF, SF.Seq[2].Main[136].TS.SData.ViCall.Parms[5]]
-%NAME = "error out"
-
-[DEF, SF.Seq[2].Main[136]]
-%NAME = "Set Red signal"
-
-[SF.Seq[2].Main[137].TS]
-Id = "ID#:clxuCo9o8RGN16QctBT8oA"
-PostExpr = "Locals.ToggleValue = !Locals.ToggleValue"
-
-[DEF, SF.Seq[2].Main[137]]
-%NAME = "Set toggle value"
-
-[SF.Seq[2].Main[138].TS]
-Id = "ID#:c1xuCo9o8RGN16QctBT8oA"
-
-[DEF, SF.Seq[2].Main[138]]
-%NAME = "Else"
-
-[SF.Seq[2].Main[139].TS]
-Id = "ID#:dFxuCo9o8RGN16QctBT8oA"
-PostExpr = "Locals.Counter ++"
-
-[DEF, SF.Seq[2].Main[139]]
-%NAME = "Increase Counter"
-
-[SF.Seq[2].Main[140].TS]
-Id = "ID#:dVxuCo9o8RGN16QctBT8oA"
-
-[DEF, SF.Seq[2].Main[140]]
-%NAME = "End"
-
-[SF.Seq[2].Main[141].TS]
-Id = "ID#:dlxuCo9o8RGN16QctBT8oA"
-
-[DEF, SF.Seq[2].Main[141]]
-%NAME = "Else"
-
-[SF.Seq[2].Main[142].TS]
-Id = "ID#:d1xuCo9o8RGN16QctBT8oA"
-
-[DEF, SF.Seq[2].Main[142].TS]
-SData = "TYPE, SeqCallStepAdditions"
-
-[SF.Seq[2].Main[142].TS.SData]
-SeqName = "Set all colors"
-UseCurFile = True
-
-[DEF, SF.Seq[2].Main[142].TS.SData]
-ActualArgs = Arguments
-
-[DEF, SF.Seq[2].Main[142].TS.SData.ActualArgs]
-ToggleValue = "TYPE, SequenceArgument"
-LampState = "TYPE, SequenceArgument"
-
-[SF.Seq[2].Main[142].TS.SData.ActualArgs.ToggleValue]
-UseDef = False
-Expr = "Locals.ToggleValue"
-ParamType = 16
-
-[SF.Seq[2].Main[142].TS.SData.ActualArgs.LampState]
-UseDef = False
-Expr = "{True,False,False}  // RD YE GN"
-ParamType = 1024
-
-[DEF, SF.Seq[2].Main[142]]
-%NAME = "Set colors"
-
-[SF.Seq[2].Main[143].TS]
-Id = "ID#:eFxuCo9o8RGN16QctBT8oA"
-PostExpr = "Locals.Counter = 0"
-
-[DEF, SF.Seq[2].Main[143]]
-%NAME = "Reset Counter"
-
-[SF.Seq[2].Main[144].TS]
-Id = "ID#:eVxuCo9o8RGN16QctBT8oA"
-
-[DEF, SF.Seq[2].Main[144]]
-%NAME = "End"
-
-[SF.Seq[2].Main[145].TS]
-Id = "ID#:m0OyA45o8RGN16QctBT8oA"
-
-[DEF, SF.Seq[2].Main[145]]
-%NAME = "Break"
-
-[SF.Seq[2].Main[146].TS]
-Id = "ID#:G23oA7tg8RGN0qQctBT8oA"
-
-[DEF, SF.Seq[2].Main[146]]
-%NAME = "End"
-
-[SF.Seq[2].Main[147].TS]
-Id = "ID#:IW3oA7tg8RGN0qQctBT8oA"
-
-[SF.Seq[2].Main[147]]
-ItemExpr = "Enums.Light_States.All_Blink_Fast"
-
-[DEF, SF.Seq[2].Main[147]]
-%NAME = "Case"
-
-[SF.Seq[2].Main[148].TS]
-Id = "ID#:IbMXSI9o8RGN16QctBT8oA"
-
-[SF.Seq[2].Main[148]]
-ConditionExpr = "StationGlobals.Automation.SystemControl.Previous_Light_State == StationGlobals.Automation.SystemControl.Light_State"
-
-[DEF, SF.Seq[2].Main[148]]
-%NAME = "If"
-
-[SF.Seq[2].Main[149].TS]
-Id = "ID#:IrMXSI9o8RGN16QctBT8oA"
-
-[DEF, SF.Seq[2].Main[149]]
-%NAME = "Other lights are set, only toggle wanted light"
-
-[SF.Seq[2].Main[150].TS]
-Id = "ID#:I7MXSI9o8RGN16QctBT8oA"
-
-[SF.Seq[2].Main[150]]
-ConditionExpr = "Locals.Counter == Locals.Fast"
-
-[DEF, SF.Seq[2].Main[150]]
-%NAME = "If"
-
-[SF.Seq[2].Main[151].TS]
-Id = "ID#:JLMXSI9o8RGN16QctBT8oA"
-PostExpr = "Locals.Counter = 0"
-
-[DEF, SF.Seq[2].Main[151]]
-%NAME = "Reset Counter"
-
-[SF.Seq[2].Main[152].TS]
-Id = "ID#:JbMXSI9o8RGN16QctBT8oA"
-
-[DEF, SF.Seq[2].Main[152].TS]
-SData = "TYPE, FlexGStepAdditions"
-
-[SF.Seq[2].Main[152].TS.SData.ViCall]
-ProjectPath = "..\\..\\LabView\\nexteer.lvproj"
-VIPath = "My Computer\\DIO\\DIO.lvlib\\Set Output.vi"
-Namespace = "DIO.lvlib"
-TDChecksum = -1657651955
-%HI: Parms = [5]
-
-[DEF, SF.Seq[2].Main[152].TS.SData.ViCall.Parms]
-%[0] = "TYPE, VIParameter"
-%[1] = "TYPE, VIParameter"
-%[2] = "TYPE, VIParameter"
-%[3] = "TYPE, VIParameter"
-%[4] = "TYPE, VIParameter"
-%[5] = "TYPE, VIParameter"
-
-[SF.Seq[2].Main[152].TS.SData.ViCall.Parms[0]]
+[SF.Seq[2].Main[114].TS.SData.ViCall.Parms[0]]
 Label = "task in"
 ArgVal = "StationGlobals.Automation.Lamp.GN.Reference"
 Type = 0
@@ -10597,10 +9781,10 @@ NumType = 4
 DisplayType = "Number (I32)"
 ConnectorNumber = 11
 
-[DEF, SF.Seq[2].Main[152].TS.SData.ViCall.Parms[0]]
+[DEF, SF.Seq[2].Main[114].TS.SData.ViCall.Parms[0]]
 %NAME = "task in"
 
-[SF.Seq[2].Main[152].TS.SData.ViCall.Parms[1]]
+[SF.Seq[2].Main[114].TS.SData.ViCall.Parms[1]]
 Label = "portBit"
 ArgVal = "StationGlobals.Automation.Lamp.GN.Channel"
 Type = 0
@@ -10609,10 +9793,10 @@ NumType = 4
 DisplayType = "Number (I32)"
 ConnectorNumber = 10
 
-[DEF, SF.Seq[2].Main[152].TS.SData.ViCall.Parms[1]]
+[DEF, SF.Seq[2].Main[114].TS.SData.ViCall.Parms[1]]
 %NAME = "portBit"
 
-[SF.Seq[2].Main[152].TS.SData.ViCall.Parms[2]]
+[SF.Seq[2].Main[114].TS.SData.ViCall.Parms[2]]
 Label = "State"
 ArgVal = "Locals.ToggleValue"
 Type = 2
@@ -10620,10 +9804,10 @@ WireRequirement = 1
 DisplayType = "Boolean"
 ConnectorNumber = 9
 
-[DEF, SF.Seq[2].Main[152].TS.SData.ViCall.Parms[2]]
+[DEF, SF.Seq[2].Main[114].TS.SData.ViCall.Parms[2]]
 %NAME = "State"
 
-[SF.Seq[2].Main[152].TS.SData.ViCall.Parms[3]]
+[SF.Seq[2].Main[114].TS.SData.ViCall.Parms[3]]
 Label = "error in "
 Type = 3
 WireRequirement = 1
@@ -10632,12 +9816,12 @@ UseDefaultValues = True
 %HI: ArrayClusterEls = [2]
 ConnectorNumber = 8
 
-[DEF, SF.Seq[2].Main[152].TS.SData.ViCall.Parms[3].ArrayClusterEls]
+[DEF, SF.Seq[2].Main[114].TS.SData.ViCall.Parms[3].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
 
-[SF.Seq[2].Main[152].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
+[SF.Seq[2].Main[114].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
 Label = "status"
 ArgVal = "False"
 Type = 2
@@ -10645,10 +9829,10 @@ WireRequirement = 1
 DisplayType = "Boolean"
 UseDefaultValues = True
 
-[DEF, SF.Seq[2].Main[152].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
+[DEF, SF.Seq[2].Main[114].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
 %NAME = "status"
 
-[SF.Seq[2].Main[152].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
+[SF.Seq[2].Main[114].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
 Label = "code"
 ArgVal = "0"
 Type = 0
@@ -10657,10 +9841,10 @@ NumType = 4
 DisplayType = "Number (I32)"
 UseDefaultValues = True
 
-[DEF, SF.Seq[2].Main[152].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
+[DEF, SF.Seq[2].Main[114].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
 %NAME = "code"
 
-[SF.Seq[2].Main[152].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
+[SF.Seq[2].Main[114].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
 Label = "source"
 ArgVal = "\"\""
 Type = 1
@@ -10668,13 +9852,13 @@ WireRequirement = 1
 DisplayType = "ASCII String"
 UseDefaultValues = True
 
-[DEF, SF.Seq[2].Main[152].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
+[DEF, SF.Seq[2].Main[114].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
 %NAME = "source"
 
-[DEF, SF.Seq[2].Main[152].TS.SData.ViCall.Parms[3]]
+[DEF, SF.Seq[2].Main[114].TS.SData.ViCall.Parms[3]]
 %NAME = "error in "
 
-[SF.Seq[2].Main[152].TS.SData.ViCall.Parms[4]]
+[SF.Seq[2].Main[114].TS.SData.ViCall.Parms[4]]
 Label = "task out"
 ArgVal = "StationGlobals.Automation.Lamp.GN.Reference"
 Type = 0
@@ -10684,10 +9868,10 @@ DisplayType = "Number (I32)"
 Direction = 1
 ConnectorNumber = 3
 
-[DEF, SF.Seq[2].Main[152].TS.SData.ViCall.Parms[4]]
+[DEF, SF.Seq[2].Main[114].TS.SData.ViCall.Parms[4]]
 %NAME = "task out"
 
-[SF.Seq[2].Main[152].TS.SData.ViCall.Parms[5]]
+[SF.Seq[2].Main[114].TS.SData.ViCall.Parms[5]]
 Label = "error out"
 ArgVal = "Step.Result.Error"
 Type = 3
@@ -10698,22 +9882,22 @@ Direction = 1
 ConnectorNumber = 0
 LegacyClusterType = 2
 
-[DEF, SF.Seq[2].Main[152].TS.SData.ViCall.Parms[5].ArrayClusterEls]
+[DEF, SF.Seq[2].Main[114].TS.SData.ViCall.Parms[5].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
 
-[SF.Seq[2].Main[152].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+[SF.Seq[2].Main[114].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
 Label = "status"
 ArgVal = "Step.Result.Error.Occurred"
 Type = 2
 WireRequirement = 1
 DisplayType = "Boolean"
 
-[DEF, SF.Seq[2].Main[152].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+[DEF, SF.Seq[2].Main[114].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
 %NAME = "status"
 
-[SF.Seq[2].Main[152].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+[SF.Seq[2].Main[114].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
 Label = "code"
 ArgVal = "Step.Result.Error.Code"
 Type = 0
@@ -10721,39 +9905,166 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[2].Main[152].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+[DEF, SF.Seq[2].Main[114].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
 %NAME = "code"
 
-[SF.Seq[2].Main[152].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+[SF.Seq[2].Main[114].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
 Label = "source"
 ArgVal = "Step.Result.Error.Msg"
 Type = 1
 WireRequirement = 1
 DisplayType = "ASCII String"
 
-[DEF, SF.Seq[2].Main[152].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+[DEF, SF.Seq[2].Main[114].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
 %NAME = "source"
 
-[DEF, SF.Seq[2].Main[152].TS.SData.ViCall.Parms[5]]
+[DEF, SF.Seq[2].Main[114].TS.SData.ViCall.Parms[5]]
 %NAME = "error out"
 
-[DEF, SF.Seq[2].Main[152]]
+[DEF, SF.Seq[2].Main[114]]
 %NAME = "Set Green signal"
 
-[SF.Seq[2].Main[153].TS]
-Id = "ID#:JrMXSI9o8RGN16QctBT8oA"
+[SF.Seq[2].Main[115].TS]
+Id = "ID#:+pI/eeRg8RGN0qQctBT8oA"
+PostExpr = "Locals.ToggleValue = !Locals.ToggleValue"
 
-[DEF, SF.Seq[2].Main[153].TS]
+[DEF, SF.Seq[2].Main[115]]
+%NAME = "Set toggle value"
+
+[SF.Seq[2].Main[116].TS]
+Id = "ID#:+5I/eeRg8RGN0qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[116]]
+%NAME = "Else"
+
+[SF.Seq[2].Main[117].TS]
+Id = "ID#:/JI/eeRg8RGN0qQctBT8oA"
+PostExpr = "Locals.Counter ++"
+
+[DEF, SF.Seq[2].Main[117]]
+%NAME = "Increase Counter"
+
+[SF.Seq[2].Main[118].TS]
+Id = "ID#:/ZI/eeRg8RGN0qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[118]]
+%NAME = "End"
+
+[SF.Seq[2].Main[119].TS]
+Id = "ID#:/pI/eeRg8RGN0qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[119]]
+%NAME = "Else"
+
+[SF.Seq[2].Main[120].TS]
+Id = "ID#:/5I/eeRg8RGN0qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[120].TS]
+SData = "TYPE, SeqCallStepAdditions"
+
+[SF.Seq[2].Main[120].TS.SData]
+SeqName = "Set all colors"
+UseCurFile = True
+
+[DEF, SF.Seq[2].Main[120].TS.SData]
+ActualArgs = Arguments
+
+[DEF, SF.Seq[2].Main[120].TS.SData.ActualArgs]
+ToggleValue = "TYPE, SequenceArgument"
+LampState = "TYPE, SequenceArgument"
+
+[SF.Seq[2].Main[120].TS.SData.ActualArgs.ToggleValue]
+UseDef = False
+Expr = "Locals.ToggleValue"
+ParamType = 16
+
+[SF.Seq[2].Main[120].TS.SData.ActualArgs.LampState]
+UseDef = False
+Expr = "{False,False,True}  // RD YE GN"
+ParamType = 1024
+
+[DEF, SF.Seq[2].Main[120]]
+%NAME = "Set colors"
+
+[SF.Seq[2].Main[121].TS]
+Id = "ID#:JWOLdo5o8RGN16QctBT8oA"
+PostExpr = "Locals.Counter = 0"
+
+[DEF, SF.Seq[2].Main[121]]
+%NAME = "Reset Counter"
+
+[SF.Seq[2].Main[122].TS]
+Id = "ID#:AJM/eeRg8RGN0qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[122]]
+%NAME = "End"
+
+[SF.Seq[2].Main[123].TS]
+Id = "ID#:mUOyA45o8RGN16QctBT8oA"
+
+[DEF, SF.Seq[2].Main[123]]
+%NAME = "Break"
+
+[SF.Seq[2].Main[124].TS]
+Id = "ID#:JgR74bpg8RGN0qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[124]]
+%NAME = "End"
+
+[SF.Seq[2].Main[125].TS]
+Id = "ID#:E23oA7tg8RGN0qQctBT8oA"
+
+[SF.Seq[2].Main[125]]
+ItemExpr = "Enums.Light_States.Yellow_Blink_Fast"
+
+[DEF, SF.Seq[2].Main[125]]
+%NAME = "Case"
+
+[SF.Seq[2].Main[126].TS]
+Id = "ID#:fHvTbI5o8RGN16QctBT8oA"
+
+[SF.Seq[2].Main[126]]
+ConditionExpr = "StationGlobals.Automation.SystemControl.Previous_Light_State == StationGlobals.Automation.SystemControl.Light_State"
+
+[DEF, SF.Seq[2].Main[126]]
+%NAME = "If"
+
+[SF.Seq[2].Main[127].TS]
+Id = "ID#:fXvTbI5o8RGN16QctBT8oA"
+
+[DEF, SF.Seq[2].Main[127]]
+%NAME = "Other lights are set, only toggle wanted light"
+
+[SF.Seq[2].Main[128].TS]
+Id = "ID#:fnvTbI5o8RGN16QctBT8oA"
+
+[SF.Seq[2].Main[128]]
+ConditionExpr = "Locals.Counter == Locals.Fast"
+
+[DEF, SF.Seq[2].Main[128]]
+%NAME = "If"
+
+[SF.Seq[2].Main[129].TS]
+Id = "ID#:f3vTbI5o8RGN16QctBT8oA"
+PostExpr = "Locals.Counter = 0"
+
+[DEF, SF.Seq[2].Main[129]]
+%NAME = "Reset Counter"
+
+[SF.Seq[2].Main[130].TS]
+Id = "ID#:Z6vUWY9o8RGN16QctBT8oA"
+
+[DEF, SF.Seq[2].Main[130].TS]
 SData = "TYPE, FlexGStepAdditions"
 
-[SF.Seq[2].Main[153].TS.SData.ViCall]
+[SF.Seq[2].Main[130].TS.SData.ViCall]
 ProjectPath = "..\\..\\LabView\\nexteer.lvproj"
 VIPath = "My Computer\\DIO\\DIO.lvlib\\Set Output.vi"
 Namespace = "DIO.lvlib"
 TDChecksum = -1657651955
 %HI: Parms = [5]
 
-[DEF, SF.Seq[2].Main[153].TS.SData.ViCall.Parms]
+[DEF, SF.Seq[2].Main[130].TS.SData.ViCall.Parms]
 %[0] = "TYPE, VIParameter"
 %[1] = "TYPE, VIParameter"
 %[2] = "TYPE, VIParameter"
@@ -10761,7 +10072,7 @@ TDChecksum = -1657651955
 %[4] = "TYPE, VIParameter"
 %[5] = "TYPE, VIParameter"
 
-[SF.Seq[2].Main[153].TS.SData.ViCall.Parms[0]]
+[SF.Seq[2].Main[130].TS.SData.ViCall.Parms[0]]
 Label = "task in"
 ArgVal = "StationGlobals.Automation.Lamp.YE.Reference"
 Type = 0
@@ -10770,10 +10081,10 @@ NumType = 4
 DisplayType = "Number (I32)"
 ConnectorNumber = 11
 
-[DEF, SF.Seq[2].Main[153].TS.SData.ViCall.Parms[0]]
+[DEF, SF.Seq[2].Main[130].TS.SData.ViCall.Parms[0]]
 %NAME = "task in"
 
-[SF.Seq[2].Main[153].TS.SData.ViCall.Parms[1]]
+[SF.Seq[2].Main[130].TS.SData.ViCall.Parms[1]]
 Label = "portBit"
 ArgVal = "StationGlobals.Automation.Lamp.YE.Channel"
 Type = 0
@@ -10782,10 +10093,10 @@ NumType = 4
 DisplayType = "Number (I32)"
 ConnectorNumber = 10
 
-[DEF, SF.Seq[2].Main[153].TS.SData.ViCall.Parms[1]]
+[DEF, SF.Seq[2].Main[130].TS.SData.ViCall.Parms[1]]
 %NAME = "portBit"
 
-[SF.Seq[2].Main[153].TS.SData.ViCall.Parms[2]]
+[SF.Seq[2].Main[130].TS.SData.ViCall.Parms[2]]
 Label = "State"
 ArgVal = "Locals.ToggleValue"
 Type = 2
@@ -10793,10 +10104,10 @@ WireRequirement = 1
 DisplayType = "Boolean"
 ConnectorNumber = 9
 
-[DEF, SF.Seq[2].Main[153].TS.SData.ViCall.Parms[2]]
+[DEF, SF.Seq[2].Main[130].TS.SData.ViCall.Parms[2]]
 %NAME = "State"
 
-[SF.Seq[2].Main[153].TS.SData.ViCall.Parms[3]]
+[SF.Seq[2].Main[130].TS.SData.ViCall.Parms[3]]
 Label = "error in "
 Type = 3
 WireRequirement = 1
@@ -10805,12 +10116,12 @@ UseDefaultValues = True
 %HI: ArrayClusterEls = [2]
 ConnectorNumber = 8
 
-[DEF, SF.Seq[2].Main[153].TS.SData.ViCall.Parms[3].ArrayClusterEls]
+[DEF, SF.Seq[2].Main[130].TS.SData.ViCall.Parms[3].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
 
-[SF.Seq[2].Main[153].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
+[SF.Seq[2].Main[130].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
 Label = "status"
 ArgVal = "False"
 Type = 2
@@ -10818,10 +10129,10 @@ WireRequirement = 1
 DisplayType = "Boolean"
 UseDefaultValues = True
 
-[DEF, SF.Seq[2].Main[153].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
+[DEF, SF.Seq[2].Main[130].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
 %NAME = "status"
 
-[SF.Seq[2].Main[153].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
+[SF.Seq[2].Main[130].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
 Label = "code"
 ArgVal = "0"
 Type = 0
@@ -10830,10 +10141,10 @@ NumType = 4
 DisplayType = "Number (I32)"
 UseDefaultValues = True
 
-[DEF, SF.Seq[2].Main[153].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
+[DEF, SF.Seq[2].Main[130].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
 %NAME = "code"
 
-[SF.Seq[2].Main[153].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
+[SF.Seq[2].Main[130].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
 Label = "source"
 ArgVal = "\"\""
 Type = 1
@@ -10841,13 +10152,13 @@ WireRequirement = 1
 DisplayType = "ASCII String"
 UseDefaultValues = True
 
-[DEF, SF.Seq[2].Main[153].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
+[DEF, SF.Seq[2].Main[130].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
 %NAME = "source"
 
-[DEF, SF.Seq[2].Main[153].TS.SData.ViCall.Parms[3]]
+[DEF, SF.Seq[2].Main[130].TS.SData.ViCall.Parms[3]]
 %NAME = "error in "
 
-[SF.Seq[2].Main[153].TS.SData.ViCall.Parms[4]]
+[SF.Seq[2].Main[130].TS.SData.ViCall.Parms[4]]
 Label = "task out"
 ArgVal = "StationGlobals.Automation.Lamp.YE.Reference"
 Type = 0
@@ -10857,10 +10168,10 @@ DisplayType = "Number (I32)"
 Direction = 1
 ConnectorNumber = 3
 
-[DEF, SF.Seq[2].Main[153].TS.SData.ViCall.Parms[4]]
+[DEF, SF.Seq[2].Main[130].TS.SData.ViCall.Parms[4]]
 %NAME = "task out"
 
-[SF.Seq[2].Main[153].TS.SData.ViCall.Parms[5]]
+[SF.Seq[2].Main[130].TS.SData.ViCall.Parms[5]]
 Label = "error out"
 ArgVal = "Step.Result.Error"
 Type = 3
@@ -10871,22 +10182,22 @@ Direction = 1
 ConnectorNumber = 0
 LegacyClusterType = 2
 
-[DEF, SF.Seq[2].Main[153].TS.SData.ViCall.Parms[5].ArrayClusterEls]
+[DEF, SF.Seq[2].Main[130].TS.SData.ViCall.Parms[5].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
 
-[SF.Seq[2].Main[153].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+[SF.Seq[2].Main[130].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
 Label = "status"
 ArgVal = "Step.Result.Error.Occurred"
 Type = 2
 WireRequirement = 1
 DisplayType = "Boolean"
 
-[DEF, SF.Seq[2].Main[153].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+[DEF, SF.Seq[2].Main[130].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
 %NAME = "status"
 
-[SF.Seq[2].Main[153].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+[SF.Seq[2].Main[130].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
 Label = "code"
 ArgVal = "Step.Result.Error.Code"
 Type = 0
@@ -10894,39 +10205,166 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[2].Main[153].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+[DEF, SF.Seq[2].Main[130].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
 %NAME = "code"
 
-[SF.Seq[2].Main[153].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+[SF.Seq[2].Main[130].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
 Label = "source"
 ArgVal = "Step.Result.Error.Msg"
 Type = 1
 WireRequirement = 1
 DisplayType = "ASCII String"
 
-[DEF, SF.Seq[2].Main[153].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+[DEF, SF.Seq[2].Main[130].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
 %NAME = "source"
 
-[DEF, SF.Seq[2].Main[153].TS.SData.ViCall.Parms[5]]
+[DEF, SF.Seq[2].Main[130].TS.SData.ViCall.Parms[5]]
 %NAME = "error out"
 
-[DEF, SF.Seq[2].Main[153]]
+[DEF, SF.Seq[2].Main[130]]
 %NAME = "Set Yellow signal"
 
-[SF.Seq[2].Main[154].TS]
-Id = "ID#:J7MXSI9o8RGN16QctBT8oA"
+[SF.Seq[2].Main[131].TS]
+Id = "ID#:gXvTbI5o8RGN16QctBT8oA"
+PostExpr = "Locals.ToggleValue = !Locals.ToggleValue"
 
-[DEF, SF.Seq[2].Main[154].TS]
+[DEF, SF.Seq[2].Main[131]]
+%NAME = "Set toggle value"
+
+[SF.Seq[2].Main[132].TS]
+Id = "ID#:gnvTbI5o8RGN16QctBT8oA"
+
+[DEF, SF.Seq[2].Main[132]]
+%NAME = "Else"
+
+[SF.Seq[2].Main[133].TS]
+Id = "ID#:g3vTbI5o8RGN16QctBT8oA"
+PostExpr = "Locals.Counter ++"
+
+[DEF, SF.Seq[2].Main[133]]
+%NAME = "Increase Counter"
+
+[SF.Seq[2].Main[134].TS]
+Id = "ID#:hHvTbI5o8RGN16QctBT8oA"
+
+[DEF, SF.Seq[2].Main[134]]
+%NAME = "End"
+
+[SF.Seq[2].Main[135].TS]
+Id = "ID#:hXvTbI5o8RGN16QctBT8oA"
+
+[DEF, SF.Seq[2].Main[135]]
+%NAME = "Else"
+
+[SF.Seq[2].Main[136].TS]
+Id = "ID#:hnvTbI5o8RGN16QctBT8oA"
+
+[DEF, SF.Seq[2].Main[136].TS]
+SData = "TYPE, SeqCallStepAdditions"
+
+[SF.Seq[2].Main[136].TS.SData]
+SeqName = "Set all colors"
+UseCurFile = True
+
+[DEF, SF.Seq[2].Main[136].TS.SData]
+ActualArgs = Arguments
+
+[DEF, SF.Seq[2].Main[136].TS.SData.ActualArgs]
+ToggleValue = "TYPE, SequenceArgument"
+LampState = "TYPE, SequenceArgument"
+
+[SF.Seq[2].Main[136].TS.SData.ActualArgs.ToggleValue]
+UseDef = False
+Expr = "Locals.ToggleValue"
+ParamType = 16
+
+[SF.Seq[2].Main[136].TS.SData.ActualArgs.LampState]
+UseDef = False
+Expr = "{False,True, False}  // RD YE GN"
+ParamType = 1024
+
+[DEF, SF.Seq[2].Main[136]]
+%NAME = "Set colors"
+
+[SF.Seq[2].Main[137].TS]
+Id = "ID#:JmOLdo5o8RGN16QctBT8oA"
+PostExpr = "Locals.Counter = 0"
+
+[DEF, SF.Seq[2].Main[137]]
+%NAME = "Reset Counter"
+
+[SF.Seq[2].Main[138].TS]
+Id = "ID#:h3vTbI5o8RGN16QctBT8oA"
+
+[DEF, SF.Seq[2].Main[138]]
+%NAME = "End"
+
+[SF.Seq[2].Main[139].TS]
+Id = "ID#:mkOyA45o8RGN16QctBT8oA"
+
+[DEF, SF.Seq[2].Main[139]]
+%NAME = "Break"
+
+[SF.Seq[2].Main[140].TS]
+Id = "ID#:FG3oA7tg8RGN0qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[140]]
+%NAME = "End"
+
+[SF.Seq[2].Main[141].TS]
+Id = "ID#:Gm3oA7tg8RGN0qQctBT8oA"
+
+[SF.Seq[2].Main[141]]
+ItemExpr = "Enums.Light_States.Red_Blink_Fast"
+
+[DEF, SF.Seq[2].Main[141]]
+%NAME = "Case"
+
+[SF.Seq[2].Main[142].TS]
+Id = "ID#:bVxuCo9o8RGN16QctBT8oA"
+
+[SF.Seq[2].Main[142]]
+ConditionExpr = "StationGlobals.Automation.SystemControl.Previous_Light_State == StationGlobals.Automation.SystemControl.Light_State"
+
+[DEF, SF.Seq[2].Main[142]]
+%NAME = "If"
+
+[SF.Seq[2].Main[143].TS]
+Id = "ID#:blxuCo9o8RGN16QctBT8oA"
+
+[DEF, SF.Seq[2].Main[143]]
+%NAME = "Other lights are set, only toggle wanted light"
+
+[SF.Seq[2].Main[144].TS]
+Id = "ID#:b1xuCo9o8RGN16QctBT8oA"
+
+[SF.Seq[2].Main[144]]
+ConditionExpr = "Locals.Counter == Locals.Fast"
+
+[DEF, SF.Seq[2].Main[144]]
+%NAME = "If"
+
+[SF.Seq[2].Main[145].TS]
+Id = "ID#:cFxuCo9o8RGN16QctBT8oA"
+PostExpr = "Locals.Counter = 0"
+
+[DEF, SF.Seq[2].Main[145]]
+%NAME = "Reset Counter"
+
+[SF.Seq[2].Main[146].TS]
+Id = "ID#:ZtJaNY9o8RGN16QctBT8oA"
+
+[DEF, SF.Seq[2].Main[146].TS]
 SData = "TYPE, FlexGStepAdditions"
 
-[SF.Seq[2].Main[154].TS.SData.ViCall]
+[SF.Seq[2].Main[146].TS.SData.ViCall]
 ProjectPath = "..\\..\\LabView\\nexteer.lvproj"
 VIPath = "My Computer\\DIO\\DIO.lvlib\\Set Output.vi"
 Namespace = "DIO.lvlib"
 TDChecksum = -1657651955
 %HI: Parms = [5]
 
-[DEF, SF.Seq[2].Main[154].TS.SData.ViCall.Parms]
+[DEF, SF.Seq[2].Main[146].TS.SData.ViCall.Parms]
 %[0] = "TYPE, VIParameter"
 %[1] = "TYPE, VIParameter"
 %[2] = "TYPE, VIParameter"
@@ -10934,7 +10372,7 @@ TDChecksum = -1657651955
 %[4] = "TYPE, VIParameter"
 %[5] = "TYPE, VIParameter"
 
-[SF.Seq[2].Main[154].TS.SData.ViCall.Parms[0]]
+[SF.Seq[2].Main[146].TS.SData.ViCall.Parms[0]]
 Label = "task in"
 ArgVal = "StationGlobals.Automation.Lamp.RD.Reference"
 Type = 0
@@ -10943,10 +10381,10 @@ NumType = 4
 DisplayType = "Number (I32)"
 ConnectorNumber = 11
 
-[DEF, SF.Seq[2].Main[154].TS.SData.ViCall.Parms[0]]
+[DEF, SF.Seq[2].Main[146].TS.SData.ViCall.Parms[0]]
 %NAME = "task in"
 
-[SF.Seq[2].Main[154].TS.SData.ViCall.Parms[1]]
+[SF.Seq[2].Main[146].TS.SData.ViCall.Parms[1]]
 Label = "portBit"
 ArgVal = "StationGlobals.Automation.Lamp.RD.Channel"
 Type = 0
@@ -10955,10 +10393,10 @@ NumType = 4
 DisplayType = "Number (I32)"
 ConnectorNumber = 10
 
-[DEF, SF.Seq[2].Main[154].TS.SData.ViCall.Parms[1]]
+[DEF, SF.Seq[2].Main[146].TS.SData.ViCall.Parms[1]]
 %NAME = "portBit"
 
-[SF.Seq[2].Main[154].TS.SData.ViCall.Parms[2]]
+[SF.Seq[2].Main[146].TS.SData.ViCall.Parms[2]]
 Label = "State"
 ArgVal = "Locals.ToggleValue"
 Type = 2
@@ -10966,10 +10404,10 @@ WireRequirement = 1
 DisplayType = "Boolean"
 ConnectorNumber = 9
 
-[DEF, SF.Seq[2].Main[154].TS.SData.ViCall.Parms[2]]
+[DEF, SF.Seq[2].Main[146].TS.SData.ViCall.Parms[2]]
 %NAME = "State"
 
-[SF.Seq[2].Main[154].TS.SData.ViCall.Parms[3]]
+[SF.Seq[2].Main[146].TS.SData.ViCall.Parms[3]]
 Label = "error in "
 Type = 3
 WireRequirement = 1
@@ -10978,12 +10416,12 @@ UseDefaultValues = True
 %HI: ArrayClusterEls = [2]
 ConnectorNumber = 8
 
-[DEF, SF.Seq[2].Main[154].TS.SData.ViCall.Parms[3].ArrayClusterEls]
+[DEF, SF.Seq[2].Main[146].TS.SData.ViCall.Parms[3].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
 
-[SF.Seq[2].Main[154].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
+[SF.Seq[2].Main[146].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
 Label = "status"
 ArgVal = "False"
 Type = 2
@@ -10991,10 +10429,10 @@ WireRequirement = 1
 DisplayType = "Boolean"
 UseDefaultValues = True
 
-[DEF, SF.Seq[2].Main[154].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
+[DEF, SF.Seq[2].Main[146].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
 %NAME = "status"
 
-[SF.Seq[2].Main[154].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
+[SF.Seq[2].Main[146].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
 Label = "code"
 ArgVal = "0"
 Type = 0
@@ -11003,10 +10441,10 @@ NumType = 4
 DisplayType = "Number (I32)"
 UseDefaultValues = True
 
-[DEF, SF.Seq[2].Main[154].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
+[DEF, SF.Seq[2].Main[146].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
 %NAME = "code"
 
-[SF.Seq[2].Main[154].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
+[SF.Seq[2].Main[146].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
 Label = "source"
 ArgVal = "\"\""
 Type = 1
@@ -11014,13 +10452,13 @@ WireRequirement = 1
 DisplayType = "ASCII String"
 UseDefaultValues = True
 
-[DEF, SF.Seq[2].Main[154].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
+[DEF, SF.Seq[2].Main[146].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
 %NAME = "source"
 
-[DEF, SF.Seq[2].Main[154].TS.SData.ViCall.Parms[3]]
+[DEF, SF.Seq[2].Main[146].TS.SData.ViCall.Parms[3]]
 %NAME = "error in "
 
-[SF.Seq[2].Main[154].TS.SData.ViCall.Parms[4]]
+[SF.Seq[2].Main[146].TS.SData.ViCall.Parms[4]]
 Label = "task out"
 ArgVal = "StationGlobals.Automation.Lamp.YE.Reference"
 Type = 0
@@ -11030,10 +10468,10 @@ DisplayType = "Number (I32)"
 Direction = 1
 ConnectorNumber = 3
 
-[DEF, SF.Seq[2].Main[154].TS.SData.ViCall.Parms[4]]
+[DEF, SF.Seq[2].Main[146].TS.SData.ViCall.Parms[4]]
 %NAME = "task out"
 
-[SF.Seq[2].Main[154].TS.SData.ViCall.Parms[5]]
+[SF.Seq[2].Main[146].TS.SData.ViCall.Parms[5]]
 Label = "error out"
 ArgVal = "Step.Result.Error"
 Type = 3
@@ -11044,22 +10482,22 @@ Direction = 1
 ConnectorNumber = 0
 LegacyClusterType = 2
 
-[DEF, SF.Seq[2].Main[154].TS.SData.ViCall.Parms[5].ArrayClusterEls]
+[DEF, SF.Seq[2].Main[146].TS.SData.ViCall.Parms[5].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
 
-[SF.Seq[2].Main[154].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+[SF.Seq[2].Main[146].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
 Label = "status"
 ArgVal = "Step.Result.Error.Occurred"
 Type = 2
 WireRequirement = 1
 DisplayType = "Boolean"
 
-[DEF, SF.Seq[2].Main[154].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+[DEF, SF.Seq[2].Main[146].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
 %NAME = "status"
 
-[SF.Seq[2].Main[154].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+[SF.Seq[2].Main[146].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
 Label = "code"
 ArgVal = "Step.Result.Error.Code"
 Type = 0
@@ -11067,148 +10505,794 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[2].Main[154].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+[DEF, SF.Seq[2].Main[146].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
 %NAME = "code"
 
-[SF.Seq[2].Main[154].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+[SF.Seq[2].Main[146].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
 Label = "source"
 ArgVal = "Step.Result.Error.Msg"
 Type = 1
 WireRequirement = 1
 DisplayType = "ASCII String"
 
-[DEF, SF.Seq[2].Main[154].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+[DEF, SF.Seq[2].Main[146].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
 %NAME = "source"
 
-[DEF, SF.Seq[2].Main[154].TS.SData.ViCall.Parms[5]]
+[DEF, SF.Seq[2].Main[146].TS.SData.ViCall.Parms[5]]
 %NAME = "error out"
 
-[DEF, SF.Seq[2].Main[154]]
+[DEF, SF.Seq[2].Main[146]]
 %NAME = "Set Red signal"
 
-[SF.Seq[2].Main[155].TS]
-Id = "ID#:KLMXSI9o8RGN16QctBT8oA"
+[SF.Seq[2].Main[147].TS]
+Id = "ID#:clxuCo9o8RGN16QctBT8oA"
 PostExpr = "Locals.ToggleValue = !Locals.ToggleValue"
 
-[DEF, SF.Seq[2].Main[155]]
+[DEF, SF.Seq[2].Main[147]]
 %NAME = "Set toggle value"
 
-[SF.Seq[2].Main[156].TS]
-Id = "ID#:KbMXSI9o8RGN16QctBT8oA"
+[SF.Seq[2].Main[148].TS]
+Id = "ID#:c1xuCo9o8RGN16QctBT8oA"
 
-[DEF, SF.Seq[2].Main[156]]
+[DEF, SF.Seq[2].Main[148]]
 %NAME = "Else"
 
-[SF.Seq[2].Main[157].TS]
-Id = "ID#:KrMXSI9o8RGN16QctBT8oA"
+[SF.Seq[2].Main[149].TS]
+Id = "ID#:dFxuCo9o8RGN16QctBT8oA"
 PostExpr = "Locals.Counter ++"
 
-[DEF, SF.Seq[2].Main[157]]
+[DEF, SF.Seq[2].Main[149]]
 %NAME = "Increase Counter"
 
-[SF.Seq[2].Main[158].TS]
-Id = "ID#:K7MXSI9o8RGN16QctBT8oA"
+[SF.Seq[2].Main[150].TS]
+Id = "ID#:dVxuCo9o8RGN16QctBT8oA"
 
-[DEF, SF.Seq[2].Main[158]]
+[DEF, SF.Seq[2].Main[150]]
 %NAME = "End"
 
-[SF.Seq[2].Main[159].TS]
-Id = "ID#:LLMXSI9o8RGN16QctBT8oA"
+[SF.Seq[2].Main[151].TS]
+Id = "ID#:dlxuCo9o8RGN16QctBT8oA"
 
-[DEF, SF.Seq[2].Main[159]]
+[DEF, SF.Seq[2].Main[151]]
 %NAME = "Else"
 
-[SF.Seq[2].Main[160].TS]
-Id = "ID#:LbMXSI9o8RGN16QctBT8oA"
+[SF.Seq[2].Main[152].TS]
+Id = "ID#:d1xuCo9o8RGN16QctBT8oA"
 
-[DEF, SF.Seq[2].Main[160].TS]
+[DEF, SF.Seq[2].Main[152].TS]
 SData = "TYPE, SeqCallStepAdditions"
 
-[SF.Seq[2].Main[160].TS.SData]
+[SF.Seq[2].Main[152].TS.SData]
 SeqName = "Set all colors"
 UseCurFile = True
 
-[DEF, SF.Seq[2].Main[160].TS.SData]
+[DEF, SF.Seq[2].Main[152].TS.SData]
 ActualArgs = Arguments
 
-[DEF, SF.Seq[2].Main[160].TS.SData.ActualArgs]
+[DEF, SF.Seq[2].Main[152].TS.SData.ActualArgs]
 ToggleValue = "TYPE, SequenceArgument"
 LampState = "TYPE, SequenceArgument"
 
-[SF.Seq[2].Main[160].TS.SData.ActualArgs.ToggleValue]
+[SF.Seq[2].Main[152].TS.SData.ActualArgs.ToggleValue]
 UseDef = False
 Expr = "Locals.ToggleValue"
 ParamType = 16
 
-[SF.Seq[2].Main[160].TS.SData.ActualArgs.LampState]
+[SF.Seq[2].Main[152].TS.SData.ActualArgs.LampState]
 UseDef = False
-Expr = "{True,True,True}  // RD YE GN"
+Expr = "{True,False,False}  // RD YE GN"
 ParamType = 1024
 
-[DEF, SF.Seq[2].Main[160]]
+[DEF, SF.Seq[2].Main[152]]
 %NAME = "Set colors"
 
+[SF.Seq[2].Main[153].TS]
+Id = "ID#:eFxuCo9o8RGN16QctBT8oA"
+PostExpr = "Locals.Counter = 0"
+
+[DEF, SF.Seq[2].Main[153]]
+%NAME = "Reset Counter"
+
+[SF.Seq[2].Main[154].TS]
+Id = "ID#:eVxuCo9o8RGN16QctBT8oA"
+
+[DEF, SF.Seq[2].Main[154]]
+%NAME = "End"
+
+[SF.Seq[2].Main[155].TS]
+Id = "ID#:m0OyA45o8RGN16QctBT8oA"
+
+[DEF, SF.Seq[2].Main[155]]
+%NAME = "Break"
+
+[SF.Seq[2].Main[156].TS]
+Id = "ID#:G23oA7tg8RGN0qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[156]]
+%NAME = "End"
+
+[SF.Seq[2].Main[157].TS]
+Id = "ID#:IW3oA7tg8RGN0qQctBT8oA"
+
+[SF.Seq[2].Main[157]]
+ItemExpr = "Enums.Light_States.All_Blink_Fast"
+
+[DEF, SF.Seq[2].Main[157]]
+%NAME = "Case"
+
+[SF.Seq[2].Main[158].TS]
+Id = "ID#:IbMXSI9o8RGN16QctBT8oA"
+
+[SF.Seq[2].Main[158]]
+ConditionExpr = "StationGlobals.Automation.SystemControl.Previous_Light_State == StationGlobals.Automation.SystemControl.Light_State"
+
+[DEF, SF.Seq[2].Main[158]]
+%NAME = "If"
+
+[SF.Seq[2].Main[159].TS]
+Id = "ID#:IrMXSI9o8RGN16QctBT8oA"
+
+[DEF, SF.Seq[2].Main[159]]
+%NAME = "Other lights are set, only toggle wanted light"
+
+[SF.Seq[2].Main[160].TS]
+Id = "ID#:I7MXSI9o8RGN16QctBT8oA"
+
+[SF.Seq[2].Main[160]]
+ConditionExpr = "Locals.Counter == Locals.Fast"
+
+[DEF, SF.Seq[2].Main[160]]
+%NAME = "If"
+
 [SF.Seq[2].Main[161].TS]
-Id = "ID#:LrMXSI9o8RGN16QctBT8oA"
+Id = "ID#:JLMXSI9o8RGN16QctBT8oA"
 PostExpr = "Locals.Counter = 0"
 
 [DEF, SF.Seq[2].Main[161]]
 %NAME = "Reset Counter"
 
 [SF.Seq[2].Main[162].TS]
-Id = "ID#:L7MXSI9o8RGN16QctBT8oA"
+Id = "ID#:JbMXSI9o8RGN16QctBT8oA"
+
+[DEF, SF.Seq[2].Main[162].TS]
+SData = "TYPE, FlexGStepAdditions"
+
+[SF.Seq[2].Main[162].TS.SData.ViCall]
+ProjectPath = "..\\..\\LabView\\nexteer.lvproj"
+VIPath = "My Computer\\DIO\\DIO.lvlib\\Set Output.vi"
+Namespace = "DIO.lvlib"
+TDChecksum = -1657651955
+%HI: Parms = [5]
+
+[DEF, SF.Seq[2].Main[162].TS.SData.ViCall.Parms]
+%[0] = "TYPE, VIParameter"
+%[1] = "TYPE, VIParameter"
+%[2] = "TYPE, VIParameter"
+%[3] = "TYPE, VIParameter"
+%[4] = "TYPE, VIParameter"
+%[5] = "TYPE, VIParameter"
+
+[SF.Seq[2].Main[162].TS.SData.ViCall.Parms[0]]
+Label = "task in"
+ArgVal = "StationGlobals.Automation.Lamp.GN.Reference"
+Type = 0
+WireRequirement = 1
+NumType = 4
+DisplayType = "Number (I32)"
+ConnectorNumber = 11
+
+[DEF, SF.Seq[2].Main[162].TS.SData.ViCall.Parms[0]]
+%NAME = "task in"
+
+[SF.Seq[2].Main[162].TS.SData.ViCall.Parms[1]]
+Label = "portBit"
+ArgVal = "StationGlobals.Automation.Lamp.GN.Channel"
+Type = 0
+WireRequirement = 1
+NumType = 4
+DisplayType = "Number (I32)"
+ConnectorNumber = 10
+
+[DEF, SF.Seq[2].Main[162].TS.SData.ViCall.Parms[1]]
+%NAME = "portBit"
+
+[SF.Seq[2].Main[162].TS.SData.ViCall.Parms[2]]
+Label = "State"
+ArgVal = "Locals.ToggleValue"
+Type = 2
+WireRequirement = 1
+DisplayType = "Boolean"
+ConnectorNumber = 9
+
+[DEF, SF.Seq[2].Main[162].TS.SData.ViCall.Parms[2]]
+%NAME = "State"
+
+[SF.Seq[2].Main[162].TS.SData.ViCall.Parms[3]]
+Label = "error in "
+Type = 3
+WireRequirement = 1
+DisplayType = "Container"
+UseDefaultValues = True
+%HI: ArrayClusterEls = [2]
+ConnectorNumber = 8
+
+[DEF, SF.Seq[2].Main[162].TS.SData.ViCall.Parms[3].ArrayClusterEls]
+%[0] = "TYPE, VIParameterElement"
+%[1] = "TYPE, VIParameterElement"
+%[2] = "TYPE, VIParameterElement"
+
+[SF.Seq[2].Main[162].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
+Label = "status"
+ArgVal = "False"
+Type = 2
+WireRequirement = 1
+DisplayType = "Boolean"
+UseDefaultValues = True
+
+[DEF, SF.Seq[2].Main[162].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
+%NAME = "status"
+
+[SF.Seq[2].Main[162].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
+Label = "code"
+ArgVal = "0"
+Type = 0
+WireRequirement = 1
+NumType = 4
+DisplayType = "Number (I32)"
+UseDefaultValues = True
+
+[DEF, SF.Seq[2].Main[162].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
+%NAME = "code"
+
+[SF.Seq[2].Main[162].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
+Label = "source"
+ArgVal = "\"\""
+Type = 1
+WireRequirement = 1
+DisplayType = "ASCII String"
+UseDefaultValues = True
+
+[DEF, SF.Seq[2].Main[162].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
+%NAME = "source"
+
+[DEF, SF.Seq[2].Main[162].TS.SData.ViCall.Parms[3]]
+%NAME = "error in "
+
+[SF.Seq[2].Main[162].TS.SData.ViCall.Parms[4]]
+Label = "task out"
+ArgVal = "StationGlobals.Automation.Lamp.GN.Reference"
+Type = 0
+WireRequirement = 1
+NumType = 4
+DisplayType = "Number (I32)"
+Direction = 1
+ConnectorNumber = 3
+
+[DEF, SF.Seq[2].Main[162].TS.SData.ViCall.Parms[4]]
+%NAME = "task out"
+
+[SF.Seq[2].Main[162].TS.SData.ViCall.Parms[5]]
+Label = "error out"
+ArgVal = "Step.Result.Error"
+Type = 3
+WireRequirement = 1
+DisplayType = "Container"
+%HI: ArrayClusterEls = [2]
+Direction = 1
+ConnectorNumber = 0
+LegacyClusterType = 2
+
+[DEF, SF.Seq[2].Main[162].TS.SData.ViCall.Parms[5].ArrayClusterEls]
+%[0] = "TYPE, VIParameterElement"
+%[1] = "TYPE, VIParameterElement"
+%[2] = "TYPE, VIParameterElement"
+
+[SF.Seq[2].Main[162].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+Label = "status"
+ArgVal = "Step.Result.Error.Occurred"
+Type = 2
+WireRequirement = 1
+DisplayType = "Boolean"
+
+[DEF, SF.Seq[2].Main[162].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+%NAME = "status"
+
+[SF.Seq[2].Main[162].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+Label = "code"
+ArgVal = "Step.Result.Error.Code"
+Type = 0
+WireRequirement = 1
+NumType = 4
+DisplayType = "Number (I32)"
+
+[DEF, SF.Seq[2].Main[162].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+%NAME = "code"
+
+[SF.Seq[2].Main[162].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+Label = "source"
+ArgVal = "Step.Result.Error.Msg"
+Type = 1
+WireRequirement = 1
+DisplayType = "ASCII String"
+
+[DEF, SF.Seq[2].Main[162].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+%NAME = "source"
+
+[DEF, SF.Seq[2].Main[162].TS.SData.ViCall.Parms[5]]
+%NAME = "error out"
 
 [DEF, SF.Seq[2].Main[162]]
-%NAME = "End"
+%NAME = "Set Green signal"
 
 [SF.Seq[2].Main[163].TS]
-Id = "ID#:nEOyA45o8RGN16QctBT8oA"
+Id = "ID#:JrMXSI9o8RGN16QctBT8oA"
+
+[DEF, SF.Seq[2].Main[163].TS]
+SData = "TYPE, FlexGStepAdditions"
+
+[SF.Seq[2].Main[163].TS.SData.ViCall]
+ProjectPath = "..\\..\\LabView\\nexteer.lvproj"
+VIPath = "My Computer\\DIO\\DIO.lvlib\\Set Output.vi"
+Namespace = "DIO.lvlib"
+TDChecksum = -1657651955
+%HI: Parms = [5]
+
+[DEF, SF.Seq[2].Main[163].TS.SData.ViCall.Parms]
+%[0] = "TYPE, VIParameter"
+%[1] = "TYPE, VIParameter"
+%[2] = "TYPE, VIParameter"
+%[3] = "TYPE, VIParameter"
+%[4] = "TYPE, VIParameter"
+%[5] = "TYPE, VIParameter"
+
+[SF.Seq[2].Main[163].TS.SData.ViCall.Parms[0]]
+Label = "task in"
+ArgVal = "StationGlobals.Automation.Lamp.YE.Reference"
+Type = 0
+WireRequirement = 1
+NumType = 4
+DisplayType = "Number (I32)"
+ConnectorNumber = 11
+
+[DEF, SF.Seq[2].Main[163].TS.SData.ViCall.Parms[0]]
+%NAME = "task in"
+
+[SF.Seq[2].Main[163].TS.SData.ViCall.Parms[1]]
+Label = "portBit"
+ArgVal = "StationGlobals.Automation.Lamp.YE.Channel"
+Type = 0
+WireRequirement = 1
+NumType = 4
+DisplayType = "Number (I32)"
+ConnectorNumber = 10
+
+[DEF, SF.Seq[2].Main[163].TS.SData.ViCall.Parms[1]]
+%NAME = "portBit"
+
+[SF.Seq[2].Main[163].TS.SData.ViCall.Parms[2]]
+Label = "State"
+ArgVal = "Locals.ToggleValue"
+Type = 2
+WireRequirement = 1
+DisplayType = "Boolean"
+ConnectorNumber = 9
+
+[DEF, SF.Seq[2].Main[163].TS.SData.ViCall.Parms[2]]
+%NAME = "State"
+
+[SF.Seq[2].Main[163].TS.SData.ViCall.Parms[3]]
+Label = "error in "
+Type = 3
+WireRequirement = 1
+DisplayType = "Container"
+UseDefaultValues = True
+%HI: ArrayClusterEls = [2]
+ConnectorNumber = 8
+
+[DEF, SF.Seq[2].Main[163].TS.SData.ViCall.Parms[3].ArrayClusterEls]
+%[0] = "TYPE, VIParameterElement"
+%[1] = "TYPE, VIParameterElement"
+%[2] = "TYPE, VIParameterElement"
+
+[SF.Seq[2].Main[163].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
+Label = "status"
+ArgVal = "False"
+Type = 2
+WireRequirement = 1
+DisplayType = "Boolean"
+UseDefaultValues = True
+
+[DEF, SF.Seq[2].Main[163].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
+%NAME = "status"
+
+[SF.Seq[2].Main[163].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
+Label = "code"
+ArgVal = "0"
+Type = 0
+WireRequirement = 1
+NumType = 4
+DisplayType = "Number (I32)"
+UseDefaultValues = True
+
+[DEF, SF.Seq[2].Main[163].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
+%NAME = "code"
+
+[SF.Seq[2].Main[163].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
+Label = "source"
+ArgVal = "\"\""
+Type = 1
+WireRequirement = 1
+DisplayType = "ASCII String"
+UseDefaultValues = True
+
+[DEF, SF.Seq[2].Main[163].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
+%NAME = "source"
+
+[DEF, SF.Seq[2].Main[163].TS.SData.ViCall.Parms[3]]
+%NAME = "error in "
+
+[SF.Seq[2].Main[163].TS.SData.ViCall.Parms[4]]
+Label = "task out"
+ArgVal = "StationGlobals.Automation.Lamp.YE.Reference"
+Type = 0
+WireRequirement = 1
+NumType = 4
+DisplayType = "Number (I32)"
+Direction = 1
+ConnectorNumber = 3
+
+[DEF, SF.Seq[2].Main[163].TS.SData.ViCall.Parms[4]]
+%NAME = "task out"
+
+[SF.Seq[2].Main[163].TS.SData.ViCall.Parms[5]]
+Label = "error out"
+ArgVal = "Step.Result.Error"
+Type = 3
+WireRequirement = 1
+DisplayType = "Container"
+%HI: ArrayClusterEls = [2]
+Direction = 1
+ConnectorNumber = 0
+LegacyClusterType = 2
+
+[DEF, SF.Seq[2].Main[163].TS.SData.ViCall.Parms[5].ArrayClusterEls]
+%[0] = "TYPE, VIParameterElement"
+%[1] = "TYPE, VIParameterElement"
+%[2] = "TYPE, VIParameterElement"
+
+[SF.Seq[2].Main[163].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+Label = "status"
+ArgVal = "Step.Result.Error.Occurred"
+Type = 2
+WireRequirement = 1
+DisplayType = "Boolean"
+
+[DEF, SF.Seq[2].Main[163].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+%NAME = "status"
+
+[SF.Seq[2].Main[163].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+Label = "code"
+ArgVal = "Step.Result.Error.Code"
+Type = 0
+WireRequirement = 1
+NumType = 4
+DisplayType = "Number (I32)"
+
+[DEF, SF.Seq[2].Main[163].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+%NAME = "code"
+
+[SF.Seq[2].Main[163].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+Label = "source"
+ArgVal = "Step.Result.Error.Msg"
+Type = 1
+WireRequirement = 1
+DisplayType = "ASCII String"
+
+[DEF, SF.Seq[2].Main[163].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+%NAME = "source"
+
+[DEF, SF.Seq[2].Main[163].TS.SData.ViCall.Parms[5]]
+%NAME = "error out"
 
 [DEF, SF.Seq[2].Main[163]]
-%NAME = "Break"
+%NAME = "Set Yellow signal"
 
 [SF.Seq[2].Main[164].TS]
-Id = "ID#:Im3oA7tg8RGN0qQctBT8oA"
+Id = "ID#:J7MXSI9o8RGN16QctBT8oA"
+
+[DEF, SF.Seq[2].Main[164].TS]
+SData = "TYPE, FlexGStepAdditions"
+
+[SF.Seq[2].Main[164].TS.SData.ViCall]
+ProjectPath = "..\\..\\LabView\\nexteer.lvproj"
+VIPath = "My Computer\\DIO\\DIO.lvlib\\Set Output.vi"
+Namespace = "DIO.lvlib"
+TDChecksum = -1657651955
+%HI: Parms = [5]
+
+[DEF, SF.Seq[2].Main[164].TS.SData.ViCall.Parms]
+%[0] = "TYPE, VIParameter"
+%[1] = "TYPE, VIParameter"
+%[2] = "TYPE, VIParameter"
+%[3] = "TYPE, VIParameter"
+%[4] = "TYPE, VIParameter"
+%[5] = "TYPE, VIParameter"
+
+[SF.Seq[2].Main[164].TS.SData.ViCall.Parms[0]]
+Label = "task in"
+ArgVal = "StationGlobals.Automation.Lamp.RD.Reference"
+Type = 0
+WireRequirement = 1
+NumType = 4
+DisplayType = "Number (I32)"
+ConnectorNumber = 11
+
+[DEF, SF.Seq[2].Main[164].TS.SData.ViCall.Parms[0]]
+%NAME = "task in"
+
+[SF.Seq[2].Main[164].TS.SData.ViCall.Parms[1]]
+Label = "portBit"
+ArgVal = "StationGlobals.Automation.Lamp.RD.Channel"
+Type = 0
+WireRequirement = 1
+NumType = 4
+DisplayType = "Number (I32)"
+ConnectorNumber = 10
+
+[DEF, SF.Seq[2].Main[164].TS.SData.ViCall.Parms[1]]
+%NAME = "portBit"
+
+[SF.Seq[2].Main[164].TS.SData.ViCall.Parms[2]]
+Label = "State"
+ArgVal = "Locals.ToggleValue"
+Type = 2
+WireRequirement = 1
+DisplayType = "Boolean"
+ConnectorNumber = 9
+
+[DEF, SF.Seq[2].Main[164].TS.SData.ViCall.Parms[2]]
+%NAME = "State"
+
+[SF.Seq[2].Main[164].TS.SData.ViCall.Parms[3]]
+Label = "error in "
+Type = 3
+WireRequirement = 1
+DisplayType = "Container"
+UseDefaultValues = True
+%HI: ArrayClusterEls = [2]
+ConnectorNumber = 8
+
+[DEF, SF.Seq[2].Main[164].TS.SData.ViCall.Parms[3].ArrayClusterEls]
+%[0] = "TYPE, VIParameterElement"
+%[1] = "TYPE, VIParameterElement"
+%[2] = "TYPE, VIParameterElement"
+
+[SF.Seq[2].Main[164].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
+Label = "status"
+ArgVal = "False"
+Type = 2
+WireRequirement = 1
+DisplayType = "Boolean"
+UseDefaultValues = True
+
+[DEF, SF.Seq[2].Main[164].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
+%NAME = "status"
+
+[SF.Seq[2].Main[164].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
+Label = "code"
+ArgVal = "0"
+Type = 0
+WireRequirement = 1
+NumType = 4
+DisplayType = "Number (I32)"
+UseDefaultValues = True
+
+[DEF, SF.Seq[2].Main[164].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
+%NAME = "code"
+
+[SF.Seq[2].Main[164].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
+Label = "source"
+ArgVal = "\"\""
+Type = 1
+WireRequirement = 1
+DisplayType = "ASCII String"
+UseDefaultValues = True
+
+[DEF, SF.Seq[2].Main[164].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
+%NAME = "source"
+
+[DEF, SF.Seq[2].Main[164].TS.SData.ViCall.Parms[3]]
+%NAME = "error in "
+
+[SF.Seq[2].Main[164].TS.SData.ViCall.Parms[4]]
+Label = "task out"
+ArgVal = "StationGlobals.Automation.Lamp.YE.Reference"
+Type = 0
+WireRequirement = 1
+NumType = 4
+DisplayType = "Number (I32)"
+Direction = 1
+ConnectorNumber = 3
+
+[DEF, SF.Seq[2].Main[164].TS.SData.ViCall.Parms[4]]
+%NAME = "task out"
+
+[SF.Seq[2].Main[164].TS.SData.ViCall.Parms[5]]
+Label = "error out"
+ArgVal = "Step.Result.Error"
+Type = 3
+WireRequirement = 1
+DisplayType = "Container"
+%HI: ArrayClusterEls = [2]
+Direction = 1
+ConnectorNumber = 0
+LegacyClusterType = 2
+
+[DEF, SF.Seq[2].Main[164].TS.SData.ViCall.Parms[5].ArrayClusterEls]
+%[0] = "TYPE, VIParameterElement"
+%[1] = "TYPE, VIParameterElement"
+%[2] = "TYPE, VIParameterElement"
+
+[SF.Seq[2].Main[164].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+Label = "status"
+ArgVal = "Step.Result.Error.Occurred"
+Type = 2
+WireRequirement = 1
+DisplayType = "Boolean"
+
+[DEF, SF.Seq[2].Main[164].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+%NAME = "status"
+
+[SF.Seq[2].Main[164].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+Label = "code"
+ArgVal = "Step.Result.Error.Code"
+Type = 0
+WireRequirement = 1
+NumType = 4
+DisplayType = "Number (I32)"
+
+[DEF, SF.Seq[2].Main[164].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+%NAME = "code"
+
+[SF.Seq[2].Main[164].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+Label = "source"
+ArgVal = "Step.Result.Error.Msg"
+Type = 1
+WireRequirement = 1
+DisplayType = "ASCII String"
+
+[DEF, SF.Seq[2].Main[164].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+%NAME = "source"
+
+[DEF, SF.Seq[2].Main[164].TS.SData.ViCall.Parms[5]]
+%NAME = "error out"
 
 [DEF, SF.Seq[2].Main[164]]
-%NAME = "End"
+%NAME = "Set Red signal"
 
 [SF.Seq[2].Main[165].TS]
-Id = "ID#:4u/XD7pg8RGN0qQctBT8oA"
+Id = "ID#:KLMXSI9o8RGN16QctBT8oA"
+PostExpr = "Locals.ToggleValue = !Locals.ToggleValue"
 
 [DEF, SF.Seq[2].Main[165]]
-%NAME = "End"
+%NAME = "Set toggle value"
 
 [SF.Seq[2].Main[166].TS]
+Id = "ID#:KbMXSI9o8RGN16QctBT8oA"
+
+[DEF, SF.Seq[2].Main[166]]
+%NAME = "Else"
+
+[SF.Seq[2].Main[167].TS]
+Id = "ID#:KrMXSI9o8RGN16QctBT8oA"
+PostExpr = "Locals.Counter ++"
+
+[DEF, SF.Seq[2].Main[167]]
+%NAME = "Increase Counter"
+
+[SF.Seq[2].Main[168].TS]
+Id = "ID#:K7MXSI9o8RGN16QctBT8oA"
+
+[DEF, SF.Seq[2].Main[168]]
+%NAME = "End"
+
+[SF.Seq[2].Main[169].TS]
+Id = "ID#:LLMXSI9o8RGN16QctBT8oA"
+
+[DEF, SF.Seq[2].Main[169]]
+%NAME = "Else"
+
+[SF.Seq[2].Main[170].TS]
+Id = "ID#:LbMXSI9o8RGN16QctBT8oA"
+
+[DEF, SF.Seq[2].Main[170].TS]
+SData = "TYPE, SeqCallStepAdditions"
+
+[SF.Seq[2].Main[170].TS.SData]
+SeqName = "Set all colors"
+UseCurFile = True
+
+[DEF, SF.Seq[2].Main[170].TS.SData]
+ActualArgs = Arguments
+
+[DEF, SF.Seq[2].Main[170].TS.SData.ActualArgs]
+ToggleValue = "TYPE, SequenceArgument"
+LampState = "TYPE, SequenceArgument"
+
+[SF.Seq[2].Main[170].TS.SData.ActualArgs.ToggleValue]
+UseDef = False
+Expr = "Locals.ToggleValue"
+ParamType = 16
+
+[SF.Seq[2].Main[170].TS.SData.ActualArgs.LampState]
+UseDef = False
+Expr = "{True,True,True}  // RD YE GN"
+ParamType = 1024
+
+[DEF, SF.Seq[2].Main[170]]
+%NAME = "Set colors"
+
+[SF.Seq[2].Main[171].TS]
+Id = "ID#:LrMXSI9o8RGN16QctBT8oA"
+PostExpr = "Locals.Counter = 0"
+
+[DEF, SF.Seq[2].Main[171]]
+%NAME = "Reset Counter"
+
+[SF.Seq[2].Main[172].TS]
+Id = "ID#:L7MXSI9o8RGN16QctBT8oA"
+
+[DEF, SF.Seq[2].Main[172]]
+%NAME = "End"
+
+[SF.Seq[2].Main[173].TS]
+Id = "ID#:nEOyA45o8RGN16QctBT8oA"
+
+[DEF, SF.Seq[2].Main[173]]
+%NAME = "Break"
+
+[SF.Seq[2].Main[174].TS]
+Id = "ID#:Im3oA7tg8RGN0qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[174]]
+%NAME = "End"
+
+[SF.Seq[2].Main[175].TS]
+Id = "ID#:4u/XD7pg8RGN0qQctBT8oA"
+
+[DEF, SF.Seq[2].Main[175]]
+%NAME = "End"
+
+[SF.Seq[2].Main[176].TS]
 Id = "ID#:wZGbWOJg8RGN0qQctBT8oA"
 PostExpr Line0001 = "StationGlobals.Automation.SystemControl.Previous_Light_State = StationGlobals.Automation.SystemControl.Light_State //Sav"
 PostExpr Line0002 = "e previous value as value that is set"
 
-[DEF, SF.Seq[2].Main[166]]
+[DEF, SF.Seq[2].Main[176]]
 %NAME = "Set Previous variable"
 
-[SF.Seq[2].Main[167].TS]
+[SF.Seq[2].Main[177].TS]
 Id = "ID#:9XlIObtg8RGN0qQctBT8oA"
 %HI: AdditionalResultsHints = [0]
 
-[DEF, SF.Seq[2].Main[167].TS.AdditionalResultsHints]
+[DEF, SF.Seq[2].Main[177].TS.AdditionalResultsHints]
 %[0] = "TYPE, NI_CustomResult"
 
-[SF.Seq[2].Main[167].TS.AdditionalResultsHints[0]]
+[SF.Seq[2].Main[177].TS.AdditionalResultsHints[0]]
 Name = "ResStr(\"NI_WAIT_STEP_TYPE\", \"TIME_TO_WAIT\")"
 ValueToLog = "Evaluate(Step.TimeExpr)"
 
-[SF.Seq[2].Main[167]]
+[SF.Seq[2].Main[177]]
 SeqCallName = "End"
 TimeExpr = "0.1"
 
-[DEF, SF.Seq[2].Main[167]]
+[DEF, SF.Seq[2].Main[177]]
 %NAME = "Wait"
 
-[SF.Seq[2].Main[168].TS]
+[SF.Seq[2].Main[178].TS]
 Id = "ID#:3+/XD7pg8RGN0qQctBT8oA"
 
-[DEF, SF.Seq[2].Main[168]]
+[DEF, SF.Seq[2].Main[178]]
 %NAME = "End"
 
 [DEF, SF.Seq[2].RTS]
