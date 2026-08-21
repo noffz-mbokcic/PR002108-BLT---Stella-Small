@@ -14,6 +14,7 @@
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="TDK-Lambda GEN LAN Series.lvlib" Type="Library" URL="/&lt;userlib&gt;/TDK-Lambda GEN LAN Series/TDK-Lambda GEN LAN Series.lvlib"/>
 		<Item Name="TDK20-38 API.lvlib" Type="Library" URL="../TDK20-38 API.lvlib"/>
+		<Item Name="test config.vi" Type="VI" URL="../test config.vi"/>
 		<Item Name="Dependencies" Type="Dependencies"/>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
