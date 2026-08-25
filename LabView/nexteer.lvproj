@@ -87,8 +87,12 @@
 			<Item Name="Controls" Type="Folder">
 				<Item Name="CHMB_Relays.ctl" Type="VI" URL="../Station/Controls/CHMB_Relays.ctl"/>
 				<Item Name="DUT_Relays.ctl" Type="VI" URL="../Station/Controls/DUT_Relays.ctl"/>
+				<Item Name="Limits.ctl" Type="VI" URL="../Station/Controls/Limits.ctl"/>
 				<Item Name="Offset_Values.ctl" Type="VI" URL="../Station/Controls/Offset_Values.ctl"/>
 				<Item Name="Relays.ctl" Type="VI" URL="../Station/Controls/Relays.ctl"/>
+				<Item Name="Section 2.ctl" Type="VI" URL="../Station/Controls/Section 2.ctl"/>
+				<Item Name="Section 3.ctl" Type="VI" URL="../Station/Controls/Section 3.ctl"/>
+				<Item Name="Section 5.ctl" Type="VI" URL="../Station/Controls/Section 5.ctl"/>
 			</Item>
 			<Item Name="Add alarm to archive.vi" Type="VI" URL="../Station/Add alarm to archive.vi"/>
 			<Item Name="Convert Array of Bytes to String (RX and TX).vi" Type="VI" URL="../Station/Convert Array of Bytes to String (RX and TX).vi"/>
@@ -98,6 +102,7 @@
 			<Item Name="Get Error Message.vi" Type="VI" URL="../Station/Get Error Message.vi"/>
 			<Item Name="Get Failure set to write.vi" Type="VI" URL="../Station/Get Failure set to write.vi"/>
 			<Item Name="Get Section 4 data and HW PN.vi" Type="VI" URL="../Station/Get Section 4 data and HW PN.vi"/>
+			<Item Name="Get Test Limits.vi" Type="VI" URL="../Station/Get Test Limits.vi"/>
 			<Item Name="Kill UTP TEF.vi" Type="VI" URL="../Station/Kill UTP TEF.vi"/>
 			<Item Name="Update Operating Mode.vi" Type="VI" URL="../Station/Update Operating Mode.vi"/>
 		</Item>
