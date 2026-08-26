@@ -10491,7 +10491,12 @@
   </Product>
   <Product>
     <Name>Single</Name>
-    <VariantIdentifiers />
+    <VariantIdentifiers>
+      <VariantName>
+        <Name>MID</Name>
+        <Description />
+      </VariantName>
+    </VariantIdentifiers>
     <SequenceFiles>
       <SequenceFile>
         <Name>EOL_CHMB1_Interface.seq</Name>
@@ -10500,6 +10505,11 @@
         <VariantItems>
           <VariantItem>
             <Name>Master</Name>
+            <FileGlobalValueItems />
+            <SequenceItems />
+          </VariantItem>
+          <VariantItem>
+            <Name>MID</Name>
             <FileGlobalValueItems />
             <SequenceItems />
           </VariantItem>
@@ -10515,6 +10525,11 @@
             <FileGlobalValueItems />
             <SequenceItems />
           </VariantItem>
+          <VariantItem>
+            <Name>MID</Name>
+            <FileGlobalValueItems />
+            <SequenceItems />
+          </VariantItem>
         </VariantItems>
       </SequenceFile>
       <SequenceFile>
@@ -10524,6 +10539,11 @@
         <VariantItems>
           <VariantItem>
             <Name>Master</Name>
+            <FileGlobalValueItems />
+            <SequenceItems />
+          </VariantItem>
+          <VariantItem>
+            <Name>MID</Name>
             <FileGlobalValueItems />
             <SequenceItems />
           </VariantItem>
@@ -19960,6 +19980,11 @@
               </SequenceItem>
             </SequenceItems>
           </VariantItem>
+          <VariantItem>
+            <Name>MID</Name>
+            <FileGlobalValueItems />
+            <SequenceItems />
+          </VariantItem>
         </VariantItems>
       </SequenceFile>
     </SequenceFiles>
@@ -19967,6 +19992,6 @@
   </Product>
   <AppInfo>
     <Version>10.2.0.0</Version>
-    <LastModification>2026-08-24T12:12:41.4398458+02:00</LastModification>
+    <LastModification>2026-08-25T14:04:41.6881455+02:00</LastModification>
   </AppInfo>
 </ProductConfiguration>
