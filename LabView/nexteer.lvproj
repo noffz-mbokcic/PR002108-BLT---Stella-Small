@@ -86,6 +86,7 @@
 		<Item Name="Station" Type="Folder">
 			<Item Name="Controls" Type="Folder">
 				<Item Name="CHMB_Relays.ctl" Type="VI" URL="../Station/Controls/CHMB_Relays.ctl"/>
+				<Item Name="DUT DO channels.ctl" Type="VI" URL="../Station/Controls/DUT DO channels.ctl"/>
 				<Item Name="DUT_Relays.ctl" Type="VI" URL="../Station/Controls/DUT_Relays.ctl"/>
 				<Item Name="Limits.ctl" Type="VI" URL="../Station/Controls/Limits.ctl"/>
 				<Item Name="Offset_Values.ctl" Type="VI" URL="../Station/Controls/Offset_Values.ctl"/>
@@ -93,6 +94,7 @@
 				<Item Name="Section 2.ctl" Type="VI" URL="../Station/Controls/Section 2.ctl"/>
 				<Item Name="Section 3.ctl" Type="VI" URL="../Station/Controls/Section 3.ctl"/>
 				<Item Name="Section 5.ctl" Type="VI" URL="../Station/Controls/Section 5.ctl"/>
+				<Item Name="Section4 variables.ctl" Type="VI" URL="../Station/Controls/Section4 variables.ctl"/>
 			</Item>
 			<Item Name="Add alarm to archive.vi" Type="VI" URL="../Station/Add alarm to archive.vi"/>
 			<Item Name="Convert Array of Bytes to String (RX and TX).vi" Type="VI" URL="../Station/Convert Array of Bytes to String (RX and TX).vi"/>
@@ -109,8 +111,6 @@
 		<Item Name="TDK_20_38" Type="Folder">
 			<Item Name="TDK20-38 API.lvlib" Type="Library" URL="../TDK_20_38/TDK20-38 API.lvlib"/>
 		</Item>
-		<Item Name="DUT DO channels.ctl" Type="VI" URL="../Station/Controls/DUT DO channels.ctl"/>
-		<Item Name="Section4 variables.ctl" Type="VI" URL="../Station/Controls/Section4 variables.ctl"/>
 		<Item Name="Dependencies" Type="Dependencies"/>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
