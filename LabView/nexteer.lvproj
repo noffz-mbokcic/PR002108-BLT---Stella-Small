@@ -86,6 +86,7 @@
 		<Item Name="Station" Type="Folder">
 			<Item Name="Controls" Type="Folder">
 				<Item Name="CHMB_Relays.ctl" Type="VI" URL="../Station/Controls/CHMB_Relays.ctl"/>
+				<Item Name="Control Message set.ctl" Type="VI" URL="../Station/Controls/Control Message set.ctl"/>
 				<Item Name="DUT DO channels.ctl" Type="VI" URL="../Station/Controls/DUT DO channels.ctl"/>
 				<Item Name="DUT_Relays.ctl" Type="VI" URL="../Station/Controls/DUT_Relays.ctl"/>
 				<Item Name="Limits.ctl" Type="VI" URL="../Station/Controls/Limits.ctl"/>
@@ -106,6 +107,8 @@
 			<Item Name="Get Section 4 data and HW PN.vi" Type="VI" URL="../Station/Get Section 4 data and HW PN.vi"/>
 			<Item Name="Get Test Limits.vi" Type="VI" URL="../Station/Get Test Limits.vi"/>
 			<Item Name="Kill UTP TEF.vi" Type="VI" URL="../Station/Kill UTP TEF.vi"/>
+			<Item Name="Log Message set (SubVI).vi" Type="VI" URL="../Station/Log Message set (SubVI).vi"/>
+			<Item Name="Log Messages set.vi" Type="VI" URL="../Station/Log Messages set.vi"/>
 			<Item Name="Update Operating Mode.vi" Type="VI" URL="../Station/Update Operating Mode.vi"/>
 		</Item>
 		<Item Name="TDK_20_38" Type="Folder">
