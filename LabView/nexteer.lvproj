@@ -61,12 +61,12 @@
 		<Item Name="Honeywell Scanner" Type="Folder">
 			<Item Name="HoneywellScanner.lvlib" Type="Library" URL="../Honeywell Scanner/HoneywellScanner.lvlib"/>
 		</Item>
-		<Item Name="New Folder" Type="Folder"/>
 		<Item Name="Numato - Relays" Type="Folder">
 			<Item Name="Numato.lvlib" Type="Library" URL="../Numato32chUSB/Numato.lvlib"/>
 			<Item Name="Read_Numato_Relays.vi" Type="VI" URL="../Station/Read_Numato_Relays.vi"/>
 		</Item>
 		<Item Name="Report" Type="Folder">
+			<Item Name="Generate CSV Report.vi" Type="VI" URL="../Report/Generate CSV Report.vi"/>
 			<Item Name="Generate txt Report.vi" Type="VI" URL="../Report/Generate txt Report.vi"/>
 			<Item Name="ReportData.csv" Type="Document" URL="../Report/ReportData.csv"/>
 		</Item>
