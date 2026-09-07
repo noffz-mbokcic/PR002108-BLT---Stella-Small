@@ -197,9 +197,9 @@
                         </LimitValueItemContainer>
                       </StepItem>
                       <StepItem>
-                        <Name>Create Queue</Name>
-                        <UniqueId>ID#:oWme+lUz8RGwBkypVBlBxD</UniqueId>
-                        <StepType>Action</StepType>
+                        <Name>Enable communication Handle</Name>
+                        <UniqueId>ID#:Cj0YxC6h8RGN9KQctBT8oA</UniqueId>
+                        <StepType>SequenceCall</StepType>
                         <StepItemGroup>Setup</StepItemGroup>
                         <Index>8</Index>
                         <RunMode>Normal</RunMode>
@@ -209,21 +209,21 @@
                         </LimitValueItemContainer>
                       </StepItem>
                       <StepItem>
-                        <Name>Enable communication Handle</Name>
-                        <UniqueId>ID#:GBmyTlVq8RGN2qQctBT8oA</UniqueId>
-                        <StepType>SequenceCall</StepType>
+                        <Name>Create Queue</Name>
+                        <UniqueId>ID#:Cz0YxC6h8RGN9KQctBT8oA</UniqueId>
+                        <StepType>Action</StepType>
                         <StepItemGroup>Setup</StepItemGroup>
                         <Index>9</Index>
-                        <RunMode>Skip</RunMode>
+                        <RunMode>Normal</RunMode>
                         <LimitValueItemContainer>
                           <Name>Limits</Name>
                           <LimitValueItems />
                         </LimitValueItemContainer>
                       </StepItem>
                       <StepItem>
-                        <Name>Run VI Asynchronously - Communication Handle</Name>
-                        <UniqueId>ID#:av7zXpVo8RGN16QctBT8oA</UniqueId>
-                        <StepType>NI_LV_RunVIAsynchronously</StepType>
+                        <Name>Run Communication handle</Name>
+                        <UniqueId>ID#:DD0YxC6h8RGN9KQctBT8oA</UniqueId>
+                        <StepType>Action</StepType>
                         <StepItemGroup>Setup</StepItemGroup>
                         <Index>10</Index>
                         <RunMode>Skip</RunMode>
@@ -233,12 +233,12 @@
                         </LimitValueItemContainer>
                       </StepItem>
                       <StepItem>
-                        <Name>Run Communication handle</Name>
-                        <UniqueId>ID#:MqKRJlYz8RGwBkypVBlBxD</UniqueId>
-                        <StepType>Action</StepType>
+                        <Name>Run VI Asynchronously - Communication Handle</Name>
+                        <UniqueId>ID#:DT0YxC6h8RGN9KQctBT8oA</UniqueId>
+                        <StepType>NI_LV_RunVIAsynchronously</StepType>
                         <StepItemGroup>Setup</StepItemGroup>
                         <Index>11</Index>
-                        <RunMode>Skip</RunMode>
+                        <RunMode>Normal</RunMode>
                         <LimitValueItemContainer>
                           <Name>Limits</Name>
                           <LimitValueItems />
@@ -387,7 +387,7 @@
                     <Name>Cleanup</Name>
                     <StepItems>
                       <StepItem>
-                        <Name>Cleanup</Name>
+                        <Name>Failure Procedure</Name>
                         <UniqueId>ID#:Rx+/8ZJ+8BGJycyCf5KpWB</UniqueId>
                         <StepType>SequenceCall</StepType>
                         <StepItemGroup>Cleanup</StepItemGroup>
@@ -411,8 +411,8 @@
                         </LimitValueItemContainer>
                       </StepItem>
                       <StepItem>
-                        <Name>Destroy Queue</Name>
-                        <UniqueId>ID#:dW7UWVYz8RGwBkypVBlBxD</UniqueId>
+                        <Name>Deinitialize PEAK</Name>
+                        <UniqueId>ID#:1PkzF7t98BGJyMyCf5KpWB</UniqueId>
                         <StepType>Action</StepType>
                         <StepItemGroup>Cleanup</StepItemGroup>
                         <Index>2</Index>
@@ -423,8 +423,8 @@
                         </LimitValueItemContainer>
                       </StepItem>
                       <StepItem>
-                        <Name>Deinitialize PEAK</Name>
-                        <UniqueId>ID#:1PkzF7t98BGJyMyCf5KpWB</UniqueId>
+                        <Name>Destroy Queue</Name>
+                        <UniqueId>ID#:ASe5zS6h8RGN9KQctBT8oA</UniqueId>
                         <StepType>Action</StepType>
                         <StepItemGroup>Cleanup</StepItemGroup>
                         <Index>3</Index>
@@ -19992,6 +19992,6 @@
   </Product>
   <AppInfo>
     <Version>10.2.0.0</Version>
-    <LastModification>2026-08-25T14:04:41.6881455+02:00</LastModification>
+    <LastModification>2026-09-04T14:23:37.6184673+02:00</LastModification>
   </AppInfo>
 </ProductConfiguration>
