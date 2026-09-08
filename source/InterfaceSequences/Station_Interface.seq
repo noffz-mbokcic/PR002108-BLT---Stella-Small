@@ -173,6 +173,7 @@ FailureAction = Num
 %FLG: Locals = 4194304
 %HI: Main = [89]
 %FLG: Main = 4194304
+%HI: Setup = [0]
 %FLG: Setup = 4194304
 %HI: Cleanup = [1]
 %FLG: Cleanup = 4194304
@@ -510,6 +511,7 @@ Color = 16777215
 
 [SF.Seq[0].Main[3].TS]
 Id = "ID#:5WeCm2BUOECkz/z+X0vAXA"
+Mode = "Skip"
 
 [DEF, SF.Seq[0].Main[3].TS]
 SData = "TYPE, SeqCallStepAdditions"
@@ -882,11 +884,12 @@ DisplayType = "ASCII String"
 
 [SF.Seq[0].Main[12].TS]
 Id = "ID#:FxThyuiO8BGJ3syCf5KpWB"
-Mode = "Skip"
-PostExpr = "StationGlobals.System.TestCHMB1 = True,\nStationGlobals.System.TestCHMB2 = True"
+PostExpr Line0001 = "StationGlobals.Automation.SystemControl.CHMB1.Error = False,\nStationGlobals.Automation.SystemControl.CHMB2.Error = Fals"
+PostExpr Line0002 = "e,\nStationGlobals.Automation.SystemControl.CurrentOperatingMode = 1,\nStationGlobals.Automation.SystemControl.PreviousM"
+PostExpr Line0003 = "ode = 1"
 
 [DEF, SF.Seq[0].Main[12]]
-%NAME = "Both chaimbers are tested "
+%NAME = "Reset error and Mode variables"
 
 [SF.Seq[0].Main[13].TS]
 Id = "ID#:1wweGUVA8BG4sVB7nf4f8B"
@@ -2443,7 +2446,6 @@ StatusExpr = "\"\""
 
 [SF.Seq[0].Main[41].TS]
 Id = "ID#:zoEYI2Cn8RGOBqQctBT8oA"
-CustExpr = "!StationGlobals.Automation.SystemControl.FirstSafety"
 CustTrueAct = "Goto"
 CustTrueActTarget = "\"ID#:l5op0Dpf8RGN0KQctBT8oA\""
 PostExpr = "StationGlobals.Automation.SystemControl.FirstSafety = (Locals.DI == 1)"
@@ -5098,6 +5100,62 @@ Id = "ID#:2LYOvl2U8BGJ6syCf5KpWB"
 Icon = "ni_blank.ico"
 StatusExpr = "\"\""
 %FLG: StatusExpr = 1
+
+[DEF, SF.Seq[0].Setup]
+%[0] = Step
+%TYPE: %[0] = "NoffzUTP_TEF_UI_Station_ShowMessage"
+
+[SF.Seq[0].Setup[0].TS]
+Id = "ID#:3z9UnFWr8RGODaQctBT8oA"
+
+[DEF, SF.Seq[0].Setup[0].TS]
+SData = "TYPE, SeqCallStepAdditions"
+
+[SF.Seq[0].Setup[0].TS.SData]
+SFPath = "Noffz.UTP.TEF.API.seq"
+SeqName = "UI.Station.ShowMessage"
+CustomThreadAffinity = "-1"
+Trace = "Off"
+
+[DEF, SF.Seq[0].Setup[0].TS.SData]
+ActualArgs = Arguments
+Prototype = Obj
+
+[DEF, SF.Seq[0].Setup[0].TS.SData.ActualArgs]
+Message = "TYPE, SequenceArgument"
+Color = "TYPE, SequenceArgument"
+FontSize = "TYPE, SequenceArgument"
+
+[SF.Seq[0].Setup[0].TS.SData.ActualArgs.Message]
+UseDef = False
+Expr = "ResStr(\"UI_CONTROL\", \"INITIALIZING\")"
+ParamType = 2
+Flags = 0
+
+[SF.Seq[0].Setup[0].TS.SData.ActualArgs.Color]
+ParamType = 4
+ParamRepresentation = 1
+Flags = 0
+
+[SF.Seq[0].Setup[0].TS.SData.ActualArgs.FontSize]
+ParamType = 4
+ParamRepresentation = 1
+Flags = 0
+
+[DEF, SF.Seq[0].Setup[0].TS.SData.Prototype]
+Message = Str
+Color = Num
+FontSize = Num
+
+[SF.Seq[0].Setup[0].TS.SData.Prototype]
+Color = Nan
+FontSize = Nan
+
+[SF.Seq[0].Setup[0].TS.SData.Prototype.Color]
+%NUMFMT = "%#x"
+
+[DEF, SF.Seq[0].Setup[0]]
+%NAME = "INIT - Initialize System"
 
 [DEF, SF.Seq[0].Cleanup]
 %[0] = Step

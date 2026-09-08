@@ -104,6 +104,7 @@
 			<Item Name="Get cassette coding.vi" Type="VI" URL="../Station/Get cassette coding.vi"/>
 			<Item Name="Get Error Message.vi" Type="VI" URL="../Station/Get Error Message.vi"/>
 			<Item Name="Get Failure set to write.vi" Type="VI" URL="../Station/Get Failure set to write.vi"/>
+			<Item Name="Get Program revision.vi" Type="VI" URL="../Station/Get Program revision.vi"/>
 			<Item Name="Get Section 4 data and HW PN.vi" Type="VI" URL="../Station/Get Section 4 data and HW PN.vi"/>
 			<Item Name="Get Test Limits.vi" Type="VI" URL="../Station/Get Test Limits.vi"/>
 			<Item Name="Kill UTP TEF.vi" Type="VI" URL="../Station/Kill UTP TEF.vi"/>
@@ -114,6 +115,7 @@
 		<Item Name="TDK_20_38" Type="Folder">
 			<Item Name="TDK20-38 API.lvlib" Type="Library" URL="../TDK_20_38/TDK20-38 API.lvlib"/>
 		</Item>
+		<Item Name="Report Variables.ctl" Type="VI" URL="../Station/Controls/Report Variables.ctl"/>
 		<Item Name="Dependencies" Type="Dependencies"/>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
