@@ -1596,7 +1596,7 @@ Flags = 0
 
 [SF.Seq[1].Main[21].TS.SData.ActualArgs.Message]
 UseDef = False
-Expr = "ResStr(\"UI_CONTROL\", \"OPEN_CHMB\") + Locals.CHMB"
+Expr = "ResStr(\"UI_CONTROL\", \"OPEN_CHMB\") +Locals.CHMB"
 ParamType = 2
 Flags = 0
 
@@ -1670,7 +1670,7 @@ Flags = 0
 
 [SF.Seq[1].Main[22].TS.SData.ActualArgs.Message]
 UseDef = False
-Expr = "ResStr(\"UI_CONTROL\", \"OPEN_CHMB\") + Locals.CHMB"
+Expr = "ResStr(\"UI_CONTROL\", \"OPEN_CHMB\") +Locals.CHMB"
 ParamType = 2
 Flags = 0
 
