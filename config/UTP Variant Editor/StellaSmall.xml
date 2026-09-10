@@ -101,11 +101,23 @@
                     <Name>Setup</Name>
                     <StepItems>
                       <StepItem>
+                        <Name>Send the signal that Parallel sequence needs to start</Name>
+                        <UniqueId>ID#:OoN1Ghqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>Statement</StepType>
+                        <StepItemGroup>Setup</StepItemGroup>
+                        <Index>0</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
                         <Name>Start Operation mode monitornig in Parallel Thread</Name>
                         <UniqueId>ID#:hrtLKGSr8RGODqQctBT8oA</UniqueId>
                         <StepType>SequenceCall</StepType>
                         <StepItemGroup>Setup</StepItemGroup>
-                        <Index>0</Index>
+                        <Index>1</Index>
                         <RunMode>Normal</RunMode>
                         <LimitValueItemContainer>
                           <Name>Limits</Name>
@@ -11276,11 +11288,23 @@
                     <Name>Setup</Name>
                     <StepItems>
                       <StepItem>
+                        <Name>Send the signal that Parallel sequence needs to start</Name>
+                        <UniqueId>ID#:vWNYNhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>Statement</StepType>
+                        <StepItemGroup>Setup</StepItemGroup>
+                        <Index>0</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
                         <Name>Start Operation mode monitornig in Parallel Thread</Name>
                         <UniqueId>ID#:hrtLKGSr8RGODqQctBT8oA</UniqueId>
                         <StepType>SequenceCall</StepType>
                         <StepItemGroup>Setup</StepItemGroup>
-                        <Index>0</Index>
+                        <Index>1</Index>
                         <RunMode>Normal</RunMode>
                         <LimitValueItemContainer>
                           <Name>Limits</Name>
@@ -22513,7 +22537,32 @@
                 <GroupItems>
                   <GroupItem>
                     <Name>Setup</Name>
-                    <StepItems />
+                    <StepItems>
+                      <StepItem>
+                        <Name>Send the signal that Parallel sequence needs to start</Name>
+                        <UniqueId>ID#:8AtyKBqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>Statement</StepType>
+                        <StepItemGroup>Setup</StepItemGroup>
+                        <Index>0</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>Start Operation mode monitornig in Parallel Thread</Name>
+                        <UniqueId>ID#:8QtyKBqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>SequenceCall</StepType>
+                        <StepItemGroup>Setup</StepItemGroup>
+                        <Index>1</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                    </StepItems>
                   </GroupItem>
                   <GroupItem>
                     <Name>Main</Name>
@@ -22606,7 +22655,20 @@
                   </GroupItem>
                   <GroupItem>
                     <Name>Cleanup</Name>
-                    <StepItems />
+                    <StepItems>
+                      <StepItem>
+                        <Name>Send the signal that Parallel sequence needs to finish</Name>
+                        <UniqueId>ID#:9QtyKBqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>Statement</StepType>
+                        <StepItemGroup>Cleanup</StepItemGroup>
+                        <Index>0</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                    </StepItems>
                   </GroupItem>
                 </GroupItems>
               </SequenceItem>
@@ -33336,6 +33398,288 @@
                         <StepType>PassFailTest</StepType>
                         <StepItemGroup>Main</StepItemGroup>
                         <Index>1</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                    </StepItems>
+                  </GroupItem>
+                  <GroupItem>
+                    <Name>Cleanup</Name>
+                    <StepItems />
+                  </GroupItem>
+                </GroupItems>
+              </SequenceItem>
+              <SequenceItem>
+                <Name>Checking of the operating mode</Name>
+                <GroupItems>
+                  <GroupItem>
+                    <Name>Setup</Name>
+                    <StepItems />
+                  </GroupItem>
+                  <GroupItem>
+                    <Name>Main</Name>
+                    <StepItems>
+                      <StepItem>
+                        <Name>## TODO test</Name>
+                        <UniqueId>ID#:aRw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>Label</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>0</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>While</Name>
+                        <UniqueId>ID#:ahw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>NI_Flow_While</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>1</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>Read First Safety</Name>
+                        <UniqueId>ID#:axw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>Action</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>2</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>If</Name>
+                        <UniqueId>ID#:bBw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>NI_Flow_If</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>3</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>Set Operation Mode to Alarm</Name>
+                        <UniqueId>ID#:bRw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>Statement</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>4</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>Else</Name>
+                        <UniqueId>ID#:bhw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>NI_Flow_Else</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>5</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>If</Name>
+                        <UniqueId>ID#:bxw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>NI_Flow_If</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>6</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>Set Operation Mode to Error</Name>
+                        <UniqueId>ID#:cBw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>Statement</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>7</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>Else</Name>
+                        <UniqueId>ID#:cRw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>NI_Flow_Else</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>8</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>Set Operation Mode to Automatic No Error</Name>
+                        <UniqueId>ID#:chw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>Statement</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>9</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>End</Name>
+                        <UniqueId>ID#:cxw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>NI_Flow_End</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>10</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>End</Name>
+                        <UniqueId>ID#:dBw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>NI_Flow_End</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>11</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>If</Name>
+                        <UniqueId>ID#:dRw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>NI_Flow_If</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>12</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>There is no product selection</Name>
+                        <UniqueId>ID#:dhw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>Label</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>13</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>Else If</Name>
+                        <UniqueId>ID#:dxw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>NI_Flow_ElseIf</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>14</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>Change the Sequence State to Terminated</Name>
+                        <UniqueId>ID#:eBw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>Statement</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>15</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>Terminate Execution</Name>
+                        <UniqueId>ID#:eRw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>Statement</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>16</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>Else If</Name>
+                        <UniqueId>ID#:ehw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>NI_Flow_ElseIf</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>17</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>Change the Sequence State to ERROR</Name>
+                        <UniqueId>ID#:exw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>Statement</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>18</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>End</Name>
+                        <UniqueId>ID#:fBw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>NI_Flow_End</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>19</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>Wait 100ms</Name>
+                        <UniqueId>ID#:fRw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>NI_Wait</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>20</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>End</Name>
+                        <UniqueId>ID#:fhw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>NI_Flow_End</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>21</Index>
                         <RunMode>Normal</RunMode>
                         <LimitValueItemContainer>
                           <Name>Limits</Name>
@@ -33373,7 +33717,32 @@
                 <GroupItems>
                   <GroupItem>
                     <Name>Setup</Name>
-                    <StepItems />
+                    <StepItems>
+                      <StepItem>
+                        <Name>Send the signal that Parallel sequence needs to start</Name>
+                        <UniqueId>ID#:IJ1wPRqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>Statement</StepType>
+                        <StepItemGroup>Setup</StepItemGroup>
+                        <Index>0</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>Start Operation mode monitornig in Parallel Thread</Name>
+                        <UniqueId>ID#:IZ1wPRqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>SequenceCall</StepType>
+                        <StepItemGroup>Setup</StepItemGroup>
+                        <Index>1</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                    </StepItems>
                   </GroupItem>
                   <GroupItem>
                     <Name>Main</Name>
@@ -33466,7 +33835,20 @@
                   </GroupItem>
                   <GroupItem>
                     <Name>Cleanup</Name>
-                    <StepItems />
+                    <StepItems>
+                      <StepItem>
+                        <Name>Send the signal that Parallel sequence needs to finish</Name>
+                        <UniqueId>ID#:Ip1wPRqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>Statement</StepType>
+                        <StepItemGroup>Cleanup</StepItemGroup>
+                        <Index>0</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                    </StepItems>
                   </GroupItem>
                 </GroupItems>
               </SequenceItem>
@@ -44211,6 +44593,288 @@
                   </GroupItem>
                 </GroupItems>
               </SequenceItem>
+              <SequenceItem>
+                <Name>Checking of the operating mode</Name>
+                <GroupItems>
+                  <GroupItem>
+                    <Name>Setup</Name>
+                    <StepItems />
+                  </GroupItem>
+                  <GroupItem>
+                    <Name>Main</Name>
+                    <StepItems>
+                      <StepItem>
+                        <Name>## TODO test</Name>
+                        <UniqueId>ID#:Uxw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>Label</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>0</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>While</Name>
+                        <UniqueId>ID#:VBw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>NI_Flow_While</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>1</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>Read First Safety</Name>
+                        <UniqueId>ID#:VRw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>Action</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>2</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>If</Name>
+                        <UniqueId>ID#:Vhw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>NI_Flow_If</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>3</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>Set Operation Mode to Alarm</Name>
+                        <UniqueId>ID#:Vxw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>Statement</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>4</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>Else</Name>
+                        <UniqueId>ID#:WBw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>NI_Flow_Else</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>5</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>If</Name>
+                        <UniqueId>ID#:WRw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>NI_Flow_If</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>6</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>Set Operation Mode to Error</Name>
+                        <UniqueId>ID#:Whw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>Statement</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>7</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>Else</Name>
+                        <UniqueId>ID#:Wxw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>NI_Flow_Else</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>8</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>Set Operation Mode to Automatic No Error</Name>
+                        <UniqueId>ID#:XBw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>Statement</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>9</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>End</Name>
+                        <UniqueId>ID#:XRw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>NI_Flow_End</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>10</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>End</Name>
+                        <UniqueId>ID#:Xhw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>NI_Flow_End</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>11</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>If</Name>
+                        <UniqueId>ID#:Xxw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>NI_Flow_If</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>12</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>There is no product selection</Name>
+                        <UniqueId>ID#:YBw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>Label</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>13</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>Else If</Name>
+                        <UniqueId>ID#:YRw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>NI_Flow_ElseIf</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>14</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>Change the Sequence State to Terminated</Name>
+                        <UniqueId>ID#:Yhw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>Statement</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>15</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>Terminate Execution</Name>
+                        <UniqueId>ID#:Yxw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>Statement</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>16</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>Else If</Name>
+                        <UniqueId>ID#:ZBw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>NI_Flow_ElseIf</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>17</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>Change the Sequence State to ERROR</Name>
+                        <UniqueId>ID#:ZRw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>Statement</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>18</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>End</Name>
+                        <UniqueId>ID#:Zhw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>NI_Flow_End</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>19</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>Wait 100ms</Name>
+                        <UniqueId>ID#:Zxw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>NI_Wait</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>20</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                      <StepItem>
+                        <Name>End</Name>
+                        <UniqueId>ID#:aBw5Rhqt8RGOFKQctBT8oA</UniqueId>
+                        <StepType>NI_Flow_End</StepType>
+                        <StepItemGroup>Main</StepItemGroup>
+                        <Index>21</Index>
+                        <RunMode>Normal</RunMode>
+                        <LimitValueItemContainer>
+                          <Name>Limits</Name>
+                          <LimitValueItems />
+                        </LimitValueItemContainer>
+                      </StepItem>
+                    </StepItems>
+                  </GroupItem>
+                  <GroupItem>
+                    <Name>Cleanup</Name>
+                    <StepItems />
+                  </GroupItem>
+                </GroupItems>
+              </SequenceItem>
             </SequenceItems>
           </VariantItem>
           <VariantItem>
@@ -44227,5 +44891,9 @@
   <AppInfo>
     <Version>10.2.0.0</Version>
     <LastModification>2026-09-10T12:15:42.8328075+02:00</LastModification>
+  </AppInfo>
+  <AppInfo>
+    <Version>10.3.0.0</Version>
+    <LastModification>2026-09-10T16:19:19.578969+02:00</LastModification>
   </AppInfo>
 </ProductConfiguration>
