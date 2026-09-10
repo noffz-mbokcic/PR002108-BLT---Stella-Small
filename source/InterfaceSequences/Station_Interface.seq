@@ -390,31 +390,31 @@ FixtureClosed = Bool
 %[73] = Step
 %TYPE: %[73] = "Label"
 %[74] = Step
-%TYPE: %[74] = "NoffzUTP_TEF_ProductSelectionDialog_Station_EnableProductSelection"
+%TYPE: %[74] = "SequenceCall"
 %[75] = Step
 %TYPE: %[75] = "Label"
 %[76] = Step
-%TYPE: %[76] = "NI_Notification"
+%TYPE: %[76] = "NoffzUTP_TEF_ProductSelectionDialog_Station_EnableProductSelection"
 %[77] = Step
 %TYPE: %[77] = "Label"
 %[78] = Step
-%TYPE: %[78] = "NoffzUTP_TEF_UI_Station_ShowMessage"
+%TYPE: %[78] = "NI_Notification"
 %[79] = Step
-%TYPE: %[79] = "NI_Notification"
+%TYPE: %[79] = "Label"
 %[80] = Step
-%TYPE: %[80] = "NoffzUTP_TEF_ProductSelectionDialog_Station_AreProductsAndVariantsSelected"
+%TYPE: %[80] = "NoffzUTP_TEF_UI_Station_ShowMessage"
 %[81] = Step
-%TYPE: %[81] = "Goto"
+%TYPE: %[81] = "NI_Notification"
 %[82] = Step
-%TYPE: %[82] = "Label"
+%TYPE: %[82] = "NoffzUTP_TEF_ProductSelectionDialog_Station_AreProductsAndVariantsSelected"
 %[83] = Step
-%TYPE: %[83] = "NoffzUTP_TEF_ProductSelectionDialog_Station_EnableProductSelection"
+%TYPE: %[83] = "Goto"
 %[84] = Step
 %TYPE: %[84] = "Label"
 %[85] = Step
-%TYPE: %[85] = "Label"
+%TYPE: %[85] = "NoffzUTP_TEF_ProductSelectionDialog_Station_EnableProductSelection"
 %[86] = Step
-%TYPE: %[86] = "SequenceCall"
+%TYPE: %[86] = "Label"
 %[87] = Step
 %TYPE: %[87] = "Label"
 %[88] = Step
@@ -2306,10 +2306,10 @@ StatusExpr = "\"\""
 %FLG: %[35] = 67108864
 %FLG: %[40] = 67108864
 %FLG: %[71] = 67108864
-%FLG: %[73] = 67108864
 %FLG: %[75] = 67108864
-%FLG: %[82] = 67108864
+%FLG: %[77] = 67108864
 %FLG: %[84] = 67108864
+%FLG: %[86] = 67108864
 %FLG: %[87] = 67108864
 %FLG: %[89] = 67108864
 
@@ -4811,179 +4811,107 @@ PostExpr = "StationGlobals.Automation.SystemControl.Light_State = Enums.Light_St
 %NAME = "Set light tower to blinking yellow fast"
 
 [SF.Seq[0].Main[73].TS]
-Id = "ID#:W5x7ijpf8RGN0KQctBT8oA"
-Icon = "ni_blank.ico"
-StatusExpr = "\"\""
-%FLG: StatusExpr = 1
+Id = "ID#:FvbAl2ug8RGN8qQctBT8oA"
+
+[DEF, SF.Seq[0].Main[73]]
+%NAME = "Set Operation Mode to Production"
 
 [SF.Seq[0].Main[74].TS]
-Id = "ID#:XJx7ijpf8RGN0KQctBT8oA"
+Id = "ID#:F/bAl2ug8RGN8qQctBT8oA"
 
 [DEF, SF.Seq[0].Main[74].TS]
 SData = "TYPE, SeqCallStepAdditions"
 
 [SF.Seq[0].Main[74].TS.SData]
-SFPath = "Noffz.UTP.TEF.API.seq"
-SeqName = "ProductSelectionDialog.Station.EnableProductSelection"
+SeqName = "Production"
+UseCurFile = True
 CustomThreadAffinity = "-1"
-Trace = "Off"
-
-[DEF, SF.Seq[0].Main[74].TS.SData]
-ActualArgs = Arguments
-Prototype = Obj
-
-[DEF, SF.Seq[0].Main[74].TS.SData.ActualArgs]
-Enabled = "TYPE, SequenceArgument"
-
-[SF.Seq[0].Main[74].TS.SData.ActualArgs.Enabled]
-UseDef = False
-Expr = "True"
-ParamType = 16
-Flags = 0
-
-[DEF, SF.Seq[0].Main[74].TS.SData.Prototype]
-Enabled = Bool
 
 [DEF, SF.Seq[0].Main[74]]
-%NAME = "ProductSelectionDialog.Station.EnableProductSelection: True"
+%NAME = "Set Operation Mode to Production"
 
 [SF.Seq[0].Main[75].TS]
-Id = "ID#:XZx7ijpf8RGN0KQctBT8oA"
+Id = "ID#:W5x7ijpf8RGN0KQctBT8oA"
 Icon = "ni_blank.ico"
 StatusExpr = "\"\""
 %FLG: StatusExpr = 1
 
 [SF.Seq[0].Main[76].TS]
+Id = "ID#:XJx7ijpf8RGN0KQctBT8oA"
+
+[DEF, SF.Seq[0].Main[76].TS]
+SData = "TYPE, SeqCallStepAdditions"
+
+[SF.Seq[0].Main[76].TS.SData]
+SFPath = "Noffz.UTP.TEF.API.seq"
+SeqName = "ProductSelectionDialog.Station.EnableProductSelection"
+CustomThreadAffinity = "-1"
+Trace = "Off"
+
+[DEF, SF.Seq[0].Main[76].TS.SData]
+ActualArgs = Arguments
+Prototype = Obj
+
+[DEF, SF.Seq[0].Main[76].TS.SData.ActualArgs]
+Enabled = "TYPE, SequenceArgument"
+
+[SF.Seq[0].Main[76].TS.SData.ActualArgs.Enabled]
+UseDef = False
+Expr = "True"
+ParamType = 16
+Flags = 0
+
+[DEF, SF.Seq[0].Main[76].TS.SData.Prototype]
+Enabled = Bool
+
+[DEF, SF.Seq[0].Main[76]]
+%NAME = "ProductSelectionDialog.Station.EnableProductSelection: True"
+
+[SF.Seq[0].Main[77].TS]
+Id = "ID#:XZx7ijpf8RGN0KQctBT8oA"
+Icon = "ni_blank.ico"
+StatusExpr = "\"\""
+%FLG: StatusExpr = 1
+
+[SF.Seq[0].Main[78].TS]
 Id = "ID#:Xpx7ijpf8RGN0KQctBT8oA"
 %HI: AdditionalResultsHints = [1]
 
-[DEF, SF.Seq[0].Main[76].TS.AdditionalResultsHints]
+[DEF, SF.Seq[0].Main[78].TS.AdditionalResultsHints]
 %[0] = "TYPE, NI_CustomResult"
 %[1] = "TYPE, NI_CustomResult"
 
-[SF.Seq[0].Main[76].TS.AdditionalResultsHints[0]]
+[SF.Seq[0].Main[78].TS.AdditionalResultsHints[0]]
 Name = "ResStr(\"NI_NOTIFICATION_STEP_TYPE\", \"ALREADY_EXISTS_HINT\")"
 ValueToLog = "Evaluate(Step.AlreadyExistsExpr)"
 
-[SF.Seq[0].Main[76].TS.AdditionalResultsHints[1]]
+[SF.Seq[0].Main[78].TS.AdditionalResultsHints[1]]
 Name = "ResStr(\"NI_NOTIFICATION_STEP_TYPE\", \"NOTIFICATION_REFERENCE_LIFETIME_HINT\")"
 ValueToLog Line0001 = "$tag =\n    Step.Lifetime == 0 ? \"LIFETIME_SEQUENCE\" :\n    Step.Lifetime == 1 ? \"LIFETIME_THREAD\" :\n    Step.Lifet"
 ValueToLog Line0002 = "ime == 2 ? \"LIFETIME_REFERENCE\" :\n    Step.Lifetime == 3 ? \"LIFETIME_EXECUTION\" :\n    \"\",\n\nResStr(\"NI_NOTIFIC"
 ValueToLog Line0003 = "ATION_STEP_TYPE\", $tag)"
 
-[SF.Seq[0].Main[76]]
+[SF.Seq[0].Main[78]]
 NameOrRefExpr = "\"Product Selection\""
-
-[DEF, SF.Seq[0].Main[76]]
-%NAME = "Create Product Selection Notification"
-
-[SF.Seq[0].Main[77].TS]
-Id = "ID#:X5x7ijpf8RGN0KQctBT8oA"
-
-[DEF, SF.Seq[0].Main[77]]
-%NAME = "Select Product"
-
-[SF.Seq[0].Main[78].TS]
-Id = "ID#:YJx7ijpf8RGN0KQctBT8oA"
-
-[DEF, SF.Seq[0].Main[78].TS]
-SData = "TYPE, SeqCallStepAdditions"
-
-[SF.Seq[0].Main[78].TS.SData]
-SFPath = "Noffz.UTP.TEF.API.seq"
-SeqName = "UI.Station.ShowMessage"
-CustomThreadAffinity = "-1"
-Trace = "Off"
-
-[DEF, SF.Seq[0].Main[78].TS.SData]
-ActualArgs = Arguments
-Prototype = Obj
-
-[DEF, SF.Seq[0].Main[78].TS.SData.ActualArgs]
-Message = "TYPE, SequenceArgument"
-Color = "TYPE, SequenceArgument"
-FontSize = "TYPE, SequenceArgument"
-
-[SF.Seq[0].Main[78].TS.SData.ActualArgs.Message]
-UseDef = False
-Expr = "ResStr(\"UI_MESSAGES\", \"SELECT_PRODUCT\")"
-ParamType = 2
-Flags = 0
-
-[SF.Seq[0].Main[78].TS.SData.ActualArgs.Color]
-UseDef = False
-Expr = "StationGlobals.TEF.Colors.DialogWaiting"
-ParamType = 4
-ParamRepresentation = 1
-Flags = 0
-
-[SF.Seq[0].Main[78].TS.SData.ActualArgs.FontSize]
-ParamType = 4
-ParamRepresentation = 1
-Flags = 0
-
-[DEF, SF.Seq[0].Main[78].TS.SData.Prototype]
-Message = Str
-Color = Num
-FontSize = Num
-
-[SF.Seq[0].Main[78].TS.SData.Prototype]
-Color = Nan
-FontSize = Nan
-
-[SF.Seq[0].Main[78].TS.SData.Prototype.Color]
-%NUMFMT = "%#x"
 
 [DEF, SF.Seq[0].Main[78]]
-%NAME = "UI.Station.ShowMessage: \"Select product\""
+%NAME = "Create Product Selection Notification"
 
 [SF.Seq[0].Main[79].TS]
-Id = "ID#:YZx7ijpf8RGN0KQctBT8oA"
-%HI: AdditionalResultsHints = [1]
-
-[DEF, SF.Seq[0].Main[79].TS.AdditionalResultsHints]
-%[0] = "TYPE, NI_CustomResult"
-%[1] = "TYPE, NI_CustomResult"
-
-[SF.Seq[0].Main[79].TS.AdditionalResultsHints[0]]
-Name = "ResStr(\"NI_NOTIFICATION_STEP_TYPE\", \"DATA_HINT\")"
-ValueToLog = "Evaluate(Step.DataExpr)"
-
-[SF.Seq[0].Main[79].TS.AdditionalResultsHints[1]]
-Name = "ResStr(\"NI_NOTIFICATION_STEP_TYPE\", \"TIMEOUT\")"
-ValueToLog = "Step.TimeoutEnabled ? Str(Evaluate(Step.TimeoutExpr)) : ResStr(\"NI_NOTIFICATION_STEP_TYPE\", \"DISABLED\")"
+Id = "ID#:X5x7ijpf8RGN0KQctBT8oA"
 
 [DEF, SF.Seq[0].Main[79]]
-Result = Obj
-%NAME = "Wait for Product Selection Notification"
-
-[DEF, SF.Seq[0].Main[79].Result]
-Error = "TYPE, Error"
-Status = Str
-ReportText = Str
-Common = "TYPE, CommonResults"
-TimeoutOccurred = Bool
-
-[SF.Seq[0].Main[79].Result]
-%FLG: Error = 4194304
-%FLG: Status = 4194304
-%FLG: ReportText = 4194304
-%FLG: Common = 0
-
-[SF.Seq[0].Main[79]]
-%FLG: Result = 4194304
-NameOrRefExpr = "\"Product Selection\""
-Operation = 4
+%NAME = "Select Product"
 
 [SF.Seq[0].Main[80].TS]
-Id = "ID#:Ypx7ijpf8RGN0KQctBT8oA"
+Id = "ID#:YJx7ijpf8RGN0KQctBT8oA"
 
 [DEF, SF.Seq[0].Main[80].TS]
 SData = "TYPE, SeqCallStepAdditions"
 
 [SF.Seq[0].Main[80].TS.SData]
 SFPath = "Noffz.UTP.TEF.API.seq"
-SeqName = "ProductSelectionDialog.Station.AreProductsAndVariantsSelected"
+SeqName = "UI.Station.ShowMessage"
 CustomThreadAffinity = "-1"
 Trace = "Off"
 
@@ -4992,95 +4920,167 @@ ActualArgs = Arguments
 Prototype = Obj
 
 [DEF, SF.Seq[0].Main[80].TS.SData.ActualArgs]
+Message = "TYPE, SequenceArgument"
+Color = "TYPE, SequenceArgument"
+FontSize = "TYPE, SequenceArgument"
+
+[SF.Seq[0].Main[80].TS.SData.ActualArgs.Message]
+UseDef = False
+Expr = "ResStr(\"UI_MESSAGES\", \"SELECT_PRODUCT\")"
+ParamType = 2
+Flags = 0
+
+[SF.Seq[0].Main[80].TS.SData.ActualArgs.Color]
+UseDef = False
+Expr = "StationGlobals.TEF.Colors.DialogWaiting"
+ParamType = 4
+ParamRepresentation = 1
+Flags = 0
+
+[SF.Seq[0].Main[80].TS.SData.ActualArgs.FontSize]
+ParamType = 4
+ParamRepresentation = 1
+Flags = 0
+
+[DEF, SF.Seq[0].Main[80].TS.SData.Prototype]
+Message = Str
+Color = Num
+FontSize = Num
+
+[SF.Seq[0].Main[80].TS.SData.Prototype]
+Color = Nan
+FontSize = Nan
+
+[SF.Seq[0].Main[80].TS.SData.Prototype.Color]
+%NUMFMT = "%#x"
+
+[DEF, SF.Seq[0].Main[80]]
+%NAME = "UI.Station.ShowMessage: \"Select product\""
+
+[SF.Seq[0].Main[81].TS]
+Id = "ID#:YZx7ijpf8RGN0KQctBT8oA"
+%HI: AdditionalResultsHints = [1]
+
+[DEF, SF.Seq[0].Main[81].TS.AdditionalResultsHints]
+%[0] = "TYPE, NI_CustomResult"
+%[1] = "TYPE, NI_CustomResult"
+
+[SF.Seq[0].Main[81].TS.AdditionalResultsHints[0]]
+Name = "ResStr(\"NI_NOTIFICATION_STEP_TYPE\", \"DATA_HINT\")"
+ValueToLog = "Evaluate(Step.DataExpr)"
+
+[SF.Seq[0].Main[81].TS.AdditionalResultsHints[1]]
+Name = "ResStr(\"NI_NOTIFICATION_STEP_TYPE\", \"TIMEOUT\")"
+ValueToLog = "Step.TimeoutEnabled ? Str(Evaluate(Step.TimeoutExpr)) : ResStr(\"NI_NOTIFICATION_STEP_TYPE\", \"DISABLED\")"
+
+[DEF, SF.Seq[0].Main[81]]
+Result = Obj
+%NAME = "Wait for Product Selection Notification"
+
+[DEF, SF.Seq[0].Main[81].Result]
+Error = "TYPE, Error"
+Status = Str
+ReportText = Str
+Common = "TYPE, CommonResults"
+TimeoutOccurred = Bool
+
+[SF.Seq[0].Main[81].Result]
+%FLG: Error = 4194304
+%FLG: Status = 4194304
+%FLG: ReportText = 4194304
+%FLG: Common = 0
+
+[SF.Seq[0].Main[81]]
+%FLG: Result = 4194304
+NameOrRefExpr = "\"Product Selection\""
+Operation = 4
+
+[SF.Seq[0].Main[82].TS]
+Id = "ID#:Ypx7ijpf8RGN0KQctBT8oA"
+
+[DEF, SF.Seq[0].Main[82].TS]
+SData = "TYPE, SeqCallStepAdditions"
+
+[SF.Seq[0].Main[82].TS.SData]
+SFPath = "Noffz.UTP.TEF.API.seq"
+SeqName = "ProductSelectionDialog.Station.AreProductsAndVariantsSelected"
+CustomThreadAffinity = "-1"
+Trace = "Off"
+
+[DEF, SF.Seq[0].Main[82].TS.SData]
+ActualArgs = Arguments
+Prototype = Obj
+
+[DEF, SF.Seq[0].Main[82].TS.SData.ActualArgs]
 Selected = "TYPE, SequenceArgument"
 
-[SF.Seq[0].Main[80].TS.SData.ActualArgs.Selected]
+[SF.Seq[0].Main[82].TS.SData.ActualArgs.Selected]
 UseDef = False
 Expr = "Locals.AreProductsAndVariantsSelected"
 ParamType = 16
 
-[DEF, SF.Seq[0].Main[80].TS.SData.Prototype]
+[DEF, SF.Seq[0].Main[82].TS.SData.Prototype]
 Selected = Bool
 
-[SF.Seq[0].Main[80].TS.SData.Prototype]
+[SF.Seq[0].Main[82].TS.SData.Prototype]
 %FLG: Selected = 4
 
-[DEF, SF.Seq[0].Main[80]]
+[DEF, SF.Seq[0].Main[82]]
 %NAME = "ProductSelectionDialog.Station.AreProductsAndVariantsSelected"
 
-[SF.Seq[0].Main[81].TS]
+[SF.Seq[0].Main[83].TS]
 Id = "ID#:Y5x7ijpf8RGN0KQctBT8oA"
 PreCond = "!Locals.AreProductsAndVariantsSelected"
 CustTrueActTarget = "\"ID#:X5x7ijpf8RGN0KQctBT8oA\""
 
-[SF.Seq[0].Main[81]]
+[SF.Seq[0].Main[83]]
 %COMMENT = "If product selection is not valid"
 
-[DEF, SF.Seq[0].Main[81]]
+[DEF, SF.Seq[0].Main[83]]
 %NAME = "Goto <Select Product>"
 
-[SF.Seq[0].Main[82].TS]
+[SF.Seq[0].Main[84].TS]
 Id = "ID#:ZJx7ijpf8RGN0KQctBT8oA"
 Icon = "ni_blank.ico"
 StatusExpr = "\"\""
 %FLG: StatusExpr = 1
 
-[SF.Seq[0].Main[83].TS]
+[SF.Seq[0].Main[85].TS]
 Id = "ID#:ZZx7ijpf8RGN0KQctBT8oA"
 
-[DEF, SF.Seq[0].Main[83].TS]
+[DEF, SF.Seq[0].Main[85].TS]
 SData = "TYPE, SeqCallStepAdditions"
 
-[SF.Seq[0].Main[83].TS.SData]
+[SF.Seq[0].Main[85].TS.SData]
 SFPath = "Noffz.UTP.TEF.API.seq"
 SeqName = "ProductSelectionDialog.Station.EnableProductSelection"
 CustomThreadAffinity = "-1"
 Trace = "Off"
 
-[DEF, SF.Seq[0].Main[83].TS.SData]
+[DEF, SF.Seq[0].Main[85].TS.SData]
 ActualArgs = Arguments
 Prototype = Obj
 
-[DEF, SF.Seq[0].Main[83].TS.SData.ActualArgs]
+[DEF, SF.Seq[0].Main[85].TS.SData.ActualArgs]
 Enabled = "TYPE, SequenceArgument"
 
-[SF.Seq[0].Main[83].TS.SData.ActualArgs.Enabled]
+[SF.Seq[0].Main[85].TS.SData.ActualArgs.Enabled]
 UseDef = False
 Expr = "False"
 ParamType = 16
 Flags = 0
 
-[DEF, SF.Seq[0].Main[83].TS.SData.Prototype]
+[DEF, SF.Seq[0].Main[85].TS.SData.Prototype]
 Enabled = Bool
 
-[DEF, SF.Seq[0].Main[83]]
+[DEF, SF.Seq[0].Main[85]]
 %NAME = "ProductSelectionDialog.Station.EnableProductSelection: False"
 
-[SF.Seq[0].Main[84].TS]
+[SF.Seq[0].Main[86].TS]
 Id = "ID#:1bYOvl2U8BGJ6syCf5KpWB"
 Icon = "ni_blank.ico"
 StatusExpr = "\"\""
 %FLG: StatusExpr = 1
-
-[SF.Seq[0].Main[85].TS]
-Id = "ID#:FvbAl2ug8RGN8qQctBT8oA"
-
-[DEF, SF.Seq[0].Main[85]]
-%NAME = "Set Operation Mode to Production"
-
-[SF.Seq[0].Main[86].TS]
-Id = "ID#:F/bAl2ug8RGN8qQctBT8oA"
-
-[DEF, SF.Seq[0].Main[86].TS]
-SData = "TYPE, SeqCallStepAdditions"
-
-[SF.Seq[0].Main[86].TS.SData]
-SeqName = "Production"
-UseCurFile = True
-CustomThreadAffinity = "-1"
-
-[DEF, SF.Seq[0].Main[86]]
-%NAME = "Set Operation Mode to Production"
 
 [SF.Seq[0].Main[87].TS]
 Id = "ID#:Bl36pWug8RGN8qQctBT8oA"
@@ -20190,39 +20190,39 @@ Expected_Code = Num
 %[8] = Step
 %TYPE: %[8] = "NI_Flow_End"
 %[9] = Step
-%TYPE: %[9] = "NI_Flow_End"
+%TYPE: %[9] = "NI_Flow_Case"
 %[10] = Step
-%TYPE: %[10] = "NI_Flow_Case"
+%TYPE: %[10] = "Label"
 %[11] = Step
-%TYPE: %[11] = "Label"
+%TYPE: %[11] = "NoffzUTP_TEF_UI_TestSocket_ShowMessage"
 %[12] = Step
 %TYPE: %[12] = "NoffzUTP_TEF_UI_TestSocket_ShowMessage"
 %[13] = Step
-%TYPE: %[13] = "NoffzUTP_TEF_UI_TestSocket_ShowMessage"
+%TYPE: %[13] = "NoffzUTP_TEF_UI_Station_ShowMessageDialog"
 %[14] = Step
-%TYPE: %[14] = "NoffzUTP_TEF_UI_Station_ShowMessageDialog"
+%TYPE: %[14] = "Goto"
 %[15] = Step
-%TYPE: %[15] = "Goto"
+%TYPE: %[15] = "NI_Flow_End"
 %[16] = Step
-%TYPE: %[16] = "NI_Flow_End"
+%TYPE: %[16] = "NI_Flow_Case"
 %[17] = Step
-%TYPE: %[17] = "NI_Flow_Case"
+%TYPE: %[17] = "Label"
 %[18] = Step
-%TYPE: %[18] = "Label"
+%TYPE: %[18] = "NoffzUTP_TEF_UI_TestSocket_ShowMessage"
 %[19] = Step
 %TYPE: %[19] = "NoffzUTP_TEF_UI_TestSocket_ShowMessage"
 %[20] = Step
-%TYPE: %[20] = "NoffzUTP_TEF_UI_TestSocket_ShowMessage"
+%TYPE: %[20] = "NoffzUTP_TEF_UI_Station_ShowMessageDialog"
 %[21] = Step
-%TYPE: %[21] = "NoffzUTP_TEF_UI_Station_ShowMessageDialog"
+%TYPE: %[21] = "Goto"
 %[22] = Step
-%TYPE: %[22] = "Goto"
+%TYPE: %[22] = "NI_Flow_End"
 %[23] = Step
-%TYPE: %[23] = "NI_Flow_End"
+%TYPE: %[23] = "NI_Flow_Case"
 %[24] = Step
-%TYPE: %[24] = "NI_Flow_Case"
+%TYPE: %[24] = "Label"
 %[25] = Step
-%TYPE: %[25] = "Label"
+%TYPE: %[25] = "NI_Flow_End"
 %[26] = Step
 %TYPE: %[26] = "NI_Flow_End"
 %[27] = Step
@@ -20798,34 +20798,100 @@ Id = "ID#:ooXBv0iP8RGN5aQctBT8oA"
 %NAME = "MID variant expected and found -> continue"
 
 [SF.Seq[11].Main[8].TS]
-Id = "ID#:w+R+6EiP8RGN5aQctBT8oA"
+Id = "ID#:SxKpqkiP8RGN5aQctBT8oA"
 
 [DEF, SF.Seq[11].Main[8]]
 %NAME = "End"
 
 [SF.Seq[11].Main[9].TS]
-Id = "ID#:SxKpqkiP8RGN5aQctBT8oA"
-
-[DEF, SF.Seq[11].Main[9]]
-%NAME = "End"
-
-[SF.Seq[11].Main[10].TS]
 Id = "ID#:BOY0uUiP8RGN5aQctBT8oA"
 
-[SF.Seq[11].Main[10]]
+[SF.Seq[11].Main[9]]
 ItemExpr = "10"
 
-[DEF, SF.Seq[11].Main[10]]
+[DEF, SF.Seq[11].Main[9]]
 %NAME = "Case"
 
-[SF.Seq[11].Main[11].TS]
+[SF.Seq[11].Main[10].TS]
 Id = "ID#:pIXBv0iP8RGN5aQctBT8oA"
 
-[DEF, SF.Seq[11].Main[11]]
+[DEF, SF.Seq[11].Main[10]]
 %NAME = "HI_LHD and HI_RHD variant"
 
-[SF.Seq[11].Main[12].TS]
+[SF.Seq[11].Main[11].TS]
 Id = "ID#:5VdXJEmP8RGN5aQctBT8oA"
+
+[DEF, SF.Seq[11].Main[11].TS]
+SData = "TYPE, SeqCallStepAdditions"
+
+[SF.Seq[11].Main[11].TS.SData]
+SFPath = "Noffz.UTP.TEF.API.seq"
+SeqName = "UI.TestSocket.ShowMessage"
+CustomThreadAffinity = "-1"
+Trace = "Off"
+
+[DEF, SF.Seq[11].Main[11].TS.SData]
+ActualArgs = Arguments
+Prototype = Obj
+
+[DEF, SF.Seq[11].Main[11].TS.SData.ActualArgs]
+TestSocket = "TYPE, SequenceArgument"
+Message = "TYPE, SequenceArgument"
+Color = "TYPE, SequenceArgument"
+FontSize = "TYPE, SequenceArgument"
+
+[SF.Seq[11].Main[11].TS.SData.ActualArgs.TestSocket]
+UseDef = False
+Expr = "Parameters.IsCHMB1 ? 0 : 2"
+ParamType = 4
+ParamRepresentation = 1
+Flags = 0
+
+[SF.Seq[11].Main[11].TS.SData.ActualArgs.Message]
+UseDef = False
+Expr = "ResStr(\"UI_CONTROL\", \"WRONG_CASSETTE\")"
+ParamType = 2
+Flags = 0
+
+[SF.Seq[11].Main[11].TS.SData.ActualArgs.Color]
+ParamType = 4
+ParamRepresentation = 1
+Flags = 0
+
+[SF.Seq[11].Main[11].TS.SData.ActualArgs.FontSize]
+ParamType = 4
+ParamRepresentation = 1
+Flags = 0
+
+[DEF, SF.Seq[11].Main[11].TS.SData.Prototype]
+TestSocket = Num
+Message = Str
+Color = Num
+FontSize = Num
+
+[SF.Seq[11].Main[11].TS.SData.Prototype]
+TestSocket = Nan
+Color = Nan
+FontSize = Nan
+
+[SF.Seq[11].Main[11].TS.SData.Prototype.TestSocket]
+%COMMENT = "Test Socket number. (Default: Current Test Socket Index)"
+
+[SF.Seq[11].Main[11].TS.SData.Prototype.Message]
+%COMMENT = "Message to show."
+
+[SF.Seq[11].Main[11].TS.SData.Prototype.Color]
+%COMMENT = "Background color of the Test Socket Message Area. (Default: StationGlobals.TEF.Colors.DialogInfo)"
+%NUMFMT = "%#x"
+
+[SF.Seq[11].Main[11].TS.SData.Prototype.FontSize]
+%COMMENT = "Size of the Font. (Default: Configuration parameter 'DialogTextBox' from Noffz.UTP.TEF.config)"
+
+[DEF, SF.Seq[11].Main[11]]
+%NAME = "Wrong cassette for selected variant"
+
+[SF.Seq[11].Main[12].TS]
+Id = "ID#:Iol3REmP8RGN5aQctBT8oA"
 
 [DEF, SF.Seq[11].Main[12].TS]
 SData = "TYPE, SeqCallStepAdditions"
@@ -20848,7 +20914,7 @@ FontSize = "TYPE, SequenceArgument"
 
 [SF.Seq[11].Main[12].TS.SData.ActualArgs.TestSocket]
 UseDef = False
-Expr = "Parameters.IsCHMB1 ? 0 : 2"
+Expr = "Parameters.IsCHMB1 ? 1 : 3"
 ParamType = 4
 ParamRepresentation = 1
 Flags = 0
@@ -20897,14 +20963,14 @@ FontSize = Nan
 %NAME = "Wrong cassette for selected variant"
 
 [SF.Seq[11].Main[13].TS]
-Id = "ID#:Iol3REmP8RGN5aQctBT8oA"
+Id = "ID#:IpsNF0mP8RGN5aQctBT8oA"
 
 [DEF, SF.Seq[11].Main[13].TS]
 SData = "TYPE, SeqCallStepAdditions"
 
 [SF.Seq[11].Main[13].TS.SData]
 SFPath = "Noffz.UTP.TEF.API.seq"
-SeqName = "UI.TestSocket.ShowMessage"
+SeqName = "UI.Station.ShowMessageDialog"
 CustomThreadAffinity = "-1"
 Trace = "Off"
 
@@ -20913,21 +20979,18 @@ ActualArgs = Arguments
 Prototype = Obj
 
 [DEF, SF.Seq[11].Main[13].TS.SData.ActualArgs]
-TestSocket = "TYPE, SequenceArgument"
 Message = "TYPE, SequenceArgument"
 Color = "TYPE, SequenceArgument"
 FontSize = "TYPE, SequenceArgument"
-
-[SF.Seq[11].Main[13].TS.SData.ActualArgs.TestSocket]
-UseDef = False
-Expr = "Parameters.IsCHMB1 ? 1 : 3"
-ParamType = 4
-ParamRepresentation = 1
-Flags = 0
+ShowOkButton = "TYPE, SequenceArgument"
+ShowCancelButton = "TYPE, SequenceArgument"
+DialogTimeout = "TYPE, SequenceArgument"
+OkButtonPressed = "TYPE, SequenceArgument"
+CancelButtonPressed = "TYPE, SequenceArgument"
 
 [SF.Seq[11].Main[13].TS.SData.ActualArgs.Message]
 UseDef = False
-Expr = "ResStr(\"UI_CONTROL\", \"WRONG_CASSETTE\")"
+Expr = "ResStr(\"UI_CONTROL\", \"WRONG_CASSETTE\") + (Parameters.IsCHMB1 ? \"Chamber 1\" : \"Chamber 2\")"
 ParamType = 2
 Flags = 0
 
@@ -20941,98 +21004,29 @@ ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[DEF, SF.Seq[11].Main[13].TS.SData.Prototype]
-TestSocket = Num
-Message = Str
-Color = Num
-FontSize = Num
-
-[SF.Seq[11].Main[13].TS.SData.Prototype]
-TestSocket = Nan
-Color = Nan
-FontSize = Nan
-
-[SF.Seq[11].Main[13].TS.SData.Prototype.TestSocket]
-%COMMENT = "Test Socket number. (Default: Current Test Socket Index)"
-
-[SF.Seq[11].Main[13].TS.SData.Prototype.Message]
-%COMMENT = "Message to show."
-
-[SF.Seq[11].Main[13].TS.SData.Prototype.Color]
-%COMMENT = "Background color of the Test Socket Message Area. (Default: StationGlobals.TEF.Colors.DialogInfo)"
-%NUMFMT = "%#x"
-
-[SF.Seq[11].Main[13].TS.SData.Prototype.FontSize]
-%COMMENT = "Size of the Font. (Default: Configuration parameter 'DialogTextBox' from Noffz.UTP.TEF.config)"
-
-[DEF, SF.Seq[11].Main[13]]
-%NAME = "Wrong cassette for selected variant"
-
-[SF.Seq[11].Main[14].TS]
-Id = "ID#:IpsNF0mP8RGN5aQctBT8oA"
-
-[DEF, SF.Seq[11].Main[14].TS]
-SData = "TYPE, SeqCallStepAdditions"
-
-[SF.Seq[11].Main[14].TS.SData]
-SFPath = "Noffz.UTP.TEF.API.seq"
-SeqName = "UI.Station.ShowMessageDialog"
-CustomThreadAffinity = "-1"
-Trace = "Off"
-
-[DEF, SF.Seq[11].Main[14].TS.SData]
-ActualArgs = Arguments
-Prototype = Obj
-
-[DEF, SF.Seq[11].Main[14].TS.SData.ActualArgs]
-Message = "TYPE, SequenceArgument"
-Color = "TYPE, SequenceArgument"
-FontSize = "TYPE, SequenceArgument"
-ShowOkButton = "TYPE, SequenceArgument"
-ShowCancelButton = "TYPE, SequenceArgument"
-DialogTimeout = "TYPE, SequenceArgument"
-OkButtonPressed = "TYPE, SequenceArgument"
-CancelButtonPressed = "TYPE, SequenceArgument"
-
-[SF.Seq[11].Main[14].TS.SData.ActualArgs.Message]
-UseDef = False
-Expr = "ResStr(\"UI_CONTROL\", \"WRONG_CASSETTE\") + (Parameters.IsCHMB1 ? \"Chamber 1\" : \"Chamber 2\")"
-ParamType = 2
-Flags = 0
-
-[SF.Seq[11].Main[14].TS.SData.ActualArgs.Color]
-ParamType = 4
-ParamRepresentation = 1
-Flags = 0
-
-[SF.Seq[11].Main[14].TS.SData.ActualArgs.FontSize]
-ParamType = 4
-ParamRepresentation = 1
-Flags = 0
-
-[SF.Seq[11].Main[14].TS.SData.ActualArgs.ShowOkButton]
+[SF.Seq[11].Main[13].TS.SData.ActualArgs.ShowOkButton]
 Expr = "True"
 ParamType = 16
 Flags = 0
 
-[SF.Seq[11].Main[14].TS.SData.ActualArgs.ShowCancelButton]
+[SF.Seq[11].Main[13].TS.SData.ActualArgs.ShowCancelButton]
 Expr = "False"
 ParamType = 16
 Flags = 0
 
-[SF.Seq[11].Main[14].TS.SData.ActualArgs.DialogTimeout]
+[SF.Seq[11].Main[13].TS.SData.ActualArgs.DialogTimeout]
 Expr = "0"
 ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[SF.Seq[11].Main[14].TS.SData.ActualArgs.OkButtonPressed]
+[SF.Seq[11].Main[13].TS.SData.ActualArgs.OkButtonPressed]
 ParamType = 16
 
-[SF.Seq[11].Main[14].TS.SData.ActualArgs.CancelButtonPressed]
+[SF.Seq[11].Main[13].TS.SData.ActualArgs.CancelButtonPressed]
 ParamType = 16
 
-[DEF, SF.Seq[11].Main[14].TS.SData.Prototype]
+[DEF, SF.Seq[11].Main[13].TS.SData.Prototype]
 Message = Str
 Color = Num
 FontSize = Num
@@ -21042,71 +21036,143 @@ DialogTimeout = Num
 OkButtonPressed = Bool
 CancelButtonPressed = Bool
 
-[SF.Seq[11].Main[14].TS.SData.Prototype.Message]
+[SF.Seq[11].Main[13].TS.SData.Prototype.Message]
 %COMMENT = "Message to show."
 
-[SF.Seq[11].Main[14].TS.SData.Prototype]
+[SF.Seq[11].Main[13].TS.SData.Prototype]
 Color = Nan
 FontSize = Nan
 %FLG: OkButtonPressed = 4
 %FLG: CancelButtonPressed = 4
 
-[SF.Seq[11].Main[14].TS.SData.Prototype.Color]
+[SF.Seq[11].Main[13].TS.SData.Prototype.Color]
 %COMMENT = "Background color of the Station Message Area. (Default: StationGlobals.TEF.Colors.DialogWaiting)"
 %NUMFMT = "%#x"
 
-[SF.Seq[11].Main[14].TS.SData.Prototype.FontSize]
+[SF.Seq[11].Main[13].TS.SData.Prototype.FontSize]
 %COMMENT = "Size of the Font. (Default: 'DialogTextBox' from Noffz.UTP.TEF.config)."
 
-[SF.Seq[11].Main[14].TS.SData.Prototype.ShowOkButton]
+[SF.Seq[11].Main[13].TS.SData.Prototype.ShowOkButton]
 %COMMENT = "Show OK button in the dialog. (Default: True)"
 
-[SF.Seq[11].Main[14].TS.SData.Prototype.ShowCancelButton]
+[SF.Seq[11].Main[13].TS.SData.Prototype.ShowCancelButton]
 %COMMENT = "Show Cancel button in the dialog. (Default: False)"
 
-[SF.Seq[11].Main[14].TS.SData.Prototype.DialogTimeout]
+[SF.Seq[11].Main[13].TS.SData.Prototype.DialogTimeout]
 %COMMENT Line0001 = "Optional. Dialog timeout in seconds. If 0, the timeout is not used and the dialog is shown until operator press a button"
 %COMMENT Line0002 = ". (Default: 0)"
 
-[SF.Seq[11].Main[14].TS.SData.Prototype.OkButtonPressed]
+[SF.Seq[11].Main[13].TS.SData.Prototype.OkButtonPressed]
 %COMMENT = "Returns True, if OK button was pressed."
 
-[SF.Seq[11].Main[14].TS.SData.Prototype.CancelButtonPressed]
+[SF.Seq[11].Main[13].TS.SData.Prototype.CancelButtonPressed]
 %COMMENT = "Returns True, if Cancel button was pressed."
 
-[DEF, SF.Seq[11].Main[14]]
+[DEF, SF.Seq[11].Main[13]]
 %NAME = "Wrong cassette for selected variant"
 
-[SF.Seq[11].Main[15].TS]
+[SF.Seq[11].Main[14].TS]
 Id = "ID#:lV6PKvmP8RGweUypVBlBxD"
 CustTrueActTarget = "\"ID#:Sn0cMvmP8RGweUypVBlBxD\""
 
-[DEF, SF.Seq[11].Main[15]]
+[DEF, SF.Seq[11].Main[14]]
 %NAME = "Goto"
 
-[SF.Seq[11].Main[16].TS]
+[SF.Seq[11].Main[15].TS]
 Id = "ID#:BeY0uUiP8RGN5aQctBT8oA"
 
-[DEF, SF.Seq[11].Main[16]]
+[DEF, SF.Seq[11].Main[15]]
 %NAME = "End"
 
-[SF.Seq[11].Main[17].TS]
+[SF.Seq[11].Main[16].TS]
 Id = "ID#:CuY0uUiP8RGN5aQctBT8oA"
 
-[SF.Seq[11].Main[17]]
+[SF.Seq[11].Main[16]]
 ItemExpr = "0"
 
-[DEF, SF.Seq[11].Main[17]]
+[DEF, SF.Seq[11].Main[16]]
 %NAME = "Case"
 
-[SF.Seq[11].Main[18].TS]
+[SF.Seq[11].Main[17].TS]
 Id = "ID#:YzdwzEiP8RGN5aQctBT8oA"
 
-[DEF, SF.Seq[11].Main[18]]
+[DEF, SF.Seq[11].Main[17]]
 %NAME = "No cassette"
 
-[SF.Seq[11].Main[19].TS]
+[SF.Seq[11].Main[18].TS]
 Id = "ID#:sA5HiPmP8RGweUypVBlBxD"
+
+[DEF, SF.Seq[11].Main[18].TS]
+SData = "TYPE, SeqCallStepAdditions"
+
+[SF.Seq[11].Main[18].TS.SData]
+SFPath = "Noffz.UTP.TEF.API.seq"
+SeqName = "UI.TestSocket.ShowMessage"
+CustomThreadAffinity = "-1"
+Trace = "Off"
+
+[DEF, SF.Seq[11].Main[18].TS.SData]
+ActualArgs = Arguments
+Prototype = Obj
+
+[DEF, SF.Seq[11].Main[18].TS.SData.ActualArgs]
+TestSocket = "TYPE, SequenceArgument"
+Message = "TYPE, SequenceArgument"
+Color = "TYPE, SequenceArgument"
+FontSize = "TYPE, SequenceArgument"
+
+[SF.Seq[11].Main[18].TS.SData.ActualArgs.TestSocket]
+UseDef = False
+Expr = "Parameters.IsCHMB1 ? 0 : 2"
+ParamType = 4
+ParamRepresentation = 1
+Flags = 0
+
+[SF.Seq[11].Main[18].TS.SData.ActualArgs.Message]
+UseDef = False
+Expr = "ResStr(\"UI_CONTROL\", \"NO_CASSETTE\")"
+ParamType = 2
+Flags = 0
+
+[SF.Seq[11].Main[18].TS.SData.ActualArgs.Color]
+ParamType = 4
+ParamRepresentation = 1
+Flags = 0
+
+[SF.Seq[11].Main[18].TS.SData.ActualArgs.FontSize]
+ParamType = 4
+ParamRepresentation = 1
+Flags = 0
+
+[DEF, SF.Seq[11].Main[18].TS.SData.Prototype]
+TestSocket = Num
+Message = Str
+Color = Num
+FontSize = Num
+
+[SF.Seq[11].Main[18].TS.SData.Prototype]
+TestSocket = Nan
+Color = Nan
+FontSize = Nan
+
+[SF.Seq[11].Main[18].TS.SData.Prototype.TestSocket]
+%COMMENT = "Test Socket number. (Default: Current Test Socket Index)"
+
+[SF.Seq[11].Main[18].TS.SData.Prototype.Message]
+%COMMENT = "Message to show."
+
+[SF.Seq[11].Main[18].TS.SData.Prototype.Color]
+%COMMENT = "Background color of the Test Socket Message Area. (Default: StationGlobals.TEF.Colors.DialogInfo)"
+%NUMFMT = "%#x"
+
+[SF.Seq[11].Main[18].TS.SData.Prototype.FontSize]
+%COMMENT = "Size of the Font. (Default: Configuration parameter 'DialogTextBox' from Noffz.UTP.TEF.config)"
+
+[DEF, SF.Seq[11].Main[18]]
+%NAME = "No cassette in chamber"
+
+[SF.Seq[11].Main[19].TS]
+Id = "ID#:sQ5HiPmP8RGweUypVBlBxD"
 
 [DEF, SF.Seq[11].Main[19].TS]
 SData = "TYPE, SeqCallStepAdditions"
@@ -21129,7 +21195,7 @@ FontSize = "TYPE, SequenceArgument"
 
 [SF.Seq[11].Main[19].TS.SData.ActualArgs.TestSocket]
 UseDef = False
-Expr = "Parameters.IsCHMB1 ? 0 : 2"
+Expr = "Parameters.IsCHMB1 ? 1 : 3"
 ParamType = 4
 ParamRepresentation = 1
 Flags = 0
@@ -21178,14 +21244,14 @@ FontSize = Nan
 %NAME = "No cassette in chamber"
 
 [SF.Seq[11].Main[20].TS]
-Id = "ID#:sQ5HiPmP8RGweUypVBlBxD"
+Id = "ID#:pBUsj/mP8RGweUypVBlBxD"
 
 [DEF, SF.Seq[11].Main[20].TS]
 SData = "TYPE, SeqCallStepAdditions"
 
 [SF.Seq[11].Main[20].TS.SData]
 SFPath = "Noffz.UTP.TEF.API.seq"
-SeqName = "UI.TestSocket.ShowMessage"
+SeqName = "UI.Station.ShowMessageDialog"
 CustomThreadAffinity = "-1"
 Trace = "Off"
 
@@ -21194,21 +21260,18 @@ ActualArgs = Arguments
 Prototype = Obj
 
 [DEF, SF.Seq[11].Main[20].TS.SData.ActualArgs]
-TestSocket = "TYPE, SequenceArgument"
 Message = "TYPE, SequenceArgument"
 Color = "TYPE, SequenceArgument"
 FontSize = "TYPE, SequenceArgument"
-
-[SF.Seq[11].Main[20].TS.SData.ActualArgs.TestSocket]
-UseDef = False
-Expr = "Parameters.IsCHMB1 ? 1 : 3"
-ParamType = 4
-ParamRepresentation = 1
-Flags = 0
+ShowOkButton = "TYPE, SequenceArgument"
+ShowCancelButton = "TYPE, SequenceArgument"
+DialogTimeout = "TYPE, SequenceArgument"
+OkButtonPressed = "TYPE, SequenceArgument"
+CancelButtonPressed = "TYPE, SequenceArgument"
 
 [SF.Seq[11].Main[20].TS.SData.ActualArgs.Message]
 UseDef = False
-Expr = "ResStr(\"UI_CONTROL\", \"NO_CASSETTE\")"
+Expr = "ResStr(\"UI_CONTROL\", \"NO_CASSETTE\") + (Parameters.IsCHMB1 ? \"Chamber 1\" : \"Chamber 2\")"
 ParamType = 2
 Flags = 0
 
@@ -21222,98 +21285,29 @@ ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[DEF, SF.Seq[11].Main[20].TS.SData.Prototype]
-TestSocket = Num
-Message = Str
-Color = Num
-FontSize = Num
-
-[SF.Seq[11].Main[20].TS.SData.Prototype]
-TestSocket = Nan
-Color = Nan
-FontSize = Nan
-
-[SF.Seq[11].Main[20].TS.SData.Prototype.TestSocket]
-%COMMENT = "Test Socket number. (Default: Current Test Socket Index)"
-
-[SF.Seq[11].Main[20].TS.SData.Prototype.Message]
-%COMMENT = "Message to show."
-
-[SF.Seq[11].Main[20].TS.SData.Prototype.Color]
-%COMMENT = "Background color of the Test Socket Message Area. (Default: StationGlobals.TEF.Colors.DialogInfo)"
-%NUMFMT = "%#x"
-
-[SF.Seq[11].Main[20].TS.SData.Prototype.FontSize]
-%COMMENT = "Size of the Font. (Default: Configuration parameter 'DialogTextBox' from Noffz.UTP.TEF.config)"
-
-[DEF, SF.Seq[11].Main[20]]
-%NAME = "No cassette in chamber"
-
-[SF.Seq[11].Main[21].TS]
-Id = "ID#:pBUsj/mP8RGweUypVBlBxD"
-
-[DEF, SF.Seq[11].Main[21].TS]
-SData = "TYPE, SeqCallStepAdditions"
-
-[SF.Seq[11].Main[21].TS.SData]
-SFPath = "Noffz.UTP.TEF.API.seq"
-SeqName = "UI.Station.ShowMessageDialog"
-CustomThreadAffinity = "-1"
-Trace = "Off"
-
-[DEF, SF.Seq[11].Main[21].TS.SData]
-ActualArgs = Arguments
-Prototype = Obj
-
-[DEF, SF.Seq[11].Main[21].TS.SData.ActualArgs]
-Message = "TYPE, SequenceArgument"
-Color = "TYPE, SequenceArgument"
-FontSize = "TYPE, SequenceArgument"
-ShowOkButton = "TYPE, SequenceArgument"
-ShowCancelButton = "TYPE, SequenceArgument"
-DialogTimeout = "TYPE, SequenceArgument"
-OkButtonPressed = "TYPE, SequenceArgument"
-CancelButtonPressed = "TYPE, SequenceArgument"
-
-[SF.Seq[11].Main[21].TS.SData.ActualArgs.Message]
-UseDef = False
-Expr = "ResStr(\"UI_CONTROL\", \"NO_CASSETTE\") + (Parameters.IsCHMB1 ? \"Chamber 1\" : \"Chamber 2\")"
-ParamType = 2
-Flags = 0
-
-[SF.Seq[11].Main[21].TS.SData.ActualArgs.Color]
-ParamType = 4
-ParamRepresentation = 1
-Flags = 0
-
-[SF.Seq[11].Main[21].TS.SData.ActualArgs.FontSize]
-ParamType = 4
-ParamRepresentation = 1
-Flags = 0
-
-[SF.Seq[11].Main[21].TS.SData.ActualArgs.ShowOkButton]
+[SF.Seq[11].Main[20].TS.SData.ActualArgs.ShowOkButton]
 Expr = "True"
 ParamType = 16
 Flags = 0
 
-[SF.Seq[11].Main[21].TS.SData.ActualArgs.ShowCancelButton]
+[SF.Seq[11].Main[20].TS.SData.ActualArgs.ShowCancelButton]
 Expr = "False"
 ParamType = 16
 Flags = 0
 
-[SF.Seq[11].Main[21].TS.SData.ActualArgs.DialogTimeout]
+[SF.Seq[11].Main[20].TS.SData.ActualArgs.DialogTimeout]
 Expr = "0"
 ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[SF.Seq[11].Main[21].TS.SData.ActualArgs.OkButtonPressed]
+[SF.Seq[11].Main[20].TS.SData.ActualArgs.OkButtonPressed]
 ParamType = 16
 
-[SF.Seq[11].Main[21].TS.SData.ActualArgs.CancelButtonPressed]
+[SF.Seq[11].Main[20].TS.SData.ActualArgs.CancelButtonPressed]
 ParamType = 16
 
-[DEF, SF.Seq[11].Main[21].TS.SData.Prototype]
+[DEF, SF.Seq[11].Main[20].TS.SData.Prototype]
 Message = Str
 Color = Num
 FontSize = Num
@@ -21323,71 +21317,77 @@ DialogTimeout = Num
 OkButtonPressed = Bool
 CancelButtonPressed = Bool
 
-[SF.Seq[11].Main[21].TS.SData.Prototype.Message]
+[SF.Seq[11].Main[20].TS.SData.Prototype.Message]
 %COMMENT = "Message to show."
 
-[SF.Seq[11].Main[21].TS.SData.Prototype]
+[SF.Seq[11].Main[20].TS.SData.Prototype]
 Color = Nan
 FontSize = Nan
 %FLG: OkButtonPressed = 4
 %FLG: CancelButtonPressed = 4
 
-[SF.Seq[11].Main[21].TS.SData.Prototype.Color]
+[SF.Seq[11].Main[20].TS.SData.Prototype.Color]
 %COMMENT = "Background color of the Station Message Area. (Default: StationGlobals.TEF.Colors.DialogWaiting)"
 %NUMFMT = "%#x"
 
-[SF.Seq[11].Main[21].TS.SData.Prototype.FontSize]
+[SF.Seq[11].Main[20].TS.SData.Prototype.FontSize]
 %COMMENT = "Size of the Font. (Default: 'DialogTextBox' from Noffz.UTP.TEF.config)."
 
-[SF.Seq[11].Main[21].TS.SData.Prototype.ShowOkButton]
+[SF.Seq[11].Main[20].TS.SData.Prototype.ShowOkButton]
 %COMMENT = "Show OK button in the dialog. (Default: True)"
 
-[SF.Seq[11].Main[21].TS.SData.Prototype.ShowCancelButton]
+[SF.Seq[11].Main[20].TS.SData.Prototype.ShowCancelButton]
 %COMMENT = "Show Cancel button in the dialog. (Default: False)"
 
-[SF.Seq[11].Main[21].TS.SData.Prototype.DialogTimeout]
+[SF.Seq[11].Main[20].TS.SData.Prototype.DialogTimeout]
 %COMMENT Line0001 = "Optional. Dialog timeout in seconds. If 0, the timeout is not used and the dialog is shown until operator press a button"
 %COMMENT Line0002 = ". (Default: 0)"
 
-[SF.Seq[11].Main[21].TS.SData.Prototype.OkButtonPressed]
+[SF.Seq[11].Main[20].TS.SData.Prototype.OkButtonPressed]
 %COMMENT = "Returns True, if OK button was pressed."
 
-[SF.Seq[11].Main[21].TS.SData.Prototype.CancelButtonPressed]
+[SF.Seq[11].Main[20].TS.SData.Prototype.CancelButtonPressed]
 %COMMENT = "Returns True, if Cancel button was pressed."
 
-[DEF, SF.Seq[11].Main[21]]
+[DEF, SF.Seq[11].Main[20]]
 %NAME = "No cassette in chamber"
 
-[SF.Seq[11].Main[22].TS]
+[SF.Seq[11].Main[21].TS]
 Id = "ID#:tg5HiPmP8RGweUypVBlBxD"
 CustTrueActTarget = "\"ID#:Sn0cMvmP8RGweUypVBlBxD\""
 
-[DEF, SF.Seq[11].Main[22]]
+[DEF, SF.Seq[11].Main[21]]
 %NAME = "Goto"
 
-[SF.Seq[11].Main[23].TS]
+[SF.Seq[11].Main[22].TS]
 Id = "ID#:C+Y0uUiP8RGN5aQctBT8oA"
 
-[DEF, SF.Seq[11].Main[23]]
+[DEF, SF.Seq[11].Main[22]]
 %NAME = "End"
 
-[SF.Seq[11].Main[24].TS]
+[SF.Seq[11].Main[23].TS]
 Id = "ID#:m11OLgqQ8RGwekypVBlBxD"
 
-[SF.Seq[11].Main[24]]
+[SF.Seq[11].Main[23]]
 ItemExpr = "11"
 
-[DEF, SF.Seq[11].Main[24]]
+[DEF, SF.Seq[11].Main[23]]
 %NAME = "Case"
 
-[SF.Seq[11].Main[25].TS]
+[SF.Seq[11].Main[24].TS]
 Id = "ID#:zYsoRgqQ8RGwekypVBlBxD"
 
-[DEF, SF.Seq[11].Main[25]]
+[DEF, SF.Seq[11].Main[24]]
 %NAME = "DODATI ERROR"
 
-[SF.Seq[11].Main[26].TS]
+[SF.Seq[11].Main[25].TS]
 Id = "ID#:nF1OLgqQ8RGwekypVBlBxD"
+
+[DEF, SF.Seq[11].Main[25]]
+%NAME = "End"
+
+[SF.Seq[11].Main[26].TS]
+Id = "ID#:dFmeAgSt8RGOFKQctBT8oA"
 
 [DEF, SF.Seq[11].Main[26]]
 %NAME = "End"
