@@ -115,7 +115,9 @@
 		<Item Name="TDK_20_38" Type="Folder">
 			<Item Name="TDK20-38 API.lvlib" Type="Library" URL="../TDK_20_38/TDK20-38 API.lvlib"/>
 		</Item>
+		<Item Name="Prepare XCP address (SubVI).vi" Type="VI" URL="../Station/Controls/Prepare XCP address (SubVI).vi"/>
 		<Item Name="Report Variables.ctl" Type="VI" URL="../Station/Controls/Report Variables.ctl"/>
+		<Item Name="XCP Addresses.ctl" Type="VI" URL="../Station/Controls/XCP Addresses.ctl"/>
 		<Item Name="Dependencies" Type="Dependencies"/>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>

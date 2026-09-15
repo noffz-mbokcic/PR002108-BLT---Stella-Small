@@ -67,4 +67,4 @@ Write Torque Trim 2 FDB5,,7CC;7CD,03 2E FD B5 00 00 00 00 ,03 6E FD B5 00 00 00 
 XCP connect,,7AE;7B0,FF 00 00 00 00 00 00 00,FF xx xx xx xx xx xx xx,,,,,,
 Read HW Torque T1,,7AE;7B0,F4 04 00 00 14 DB BE FE ,FF XX XX XX XX xx xx xx ,,,,,,
 Read HW Torque T2,,7AE;7B0,F4 04 00 00 18 DB BE FE ,FF XX XX XX XX xx xx xx ,,,,,,
-Read Motor Speed ,,7AE;7B0,F4 04 00 00 68 DB BE FE ,FF 1F 85 A7 41 xx xx xx,,,,,,
+Read Motor Speed ,,7AE;7B0,F4 04 00 00 68 DB BE FE ,FF XX XX XX XX xx xx xx,,,,,,
