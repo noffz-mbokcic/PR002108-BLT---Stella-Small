@@ -8,6 +8,8 @@
 </Property>
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">false</Property>
 	<Item Name="Check if MES Failed.vi" Type="VI" URL="../Check if MES Failed.vi"/>
+	<Item Name="Create checking list.vi" Type="VI" URL="../Create checking list.vi"/>
 	<Item Name="Get Model From Serial Number.vi" Type="VI" URL="../Get Model From Serial Number.vi"/>
 	<Item Name="Get Result of the Proccess from URL link.vi" Type="VI" URL="../Get Result of the Proccess from URL link.vi"/>
+	<Item Name="Get ResultS of the Proccess from URL link.vi" Type="VI" URL="../Get ResultS of the Proccess from URL link.vi"/>
 </Library>

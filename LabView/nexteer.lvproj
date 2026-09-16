@@ -67,6 +67,9 @@
 		<Item Name="Honeywell Scanner" Type="Folder">
 			<Item Name="HoneywellScanner.lvlib" Type="Library" URL="../Honeywell Scanner/HoneywellScanner.lvlib"/>
 		</Item>
+		<Item Name="MES" Type="Folder">
+			<Item Name="MES Interlcok.lvlib" Type="Library" URL="../MES Interlcok/MES Interlcok.lvlib"/>
+		</Item>
 		<Item Name="Numato - Relays" Type="Folder">
 			<Item Name="Numato.lvlib" Type="Library" URL="../Numato32chUSB/Numato.lvlib"/>
 			<Item Name="Read_Numato_Relays.vi" Type="VI" URL="../Station/Read_Numato_Relays.vi"/>
