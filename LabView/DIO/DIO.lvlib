@@ -15,6 +15,5 @@
 	<Item Name="Read Single.vi" Type="VI" URL="../Read Single.vi"/>
 	<Item Name="Set Output.vi" Type="VI" URL="../Set Output.vi"/>
 	<Item Name="Set Relays.vi" Type="VI" URL="../Set Relays.vi"/>
-	<Item Name="Set Releys Test.vi" Type="VI" URL="../Set Releys Test.vi"/>
 	<Item Name="Single Write.vi" Type="VI" URL="../Single Write.vi"/>
 </Library>

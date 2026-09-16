@@ -8,12 +8,12 @@
 //
 //  ------------------------------------------------------------------
 //  Author : Keneth Wagner
-//  Last change: 2024-09-24
+//  Last change: 2025-11-14
 //
 //  Language: Object Pascal
 //  ------------------------------------------------------------------
 //
-//  Copyright (C) 1999-2024  PEAK-System Technik GmbH, Darmstadt
+//  Copyright (C) 1999-2025  PEAK-System Technik GmbH, Darmstadt
 //  more Info at http://www.peak-system.com
 //
 unit PCANBasic;
@@ -23,15 +23,22 @@ Const
     // Other constants
     //
     MAX_LENGTH_HARDWARE_NAME = 33;     // Maximum length of the name of a device: 32 characters + terminator
-    MAX_LENGTH_VERSION_STRING = 256;     // Maximum length of a version string: 255 characters + terminator
+    MAX_LENGTH_VERSION_STRING = 256;   // Maximum length of a version string: 255 characters + terminator
+    MAX_LENGTH_DATA_XL = 2048;         // Maximum amount of data bytes of a CAN-XL message
+    MAX_VALUE_STANDARD_ID = $7FF;      // Maximum value for a standard CAN ID of a CAN 2.0A/B / FD message
+    MAX_VALUE_EXTENDED_ID = $1FFFFFFF; // Maximum value for an extended CAN ID of a CAN 2.0A/B / FD message
 
 type
   TPCANHandle = Word;
   PTPCANHandle = ^Word;
+  TPCANBitrateCC = PAnsiChar;
   TPCANBitrateFD = PAnsiChar;
+  TPCANBitrateXL = PAnsiChar;
   TPCANTimestampFD = UInt64;
+  TPCANTimestampXL = UInt64;
   PUInt64 = ^UInt64;
 
+{$SCOPEDENUMS on}
 {$Z4}
   /// <summary>
   /// Represents a PCAN status/error code
@@ -60,7 +67,7 @@ type
     /// <summary>
     /// Bus error: an error counter reached the 'warning' limit
     /// </summary>
-    PCAN_ERROR_BUSWARNING = LongWord(PCAN_ERROR_BUSHEAVY),
+    PCAN_ERROR_BUSWARNING = $00008,
     /// <summary>
     /// Bus error: the CAN controller is error passive
     /// </summary>
@@ -72,7 +79,7 @@ type
     /// <summary>
     /// Mask for all bus errors
     /// </summary>
-    PCAN_ERROR_ANYBUSERR = LongWord(PCAN_ERROR_BUSWARNING) Or LongWord(PCAN_ERROR_BUSLIGHT) Or LongWord(PCAN_ERROR_BUSHEAVY) Or LongWord(PCAN_ERROR_BUSOFF) Or LongWord(PCAN_ERROR_BUSPASSIVE),
+    PCAN_ERROR_ANYBUSERR = $00008 Or $00004 Or $00010 Or $40000,
     /// <summary>
     /// Receive queue is empty
     /// </summary>
@@ -116,7 +123,7 @@ type
     /// <summary>
     /// Mask for all handle errors
     /// </summary>
-    PCAN_ERROR_ILLHANDLE = LongWord(PCAN_ERROR_ILLHW) Or LongWord(PCAN_ERROR_ILLNET) Or LongWord(PCAN_ERROR_ILLCLIENT),
+    PCAN_ERROR_ILLHANDLE = $01400 Or $01800 Or $01C00,
     /// <summary>
     /// Resource (FIFO, Client, timeout) cannot be created
     /// </summary>
@@ -167,18 +174,6 @@ type
     /// </summary>
     PCAN_NONE = 0,
     /// <summary>
-    /// PCAN Non-PnP devices. NOT USED WITHIN PCAN-Basic API
-    /// </summary>
-    PCAN_PEAKCAN = 1,
-    /// <summary>
-    /// PCAN-ISA, PCAN-PC/104, and PCAN-PC/104-Plus
-    /// </summary>
-    PCAN_ISA = 2,
-    /// <summary>
-    /// PCAN-Dongle
-    /// </summary>
-    PCAN_DNG = 3,
-    /// <summary>
     /// PCAN-PCI, PCAN-cPCI, PCAN-miniPCI, and PCAN-PCI Express
     /// </summary>
     PCAN_PCI = 4,
@@ -186,14 +181,6 @@ type
     /// PCAN-USB and PCAN-USB Pro
     /// </summary>
     PCAN_USB = 5,
-    /// <summary>
-    /// PCAN-PC Card
-    /// </summary>
-    PCAN_PCC = 6,
-    /// <summary>
-    /// PCAN Virtual hardware. NOT USED WITHIN PCAN-Basic API
-    /// </summary>
-    PCAN_VIRTUAL = 7,
     /// <summary>
     /// PCAN Gateway devices
     /// </summary>
@@ -208,10 +195,6 @@ type
     /// Device identifier parameter
     /// </summary>
     PCAN_DEVICE_ID = 1,
-    /// <summary>
-    /// DEPRECATED. Use PCAN_DEVICE_ID instead
-    /// </summary>
-    PCAN_DEVICE_NUMBER = PCAN_DEVICE_ID,
     /// <summary>
     /// 5-Volt power parameter
     /// </summary>
@@ -301,7 +284,11 @@ type
     /// </summary>
     PCAN_BITRATE_ADAPTING = 23,
     /// <summary>
-    /// Configured bit rate as Btr0Btr1 value
+    /// Configured bit rate as a Baud Rate Timing Register value
+    /// </summary>
+    PCAN_BITRATE_INFO_BTR = 24,
+    /// <summary>
+    /// DEPRECATED. Use PCAN_BITRATE_INFO_BTR instead
     /// </summary>
     PCAN_BITRATE_INFO = 24,
     /// <summary>
@@ -313,7 +300,11 @@ type
     /// </summary>
     PCAN_BUSSPEED_NOMINAL = 26,
     /// <summary>
-    /// Configured CAN data speed as Bits per seconds
+    /// Configured CAN FD speed as Bits per seconds
+    /// </summary>
+    PCAN_BUSSPEED_FD = 27,
+    /// <summary>
+    /// DEPRECATED. Use PCAN_BUSSPEED_FD instead
     /// </summary>
     PCAN_BUSSPEED_DATA = 27,
     /// <summary>
@@ -399,7 +390,19 @@ type
     /// <summary>
     /// Get the global unique device identifier (GUID) associated to a device
     /// </summary>
-    PCAN_DEVICE_GUID = 48
+    PCAN_DEVICE_GUID = 48,
+    /// <summary>
+    /// Configured bit rate as TPCANBitrateCC value
+    /// </summary>
+    PCAN_BITRATE_INFO_CC = 49,
+    /// <summary>
+    /// Configured bit rate as TPCANBitrateXL string
+    /// </summary>
+    PCAN_BITRATE_INFO_XL = 50,
+    /// <summary>
+    /// Configured CAN XL Bus speed as Bits per seconds
+    /// </summary>
+    PCAN_BUSSPEED_XL = 51
   );
 
   /// <summary>
@@ -445,22 +448,76 @@ type
   );
 
   /// <summary>
+  /// Represents the type of a PCAN message XL
+  /// </summary>
+  TPCANMessageTypeXL = (
+    /// <summary>
+    /// The PCAN message is a CAN Standard Frame (11-bit identifier)
+    /// </summary>
+    PCAN_MESSAGE_STANDARD = $00,
+    /// <summary>
+    /// The PCAN message is a CAN Remote-Transfer-Request Frame
+    /// </summary>
+    PCAN_MESSAGE_RTR = $01,
+    /// <summary>
+    /// The PCAN message is a CAN Extended Frame (29-bit identifier)
+    /// </summary>
+    PCAN_MESSAGE_EXTENDED = $02,
+    /// <summary>
+    /// The PCAN message represents a FD frame in terms of CiA Specs
+    /// </summary>
+    PCAN_MESSAGE_FD = $04,
+    /// <summary>
+    /// The PCAN message represents a FD bit rate switch (CAN data at a higher bit rate)
+    /// </summary>
+    PCAN_MESSAGE_BRS = $08,
+    /// <summary>
+    /// The PCAN message represents a FD error state indicator(CAN FD transmitter was error active)
+    /// </summary>
+    PCAN_MESSAGE_ESI = $10,
+    /// <summary>
+    /// The PCAN message represents an echo CAN Frame
+    /// </summary>
+    PCAN_MESSAGE_ECHO = $20,
+    /// <summary>
+    /// The PCAN message represents an error frame
+    /// </summary>
+    PCAN_MESSAGE_ERRFRAME = $40,
+    /// <summary>
+    /// The PCAN message represents a PCAN status message
+    /// </summary>
+    PCAN_MESSAGE_STATUS = $80,
+    /// <summary>
+    /// The PCAN message represents a XL frame in terms of CiA Specs
+    /// </summary>
+    PCAN_MESSAGE_XL = $100,
+    /// <summary>
+    /// The PCAN message represents a protocol exception from CAN core
+    /// </summary>
+    PCAN_MESSAGE_PROTOCOL_EXCEPTION = $200,
+    /// <summary>
+    /// The PCAN message represents an error notification from CAN core
+    /// </summary>
+    PCAN_MESSAGE_ERROR_NOTIFICATION = $400
+  );
+
+  /// <summary>
   /// Represents a PCAN filter mode
   /// </summary>
   TPCANMode = (
     /// <summary>
     /// Mode is Standard (11-bit identifier)
     /// </summary>
-    PCAN_MODE_STANDARD = Byte(PCAN_MESSAGE_STANDARD),
+    PCAN_MODE_STANDARD = Byte(TPCANMessageType.PCAN_MESSAGE_STANDARD),
     /// <summary>
     /// Mode is Extended (29-bit identifier)
     /// </summary>
-    PCAN_MODE_EXTENDED = Byte(PCAN_MESSAGE_EXTENDED)
+    PCAN_MODE_EXTENDED = Byte(TPCANMessageType.PCAN_MESSAGE_EXTENDED)
   );
 
 {$Z2}
   /// <summary>
-  /// Represents a PCAN Baud rate register value
+  /// Represents a PCAN Baud Rate Timing Register value
   /// </summary>
   TPCANBaudrate = (
     /// <summary>
@@ -520,41 +577,7 @@ type
     /// </summary>
     PCAN_BAUD_5K = $7F7F
   );
-
-{$Z1}
-  /// <summary>
-  /// Represents the type of PCAN (Non-PnP) hardware to be initialized
-  /// </summary>
-  TPCANType = (
-    /// <summary>
-    /// PCAN-ISA 82C200
-    /// </summary>
-    PCAN_TYPE_ISA = $01,
-    /// <summary>
-    /// PCAN-ISA SJA1000
-    /// </summary>
-    PCAN_TYPE_ISA_SJA = $09,
-    /// <summary>
-    /// PHYTEC ISA
-    /// </summary>
-    PCAN_TYPE_ISA_PHYTEC = $04,
-    /// <summary>
-    /// PCAN-Dongle 82C200
-    /// </summary>
-    PCAN_TYPE_DNG = $02,
-    /// <summary>
-    /// PCAN-Dongle EPP 82C200
-    /// </summary>
-    PCAN_TYPE_DNG_EPP = $03,
-    /// <summary>
-    /// PCAN-Dongle SJA1000
-    /// </summary>
-    PCAN_TYPE_DNG_SJA = $05,
-    /// <summary>
-    /// PCAN-Dongle EPP SJA1000
-    /// </summary>
-    PCAN_TYPE_DNG_SJA_EPP = $06
-  );
+{$SCOPEDENUMS off}
 
   /// <summary>
   /// Represents a PCAN message
@@ -622,6 +645,54 @@ type
   end;
   PTPCANMsgFD = ^TPCANMsgFD;
 
+  /// <summary>
+  /// Represents a PCAN message from a XL capable hardware
+  /// <remarks>
+  /// CAN-CC/CAN-FD: only the fields PID, MSGTYPE, DLC,and DATA are used.
+  /// Additonal CAN-XL related fields are ignored
+  /// </remarks>
+  /// </summary>
+  TPCANMsgXL = record
+    /// <summary>
+    /// CAN-XL: Priority ID (physical layer) (0..0x7FF)
+    /// CAN-CC/CAN-FD: 11/29-bit message identifier
+    /// </summary>
+    PID: Longword;
+    /// <summary>
+    /// Virtual CAN network ID
+    /// </summary>
+    VCID: Byte;
+    /// <summary>
+    /// Type of the message
+    /// </summary>
+    MSGTYPE: TPCANMessageTypeXL;
+    /// <summary>
+    /// Data Length Code of the message (0..2047)
+    /// </summary>
+    DLC: Word;
+    /// <summary>
+    /// Service Data unit(SDU) protocol Type
+    /// </summary>
+    SDT: Byte;
+    /// <summary>
+    /// Acceptance Field, SDU - specific high - layer ID
+    /// </summary>
+    AF: Longword;
+    /// <summary>
+    /// Remote Request Substitution flag (0..1)
+    /// </summary>
+    RRS: Byte;
+    /// <summary>
+    /// Simple Extended Content flag (0..1)
+    /// </summary>
+    SEC: Byte;
+    /// <summary>
+    /// Data of the message (DATA[0]..DATA[2047])
+    /// </summary>
+    DATA: array[0..2047] of Byte;
+  end;
+  PTPCANMsgXL = ^TPCANMsgXL;
+
 
   /// <summary>
   /// Describes an available PCAN channel
@@ -668,44 +739,6 @@ type
       /// Undefined/default value for a PCAN bus
       /// </summary>
       const PCAN_NONEBUS: TPCANHandle = $00;
-
-      /// <summary>
-      /// PCAN-ISA interface, channel 1
-      /// </summary>
-      const PCAN_ISABUS1: TPCANHandle = $21;
-      /// <summary>
-      /// PCAN-ISA interface, channel 2
-      /// </summary>
-      const PCAN_ISABUS2: TPCANHandle = $22;
-      /// <summary>
-      /// PCAN-ISA interface, channel 3
-      /// </summary>
-      const PCAN_ISABUS3: TPCANHandle = $23;
-      /// <summary>
-      /// PCAN-ISA interface, channel 4
-      /// </summary>
-      const PCAN_ISABUS4: TPCANHandle = $24;
-      /// <summary>
-      /// PCAN-ISA interface, channel 5
-      /// </summary>
-      const PCAN_ISABUS5: TPCANHandle = $25;
-      /// <summary>
-      /// PCAN-ISA interface, channel 6
-      /// </summary>
-      const PCAN_ISABUS6: TPCANHandle = $26;
-      /// <summary>
-      /// PCAN-ISA interface, channel 7
-      /// </summary>
-      const PCAN_ISABUS7: TPCANHandle = $27;
-      /// <summary>
-      /// PCAN-ISA interface, channel 8
-      /// </summary>
-      const PCAN_ISABUS8: TPCANHandle = $28;
-
-      /// <summary>
-      /// PPCAN-Dongle/LPT interface, channel 1
-      /// </summary>
-      const PCAN_DNGBUS1: TPCANHandle = $31;
 
       /// <summary>
       /// PCAN-PCI interface, channel 1
@@ -838,15 +871,6 @@ type
       const PCAN_USBBUS16: TPCANHandle = $510;
 
       /// <summary>
-      /// PCAN-PC Card interface, channel 1
-      /// </summary>
-      const PCAN_PCCBUS1: TPCANHandle = $61;
-      /// <summary>
-      /// PCAN-PC Card interface, channel 2
-      /// </summary>
-      const PCAN_PCCBUS2: TPCANHandle = $62;
-
-      /// <summary>
       /// PCAN-LAN interface, channel 1
       /// </summary>
       const PCAN_LANBUS1: TPCANHandle = $801;
@@ -912,13 +936,14 @@ type
       const PCAN_LANBUS16: TPCANHandle = $810;
 
       /// <summary>
-      /// Clock frequency in Herz (80000000, 60000000, 40000000, 30000000, 24000000, 20000000)
+      /// Clock frequency in Herz (160000000, 80000000, 60000000, 40000000, 30000000, 24000000, 20000000)
       /// </summary>
       const PCAN_BR_CLOCK: String = 'f_clock';
       /// <summary>
-      /// Clock frequency in Megaherz (80, 60, 40, 30, 24, 20)
+      /// Clock frequency in Megaherz (160, 80, 60, 40, 30, 24, 20)
       /// </summary>
       const PCAN_BR_CLOCK_MHZ: String = 'f_clock_mhz';
+
       /// <summary>
       /// Clock prescaler for nominal time quantum
       /// </summary>
@@ -956,9 +981,73 @@ type
       /// </summary>
       const PCAN_BR_DATA_SJW: String = 'data_sjw';
       /// <summary>
-      /// Secondary sample point delay for highspeed data bit rate in cyles
+      /// DEPRECATED: Secondary sample point delay for highspeed data bit rate in cycles
+      /// <remarks>Use "PCAN_BR_DATA_SSP_OFFSET" instead</remarks>
       /// </summary>
       const PCAN_BR_DATA_SAMPLE: String = 'data_ssp_offset';
+      /// <summary>
+      /// Secondary sample point delay for highspeed data bit rate in cycles
+      /// </summary>
+      const PCAN_BR_DATA_SSP_OFFSET: String = 'data_ssp_offset';
+
+      /// <summary>
+      /// Clock prescaler for nominal, CAN FD and CAN XL bit rates
+      /// </summary>
+      const PCAN_BR_BRP: String = 'brp';
+      /// <summary>
+      /// Clock prescaler for fast data time quantum
+      /// </summary>
+      const PCAN_BR_FD_TSEG1: String = 'fd_tseg1';
+      /// <summary>
+      /// Clock prescaler for fast data time quantum
+      /// </summary>
+      const PCAN_BR_FD_TSEG2: String = 'fd_tseg2';
+      /// <summary>
+      /// Synchronization Jump Width for fast data bit rate in time quanta
+      /// </summary>
+      const PCAN_BR_FD_SJW: String = 'fd_sjw';
+      /// <summary>
+      /// Secondary sample point delay for fast data bit rate in cycles
+      /// </summary>
+      const PCAN_BR_FD_SSP_OFFSET: String = 'fd_ssp_offset';
+      /// <summary>
+      /// Clock prescaler for XL time quantum
+      /// </summary>
+      const PCAN_BR_XL_TSEG1: String = 'xl_tseg1';
+      /// <summary>
+      /// Clock prescaler for XL time quantum
+      /// </summary>
+      const PCAN_BR_XL_TSEG2: String = 'xl_tseg2';
+      /// <summary>
+      /// Synchronization Jump Width for XL bit rate in time quanta
+      /// </summary>
+      const PCAN_BR_XL_SJW: String = 'xl_sjw';
+      /// <summary>
+      /// Secondary sample point delay for XL bit rate in cycles
+      /// </summary>
+      const PCAN_BR_XL_SSP_OFFSET: String = 'xl_ssp_offset';
+      /// <summary>
+      /// CAN XL PWM Offset in mtq ticks == f_cancore cycles
+      /// </summary>
+      const PCAN_BR_XL_PWM_OFFSET: String = 'xl_pwm_offset';
+      /// <summary>
+      /// CAN XL PWM Short phase in mtq ticks == f_cancore cycles
+      /// </summary>
+      const PCAN_BR_XL_PWM_SHORT: String = 'xl_pwm_short';
+      /// <summary>
+      /// CAN XL PWM Long phase in mtq ticks == f_cancore cycles
+      /// </summary>
+      const PCAN_BR_XL_PWM_LONG: String = 'xl_pwm_long';
+      /// <summary>
+      /// 1 = CAN XL Data Phase uses 'fast TX' or 'fast RX' with PWM encoding
+      /// 0 = CAN XL Data Phase uses no PWM encoding (recessive/dominant only, like CAN FD)
+      /// </summary>
+      const PCAN_BR_XL_TRANSCEIVER_MODE_SWITCH: String = 'xl_transceiver_mode_switch';
+      /// <summary>
+      /// 1 = Error Signaling with Error Frame in case of bus errors
+      /// 0 = No Error Signaling
+      /// </summary>
+      const PCAN_BR_XL_ERROR_SIGNALING: String = 'xl_error_signaling';
 
       /// <summary>
       /// The PCAN parameter is not set (inactive)
@@ -1053,7 +1142,7 @@ type
       const TRACE_FILE_DATA_LENGTH: Integer = $100;
 
       /// <summary>
-      /// Device supports flexible data-rate (CAN-FD)
+      /// Device supports the subsequent development of the classic CAN bus (CAN FD)
       /// </summary>
       const FEATURE_FD_CAPABLE: Integer = $01;
       /// <summary>
@@ -1064,6 +1153,10 @@ type
       /// Device supports I/O functionality for electronic circuits (USB-Chip devices)
       /// </summary>
       const FEATURE_IO_CAPABLE: Integer = $4;
+      /// <summary>
+      /// Device supports the subsequent development of the classic CAN bus (CAN XL)
+      /// </summary>
+      const FEATURE_XL_CAPABLE: Integer = $8;
 
       /// <summary>
       /// The service is not running
@@ -1083,7 +1176,7 @@ type
       /// </summary>
       const LAN_DIRECTION_WRITE: Integer = $02;
       /// <summary>
-      /// The PCAN-Channel communication is bidirectional 
+      /// The PCAN-Channel communication is bidirectional
       /// </summary>
       const LAN_DIRECTION_READ_WRITE: Integer = $03;
 
@@ -1122,18 +1215,18 @@ type
     /// </summary>
     /// <param name="Channel">The handle of a PCAN Channel</param>
     /// <param name="Btr0Btr1">The speed for the communication (BTR0BTR1 code)</param>
-    /// <param name="HwType">Non-PnP: The type of hardware and operation mode</param>
-    /// <param name="IOPort">Non-PnP: The I/O address for the parallel port</param>
-    /// <param name="Interrupt">Non-PnP: Interrupt number of the parallel port</param>
+    /// <param name="deprecated1">Deprecated. Parameter is ignored</param>
+    /// <param name="deprecated2">Deprecated. Parameter is ignored</param>
+    /// <param name="deprecated3">Deprecated. Parameter is ignored</param>
     /// <returns>A TPCANStatus error code</returns>
     class function Initialize(
         Channel: TPCANHandle;
         Btr0Btr1: TPCANBaudrate;
-        HwType: TPCANType;
-        IOPort: LongWord;
-        Interrupt: Word
+        deprecated1: Byte;
+        deprecated2: LongWord;
+        deprecated3: Word
         ): TPCANStatus; overload;
-            
+
     /// <summary>
     /// Initializes a PCAN Channel
     /// </summary>
@@ -1144,7 +1237,7 @@ type
         Channel: TPCANHandle;
         Btr0Btr1: TPCANBaudrate
         ): TPCANStatus; overload;
-            
+
     /// <summary>
     /// Initializes a FD capable PCAN Channel
     /// </summary>
@@ -1164,6 +1257,26 @@ type
         BitrateFD: TPCANBitrateFD
         ): TPCANStatus;
 
+    /// Initializes a XL capable PCAN Channel
+    /// </summary>
+    /// <param name="Channel">The handle of a XL capable PCAN Channel</param>
+    /// <param name="BitrateXL">The speed for the communication (XL bit rate string)</param>
+    /// <remarks>See PCAN_BR_* values
+    /// * Parameter and values must be separated by '='
+    /// * Couples of Parameter/value must be separated by ','
+    /// * Following Parameter must be filled out: f_clock, brp, nom_brp, nom_sjw, nom_tseg1, nom_tseg2.
+    ///   If xl_transceiver_mode_switch is active, also the parameters xl_sjw, xl_tseg1, and xl_tseg2, must be present.
+    ///   If error_signaling is active, also the parameters fd_sjw, fd_tseg1, and fd_tseg2, must be present.
+    /// * Following Parameters are optional: fd_ssp_offset, xl_ssp_offset, xl_transceiver_mode_switch, error_signaling,
+    ///   xl_pwm_offset, xl_pwm_short, and xl_pwm_long</remarks>
+    /// <example>f_clock=160000000,brp=1,nom_tseg1=255,nom_tseg2=64,nom_sjw=64,fd_tseg1=63,fd_tseg2=16,fd_sjw=16,fd_ssp_offset=0,xl_tseg1=10,
+    /// xl_tseg2=9,xl_sjw=9,xl_ssp_offset=10,xl_error_signaling=1,xl_transceiver_mode_switch=0</example>
+    /// <returns>A TPCANStatus error code</returns>
+    class function InitializeXL(
+        Channel: TPCANHandle;
+        BitrateXL: TPCANBitrateXL
+        ): TPCANStatus;
+
     /// <summary>
     /// Uninitializes one or all PCAN Channels initialized by CAN_Initialize
     /// </summary>
@@ -1174,7 +1287,7 @@ type
     class function Uninitialize(
         Channel: TPCANHandle
         ): TPCANStatus;
-            
+
     /// <summary>
     /// Resets the receive and transmit queues of the PCAN Channel
     /// </summary>
@@ -1184,7 +1297,7 @@ type
     class function Reset(
         Channel: TPCANHandle
         ): TPCANStatus;
-            
+
     /// <summary>
     /// Gets the current status of a PCAN Channel
     /// </summary>
@@ -1193,7 +1306,7 @@ type
     class function GetStatus(
         Channel: TPCANHandle
         ): TPCANStatus;
-            
+
     /// <summary>
     /// Reads a CAN message from the receive queue of a PCAN Channel
     /// </summary>
@@ -1207,7 +1320,7 @@ type
         var MessageBuffer: TPCANMsg;
         var TimestampBuffer: TPCANTimestamp
         ):TPCANStatus; overload;
-            
+
     /// <summary>
     /// Reads a CAN message from the receive queue of a PCAN Channel
     /// </summary>
@@ -1232,7 +1345,7 @@ type
         var MessageBuffer: TPCANMsgFD;
         var TimestampBuffer: TPCANTimestampFD
         ):TPCANStatus; overload;
-            
+
     /// <summary>
     /// Reads a CAN message from the receive queue of a FD capable PCAN Channel
     /// </summary>
@@ -1243,7 +1356,30 @@ type
         Channel: TPCANHandle;
         var MessageBuffer: TPCANMsgFD
         ):TPCANStatus; overload;
-            
+
+    /// Reads a CAN message from the receive queue of a XL capable PCAN Channel
+    /// </summary>
+    /// <param name="Channel">The handle of a XL capable PCAN Channel</param>
+    /// <param name="MessageBuffer">A TPCANMsgXL structure buffer to store the CAN message</param>
+    /// <param name="TimestampBuffer">A TPCANTimestampXL buffer to get
+    /// the reception time of the message</param>
+    /// <returns>A TPCANStatus error code</returns>
+    class function ReadXL(
+        Channel: TPCANHandle;
+        var MessageBuffer: TPCANMsgXL;
+        var TimestampBuffer: TPCANTimestampXL
+        ):TPCANStatus; overload;
+
+    /// Reads a CAN message from the receive queue of a XL capable PCAN Channel
+    /// </summary>
+    /// <param name="Channel">The handle of a XL capable PCAN Channel</param>
+    /// <param name="MessageBuffer">A TPCANMsgXL structure buffer to store the CAN message</param>
+    /// <returns>"A TPCANStatus error code"</returns>
+    class function ReadXL(
+        Channel: TPCANHandle;
+        var MessageBuffer: TPCANMsgXL
+        ):TPCANStatus; overload;
+
     /// <summary>
     ///  Transmits a CAN message
     /// </summary>
@@ -1254,7 +1390,7 @@ type
         Channel: TPCANHandle;
         var MessageBuffer: TPCANMsg
         ): TPCANStatus;
-            
+
     /// <summary>
     /// Transmits a CAN message over a FD capable PCAN Channel
     /// </summary>
@@ -1264,6 +1400,17 @@ type
     class function WriteFD(
         Channel: TPCANHandle;
         var MessageBuffer: TPCANMsgFD
+        ): TPCANStatus;
+
+    /// <summary>
+    /// Transmits a CAN message over a XL capable PCAN Channel
+    /// </summary>
+    /// <param name="Channel">"The handle of a XL capable PCAN Channel"</param>
+    /// <param name="MessageBuffer">"A TPCANMsgXL buffer with the message to be sent"</param>
+    /// <returns>A TPCANStatus error code</returns>
+    class function WriteXL(
+        Channel: TPCANHandle;
+        var MessageBuffer: TPCANMsgXL
         ): TPCANStatus;
 
     /// <summary>
@@ -1302,8 +1449,8 @@ type
         NumericBuffer: PLongWord;
         BufferLength: LongWord
         ): TPCANStatus; overload;
-            
-            
+
+
     /// <summary>
     /// Retrieves a PCAN Channel value
     /// </summary>
@@ -1321,8 +1468,8 @@ type
         NumericBuffer: PUInt64;
         BufferLength: LongWord
         ): TPCANStatus; overload;
-            
-            
+
+
     /// <summary>
     /// Retrieves a PCAN Channel value
     /// </summary>
@@ -1347,7 +1494,7 @@ type
         ChannelsBuffer: PTPCANChannelInformation;
         BufferLength: LongWord
         ): TPCANStatus; overload;
-            
+
     /// <summary>
     /// Configures or sets a PCAN Channel value
     /// </summary>
@@ -1383,7 +1530,7 @@ type
         NumericBuffer: PUInt64;
         BufferLength: LongWord
         ): TPCANStatus; overload;
-            
+
     /// <summary>
     /// Configures or sets a PCAN Channel value
     /// </summary>
@@ -1439,9 +1586,11 @@ uses SysUtils;
 
 const DLL_Name = 'PCANBASIC.DLL';
 
-function CAN_Initialize(Channel: TPCANHandle; Btr0Btr1: TPCANBaudrate; HwType: TPCANType; IOPort: LongWord; Interrupt: Word): TPCANStatus; stdcall;
+function CAN_Initialize(Channel: TPCANHandle; Btr0Btr1: TPCANBaudrate; deprecated1: Byte; deprecated2: LongWord; deprecated3: Word): TPCANStatus; stdcall;
 external DLL_Name;
 function CAN_InitializeFD(Channel: TPCANHandle; BitrateFD: TPCANBitrateFD): TPCANStatus; stdcall;
+external DLL_Name;
+function CAN_InitializeXL(Channel: TPCANHandle; BitrateXL: TPCANBitrateXL): TPCANStatus; stdcall;
 external DLL_Name;
 function CAN_Uninitialize(Channel: TPCANHandle): TPCANStatus; stdcall;
 external DLL_Name;
@@ -1453,9 +1602,13 @@ function CAN_Read(Channel: TPCANHandle; var MessageBuffer: TPCANMsg; TimestampBu
 external DLL_Name;
 function CAN_ReadFD(Channel: TPCANHandle; var MessageBuffer: TPCANMsgFD; TimestampBuffer: PUInt64):TPCANStatus; overload; stdcall;
 external DLL_Name;
+function CAN_ReadXL(Channel: TPCANHandle; var MessageBuffer: TPCANMsgXL; TimestampBuffer: PUInt64):TPCANStatus; overload; stdcall;
+external DLL_Name;
 function CAN_Write(Channel: TPCANHandle; var MessageBuffer: TPCANMsg): TPCANStatus; stdcall;
 external DLL_Name;
 function CAN_WriteFD(Channel: TPCANHandle; var MessageBuffer: TPCANMsgFD): TPCANStatus; stdcall;
+external DLL_Name;
+function CAN_WriteXL(Channel: TPCANHandle; var MessageBuffer: TPCANMsgXL): TPCANStatus; stdcall;
 external DLL_Name;
 function CAN_FilterMessages(Channel: TPCANHandle; FromID: LongWord; ToID: LongWord; Mode: TPCANMode): TPCANStatus; stdcall;
 external DLL_Name;
@@ -1468,19 +1621,24 @@ external DLL_Name;
 function CAN_LookUpChannel(Parameters: PAnsiChar; FoundChannel: PTPCANHandle): TPCANStatus; stdcall;
 external DLL_Name;
 
-class function TPCANBasic.Initialize(Channel: TPCANHandle; Btr0Btr1: TPCANBaudrate; HwType: TPCANType; IOPort: LongWord; Interrupt: Word): TPCANStatus;
+class function TPCANBasic.Initialize(Channel: TPCANHandle; Btr0Btr1: TPCANBaudrate; deprecated1: Byte; deprecated2: LongWord; deprecated3: Word): TPCANStatus;
 begin
-  Result:= CAN_Initialize(Channel,Btr0Btr1,HwType,IOPort,Interrupt);
+  Result:= CAN_Initialize(Channel,Btr0Btr1,0,0,0);
 end;
 
 class function TPCANBasic.Initialize(Channel: TPCANHandle; Btr0Btr1: TPCANBaudrate): TPCANStatus;
 begin
-  Result:= CAN_Initialize(Channel,Btr0Btr1,PCAN_TYPE_ISA, 0,0);
+  Result:= CAN_Initialize(Channel,Btr0Btr1,0,0,0);
 end;
 
 class function TPCANBasic.InitializeFD(Channel: TPCANHandle; BitrateFD: TPCANBitrateFD): TPCANStatus;
 begin
   Result:= CAN_InitializeFD(Channel,BitrateFD);
+end;
+
+class function TPCANBasic.InitializeXL(Channel: TPCANHandle; BitrateXL: TPCANBitrateXL): TPCANStatus;
+begin
+  Result:= CAN_InitializeXL(Channel,BitrateXL);
 end;
 
 class function TPCANBasic.Uninitialize(Channel: TPCANHandle): TPCANStatus;
@@ -1518,6 +1676,16 @@ begin
   Result:= CAN_ReadFD(Channel, MessageBuffer, nil);
 end;
 
+class function TPCANBasic.ReadXL(Channel: TPCANHandle; var MessageBuffer: TPCANMsgXL; var TimestampBuffer: TPCANTimestampXL):TPCANStatus;
+begin
+  Result:= CAN_ReadXL(Channel, MessageBuffer, @TimestampBuffer);
+end;
+
+class function TPCANBasic.ReadXL(Channel: TPCANHandle; var MessageBuffer: TPCANMsgXL):TPCANStatus;
+begin
+  Result:= CAN_ReadXL(Channel, MessageBuffer, nil);
+end;
+
 class function TPCANBasic.Write(Channel: TPCANHandle; var MessageBuffer: TPCANMsg): TPCANStatus;
 begin
   Result:= CAN_Write(Channel, MessageBuffer);
@@ -1526,6 +1694,11 @@ end;
 class function TPCANBasic.WriteFD(Channel: TPCANHandle; var MessageBuffer: TPCANMsgFD): TPCANStatus;
 begin
   Result:= CAN_WriteFD(Channel, MessageBuffer);
+end;
+
+class function TPCANBasic.WriteXL(Channel: TPCANHandle; var MessageBuffer: TPCANMsgXL): TPCANStatus;
+begin
+  Result:= CAN_WriteXL(Channel, MessageBuffer);
 end;
 
 class function TPCANBasic.FilterMessages(Channel: TPCANHandle; FromID: LongWord; ToID: LongWord; Mode: TPCANMode): TPCANStatus;

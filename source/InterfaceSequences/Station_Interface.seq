@@ -5,7 +5,7 @@ CompatibleProdVersion = 23.0.0.0
 Version = 1022
 Type = "SequenceFile"
 Path = ""
-ProductVersionString = "2025 Q3 (25.0.0.49152)"
+ProductVersionString = "2023 Q4 (23.0.0.49152)"
 CharEncoding = "SBCS"
 
 [DEF, %OBJROOT]
@@ -25573,7 +25573,7 @@ FailureAction = Num
 [SF.Seq[19]]
 %FLG: Parameters = 4456448
 %FLG: Locals = 4194304
-%HI: Main = [21]
+%HI: Main = [31]
 %FLG: Main = 4194304
 %HI: Setup = [1]
 %FLG: Setup = 4194304
@@ -25593,6 +25593,8 @@ Variant = Str
 CHMB2HP = Bool
 CHMB1HP = Bool
 Input = Str
+TestSocketNumber = Num
+TestSocket = Num
 
 [DEF, SF.Seq[19].Locals.ResultList]
 %EPTYPE = TEResult
@@ -25637,11 +25639,31 @@ Input = Str
 %[18] = Step
 %TYPE: %[18] = "NoffzUTP_TEF_UI_Station_ShowPopupInputDialog"
 %[19] = Step
-%TYPE: %[19] = "NI_Flow_Else"
+%TYPE: %[19] = "NI_Flow_If"
 %[20] = Step
-%TYPE: %[20] = "NoffzUTP_TEF_UI_TestSocket_ShowMessageDialog"
+%TYPE: %[20] = "NoffzUTP_TEF_UI_Station_ShowPopupMessageDialog"
 %[21] = Step
-%TYPE: %[21] = "NI_Flow_End"
+%TYPE: %[21] = "SequenceCall"
+%[22] = Step
+%TYPE: %[22] = "NI_Flow_Else"
+%[23] = Step
+%TYPE: %[23] = "NoffzUTP_TEF_UI_TestSocket_ShowMessage"
+%[24] = Step
+%TYPE: %[24] = "NoffzUTP_TEF_UI_TestSocket_ShowMessage"
+%[25] = Step
+%TYPE: %[25] = "NoffzUTP_TEF_UI_TestSocket_ShowMessage"
+%[26] = Step
+%TYPE: %[26] = "NoffzUTP_TEF_UI_TestSocket_ShowMessage"
+%[27] = Step
+%TYPE: %[27] = "Statement"
+%[28] = Step
+%TYPE: %[28] = "NI_Flow_End"
+%[29] = Step
+%TYPE: %[29] = "NI_Flow_Else"
+%[30] = Step
+%TYPE: %[30] = "NoffzUTP_TEF_UI_TestSocket_ShowMessageDialog"
+%[31] = Step
+%TYPE: %[31] = "NI_Flow_End"
 
 [SF.Seq[19].Main[0].TS]
 Id = "ID#:I+VioM6w8RGOGaQctBT8oA"
@@ -25736,6 +25758,7 @@ Color = 16777215
 
 [SF.Seq[19].Main[3].TS]
 Id = "ID#:gKhd8tSQ8RGwe0ypVBlBxD"
+Mode = "Skip"
 
 [DEF, SF.Seq[19].Main[3].TS]
 SData = "TYPE, FlexGStepAdditions"
@@ -25930,6 +25953,7 @@ DisplayType = "ASCII String"
 
 [SF.Seq[19].Main[4].TS]
 Id = "ID#:a1akrNSQ8RGwe0ypVBlBxD"
+Mode = "Skip"
 PostExpr Line0001 = "StationGlobals.Automation.SystemControl.MSA.MSA_Counter = {StationGlobals.Automation.SystemControl.MSA.Target,StationGlo"
 PostExpr Line0002 = "bals.Automation.SystemControl.MSA.Target,StationGlobals.Automation.SystemControl.MSA.Target,StationGlobals.Automation.Sy"
 PostExpr Line0003 = "stemControl.MSA.Target},\nStationGlobals.Automation.SystemControl.CHMB1.MSA.Ready = True,\nStationGlobals.Automation.Sys"
@@ -27653,7 +27677,7 @@ StatusExpr = "\"\""
 
 [SF.Seq[19].Main[18].TS]
 Id = "ID#:wnbjN9Gw8RGOGaQctBT8oA"
-PostExpr = "StationGlobals.Automation.SystemControl.MSA.Target  = Val(Locals.Input)"
+PostExpr = "StationGlobals.Automation.SystemControl.MSA.Target  = Val(Locals.Input) +1"
 
 [DEF, SF.Seq[19].Main[18].TS]
 SData = "TYPE, SeqCallStepAdditions"
@@ -27832,20 +27856,24 @@ ShowOkButton = True
 %NAME = "Get Number Of Testing for MSA"
 
 [SF.Seq[19].Main[19].TS]
-Id = "ID#:NwuXtc6w8RGOGaQctBT8oA"
+Id = "ID#:beFTK7mx8RGOIaQctBT8oA"
+
+[SF.Seq[19].Main[19]]
+ConditionExpr Line0001 = "StationGlobals.Automation.SystemControl.MSA.Target < 2 // Input was increased by 1 -> 2 means one test and 1 means 0 was"
+ConditionExpr Line0002 = " input"
 
 [DEF, SF.Seq[19].Main[19]]
-%NAME = "Else"
+%NAME = "If"
 
 [SF.Seq[19].Main[20].TS]
-Id = "ID#:OQuXtc6w8RGOGaQctBT8oA"
+Id = "ID#:DxIdbLmx8RGOIaQctBT8oA"
 
 [DEF, SF.Seq[19].Main[20].TS]
 SData = "TYPE, SeqCallStepAdditions"
 
 [SF.Seq[19].Main[20].TS.SData]
 SFPath = "Noffz.UTP.TEF.API.seq"
-SeqName = "UI.TestSocket.ShowMessageDialog"
+SeqName = "UI.Station.ShowPopupMessageDialog"
 CustomThreadAffinity = "-1"
 Trace = "Off"
 
@@ -27854,35 +27882,44 @@ ActualArgs = Arguments
 Prototype = Obj
 
 [DEF, SF.Seq[19].Main[20].TS.SData.ActualArgs]
-TestSocket = "TYPE, SequenceArgument"
 Message = "TYPE, SequenceArgument"
-Color = "TYPE, SequenceArgument"
-FontSize = "TYPE, SequenceArgument"
+Title = "TYPE, SequenceArgument"
+CenterPosition = "TYPE, SequenceArgument"
+XPosition = "TYPE, SequenceArgument"
+YPosition = "TYPE, SequenceArgument"
+IsModal = "TYPE, SequenceArgument"
 ShowOkButton = "TYPE, SequenceArgument"
 ShowCancelButton = "TYPE, SequenceArgument"
 DialogTimeout = "TYPE, SequenceArgument"
 OkButtonPressed = "TYPE, SequenceArgument"
 CancelButtonPressed = "TYPE, SequenceArgument"
 
-[SF.Seq[19].Main[20].TS.SData.ActualArgs.TestSocket]
-ParamType = 4
-ParamRepresentation = 1
-Flags = 0
-
 [SF.Seq[19].Main[20].TS.SData.ActualArgs.Message]
 UseDef = False
-Expr = "ResStr(\"UI_MESSAGES\", \"HOME_REQUIRED\")"
+Expr = "ResStr(\"UI_CONTROL\", \"MSA_NOT_START\")"
 ParamType = 2
 Flags = 0
 
-[SF.Seq[19].Main[20].TS.SData.ActualArgs.Color]
+[SF.Seq[19].Main[20].TS.SData.ActualArgs.Title]
+ParamType = 2
+Flags = 0
+
+[SF.Seq[19].Main[20].TS.SData.ActualArgs.CenterPosition]
+ParamType = 16
+Flags = 0
+
+[SF.Seq[19].Main[20].TS.SData.ActualArgs.XPosition]
 ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[SF.Seq[19].Main[20].TS.SData.ActualArgs.FontSize]
+[SF.Seq[19].Main[20].TS.SData.ActualArgs.YPosition]
 ParamType = 4
 ParamRepresentation = 1
+Flags = 0
+
+[SF.Seq[19].Main[20].TS.SData.ActualArgs.IsModal]
+ParamType = 16
 Flags = 0
 
 [SF.Seq[19].Main[20].TS.SData.ActualArgs.ShowOkButton]
@@ -27908,35 +27945,41 @@ ParamType = 16
 ParamType = 16
 
 [DEF, SF.Seq[19].Main[20].TS.SData.Prototype]
-TestSocket = Num
 Message = Str
-Color = Num
-FontSize = Num
+Title = Str
+CenterPosition = Bool
+XPosition = Num
+YPosition = Num
+IsModal = Bool
 ShowOkButton = Bool
 ShowCancelButton = Bool
 DialogTimeout = Num
 OkButtonPressed = Bool
 CancelButtonPressed = Bool
 
-[SF.Seq[19].Main[20].TS.SData.Prototype]
-TestSocket = Nan
-Color = Nan
-FontSize = Nan
-%FLG: OkButtonPressed = 4
-%FLG: CancelButtonPressed = 4
-
-[SF.Seq[19].Main[20].TS.SData.Prototype.TestSocket]
-%COMMENT = "Test Socket number. (Default: Current Test Socket Index)"
-
 [SF.Seq[19].Main[20].TS.SData.Prototype.Message]
 %COMMENT = "Message to show."
 
-[SF.Seq[19].Main[20].TS.SData.Prototype.Color]
-%COMMENT = "Background color of the Station Message Area. (Default: StationGlobals.TEF.Colors.DialogWaiting)"
-%NUMFMT = "%#x"
+[SF.Seq[19].Main[20].TS.SData.Prototype.Title]
+%COMMENT = "Dialog title. (Default: Empty)"
 
-[SF.Seq[19].Main[20].TS.SData.Prototype.FontSize]
-%COMMENT = "Size of the Font. (Default: 'DialogTextBox' from Noffz.UTP.TEF.config)."
+[SF.Seq[19].Main[20].TS.SData.Prototype]
+CenterPosition = True
+ShowOkButton = True
+%FLG: OkButtonPressed = 4
+%FLG: CancelButtonPressed = 4
+
+[SF.Seq[19].Main[20].TS.SData.Prototype.CenterPosition]
+%COMMENT = "If True, the dialog is positioned in the center of the screen. (Default: True)"
+
+[SF.Seq[19].Main[20].TS.SData.Prototype.XPosition]
+%COMMENT = "Position of the dialog, X coordinate. Parameter is ignored, if CenterPosition is True. (Default: 0)."
+
+[SF.Seq[19].Main[20].TS.SData.Prototype.YPosition]
+%COMMENT = "Position of the dialog, Y coordinate. Parameter is ignored, if CenterPosition is True. (Default: 0)."
+
+[SF.Seq[19].Main[20].TS.SData.Prototype.IsModal]
+%COMMENT = "If True, the dialog is modal to UTP TEF or Sequence Editor. (Default: False)"
 
 [SF.Seq[19].Main[20].TS.SData.Prototype.ShowOkButton]
 %COMMENT = "Show OK button in the dialog. (Default: True)"
@@ -27955,12 +27998,475 @@ FontSize = Nan
 %COMMENT = "Returns True, if Cancel button was pressed."
 
 [DEF, SF.Seq[19].Main[20]]
-%NAME = " Need to be in home position"
+%NAME = "Invalid number"
 
 [SF.Seq[19].Main[21].TS]
-Id = "ID#:JeVioM6w8RGOGaQctBT8oA"
+Id = "ID#:X2jturmx8RGOIaQctBT8oA"
+
+[DEF, SF.Seq[19].Main[21].TS]
+SData = "TYPE, SeqCallStepAdditions"
+
+[SF.Seq[19].Main[21].TS.SData]
+SeqName = "Production"
+UseCurFile = True
 
 [DEF, SF.Seq[19].Main[21]]
+%NAME = "Set Production Mode"
+
+[SF.Seq[19].Main[22].TS]
+Id = "ID#:4Mx5Y7mx8RGOIaQctBT8oA"
+
+[DEF, SF.Seq[19].Main[22]]
+%NAME = "Else"
+
+[SF.Seq[19].Main[23].TS]
+Id = "ID#:/jW2pbux8RGOIaQctBT8oA"
+PreCond = "StationGlobals.Automation.SystemControl.CHMB1.TestCHMB1"
+
+[DEF, SF.Seq[19].Main[23].TS]
+SData = "TYPE, SeqCallStepAdditions"
+
+[SF.Seq[19].Main[23].TS.SData]
+SFPath = "Noffz.UTP.TEF.API.seq"
+SeqName = "UI.TestSocket.ShowMessage"
+CustomThreadAffinity = "-1"
+Trace = "Off"
+
+[DEF, SF.Seq[19].Main[23].TS.SData]
+ActualArgs = Arguments
+Prototype = Obj
+
+[DEF, SF.Seq[19].Main[23].TS.SData.ActualArgs]
+TestSocket = "TYPE, SequenceArgument"
+Message = "TYPE, SequenceArgument"
+Color = "TYPE, SequenceArgument"
+FontSize = "TYPE, SequenceArgument"
+
+[SF.Seq[19].Main[23].TS.SData.ActualArgs.TestSocket]
+UseDef = False
+Expr = "0"
+ParamType = 4
+ParamRepresentation = 1
+Flags = 0
+
+[SF.Seq[19].Main[23].TS.SData.ActualArgs.Message]
+UseDef = False
+Expr = "ResStr(\"UI_CONTROL\", \"CLOSE_CHMB_MSA\")"
+ParamType = 2
+Flags = 0
+
+[SF.Seq[19].Main[23].TS.SData.ActualArgs.Color]
+UseDef = False
+Expr = "StationGlobals.TEF.Colors.DialogWaiting"
+ParamType = 4
+ParamRepresentation = 1
+Flags = 0
+
+[SF.Seq[19].Main[23].TS.SData.ActualArgs.FontSize]
+ParamType = 4
+ParamRepresentation = 1
+Flags = 0
+
+[DEF, SF.Seq[19].Main[23].TS.SData.Prototype]
+TestSocket = Num
+Message = Str
+Color = Num
+FontSize = Num
+
+[SF.Seq[19].Main[23].TS.SData.Prototype]
+TestSocket = Nan
+Color = Nan
+FontSize = Nan
+
+[SF.Seq[19].Main[23].TS.SData.Prototype.TestSocket]
+%COMMENT = "Test Socket number. (Default: Current Test Socket Index)"
+
+[SF.Seq[19].Main[23].TS.SData.Prototype.Message]
+%COMMENT = "Message to show."
+
+[SF.Seq[19].Main[23].TS.SData.Prototype.Color]
+%COMMENT = "Background color of the Test Socket Message Area. (Default: StationGlobals.TEF.Colors.DialogInfo)"
+%NUMFMT = "%#x"
+
+[SF.Seq[19].Main[23].TS.SData.Prototype.FontSize]
+%COMMENT = "Size of the Font. (Default: Configuration parameter 'DialogTextBox' from Noffz.UTP.TEF.config)"
+
+[DEF, SF.Seq[19].Main[23]]
+%NAME = "UI.TestSocket.ShowMessage"
+
+[SF.Seq[19].Main[24].TS]
+Id = "ID#:/+NO9Lux8RGOIaQctBT8oA"
+PreCond = "StationGlobals.Automation.SystemControl.CHMB1.TestCHMB1"
+
+[DEF, SF.Seq[19].Main[24].TS]
+SData = "TYPE, SeqCallStepAdditions"
+
+[SF.Seq[19].Main[24].TS.SData]
+SFPath = "Noffz.UTP.TEF.API.seq"
+SeqName = "UI.TestSocket.ShowMessage"
+CustomThreadAffinity = "-1"
+Trace = "Off"
+
+[DEF, SF.Seq[19].Main[24].TS.SData]
+ActualArgs = Arguments
+Prototype = Obj
+
+[DEF, SF.Seq[19].Main[24].TS.SData.ActualArgs]
+TestSocket = "TYPE, SequenceArgument"
+Message = "TYPE, SequenceArgument"
+Color = "TYPE, SequenceArgument"
+FontSize = "TYPE, SequenceArgument"
+
+[SF.Seq[19].Main[24].TS.SData.ActualArgs.TestSocket]
+UseDef = False
+Expr = "1"
+ParamType = 4
+ParamRepresentation = 1
+Flags = 0
+
+[SF.Seq[19].Main[24].TS.SData.ActualArgs.Message]
+UseDef = False
+Expr = "ResStr(\"UI_CONTROL\", \"CLOSE_CHMB_MSA\")"
+ParamType = 2
+Flags = 0
+
+[SF.Seq[19].Main[24].TS.SData.ActualArgs.Color]
+UseDef = False
+Expr = "StationGlobals.TEF.Colors.DialogWaiting"
+ParamType = 4
+ParamRepresentation = 1
+Flags = 0
+
+[SF.Seq[19].Main[24].TS.SData.ActualArgs.FontSize]
+ParamType = 4
+ParamRepresentation = 1
+Flags = 0
+
+[DEF, SF.Seq[19].Main[24].TS.SData.Prototype]
+TestSocket = Num
+Message = Str
+Color = Num
+FontSize = Num
+
+[SF.Seq[19].Main[24].TS.SData.Prototype]
+TestSocket = Nan
+Color = Nan
+FontSize = Nan
+
+[SF.Seq[19].Main[24].TS.SData.Prototype.TestSocket]
+%COMMENT = "Test Socket number. (Default: Current Test Socket Index)"
+
+[SF.Seq[19].Main[24].TS.SData.Prototype.Message]
+%COMMENT = "Message to show."
+
+[SF.Seq[19].Main[24].TS.SData.Prototype.Color]
+%COMMENT = "Background color of the Test Socket Message Area. (Default: StationGlobals.TEF.Colors.DialogInfo)"
+%NUMFMT = "%#x"
+
+[SF.Seq[19].Main[24].TS.SData.Prototype.FontSize]
+%COMMENT = "Size of the Font. (Default: Configuration parameter 'DialogTextBox' from Noffz.UTP.TEF.config)"
+
+[DEF, SF.Seq[19].Main[24]]
+%NAME = "UI.TestSocket.ShowMessage"
+
+[SF.Seq[19].Main[25].TS]
+Id = "ID#:A+RO9Lux8RGOIaQctBT8oA"
+PreCond = "StationGlobals.Automation.SystemControl.CHMB2.TestCHMB2"
+
+[DEF, SF.Seq[19].Main[25].TS]
+SData = "TYPE, SeqCallStepAdditions"
+
+[SF.Seq[19].Main[25].TS.SData]
+SFPath = "Noffz.UTP.TEF.API.seq"
+SeqName = "UI.TestSocket.ShowMessage"
+CustomThreadAffinity = "-1"
+Trace = "Off"
+
+[DEF, SF.Seq[19].Main[25].TS.SData]
+ActualArgs = Arguments
+Prototype = Obj
+
+[DEF, SF.Seq[19].Main[25].TS.SData.ActualArgs]
+TestSocket = "TYPE, SequenceArgument"
+Message = "TYPE, SequenceArgument"
+Color = "TYPE, SequenceArgument"
+FontSize = "TYPE, SequenceArgument"
+
+[SF.Seq[19].Main[25].TS.SData.ActualArgs.TestSocket]
+UseDef = False
+Expr = "2"
+ParamType = 4
+ParamRepresentation = 1
+Flags = 0
+
+[SF.Seq[19].Main[25].TS.SData.ActualArgs.Message]
+UseDef = False
+Expr = "ResStr(\"UI_CONTROL\", \"CLOSE_CHMB_MSA\")"
+ParamType = 2
+Flags = 0
+
+[SF.Seq[19].Main[25].TS.SData.ActualArgs.Color]
+UseDef = False
+Expr = "StationGlobals.TEF.Colors.DialogWaiting"
+ParamType = 4
+ParamRepresentation = 1
+Flags = 0
+
+[SF.Seq[19].Main[25].TS.SData.ActualArgs.FontSize]
+ParamType = 4
+ParamRepresentation = 1
+Flags = 0
+
+[DEF, SF.Seq[19].Main[25].TS.SData.Prototype]
+TestSocket = Num
+Message = Str
+Color = Num
+FontSize = Num
+
+[SF.Seq[19].Main[25].TS.SData.Prototype]
+TestSocket = Nan
+Color = Nan
+FontSize = Nan
+
+[SF.Seq[19].Main[25].TS.SData.Prototype.TestSocket]
+%COMMENT = "Test Socket number. (Default: Current Test Socket Index)"
+
+[SF.Seq[19].Main[25].TS.SData.Prototype.Message]
+%COMMENT = "Message to show."
+
+[SF.Seq[19].Main[25].TS.SData.Prototype.Color]
+%COMMENT = "Background color of the Test Socket Message Area. (Default: StationGlobals.TEF.Colors.DialogInfo)"
+%NUMFMT = "%#x"
+
+[SF.Seq[19].Main[25].TS.SData.Prototype.FontSize]
+%COMMENT = "Size of the Font. (Default: Configuration parameter 'DialogTextBox' from Noffz.UTP.TEF.config)"
+
+[DEF, SF.Seq[19].Main[25]]
+%NAME = "UI.TestSocket.ShowMessage"
+
+[SF.Seq[19].Main[26].TS]
+Id = "ID#:BORO9Lux8RGOIaQctBT8oA"
+PreCond = "StationGlobals.Automation.SystemControl.CHMB2.TestCHMB2"
+
+[DEF, SF.Seq[19].Main[26].TS]
+SData = "TYPE, SeqCallStepAdditions"
+
+[SF.Seq[19].Main[26].TS.SData]
+SFPath = "Noffz.UTP.TEF.API.seq"
+SeqName = "UI.TestSocket.ShowMessage"
+CustomThreadAffinity = "-1"
+Trace = "Off"
+
+[DEF, SF.Seq[19].Main[26].TS.SData]
+ActualArgs = Arguments
+Prototype = Obj
+
+[DEF, SF.Seq[19].Main[26].TS.SData.ActualArgs]
+TestSocket = "TYPE, SequenceArgument"
+Message = "TYPE, SequenceArgument"
+Color = "TYPE, SequenceArgument"
+FontSize = "TYPE, SequenceArgument"
+
+[SF.Seq[19].Main[26].TS.SData.ActualArgs.TestSocket]
+UseDef = False
+Expr = "3"
+ParamType = 4
+ParamRepresentation = 1
+Flags = 0
+
+[SF.Seq[19].Main[26].TS.SData.ActualArgs.Message]
+UseDef = False
+Expr = "ResStr(\"UI_CONTROL\", \"CLOSE_CHMB_MSA\")"
+ParamType = 2
+Flags = 0
+
+[SF.Seq[19].Main[26].TS.SData.ActualArgs.Color]
+UseDef = False
+Expr = "StationGlobals.TEF.Colors.DialogWaiting"
+ParamType = 4
+ParamRepresentation = 1
+Flags = 0
+
+[SF.Seq[19].Main[26].TS.SData.ActualArgs.FontSize]
+ParamType = 4
+ParamRepresentation = 1
+Flags = 0
+
+[DEF, SF.Seq[19].Main[26].TS.SData.Prototype]
+TestSocket = Num
+Message = Str
+Color = Num
+FontSize = Num
+
+[SF.Seq[19].Main[26].TS.SData.Prototype]
+TestSocket = Nan
+Color = Nan
+FontSize = Nan
+
+[SF.Seq[19].Main[26].TS.SData.Prototype.TestSocket]
+%COMMENT = "Test Socket number. (Default: Current Test Socket Index)"
+
+[SF.Seq[19].Main[26].TS.SData.Prototype.Message]
+%COMMENT = "Message to show."
+
+[SF.Seq[19].Main[26].TS.SData.Prototype.Color]
+%COMMENT = "Background color of the Test Socket Message Area. (Default: StationGlobals.TEF.Colors.DialogInfo)"
+%NUMFMT = "%#x"
+
+[SF.Seq[19].Main[26].TS.SData.Prototype.FontSize]
+%COMMENT = "Size of the Font. (Default: Configuration parameter 'DialogTextBox' from Noffz.UTP.TEF.config)"
+
+[DEF, SF.Seq[19].Main[26]]
+%NAME = "UI.TestSocket.ShowMessage"
+
+[SF.Seq[19].Main[27].TS]
+Id = "ID#:MpSjEQax8RGOHSqHuqTN1A"
+PostExpr Line0001 = "StationGlobals.Automation.SystemControl.MSA.MSA_Counter = {StationGlobals.Automation.SystemControl.MSA.Target,StationGlo"
+PostExpr Line0002 = "bals.Automation.SystemControl.MSA.Target,StationGlobals.Automation.SystemControl.MSA.Target,StationGlobals.Automation.Sy"
+PostExpr Line0003 = "stemControl.MSA.Target},\nStationGlobals.Automation.SystemControl.CHMB1.MSA.Ready = True,\nStationGlobals.Automation.Sys"
+PostExpr Line0004 = "temControl.CHMB1.MSA.Running = False,\nStationGlobals.Automation.SystemControl.CHMB2.MSA.Ready = True,\nStationGlobals.A"
+PostExpr Line0005 = "utomation.SystemControl.CHMB2.MSA.Running = False\n\n//Ready True until first test and Running is False until first test"
+PostExpr Line0006 = " and it is True while test is performed"
+
+[DEF, SF.Seq[19].Main[27]]
+%NAME = "Set counters"
+
+[SF.Seq[19].Main[28].TS]
+Id = "ID#:b+FTK7mx8RGOIaQctBT8oA"
+
+[DEF, SF.Seq[19].Main[28]]
+%NAME = "End"
+
+[SF.Seq[19].Main[29].TS]
+Id = "ID#:NwuXtc6w8RGOGaQctBT8oA"
+
+[DEF, SF.Seq[19].Main[29]]
+%NAME = "Else"
+
+[SF.Seq[19].Main[30].TS]
+Id = "ID#:OQuXtc6w8RGOGaQctBT8oA"
+
+[DEF, SF.Seq[19].Main[30].TS]
+SData = "TYPE, SeqCallStepAdditions"
+
+[SF.Seq[19].Main[30].TS.SData]
+SFPath = "Noffz.UTP.TEF.API.seq"
+SeqName = "UI.TestSocket.ShowMessageDialog"
+CustomThreadAffinity = "-1"
+Trace = "Off"
+
+[DEF, SF.Seq[19].Main[30].TS.SData]
+ActualArgs = Arguments
+Prototype = Obj
+
+[DEF, SF.Seq[19].Main[30].TS.SData.ActualArgs]
+TestSocket = "TYPE, SequenceArgument"
+Message = "TYPE, SequenceArgument"
+Color = "TYPE, SequenceArgument"
+FontSize = "TYPE, SequenceArgument"
+ShowOkButton = "TYPE, SequenceArgument"
+ShowCancelButton = "TYPE, SequenceArgument"
+DialogTimeout = "TYPE, SequenceArgument"
+OkButtonPressed = "TYPE, SequenceArgument"
+CancelButtonPressed = "TYPE, SequenceArgument"
+
+[SF.Seq[19].Main[30].TS.SData.ActualArgs.TestSocket]
+ParamType = 4
+ParamRepresentation = 1
+Flags = 0
+
+[SF.Seq[19].Main[30].TS.SData.ActualArgs.Message]
+UseDef = False
+Expr = "ResStr(\"UI_MESSAGES\", \"HOME_REQUIRED\")"
+ParamType = 2
+Flags = 0
+
+[SF.Seq[19].Main[30].TS.SData.ActualArgs.Color]
+ParamType = 4
+ParamRepresentation = 1
+Flags = 0
+
+[SF.Seq[19].Main[30].TS.SData.ActualArgs.FontSize]
+ParamType = 4
+ParamRepresentation = 1
+Flags = 0
+
+[SF.Seq[19].Main[30].TS.SData.ActualArgs.ShowOkButton]
+Expr = "True"
+ParamType = 16
+Flags = 0
+
+[SF.Seq[19].Main[30].TS.SData.ActualArgs.ShowCancelButton]
+Expr = "False"
+ParamType = 16
+Flags = 0
+
+[SF.Seq[19].Main[30].TS.SData.ActualArgs.DialogTimeout]
+Expr = "0"
+ParamType = 4
+ParamRepresentation = 1
+Flags = 0
+
+[SF.Seq[19].Main[30].TS.SData.ActualArgs.OkButtonPressed]
+ParamType = 16
+
+[SF.Seq[19].Main[30].TS.SData.ActualArgs.CancelButtonPressed]
+ParamType = 16
+
+[DEF, SF.Seq[19].Main[30].TS.SData.Prototype]
+TestSocket = Num
+Message = Str
+Color = Num
+FontSize = Num
+ShowOkButton = Bool
+ShowCancelButton = Bool
+DialogTimeout = Num
+OkButtonPressed = Bool
+CancelButtonPressed = Bool
+
+[SF.Seq[19].Main[30].TS.SData.Prototype]
+TestSocket = Nan
+Color = Nan
+FontSize = Nan
+%FLG: OkButtonPressed = 4
+%FLG: CancelButtonPressed = 4
+
+[SF.Seq[19].Main[30].TS.SData.Prototype.TestSocket]
+%COMMENT = "Test Socket number. (Default: Current Test Socket Index)"
+
+[SF.Seq[19].Main[30].TS.SData.Prototype.Message]
+%COMMENT = "Message to show."
+
+[SF.Seq[19].Main[30].TS.SData.Prototype.Color]
+%COMMENT = "Background color of the Station Message Area. (Default: StationGlobals.TEF.Colors.DialogWaiting)"
+%NUMFMT = "%#x"
+
+[SF.Seq[19].Main[30].TS.SData.Prototype.FontSize]
+%COMMENT = "Size of the Font. (Default: 'DialogTextBox' from Noffz.UTP.TEF.config)."
+
+[SF.Seq[19].Main[30].TS.SData.Prototype.ShowOkButton]
+%COMMENT = "Show OK button in the dialog. (Default: True)"
+
+[SF.Seq[19].Main[30].TS.SData.Prototype.ShowCancelButton]
+%COMMENT = "Show Cancel button in the dialog. (Default: False)"
+
+[SF.Seq[19].Main[30].TS.SData.Prototype.DialogTimeout]
+%COMMENT Line0001 = "Optional. Dialog timeout in seconds. If 0, the timeout is not used and the dialog is shown until operator press a button"
+%COMMENT Line0002 = ". (Default: 0)"
+
+[SF.Seq[19].Main[30].TS.SData.Prototype.OkButtonPressed]
+%COMMENT = "Returns True, if OK button was pressed."
+
+[SF.Seq[19].Main[30].TS.SData.Prototype.CancelButtonPressed]
+%COMMENT = "Returns True, if Cancel button was pressed."
+
+[DEF, SF.Seq[19].Main[30]]
+%NAME = " Need to be in home position"
+
+[SF.Seq[19].Main[31].TS]
+Id = "ID#:JeVioM6w8RGOGaQctBT8oA"
+
+[DEF, SF.Seq[19].Main[31]]
 %NAME = "End"
 
 [DEF, SF.Seq[19].Setup]
@@ -27971,6 +28477,7 @@ Id = "ID#:JeVioM6w8RGOGaQctBT8oA"
 
 [SF.Seq[19].Setup[0].TS]
 Id = "ID#:MUkONc6w8RGOGaQctBT8oA"
+PreCond = "StationGlobals.Automation.SystemControl.CHMB1.TestCHMB1"
 
 [DEF, SF.Seq[19].Setup[0].TS]
 SData = "TYPE, SeqCallStepAdditions"
@@ -28002,6 +28509,7 @@ ParamRepresentation = 1
 
 [SF.Seq[19].Setup[1].TS]
 Id = "ID#:hw1KmM6w8RGOGaQctBT8oA"
+PreCond = "StationGlobals.Automation.SystemControl.CHMB2.TestCHMB2"
 
 [DEF, SF.Seq[19].Setup[1].TS]
 SData = "TYPE, SeqCallStepAdditions"
@@ -28128,6 +28636,8 @@ Product = Str
 Variant = Str
 CHMB1HP = Bool
 CHMB2HP = Bool
+TestSocketNumber = Num
+TestSocket = Num
 
 [DEF, SF.Seq[20].Locals.ResultList]
 %EPTYPE = TEResult
@@ -30590,7 +31100,7 @@ XCP_Addresses = "XCP_Addresses"
 [Path]
 %TIMESTAMP = 1751310915
 %VERSION = "23.0.0.49152"
-%TYPELASTMOD = "25.0.0.49152"
+%TYPELASTMOD = "23.0.0.49152"
 %MINPRODVER = "23.0.0.0"
 %TYPE_FLG = 33554436
 
@@ -30601,7 +31111,7 @@ XCP_Addresses = "XCP_Addresses"
 [StepTypeSubstepsArray]
 %TIMESTAMP = 1751310915
 %VERSION = "23.0.0.49152"
-%TYPELASTMOD = "25.0.0.49152"
+%TYPELASTMOD = "23.0.0.49152"
 %MINPRODVER = "23.0.0.0"
 %FLG = 24
 %TYPE_FLG = 33554436
@@ -30615,7 +31125,7 @@ XCP_Addresses = "XCP_Addresses"
 [Expression]
 %TIMESTAMP = 1751310915
 %VERSION = "23.0.0.49152"
-%TYPELASTMOD = "25.0.0.49152"
+%TYPELASTMOD = "23.0.0.49152"
 %MINPRODVER = "23.0.0.0"
 %TYPE_FLG = 33554436
 
@@ -30637,7 +31147,7 @@ ItemName = "\"\""
 SingularItemName = "\"\""
 %TIMESTAMP = 1751310915
 %VERSION = "23.0.0.49152"
-%TYPELASTMOD = "25.0.0.49152"
+%TYPELASTMOD = "23.0.0.49152"
 %MINPRODVER = "23.0.0.0"
 %FLG = 24
 %TYPE_FLG = 33554436
@@ -30653,7 +31163,7 @@ UpperBounds = Nums
 [NI_ArrayDimensions]
 %TIMESTAMP = 1751310915
 %VERSION = "23.0.0.49152"
-%TYPELASTMOD = "25.0.0.49152"
+%TYPELASTMOD = "23.0.0.49152"
 %MINPRODVER = "23.0.0.0"
 %FLG = 24
 %TYPE_FLG = 33554436
@@ -30675,7 +31185,7 @@ IsObject = True
 Representation = 1
 %TIMESTAMP = 1751310915
 %VERSION = "23.0.0.49152"
-%TYPELASTMOD = "25.0.0.49152"
+%TYPELASTMOD = "23.0.0.49152"
 %MINPRODVER = "23.0.0.0"
 %FLG = 24
 %TYPE_FLG = 33554436
@@ -30698,7 +31208,7 @@ CheckedState = 2
 IsAnyType = True
 %TIMESTAMP = 1751310915
 %VERSION = "23.0.0.49152"
-%TYPELASTMOD = "25.0.0.49152"
+%TYPELASTMOD = "23.0.0.49152"
 %MINPRODVER = "23.0.0.0"
 %FLG = 24
 %TYPE_FLG = 33554436
@@ -30839,7 +31349,7 @@ CanEditParameterAdditionalResults = True
 %INSTOVRD: AdditionalResultsHints = 5046296
 %TIMESTAMP = 1751310915
 %VERSION = "23.0.0.49152"
-%TYPELASTMOD = "25.0.0.49152"
+%TYPELASTMOD = "23.0.0.49152"
 %MINPRODVER = "23.0.0.0"
 %FLG = 24
 %TYPE_FLG = 33554436
@@ -30905,7 +31415,7 @@ ExecBreakOnEntryExpr = "False"
 Trace = "Don't Change"
 %TIMESTAMP = 1751311234
 %VERSION = "23.0.0.49152"
-%TYPELASTMOD = "25.0.0.49152"
+%TYPELASTMOD = "23.0.0.49152"
 %MINPRODVER = "23.0.0.0"
 %FLG = 24
 %TYPE_FLG = 33554436
@@ -30918,7 +31428,7 @@ EditPanels = Strs
 [StepTypeNIData]
 %TIMESTAMP = 1751310915
 %VERSION = "23.0.0.49152"
-%TYPELASTMOD = "25.0.0.49152"
+%TYPELASTMOD = "23.0.0.49152"
 %MINPRODVER = "23.0.0.0"
 %FLG = 24
 %TYPE_FLG = 33554436
@@ -30941,7 +31451,7 @@ Occurred = Bool
 %INSTFLG: Occurred = 4194304
 %TIMESTAMP = 1751310915
 %VERSION = "23.0.0.49152"
-%TYPELASTMOD = "25.0.0.49152"
+%TYPELASTMOD = "23.0.0.49152"
 %MINPRODVER = "23.0.0.0"
 %TYPE_FLG = 33554436
 %EXTDATA = True
@@ -31031,7 +31541,7 @@ DataVersion = 1
 [CommonResults]
 %TIMESTAMP = 1465572565
 %VERSION = "3.1.0.100"
-%TYPELASTMOD = "25.0.0.49152"
+%TYPELASTMOD = "23.0.0.49152"
 %MINPRODVER = "3.1.0.0"
 %FLG = 4194304
 %TYPE_FLG = 33554432
@@ -31049,7 +31559,7 @@ Flags = 8192
 CheckedState = 1
 %TIMESTAMP = 1751310915
 %VERSION = "23.0.0.49152"
-%TYPELASTMOD = "25.0.0.49152"
+%TYPELASTMOD = "23.0.0.49152"
 %MINPRODVER = "23.0.0.0"
 %FLG = 24
 %TYPE_FLG = 33554436
@@ -31075,7 +31585,7 @@ Flags = 4
 %INSTFLG: UserData = 2097152
 %TIMESTAMP = 1751310915
 %VERSION = "23.0.0.49152"
-%TYPELASTMOD = "25.0.0.49152"
+%TYPELASTMOD = "23.0.0.49152"
 %MINPRODVER = "23.0.0.0"
 %FLG = 24
 %TYPE_FLG = 33554436
@@ -31158,7 +31668,7 @@ CodeTemplates Line0002 = "TB72_Template|DefaultHTB80_Template|Default_Template"
 %FLG: CanEncapsulate = 4194328
 %TIMESTAMP = 1751310915
 %VERSION = "23.0.0.49152"
-%TYPELASTMOD = "25.0.0.49152"
+%TYPELASTMOD = "23.0.0.49152"
 %MINPRODVER = "23.0.0.0"
 %TYPE_FLG = 33554438
 %INSTFLG = 4194304
@@ -31219,7 +31729,7 @@ Flags = 8192
 CheckedState = 1
 %TIMESTAMP = 1751310915
 %VERSION = "23.0.0.49152"
-%TYPELASTMOD = "25.0.0.49152"
+%TYPELASTMOD = "23.0.0.49152"
 %MINPRODVER = "23.0.0.0"
 %FLG = 24
 %TYPE_FLG = 33554436
@@ -31258,7 +31768,7 @@ StrSize = "1024"
 %INSTFLG: UserData = 2097152
 %TIMESTAMP = 1751311262
 %VERSION = "23.0.0.49152"
-%TYPELASTMOD = "25.0.0.49152"
+%TYPELASTMOD = "23.0.0.49152"
 %MINPRODVER = "23.0.0.0"
 %FLG = 24
 %TYPE_FLG = 33554436
@@ -31304,7 +31814,7 @@ Type = 3
 [FlexCStepAdditions]
 %TIMESTAMP = 1751311262
 %VERSION = "23.0.0.49152"
-%TYPELASTMOD = "25.0.0.49152"
+%TYPELASTMOD = "23.0.0.49152"
 %MINPRODVER = "23.0.0.0"
 %FLG = 24
 %TYPE_FLG = 33554436
@@ -31316,7 +31826,7 @@ Type = 3
 [NoneStepAdditions]
 %TIMESTAMP = 1751311289
 %VERSION = "23.0.0.49152"
-%TYPELASTMOD = "25.0.0.49152"
+%TYPELASTMOD = "23.0.0.49152"
 %MINPRODVER = "23.0.0.0"
 %FLG = 24
 %TYPE_FLG = 33554436
@@ -32077,7 +32587,7 @@ CodeTemplates Line0002 = "TB72_Template|DefaultHTB80_Template|Default_Template"
 %FLG: CanEncapsulate = 4194328
 %TIMESTAMP = 1751310915
 %VERSION = "23.0.0.49152"
-%TYPELASTMOD = "25.0.0.49152"
+%TYPELASTMOD = "23.0.0.49152"
 %MINPRODVER = "23.0.0.0"
 %TYPE_FLG = 33554438
 %INSTFLG = 4194304
@@ -33087,7 +33597,7 @@ CodeTemplates Line0002 = "TB72_Template|DefaultHTB80_Template|Default_Template"
 %FLG: CanEncapsulate = 4194328
 %TIMESTAMP = 1751310915
 %VERSION = "23.0.0.49152"
-%TYPELASTMOD = "25.0.0.49152"
+%TYPELASTMOD = "23.0.0.49152"
 %MINPRODVER = "23.0.0.0"
 %TYPE_FLG = 33554438
 %INSTFLG = 4194304
@@ -35712,7 +36222,7 @@ Flags = 8192
 CheckedState = 1
 %TIMESTAMP = 1751310915
 %VERSION = "23.0.0.49152"
-%TYPELASTMOD = "25.0.0.49152"
+%TYPELASTMOD = "23.0.0.49152"
 %MINPRODVER = "23.0.0.0"
 %FLG = 24
 %TYPE_FLG = 33554436
@@ -35764,7 +36274,7 @@ NumType = 7
 ConnectorNumber = -1
 %TIMESTAMP = 1751311423
 %VERSION = "23.0.0.49152"
-%TYPELASTMOD = "25.0.0.49152"
+%TYPELASTMOD = "23.0.0.49152"
 %MINPRODVER = "23.0.0.0"
 %FLG = 24
 %TYPE_FLG = 33554436
@@ -35781,7 +36291,7 @@ UniqueID = Str
 [NI_NodeProperty]
 %TIMESTAMP = 1751311423
 %VERSION = "23.0.0.49152"
-%TYPELASTMOD = "25.0.0.49152"
+%TYPELASTMOD = "23.0.0.49152"
 %MINPRODVER = "23.0.0.0"
 %FLG = 24
 %TYPE_FLG = 33554436
@@ -35841,7 +36351,7 @@ OverrideBinaryVIChecksum = -1
 [FlexGStepAdditions]
 %TIMESTAMP = 1751311423
 %VERSION = "23.0.0.49152"
-%TYPELASTMOD = "25.0.0.49152"
+%TYPELASTMOD = "23.0.0.49152"
 %MINPRODVER = "23.0.0.0"
 %FLG = 24
 %TYPE_FLG = 33554436
@@ -35886,7 +36396,7 @@ NumType = 7
 %INSTFLG: UserData = 2097152
 %TIMESTAMP = 1751311423
 %VERSION = "23.0.0.49152"
-%TYPELASTMOD = "25.0.0.49152"
+%TYPELASTMOD = "23.0.0.49152"
 %MINPRODVER = "23.0.0.0"
 %FLG = 24
 %TYPE_FLG = 33554436
@@ -36202,7 +36712,7 @@ CodeTemplates Line0002 = "TB72_Template|DefaultHTB80_Template|Default_Template"
 %FLG: CanEncapsulate = 4194328
 %TIMESTAMP = 1751310915
 %VERSION = "23.0.0.49152"
-%TYPELASTMOD = "25.0.0.49152"
+%TYPELASTMOD = "23.0.0.49152"
 %MINPRODVER = "23.0.0.0"
 %TYPE_FLG = 33554438
 %INSTFLG = 4194304

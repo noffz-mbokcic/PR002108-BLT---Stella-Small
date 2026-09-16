@@ -1,7 +1,8 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
 <Project Type="Project" LVVersion="25008000">
-	<Property Name="NI.LV.All.SaveVersion" Type="Str">25.0</Property>
+	<Property Name="NI.LV.All.SaveVersion" Type="Str">Editor version</Property>
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">true</Property>
+	<Property Name="NI.Project.Description" Type="Str"></Property>
 	<Item Name="My Computer" Type="My Computer">
 		<Property Name="server.app.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="server.control.propertiesEnabled" Type="Bool">true</Property>
@@ -24,11 +25,15 @@
 				<Item Name="Encode parameters.vi" Type="VI" URL="../Communication Handle/API/Encode parameters.vi"/>
 				<Item Name="Expected messages.ctl" Type="VI" URL="../Communication Handle/API/Expected messages.ctl"/>
 				<Item Name="Get Base messages for commands (SubVI).vi" Type="VI" URL="../Communication Handle/API/Get Base messages for commands (SubVI).vi"/>
+				<Item Name="Message Coordinator V2.vi" Type="VI" URL="../Communication Handle/API/Message Coordinator V2.vi"/>
+				<Item Name="Message Coordinator XCP.vi" Type="VI" URL="../Communication Handle/API/Message Coordinator XCP.vi"/>
 				<Item Name="Message handle.vi" Type="VI" URL="../Communication Handle/API/Message handle.vi"/>
 				<Item Name="Notifier Data.ctl" Type="VI" URL="../Communication Handle/API/Notifier Data.ctl"/>
 				<Item Name="Prepare message set.vi" Type="VI" URL="../Communication Handle/API/Prepare message set.vi"/>
 				<Item Name="Prepare messages based on command.vi" Type="VI" URL="../Communication Handle/API/Prepare messages based on command.vi"/>
 				<Item Name="Queue API.lvlib" Type="Library" URL="../Communication Handle/API/Queue API.lvlib"/>
+				<Item Name="Set Wait between Write Data (SubVI).vi" Type="VI" URL="../Communication Handle/API/Set Wait between Write Data (SubVI).vi"/>
+				<Item Name="Update data from CAN to CANFD.vi" Type="VI" URL="../Communication Handle/API/Update data from CAN to CANFD.vi"/>
 			</Item>
 			<Item Name="Controls" Type="Folder">
 				<Item Name="CAN Payload.ctl" Type="VI" URL="../Communication Handle/Controls/CAN Payload.ctl"/>
@@ -49,6 +54,7 @@
 			</Item>
 			<Item Name="SubVis" Type="Folder">
 				<Item Name="Find correct message in buffer.vi" Type="VI" URL="../Communication Handle/SubVIs/Find correct message in buffer.vi"/>
+				<Item Name="Is XCP (SubVI).vi" Type="VI" URL="../Communication Handle/SubVIs/Is XCP (SubVI).vi"/>
 				<Item Name="Message Coordinator (SubVI).vi" Type="VI" URL="../Communication Handle/SubVIs/Message Coordinator (SubVI).vi"/>
 			</Item>
 			<Item Name="Communication Handle.vi" Type="VI" URL="../Communication Handle/Communication Handle.vi"/>
@@ -92,10 +98,12 @@
 				<Item Name="Limits.ctl" Type="VI" URL="../Station/Controls/Limits.ctl"/>
 				<Item Name="Offset_Values.ctl" Type="VI" URL="../Station/Controls/Offset_Values.ctl"/>
 				<Item Name="Relays.ctl" Type="VI" URL="../Station/Controls/Relays.ctl"/>
+				<Item Name="Report Variables.ctl" Type="VI" URL="../Station/Controls/Report Variables.ctl"/>
 				<Item Name="Section 2.ctl" Type="VI" URL="../Station/Controls/Section 2.ctl"/>
 				<Item Name="Section 3.ctl" Type="VI" URL="../Station/Controls/Section 3.ctl"/>
 				<Item Name="Section 5.ctl" Type="VI" URL="../Station/Controls/Section 5.ctl"/>
 				<Item Name="Section4 variables.ctl" Type="VI" URL="../Station/Controls/Section4 variables.ctl"/>
+				<Item Name="XCP Addresses.ctl" Type="VI" URL="../Station/Controls/XCP Addresses.ctl"/>
 			</Item>
 			<Item Name="Add alarm to archive.vi" Type="VI" URL="../Station/Add alarm to archive.vi"/>
 			<Item Name="Convert Array of Bytes to String (RX and TX).vi" Type="VI" URL="../Station/Convert Array of Bytes to String (RX and TX).vi"/>
@@ -110,14 +118,17 @@
 			<Item Name="Kill UTP TEF.vi" Type="VI" URL="../Station/Kill UTP TEF.vi"/>
 			<Item Name="Log Message set (SubVI).vi" Type="VI" URL="../Station/Log Message set (SubVI).vi"/>
 			<Item Name="Log Messages set.vi" Type="VI" URL="../Station/Log Messages set.vi"/>
+			<Item Name="Prepare XCP address (SubVI).vi" Type="VI" URL="../Station/Controls/Prepare XCP address (SubVI).vi"/>
 			<Item Name="Update Operating Mode.vi" Type="VI" URL="../Station/Update Operating Mode.vi"/>
+			<Item Name="Wait.vi" Type="VI" URL="../Station/Wait.vi"/>
 		</Item>
 		<Item Name="TDK_20_38" Type="Folder">
 			<Item Name="TDK20-38 API.lvlib" Type="Library" URL="../TDK_20_38/TDK20-38 API.lvlib"/>
 		</Item>
-		<Item Name="Prepare XCP address (SubVI).vi" Type="VI" URL="../Station/Controls/Prepare XCP address (SubVI).vi"/>
-		<Item Name="Report Variables.ctl" Type="VI" URL="../Station/Controls/Report Variables.ctl"/>
-		<Item Name="XCP Addresses.ctl" Type="VI" URL="../Station/Controls/XCP Addresses.ctl"/>
+		<Item Name="Test" Type="Folder">
+			<Item Name="Initialize CAN FD with filter.vi" Type="VI" URL="../../../Users/Administrator/Desktop/Initialize CAN FD with filter.vi"/>
+			<Item Name="test XCP.vi" Type="VI" URL="../../../Users/Administrator/Desktop/test XCP.vi"/>
+		</Item>
 		<Item Name="Dependencies" Type="Dependencies"/>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>

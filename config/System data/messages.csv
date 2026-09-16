@@ -1,5 +1,5 @@
 Commands,,,Tx,Rx,Tx,Rx,Tx,Rx,Tx,Rx
-Nexteer connect,,7CC;7CD,02 10 7E 00 00 00 00 00,02 50 7E 00 00 00 00 00,,,,,,
+Nexteer connect,,7CC;7CD,02 10 7E 00 00 00 00 00,06 50 7E 00 00 00 00 00,,,,,,
 Write Polarity,01 18 10 00 = polarity,7CC;7CD,07 2E FD 03 01 18 10 00 ,03 6E FD 03 00 00 00 00,,,,,,
 Write BEMF,,7CC;7CD,05 2E FD C0 00 00 00 00 ,03 6E FD C0 00 00 00 00,,,,,,
 Write Torque Scale Sensors T1,,7CC;7CD,07 2E FD B6 3E 51 EB 85 ,03 6E FD B6 00 00 00 00,,,,,,
@@ -65,6 +65,6 @@ Read Torque Trim 2 FDB5,,7CC;7CD,03 22 FD B5 00 00 00 00 ,07 62 FD B5 00 00 00 0
 Write Torque Trim 1 FDB4,,7CC;7CD,03 2E FD B4 00 00 00 00 ,03 6E FD B4 00 00 00 00,,,,,,
 Write Torque Trim 2 FDB5,,7CC;7CD,03 2E FD B5 00 00 00 00 ,03 6E FD B5 00 00 00 00,,,,,,
 XCP connect,,7AE;7B0,FF 00 00 00 00 00 00 00,FF xx xx xx xx xx xx xx,,,,,,
-Read HW Torque T1,,7AE;7B0,F4 04 00 00 14 DB BE FE ,FF XX XX XX XX xx xx xx ,,,,,,
-Read HW Torque T2,,7AE;7B0,F4 04 00 00 18 DB BE FE ,FF XX XX XX XX xx xx xx ,,,,,,
+Read HW Torque T1,,7AE;7B0,F4 04 00 00 60 C3 BE FE,FF xx xx xx xx xx xx xx,,,,,,
+Read HW Torque T2,,7AE;7B0,F4 04 00 00 64 C3 BE FE,FF xx xx xx xx xx xx xx,,,,,,
 Read Motor Speed ,,7AE;7B0,F4 04 00 00 68 DB BE FE ,FF XX XX XX XX xx xx xx,,,,,,

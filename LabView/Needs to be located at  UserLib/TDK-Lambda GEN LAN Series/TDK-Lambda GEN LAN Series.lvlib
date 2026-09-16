@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
-<Library LVVersion="19008000">
+<Library LVVersion="25008000">
 	<Property Name="Instrument Driver" Type="Str">True</Property>
 	<Property Name="NI.Lib.DefaultMenu" Type="Str">dir.mnu</Property>
 	<Property Name="NI.Lib.Description" Type="Str">LabVIEW Plug and Play instrument driver for:
@@ -8,8 +8,8 @@ TDK-Lambda Genesys Power Supply
    using the LAN interface.
 All model output ratings.
 </Property>
-	<Property Name="NI.Lib.Icon" Type="Bin">'1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!*0!!!*Q(C=\:1^DBMR$%9`"SH3_A;"L]!LO.A,T"6Y"&lt;=O(3"&amp;NEB"9!-%+6,Y#LZ"Q%L^^&amp;PZ#MY&lt;$==)M)$&gt;:)%%7-G=HY]5_5;3*@8W18KP&gt;K]^X'S4PSW8+&lt;;^]-^+7Y)LJ.^&lt;_6ML8VP]&lt;?HN_PJ1E:7KF&lt;WM0T^?R^`GP_BGO\TZX`T`N@^/)W:`._C6G\4KJ&amp;BCA4FG`?MOC:\IC:\IC:\IA2\IA2\IA2\IDO\IDO\IDO\IBG\IBG\IBG\IP;-,8?B#:V;3YEGB*'G3)!E'2=EFY5FY%J[%BV=F0!F0QJ0Q*$S%+/&amp;*?"+?B#@B9:A3HI1HY5FY%BZ3&gt;:,M(2W?B)@U#HA#HI!HY!FY++G!*Q!)CA7*AS2A+(!'$Q&amp;0Q"0Q]+C!*_!*?!+?A!?X!J[!*_!*?!)?BP2:C5YT&gt;82Y3#/(R_&amp;R?"Q?BY@5=HA=(I@(Y8&amp;Y+#?(R_&amp;R)*S#4H)1Z!RS!JQ8B]@BY3;(R_&amp;R?"Q?BQ&gt;88S(P-T024"U&gt;(I0(Y$&amp;Y$"[$BR1S?!Q?A]@A-8B)+Y0(Y$&amp;Y$"[$BV)S?!Q?A]=!-9J38E9S9[!2:!A'$\__7[SP5H13[\X_GP.'67V!V=:3&lt;2D62F!NM'LB6!OCGGD6"+IG2P8"KA^2!;I+KR+K!H8G/G)H\)A&gt;M"UW9&amp;NMA[WHI8]Z](Q_;RR(H5YH(9^((1Y(\89\$=/A\8;LT7;D^8J^0;U_UO?W7M[F0=^0T`P6^]^@PP\]^4D]_01Y0DV`'S&lt;^.7U_F`[&amp;MV(P&gt;0HDG'?/@A0C4&amp;,H!!!!!!</Property>
-	<Property Name="NI.Lib.SourceVersion" Type="Int">419463168</Property>
+	<Property Name="NI.Lib.Icon" Type="Bin">*1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!*0!!!*Q(C=\:1^DBMR$%9`"SH3_A;"L]!LO.A,T"6Y"&lt;=O(3"&amp;NEB"9!-%+6,Y#LZ"Q%L^^&amp;PZ#MY&lt;$==)M)$&gt;:)%%7-G=HY]5_5;3*@8W18KP&gt;K]^X'S4PSW8+&lt;;^]-^+7Y)LJ.^&lt;_6ML8VP]&lt;?HN_PJ1E:7KF&lt;WM0T^?R^`GP_BGO\TZX`T`N@^/)W:`._C6G\4KJ&amp;BCA4FG`?MOC:\IC:\IC:\IA2\IA2\IA2\IDO\IDO\IDO\IBG\IBG\IBG\IP;-,8?B#:V;3YEGB*'G3)!E'2=EFY5FY%J[%BV=F0!F0QJ0Q*$S%+/&amp;*?"+?B#@B9:A3HI1HY5FY%BZ3&gt;:,M(2W?B)@U#HA#HI!HY!FY++G!*Q!)CA7*AS2A+(!'$Q&amp;0Q"0Q]+C!*_!*?!+?A!?X!J[!*_!*?!)?BP2:C5YT&gt;82Y3#/(R_&amp;R?"Q?BY@5=HA=(I@(Y8&amp;Y+#?(R_&amp;R)*S#4H)1Z!RS!JQ8B]@BY3;(R_&amp;R?"Q?BQ&gt;88S(P-T024"U&gt;(I0(Y$&amp;Y$"[$BR1S?!Q?A]@A-8B)+Y0(Y$&amp;Y$"[$BV)S?!Q?A]=!-9J38E9S9[!2:!A'$\__7[SP5H13[\X_GP.'67V!V=:3&lt;2D62F!NM'LB6!OCGGD6"+IG2P8"KA^2!;I+KR+K!H8G/G)H\)A&gt;M"UW9&amp;NMA[WHI8]Z](Q_;RR(H5YH(9^((1Y(\89\$=/A\8;LT7;D^8J^0;U_UO?W7M[F0=^0T`P6^]^@PP\]^4D]_01Y0DV`'S&lt;^.7U_F`[&amp;MV(P&gt;0HDG'?/@A0C4&amp;,H!!!!!!</Property>
+	<Property Name="NI.Lib.SourceVersion" Type="Int">620789760</Property>
 	<Property Name="NI.Lib.Version" Type="Str">1.0.0.0</Property>
 	<Property Name="NI.SortType" Type="Int">3</Property>
 	<Item Name="Public" Type="Folder">

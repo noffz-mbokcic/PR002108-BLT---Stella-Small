@@ -8,12 +8,12 @@
 //
 //  ------------------------------------------------------------------
 //  Author : Keneth Wagner
-//  Last change: 2024-09-24
+//  Last change: 2025-10-24
 //
 //  Language: C++/CLR
 //  ------------------------------------------------------------------
 //
-//  Copyright (C) 1999-2024  PEAK-System Technik GmbH, Darmstadt
+//  Copyright (C) 1999-2025  PEAK-System Technik GmbH, Darmstadt
 //  more Info at http://www.peak-system.com 
 //
 using namespace System;
@@ -24,8 +24,11 @@ using namespace System::Runtime::InteropServices;
 // Type definitions
 ////////////////////////////////////////////////////////////
 #define TPCANHandle                 System::UInt16  // Represents a PCAN hardware channel handle
-#define TPCANBitrateFD              System::String^ // Represents a bit rate String (Flexible Data rate)
+#define TPCANBitrateCC              System::String^ // Represents a CC bit rate String
+#define TPCANBitrateFD              System::String^ // Represents a FD bit rate String
+#define TPCANBitrateXL              System::String^ // Represents a XL bit rate String
 #define TPCANTimestampFD            System::UInt64  // Represents a timestamp in microseconds
+#define TPCANTimestampXL            System::UInt64  // Represents a timestamp in microseconds
 
 namespace Peak
 {
@@ -42,6 +45,18 @@ namespace Peak
             /// Maximum length of a version string: 255 characters + terminator
             /// </summary>
             static const int MAX_LENGTH_VERSION_STRING = 256;
+            /// <summary>
+            /// Maximum amount of data bytes of a CAN-XL message
+            /// </summary>
+            static const int MAX_LENGTH_DATA_XL = 2048;
+            /// <summary>
+            /// Maximum value for a standard CAN ID of a CAN 2.0A/B / FD message
+            /// </summary>
+            static const int MAX_VALUE_STANDARD_ID = 0x7FF;
+            /// <summary>
+            /// Maximum value for an extended CAN ID of a CAN 2.0A/B / FD message
+            /// </summary>
+            static const int MAX_VALUE_EXTENDED_ID = 0x1FFFFFFF;
             #pragma endregion
 
             #pragma region Enumerations
@@ -181,18 +196,6 @@ namespace Peak
                 /// </summary>
                 PCAN_NONE = 0,
                 /// <summary>
-                /// PCAN Non-PnP devices. NOT USED WITHIN PCAN-Basic API
-                /// </summary>
-                PCAN_PEAKCAN = 1,
-                /// <summary>
-                /// PCAN-ISA, PCAN-PC/104, and PCAN-PC/104-Plus
-                /// </summary>
-                PCAN_ISA = 2,
-                /// <summary>
-                /// PCAN-Dongle
-                /// </summary>
-                PCAN_DNG = 3,
-                /// <summary>
                 /// PCAN-PCI, PCAN-cPCI, PCAN-miniPCI, and PCAN-PCI Express
                 /// </summary>
                 PCAN_PCI = 4,
@@ -200,14 +203,6 @@ namespace Peak
                 /// PCAN-USB and PCAN-USB Pro
                 /// </summary>
                 PCAN_USB = 5,
-                /// <summary>
-                /// PCAN-PC Card
-                /// </summary>
-                PCAN_PCC = 6,
-                /// <summary>
-                /// PCAN Virtual hardware. NOT USED WITHIN PCAN-Basic API
-                /// </summary>
-                PCAN_VIRTUAL = 7,
                 /// <summary>
                 /// PCAN Gateway devices
                 /// </summary>
@@ -223,11 +218,6 @@ namespace Peak
                 /// Device identifier parameter
                 /// </summary>
                 PCAN_DEVICE_ID               = 1,
-                /// <summary>
-                /// DEPRECATED. Use PCAN_DEVICE_ID instead
-                /// </summary>
-                [Obsolete]
-                PCAN_DEVICE_NUMBER           = PCAN_DEVICE_ID,
                 /// <summary>
                 /// 5-Volt power parameter
                 /// </summary>
@@ -317,9 +307,14 @@ namespace Peak
                 /// </summary>
                 PCAN_BITRATE_ADAPTING        = 23,
                 /// <summary>
-                /// Configured bit rate as Btr0Btr1 value
+                /// Configured bit rate as a Baud Rate Timing Register value
                 /// </summary>
-                PCAN_BITRATE_INFO            = 24,
+                PCAN_BITRATE_INFO_BTR         = 24,
+                /// <summary>
+                /// Deprecated parameter. Use PCAN_BITRATE_INFO_CC instead
+                /// </summary>
+                [Obsolete]
+                PCAN_BITRATE_INFO            = PCAN_BITRATE_INFO_BTR,
                 /// <summary>
                 /// Configured bit rate as TPCANBitrateFD string
                 /// </summary>
@@ -329,9 +324,14 @@ namespace Peak
                 /// </summary>
                 PCAN_BUSSPEED_NOMINAL        = 26,  
                 /// <summary>
-                /// Configured CAN data speed as Bits per seconds
+                /// Configured CAN FD speed as Bits per seconds
                 /// </summary>
-                PCAN_BUSSPEED_DATA           = 27,
+                PCAN_BUSSPEED_FD           = 27,
+                /// <summary>
+                /// DEPRECATED. Use PCAN_BUSSPEED_FD instead
+                /// </summary>
+                [Obsolete]
+                PCAN_BUSSPEED_DATA = PCAN_BUSSPEED_FD,
                 /// <summary>
                 /// Remote address of a LAN channel as string in IPv4 format
                 /// </summary>
@@ -416,8 +416,21 @@ namespace Peak
                 /// Get the global unique device identifier (GUID) associated to a device
                 /// </summary>
                 PCAN_DEVICE_GUID             = 48,
+                /// <summary>
+                /// Configured bit rate as TPCANBitrateCC value
+                /// </summary>
+                PCAN_BITRATE_INFO_CC         = 49,
+                /// <summary>
+                /// Configured bit rate as TPCANBitrateXL string
+                /// </summary>
+                PCAN_BITRATE_INFO_XL         = 50,
+                /// <summary>
+                /// Configured CAN XL Bus speed as Bits per seconds
+                /// </summary>
+                PCAN_BUSSPEED_XL             = 51
             };
 
+            /// <summary>
             /// Represents the type of a PCAN message
             /// </summary>
             [Flags]
@@ -463,6 +476,63 @@ namespace Peak
             };
 
             /// <summary>
+            /// Represents the type of a PCAN message
+            /// </summary>
+            [Flags]
+            public enum class TPCANMessageTypeXL : UInt16
+            {
+                /// <summary>
+                /// The PCAN message is a CAN Standard Frame (11-bit identifier)
+                /// </summary>
+                PCAN_MESSAGE_STANDARD = 0x00,
+                /// <summary>
+                /// The PCAN message is a CAN Remote-Transfer-Request Frame
+                /// </summary>
+                PCAN_MESSAGE_RTR = 0x01,
+                /// <summary>
+                /// The PCAN message is a CAN Extended Frame (29-bit identifier)
+                /// </summary>
+                PCAN_MESSAGE_EXTENDED = 0x02,
+                /// <summary>
+                /// The PCAN message represents a FD frame in terms of CiA Specs
+                /// </summary>
+                PCAN_MESSAGE_FD = 0x04,
+                /// <summary>
+                /// The PCAN message represents a FD bit rate switch (CAN data at a higher bit rate)
+                /// </summary>
+                PCAN_MESSAGE_BRS = 0x08,
+                /// <summary>
+                /// The PCAN message represents a FD error state indicator(CAN FD transmitter was error active)
+                /// </summary>
+                PCAN_MESSAGE_ESI = 0x10,
+                /// <summary>
+                /// The PCAN message represents an echo CAN Frame
+                /// </summary>
+                PCAN_MESSAGE_ECHO = 0x20,
+                /// <summary>
+                /// The PCAN message represents an error frame
+                /// </summary>
+                PCAN_MESSAGE_ERRFRAME = 0x40,
+                /// <summary>
+                /// The PCAN message represents a PCAN status message
+                /// <summary>
+                /// </summary>
+                PCAN_MESSAGE_STATUS = 0x80,
+                /// <summary>
+                /// The PCAN message represents a XL frame in terms of CiA Specs
+                /// </summary>
+                PCAN_MESSAGE_XL = 0x100,
+                /// <summary>
+                /// The PCAN message represents a protocol exception from CAN core
+                /// </summary>
+                PCAN_MESSAGE_PROTOCOL_EXCEPTION = 0x200,
+                /// <summary>
+                /// The PCAN message represents an error notification from CAN core
+                /// </summary>
+                PCAN_MESSAGE_ERROR_NOTIFICATION = 0x400,
+            };
+
+            /// <summary>
             /// Represents a PCAN filter mode
             /// </summary>
             public enum class TPCANMode : Byte
@@ -478,7 +548,7 @@ namespace Peak
             };
 
             /// <summary>
-            /// Represents a PCAN Baud rate register value
+            /// Represents a PCAN Baud Rate Timing Register value
             /// </summary>
             public enum class TPCANBaudrate : UInt16
             {
@@ -538,41 +608,6 @@ namespace Peak
                 /// 5 kBit/s
                 /// </summary>
                 PCAN_BAUD_5K      = 0x7F7F,
-            };
-
-            /// <summary>
-            /// Represents the type of PCAN (Non-PnP) hardware to be initialized
-            /// </summary>
-            public enum class TPCANType : Byte
-            {
-                /// <summary>
-                /// PCAN-ISA 82C200
-                /// </summary>
-                PCAN_TYPE_ISA           = 0x01,
-                /// <summary>
-                /// PCAN-ISA SJA1000
-                /// </summary>
-                PCAN_TYPE_ISA_SJA       = 0x09,
-                /// <summary>
-                /// PHYTEC ISA 
-                /// </summary>
-                PCAN_TYPE_ISA_PHYTEC    = 0x04,
-                /// <summary>
-                /// PCAN-Dongle 82C200
-                /// </summary>
-                PCAN_TYPE_DNG           = 0x02,
-                /// <summary>
-                /// PCAN-Dongle EPP 82C200
-                /// </summary>
-                PCAN_TYPE_DNG_EPP       = 0x03,
-                /// <summary>
-                /// PCAN-Dongle SJA1000
-                /// </summary>
-                PCAN_TYPE_DNG_SJA       = 0x05,
-                /// <summary>
-                /// PCAN-Dongle EPP SJA1000
-                /// </summary>
-                PCAN_TYPE_DNG_SJA_EPP   = 0x06,
             };
             #pragma endregion
 
@@ -647,6 +682,49 @@ namespace Peak
                 array<Byte>^ DATA;
             };
 
+            public value struct TPCANMsgXL
+            {
+                /// <summary>
+                /// CAN-XL: Priority ID (physical layer) (0..0x7FF)
+                /// CAN-CC/CAN-FD: 11/29-bit message identifier
+                /// </summary>
+                UInt32 PID;
+                /// <summary>
+                /// Virtual CAN network ID
+                /// </summary>
+                Byte VCID;
+                /// <summary>
+                /// Type of the message
+                /// </summary>
+                [MarshalAs(UnmanagedType::U2)]
+                TPCANMessageTypeXL MSGTYPE;
+                /// <summary>
+                /// Data Length Code of the message (0..2047)  
+                /// </summary>
+                UInt16 DLC;
+                /// <summary>
+                /// Service Data unit(SDU) protocol Type
+                /// </summary>
+                Byte SDT;
+                /// <summary>
+                /// Acceptance Field, SDU - specific high - layer ID
+                /// </summary>
+                UInt32 AF;
+                /// <summary>
+                /// Remote Request Substitution flag (0..1)
+                /// </summary>
+                Byte RRS;
+                /// <summary>
+                /// Simple Extended Content flag (0..1)
+                /// </summary>
+                Byte SEC;
+                /// <summary>
+                /// Data of the message (DATA[0]..DATA[2047])
+                /// </summary>
+                [MarshalAs(UnmanagedType::ByValArray, SizeConst = 2048)]
+                array<Byte>^ DATA;
+            };
+
             /// <summary>
             /// Describes an available PCAN channel
             /// </summary>
@@ -698,44 +776,6 @@ namespace Peak
                     /// Undefined/default value for a PCAN bus
                     /// </summary>
                     static const TPCANHandle PCAN_NONEBUS = 0x00;
-
-                    /// <summary>
-                    /// PCAN-ISA interface, channel 1
-                    /// </summary>
-                    static const TPCANHandle PCAN_ISABUS1 = 0x21;
-                    /// <summary>
-                    /// PCAN-ISA interface, channel 2
-                    /// </summary>
-                    static const TPCANHandle PCAN_ISABUS2  = 0x22;
-                    /// <summary>
-                    /// PCAN-ISA interface, channel 3
-                    /// </summary>
-                    static const TPCANHandle PCAN_ISABUS3 = 0x23;
-                    /// <summary>
-                    /// PCAN-ISA interface, channel 4
-                    /// </summary>
-                    static const TPCANHandle PCAN_ISABUS4 = 0x24;
-                    /// <summary>
-                    /// PCAN-ISA interface, channel 5
-                    /// </summary>
-                    static const TPCANHandle PCAN_ISABUS5 = 0x25;
-                    /// <summary>
-                    /// PCAN-ISA interface, channel 6
-                    /// </summary>
-                    static const TPCANHandle PCAN_ISABUS6 = 0x26;
-                    /// <summary>
-                    /// PCAN-ISA interface, channel 7
-                    /// </summary>
-                    static const TPCANHandle PCAN_ISABUS7 = 0x27;
-                    /// <summary>
-                    /// PCAN-ISA interface, channel 8
-                    /// </summary>
-                    static const TPCANHandle PCAN_ISABUS8 = 0x28;
-
-                    /// <summary>
-                    /// PPCAN-Dongle/LPT interface, channel 1 
-                    /// </summary>
-                    static const TPCANHandle PCAN_DNGBUS1 = 0x31;
 
                     /// <summary>
                     /// PCAN-PCI interface, channel 1
@@ -868,15 +908,6 @@ namespace Peak
                     static const TPCANHandle PCAN_USBBUS16 = 0x510;
 
                     /// <summary>
-                    /// PCAN-PC Card interface, channel 1
-                    /// </summary>
-                    static const TPCANHandle PCAN_PCCBUS1 = 0x61;
-                    /// <summary>
-                    /// PCAN-PC Card interface, channel 2
-                    /// </summary>
-                    static const TPCANHandle PCAN_PCCBUS2 = 0x62;
-
-                    /// <summary>
                     /// PCAN-LAN interface, channel 1
                     /// </summary>
                     static const TPCANHandle PCAN_LANBUS1 = 0x801;
@@ -942,15 +973,18 @@ namespace Peak
                     static const TPCANHandle PCAN_LANBUS16 = 0x810;
                     #pragma endregion
 
-                    #pragma region FD Bit rate definition
+					#pragma region Bit rate frequency parameters
                     /// <summary>
-                    /// Clock frequency in Herz (80000000, 60000000, 40000000, 30000000, 24000000, 20000000)
+                    /// Clock frequency in Herz (160000000, 80000000, 60000000, 40000000, 30000000, 24000000, 20000000)
                     /// </summary>
                     static const String^ PCAN_BR_CLOCK = "f_clock";
                     /// <summary>
-                    /// Clock frequency in Megaherz (80, 60, 40, 30, 24, 20)
+                    /// Clock frequency in Megaherz (160, 80, 60, 40, 30, 24, 20)
                     /// </summary>
                     static const String^ PCAN_BR_CLOCK_MHZ = "f_clock_mhz";
+					#pragma endregion
+					
+                    #pragma region FD Bit rate specific parameters
                     /// <summary>
                     /// Clock prescaler for nominal time quantum
                     /// </summary>
@@ -988,9 +1022,75 @@ namespace Peak
                     /// </summary>
                     static const String^ PCAN_BR_DATA_SJW = "data_sjw";
                     /// <summary>
-                    /// Secondary sample point delay for highspeed data bit rate in cyles
+                    /// DEPRECATED: Secondary sample point delay for highspeed data bit rate in cycles
+                    /// <remarks>Use <see cref="PCANBasic::PCAN_BR_DATA_SSP_OFFSET"/> instead</remarks>
                     /// </summary>
                     static const String^ PCAN_BR_DATA_SAMPLE = "data_ssp_offset";
+                    /// <summary>
+                    /// Secondary sample point delay for highspeed data bit rate in cycles
+                    /// </summary>
+                    static const String^ PCAN_BR_DATA_SSP_OFFSET = "data_ssp_offset";
+                    #pragma endregion
+
+                    #pragma region XL Bit rate specific parameters
+                    /// <summary>
+                    /// Clock prescaler for nominal, CAN FD and CAN XL bit rates
+                    /// </summary>
+                    static const String^ PCAN_BR_BRP = "brp";
+                    /// <summary>
+                    /// Clock prescaler for fast data time quantum
+                    /// </summary>
+                    static const String^ PCAN_BR_FD_TSEG1 = "fd_tseg1";
+                    /// <summary>
+                    /// Clock prescaler for fast data time quantum
+                    /// </summary>
+                    static const String^ PCAN_BR_FD_TSEG2 = "fd_tseg2";
+                    /// <summary>
+                    /// Synchronization Jump Width for fast data bit rate in time quanta
+                    /// </summary>
+                    static const String^ PCAN_BR_FD_SJW = "fd_sjw";
+                    /// <summary>
+                    /// Secondary sample point delay for fast data bit rate in cycles
+                    /// </summary>
+                    static const String^ PCAN_BR_FD_SSP_OFFSET = "fd_ssp_offset";
+                    /// <summary>
+                    /// Clock prescaler for XL time quantum
+                    /// </summary>
+                    static const String^ PCAN_BR_XL_TSEG1 = "xl_tseg1";
+                    /// <summary>
+                    /// Clock prescaler for XL time quantum
+                    /// </summary>
+                    static const String^ PCAN_BR_XL_TSEG2 = "xl_tseg2";
+                    /// <summary>
+                    /// Synchronization Jump Width for XL bit rate in time quanta
+                    /// </summary>
+                    static const String^ PCAN_BR_XL_SJW = "xl_sjw";
+                    /// <summary>
+                    /// Secondary sample point delay for XL bit rate in cycles
+                    /// </summary>
+                    static const String^ PCAN_BR_XL_SSP_OFFSET = "xl_ssp_offset";
+                    /// <summary>
+                    /// CAN XL PWM Offset in mtq ticks == f_cancore cycles
+                    /// </summary>
+                    static const String^ PCAN_BR_XL_PWM_OFFSET = "xl_pwm_offset";
+                    /// <summary>
+                    /// CAN XL PWM Short phase in mtq ticks == f_cancore cycles
+                    /// </summary>
+                    static const String^ PCAN_BR_XL_PWM_SHORT = "xl_pwm_short";
+                    /// <summary>
+                    /// CAN XL PWM Long phase in mtq ticks == f_cancore cycles
+                    /// </summary>
+                    static const String^ PCAN_BR_XL_PWM_LONG = "xl_pwm_long";
+                    /// <summary>
+                    /// 1 = CAN XL Data Phase uses 'fast TX' or 'fast RX' with PWM encoding
+                    /// 0 = CAN XL Data Phase uses no PWM encoding (recessive/dominant only, like CAN FD)
+                    /// </summary>
+                    static const String^ PCAN_BR_XL_TRANSCEIVER_MODE_SWITCH = "xl_transceiver_mode_switch";
+                    /// <summary>
+                    /// 1 = Error Signaling with Error Frame in case of bus errors
+                    /// 0 = No Error Signaling
+                    /// </summary>
+                    static const String^ PCAN_BR_XL_ERROR_SIGNALING = "xl_error_signaling";
                     #pragma endregion
 
                     #pragma region Parameter values definition
@@ -1087,7 +1187,7 @@ namespace Peak
                     static const int TRACE_FILE_DATA_LENGTH = 0x100;
 
                     /// <summary>
-                    /// Device supports flexible data-rate (CAN-FD)
+                    /// Device supports the subsequent development of the classic CAN bus (CAN FD)
                     /// </summary>
                     static const int FEATURE_FD_CAPABLE = 0x01;
                     /// <summary>
@@ -1098,6 +1198,10 @@ namespace Peak
                     /// Device supports I/O functionality for electronic circuits (USB-Chip devices)
                     /// </summary>
                     static const int FEATURE_IO_CAPABLE = 0x04;
+                    /// <summary>
+                    /// Device supports the subsequent development of the classic CAN bus (CAN XL)
+                    /// </summary>
+                    static const int FEATURE_XL_CAPABLE = 0x08;
 
                     /// <summary>
                     /// The PCAN-Channel is limited to incoming communication only
@@ -1151,9 +1255,9 @@ namespace Peak
                     /// </summary>
                     /// <param name="Channel">The handle of a PCAN Channel</param>
                     /// <param name="Btr0Btr1">The speed for the communication (BTR0BTR1 code)</param>
-                    /// <param name="HwType">Non-PnP: The type of hardware and operation mode</param>
-                    /// <param name="IOPort">Non-PnP: The I/O address for the parallel port</param>
-                    /// <param name="Interrupt">Non-PnP: Interrupt number of the parallel por</param>
+                    /// <param name="deprecated1">Deprecated. Parameter is ignored</param>
+                    /// <param name="deprecated2">Deprecated. Parameter is ignored</param>
+                    /// <param name="deprecated3">Deprecated. Parameter is ignored</param>
                     /// <returns>A TPCANStatus error code</returns>
                     [DllImport("PCANBasic.dll", EntryPoint = "CAN_Initialize")]
                     static TPCANStatus Initialize(
@@ -1162,10 +1266,11 @@ namespace Peak
                         [MarshalAs(UnmanagedType::U2)]
                         TPCANBaudrate Btr0Btr1,
                         [MarshalAs(UnmanagedType::U1)]
-                        TPCANType HwType, 
-                        UInt32 IOPort, 
-                        UInt16 Interrupt);
+                        Byte deprecated1,
+                        UInt32 deprecated2,
+                        UInt16 deprecated3);
 
+                public:
                     /// <summary>
                     /// Initializes a PCAN Channel
                     /// </summary>
@@ -1176,7 +1281,7 @@ namespace Peak
                         TPCANHandle Channel,
                         TPCANBaudrate Btr0Btr1)
                     {
-                        return Initialize(Channel, Btr0Btr1, (TPCANType)0, 0, 0);
+                        return Initialize(Channel, Btr0Btr1, 0, 0, 0);
                     }
 
                     /// <summary>
@@ -1198,6 +1303,28 @@ namespace Peak
                         [MarshalAs(UnmanagedType::U2)]
                         TPCANHandle Channel,
                         TPCANBitrateFD BitrateFD);
+
+                    /// <summary>
+                    /// Initializes a XL capable PCAN Channel  
+                    /// </summary>
+                    /// <param name="Channel">The handle of a XL capable PCAN Channel</param>
+                    /// <param name="BitrateXL">The speed for the communication (XL bit rate string)</param>
+                    /// <remarks>See PCAN_BR_* values
+                    /// * Parameter and values must be separated by '='
+                    /// * Couples of Parameter/value must be separated by ','
+                    /// * Following Parameter must be filled out: f_clock, brp, nom_brp, nom_sjw, nom_tseg1, nom_tseg2. 
+                    ///   If xl_transceiver_mode_switch is active, also the parameters xl_sjw, xl_tseg1, and xl_tseg2, must be present.
+                    ///   If error_signaling is active, also the parameters fd_sjw, fd_tseg1, and fd_tseg2, must be present. 
+                    /// * Following Parameters are optional: fd_ssp_offset, xl_ssp_offset, xl_transceiver_mode_switch, error_signaling,
+                    ///   xl_pwm_offset, xl_pwm_short, and xl_pwm_long</remarks>
+                    /// <example>f_clock=160000000,brp=1,nom_tseg1=255,nom_tseg2=64,nom_sjw=64,fd_tseg1=63,fd_tseg2=16,fd_sjw=16,fd_ssp_offset=0,xl_tseg1=10,
+                    /// xl_tseg2=9,xl_sjw=9,xl_ssp_offset=10,xl_error_signaling=1,xl_transceiver_mode_switch=0</example>
+                    /// <returns>A TPCANStatus error code</returns>
+                    [DllImport("PCANBasic.dll", EntryPoint = "CAN_InitializeXL")]
+                    static TPCANStatus InitializeXL(
+                        [MarshalAs(UnmanagedType::U2)]
+                        TPCANHandle Channel,
+                        TPCANBitrateXL BitrateXL);
 
                     /// <summary>
                     /// Uninitializes one or all PCAN Channels initialized by CAN_Initialize
@@ -1309,6 +1436,44 @@ namespace Peak
                     }
 
                     /// <summary>
+                    /// Reads a CAN message from the receive queue of a XL capable PCAN Channel 
+                    /// </summary>
+                    /// <param name="Channel">The handle of a XL capable PCAN Channel</param>
+                    /// <param name="MessageBuffer">A TPCANMsgXL structure buffer to store the CAN message</param>
+                    /// <param name="TimestampBuffer">A TPCANTimestampXL buffer to get 
+                    /// the reception time of the message. If this value is not desired, this parameter
+                    /// should be passed as NULL</param>
+                    /// <returns>A TPCANStatus error code</returns>
+                    [DllImport("PCANBasic.dll", EntryPoint = "CAN_ReadXL")]
+                    static TPCANStatus ReadXL(
+                        [MarshalAs(UnmanagedType::U2)]
+                        TPCANHandle Channel,
+                        TPCANMsgXL %MessageBuffer,
+                        TPCANTimestampXL %TimestampBuffer);
+
+                private:
+                    [DllImport("PCANBasic.dll", EntryPoint = "CAN_ReadXL")]
+                    static TPCANStatus ReadXL(
+                        [MarshalAs(UnmanagedType::U2)]
+                        TPCANHandle Channel,
+                        TPCANMsgXL% MessageBuffer,
+                        IntPtr bufferPointer);
+
+               public:
+                    /// <summary>
+                    /// Reads a CAN message from the receive queue of a XL capable PCAN Channel 
+                    /// </summary>
+                    /// <param name="Channel">The handle of a XL capable PCAN Channel</param>
+                    /// <param name="MessageBuffer">A TPCANMsgXL structure buffer to store the CAN message</param>
+                    /// <returns>A TPCANStatus error code</returns>
+                    static TPCANStatus ReadXL(
+                        TPCANHandle Channel,
+                        TPCANMsgXL %MessageBuffer)
+                    {
+                        return ReadXL(Channel, MessageBuffer, IntPtr::Zero);
+                    }
+
+                    /// <summary>
                     ///  Transmits a CAN message 
                     /// </summary>
                     /// <param name="Channel">The handle of a PCAN Channel</param>
@@ -1331,6 +1496,18 @@ namespace Peak
                         [MarshalAs(UnmanagedType::U2)]
                         TPCANHandle Channel,
                         TPCANMsgFD %MessageBuffer);
+
+                    /// <summary>
+                    /// Transmits a CAN message over a XL capable PCAN Channel
+                    /// </summary>
+                    /// <param name="Channel">"The handle of a XL capable PCAN Channel"</param>
+                    /// <param name="MessageBuffer">"A TPCANMsgXL buffer with the message to be sent"</param>
+                    /// <returns></returns>
+                    [DllImport("PCANBasic.dll", EntryPoint = "CAN_WriteXL")]
+                    static TPCANStatus WriteXL(
+                        [MarshalAs(UnmanagedType::U2)]
+                        TPCANHandle Channel,
+                        TPCANMsgXL %MessageBuffer);
 
                     /// <summary>
                     /// Configures the reception filter
@@ -1423,6 +1600,7 @@ namespace Peak
                         [MarshalAs(UnmanagedType::LPArray, SizeParamIndex=3)]
                         [In, Out]array<TPCANChannelInformation> ^ChannelBuffer,
                         UInt32 BufferLength);
+
                 public:
                     /// <summary>
                     /// Retrieves a PCAN Channel value
