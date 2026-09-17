@@ -109,6 +109,7 @@
 				<Item Name="XCP Addresses.ctl" Type="VI" URL="../Station/Controls/XCP Addresses.ctl"/>
 			</Item>
 			<Item Name="Add alarm to archive.vi" Type="VI" URL="../Station/Add alarm to archive.vi"/>
+			<Item Name="Check for Critical NTC.vi" Type="VI" URL="../Station/Check for Critical NTC.vi"/>
 			<Item Name="Convert Array of Bytes to String (RX and TX).vi" Type="VI" URL="../Station/Convert Array of Bytes to String (RX and TX).vi"/>
 			<Item Name="Convert CAN message to String (RX and TX).vi" Type="VI" URL="../Station/Convert CAN message to String (RX and TX).vi"/>
 			<Item Name="Delete Alarm archive and Create Header for new one Alarm archive.vi" Type="VI" URL="../Station/Delete Alarm archive and Create Header for new one Alarm archive.vi"/>

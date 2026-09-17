@@ -13016,7 +13016,7 @@ PostExpr = "StationGlobals.Automation.SystemControl.Light_State = Enums.Light_St
 %NAME = "Set light tower to blinking yellow fast"
 
 [SF.Seq[3].Main[57].TS]
-Id = "ID#:kyD/c6f57xG53NQli0T1uC"
+Id = "ID#:ijCglYyy8RGOIqQctBT8oA"
 
 [DEF, SF.Seq[3].Main[57].TS]
 SData = "TYPE, SeqCallStepAdditions"
@@ -13044,7 +13044,8 @@ Flags = 0
 
 [SF.Seq[3].Main[57].TS.SData.ActualArgs.Message]
 UseDef = False
-Expr = "ResStr(\"UI_CONTROL\", \"PRESS_ACK_BUTTON_UNLOCK_DRAWER\")"
+Expr Line0001 = "ResStr(\"UI_CONTROL\", \"PRESS_ACK_BUTTON_UNLOCK_DRAWER\") + \"\\n\" + ResStr(\"UI_CONTROL\", \"FAILED_SECTION\") + Stat"
+Expr Line0002 = "ionGlobals.Testing.FailedStation[RunState.TestSockets.MyIndex]"
 ParamType = 2
 Flags = 0
 

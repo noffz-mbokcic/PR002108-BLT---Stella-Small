@@ -18723,7 +18723,7 @@ SData = "TYPE, FlexGStepAdditions"
 [SF.Seq[11].Main[9].TS.SData.ViCall]
 ProjectPath = "..\\..\\LabView\\nexteer.lvproj"
 VIPath = "My Computer\\Station\\Get Section 4 data and HW PN.vi"
-TDChecksum = -29899985
+TDChecksum = 961030561
 %HI: Parms = [5]
 
 [DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms]
@@ -18906,7 +18906,7 @@ ArgVal = "StationGlobals.Testing.Parameters.XCP_Addresses"
 Type = 3
 WireRequirement = 1
 DisplayType = "Container"
-%HI: ArrayClusterEls = [2]
+%HI: ArrayClusterEls = [5]
 Direction = 1
 ConnectorNumber = 1
 
@@ -18914,9 +18914,12 @@ ConnectorNumber = 1
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
+%[3] = "TYPE, VIParameterElement"
+%[4] = "TYPE, VIParameterElement"
+%[5] = "TYPE, VIParameterElement"
 
 [SF.Seq[11].Main[9].TS.SData.ViCall.Parms[4].ArrayClusterEls[0]]
-Label = "T1"
+Label = "Torque1"
 ArgVal = "StationGlobals.Testing.Parameters.XCP_Addresses.T1"
 Type = 5
 WireRequirement = 1
@@ -18924,10 +18927,10 @@ NumType = 1
 DisplayType = "1D Array (U8)"
 
 [DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[4].ArrayClusterEls[0]]
-%NAME = "T1"
+%NAME = "Torque1"
 
 [SF.Seq[11].Main[9].TS.SData.ViCall.Parms[4].ArrayClusterEls[1]]
-Label = "T2"
+Label = "Torque2"
 ArgVal = "StationGlobals.Testing.Parameters.XCP_Addresses.T2"
 Type = 5
 WireRequirement = 1
@@ -18935,7 +18938,7 @@ NumType = 1
 DisplayType = "1D Array (U8)"
 
 [DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[4].ArrayClusterEls[1]]
-%NAME = "T2"
+%NAME = "Torque2"
 
 [SF.Seq[11].Main[9].TS.SData.ViCall.Parms[4].ArrayClusterEls[2]]
 Label = "MotorSpeed"
@@ -18947,6 +18950,36 @@ DisplayType = "1D Array (U8)"
 
 [DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[4].ArrayClusterEls[2]]
 %NAME = "MotorSpeed"
+
+[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[4].ArrayClusterEls[3]]
+Label = "Temperature"
+Type = 5
+WireRequirement = 1
+NumType = 1
+DisplayType = "1D Array (U8)"
+
+[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[4].ArrayClusterEls[3]]
+%NAME = "Temperature"
+
+[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[4].ArrayClusterEls[4]]
+Label = "BatteryVolatge"
+Type = 5
+WireRequirement = 1
+NumType = 1
+DisplayType = "1D Array (U8)"
+
+[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[4].ArrayClusterEls[4]]
+%NAME = "BatteryVolatge"
+
+[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[4].ArrayClusterEls[5]]
+Label = "MotorCurrent"
+Type = 5
+WireRequirement = 1
+NumType = 1
+DisplayType = "1D Array (U8)"
+
+[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[4].ArrayClusterEls[5]]
+%NAME = "MotorCurrent"
 
 [DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[4]]
 %NAME = "XCP Addresses"
@@ -41406,6 +41439,7 @@ T1_3 = Obj
 T2_3 = Obj
 MEC_Counter = Obj
 FirstMotorPosition = Obj
+DC_Voltage = Obj
 %ROOT_TYPE = True
 %ALWAYS_SAVE = True
 
@@ -41783,9 +41817,43 @@ AllowClusterPassing = True
 DataVersion = 1
 ClusterMemberLabelName = "FirstMotorPosition"
 
+[DEF, Section2.DC_Voltage]
+Low = Num
+High = Num
+Offset = Num
+
+[Section2.DC_Voltage.Low]
+%EXTDATA = True
+
+[EXTDATA, Section2.DC_Voltage.Low, CLUST]
+DataVersion = 1
+ClusterMemberLabelName = "Low"
+
+[Section2.DC_Voltage.High]
+%EXTDATA = True
+
+[EXTDATA, Section2.DC_Voltage.High, CLUST]
+DataVersion = 1
+ClusterMemberLabelName = "High"
+
+[Section2.DC_Voltage.Offset]
+%EXTDATA = True
+
+[EXTDATA, Section2.DC_Voltage.Offset, CLUST]
+DataVersion = 1
+ClusterMemberLabelName = "Offset"
+
+[Section2.DC_Voltage]
+%EXTDATA = True
+
+[EXTDATA, Section2.DC_Voltage, CLUST]
+DataVersion = 1
+ClusterMemberLabelName = "DC_Voltage"
+
 [Section2]
-%TIMESTAMP = 1787651469
-%TYPELASTMOD = "25.0.0.49152"
+%TIMESTAMP = 1789635837
+%VERSION = "0.0.0.1"
+%TYPELASTMOD = "23.0.0.49152"
 %EXTDATA = True
 
 [EXTDATA, Section2, CLUST]
@@ -43364,25 +43432,28 @@ Common = "TYPE, CommonResults"
 
 [DEF, XCP_Addresses]
 %LOCATION = "UserTypes"
-T1 = Nums
-T2 = Nums
+Torque1 = Nums
+Torque2 = Nums
 MotorSpeed = Nums
+Temperature = Nums
+BatteryVolatge = Nums
+MotorCurrent = Nums
 %ROOT_TYPE = True
 %ALWAYS_SAVE = True
 
-[XCP_Addresses.T1]
+[XCP_Addresses.Torque1]
 %EXTDATA = True
 
-[EXTDATA, XCP_Addresses.T1, CLUST]
+[EXTDATA, XCP_Addresses.Torque1, CLUST]
 DataVersion = 1
-ClusterMemberLabelName = "T1"
+ClusterMemberLabelName = "Torque1"
 
-[XCP_Addresses.T2]
+[XCP_Addresses.Torque2]
 %EXTDATA = True
 
-[EXTDATA, XCP_Addresses.T2, CLUST]
+[EXTDATA, XCP_Addresses.Torque2, CLUST]
 DataVersion = 1
-ClusterMemberLabelName = "T2"
+ClusterMemberLabelName = "Torque2"
 
 [XCP_Addresses.MotorSpeed]
 %EXTDATA = True
@@ -43391,9 +43462,31 @@ ClusterMemberLabelName = "T2"
 DataVersion = 1
 ClusterMemberLabelName = "MotorSpeed"
 
+[XCP_Addresses.Temperature]
+%EXTDATA = True
+
+[EXTDATA, XCP_Addresses.Temperature, CLUST]
+DataVersion = 1
+ClusterMemberLabelName = "Temperature"
+
+[XCP_Addresses.BatteryVolatge]
+%EXTDATA = True
+
+[EXTDATA, XCP_Addresses.BatteryVolatge, CLUST]
+DataVersion = 1
+ClusterMemberLabelName = "BatteryVolatge"
+
+[XCP_Addresses.MotorCurrent]
+%EXTDATA = True
+
+[EXTDATA, XCP_Addresses.MotorCurrent, CLUST]
+DataVersion = 1
+ClusterMemberLabelName = "MotorCurrent"
+
 [XCP_Addresses]
-%TIMESTAMP = 1789457343
-%TYPELASTMOD = "25.0.0.49152"
+%TIMESTAMP = 1789651219
+%VERSION = "0.0.0.1"
+%TYPELASTMOD = "23.0.0.49152"
 %EXTDATA = True
 
 [EXTDATA, XCP_Addresses, CLUST]
