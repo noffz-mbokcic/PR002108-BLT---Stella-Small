@@ -133,6 +133,7 @@
 			<Item Name="Initialize CAN FD with filter.vi" Type="VI" URL="../../../Users/Administrator/Desktop/Initialize CAN FD with filter.vi"/>
 			<Item Name="test XCP.vi" Type="VI" URL="../../../Users/Administrator/Desktop/test XCP.vi"/>
 		</Item>
+		<Item Name="Section 6.ctl" Type="VI" URL="../Station/Controls/Section 6.ctl"/>
 		<Item Name="Dependencies" Type="Dependencies"/>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
