@@ -100,13 +100,13 @@
 				<Item Name="DUT_Relays.ctl" Type="VI" URL="../Station/Controls/DUT_Relays.ctl"/>
 				<Item Name="Limits.ctl" Type="VI" URL="../Station/Controls/Limits.ctl"/>
 				<Item Name="Offset_Values.ctl" Type="VI" URL="../Station/Controls/Offset_Values.ctl"/>
+				<Item Name="Polarity Address.ctl" Type="VI" URL="../Station/Controls/Polarity Address.ctl"/>
 				<Item Name="Relays.ctl" Type="VI" URL="../Station/Controls/Relays.ctl"/>
 				<Item Name="Report Variables.ctl" Type="VI" URL="../Station/Controls/Report Variables.ctl"/>
 				<Item Name="Section 2.ctl" Type="VI" URL="../Station/Controls/Section 2.ctl"/>
 				<Item Name="Section 3.ctl" Type="VI" URL="../Station/Controls/Section 3.ctl"/>
 				<Item Name="Section 5.ctl" Type="VI" URL="../Station/Controls/Section 5.ctl"/>
 				<Item Name="Section4 variables.ctl" Type="VI" URL="../Station/Controls/Section4 variables.ctl"/>
-				<Item Name="XCP Addresses.ctl" Type="VI" URL="../Station/Controls/XCP Addresses.ctl"/>
 			</Item>
 			<Item Name="Add alarm to archive.vi" Type="VI" URL="../Station/Add alarm to archive.vi"/>
 			<Item Name="Check for Critical NTC.vi" Type="VI" URL="../Station/Check for Critical NTC.vi"/>
@@ -133,7 +133,9 @@
 			<Item Name="Initialize CAN FD with filter.vi" Type="VI" URL="../../../Users/Administrator/Desktop/Initialize CAN FD with filter.vi"/>
 			<Item Name="test XCP.vi" Type="VI" URL="../../../Users/Administrator/Desktop/test XCP.vi"/>
 		</Item>
+		<Item Name="Convert Data Bytes to Motor Position.vi" Type="VI" URL="../Communication Handle/Converters/Convert Data Bytes to Motor Position.vi"/>
 		<Item Name="Section 6.ctl" Type="VI" URL="../Station/Controls/Section 6.ctl"/>
+		<Item Name="Test Messages.vi" Type="VI" URL="../../Testing/Test Messages.vi"/>
 		<Item Name="Dependencies" Type="Dependencies"/>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>

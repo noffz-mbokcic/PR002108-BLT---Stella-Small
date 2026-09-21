@@ -14447,7 +14447,7 @@ ConnectorNumber = 1
 [SF.Seq[4].Setup[18].TS.SData.ViCall.Parms[2]]
 Label = "Current Limit (5.0 A)"
 Caption = "Current Limit (5 A)"
-ArgVal = "1//A"
+ArgVal = "2.95//A"
 Type = 0
 WireRequirement = 1
 DisplayType = "Number (DBL)"
@@ -14681,7 +14681,7 @@ ConnectorNumber = 1
 [SF.Seq[4].Setup[19].TS.SData.ViCall.Parms[2]]
 Label = "Current Limit (5.0 A)"
 Caption = "Current Limit (5 A)"
-ArgVal = "1 //A"
+ArgVal = "2.95 //A"
 Type = 0
 WireRequirement = 1
 DisplayType = "Number (DBL)"
@@ -18723,8 +18723,8 @@ SData = "TYPE, FlexGStepAdditions"
 [SF.Seq[11].Main[9].TS.SData.ViCall]
 ProjectPath = "..\\..\\LabView\\nexteer.lvproj"
 VIPath = "My Computer\\Station\\Get Section 4 data and HW PN.vi"
-TDChecksum = 961030561
-%HI: Parms = [5]
+TDChecksum = -259224280
+%HI: Parms = [6]
 
 [DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms]
 %[0] = "TYPE, VIParameter"
@@ -18733,6 +18733,7 @@ TDChecksum = 961030561
 %[3] = "TYPE, VIParameter"
 %[4] = "TYPE, VIParameter"
 %[5] = "TYPE, VIParameter"
+%[6] = "TYPE, VIParameter"
 
 [SF.Seq[11].Main[9].TS.SData.ViCall.Parms[0]]
 Label = "Variant"
@@ -18797,6 +18798,19 @@ UseDefaultValues = True
 %NAME = "error in "
 
 [SF.Seq[11].Main[9].TS.SData.ViCall.Parms[2]]
+Label = "Polarity Address"
+ArgVal = "StationGlobals.Testing.Parameters.Polarity"
+Type = 5
+WireRequirement = 1
+NumType = 5
+DisplayType = "1D Array (U32)"
+Direction = 1
+ConnectorNumber = 5
+
+[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[2]]
+%NAME = "Polarity Address"
+
+[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[3]]
 Label = "Section4"
 ArgVal = "StationGlobals.Testing.Parameters.Section4"
 Type = 3
@@ -18806,7 +18820,7 @@ DisplayType = "Container"
 Direction = 1
 ConnectorNumber = 3
 
-[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[2].ArrayClusterEls]
+[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[3].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
@@ -18815,80 +18829,80 @@ ConnectorNumber = 3
 %[5] = "TYPE, VIParameterElement"
 %[6] = "TYPE, VIParameterElement"
 
-[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[2].ArrayClusterEls[0]]
+[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
 Label = "Software_ID"
 ArgVal = "StationGlobals.Testing.Parameters.Section4.Software_ID"
 Type = 1
 WireRequirement = 1
 DisplayType = "ASCII String"
 
-[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[2].ArrayClusterEls[0]]
+[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
 %NAME = "Software_ID"
 
-[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[2].ArrayClusterEls[1]]
+[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
 Label = "Software_Version"
 ArgVal = "StationGlobals.Testing.Parameters.Section4.Software_Version"
 Type = 1
 WireRequirement = 1
 DisplayType = "ASCII String"
 
-[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[2].ArrayClusterEls[1]]
+[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
 %NAME = "Software_Version"
 
-[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[2].ArrayClusterEls[2]]
+[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
 Label = "Bootloader_ID"
 ArgVal = "StationGlobals.Testing.Parameters.Section4.Bootloader_ID"
 Type = 1
 WireRequirement = 1
 DisplayType = "ASCII String"
 
-[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[2].ArrayClusterEls[2]]
+[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
 %NAME = "Bootloader_ID"
 
-[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[2].ArrayClusterEls[3]]
+[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[3].ArrayClusterEls[3]]
 Label = "Bootloader_Version"
 ArgVal = "StationGlobals.Testing.Parameters.Section4.Bootloader_Version"
 Type = 1
 WireRequirement = 1
 DisplayType = "ASCII String"
 
-[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[2].ArrayClusterEls[3]]
+[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[3].ArrayClusterEls[3]]
 %NAME = "Bootloader_Version"
 
-[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[2].ArrayClusterEls[4]]
+[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[3].ArrayClusterEls[4]]
 Label = "Calibration_Number_0"
 ArgVal = "StationGlobals.Testing.Parameters.Section4.Calibration_Number_0"
 Type = 1
 WireRequirement = 1
 DisplayType = "ASCII String"
 
-[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[2].ArrayClusterEls[4]]
+[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[3].ArrayClusterEls[4]]
 %NAME = "Calibration_Number_0"
 
-[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[2].ArrayClusterEls[5]]
+[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[3].ArrayClusterEls[5]]
 Label = "Calibration_Number_1"
 ArgVal = "StationGlobals.Testing.Parameters.Section4.Calibration_Number_1"
 Type = 1
 WireRequirement = 1
 DisplayType = "ASCII String"
 
-[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[2].ArrayClusterEls[5]]
+[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[3].ArrayClusterEls[5]]
 %NAME = "Calibration_Number_1"
 
-[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[2].ArrayClusterEls[6]]
+[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[3].ArrayClusterEls[6]]
 Label = "Calibration_Number_2"
 ArgVal = "StationGlobals.Testing.Parameters.Section4.Calibration_Number_2"
 Type = 1
 WireRequirement = 1
 DisplayType = "ASCII String"
 
-[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[2].ArrayClusterEls[6]]
+[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[3].ArrayClusterEls[6]]
 %NAME = "Calibration_Number_2"
 
-[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[2]]
+[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[3]]
 %NAME = "Section4"
 
-[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[3]]
+[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[4]]
 Label = "HW PN"
 ArgVal = "StationGlobals.Testing.Parameters.HW_PN"
 Type = 1
@@ -18897,10 +18911,10 @@ DisplayType = "ASCII String"
 Direction = 1
 ConnectorNumber = 2
 
-[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[3]]
+[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[4]]
 %NAME = "HW PN"
 
-[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[4]]
+[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[5]]
 Label = "XCP Addresses"
 ArgVal = "StationGlobals.Testing.Parameters.XCP_Addresses"
 Type = 3
@@ -18910,7 +18924,7 @@ DisplayType = "Container"
 Direction = 1
 ConnectorNumber = 1
 
-[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[4].ArrayClusterEls]
+[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[5].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
@@ -18918,7 +18932,7 @@ ConnectorNumber = 1
 %[4] = "TYPE, VIParameterElement"
 %[5] = "TYPE, VIParameterElement"
 
-[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[4].ArrayClusterEls[0]]
+[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
 Label = "Torque1"
 ArgVal = "StationGlobals.Testing.Parameters.XCP_Addresses.T1"
 Type = 5
@@ -18926,10 +18940,10 @@ WireRequirement = 1
 NumType = 1
 DisplayType = "1D Array (U8)"
 
-[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[4].ArrayClusterEls[0]]
+[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
 %NAME = "Torque1"
 
-[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[4].ArrayClusterEls[1]]
+[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
 Label = "Torque2"
 ArgVal = "StationGlobals.Testing.Parameters.XCP_Addresses.T2"
 Type = 5
@@ -18937,10 +18951,10 @@ WireRequirement = 1
 NumType = 1
 DisplayType = "1D Array (U8)"
 
-[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[4].ArrayClusterEls[1]]
+[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
 %NAME = "Torque2"
 
-[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[4].ArrayClusterEls[2]]
+[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
 Label = "MotorSpeed"
 ArgVal = "StationGlobals.Testing.Parameters.XCP_Addresses.MotorSpeed"
 Type = 5
@@ -18948,43 +18962,43 @@ WireRequirement = 1
 NumType = 1
 DisplayType = "1D Array (U8)"
 
-[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[4].ArrayClusterEls[2]]
+[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
 %NAME = "MotorSpeed"
 
-[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[4].ArrayClusterEls[3]]
+[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[5].ArrayClusterEls[3]]
 Label = "Temperature"
 Type = 5
 WireRequirement = 1
 NumType = 1
 DisplayType = "1D Array (U8)"
 
-[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[4].ArrayClusterEls[3]]
+[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[5].ArrayClusterEls[3]]
 %NAME = "Temperature"
 
-[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[4].ArrayClusterEls[4]]
-Label = "BatteryVolatge"
+[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[5].ArrayClusterEls[4]]
+Label = "BatteryVoltage"
 Type = 5
 WireRequirement = 1
 NumType = 1
 DisplayType = "1D Array (U8)"
 
-[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[4].ArrayClusterEls[4]]
-%NAME = "BatteryVolatge"
+[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[5].ArrayClusterEls[4]]
+%NAME = "BatteryVoltage"
 
-[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[4].ArrayClusterEls[5]]
+[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[5].ArrayClusterEls[5]]
 Label = "MotorCurrent"
 Type = 5
 WireRequirement = 1
 NumType = 1
 DisplayType = "1D Array (U8)"
 
-[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[4].ArrayClusterEls[5]]
+[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[5].ArrayClusterEls[5]]
 %NAME = "MotorCurrent"
 
-[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[4]]
+[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[5]]
 %NAME = "XCP Addresses"
 
-[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[5]]
+[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[6]]
 Label = "error out"
 ArgVal = "Step.Result.Error"
 Type = 3
@@ -18995,22 +19009,22 @@ Direction = 1
 ConnectorNumber = 0
 LegacyClusterType = 2
 
-[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[5].ArrayClusterEls]
+[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[6].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
 
-[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[6].ArrayClusterEls[0]]
 Label = "status"
 ArgVal = "Step.Result.Error.Occurred"
 Type = 2
 WireRequirement = 1
 DisplayType = "Boolean"
 
-[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[6].ArrayClusterEls[0]]
 %NAME = "status"
 
-[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[6].ArrayClusterEls[1]]
 Label = "code"
 ArgVal = "Step.Result.Error.Code"
 Type = 0
@@ -19018,20 +19032,20 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[6].ArrayClusterEls[1]]
 %NAME = "code"
 
-[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+[SF.Seq[11].Main[9].TS.SData.ViCall.Parms[6].ArrayClusterEls[2]]
 Label = "source"
 ArgVal = "Step.Result.Error.Msg"
 Type = 1
 WireRequirement = 1
 DisplayType = "ASCII String"
 
-[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[6].ArrayClusterEls[2]]
 %NAME = "source"
 
-[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[5]]
+[DEF, SF.Seq[11].Main[9].TS.SData.ViCall.Parms[6]]
 %NAME = "error out"
 
 [DEF, SF.Seq[11].Main[9]]
@@ -43473,7 +43487,7 @@ Torque1 = Nums
 Torque2 = Nums
 MotorSpeed = Nums
 Temperature = Nums
-BatteryVolatge = Nums
+BatteryVoltage = Nums
 MotorCurrent = Nums
 %ROOT_TYPE = True
 %ALWAYS_SAVE = True
@@ -43506,12 +43520,12 @@ ClusterMemberLabelName = "MotorSpeed"
 DataVersion = 1
 ClusterMemberLabelName = "Temperature"
 
-[XCP_Addresses.BatteryVolatge]
+[XCP_Addresses.BatteryVoltage]
 %EXTDATA = True
 
-[EXTDATA, XCP_Addresses.BatteryVolatge, CLUST]
+[EXTDATA, XCP_Addresses.BatteryVoltage, CLUST]
 DataVersion = 1
-ClusterMemberLabelName = "BatteryVolatge"
+ClusterMemberLabelName = "BatteryVoltage"
 
 [XCP_Addresses.MotorCurrent]
 %EXTDATA = True
@@ -43521,8 +43535,8 @@ DataVersion = 1
 ClusterMemberLabelName = "MotorCurrent"
 
 [XCP_Addresses]
-%TIMESTAMP = 1789651219
-%VERSION = "0.0.0.1"
+%TIMESTAMP = 1789736110
+%VERSION = "0.0.0.2"
 %TYPELASTMOD = "23.0.0.49152"
 %EXTDATA = True
 
