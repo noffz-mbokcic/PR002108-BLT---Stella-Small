@@ -16,6 +16,7 @@
 	<Item Name="Initialize.vi" Type="VI" URL="../Initialize.vi"/>
 	<Item Name="Read measurement.vi" Type="VI" URL="../Read measurement.vi"/>
 	<Item Name="Read.vi" Type="VI" URL="../Read.vi"/>
+	<Item Name="Test DMM.vi" Type="VI" URL="../Test DMM.vi"/>
 	<Item Name="Write.vi" Type="VI" URL="../Write.vi"/>
 </Library>
-<?sig 9C6846FCFAAF11E47D69F68285A42057?>
+<?sig 7253891115870A04EE8DC846FBCDCFF7?>
