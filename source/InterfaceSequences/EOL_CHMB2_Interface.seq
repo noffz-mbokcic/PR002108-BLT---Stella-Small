@@ -4404,7 +4404,7 @@ FailureAction = Num
 [SF.Seq[2]]
 %FLG: Parameters = 4456448
 %FLG: Locals = 4194304
-%HI: Main = [157]
+%HI: Main = [158]
 %FLG: Main = 4194304
 %HI: Setup = [24]
 %FLG: Setup = 4194304
@@ -4791,6 +4791,8 @@ Max_Test = Bool
 %TYPE: %[156] = "NI_Flow_End"
 %[157] = Step
 %TYPE: %[157] = "Label"
+%[158] = Step
+%TYPE: %[158] = "Statement"
 
 [SF.Seq[2].Main[0].TS]
 Id = "ID#:E8GH7JFo8RGN16QctBT8oA"
@@ -10488,6 +10490,13 @@ Id = "ID#:nRwGBf7t7xG4Y1B7nf4f8B"
 Icon = "ni_blank.ico"
 StatusExpr = "\"\""
 %FLG: StatusExpr = 1
+
+[SF.Seq[2].Main[158].TS]
+Id = "ID#:ycT9XtO48RGOKKQctBT8oA"
+PostExpr = "RunState.Engine.StationOptions.AlwaysGotoCleanupOnFailure = False"
+
+[DEF, SF.Seq[2].Main[158]]
+%NAME = "TEMPORARY"
 
 [DEF, SF.Seq[2].Setup]
 %[0] = Step

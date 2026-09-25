@@ -3981,7 +3981,7 @@ FailureAction = Num
 [SF.Seq[2]]
 %FLG: Parameters = 4456448
 %FLG: Locals = 4194304
-%HI: Main = [158]
+%HI: Main = [159]
 %FLG: Main = 4194304
 %HI: Setup = [24]
 %FLG: Setup = 4194304
@@ -4370,6 +4370,8 @@ Max_Test = Bool
 %TYPE: %[157] = "NI_Flow_End"
 %[158] = Step
 %TYPE: %[158] = "Label"
+%[159] = Step
+%TYPE: %[159] = "Statement"
 
 [SF.Seq[2].Main[0].TS]
 Id = "ID#:3gtGmTD77xG53tQli0T1uC"
@@ -10111,6 +10113,13 @@ Icon = "ni_blank.ico"
 StatusExpr = "\"\""
 %FLG: StatusExpr = 1
 
+[SF.Seq[2].Main[159].TS]
+Id = "ID#:gVo/GNS48RGOKKQctBT8oA"
+PostExpr = "RunState.Engine.StationOptions.AlwaysGotoCleanupOnFailure = False"
+
+[DEF, SF.Seq[2].Main[159]]
+%NAME = "TEMPORARY"
+
 [DEF, SF.Seq[2].Setup]
 %[0] = Step
 %TYPE: %[0] = "SequenceCall"
@@ -10801,7 +10810,7 @@ MainSequenceResult = Ref
 [SF.Seq[3]]
 %FLG: Parameters = 4456448
 %FLG: Locals = 4194304
-%HI: Main = [121]
+%HI: Main = [120]
 %FLG: Main = 4194304
 %HI: Setup = [6]
 %FLG: Setup = 4194304
@@ -10917,460 +10926,427 @@ Channel = Num
 
 [DEF, SF.Seq[3].Main]
 %[0] = Step
-%TYPE: %[0] = "SequenceCall"
+%TYPE: %[0] = "NI_Flow_If"
 %[1] = Step
-%TYPE: %[1] = "NI_Flow_If"
+%TYPE: %[1] = "SequenceCall"
 %[2] = Step
-%TYPE: %[2] = "SequenceCall"
+%TYPE: %[2] = "NI_Rendezvous"
 %[3] = Step
 %TYPE: %[3] = "NI_Rendezvous"
 %[4] = Step
-%TYPE: %[4] = "NI_Rendezvous"
+%TYPE: %[4] = "Label"
 %[5] = Step
-%TYPE: %[5] = "Label"
+%TYPE: %[5] = "NoffzUTP_TEF_Model_TestSocket_GetSerialNumber"
 %[6] = Step
-%TYPE: %[6] = "NoffzUTP_TEF_Model_TestSocket_GetSerialNumber"
+%TYPE: %[6] = "Action"
 %[7] = Step
-%TYPE: %[7] = "Action"
+%TYPE: %[7] = "SequenceCall"
 %[8] = Step
-%TYPE: %[8] = "SequenceCall"
+%TYPE: %[8] = "Action"
 %[9] = Step
 %TYPE: %[9] = "Action"
 %[10] = Step
 %TYPE: %[10] = "Action"
 %[11] = Step
-%TYPE: %[11] = "Action"
+%TYPE: %[11] = "Label"
 %[12] = Step
 %TYPE: %[12] = "Label"
 %[13] = Step
-%TYPE: %[13] = "Label"
+%TYPE: %[13] = "NI_Flow_Select"
 %[14] = Step
-%TYPE: %[14] = "NI_Flow_Select"
+%TYPE: %[14] = "NI_Flow_Case"
 %[15] = Step
-%TYPE: %[15] = "NI_Flow_Case"
+%TYPE: %[15] = "Statement"
 %[16] = Step
-%TYPE: %[16] = "Statement"
+%TYPE: %[16] = "NI_Flow_End"
 %[17] = Step
-%TYPE: %[17] = "NI_Flow_End"
+%TYPE: %[17] = "NI_Flow_Case"
 %[18] = Step
-%TYPE: %[18] = "NI_Flow_Case"
+%TYPE: %[18] = "Statement"
 %[19] = Step
-%TYPE: %[19] = "Statement"
+%TYPE: %[19] = "NI_Flow_End"
 %[20] = Step
 %TYPE: %[20] = "NI_Flow_End"
 %[21] = Step
-%TYPE: %[21] = "NI_Flow_End"
+%TYPE: %[21] = "Label"
 %[22] = Step
 %TYPE: %[22] = "Label"
 %[23] = Step
-%TYPE: %[23] = "Label"
+%TYPE: %[23] = "NoffzUTP_TEF_UI_TestSocket_TestStatus_SetValue"
 %[24] = Step
-%TYPE: %[24] = "NoffzUTP_TEF_UI_TestSocket_TestStatus_SetValue"
+%TYPE: %[24] = "NoffzUTP_TEF_UI_TestSocket_SetIcon"
 %[25] = Step
-%TYPE: %[25] = "NoffzUTP_TEF_UI_TestSocket_SetIcon"
+%TYPE: %[25] = "NoffzUTP_TEF_UI_TestSocket_ShowMessage"
 %[26] = Step
-%TYPE: %[26] = "NoffzUTP_TEF_UI_TestSocket_ShowMessage"
+%TYPE: %[26] = "NoffzUTP_TEF_Model_TestSocket_GetProductAndVariant"
 %[27] = Step
-%TYPE: %[27] = "NoffzUTP_TEF_Model_TestSocket_GetProductAndVariant"
+%TYPE: %[27] = "NoffzUTP_TEF_Model_TestSocket_GetSerialNumber"
 %[28] = Step
-%TYPE: %[28] = "NoffzUTP_TEF_Model_TestSocket_GetSerialNumber"
+%TYPE: %[28] = "NoffzUTP_TEF_UI_TestSocket_Statistic_Update"
 %[29] = Step
-%TYPE: %[29] = "NoffzUTP_TEF_UI_TestSocket_Statistic_Update"
+%TYPE: %[29] = "NoffzUTP_TEF_UI_Station_Statistic_Update"
 %[30] = Step
-%TYPE: %[30] = "NoffzUTP_TEF_UI_Station_Statistic_Update"
+%TYPE: %[30] = "Label"
 %[31] = Step
-%TYPE: %[31] = "Label"
+%TYPE: %[31] = "NI_Rendezvous"
 %[32] = Step
 %TYPE: %[32] = "NI_Rendezvous"
 %[33] = Step
-%TYPE: %[33] = "NI_Rendezvous"
+%TYPE: %[33] = "NI_Flow_If"
 %[34] = Step
-%TYPE: %[34] = "NI_Flow_If"
+%TYPE: %[34] = "Statement"
 %[35] = Step
-%TYPE: %[35] = "Statement"
+%TYPE: %[35] = "NI_Flow_ElseIf"
 %[36] = Step
-%TYPE: %[36] = "NI_Flow_ElseIf"
+%TYPE: %[36] = "Label"
 %[37] = Step
-%TYPE: %[37] = "Label"
+%TYPE: %[37] = "Statement"
 %[38] = Step
-%TYPE: %[38] = "Statement"
+%TYPE: %[38] = "Label"
 %[39] = Step
 %TYPE: %[39] = "Label"
 %[40] = Step
-%TYPE: %[40] = "Label"
+%TYPE: %[40] = "Statement"
 %[41] = Step
-%TYPE: %[41] = "Statement"
+%TYPE: %[41] = "NI_Flow_If"
 %[42] = Step
-%TYPE: %[42] = "NI_Flow_If"
+%TYPE: %[42] = "Statement"
 %[43] = Step
-%TYPE: %[43] = "Statement"
+%TYPE: %[43] = "NI_Flow_End"
 %[44] = Step
-%TYPE: %[44] = "NI_Flow_End"
+%TYPE: %[44] = "SequenceCall"
 %[45] = Step
-%TYPE: %[45] = "SequenceCall"
+%TYPE: %[45] = "NI_Flow_ElseIf"
 %[46] = Step
-%TYPE: %[46] = "NI_Flow_ElseIf"
+%TYPE: %[46] = "Statement"
 %[47] = Step
-%TYPE: %[47] = "Statement"
+%TYPE: %[47] = "Label"
 %[48] = Step
-%TYPE: %[48] = "Label"
+%TYPE: %[48] = "Statement"
 %[49] = Step
-%TYPE: %[49] = "Statement"
+%TYPE: %[49] = "Label"
 %[50] = Step
-%TYPE: %[50] = "Label"
+%TYPE: %[50] = "SequenceCall"
 %[51] = Step
-%TYPE: %[51] = "SequenceCall"
+%TYPE: %[51] = "NI_Flow_End"
 %[52] = Step
-%TYPE: %[52] = "NI_Flow_End"
+%TYPE: %[52] = "Label"
 %[53] = Step
-%TYPE: %[53] = "Label"
+%TYPE: %[53] = "Statement"
 %[54] = Step
-%TYPE: %[54] = "Statement"
+%TYPE: %[54] = "Label"
 %[55] = Step
-%TYPE: %[55] = "Label"
+%TYPE: %[55] = "NI_Flow_If"
 %[56] = Step
-%TYPE: %[56] = "NI_Flow_If"
+%TYPE: %[56] = "Statement"
 %[57] = Step
-%TYPE: %[57] = "Statement"
+%TYPE: %[57] = "NoffzUTP_TEF_UI_TestSocket_ShowMessage"
 %[58] = Step
-%TYPE: %[58] = "NoffzUTP_TEF_UI_TestSocket_ShowMessage"
+%TYPE: %[58] = "Action"
 %[59] = Step
-%TYPE: %[59] = "Action"
+%TYPE: %[59] = "NI_Flow_While"
 %[60] = Step
-%TYPE: %[60] = "NI_Flow_While"
+%TYPE: %[60] = "NI_Wait"
 %[61] = Step
-%TYPE: %[61] = "NI_Wait"
+%TYPE: %[61] = "Action"
 %[62] = Step
-%TYPE: %[62] = "Action"
+%TYPE: %[62] = "NI_Flow_End"
 %[63] = Step
 %TYPE: %[63] = "NI_Flow_End"
 %[64] = Step
-%TYPE: %[64] = "NI_Flow_End"
+%TYPE: %[64] = "NI_Wait"
 %[65] = Step
-%TYPE: %[65] = "NI_Wait"
+%TYPE: %[65] = "Label"
 %[66] = Step
-%TYPE: %[66] = "Label"
+%TYPE: %[66] = "Action"
 %[67] = Step
-%TYPE: %[67] = "Action"
+%TYPE: %[67] = "Label"
 %[68] = Step
-%TYPE: %[68] = "Label"
+%TYPE: %[68] = "NoffzUTP_TEF_Model_Station_GetOperationMode"
 %[69] = Step
-%TYPE: %[69] = "NoffzUTP_TEF_Model_Station_GetOperationMode"
+%TYPE: %[69] = "NI_Flow_If"
 %[70] = Step
 %TYPE: %[70] = "NI_Flow_If"
 %[71] = Step
 %TYPE: %[71] = "NI_Flow_If"
 %[72] = Step
-%TYPE: %[72] = "NI_Flow_If"
+%TYPE: %[72] = "Statement"
 %[73] = Step
-%TYPE: %[73] = "Statement"
+%TYPE: %[73] = "NI_Flow_Else"
 %[74] = Step
-%TYPE: %[74] = "NI_Flow_Else"
+%TYPE: %[74] = "Statement"
 %[75] = Step
-%TYPE: %[75] = "Statement"
+%TYPE: %[75] = "NI_Flow_End"
 %[76] = Step
-%TYPE: %[76] = "NI_Flow_End"
+%TYPE: %[76] = "Statement"
 %[77] = Step
-%TYPE: %[77] = "Statement"
+%TYPE: %[77] = "NI_Flow_ElseIf"
 %[78] = Step
-%TYPE: %[78] = "NI_Flow_ElseIf"
+%TYPE: %[78] = "NI_Flow_If"
 %[79] = Step
-%TYPE: %[79] = "NI_Flow_If"
+%TYPE: %[79] = "Statement"
 %[80] = Step
-%TYPE: %[80] = "Statement"
+%TYPE: %[80] = "NI_Flow_Else"
 %[81] = Step
-%TYPE: %[81] = "NI_Flow_Else"
+%TYPE: %[81] = "Statement"
 %[82] = Step
-%TYPE: %[82] = "Statement"
+%TYPE: %[82] = "NI_Flow_End"
 %[83] = Step
-%TYPE: %[83] = "NI_Flow_End"
+%TYPE: %[83] = "Statement"
 %[84] = Step
-%TYPE: %[84] = "Statement"
+%TYPE: %[84] = "NI_Flow_End"
 %[85] = Step
 %TYPE: %[85] = "NI_Flow_End"
 %[86] = Step
-%TYPE: %[86] = "NI_Flow_End"
+%TYPE: %[86] = "Label"
 %[87] = Step
-%TYPE: %[87] = "Label"
+%TYPE: %[87] = "NI_Rendezvous"
 %[88] = Step
 %TYPE: %[88] = "NI_Rendezvous"
 %[89] = Step
-%TYPE: %[89] = "NI_Rendezvous"
+%TYPE: %[89] = "Label"
 %[90] = Step
-%TYPE: %[90] = "Label"
+%TYPE: %[90] = "NI_Flow_If"
 %[91] = Step
 %TYPE: %[91] = "NI_Flow_If"
 %[92] = Step
-%TYPE: %[92] = "NI_Flow_If"
+%TYPE: %[92] = "Label"
 %[93] = Step
-%TYPE: %[93] = "Label"
+%TYPE: %[93] = "NoffzUTP_TEF_UI_TestSocket_ShowMessage"
 %[94] = Step
-%TYPE: %[94] = "NoffzUTP_TEF_UI_TestSocket_ShowMessage"
+%TYPE: %[94] = "SequenceCall"
 %[95] = Step
-%TYPE: %[95] = "SequenceCall"
+%TYPE: %[95] = "NI_Flow_ElseIf"
 %[96] = Step
-%TYPE: %[96] = "NI_Flow_ElseIf"
+%TYPE: %[96] = "NI_Flow_If"
 %[97] = Step
-%TYPE: %[97] = "NI_Flow_If"
+%TYPE: %[97] = "NoffzUTP_TEF_UI_TestSocket_ShowMessage"
 %[98] = Step
-%TYPE: %[98] = "NoffzUTP_TEF_UI_TestSocket_ShowMessage"
+%TYPE: %[98] = "NI_Wait"
 %[99] = Step
-%TYPE: %[99] = "NI_Wait"
+%TYPE: %[99] = "NI_Flow_ElseIf"
 %[100] = Step
-%TYPE: %[100] = "NI_Flow_ElseIf"
+%TYPE: %[100] = "Statement"
 %[101] = Step
-%TYPE: %[101] = "Statement"
+%TYPE: %[101] = "NoffzUTP_TEF_UI_TestSocket_ShowMessage"
 %[102] = Step
-%TYPE: %[102] = "NoffzUTP_TEF_UI_TestSocket_ShowMessage"
+%TYPE: %[102] = "NI_Wait"
 %[103] = Step
-%TYPE: %[103] = "NI_Wait"
+%TYPE: %[103] = "NI_Flow_End"
 %[104] = Step
 %TYPE: %[104] = "NI_Flow_End"
 %[105] = Step
 %TYPE: %[105] = "NI_Flow_End"
 %[106] = Step
-%TYPE: %[106] = "NI_Flow_End"
+%TYPE: %[106] = "Label"
 %[107] = Step
 %TYPE: %[107] = "Label"
 %[108] = Step
-%TYPE: %[108] = "Label"
+%TYPE: %[108] = "Statement"
 %[109] = Step
-%TYPE: %[109] = "Statement"
+%TYPE: %[109] = "Action"
 %[110] = Step
-%TYPE: %[110] = "Action"
+%TYPE: %[110] = "NI_Flow_If"
 %[111] = Step
-%TYPE: %[111] = "NI_Flow_If"
+%TYPE: %[111] = "NoffzUTP_TEF_UI_TestSocket_ShowMessage"
 %[112] = Step
-%TYPE: %[112] = "NoffzUTP_TEF_UI_TestSocket_ShowMessage"
+%TYPE: %[112] = "NI_Flow_While"
 %[113] = Step
-%TYPE: %[113] = "NI_Flow_While"
+%TYPE: %[113] = "Action"
 %[114] = Step
-%TYPE: %[114] = "Action"
+%TYPE: %[114] = "NoffzUTP_TEF_UI_TestSocket_ShowMessage"
 %[115] = Step
-%TYPE: %[115] = "NoffzUTP_TEF_UI_TestSocket_ShowMessage"
+%TYPE: %[115] = "NI_Flow_End"
 %[116] = Step
 %TYPE: %[116] = "NI_Flow_End"
 %[117] = Step
-%TYPE: %[117] = "NI_Flow_End"
+%TYPE: %[117] = "Label"
 %[118] = Step
-%TYPE: %[118] = "Label"
+%TYPE: %[118] = "NI_Flow_Else"
 %[119] = Step
-%TYPE: %[119] = "NI_Flow_Else"
+%TYPE: %[119] = "Label"
 %[120] = Step
-%TYPE: %[120] = "Label"
-%[121] = Step
-%TYPE: %[121] = "NI_Flow_End"
+%TYPE: %[120] = "NI_Flow_End"
 
 [SF.Seq[3].Main[0].TS]
-Id = "ID#:izCglYyy8RGOIqQctBT8oA"
-
-[DEF, SF.Seq[3].Main[0].TS]
-SData = "TYPE, SeqCallStepAdditions"
-
-[SF.Seq[3].Main[0].TS.SData]
-SFPath = "EOL_CHMB1_Interface.seq"
-SeqName = "Post UUT"
-UseCurFile = True
-
-[DEF, SF.Seq[3].Main[0].TS.SData]
-ActualArgs = Arguments
-
-[DEF, SF.Seq[3].Main[0].TS.SData.ActualArgs]
-UUTStatus = "TYPE, SequenceArgument"
-MainSequenceResult = "TYPE, SequenceArgument"
-
-[SF.Seq[3].Main[0].TS.SData.ActualArgs.UUTStatus]
-UseDef = False
-ParamType = 2
-Flags = 0
-
-[SF.Seq[3].Main[0].TS.SData.ActualArgs.MainSequenceResult]
-UseDef = False
-ParamType = 2048
-Flags = 0
-
-[DEF, SF.Seq[3].Main[0]]
-%NAME = "Call Post UUT"
-
-[SF.Seq[3].Main[1].TS]
 Id = "ID#:b1Mprwn57xG52tQli0T1uC"
 
-[SF.Seq[3].Main[1]]
+[SF.Seq[3].Main[0]]
 ConditionExpr Line0001 = "StationGlobals.SequenceStates[RunState.TestSockets.MyIndex] != Enums.SEQUENCE_STATES.ERROR && StationGlobals.SequenceSta"
 ConditionExpr Line0002 = "tes[RunState.TestSockets.MyIndex] != Enums.SEQUENCE_STATES.TERMINATED"
 %COMMENT = "In this case at PRE UUT or Main Sequence we didn't have ERROR or TERMINATION - we can process results of testing"
 
-[DEF, SF.Seq[3].Main[1]]
+[DEF, SF.Seq[3].Main[0]]
 %NAME = "If"
 
-[SF.Seq[3].Main[2].TS]
+[SF.Seq[3].Main[1].TS]
 Id = "ID#:7WrKIMmq8RGODKQctBT8oA"
 PreExpr = "StationGlobals.Automation.SystemControl.LightOn = True"
 
-[DEF, SF.Seq[3].Main[2].TS]
+[DEF, SF.Seq[3].Main[1].TS]
 SData = "TYPE, SeqCallStepAdditions"
 
-[SF.Seq[3].Main[2].TS.SData]
+[SF.Seq[3].Main[1].TS.SData]
 SeqName = "Light Control"
 UseCurFile = True
 ThreadOpt = 1
 
-[DEF, SF.Seq[3].Main[2]]
+[DEF, SF.Seq[3].Main[1]]
 %NAME = "Light Control"
 
-[SF.Seq[3].Main[3].TS]
+[SF.Seq[3].Main[2].TS]
 Id = "ID#:Qbnst2/67xG53dQli0T1uC"
 IgnoreRTE = True
 %HI: AdditionalResultsHints = [2]
 
-[DEF, SF.Seq[3].Main[3].TS.AdditionalResultsHints]
+[DEF, SF.Seq[3].Main[2].TS.AdditionalResultsHints]
 %[0] = "TYPE, NI_CustomResult"
 %[1] = "TYPE, NI_CustomResult"
 %[2] = "TYPE, NI_CustomResult"
 
-[SF.Seq[3].Main[3].TS.AdditionalResultsHints[0]]
+[SF.Seq[3].Main[2].TS.AdditionalResultsHints[0]]
 Name = "ResStr(\"NI_RENDEZVOUS_STEP_TYPE\", \"ALREADY_EXISTS_HINT\")"
 ValueToLog = "Evaluate(Step.AlreadyExistsExpr)"
 
-[SF.Seq[3].Main[3].TS.AdditionalResultsHints[1]]
+[SF.Seq[3].Main[2].TS.AdditionalResultsHints[1]]
 Name = "ResStr(\"NI_RENDEZVOUS_STEP_TYPE\", \"RENDEZVOUS_REFERENCE_LIFETIME_HINT\")"
 ValueToLog Line0001 = "ResStr(\"NI_RENDEZVOUS_STEP_TYPE\", (Step.Lifetime == 0 ? \"LIFETIME_SEQUENCE\" :\n    Step.Lifetime == 1 ? \"LIFETIME_T"
 ValueToLog Line0002 = "HREAD\" :\n    Step.Lifetime == 2 ? \"LIFETIME_REFERENCE\" :\n    Step.Lifetime == 3 ? \"LIFETIME_EXECUTION\" :\n    \"\"
 ValueToLog Line0003 = ""))"
 
-[SF.Seq[3].Main[3].TS.AdditionalResultsHints[2]]
+[SF.Seq[3].Main[2].TS.AdditionalResultsHints[2]]
 Name = "ResStr(\"NI_RENDEZVOUS_STEP_TYPE\", \"NUMBER_OF_THREADS_PER_RENDEZVOUS_HINT\")"
 ValueToLog = "Evaluate(Step.RendezvousCountExpr)"
 
-[SF.Seq[3].Main[3]]
+[SF.Seq[3].Main[2]]
 NameOrRefExpr = "\"POST_UUT\"+Locals.CHMB"
 RendezvousCountExpr = "StationGlobals.Automation.SystemControl.CHMB1.NumberOfDUTs"
 Lifetime = 0
 %COMMENT = "Wait for both sockets to get to POST UUT\nFIXED TO 2 TEST SOCKETS"
 
-[DEF, SF.Seq[3].Main[3]]
+[DEF, SF.Seq[3].Main[2]]
 %NAME = "Create rendezvous for POST UUT"
 
-[SF.Seq[3].Main[4].TS]
+[SF.Seq[3].Main[3].TS]
 Id = "ID#:Qrnst2/67xG53dQli0T1uC"
 IgnoreRTE = True
 %HI: AdditionalResultsHints = [0]
 
-[DEF, SF.Seq[3].Main[4].TS.AdditionalResultsHints]
+[DEF, SF.Seq[3].Main[3].TS.AdditionalResultsHints]
 %[0] = "TYPE, NI_CustomResult"
 
-[SF.Seq[3].Main[4].TS.AdditionalResultsHints[0]]
+[SF.Seq[3].Main[3].TS.AdditionalResultsHints[0]]
 Name = "ResStr(\"NI_RENDEZVOUS_STEP_TYPE\", \"TIMEOUT\")"
 ValueToLog = "Step.TimeoutEnabled ? Str(Evaluate(Step.TimeoutExpr)) : ResStr(\"NI_RENDEZVOUS_STEP_TYPE\", \"DISABLED\")"
 
-[DEF, SF.Seq[3].Main[4]]
+[DEF, SF.Seq[3].Main[3]]
 Result = Obj
 %NAME = "Wait POST UUT operation"
 
-[DEF, SF.Seq[3].Main[4].Result]
+[DEF, SF.Seq[3].Main[3].Result]
 Error = "TYPE, Error"
 Status = Str
 ReportText = Str
 Common = "TYPE, CommonResults"
 TimeoutOccurred = Bool
 
-[SF.Seq[3].Main[4].Result]
+[SF.Seq[3].Main[3].Result]
 %FLG: Error = 4194304
 %FLG: Status = 4194304
 %FLG: ReportText = 4194304
 %FLG: Common = 0
 
-[SF.Seq[3].Main[4]]
+[SF.Seq[3].Main[3]]
 %FLG: Result = 4194304
 NameOrRefExpr = "\"POST_UUT\"+Locals.CHMB"
 Operation = 1
 
-[SF.Seq[3].Main[5].TS]
+[SF.Seq[3].Main[4].TS]
 Id = "ID#:+jmRzNgh8BG4klB7nf4f8B"
 Icon = "ni_blank.ico"
 StatusExpr = "\"\""
 %FLG: StatusExpr = 1
 
 [SF.Seq[3].Main]
-%FLG: %[5] = 67108864
+%FLG: %[4] = 67108864
+%FLG: %[11] = 67108864
 %FLG: %[12] = 67108864
-%FLG: %[13] = 67108864
+%FLG: %[21] = 67108864
 %FLG: %[22] = 67108864
-%FLG: %[23] = 67108864
-%FLG: %[31] = 67108864
-%FLG: %[53] = 67108864
-%FLG: %[55] = 67108864
-%FLG: %[66] = 67108864
-%FLG: %[68] = 67108864
-%FLG: %[87] = 67108864
-%FLG: %[90] = 67108864
+%FLG: %[30] = 67108864
+%FLG: %[52] = 67108864
+%FLG: %[54] = 67108864
+%FLG: %[65] = 67108864
+%FLG: %[67] = 67108864
+%FLG: %[86] = 67108864
+%FLG: %[89] = 67108864
+%FLG: %[106] = 67108864
 %FLG: %[107] = 67108864
-%FLG: %[108] = 67108864
-%FLG: %[118] = 67108864
+%FLG: %[117] = 67108864
 
-[SF.Seq[3].Main[6].TS]
+[SF.Seq[3].Main[5].TS]
 Id = "ID#:As2t4Q6S8BGJ5cyCf5KpWB"
 
-[DEF, SF.Seq[3].Main[6].TS]
+[DEF, SF.Seq[3].Main[5].TS]
 SData = "TYPE, SeqCallStepAdditions"
 
-[SF.Seq[3].Main[6].TS.SData]
+[SF.Seq[3].Main[5].TS.SData]
 SFPath = "Noffz.UTP.TEF.API.seq"
 SeqName = "Model.TestSocket.GetSerialNumber"
 CustomThreadAffinity = "-1"
 Trace = "Off"
 
-[DEF, SF.Seq[3].Main[6].TS.SData]
+[DEF, SF.Seq[3].Main[5].TS.SData]
 ActualArgs = Arguments
 Prototype = Obj
 
-[DEF, SF.Seq[3].Main[6].TS.SData.ActualArgs]
+[DEF, SF.Seq[3].Main[5].TS.SData.ActualArgs]
 TestSocket = "TYPE, SequenceArgument"
 SerialNumber = "TYPE, SequenceArgument"
 
-[SF.Seq[3].Main[6].TS.SData.ActualArgs.TestSocket]
+[SF.Seq[3].Main[5].TS.SData.ActualArgs.TestSocket]
 ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[SF.Seq[3].Main[6].TS.SData.ActualArgs.SerialNumber]
+[SF.Seq[3].Main[5].TS.SData.ActualArgs.SerialNumber]
 UseDef = False
 Expr = "Locals.SerialNumber"
 ParamType = 2
 
-[DEF, SF.Seq[3].Main[6].TS.SData.Prototype]
+[DEF, SF.Seq[3].Main[5].TS.SData.Prototype]
 TestSocket = Num
 SerialNumber = Str
 
-[SF.Seq[3].Main[6].TS.SData.Prototype]
+[SF.Seq[3].Main[5].TS.SData.Prototype]
 TestSocket = Nan
 %FLG: SerialNumber = 4
 
-[SF.Seq[3].Main[6].TS.SData.Prototype.TestSocket]
+[SF.Seq[3].Main[5].TS.SData.Prototype.TestSocket]
 %COMMENT = "Test Socket number. (Default: Current Test Socket Index)"
 
-[SF.Seq[3].Main[6].TS.SData.Prototype.SerialNumber]
+[SF.Seq[3].Main[5].TS.SData.Prototype.SerialNumber]
 %COMMENT = "Serial number of the UUT on the Test Socket."
 
-[DEF, SF.Seq[3].Main[6]]
+[DEF, SF.Seq[3].Main[5]]
 %NAME = "Model.TestSocket.GetSerialNumber"
 
-[SF.Seq[3].Main[7].TS]
+[SF.Seq[3].Main[6].TS]
 Id = "ID#:C9YUTFCr8RGODaQctBT8oA"
 
-[DEF, SF.Seq[3].Main[7].TS]
+[DEF, SF.Seq[3].Main[6].TS]
 SData = "TYPE, FlexGStepAdditions"
 
-[SF.Seq[3].Main[7].TS.SData.ViCall]
+[SF.Seq[3].Main[6].TS.SData.ViCall]
 ProjectPath = "..\\..\\LabView\\nexteer.lvproj"
 VIPath = "My Computer\\Station\\Get Program revision.vi"
 TDChecksum = -307564253
 %HI: Parms = [0]
 
-[DEF, SF.Seq[3].Main[7].TS.SData.ViCall.Parms]
+[DEF, SF.Seq[3].Main[6].TS.SData.ViCall.Parms]
 %[0] = "TYPE, VIParameter"
 
-[SF.Seq[3].Main[7].TS.SData.ViCall.Parms[0]]
+[SF.Seq[3].Main[6].TS.SData.ViCall.Parms[0]]
 Label = "Revision"
 ArgVal = "Locals.ProgramRevision"
 Type = 1
@@ -11379,26 +11355,26 @@ DisplayType = "ASCII String"
 Direction = 1
 ConnectorNumber = 3
 
-[DEF, SF.Seq[3].Main[7].TS.SData.ViCall.Parms[0]]
+[DEF, SF.Seq[3].Main[6].TS.SData.ViCall.Parms[0]]
 %NAME = "Revision"
 
-[DEF, SF.Seq[3].Main[7]]
+[DEF, SF.Seq[3].Main[6]]
 %NAME = "Get Program revision"
 
-[SF.Seq[3].Main[8].TS]
+[SF.Seq[3].Main[7].TS]
 Id = "ID#:/k4LJwr57xG52tQli0T1uC"
 
-[DEF, SF.Seq[3].Main[8].TS]
+[DEF, SF.Seq[3].Main[7].TS]
 SData = "TYPE, SeqCallStepAdditions"
 
-[SF.Seq[3].Main[8].TS.SData]
+[SF.Seq[3].Main[7].TS.SData]
 SeqName = "Collect Test Results"
 UseCurFile = True
 
-[DEF, SF.Seq[3].Main[8].TS.SData]
+[DEF, SF.Seq[3].Main[7].TS.SData]
 ActualArgs = Arguments
 
-[DEF, SF.Seq[3].Main[8].TS.SData.ActualArgs]
+[DEF, SF.Seq[3].Main[7].TS.SData.ActualArgs]
 MainSequenceResult = "TYPE, SequenceArgument"
 AcquireTesting = "TYPE, SequenceArgument"
 FailureSet = "TYPE, SequenceArgument"
@@ -11408,70 +11384,70 @@ Tx = "TYPE, SequenceArgument"
 Rx = "TYPE, SequenceArgument"
 Report = "TYPE, SequenceArgument"
 
-[SF.Seq[3].Main[8].TS.SData.ActualArgs.MainSequenceResult]
+[SF.Seq[3].Main[7].TS.SData.ActualArgs.MainSequenceResult]
 UseDef = False
 Expr = "Parameters.MainSequenceResult"
 ParamType = 2048
 Flags = 0
 
-[SF.Seq[3].Main[8].TS.SData.ActualArgs.AcquireTesting]
+[SF.Seq[3].Main[7].TS.SData.ActualArgs.AcquireTesting]
 UseDef = False
 Expr = "Locals.AcquireTesting"
 ParamType = 1
 
-[SF.Seq[3].Main[8].TS.SData.ActualArgs.FailureSet]
+[SF.Seq[3].Main[7].TS.SData.ActualArgs.FailureSet]
 UseDef = False
 Expr = "Locals.Report.FailureSet"
 ParamType = 256
 
-[SF.Seq[3].Main[8].TS.SData.ActualArgs.ResultPrint]
+[SF.Seq[3].Main[7].TS.SData.ActualArgs.ResultPrint]
 UseDef = False
 Expr = "Locals.Report.ResultPrint"
 ParamType = 256
 
-[SF.Seq[3].Main[8].TS.SData.ActualArgs.SetpointPrint]
+[SF.Seq[3].Main[7].TS.SData.ActualArgs.SetpointPrint]
 UseDef = False
 Expr = "Locals.Report.SetpointPrint"
 ParamType = 256
 
-[SF.Seq[3].Main[8].TS.SData.ActualArgs.Tx]
+[SF.Seq[3].Main[7].TS.SData.ActualArgs.Tx]
 UseDef = False
 Expr = "Locals.Report.Tx"
 ParamType = 256
 
-[SF.Seq[3].Main[8].TS.SData.ActualArgs.Rx]
+[SF.Seq[3].Main[7].TS.SData.ActualArgs.Rx]
 UseDef = False
 Expr = "Locals.Report.Rx"
 ParamType = 256
 
-[SF.Seq[3].Main[8].TS.SData.ActualArgs.Report]
+[SF.Seq[3].Main[7].TS.SData.ActualArgs.Report]
 UseDef = False
 Expr = "Locals.Report.Report"
 ParamType = 1
 
-[SF.Seq[3].Main[8]]
+[SF.Seq[3].Main[7]]
 %COMMENT = "//CHANGE FAILIURE DESCRPTION IF NEEDED"
 
-[DEF, SF.Seq[3].Main[8]]
+[DEF, SF.Seq[3].Main[7]]
 %NAME = "GetDUT results"
 
-[SF.Seq[3].Main[9].TS]
+[SF.Seq[3].Main[8].TS]
 Id = "ID#:Kna2N5v67xG53dQli0T1uC"
 
-[DEF, SF.Seq[3].Main[9].TS]
+[DEF, SF.Seq[3].Main[8].TS]
 SData = "TYPE, FlexGStepAdditions"
 
-[SF.Seq[3].Main[9].TS.SData.ViCall]
+[SF.Seq[3].Main[8].TS.SData.ViCall]
 ProjectPath = "..\\..\\LabView\\nexteer.lvproj"
 VIPath = "My Computer\\Station\\Get Failure set to write.vi"
 TDChecksum = -1409273814
 %HI: Parms = [1]
 
-[DEF, SF.Seq[3].Main[9].TS.SData.ViCall.Parms]
+[DEF, SF.Seq[3].Main[8].TS.SData.ViCall.Parms]
 %[0] = "TYPE, VIParameter"
 %[1] = "TYPE, VIParameter"
 
-[SF.Seq[3].Main[9].TS.SData.ViCall.Parms[0]]
+[SF.Seq[3].Main[8].TS.SData.ViCall.Parms[0]]
 Label = "Failure set"
 ArgVal = "Locals.Report.FailureSet"
 Type = 5
@@ -11480,10 +11456,10 @@ ArrayType = 51
 DisplayType = "1D Array (ASCII String)"
 ConnectorNumber = 11
 
-[DEF, SF.Seq[3].Main[9].TS.SData.ViCall.Parms[0]]
+[DEF, SF.Seq[3].Main[8].TS.SData.ViCall.Parms[0]]
 %NAME = "Failure set"
 
-[SF.Seq[3].Main[9].TS.SData.ViCall.Parms[1]]
+[SF.Seq[3].Main[8].TS.SData.ViCall.Parms[1]]
 Label = "Failure set to write"
 ArgVal = "Locals.FailureSetToWrite"
 Type = 1
@@ -11492,25 +11468,25 @@ DisplayType = "ASCII String"
 Direction = 1
 ConnectorNumber = 3
 
-[DEF, SF.Seq[3].Main[9].TS.SData.ViCall.Parms[1]]
+[DEF, SF.Seq[3].Main[8].TS.SData.ViCall.Parms[1]]
 %NAME = "Failure set to write"
 
-[DEF, SF.Seq[3].Main[9]]
+[DEF, SF.Seq[3].Main[8]]
 %NAME = "Get Failure set to write"
 
-[SF.Seq[3].Main[10].TS]
+[SF.Seq[3].Main[9].TS]
 Id = "ID#:ByiwN/uO8BGJ3syCf5KpWB"
 
-[DEF, SF.Seq[3].Main[10].TS]
+[DEF, SF.Seq[3].Main[9].TS]
 SData = "TYPE, FlexGStepAdditions"
 
-[SF.Seq[3].Main[10].TS.SData.ViCall]
+[SF.Seq[3].Main[9].TS.SData.ViCall]
 ProjectPath = "..\\..\\LabView\\nexteer.lvproj"
 VIPath = "My Computer\\Report\\Generate txt Report.vi"
 TDChecksum = -1548617726
 %HI: Parms = [11]
 
-[DEF, SF.Seq[3].Main[10].TS.SData.ViCall.Parms]
+[DEF, SF.Seq[3].Main[9].TS.SData.ViCall.Parms]
 %[0] = "TYPE, VIParameter"
 %[1] = "TYPE, VIParameter"
 %[2] = "TYPE, VIParameter"
@@ -11524,7 +11500,7 @@ TDChecksum = -1548617726
 %[10] = "TYPE, VIParameter"
 %[11] = "TYPE, VIParameter"
 
-[SF.Seq[3].Main[10].TS.SData.ViCall.Parms[0]]
+[SF.Seq[3].Main[9].TS.SData.ViCall.Parms[0]]
 Label = "Test Names"
 ArgVal = "Locals.Report.Report.TestNames"
 Type = 5
@@ -11533,10 +11509,10 @@ ArrayType = 51
 DisplayType = "1D Array (ASCII String)"
 ConnectorNumber = 6
 
-[DEF, SF.Seq[3].Main[10].TS.SData.ViCall.Parms[0]]
+[DEF, SF.Seq[3].Main[9].TS.SData.ViCall.Parms[0]]
 %NAME = "Test Names"
 
-[SF.Seq[3].Main[10].TS.SData.ViCall.Parms[1]]
+[SF.Seq[3].Main[9].TS.SData.ViCall.Parms[1]]
 Label = "Serial Number"
 ArgVal = "Locals.SerialNumber"
 Type = 1
@@ -11544,10 +11520,10 @@ WireRequirement = 1
 DisplayType = "ASCII String"
 ConnectorNumber = 0
 
-[DEF, SF.Seq[3].Main[10].TS.SData.ViCall.Parms[1]]
+[DEF, SF.Seq[3].Main[9].TS.SData.ViCall.Parms[1]]
 %NAME = "Serial Number"
 
-[SF.Seq[3].Main[10].TS.SData.ViCall.Parms[2]]
+[SF.Seq[3].Main[9].TS.SData.ViCall.Parms[2]]
 Label = "Testing result"
 ArgVal = "Parameters.UUTStatus"
 Type = 1
@@ -11555,10 +11531,10 @@ WireRequirement = 1
 DisplayType = "ASCII String"
 ConnectorNumber = 1
 
-[DEF, SF.Seq[3].Main[10].TS.SData.ViCall.Parms[2]]
+[DEF, SF.Seq[3].Main[9].TS.SData.ViCall.Parms[2]]
 %NAME = "Testing result"
 
-[SF.Seq[3].Main[10].TS.SData.ViCall.Parms[3]]
+[SF.Seq[3].Main[9].TS.SData.ViCall.Parms[3]]
 Label = "Failed Tests"
 ArgVal = "Locals.FailureSetToWrite"
 Type = 1
@@ -11566,10 +11542,10 @@ WireRequirement = 1
 DisplayType = "ASCII String"
 ConnectorNumber = 2
 
-[DEF, SF.Seq[3].Main[10].TS.SData.ViCall.Parms[3]]
+[DEF, SF.Seq[3].Main[9].TS.SData.ViCall.Parms[3]]
 %NAME = "Failed Tests"
 
-[SF.Seq[3].Main[10].TS.SData.ViCall.Parms[4]]
+[SF.Seq[3].Main[9].TS.SData.ViCall.Parms[4]]
 Label = "Upper Limits"
 ArgVal = "Locals.AcquireTesting.TSUpperToleranceSet"
 Type = 5
@@ -11577,10 +11553,10 @@ WireRequirement = 1
 DisplayType = "1D Array (DBL)"
 ConnectorNumber = 3
 
-[DEF, SF.Seq[3].Main[10].TS.SData.ViCall.Parms[4]]
+[DEF, SF.Seq[3].Main[9].TS.SData.ViCall.Parms[4]]
 %NAME = "Upper Limits"
 
-[SF.Seq[3].Main[10].TS.SData.ViCall.Parms[5]]
+[SF.Seq[3].Main[9].TS.SData.ViCall.Parms[5]]
 Label = "Lower Limits"
 ArgVal = "Locals.AcquireTesting.TSLowerToleranceSet"
 Type = 5
@@ -11588,10 +11564,10 @@ WireRequirement = 1
 DisplayType = "1D Array (DBL)"
 ConnectorNumber = 4
 
-[DEF, SF.Seq[3].Main[10].TS.SData.ViCall.Parms[5]]
+[DEF, SF.Seq[3].Main[9].TS.SData.ViCall.Parms[5]]
 %NAME = "Lower Limits"
 
-[SF.Seq[3].Main[10].TS.SData.ViCall.Parms[6]]
+[SF.Seq[3].Main[9].TS.SData.ViCall.Parms[6]]
 Label = "Measurement values"
 ArgVal = "Locals.AcquireTesting.TSValueSet"
 Type = 5
@@ -11599,10 +11575,10 @@ WireRequirement = 1
 DisplayType = "1D Array (DBL)"
 ConnectorNumber = 5
 
-[DEF, SF.Seq[3].Main[10].TS.SData.ViCall.Parms[6]]
+[DEF, SF.Seq[3].Main[9].TS.SData.ViCall.Parms[6]]
 %NAME = "Measurement values"
 
-[SF.Seq[3].Main[10].TS.SData.ViCall.Parms[7]]
+[SF.Seq[3].Main[9].TS.SData.ViCall.Parms[7]]
 Label = "Status"
 ArgVal = "Locals.Report.Report.Statuses"
 Type = 5
@@ -11611,10 +11587,10 @@ ArrayType = 51
 DisplayType = "1D Array (ASCII String)"
 ConnectorNumber = 7
 
-[DEF, SF.Seq[3].Main[10].TS.SData.ViCall.Parms[7]]
+[DEF, SF.Seq[3].Main[9].TS.SData.ViCall.Parms[7]]
 %NAME = "Status"
 
-[SF.Seq[3].Main[10].TS.SData.ViCall.Parms[8]]
+[SF.Seq[3].Main[9].TS.SData.ViCall.Parms[8]]
 Label = "NTC Codes"
 ArgVal = "StationGlobals.Testing.Parameters.NTC_Codes[RunState.TestSockets.MyIndex]"
 Type = 1
@@ -11622,10 +11598,10 @@ WireRequirement = 1
 DisplayType = "ASCII String"
 ConnectorNumber = 9
 
-[DEF, SF.Seq[3].Main[10].TS.SData.ViCall.Parms[8]]
+[DEF, SF.Seq[3].Main[9].TS.SData.ViCall.Parms[8]]
 %NAME = "NTC Codes"
 
-[SF.Seq[3].Main[10].TS.SData.ViCall.Parms[9]]
+[SF.Seq[3].Main[9].TS.SData.ViCall.Parms[9]]
 Label = "Critical NTC"
 Type = 2
 WireRequirement = 1
@@ -11633,10 +11609,10 @@ DisplayType = "Boolean"
 Direction = 1
 ConnectorNumber = 14
 
-[DEF, SF.Seq[3].Main[10].TS.SData.ViCall.Parms[9]]
+[DEF, SF.Seq[3].Main[9].TS.SData.ViCall.Parms[9]]
 %NAME = "Critical NTC"
 
-[SF.Seq[3].Main[10].TS.SData.ViCall.Parms[10]]
+[SF.Seq[3].Main[9].TS.SData.ViCall.Parms[10]]
 Label = "Fault NTC"
 Type = 2
 WireRequirement = 1
@@ -11644,10 +11620,10 @@ DisplayType = "Boolean"
 Direction = 1
 ConnectorNumber = 15
 
-[DEF, SF.Seq[3].Main[10].TS.SData.ViCall.Parms[10]]
+[DEF, SF.Seq[3].Main[9].TS.SData.ViCall.Parms[10]]
 %NAME = "Fault NTC"
 
-[SF.Seq[3].Main[10].TS.SData.ViCall.Parms[11]]
+[SF.Seq[3].Main[9].TS.SData.ViCall.Parms[11]]
 Label = "error out"
 ArgVal = "Step.Result.Error"
 Type = 3
@@ -11658,22 +11634,22 @@ Direction = 1
 ConnectorNumber = 19
 LegacyClusterType = 2
 
-[DEF, SF.Seq[3].Main[10].TS.SData.ViCall.Parms[11].ArrayClusterEls]
+[DEF, SF.Seq[3].Main[9].TS.SData.ViCall.Parms[11].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
 
-[SF.Seq[3].Main[10].TS.SData.ViCall.Parms[11].ArrayClusterEls[0]]
+[SF.Seq[3].Main[9].TS.SData.ViCall.Parms[11].ArrayClusterEls[0]]
 Label = "status"
 ArgVal = "Step.Result.Error.Occurred"
 Type = 2
 WireRequirement = 1
 DisplayType = "Boolean"
 
-[DEF, SF.Seq[3].Main[10].TS.SData.ViCall.Parms[11].ArrayClusterEls[0]]
+[DEF, SF.Seq[3].Main[9].TS.SData.ViCall.Parms[11].ArrayClusterEls[0]]
 %NAME = "status"
 
-[SF.Seq[3].Main[10].TS.SData.ViCall.Parms[11].ArrayClusterEls[1]]
+[SF.Seq[3].Main[9].TS.SData.ViCall.Parms[11].ArrayClusterEls[1]]
 Label = "code"
 ArgVal = "Step.Result.Error.Code"
 Type = 0
@@ -11681,41 +11657,41 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[3].Main[10].TS.SData.ViCall.Parms[11].ArrayClusterEls[1]]
+[DEF, SF.Seq[3].Main[9].TS.SData.ViCall.Parms[11].ArrayClusterEls[1]]
 %NAME = "code"
 
-[SF.Seq[3].Main[10].TS.SData.ViCall.Parms[11].ArrayClusterEls[2]]
+[SF.Seq[3].Main[9].TS.SData.ViCall.Parms[11].ArrayClusterEls[2]]
 Label = "source"
 ArgVal = "Step.Result.Error.Msg"
 Type = 1
 WireRequirement = 1
 DisplayType = "ASCII String"
 
-[DEF, SF.Seq[3].Main[10].TS.SData.ViCall.Parms[11].ArrayClusterEls[2]]
+[DEF, SF.Seq[3].Main[9].TS.SData.ViCall.Parms[11].ArrayClusterEls[2]]
 %NAME = "source"
 
-[DEF, SF.Seq[3].Main[10].TS.SData.ViCall.Parms[11]]
+[DEF, SF.Seq[3].Main[9].TS.SData.ViCall.Parms[11]]
 %NAME = "error out"
 
-[SF.Seq[3].Main[10]]
+[SF.Seq[3].Main[9]]
 %COMMENT = "## TODO NEEDS TO BE UPDATED"
 
-[DEF, SF.Seq[3].Main[10]]
+[DEF, SF.Seq[3].Main[9]]
 %NAME = "Generate Report"
 
-[SF.Seq[3].Main[11].TS]
+[SF.Seq[3].Main[10].TS]
 Id = "ID#:is0VwMiq8RGODKQctBT8oA"
 
-[DEF, SF.Seq[3].Main[11].TS]
+[DEF, SF.Seq[3].Main[10].TS]
 SData = "TYPE, FlexGStepAdditions"
 
-[SF.Seq[3].Main[11].TS.SData.ViCall]
+[SF.Seq[3].Main[10].TS.SData.ViCall]
 ProjectPath = "..\\..\\LabView\\nexteer.lvproj"
 VIPath = "My Computer\\Report\\Generate CSV Report.vi"
 TDChecksum = 1967907419
 %HI: Parms = [7]
 
-[DEF, SF.Seq[3].Main[11].TS.SData.ViCall.Parms]
+[DEF, SF.Seq[3].Main[10].TS.SData.ViCall.Parms]
 %[0] = "TYPE, VIParameter"
 %[1] = "TYPE, VIParameter"
 %[2] = "TYPE, VIParameter"
@@ -11725,7 +11701,7 @@ TDChecksum = 1967907419
 %[6] = "TYPE, VIParameter"
 %[7] = "TYPE, VIParameter"
 
-[SF.Seq[3].Main[11].TS.SData.ViCall.Parms[0]]
+[SF.Seq[3].Main[10].TS.SData.ViCall.Parms[0]]
 Label = "Report Variables"
 Type = 3
 WireRequirement = 1
@@ -11733,7 +11709,7 @@ DisplayType = "Container"
 %HI: ArrayClusterEls = [8]
 ConnectorNumber = 0
 
-[DEF, SF.Seq[3].Main[11].TS.SData.ViCall.Parms[0].ArrayClusterEls]
+[DEF, SF.Seq[3].Main[10].TS.SData.ViCall.Parms[0].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
@@ -11744,100 +11720,100 @@ ConnectorNumber = 0
 %[7] = "TYPE, VIParameterElement"
 %[8] = "TYPE, VIParameterElement"
 
-[SF.Seq[3].Main[11].TS.SData.ViCall.Parms[0].ArrayClusterEls[0]]
+[SF.Seq[3].Main[10].TS.SData.ViCall.Parms[0].ArrayClusterEls[0]]
 Label = "Project "
 ArgVal = "\"Stella Small\""
 Type = 1
 WireRequirement = 1
 DisplayType = "ASCII String"
 
-[DEF, SF.Seq[3].Main[11].TS.SData.ViCall.Parms[0].ArrayClusterEls[0]]
+[DEF, SF.Seq[3].Main[10].TS.SData.ViCall.Parms[0].ArrayClusterEls[0]]
 %NAME = "Project "
 
-[SF.Seq[3].Main[11].TS.SData.ViCall.Parms[0].ArrayClusterEls[1]]
+[SF.Seq[3].Main[10].TS.SData.ViCall.Parms[0].ArrayClusterEls[1]]
 Label = "Program revision"
 ArgVal = "Locals.ProgramRevision"
 Type = 1
 WireRequirement = 1
 DisplayType = "ASCII String"
 
-[DEF, SF.Seq[3].Main[11].TS.SData.ViCall.Parms[0].ArrayClusterEls[1]]
+[DEF, SF.Seq[3].Main[10].TS.SData.ViCall.Parms[0].ArrayClusterEls[1]]
 %NAME = "Program revision"
 
-[SF.Seq[3].Main[11].TS.SData.ViCall.Parms[0].ArrayClusterEls[2]]
+[SF.Seq[3].Main[10].TS.SData.ViCall.Parms[0].ArrayClusterEls[2]]
 Label = "Variant"
 ArgVal = "Locals.Variant"
 Type = 1
 WireRequirement = 1
 DisplayType = "ASCII String"
 
-[DEF, SF.Seq[3].Main[11].TS.SData.ViCall.Parms[0].ArrayClusterEls[2]]
+[DEF, SF.Seq[3].Main[10].TS.SData.ViCall.Parms[0].ArrayClusterEls[2]]
 %NAME = "Variant"
 
-[SF.Seq[3].Main[11].TS.SData.ViCall.Parms[0].ArrayClusterEls[3]]
+[SF.Seq[3].Main[10].TS.SData.ViCall.Parms[0].ArrayClusterEls[3]]
 Label = "Fixture"
 ArgVal = "Str(RunState.TestSockets.MyIndex)"
 Type = 1
 WireRequirement = 1
 DisplayType = "ASCII String"
 
-[DEF, SF.Seq[3].Main[11].TS.SData.ViCall.Parms[0].ArrayClusterEls[3]]
+[DEF, SF.Seq[3].Main[10].TS.SData.ViCall.Parms[0].ArrayClusterEls[3]]
 %NAME = "Fixture"
 
-[SF.Seq[3].Main[11].TS.SData.ViCall.Parms[0].ArrayClusterEls[4]]
+[SF.Seq[3].Main[10].TS.SData.ViCall.Parms[0].ArrayClusterEls[4]]
 Label = "Serial Number"
 ArgVal = "Locals.SerialNumber"
 Type = 1
 WireRequirement = 1
 DisplayType = "ASCII String"
 
-[DEF, SF.Seq[3].Main[11].TS.SData.ViCall.Parms[0].ArrayClusterEls[4]]
+[DEF, SF.Seq[3].Main[10].TS.SData.ViCall.Parms[0].ArrayClusterEls[4]]
 %NAME = "Serial Number"
 
-[SF.Seq[3].Main[11].TS.SData.ViCall.Parms[0].ArrayClusterEls[5]]
+[SF.Seq[3].Main[10].TS.SData.ViCall.Parms[0].ArrayClusterEls[5]]
 Label = "Date"
 ArgVal = "Date()"
 Type = 1
 WireRequirement = 1
 DisplayType = "ASCII String"
 
-[DEF, SF.Seq[3].Main[11].TS.SData.ViCall.Parms[0].ArrayClusterEls[5]]
+[DEF, SF.Seq[3].Main[10].TS.SData.ViCall.Parms[0].ArrayClusterEls[5]]
 %NAME = "Date"
 
-[SF.Seq[3].Main[11].TS.SData.ViCall.Parms[0].ArrayClusterEls[6]]
+[SF.Seq[3].Main[10].TS.SData.ViCall.Parms[0].ArrayClusterEls[6]]
 Label = "Time"
 ArgVal = "Time()"
 Type = 1
 WireRequirement = 1
 DisplayType = "ASCII String"
 
-[DEF, SF.Seq[3].Main[11].TS.SData.ViCall.Parms[0].ArrayClusterEls[6]]
+[DEF, SF.Seq[3].Main[10].TS.SData.ViCall.Parms[0].ArrayClusterEls[6]]
 %NAME = "Time"
 
-[SF.Seq[3].Main[11].TS.SData.ViCall.Parms[0].ArrayClusterEls[7]]
+[SF.Seq[3].Main[10].TS.SData.ViCall.Parms[0].ArrayClusterEls[7]]
 Label = "Retest"
 ArgVal = "Str(Locals.NumberOfFails + Locals.NumberOfPass +1 )"
 Type = 1
 WireRequirement = 1
 DisplayType = "ASCII String"
 
-[DEF, SF.Seq[3].Main[11].TS.SData.ViCall.Parms[0].ArrayClusterEls[7]]
+[DEF, SF.Seq[3].Main[10].TS.SData.ViCall.Parms[0].ArrayClusterEls[7]]
 %NAME = "Retest"
 
-[SF.Seq[3].Main[11].TS.SData.ViCall.Parms[0].ArrayClusterEls[8]]
+[SF.Seq[3].Main[10].TS.SData.ViCall.Parms[0].ArrayClusterEls[8]]
 Label = "Work Order"
 ArgVal = "StationGlobals.Automation.SystemControl.WorkOrder"
 Type = 1
 WireRequirement = 1
 DisplayType = "ASCII String"
 
-[DEF, SF.Seq[3].Main[11].TS.SData.ViCall.Parms[0].ArrayClusterEls[8]]
+[DEF, SF.Seq[3].Main[10].TS.SData.ViCall.Parms[0].ArrayClusterEls[8]]
 %NAME = "Work Order"
 
-[DEF, SF.Seq[3].Main[11].TS.SData.ViCall.Parms[0]]
+[DEF, SF.Seq[3].Main[10].TS.SData.ViCall.Parms[0]]
 %NAME = "Report Variables"
 
-[SF.Seq[3].Main[11].TS.SData.ViCall.Parms[1]]
+[SF.Seq[3].Main[10].TS.SData.ViCall.Parms[1]]
 Label = "Lower Limits"
 ArgVal = "Locals.AcquireTesting.TSLowerToleranceSet"
 Type = 5
@@ -11845,10 +11821,10 @@ WireRequirement = 1
 DisplayType = "1D Array (DBL)"
 ConnectorNumber = 4
 
-[DEF, SF.Seq[3].Main[11].TS.SData.ViCall.Parms[1]]
+[DEF, SF.Seq[3].Main[10].TS.SData.ViCall.Parms[1]]
 %NAME = "Lower Limits"
 
-[SF.Seq[3].Main[11].TS.SData.ViCall.Parms[2]]
+[SF.Seq[3].Main[10].TS.SData.ViCall.Parms[2]]
 Label = "Measurment values"
 ArgVal = "Locals.AcquireTesting.TSValueSet"
 Type = 5
@@ -11856,10 +11832,10 @@ WireRequirement = 1
 DisplayType = "1D Array (DBL)"
 ConnectorNumber = 5
 
-[DEF, SF.Seq[3].Main[11].TS.SData.ViCall.Parms[2]]
+[DEF, SF.Seq[3].Main[10].TS.SData.ViCall.Parms[2]]
 %NAME = "Measurment values"
 
-[SF.Seq[3].Main[11].TS.SData.ViCall.Parms[3]]
+[SF.Seq[3].Main[10].TS.SData.ViCall.Parms[3]]
 Label = "Upper Limits"
 ArgVal = "Locals.AcquireTesting.TSUpperToleranceSet"
 Type = 5
@@ -11867,10 +11843,10 @@ WireRequirement = 1
 DisplayType = "1D Array (DBL)"
 ConnectorNumber = 7
 
-[DEF, SF.Seq[3].Main[11].TS.SData.ViCall.Parms[3]]
+[DEF, SF.Seq[3].Main[10].TS.SData.ViCall.Parms[3]]
 %NAME = "Upper Limits"
 
-[SF.Seq[3].Main[11].TS.SData.ViCall.Parms[4]]
+[SF.Seq[3].Main[10].TS.SData.ViCall.Parms[4]]
 Label = "Status"
 ArgVal = "Locals.Report.Report.Statuses"
 Type = 5
@@ -11879,10 +11855,10 @@ ArrayType = 51
 DisplayType = "1D Array (ASCII String)"
 ConnectorNumber = 9
 
-[DEF, SF.Seq[3].Main[11].TS.SData.ViCall.Parms[4]]
+[DEF, SF.Seq[3].Main[10].TS.SData.ViCall.Parms[4]]
 %NAME = "Status"
 
-[SF.Seq[3].Main[11].TS.SData.ViCall.Parms[5]]
+[SF.Seq[3].Main[10].TS.SData.ViCall.Parms[5]]
 Label = "Overall status"
 ArgVal = "Parameters.UUTStatus"
 Type = 1
@@ -11890,10 +11866,10 @@ WireRequirement = 1
 DisplayType = "ASCII String"
 ConnectorNumber = 11
 
-[DEF, SF.Seq[3].Main[11].TS.SData.ViCall.Parms[5]]
+[DEF, SF.Seq[3].Main[10].TS.SData.ViCall.Parms[5]]
 %NAME = "Overall status"
 
-[SF.Seq[3].Main[11].TS.SData.ViCall.Parms[6]]
+[SF.Seq[3].Main[10].TS.SData.ViCall.Parms[6]]
 Label = "Test Names"
 ArgVal = "Locals.Report.Report.TestNames"
 Type = 5
@@ -11902,10 +11878,10 @@ ArrayType = 51
 DisplayType = "1D Array (ASCII String)"
 ConnectorNumber = 13
 
-[DEF, SF.Seq[3].Main[11].TS.SData.ViCall.Parms[6]]
+[DEF, SF.Seq[3].Main[10].TS.SData.ViCall.Parms[6]]
 %NAME = "Test Names"
 
-[SF.Seq[3].Main[11].TS.SData.ViCall.Parms[7]]
+[SF.Seq[3].Main[10].TS.SData.ViCall.Parms[7]]
 Label = "error out"
 ArgVal = "Step.Result.Error"
 Type = 3
@@ -11916,22 +11892,22 @@ Direction = 1
 ConnectorNumber = 19
 LegacyClusterType = 2
 
-[DEF, SF.Seq[3].Main[11].TS.SData.ViCall.Parms[7].ArrayClusterEls]
+[DEF, SF.Seq[3].Main[10].TS.SData.ViCall.Parms[7].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
 
-[SF.Seq[3].Main[11].TS.SData.ViCall.Parms[7].ArrayClusterEls[0]]
+[SF.Seq[3].Main[10].TS.SData.ViCall.Parms[7].ArrayClusterEls[0]]
 Label = "status"
 ArgVal = "Step.Result.Error.Occurred"
 Type = 2
 WireRequirement = 1
 DisplayType = "Boolean"
 
-[DEF, SF.Seq[3].Main[11].TS.SData.ViCall.Parms[7].ArrayClusterEls[0]]
+[DEF, SF.Seq[3].Main[10].TS.SData.ViCall.Parms[7].ArrayClusterEls[0]]
 %NAME = "status"
 
-[SF.Seq[3].Main[11].TS.SData.ViCall.Parms[7].ArrayClusterEls[1]]
+[SF.Seq[3].Main[10].TS.SData.ViCall.Parms[7].ArrayClusterEls[1]]
 Label = "code"
 ArgVal = "Step.Result.Error.Code"
 Type = 0
@@ -11939,141 +11915,141 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[3].Main[11].TS.SData.ViCall.Parms[7].ArrayClusterEls[1]]
+[DEF, SF.Seq[3].Main[10].TS.SData.ViCall.Parms[7].ArrayClusterEls[1]]
 %NAME = "code"
 
-[SF.Seq[3].Main[11].TS.SData.ViCall.Parms[7].ArrayClusterEls[2]]
+[SF.Seq[3].Main[10].TS.SData.ViCall.Parms[7].ArrayClusterEls[2]]
 Label = "source"
 ArgVal = "Step.Result.Error.Msg"
 Type = 1
 WireRequirement = 1
 DisplayType = "ASCII String"
 
-[DEF, SF.Seq[3].Main[11].TS.SData.ViCall.Parms[7].ArrayClusterEls[2]]
+[DEF, SF.Seq[3].Main[10].TS.SData.ViCall.Parms[7].ArrayClusterEls[2]]
 %NAME = "source"
 
-[DEF, SF.Seq[3].Main[11].TS.SData.ViCall.Parms[7]]
+[DEF, SF.Seq[3].Main[10].TS.SData.ViCall.Parms[7]]
 %NAME = "error out"
 
-[SF.Seq[3].Main[11]]
+[SF.Seq[3].Main[10]]
 %COMMENT = "## TODO NEEDS TO BE UPDATED"
 
-[DEF, SF.Seq[3].Main[11]]
+[DEF, SF.Seq[3].Main[10]]
 %NAME = "Generate Report csv"
 
-[SF.Seq[3].Main[12].TS]
+[SF.Seq[3].Main[11].TS]
 Id = "ID#:Usb+Br2J8RGwckypVBlBxD"
 Icon = "ni_blank.ico"
 StatusExpr = "\"\""
 %FLG: StatusExpr = 1
 
-[SF.Seq[3].Main[13].TS]
+[SF.Seq[3].Main[12].TS]
 Id = "ID#:Rrnst2/67xG53dQli0T1uC"
 Icon = "ni_blank.ico"
 StatusExpr = "\"\""
 %FLG: StatusExpr = 1
 
-[SF.Seq[3].Main[14].TS]
+[SF.Seq[3].Main[13].TS]
 Id = "ID#:cXY9wAz57xG52tQli0T1uC"
 
-[SF.Seq[3].Main[14]]
+[SF.Seq[3].Main[13]]
 ItemExpr = "Locals.TestSocketName"
 
-[DEF, SF.Seq[3].Main[14]]
+[DEF, SF.Seq[3].Main[13]]
 %NAME = "Select"
 
-[SF.Seq[3].Main[15].TS]
+[SF.Seq[3].Main[14].TS]
 Id = "ID#:cnY9wAz57xG52tQli0T1uC"
 
-[SF.Seq[3].Main[15]]
+[SF.Seq[3].Main[14]]
 ItemExpr = "\"CHMB1_DUT1\""
 %COMMENT = "Case of the LEFT DUT NEST"
 
-[DEF, SF.Seq[3].Main[15]]
+[DEF, SF.Seq[3].Main[14]]
 %NAME = "Case"
 
-[SF.Seq[3].Main[16].TS]
+[SF.Seq[3].Main[15].TS]
 Id = "ID#:wwGCxgz57xG52tQli0T1uC"
 PostExpr = "StationGlobals.Automation.SystemControl.CHMB1.DUT1.TestingStatus = Parameters.UUTStatus"
 
-[DEF, SF.Seq[3].Main[16]]
+[DEF, SF.Seq[3].Main[15]]
 %NAME = "Get status for LEFT NEST"
 
-[SF.Seq[3].Main[17].TS]
+[SF.Seq[3].Main[16].TS]
 Id = "ID#:c3Y9wAz57xG52tQli0T1uC"
 
-[DEF, SF.Seq[3].Main[17]]
+[DEF, SF.Seq[3].Main[16]]
 %NAME = "End"
 
-[SF.Seq[3].Main[18].TS]
+[SF.Seq[3].Main[17].TS]
 Id = "ID#:dHY9wAz57xG52tQli0T1uC"
 
-[SF.Seq[3].Main[18]]
+[SF.Seq[3].Main[17]]
 ItemExpr = "\"CHMB1_DUT2\""
 %COMMENT = "Case of the RIGHT DUT NEST"
 
-[DEF, SF.Seq[3].Main[18]]
+[DEF, SF.Seq[3].Main[17]]
 %NAME = "Case"
 
-[SF.Seq[3].Main[19].TS]
+[SF.Seq[3].Main[18].TS]
 Id = "ID#:i3aRPg357xG52tQli0T1uC"
 PostExpr = "StationGlobals.Automation.SystemControl.CHMB1.DUT2.TestingStatus = Parameters.UUTStatus"
 
-[DEF, SF.Seq[3].Main[19]]
+[DEF, SF.Seq[3].Main[18]]
 %NAME = "Get status for RIGHT NEST"
 
-[SF.Seq[3].Main[20].TS]
+[SF.Seq[3].Main[19].TS]
 Id = "ID#:dXY9wAz57xG52tQli0T1uC"
+
+[DEF, SF.Seq[3].Main[19]]
+%NAME = "End"
+
+[SF.Seq[3].Main[20].TS]
+Id = "ID#:dnY9wAz57xG52tQli0T1uC"
 
 [DEF, SF.Seq[3].Main[20]]
 %NAME = "End"
 
 [SF.Seq[3].Main[21].TS]
-Id = "ID#:dnY9wAz57xG52tQli0T1uC"
-
-[DEF, SF.Seq[3].Main[21]]
-%NAME = "End"
-
-[SF.Seq[3].Main[22].TS]
 Id = "ID#:wgGCxgz57xG52tQli0T1uC"
 Icon = "ni_blank.ico"
 StatusExpr = "\"\""
 %FLG: StatusExpr = 1
 
-[SF.Seq[3].Main[23].TS]
+[SF.Seq[3].Main[22].TS]
 Id = "ID#:b7XHUQr57xG52tQli0T1uC"
 Icon = "ni_blank.ico"
 StatusExpr = "\"\""
 %FLG: StatusExpr = 1
 
-[SF.Seq[3].Main[24].TS]
+[SF.Seq[3].Main[23].TS]
 Id = "ID#:Fx5zWgr57xG52tQli0T1uC"
 
-[DEF, SF.Seq[3].Main[24].TS]
+[DEF, SF.Seq[3].Main[23].TS]
 SData = "TYPE, SeqCallStepAdditions"
 
-[SF.Seq[3].Main[24].TS.SData]
+[SF.Seq[3].Main[23].TS.SData]
 SFPath = "Noffz.UTP.TEF.API.seq"
 SeqName = "UI.TestSocket.TestStatus.SetValue"
 CustomThreadAffinity = "-1"
 Trace = "Off"
 
-[DEF, SF.Seq[3].Main[24].TS.SData]
+[DEF, SF.Seq[3].Main[23].TS.SData]
 ActualArgs = Arguments
 Prototype = Obj
 
-[DEF, SF.Seq[3].Main[24].TS.SData.ActualArgs]
+[DEF, SF.Seq[3].Main[23].TS.SData.ActualArgs]
 TestSocket = "TYPE, SequenceArgument"
 Text = "TYPE, SequenceArgument"
 Color = "TYPE, SequenceArgument"
 FontSize = "TYPE, SequenceArgument"
 
-[SF.Seq[3].Main[24].TS.SData.ActualArgs.TestSocket]
+[SF.Seq[3].Main[23].TS.SData.ActualArgs.TestSocket]
 ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[SF.Seq[3].Main[24].TS.SData.ActualArgs.Text]
+[SF.Seq[3].Main[23].TS.SData.ActualArgs.Text]
 UseDef = False
 Expr Line0001 = "(\n   Parameters.MainSequenceResult != Nothing?\n   ( \n     Parameters.UUTStatus == \"Passed\"? \n     ResStr(\"UI_MESS"
 Expr Line0002 = "AGES\",  \"TEST_PASSED\")\n     : \n     (\n     \tParameters.UUTStatus == \"Error\"? \n     \tResStr(\"UI_MESSAGES\",  "
@@ -12085,7 +12061,7 @@ Expr Line0007 = "  :\n   (\n      \"\"\n   )\n)"
 ParamType = 2
 Flags = 0
 
-[SF.Seq[3].Main[24].TS.SData.ActualArgs.Color]
+[SF.Seq[3].Main[23].TS.SData.ActualArgs.Color]
 UseDef = False
 Expr Line0001 = "(Parameters.UUTStatus == \"Passed\" ? StationGlobals.TEF.Colors.StatusPassed : (Parameters.UUTStatus == \"Terminated\" ?"
 Expr Line0002 = " StationGlobals.TEF.Colors.StatusTerminated : StationGlobals.TEF.Colors.StatusFailed))"
@@ -12093,38 +12069,79 @@ ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[SF.Seq[3].Main[24].TS.SData.ActualArgs.FontSize]
+[SF.Seq[3].Main[23].TS.SData.ActualArgs.FontSize]
 Expr = "40"
 ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[DEF, SF.Seq[3].Main[24].TS.SData.Prototype]
+[DEF, SF.Seq[3].Main[23].TS.SData.Prototype]
 TestSocket = Num
 Text = Str
 Color = Num
 FontSize = Num
 
-[SF.Seq[3].Main[24].TS.SData.Prototype]
+[SF.Seq[3].Main[23].TS.SData.Prototype]
 TestSocket = Nan
 Color = Nan
 FontSize = Nan
 
-[SF.Seq[3].Main[24].TS.SData.Prototype.Color]
+[SF.Seq[3].Main[23].TS.SData.Prototype.Color]
 %NUMFMT = "%#x"
 
-[DEF, SF.Seq[3].Main[24]]
+[DEF, SF.Seq[3].Main[23]]
 %NAME = "UI.TestSocket.TestStatus.SetValue"
 
-[SF.Seq[3].Main[25].TS]
+[SF.Seq[3].Main[24].TS]
 Id = "ID#:GB5zWgr57xG52tQli0T1uC"
+
+[DEF, SF.Seq[3].Main[24].TS]
+SData = "TYPE, SeqCallStepAdditions"
+
+[SF.Seq[3].Main[24].TS.SData]
+SFPath = "Noffz.UTP.TEF.API.seq"
+SeqName = "UI.TestSocket.SetIcon"
+CustomThreadAffinity = "-1"
+Trace = "Off"
+
+[DEF, SF.Seq[3].Main[24].TS.SData]
+ActualArgs = Arguments
+Prototype = Obj
+
+[DEF, SF.Seq[3].Main[24].TS.SData.ActualArgs]
+TestSocket = "TYPE, SequenceArgument"
+IconPath = "TYPE, SequenceArgument"
+
+[SF.Seq[3].Main[24].TS.SData.ActualArgs.TestSocket]
+ParamType = 4
+ParamRepresentation = 1
+Flags = 0
+
+[SF.Seq[3].Main[24].TS.SData.ActualArgs.IconPath]
+UseDef = False
+Expr = "(Parameters.UUTStatus == \"Passed\"? \"Ok.ico\" : \"Cancel.ico\")"
+ParamType = 2
+Flags = 0
+
+[DEF, SF.Seq[3].Main[24].TS.SData.Prototype]
+TestSocket = Num
+Caption = Str
+
+[SF.Seq[3].Main[24].TS.SData.Prototype]
+TestSocket = Nan
+
+[DEF, SF.Seq[3].Main[24]]
+%NAME = "UI.TestSocket.SetIcon: Socket Pass/Fail"
+
+[SF.Seq[3].Main[25].TS]
+Id = "ID#:GR5zWgr57xG52tQli0T1uC"
 
 [DEF, SF.Seq[3].Main[25].TS]
 SData = "TYPE, SeqCallStepAdditions"
 
 [SF.Seq[3].Main[25].TS.SData]
 SFPath = "Noffz.UTP.TEF.API.seq"
-SeqName = "UI.TestSocket.SetIcon"
+SeqName = "UI.TestSocket.ShowMessage"
 CustomThreadAffinity = "-1"
 Trace = "Off"
 
@@ -12134,38 +12151,57 @@ Prototype = Obj
 
 [DEF, SF.Seq[3].Main[25].TS.SData.ActualArgs]
 TestSocket = "TYPE, SequenceArgument"
-IconPath = "TYPE, SequenceArgument"
+Message = "TYPE, SequenceArgument"
+Color = "TYPE, SequenceArgument"
+FontSize = "TYPE, SequenceArgument"
 
 [SF.Seq[3].Main[25].TS.SData.ActualArgs.TestSocket]
 ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[SF.Seq[3].Main[25].TS.SData.ActualArgs.IconPath]
+[SF.Seq[3].Main[25].TS.SData.ActualArgs.Message]
 UseDef = False
-Expr = "(Parameters.UUTStatus == \"Passed\"? \"Ok.ico\" : \"Cancel.ico\")"
+Expr = "\"\""
 ParamType = 2
+Flags = 0
+
+[SF.Seq[3].Main[25].TS.SData.ActualArgs.Color]
+ParamType = 4
+ParamRepresentation = 1
+Flags = 0
+
+[SF.Seq[3].Main[25].TS.SData.ActualArgs.FontSize]
+ParamType = 4
+ParamRepresentation = 1
 Flags = 0
 
 [DEF, SF.Seq[3].Main[25].TS.SData.Prototype]
 TestSocket = Num
-Caption = Str
+Message = Str
+Color = Num
+FontSize = Num
 
 [SF.Seq[3].Main[25].TS.SData.Prototype]
 TestSocket = Nan
+Color = Nan
+FontSize = Nan
+
+[SF.Seq[3].Main[25].TS.SData.Prototype.Color]
+%NUMFMT = "%#x"
 
 [DEF, SF.Seq[3].Main[25]]
-%NAME = "UI.TestSocket.SetIcon: Socket Pass/Fail"
+%NAME = "UI.TestSocket.ShowMessage: \"\""
 
 [SF.Seq[3].Main[26].TS]
-Id = "ID#:GR5zWgr57xG52tQli0T1uC"
+Id = "ID#:Gh5zWgr57xG52tQli0T1uC"
 
 [DEF, SF.Seq[3].Main[26].TS]
 SData = "TYPE, SeqCallStepAdditions"
 
 [SF.Seq[3].Main[26].TS.SData]
 SFPath = "Noffz.UTP.TEF.API.seq"
-SeqName = "UI.TestSocket.ShowMessage"
+SeqName = "Model.TestSocket.GetProductAndVariant"
 CustomThreadAffinity = "-1"
 Trace = "Off"
 
@@ -12175,57 +12211,46 @@ Prototype = Obj
 
 [DEF, SF.Seq[3].Main[26].TS.SData.ActualArgs]
 TestSocket = "TYPE, SequenceArgument"
-Message = "TYPE, SequenceArgument"
-Color = "TYPE, SequenceArgument"
-FontSize = "TYPE, SequenceArgument"
+Product = "TYPE, SequenceArgument"
+Variant = "TYPE, SequenceArgument"
 
 [SF.Seq[3].Main[26].TS.SData.ActualArgs.TestSocket]
 ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[SF.Seq[3].Main[26].TS.SData.ActualArgs.Message]
+[SF.Seq[3].Main[26].TS.SData.ActualArgs.Product]
 UseDef = False
-Expr = "\"\""
+Expr = "Locals.Product"
 ParamType = 2
-Flags = 0
 
-[SF.Seq[3].Main[26].TS.SData.ActualArgs.Color]
-ParamType = 4
-ParamRepresentation = 1
-Flags = 0
-
-[SF.Seq[3].Main[26].TS.SData.ActualArgs.FontSize]
-ParamType = 4
-ParamRepresentation = 1
-Flags = 0
+[SF.Seq[3].Main[26].TS.SData.ActualArgs.Variant]
+UseDef = False
+Expr = "Locals.Variant"
+ParamType = 2
 
 [DEF, SF.Seq[3].Main[26].TS.SData.Prototype]
 TestSocket = Num
-Message = Str
-Color = Num
-FontSize = Num
+Product = Str
+Variant = Str
 
 [SF.Seq[3].Main[26].TS.SData.Prototype]
 TestSocket = Nan
-Color = Nan
-FontSize = Nan
-
-[SF.Seq[3].Main[26].TS.SData.Prototype.Color]
-%NUMFMT = "%#x"
+%FLG: Product = 4
+%FLG: Variant = 4
 
 [DEF, SF.Seq[3].Main[26]]
-%NAME = "UI.TestSocket.ShowMessage: \"\""
+%NAME = "Model.TestSocket.GetProductAndVariant"
 
 [SF.Seq[3].Main[27].TS]
-Id = "ID#:Gh5zWgr57xG52tQli0T1uC"
+Id = "ID#:Gx5zWgr57xG52tQli0T1uC"
 
 [DEF, SF.Seq[3].Main[27].TS]
 SData = "TYPE, SeqCallStepAdditions"
 
 [SF.Seq[3].Main[27].TS.SData]
 SFPath = "Noffz.UTP.TEF.API.seq"
-SeqName = "Model.TestSocket.GetProductAndVariant"
+SeqName = "Model.TestSocket.GetSerialNumber"
 CustomThreadAffinity = "-1"
 Trace = "Off"
 
@@ -12235,46 +12260,44 @@ Prototype = Obj
 
 [DEF, SF.Seq[3].Main[27].TS.SData.ActualArgs]
 TestSocket = "TYPE, SequenceArgument"
-Product = "TYPE, SequenceArgument"
-Variant = "TYPE, SequenceArgument"
+SerialNumber = "TYPE, SequenceArgument"
 
 [SF.Seq[3].Main[27].TS.SData.ActualArgs.TestSocket]
 ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[SF.Seq[3].Main[27].TS.SData.ActualArgs.Product]
+[SF.Seq[3].Main[27].TS.SData.ActualArgs.SerialNumber]
 UseDef = False
-Expr = "Locals.Product"
-ParamType = 2
-
-[SF.Seq[3].Main[27].TS.SData.ActualArgs.Variant]
-UseDef = False
-Expr = "Locals.Variant"
+Expr = "Locals.SerialNumber"
 ParamType = 2
 
 [DEF, SF.Seq[3].Main[27].TS.SData.Prototype]
 TestSocket = Num
-Product = Str
-Variant = Str
+SerialNumber = Str
 
 [SF.Seq[3].Main[27].TS.SData.Prototype]
 TestSocket = Nan
-%FLG: Product = 4
-%FLG: Variant = 4
+%FLG: SerialNumber = 4
+
+[SF.Seq[3].Main[27].TS.SData.Prototype.TestSocket]
+%COMMENT = "Test Socket number. (Default: Current Test Socket Index)"
+
+[SF.Seq[3].Main[27].TS.SData.Prototype.SerialNumber]
+%COMMENT = "Serial number of the UUT on the Test Socket."
 
 [DEF, SF.Seq[3].Main[27]]
-%NAME = "Model.TestSocket.GetProductAndVariant"
+%NAME = "Model.TestSocket.GetSerialNumber"
 
 [SF.Seq[3].Main[28].TS]
-Id = "ID#:Gx5zWgr57xG52tQli0T1uC"
+Id = "ID#:AbF0cgr57xG52tQli0T1uC"
 
 [DEF, SF.Seq[3].Main[28].TS]
 SData = "TYPE, SeqCallStepAdditions"
 
 [SF.Seq[3].Main[28].TS.SData]
 SFPath = "Noffz.UTP.TEF.API.seq"
-SeqName = "Model.TestSocket.GetSerialNumber"
+SeqName = "UI.TestSocket.Statistic.Update"
 CustomThreadAffinity = "-1"
 Trace = "Off"
 
@@ -12284,44 +12307,44 @@ Prototype = Obj
 
 [DEF, SF.Seq[3].Main[28].TS.SData.ActualArgs]
 TestSocket = "TYPE, SequenceArgument"
-SerialNumber = "TYPE, SequenceArgument"
+UUTStatus = "TYPE, SequenceArgument"
 
 [SF.Seq[3].Main[28].TS.SData.ActualArgs.TestSocket]
 ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[SF.Seq[3].Main[28].TS.SData.ActualArgs.SerialNumber]
+[SF.Seq[3].Main[28].TS.SData.ActualArgs.UUTStatus]
 UseDef = False
-Expr = "Locals.SerialNumber"
+Expr = "Parameters.UUTStatus"
 ParamType = 2
+Flags = 0
 
 [DEF, SF.Seq[3].Main[28].TS.SData.Prototype]
 TestSocket = Num
-SerialNumber = Str
+UUTStatus = Str
 
 [SF.Seq[3].Main[28].TS.SData.Prototype]
 TestSocket = Nan
-%FLG: SerialNumber = 4
 
 [SF.Seq[3].Main[28].TS.SData.Prototype.TestSocket]
 %COMMENT = "Test Socket number. (Default: Current Test Socket Index)"
 
-[SF.Seq[3].Main[28].TS.SData.Prototype.SerialNumber]
-%COMMENT = "Serial number of the UUT on the Test Socket."
+[SF.Seq[3].Main[28].TS.SData.Prototype.UUTStatus]
+%COMMENT = "UUT test status: \"Passed\" or others."
 
 [DEF, SF.Seq[3].Main[28]]
-%NAME = "Model.TestSocket.GetSerialNumber"
+%NAME = "UI.TestSocket.Statistic.Update"
 
 [SF.Seq[3].Main[29].TS]
-Id = "ID#:AbF0cgr57xG52tQli0T1uC"
+Id = "ID#:ArF0cgr57xG52tQli0T1uC"
 
 [DEF, SF.Seq[3].Main[29].TS]
 SData = "TYPE, SeqCallStepAdditions"
 
 [SF.Seq[3].Main[29].TS.SData]
 SFPath = "Noffz.UTP.TEF.API.seq"
-SeqName = "UI.TestSocket.Statistic.Update"
+SeqName = "UI.Station.Statistic.Update"
 CustomThreadAffinity = "-1"
 Trace = "Off"
 
@@ -12330,13 +12353,7 @@ ActualArgs = Arguments
 Prototype = Obj
 
 [DEF, SF.Seq[3].Main[29].TS.SData.ActualArgs]
-TestSocket = "TYPE, SequenceArgument"
 UUTStatus = "TYPE, SequenceArgument"
-
-[SF.Seq[3].Main[29].TS.SData.ActualArgs.TestSocket]
-ParamType = 4
-ParamRepresentation = 1
-Flags = 0
 
 [SF.Seq[3].Main[29].TS.SData.ActualArgs.UUTStatus]
 UseDef = False
@@ -12345,418 +12362,377 @@ ParamType = 2
 Flags = 0
 
 [DEF, SF.Seq[3].Main[29].TS.SData.Prototype]
-TestSocket = Num
 UUTStatus = Str
-
-[SF.Seq[3].Main[29].TS.SData.Prototype]
-TestSocket = Nan
-
-[SF.Seq[3].Main[29].TS.SData.Prototype.TestSocket]
-%COMMENT = "Test Socket number. (Default: Current Test Socket Index)"
-
-[SF.Seq[3].Main[29].TS.SData.Prototype.UUTStatus]
-%COMMENT = "UUT test status: \"Passed\" or others."
 
 [DEF, SF.Seq[3].Main[29]]
-%NAME = "UI.TestSocket.Statistic.Update"
-
-[SF.Seq[3].Main[30].TS]
-Id = "ID#:ArF0cgr57xG52tQli0T1uC"
-
-[DEF, SF.Seq[3].Main[30].TS]
-SData = "TYPE, SeqCallStepAdditions"
-
-[SF.Seq[3].Main[30].TS.SData]
-SFPath = "Noffz.UTP.TEF.API.seq"
-SeqName = "UI.Station.Statistic.Update"
-CustomThreadAffinity = "-1"
-Trace = "Off"
-
-[DEF, SF.Seq[3].Main[30].TS.SData]
-ActualArgs = Arguments
-Prototype = Obj
-
-[DEF, SF.Seq[3].Main[30].TS.SData.ActualArgs]
-UUTStatus = "TYPE, SequenceArgument"
-
-[SF.Seq[3].Main[30].TS.SData.ActualArgs.UUTStatus]
-UseDef = False
-Expr = "Parameters.UUTStatus"
-ParamType = 2
-Flags = 0
-
-[DEF, SF.Seq[3].Main[30].TS.SData.Prototype]
-UUTStatus = Str
-
-[DEF, SF.Seq[3].Main[30]]
 %NAME = "UI.Station.Statistic.Update"
 
-[SF.Seq[3].Main[31].TS]
+[SF.Seq[3].Main[30].TS]
 Id = "ID#:cLXHUQr57xG52tQli0T1uC"
 Icon = "ni_blank.ico"
 StatusExpr = "\"\""
 %FLG: StatusExpr = 1
 
-[SF.Seq[3].Main[32].TS]
+[SF.Seq[3].Main[31].TS]
 Id = "ID#:56unKRgV8BG4iVB7nf4f8B"
 IgnoreRTE = True
 %HI: AdditionalResultsHints = [2]
 
-[DEF, SF.Seq[3].Main[32].TS.AdditionalResultsHints]
+[DEF, SF.Seq[3].Main[31].TS.AdditionalResultsHints]
 %[0] = "TYPE, NI_CustomResult"
 %[1] = "TYPE, NI_CustomResult"
 %[2] = "TYPE, NI_CustomResult"
 
-[SF.Seq[3].Main[32].TS.AdditionalResultsHints[0]]
+[SF.Seq[3].Main[31].TS.AdditionalResultsHints[0]]
 Name = "ResStr(\"NI_RENDEZVOUS_STEP_TYPE\", \"ALREADY_EXISTS_HINT\")"
 ValueToLog = "Evaluate(Step.AlreadyExistsExpr)"
 
-[SF.Seq[3].Main[32].TS.AdditionalResultsHints[1]]
+[SF.Seq[3].Main[31].TS.AdditionalResultsHints[1]]
 Name = "ResStr(\"NI_RENDEZVOUS_STEP_TYPE\", \"RENDEZVOUS_REFERENCE_LIFETIME_HINT\")"
 ValueToLog Line0001 = "ResStr(\"NI_RENDEZVOUS_STEP_TYPE\", (Step.Lifetime == 0 ? \"LIFETIME_SEQUENCE\" :\n    Step.Lifetime == 1 ? \"LIFETIME_T"
 ValueToLog Line0002 = "HREAD\" :\n    Step.Lifetime == 2 ? \"LIFETIME_REFERENCE\" :\n    Step.Lifetime == 3 ? \"LIFETIME_EXECUTION\" :\n    \"\"
 ValueToLog Line0003 = ""))"
 
-[SF.Seq[3].Main[32].TS.AdditionalResultsHints[2]]
+[SF.Seq[3].Main[31].TS.AdditionalResultsHints[2]]
 Name = "ResStr(\"NI_RENDEZVOUS_STEP_TYPE\", \"NUMBER_OF_THREADS_PER_RENDEZVOUS_HINT\")"
 ValueToLog = "Evaluate(Step.RendezvousCountExpr)"
 
-[SF.Seq[3].Main[32]]
+[SF.Seq[3].Main[31]]
 NameOrRefExpr = "\"ACK\"+Locals.CHMB"
 RendezvousCountExpr = "StationGlobals.Automation.SystemControl.CHMB1.NumberOfDUTs"
 Lifetime = 0
 %COMMENT = "Wait for both sockets to get to POST UUT"
 
-[DEF, SF.Seq[3].Main[32]]
+[DEF, SF.Seq[3].Main[31]]
 %NAME = "Create rendezvous for POST UUT"
 
-[SF.Seq[3].Main[33].TS]
+[SF.Seq[3].Main[32].TS]
 Id = "ID#:6KunKRgV8BG4iVB7nf4f8B"
 IgnoreRTE = True
 %HI: AdditionalResultsHints = [0]
 
-[DEF, SF.Seq[3].Main[33].TS.AdditionalResultsHints]
+[DEF, SF.Seq[3].Main[32].TS.AdditionalResultsHints]
 %[0] = "TYPE, NI_CustomResult"
 
-[SF.Seq[3].Main[33].TS.AdditionalResultsHints[0]]
+[SF.Seq[3].Main[32].TS.AdditionalResultsHints[0]]
 Name = "ResStr(\"NI_RENDEZVOUS_STEP_TYPE\", \"TIMEOUT\")"
 ValueToLog = "Step.TimeoutEnabled ? Str(Evaluate(Step.TimeoutExpr)) : ResStr(\"NI_RENDEZVOUS_STEP_TYPE\", \"DISABLED\")"
 
-[DEF, SF.Seq[3].Main[33]]
+[DEF, SF.Seq[3].Main[32]]
 Result = Obj
 %NAME = "Wait POST UUT operation"
 
-[DEF, SF.Seq[3].Main[33].Result]
+[DEF, SF.Seq[3].Main[32].Result]
 Error = "TYPE, Error"
 Status = Str
 ReportText = Str
 Common = "TYPE, CommonResults"
 TimeoutOccurred = Bool
 
-[SF.Seq[3].Main[33].Result]
+[SF.Seq[3].Main[32].Result]
 %FLG: Error = 4194304
 %FLG: Status = 4194304
 %FLG: ReportText = 4194304
 %FLG: Common = 0
 
-[SF.Seq[3].Main[33]]
+[SF.Seq[3].Main[32]]
 %FLG: Result = 4194304
 NameOrRefExpr = "\"ACK\"+Locals.CHMB"
 Operation = 1
 
-[SF.Seq[3].Main[34].TS]
+[SF.Seq[3].Main[33].TS]
 Id = "ID#:/LB0cgr57xG52tQli0T1uC"
 
-[SF.Seq[3].Main[34]]
+[SF.Seq[3].Main[33]]
 ConditionExpr = "Parameters.UUTStatus == \"Terminated\""
 %COMMENT Line0001 = "In case that Main Sequence was Termimnated - Nothing should be done\n(By pressing the button or Operation mode was chang"
 %COMMENT Line0002 = "ed to Manual or Alarm)"
 
-[DEF, SF.Seq[3].Main[34]]
+[DEF, SF.Seq[3].Main[33]]
 %NAME = "If"
 
-[SF.Seq[3].Main[35].TS]
+[SF.Seq[3].Main[34].TS]
 Id = "ID#:RFwQ0Z/57xG53NQli0T1uC"
 PostExpr Line0001 = "StationGlobals.SequenceStates[RunState.TestSockets.MyIndex] = Enums.SEQUENCE_STATES.TERMINATED,\nRunState.GotoCleanup = "
 PostExpr Line0002 = "True"
 
-[DEF, SF.Seq[3].Main[35]]
+[DEF, SF.Seq[3].Main[34]]
 %NAME = "Change the Sequence State to Terminated and Goto Clenup"
 
-[SF.Seq[3].Main[36].TS]
+[SF.Seq[3].Main[35].TS]
 Id = "ID#:/bB0cgr57xG52tQli0T1uC"
 
-[SF.Seq[3].Main[36]]
+[SF.Seq[3].Main[35]]
 ConditionExpr Line0001 = "Parameters.UUTStatus == \"Failed\"|| StationGlobals.Automation.SystemControl.CHMB1.DUT1.TestingStatus == \"Error\" || St"
 ConditionExpr Line0002 = "ationGlobals.Automation.SystemControl.CHMB1.DUT2.TestingStatus == \"Error\""
 %COMMENT Line0001 = "In case that at least one DUT failed testing or at least one Test Socket goes to Error\n(We are treating ERROR in main s"
 %COMMENT Line0002 = "equence as FAILURE)"
 
-[DEF, SF.Seq[3].Main[36]]
+[DEF, SF.Seq[3].Main[35]]
 %NAME = "Else If"
 
-[SF.Seq[3].Main[37].TS]
+[SF.Seq[3].Main[36].TS]
 Id = "ID#:LgEdCJyQ8RGwe0ypVBlBxD"
 
-[DEF, SF.Seq[3].Main[37]]
+[DEF, SF.Seq[3].Main[36]]
 %NAME = "Counter for device fails"
 
-[SF.Seq[3].Main[38].TS]
+[SF.Seq[3].Main[37].TS]
 Id = "ID#:kG6kS72J8RGwckypVBlBxD"
 PostExpr Line0001 = "Locals.NumberOfFails = FileGlobals.DUT_TestingData.NumberOfFailed[RunState.TestSockets.MyIndex] + 1,\nLocals.NumberOfPas"
 PostExpr Line0002 = "s = FileGlobals.DUT_TestingData.NumberOfPasses[RunState.TestSockets.MyIndex]"
 
-[DEF, SF.Seq[3].Main[38]]
+[DEF, SF.Seq[3].Main[37]]
 %NAME = "Set Number of Fails"
 
-[SF.Seq[3].Main[39].TS]
+[SF.Seq[3].Main[38].TS]
 Id = "ID#:5M/4H5yQ8RGwe0ypVBlBxD"
 
-[DEF, SF.Seq[3].Main[39]]
+[DEF, SF.Seq[3].Main[38]]
 %NAME = "Counter for fails on same socket position"
 
-[SF.Seq[3].Main[40].TS]
+[SF.Seq[3].Main[39].TS]
 Id = "ID#:8ORfLpyQ8RGwe0ypVBlBxD"
 
-[DEF, SF.Seq[3].Main[40]]
+[DEF, SF.Seq[3].Main[39]]
 %NAME = "## TODO UPDATE FROM 4 IN A ROW TO COUNT FAILS FOR EACH"
 
-[SF.Seq[3].Main[41].TS]
+[SF.Seq[3].Main[40].TS]
 Id = "ID#:dDoC8/io8BGJ/MyCf5KpWB"
 PostExpr = "StationGlobals.Automation.NOK_Counter[RunState.TestSockets.MyIndex]++\n//StationGlobals.Automation.NOK_Counter ++\n"
 
-[DEF, SF.Seq[3].Main[41]]
+[DEF, SF.Seq[3].Main[40]]
 %NAME = "Increase NOK counter"
 
-[SF.Seq[3].Main[42].TS]
+[SF.Seq[3].Main[41].TS]
 Id = "ID#:Syh1//io8BGJ/MyCf5KpWB"
 
-[SF.Seq[3].Main[42]]
+[SF.Seq[3].Main[41]]
 ConditionExpr = "StationGlobals.Automation.NOK_Counter[RunState.TestSockets.MyIndex] > 4\n//StationGlobals.Automation.NOK_Counter>4"
 
-[DEF, SF.Seq[3].Main[42]]
+[DEF, SF.Seq[3].Main[41]]
 %NAME = "If"
 
-[SF.Seq[3].Main[43].TS]
+[SF.Seq[3].Main[42].TS]
 Id = "ID#:AYfHOvmo8BGJ/MyCf5KpWB"
 PostExpr = "StationGlobals.Automation.NOK_Counter[RunState.TestSockets.MyIndex] = 0\n//StationGlobals.Automation.NOK_Counter=0\n"
 
-[DEF, SF.Seq[3].Main[43]]
+[DEF, SF.Seq[3].Main[42]]
 %NAME = "Reset NOK counter"
 
-[SF.Seq[3].Main[44].TS]
+[SF.Seq[3].Main[43].TS]
 Id = "ID#:TSh1//io8BGJ/MyCf5KpWB"
 
-[DEF, SF.Seq[3].Main[44]]
+[DEF, SF.Seq[3].Main[43]]
 %NAME = "End"
 
-[SF.Seq[3].Main[45].TS]
+[SF.Seq[3].Main[44].TS]
 Id = "ID#:lCy3y1SK8RGwc0ypVBlBxD"
 Mode = "Skip"
 
-[DEF, SF.Seq[3].Main[45].TS]
+[DEF, SF.Seq[3].Main[44].TS]
 SData = "TYPE, SeqCallStepAdditions"
 
-[SF.Seq[3].Main[45].TS.SData]
+[SF.Seq[3].Main[44].TS.SData]
 SeqName = "MES NTC ERROR HANDLE - Failed device"
 UseCurFile = True
 
-[DEF, SF.Seq[3].Main[45].TS.SData]
+[DEF, SF.Seq[3].Main[44].TS.SData]
 ActualArgs = Arguments
 
-[DEF, SF.Seq[3].Main[45].TS.SData.ActualArgs]
+[DEF, SF.Seq[3].Main[44].TS.SData.ActualArgs]
 NTC_Critical = "TYPE, SequenceArgument"
 
-[SF.Seq[3].Main[45].TS.SData.ActualArgs.NTC_Critical]
+[SF.Seq[3].Main[44].TS.SData.ActualArgs.NTC_Critical]
 UseDef = False
 ParamType = 16
 
-[DEF, SF.Seq[3].Main[45]]
+[DEF, SF.Seq[3].Main[44]]
 %NAME = "MES NTC ERROR HANDLE FOR FAILED DEVICE"
 
-[SF.Seq[3].Main[46].TS]
+[SF.Seq[3].Main[45].TS]
 Id = "ID#:VMxOw6D57xG53NQli0T1uC"
 
-[SF.Seq[3].Main[46]]
+[SF.Seq[3].Main[45]]
 ConditionExpr = "Parameters.UUTStatus == \"Passed\""
 %COMMENT = "In this case TS will enter if it PASSED and other socket was Terminated OR \nboth TS PASSED testing "
 
-[DEF, SF.Seq[3].Main[46]]
+[DEF, SF.Seq[3].Main[45]]
 %NAME = "Else If"
 
-[SF.Seq[3].Main[47].TS]
+[SF.Seq[3].Main[46].TS]
 Id = "ID#:kW6kS72J8RGwckypVBlBxD"
 PostExpr Line0001 = "FileGlobals.DUT_TestingData.NumberOfFailed[RunState.TestSockets.MyIndex] = FileGlobals.DUT_TestingData.NumberOfFailed[Ru"
 PostExpr Line0002 = "nState.TestSockets.MyIndex] ,\nFileGlobals.DUT_TestingData.NumberOfPasses[RunState.TestSockets.MyIndex] = FileGlobals.DU"
 PostExpr Line0003 = "T_TestingData.NumberOfPasses[RunState.TestSockets.MyIndex] +1"
 
-[DEF, SF.Seq[3].Main[47]]
+[DEF, SF.Seq[3].Main[46]]
 %NAME = "Set Number of Fails and Passes"
 
-[SF.Seq[3].Main[48].TS]
+[SF.Seq[3].Main[47].TS]
 Id = "ID#:Ac9XjJyQ8RGwe0ypVBlBxD"
 
-[DEF, SF.Seq[3].Main[48]]
+[DEF, SF.Seq[3].Main[47]]
 %NAME = "## TODO UPDATE FROM 4 IN A ROW TO COUNT FAILS FOR EACH"
 
-[SF.Seq[3].Main[49].TS]
+[SF.Seq[3].Main[48].TS]
 Id = "ID#:2ov/6fio8BGJ/MyCf5KpWB"
 PostExpr = "StationGlobals.Automation.NOK_Counter[RunState.TestSockets.MyIndex] = 0"
 
-[DEF, SF.Seq[3].Main[49]]
+[DEF, SF.Seq[3].Main[48]]
 %NAME = "Reset NOK counter"
 
-[SF.Seq[3].Main[50].TS]
+[SF.Seq[3].Main[49].TS]
 Id = "ID#:2P5s/bn57xG53NQli0T1uC"
 
-[DEF, SF.Seq[3].Main[50]]
+[DEF, SF.Seq[3].Main[49]]
 %NAME = "CONTINUE"
 
-[SF.Seq[3].Main[51].TS]
+[SF.Seq[3].Main[50].TS]
 Id = "ID#:O55V2VSK8RGwc0ypVBlBxD"
 Mode = "Skip"
 
-[DEF, SF.Seq[3].Main[51].TS]
+[DEF, SF.Seq[3].Main[50].TS]
 SData = "TYPE, SeqCallStepAdditions"
 
-[SF.Seq[3].Main[51].TS.SData]
+[SF.Seq[3].Main[50].TS.SData]
 SeqName = "MES NTC ERROR HANDLE - PASSED DEVICE"
 UseCurFile = True
 
-[DEF, SF.Seq[3].Main[51]]
+[DEF, SF.Seq[3].Main[50]]
 %NAME = "MES NTC ERROR HANDLE FOR PASSED DEVICE"
 
-[SF.Seq[3].Main[52].TS]
+[SF.Seq[3].Main[51].TS]
 Id = "ID#:/rB0cgr57xG52tQli0T1uC"
 
-[DEF, SF.Seq[3].Main[52]]
+[DEF, SF.Seq[3].Main[51]]
 %NAME = "End"
 
-[SF.Seq[3].Main[53].TS]
+[SF.Seq[3].Main[52].TS]
 Id = "ID#:cbXHUQr57xG52tQli0T1uC"
 Icon = "ni_blank.ico"
 StatusExpr = "\"\""
 %FLG: StatusExpr = 1
 
-[SF.Seq[3].Main[54].TS]
+[SF.Seq[3].Main[53].TS]
 Id = "ID#:FrFViL2J8RGwckypVBlBxD"
 PostExpr = "Locals.ErrorCode = FileGlobals.DUT_TestingData.ErrorCode[RunState.TestSockets.MyIndex] "
 
-[DEF, SF.Seq[3].Main[54]]
+[DEF, SF.Seq[3].Main[53]]
 %NAME = "Set Error code"
 
-[SF.Seq[3].Main[55].TS]
+[SF.Seq[3].Main[54].TS]
 Id = "ID#:F7FViL2J8RGwckypVBlBxD"
 Icon = "ni_blank.ico"
 StatusExpr = "\"\""
 %FLG: StatusExpr = 1
 
-[SF.Seq[3].Main[56].TS]
+[SF.Seq[3].Main[55].TS]
 Id = "ID#:V/iAkj2V8BGJ68yCf5KpWB"
 
-[SF.Seq[3].Main[56]]
+[SF.Seq[3].Main[55]]
 ConditionExpr Line0001 = "StationGlobals.Automation.SystemControl.CHMB1.DUT1.TestingStatus == \"Failed\" || StationGlobals.Automation.SystemContro"
 ConditionExpr Line0002 = "l.CHMB1.DUT2.TestingStatus == \"Failed\" || StationGlobals.Automation.SystemControl.CHMB1.DUT1.TestingStatus == \"Error\"
 ConditionExpr Line0003 = "" || StationGlobals.Automation.SystemControl.CHMB1.DUT2.TestingStatus == \"Error\""
 %COMMENT = "If sequence is manual wait for ACK button"
 
-[DEF, SF.Seq[3].Main[56]]
+[DEF, SF.Seq[3].Main[55]]
 %NAME = "If"
 
-[SF.Seq[3].Main[57].TS]
+[SF.Seq[3].Main[56].TS]
 Id = "ID#:U11mKpJo8RGN16QctBT8oA"
 PostExpr = "StationGlobals.Automation.SystemControl.Light_State = Enums.Light_States.Yellow_Blink_Fast"
 
-[DEF, SF.Seq[3].Main[57]]
+[DEF, SF.Seq[3].Main[56]]
 %NAME = "Set light tower to blinking yellow fast"
 
-[SF.Seq[3].Main[58].TS]
+[SF.Seq[3].Main[57].TS]
 Id = "ID#:a3BEnoyy8RGOIqQctBT8oA"
 
-[DEF, SF.Seq[3].Main[58].TS]
+[DEF, SF.Seq[3].Main[57].TS]
 SData = "TYPE, SeqCallStepAdditions"
 
-[SF.Seq[3].Main[58].TS.SData]
+[SF.Seq[3].Main[57].TS.SData]
 SFPath = "Noffz.UTP.TEF.API.seq"
 SeqName = "UI.TestSocket.ShowMessage"
 CustomThreadAffinity = "-1"
 Trace = "Off"
 
-[DEF, SF.Seq[3].Main[58].TS.SData]
+[DEF, SF.Seq[3].Main[57].TS.SData]
 ActualArgs = Arguments
 Prototype = Obj
 
-[DEF, SF.Seq[3].Main[58].TS.SData.ActualArgs]
+[DEF, SF.Seq[3].Main[57].TS.SData.ActualArgs]
 TestSocket = "TYPE, SequenceArgument"
 Message = "TYPE, SequenceArgument"
 Color = "TYPE, SequenceArgument"
 FontSize = "TYPE, SequenceArgument"
 
-[SF.Seq[3].Main[58].TS.SData.ActualArgs.TestSocket]
+[SF.Seq[3].Main[57].TS.SData.ActualArgs.TestSocket]
 ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[SF.Seq[3].Main[58].TS.SData.ActualArgs.Message]
+[SF.Seq[3].Main[57].TS.SData.ActualArgs.Message]
 UseDef = False
 Expr Line0001 = "ResStr(\"UI_CONTROL\", \"PRESS_ACK_BUTTON_UNLOCK_DRAWER\") + \"\\n\" + ResStr(\"UI_CONTROL\", \"FAILED_SECTION\") + Stat"
 Expr Line0002 = "ionGlobals.Testing.FailedStation[RunState.TestSockets.MyIndex]"
 ParamType = 2
 Flags = 0
 
-[SF.Seq[3].Main[58].TS.SData.ActualArgs.Color]
+[SF.Seq[3].Main[57].TS.SData.ActualArgs.Color]
 ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[SF.Seq[3].Main[58].TS.SData.ActualArgs.FontSize]
+[SF.Seq[3].Main[57].TS.SData.ActualArgs.FontSize]
 Expr = "40"
 ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[DEF, SF.Seq[3].Main[58].TS.SData.Prototype]
+[DEF, SF.Seq[3].Main[57].TS.SData.Prototype]
 TestSocket = Num
 Message = Str
 Color = Num
 FontSize = Num
 
-[SF.Seq[3].Main[58].TS.SData.Prototype]
+[SF.Seq[3].Main[57].TS.SData.Prototype]
 TestSocket = Nan
 Color = Nan
 FontSize = Nan
 
-[SF.Seq[3].Main[58].TS.SData.Prototype.TestSocket]
+[SF.Seq[3].Main[57].TS.SData.Prototype.TestSocket]
 %COMMENT = "Test Socket number. (Default: Current Test Socket Index)"
 
-[SF.Seq[3].Main[58].TS.SData.Prototype.Message]
+[SF.Seq[3].Main[57].TS.SData.Prototype.Message]
 %COMMENT = "Message to show."
 
-[SF.Seq[3].Main[58].TS.SData.Prototype.Color]
+[SF.Seq[3].Main[57].TS.SData.Prototype.Color]
 %COMMENT = "Background color of the Test Socket Message Area. (Default: StationGlobals.TEF.Colors.DialogInfo)"
 %NUMFMT = "%#x"
 
-[SF.Seq[3].Main[58].TS.SData.Prototype.FontSize]
+[SF.Seq[3].Main[57].TS.SData.Prototype.FontSize]
 %COMMENT = "Size of the Font. (Default: Configuration parameter 'DialogTextBox' from Noffz.UTP.TEF.config)"
 
-[DEF, SF.Seq[3].Main[58]]
+[DEF, SF.Seq[3].Main[57]]
 %NAME = "Tell operator to press ACK button to UNLOCK the DRAWER"
 
-[SF.Seq[3].Main[59].TS]
+[SF.Seq[3].Main[58].TS]
 Id = "ID#:bqnxQ7hg8RGN0qQctBT8oA"
 PostExpr = "Locals.Automated.NOK_Button =  (Locals.DI == 1)"
 
-[DEF, SF.Seq[3].Main[59].TS]
+[DEF, SF.Seq[3].Main[58].TS]
 SData = "TYPE, FlexGStepAdditions"
 
-[SF.Seq[3].Main[59].TS.SData.ViCall]
+[SF.Seq[3].Main[58].TS.SData.ViCall]
 ProjectPath = "..\\..\\LabView\\nexteer.lvproj"
 VIPath = "My Computer\\DIO\\DIO.lvlib\\Read Single.vi"
 Namespace = "DIO.lvlib"
 TDChecksum = 1475140127
 %HI: Parms = [5]
 
-[DEF, SF.Seq[3].Main[59].TS.SData.ViCall.Parms]
+[DEF, SF.Seq[3].Main[58].TS.SData.ViCall.Parms]
 %[0] = "TYPE, VIParameter"
 %[1] = "TYPE, VIParameter"
 %[2] = "TYPE, VIParameter"
@@ -12764,7 +12740,7 @@ TDChecksum = 1475140127
 %[4] = "TYPE, VIParameter"
 %[5] = "TYPE, VIParameter"
 
-[SF.Seq[3].Main[59].TS.SData.ViCall.Parms[0]]
+[SF.Seq[3].Main[58].TS.SData.ViCall.Parms[0]]
 Label = "task in"
 ArgVal = "Locals.References.NOK_Button.Reference"
 Type = 0
@@ -12773,10 +12749,10 @@ NumType = 4
 DisplayType = "Number (I32)"
 ConnectorNumber = 11
 
-[DEF, SF.Seq[3].Main[59].TS.SData.ViCall.Parms[0]]
+[DEF, SF.Seq[3].Main[58].TS.SData.ViCall.Parms[0]]
 %NAME = "task in"
 
-[SF.Seq[3].Main[59].TS.SData.ViCall.Parms[1]]
+[SF.Seq[3].Main[58].TS.SData.ViCall.Parms[1]]
 Label = "portBit"
 ArgVal = "Locals.References.NOK_Button.Channel"
 Type = 0
@@ -12785,10 +12761,10 @@ NumType = 4
 DisplayType = "Number (I32)"
 ConnectorNumber = 10
 
-[DEF, SF.Seq[3].Main[59].TS.SData.ViCall.Parms[1]]
+[DEF, SF.Seq[3].Main[58].TS.SData.ViCall.Parms[1]]
 %NAME = "portBit"
 
-[SF.Seq[3].Main[59].TS.SData.ViCall.Parms[2]]
+[SF.Seq[3].Main[58].TS.SData.ViCall.Parms[2]]
 Label = "error in "
 Type = 3
 WireRequirement = 1
@@ -12797,12 +12773,12 @@ UseDefaultValues = True
 %HI: ArrayClusterEls = [2]
 ConnectorNumber = 8
 
-[DEF, SF.Seq[3].Main[59].TS.SData.ViCall.Parms[2].ArrayClusterEls]
+[DEF, SF.Seq[3].Main[58].TS.SData.ViCall.Parms[2].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
 
-[SF.Seq[3].Main[59].TS.SData.ViCall.Parms[2].ArrayClusterEls[0]]
+[SF.Seq[3].Main[58].TS.SData.ViCall.Parms[2].ArrayClusterEls[0]]
 Label = "status"
 ArgVal = "False"
 Type = 2
@@ -12810,10 +12786,10 @@ WireRequirement = 1
 DisplayType = "Boolean"
 UseDefaultValues = True
 
-[DEF, SF.Seq[3].Main[59].TS.SData.ViCall.Parms[2].ArrayClusterEls[0]]
+[DEF, SF.Seq[3].Main[58].TS.SData.ViCall.Parms[2].ArrayClusterEls[0]]
 %NAME = "status"
 
-[SF.Seq[3].Main[59].TS.SData.ViCall.Parms[2].ArrayClusterEls[1]]
+[SF.Seq[3].Main[58].TS.SData.ViCall.Parms[2].ArrayClusterEls[1]]
 Label = "code"
 ArgVal = "0"
 Type = 0
@@ -12822,10 +12798,10 @@ NumType = 4
 DisplayType = "Number (I32)"
 UseDefaultValues = True
 
-[DEF, SF.Seq[3].Main[59].TS.SData.ViCall.Parms[2].ArrayClusterEls[1]]
+[DEF, SF.Seq[3].Main[58].TS.SData.ViCall.Parms[2].ArrayClusterEls[1]]
 %NAME = "code"
 
-[SF.Seq[3].Main[59].TS.SData.ViCall.Parms[2].ArrayClusterEls[2]]
+[SF.Seq[3].Main[58].TS.SData.ViCall.Parms[2].ArrayClusterEls[2]]
 Label = "source"
 ArgVal = "\"\""
 Type = 1
@@ -12833,13 +12809,13 @@ WireRequirement = 1
 DisplayType = "ASCII String"
 UseDefaultValues = True
 
-[DEF, SF.Seq[3].Main[59].TS.SData.ViCall.Parms[2].ArrayClusterEls[2]]
+[DEF, SF.Seq[3].Main[58].TS.SData.ViCall.Parms[2].ArrayClusterEls[2]]
 %NAME = "source"
 
-[DEF, SF.Seq[3].Main[59].TS.SData.ViCall.Parms[2]]
+[DEF, SF.Seq[3].Main[58].TS.SData.ViCall.Parms[2]]
 %NAME = "error in "
 
-[SF.Seq[3].Main[59].TS.SData.ViCall.Parms[3]]
+[SF.Seq[3].Main[58].TS.SData.ViCall.Parms[3]]
 Label = "task out"
 ArgVal = "Locals.References.NOK_Button.Reference"
 Type = 0
@@ -12849,10 +12825,10 @@ DisplayType = "Number (I32)"
 Direction = 1
 ConnectorNumber = 3
 
-[DEF, SF.Seq[3].Main[59].TS.SData.ViCall.Parms[3]]
+[DEF, SF.Seq[3].Main[58].TS.SData.ViCall.Parms[3]]
 %NAME = "task out"
 
-[SF.Seq[3].Main[59].TS.SData.ViCall.Parms[4]]
+[SF.Seq[3].Main[58].TS.SData.ViCall.Parms[4]]
 Label = "data"
 ArgVal = "Locals.DI"
 Type = 0
@@ -12862,10 +12838,10 @@ DisplayType = "Number (U8)"
 Direction = 1
 ConnectorNumber = 2
 
-[DEF, SF.Seq[3].Main[59].TS.SData.ViCall.Parms[4]]
+[DEF, SF.Seq[3].Main[58].TS.SData.ViCall.Parms[4]]
 %NAME = "data"
 
-[SF.Seq[3].Main[59].TS.SData.ViCall.Parms[5]]
+[SF.Seq[3].Main[58].TS.SData.ViCall.Parms[5]]
 Label = "error out"
 ArgVal = "Step.Result.Error"
 Type = 3
@@ -12876,22 +12852,22 @@ Direction = 1
 ConnectorNumber = 0
 LegacyClusterType = 2
 
-[DEF, SF.Seq[3].Main[59].TS.SData.ViCall.Parms[5].ArrayClusterEls]
+[DEF, SF.Seq[3].Main[58].TS.SData.ViCall.Parms[5].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
 
-[SF.Seq[3].Main[59].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+[SF.Seq[3].Main[58].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
 Label = "status"
 ArgVal = "Step.Result.Error.Occurred"
 Type = 2
 WireRequirement = 1
 DisplayType = "Boolean"
 
-[DEF, SF.Seq[3].Main[59].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+[DEF, SF.Seq[3].Main[58].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
 %NAME = "status"
 
-[SF.Seq[3].Main[59].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+[SF.Seq[3].Main[58].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
 Label = "code"
 ArgVal = "Step.Result.Error.Code"
 Type = 0
@@ -12899,68 +12875,68 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[3].Main[59].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+[DEF, SF.Seq[3].Main[58].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
 %NAME = "code"
 
-[SF.Seq[3].Main[59].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+[SF.Seq[3].Main[58].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
 Label = "source"
 ArgVal = "Step.Result.Error.Msg"
 Type = 1
 WireRequirement = 1
 DisplayType = "ASCII String"
 
-[DEF, SF.Seq[3].Main[59].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+[DEF, SF.Seq[3].Main[58].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
 %NAME = "source"
 
-[DEF, SF.Seq[3].Main[59].TS.SData.ViCall.Parms[5]]
+[DEF, SF.Seq[3].Main[58].TS.SData.ViCall.Parms[5]]
 %NAME = "error out"
 
-[DEF, SF.Seq[3].Main[59]]
+[DEF, SF.Seq[3].Main[58]]
 %NAME = "Read NOK Button"
 
-[SF.Seq[3].Main[60].TS]
+[SF.Seq[3].Main[59].TS]
 Id = "ID#:Kz7zoKj57xG53NQli0T1uC"
 
-[SF.Seq[3].Main[60]]
+[SF.Seq[3].Main[59]]
 ConditionExpr = "Locals.Automated.NOK_Button == False"
 %COMMENT = "Wait for operator to press ACK button"
 
-[DEF, SF.Seq[3].Main[60]]
+[DEF, SF.Seq[3].Main[59]]
 %NAME = "While"
 
-[SF.Seq[3].Main[61].TS]
+[SF.Seq[3].Main[60].TS]
 Id = "ID#:LD7zoKj57xG53NQli0T1uC"
 %HI: AdditionalResultsHints = [0]
 
-[DEF, SF.Seq[3].Main[61].TS.AdditionalResultsHints]
+[DEF, SF.Seq[3].Main[60].TS.AdditionalResultsHints]
 %[0] = "TYPE, NI_CustomResult"
 
-[SF.Seq[3].Main[61].TS.AdditionalResultsHints[0]]
+[SF.Seq[3].Main[60].TS.AdditionalResultsHints[0]]
 Name = "ResStr(\"NI_WAIT_STEP_TYPE\", \"TIME_TO_WAIT\")"
 ValueToLog = "Evaluate(Step.TimeExpr)"
 
-[SF.Seq[3].Main[61]]
+[SF.Seq[3].Main[60]]
 SeqCallName = "End"
 TimeExpr = "0.05"
 
-[DEF, SF.Seq[3].Main[61]]
+[DEF, SF.Seq[3].Main[60]]
 %NAME = "Wait 50ms"
 
-[SF.Seq[3].Main[62].TS]
+[SF.Seq[3].Main[61].TS]
 Id = "ID#:0idBn7hg8RGN0qQctBT8oA"
 PostExpr = "Locals.Automated.NOK_Button =  (Locals.DI == 1)"
 
-[DEF, SF.Seq[3].Main[62].TS]
+[DEF, SF.Seq[3].Main[61].TS]
 SData = "TYPE, FlexGStepAdditions"
 
-[SF.Seq[3].Main[62].TS.SData.ViCall]
+[SF.Seq[3].Main[61].TS.SData.ViCall]
 ProjectPath = "..\\..\\LabView\\nexteer.lvproj"
 VIPath = "My Computer\\DIO\\DIO.lvlib\\Read Single.vi"
 Namespace = "DIO.lvlib"
 TDChecksum = 1475140127
 %HI: Parms = [5]
 
-[DEF, SF.Seq[3].Main[62].TS.SData.ViCall.Parms]
+[DEF, SF.Seq[3].Main[61].TS.SData.ViCall.Parms]
 %[0] = "TYPE, VIParameter"
 %[1] = "TYPE, VIParameter"
 %[2] = "TYPE, VIParameter"
@@ -12968,7 +12944,7 @@ TDChecksum = 1475140127
 %[4] = "TYPE, VIParameter"
 %[5] = "TYPE, VIParameter"
 
-[SF.Seq[3].Main[62].TS.SData.ViCall.Parms[0]]
+[SF.Seq[3].Main[61].TS.SData.ViCall.Parms[0]]
 Label = "task in"
 ArgVal = "Locals.References.NOK_Button.Reference"
 Type = 0
@@ -12977,10 +12953,10 @@ NumType = 4
 DisplayType = "Number (I32)"
 ConnectorNumber = 11
 
-[DEF, SF.Seq[3].Main[62].TS.SData.ViCall.Parms[0]]
+[DEF, SF.Seq[3].Main[61].TS.SData.ViCall.Parms[0]]
 %NAME = "task in"
 
-[SF.Seq[3].Main[62].TS.SData.ViCall.Parms[1]]
+[SF.Seq[3].Main[61].TS.SData.ViCall.Parms[1]]
 Label = "portBit"
 ArgVal = "Locals.References.NOK_Button.Channel"
 Type = 0
@@ -12989,10 +12965,10 @@ NumType = 4
 DisplayType = "Number (I32)"
 ConnectorNumber = 10
 
-[DEF, SF.Seq[3].Main[62].TS.SData.ViCall.Parms[1]]
+[DEF, SF.Seq[3].Main[61].TS.SData.ViCall.Parms[1]]
 %NAME = "portBit"
 
-[SF.Seq[3].Main[62].TS.SData.ViCall.Parms[2]]
+[SF.Seq[3].Main[61].TS.SData.ViCall.Parms[2]]
 Label = "error in "
 Type = 3
 WireRequirement = 1
@@ -13001,12 +12977,12 @@ UseDefaultValues = True
 %HI: ArrayClusterEls = [2]
 ConnectorNumber = 8
 
-[DEF, SF.Seq[3].Main[62].TS.SData.ViCall.Parms[2].ArrayClusterEls]
+[DEF, SF.Seq[3].Main[61].TS.SData.ViCall.Parms[2].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
 
-[SF.Seq[3].Main[62].TS.SData.ViCall.Parms[2].ArrayClusterEls[0]]
+[SF.Seq[3].Main[61].TS.SData.ViCall.Parms[2].ArrayClusterEls[0]]
 Label = "status"
 ArgVal = "False"
 Type = 2
@@ -13014,10 +12990,10 @@ WireRequirement = 1
 DisplayType = "Boolean"
 UseDefaultValues = True
 
-[DEF, SF.Seq[3].Main[62].TS.SData.ViCall.Parms[2].ArrayClusterEls[0]]
+[DEF, SF.Seq[3].Main[61].TS.SData.ViCall.Parms[2].ArrayClusterEls[0]]
 %NAME = "status"
 
-[SF.Seq[3].Main[62].TS.SData.ViCall.Parms[2].ArrayClusterEls[1]]
+[SF.Seq[3].Main[61].TS.SData.ViCall.Parms[2].ArrayClusterEls[1]]
 Label = "code"
 ArgVal = "0"
 Type = 0
@@ -13026,10 +13002,10 @@ NumType = 4
 DisplayType = "Number (I32)"
 UseDefaultValues = True
 
-[DEF, SF.Seq[3].Main[62].TS.SData.ViCall.Parms[2].ArrayClusterEls[1]]
+[DEF, SF.Seq[3].Main[61].TS.SData.ViCall.Parms[2].ArrayClusterEls[1]]
 %NAME = "code"
 
-[SF.Seq[3].Main[62].TS.SData.ViCall.Parms[2].ArrayClusterEls[2]]
+[SF.Seq[3].Main[61].TS.SData.ViCall.Parms[2].ArrayClusterEls[2]]
 Label = "source"
 ArgVal = "\"\""
 Type = 1
@@ -13037,13 +13013,13 @@ WireRequirement = 1
 DisplayType = "ASCII String"
 UseDefaultValues = True
 
-[DEF, SF.Seq[3].Main[62].TS.SData.ViCall.Parms[2].ArrayClusterEls[2]]
+[DEF, SF.Seq[3].Main[61].TS.SData.ViCall.Parms[2].ArrayClusterEls[2]]
 %NAME = "source"
 
-[DEF, SF.Seq[3].Main[62].TS.SData.ViCall.Parms[2]]
+[DEF, SF.Seq[3].Main[61].TS.SData.ViCall.Parms[2]]
 %NAME = "error in "
 
-[SF.Seq[3].Main[62].TS.SData.ViCall.Parms[3]]
+[SF.Seq[3].Main[61].TS.SData.ViCall.Parms[3]]
 Label = "task out"
 ArgVal = "Locals.References.NOK_Button.Reference"
 Type = 0
@@ -13053,10 +13029,10 @@ DisplayType = "Number (I32)"
 Direction = 1
 ConnectorNumber = 3
 
-[DEF, SF.Seq[3].Main[62].TS.SData.ViCall.Parms[3]]
+[DEF, SF.Seq[3].Main[61].TS.SData.ViCall.Parms[3]]
 %NAME = "task out"
 
-[SF.Seq[3].Main[62].TS.SData.ViCall.Parms[4]]
+[SF.Seq[3].Main[61].TS.SData.ViCall.Parms[4]]
 Label = "data"
 ArgVal = "Locals.DI"
 Type = 0
@@ -13066,10 +13042,10 @@ DisplayType = "Number (U8)"
 Direction = 1
 ConnectorNumber = 2
 
-[DEF, SF.Seq[3].Main[62].TS.SData.ViCall.Parms[4]]
+[DEF, SF.Seq[3].Main[61].TS.SData.ViCall.Parms[4]]
 %NAME = "data"
 
-[SF.Seq[3].Main[62].TS.SData.ViCall.Parms[5]]
+[SF.Seq[3].Main[61].TS.SData.ViCall.Parms[5]]
 Label = "error out"
 ArgVal = "Step.Result.Error"
 Type = 3
@@ -13080,22 +13056,22 @@ Direction = 1
 ConnectorNumber = 0
 LegacyClusterType = 2
 
-[DEF, SF.Seq[3].Main[62].TS.SData.ViCall.Parms[5].ArrayClusterEls]
+[DEF, SF.Seq[3].Main[61].TS.SData.ViCall.Parms[5].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
 
-[SF.Seq[3].Main[62].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+[SF.Seq[3].Main[61].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
 Label = "status"
 ArgVal = "Step.Result.Error.Occurred"
 Type = 2
 WireRequirement = 1
 DisplayType = "Boolean"
 
-[DEF, SF.Seq[3].Main[62].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+[DEF, SF.Seq[3].Main[61].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
 %NAME = "status"
 
-[SF.Seq[3].Main[62].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+[SF.Seq[3].Main[61].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
 Label = "code"
 ArgVal = "Step.Result.Error.Code"
 Type = 0
@@ -13103,75 +13079,75 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[3].Main[62].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+[DEF, SF.Seq[3].Main[61].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
 %NAME = "code"
 
-[SF.Seq[3].Main[62].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+[SF.Seq[3].Main[61].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
 Label = "source"
 ArgVal = "Step.Result.Error.Msg"
 Type = 1
 WireRequirement = 1
 DisplayType = "ASCII String"
 
-[DEF, SF.Seq[3].Main[62].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+[DEF, SF.Seq[3].Main[61].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
 %NAME = "source"
 
-[DEF, SF.Seq[3].Main[62].TS.SData.ViCall.Parms[5]]
+[DEF, SF.Seq[3].Main[61].TS.SData.ViCall.Parms[5]]
 %NAME = "error out"
 
-[DEF, SF.Seq[3].Main[62]]
+[DEF, SF.Seq[3].Main[61]]
 %NAME = "Read NOK Button"
 
-[SF.Seq[3].Main[63].TS]
+[SF.Seq[3].Main[62].TS]
 Id = "ID#:Lj7zoKj57xG53NQli0T1uC"
+
+[DEF, SF.Seq[3].Main[62]]
+%NAME = "End"
+
+[SF.Seq[3].Main[63].TS]
+Id = "ID#:WfiAkj2V8BGJ68yCf5KpWB"
 
 [DEF, SF.Seq[3].Main[63]]
 %NAME = "End"
 
 [SF.Seq[3].Main[64].TS]
-Id = "ID#:WfiAkj2V8BGJ68yCf5KpWB"
-
-[DEF, SF.Seq[3].Main[64]]
-%NAME = "End"
-
-[SF.Seq[3].Main[65].TS]
 Id = "ID#:8qa3A+up8BGJ/cyCf5KpWB"
 %HI: AdditionalResultsHints = [0]
 
-[DEF, SF.Seq[3].Main[65].TS.AdditionalResultsHints]
+[DEF, SF.Seq[3].Main[64].TS.AdditionalResultsHints]
 %[0] = "TYPE, NI_CustomResult"
 
-[SF.Seq[3].Main[65].TS.AdditionalResultsHints[0]]
+[SF.Seq[3].Main[64].TS.AdditionalResultsHints[0]]
 Name = "ResStr(\"NI_WAIT_STEP_TYPE\", \"TIME_TO_WAIT\")"
 ValueToLog = "Evaluate(Step.TimeExpr)"
 
-[SF.Seq[3].Main[65]]
+[SF.Seq[3].Main[64]]
 SeqCallName = "End"
 TimeExpr = "0.05"
 
-[DEF, SF.Seq[3].Main[65]]
+[DEF, SF.Seq[3].Main[64]]
 %NAME = "Wait 50ms"
 
-[SF.Seq[3].Main[66].TS]
+[SF.Seq[3].Main[65].TS]
 Id = "ID#:8aa3A+up8BGJ/cyCf5KpWB"
 Icon = "ni_blank.ico"
 StatusExpr = "\"\""
 %FLG: StatusExpr = 1
 
-[SF.Seq[3].Main[67].TS]
+[SF.Seq[3].Main[66].TS]
 Id = "ID#:dZa3rx9g8RGN0aQctBT8oA"
 
-[DEF, SF.Seq[3].Main[67].TS]
+[DEF, SF.Seq[3].Main[66].TS]
 SData = "TYPE, FlexGStepAdditions"
 
-[SF.Seq[3].Main[67].TS.SData.ViCall]
+[SF.Seq[3].Main[66].TS.SData.ViCall]
 ProjectPath = "..\\..\\LabView\\nexteer.lvproj"
 VIPath = "My Computer\\DIO\\DIO.lvlib\\Set Output.vi"
 Namespace = "DIO.lvlib"
 TDChecksum = -1657651955
 %HI: Parms = [5]
 
-[DEF, SF.Seq[3].Main[67].TS.SData.ViCall.Parms]
+[DEF, SF.Seq[3].Main[66].TS.SData.ViCall.Parms]
 %[0] = "TYPE, VIParameter"
 %[1] = "TYPE, VIParameter"
 %[2] = "TYPE, VIParameter"
@@ -13179,7 +13155,7 @@ TDChecksum = -1657651955
 %[4] = "TYPE, VIParameter"
 %[5] = "TYPE, VIParameter"
 
-[SF.Seq[3].Main[67].TS.SData.ViCall.Parms[0]]
+[SF.Seq[3].Main[66].TS.SData.ViCall.Parms[0]]
 Label = "task in"
 ArgVal = "Locals.References.Locker.Reference"
 Type = 0
@@ -13188,10 +13164,10 @@ NumType = 4
 DisplayType = "Number (I32)"
 ConnectorNumber = 11
 
-[DEF, SF.Seq[3].Main[67].TS.SData.ViCall.Parms[0]]
+[DEF, SF.Seq[3].Main[66].TS.SData.ViCall.Parms[0]]
 %NAME = "task in"
 
-[SF.Seq[3].Main[67].TS.SData.ViCall.Parms[1]]
+[SF.Seq[3].Main[66].TS.SData.ViCall.Parms[1]]
 Label = "portBit"
 ArgVal = "Locals.References.Locker.Channel"
 Type = 0
@@ -13200,10 +13176,10 @@ NumType = 4
 DisplayType = "Number (I32)"
 ConnectorNumber = 10
 
-[DEF, SF.Seq[3].Main[67].TS.SData.ViCall.Parms[1]]
+[DEF, SF.Seq[3].Main[66].TS.SData.ViCall.Parms[1]]
 %NAME = "portBit"
 
-[SF.Seq[3].Main[67].TS.SData.ViCall.Parms[2]]
+[SF.Seq[3].Main[66].TS.SData.ViCall.Parms[2]]
 Label = "State"
 ArgVal = "False"
 Type = 2
@@ -13211,10 +13187,10 @@ WireRequirement = 1
 DisplayType = "Boolean"
 ConnectorNumber = 9
 
-[DEF, SF.Seq[3].Main[67].TS.SData.ViCall.Parms[2]]
+[DEF, SF.Seq[3].Main[66].TS.SData.ViCall.Parms[2]]
 %NAME = "State"
 
-[SF.Seq[3].Main[67].TS.SData.ViCall.Parms[3]]
+[SF.Seq[3].Main[66].TS.SData.ViCall.Parms[3]]
 Label = "error in "
 Type = 3
 WireRequirement = 1
@@ -13223,12 +13199,12 @@ UseDefaultValues = True
 %HI: ArrayClusterEls = [2]
 ConnectorNumber = 8
 
-[DEF, SF.Seq[3].Main[67].TS.SData.ViCall.Parms[3].ArrayClusterEls]
+[DEF, SF.Seq[3].Main[66].TS.SData.ViCall.Parms[3].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
 
-[SF.Seq[3].Main[67].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
+[SF.Seq[3].Main[66].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
 Label = "status"
 ArgVal = "False"
 Type = 2
@@ -13236,10 +13212,10 @@ WireRequirement = 1
 DisplayType = "Boolean"
 UseDefaultValues = True
 
-[DEF, SF.Seq[3].Main[67].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
+[DEF, SF.Seq[3].Main[66].TS.SData.ViCall.Parms[3].ArrayClusterEls[0]]
 %NAME = "status"
 
-[SF.Seq[3].Main[67].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
+[SF.Seq[3].Main[66].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
 Label = "code"
 ArgVal = "0"
 Type = 0
@@ -13248,10 +13224,10 @@ NumType = 4
 DisplayType = "Number (I32)"
 UseDefaultValues = True
 
-[DEF, SF.Seq[3].Main[67].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
+[DEF, SF.Seq[3].Main[66].TS.SData.ViCall.Parms[3].ArrayClusterEls[1]]
 %NAME = "code"
 
-[SF.Seq[3].Main[67].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
+[SF.Seq[3].Main[66].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
 Label = "source"
 ArgVal = "\"\""
 Type = 1
@@ -13259,13 +13235,13 @@ WireRequirement = 1
 DisplayType = "ASCII String"
 UseDefaultValues = True
 
-[DEF, SF.Seq[3].Main[67].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
+[DEF, SF.Seq[3].Main[66].TS.SData.ViCall.Parms[3].ArrayClusterEls[2]]
 %NAME = "source"
 
-[DEF, SF.Seq[3].Main[67].TS.SData.ViCall.Parms[3]]
+[DEF, SF.Seq[3].Main[66].TS.SData.ViCall.Parms[3]]
 %NAME = "error in "
 
-[SF.Seq[3].Main[67].TS.SData.ViCall.Parms[4]]
+[SF.Seq[3].Main[66].TS.SData.ViCall.Parms[4]]
 Label = "task out"
 ArgVal = "Locals.References.Locker.Reference"
 Type = 0
@@ -13275,10 +13251,10 @@ DisplayType = "Number (I32)"
 Direction = 1
 ConnectorNumber = 3
 
-[DEF, SF.Seq[3].Main[67].TS.SData.ViCall.Parms[4]]
+[DEF, SF.Seq[3].Main[66].TS.SData.ViCall.Parms[4]]
 %NAME = "task out"
 
-[SF.Seq[3].Main[67].TS.SData.ViCall.Parms[5]]
+[SF.Seq[3].Main[66].TS.SData.ViCall.Parms[5]]
 Label = "error out"
 ArgVal = "Step.Result.Error"
 Type = 3
@@ -13289,22 +13265,22 @@ Direction = 1
 ConnectorNumber = 0
 LegacyClusterType = 2
 
-[DEF, SF.Seq[3].Main[67].TS.SData.ViCall.Parms[5].ArrayClusterEls]
+[DEF, SF.Seq[3].Main[66].TS.SData.ViCall.Parms[5].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
 
-[SF.Seq[3].Main[67].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+[SF.Seq[3].Main[66].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
 Label = "status"
 ArgVal = "Step.Result.Error.Occurred"
 Type = 2
 WireRequirement = 1
 DisplayType = "Boolean"
 
-[DEF, SF.Seq[3].Main[67].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+[DEF, SF.Seq[3].Main[66].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
 %NAME = "status"
 
-[SF.Seq[3].Main[67].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+[SF.Seq[3].Main[66].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
 Label = "code"
 ArgVal = "Step.Result.Error.Code"
 Type = 0
@@ -13312,290 +13288,290 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[3].Main[67].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+[DEF, SF.Seq[3].Main[66].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
 %NAME = "code"
 
-[SF.Seq[3].Main[67].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+[SF.Seq[3].Main[66].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
 Label = "source"
 ArgVal = "Step.Result.Error.Msg"
 Type = 1
 WireRequirement = 1
 DisplayType = "ASCII String"
 
-[DEF, SF.Seq[3].Main[67].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+[DEF, SF.Seq[3].Main[66].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
 %NAME = "source"
 
-[DEF, SF.Seq[3].Main[67].TS.SData.ViCall.Parms[5]]
+[DEF, SF.Seq[3].Main[66].TS.SData.ViCall.Parms[5]]
 %NAME = "error out"
 
-[DEF, SF.Seq[3].Main[67]]
+[DEF, SF.Seq[3].Main[66]]
 %NAME = "Unlock Fixture CHMB"
 
-[SF.Seq[3].Main[68].TS]
+[SF.Seq[3].Main[67].TS]
 Id = "ID#:/wqSIdaQ8RGwe0ypVBlBxD"
 Icon = "ni_blank.ico"
 StatusExpr = "\"\""
 %FLG: StatusExpr = 1
 
-[SF.Seq[3].Main[69].TS]
+[SF.Seq[3].Main[68].TS]
 Id = "ID#:Q+Whi9SQ8RGwe0ypVBlBxD"
 
-[DEF, SF.Seq[3].Main[69].TS]
+[DEF, SF.Seq[3].Main[68].TS]
 SData = "TYPE, SeqCallStepAdditions"
 
-[SF.Seq[3].Main[69].TS.SData]
+[SF.Seq[3].Main[68].TS.SData]
 SFPath = "Noffz.UTP.TEF.API.seq"
 SeqName = "Model.Station.GetOperationMode"
 CustomThreadAffinity = "-1"
 Trace = "Off"
 
-[DEF, SF.Seq[3].Main[69].TS.SData]
+[DEF, SF.Seq[3].Main[68].TS.SData]
 ActualArgs = Arguments
 Prototype = Obj
 
-[DEF, SF.Seq[3].Main[69].TS.SData.ActualArgs]
+[DEF, SF.Seq[3].Main[68].TS.SData.ActualArgs]
 OperationMode = "TYPE, SequenceArgument"
 
-[SF.Seq[3].Main[69].TS.SData.ActualArgs.OperationMode]
+[SF.Seq[3].Main[68].TS.SData.ActualArgs.OperationMode]
 UseDef = False
 Expr = "Locals.OperationMode"
 ParamType = 2
 
-[DEF, SF.Seq[3].Main[69].TS.SData.Prototype]
+[DEF, SF.Seq[3].Main[68].TS.SData.Prototype]
 OperationMode = Str
 
-[SF.Seq[3].Main[69].TS.SData.Prototype]
+[SF.Seq[3].Main[68].TS.SData.Prototype]
 %FLG: OperationMode = 4
 
-[DEF, SF.Seq[3].Main[69]]
+[DEF, SF.Seq[3].Main[68]]
 %NAME = "Model.Station.GetOperationMode"
 
-[SF.Seq[3].Main[70].TS]
+[SF.Seq[3].Main[69].TS]
 Id = "ID#:8kfoGrax8RGOIaQctBT8oA"
 
-[SF.Seq[3].Main[70]]
+[SF.Seq[3].Main[69]]
 ConditionExpr = "Locals.OperationMode == \"MSA\""
+
+[DEF, SF.Seq[3].Main[69]]
+%NAME = "If"
+
+[SF.Seq[3].Main[70].TS]
+Id = "ID#:80foGrax8RGOIaQctBT8oA"
+
+[SF.Seq[3].Main[70]]
+ConditionExpr = "Locals.CHMB == \"CHMB1\""
 
 [DEF, SF.Seq[3].Main[70]]
 %NAME = "If"
 
 [SF.Seq[3].Main[71].TS]
-Id = "ID#:80foGrax8RGOIaQctBT8oA"
+Id = "ID#:9EfoGrax8RGOIaQctBT8oA"
 
 [SF.Seq[3].Main[71]]
-ConditionExpr = "Locals.CHMB == \"CHMB1\""
+ConditionExpr = "StationGlobals.Automation.SystemControl.CHMB1.NumberOfDUTs < 2"
 
 [DEF, SF.Seq[3].Main[71]]
 %NAME = "If"
 
 [SF.Seq[3].Main[72].TS]
-Id = "ID#:9EfoGrax8RGOIaQctBT8oA"
-
-[SF.Seq[3].Main[72]]
-ConditionExpr = "StationGlobals.Automation.SystemControl.CHMB1.NumberOfDUTs < 2"
-
-[DEF, SF.Seq[3].Main[72]]
-%NAME = "If"
-
-[SF.Seq[3].Main[73].TS]
 Id = "ID#:9UfoGrax8RGOIaQctBT8oA"
 PostExpr Line0001 = "StationGlobals.Automation.SystemControl.MSA.MSA_Counter[0] --,\nStationGlobals.Automation.SystemControl.MSA.MSA_Counter["
 PostExpr Line0002 = "1] --"
 
-[DEF, SF.Seq[3].Main[73]]
+[DEF, SF.Seq[3].Main[72]]
 %NAME = "Decrease MSA counters - both CHMB1"
 
-[SF.Seq[3].Main[74].TS]
+[SF.Seq[3].Main[73].TS]
 Id = "ID#:9kfoGrax8RGOIaQctBT8oA"
 
-[DEF, SF.Seq[3].Main[74]]
+[DEF, SF.Seq[3].Main[73]]
 %NAME = "Else"
 
-[SF.Seq[3].Main[75].TS]
+[SF.Seq[3].Main[74].TS]
 Id = "ID#:90foGrax8RGOIaQctBT8oA"
 PostExpr Line0001 = "StationGlobals.Automation.SystemControl.MSA.MSA_Counter[RunState.TestSockets.MyIndex] = StationGlobals.Automation.System"
 PostExpr Line0002 = "Control.MSA.MSA_Counter[RunState.TestSockets.MyIndex]-1"
 
-[DEF, SF.Seq[3].Main[75]]
+[DEF, SF.Seq[3].Main[74]]
 %NAME = "Decrease MSA counters - one by one"
 
-[SF.Seq[3].Main[76].TS]
+[SF.Seq[3].Main[75].TS]
 Id = "ID#:+EfoGrax8RGOIaQctBT8oA"
 
-[DEF, SF.Seq[3].Main[76]]
+[DEF, SF.Seq[3].Main[75]]
 %NAME = "End"
 
-[SF.Seq[3].Main[77].TS]
+[SF.Seq[3].Main[76].TS]
 Id = "ID#:+UfoGrax8RGOIaQctBT8oA"
 PostExpr Line0001 = "StationGlobals.Automation.SystemControl.CHMB1.MSA.Ready = False,\nStationGlobals.Automation.SystemControl.CHMB1.MSA.Runn"
 PostExpr Line0002 = "ing = StationGlobals.Automation.SystemControl.MSA.MSA_Counter[RunState.TestSockets.MyIndex] > 1 // Running until end is "
 PostExpr Line0003 = "reached\n// Running will not be set to true if at least once test was not performed because this step will not be reache"
 PostExpr Line0004 = "d (Counter ==50 is not a problem)"
 
-[DEF, SF.Seq[3].Main[77]]
+[DEF, SF.Seq[3].Main[76]]
 %NAME = "Set MSA status CHMB1"
 
-[SF.Seq[3].Main[78].TS]
+[SF.Seq[3].Main[77].TS]
 Id = "ID#:+kfoGrax8RGOIaQctBT8oA"
 
-[SF.Seq[3].Main[78]]
+[SF.Seq[3].Main[77]]
 ConditionExpr = "Locals.CHMB == \"CHMB2\""
 
-[DEF, SF.Seq[3].Main[78]]
+[DEF, SF.Seq[3].Main[77]]
 %NAME = "Else If"
 
-[SF.Seq[3].Main[79].TS]
+[SF.Seq[3].Main[78].TS]
 Id = "ID#:+0foGrax8RGOIaQctBT8oA"
 
-[SF.Seq[3].Main[79]]
+[SF.Seq[3].Main[78]]
 ConditionExpr = "StationGlobals.Automation.SystemControl.CHMB2.NumberOfDUTs < 2"
 
-[DEF, SF.Seq[3].Main[79]]
+[DEF, SF.Seq[3].Main[78]]
 %NAME = "If"
 
-[SF.Seq[3].Main[80].TS]
+[SF.Seq[3].Main[79].TS]
 Id = "ID#:/EfoGrax8RGOIaQctBT8oA"
 PostExpr Line0001 = "StationGlobals.Automation.SystemControl.MSA.MSA_Counter[2] --,\nStationGlobals.Automation.SystemControl.MSA.MSA_Counter["
 PostExpr Line0002 = "3] --"
 
-[DEF, SF.Seq[3].Main[80]]
+[DEF, SF.Seq[3].Main[79]]
 %NAME = "Decrease MSA counters - both CHMB2"
 
-[SF.Seq[3].Main[81].TS]
+[SF.Seq[3].Main[80].TS]
 Id = "ID#:/UfoGrax8RGOIaQctBT8oA"
 
-[DEF, SF.Seq[3].Main[81]]
+[DEF, SF.Seq[3].Main[80]]
 %NAME = "Else"
 
-[SF.Seq[3].Main[82].TS]
+[SF.Seq[3].Main[81].TS]
 Id = "ID#:/kfoGrax8RGOIaQctBT8oA"
 PostExpr Line0001 = "StationGlobals.Automation.SystemControl.MSA.MSA_Counter[RunState.TestSockets.MyIndex] = StationGlobals.Automation.System"
 PostExpr Line0002 = "Control.MSA.MSA_Counter[RunState.TestSockets.MyIndex]-1"
 
-[DEF, SF.Seq[3].Main[82]]
+[DEF, SF.Seq[3].Main[81]]
 %NAME = "Decrease MSA counters - one by one"
 
-[SF.Seq[3].Main[83].TS]
+[SF.Seq[3].Main[82].TS]
 Id = "ID#:/0foGrax8RGOIaQctBT8oA"
 
-[DEF, SF.Seq[3].Main[83]]
+[DEF, SF.Seq[3].Main[82]]
 %NAME = "End"
 
-[SF.Seq[3].Main[84].TS]
+[SF.Seq[3].Main[83].TS]
 Id = "ID#:AEjoGrax8RGOIaQctBT8oA"
 PostExpr Line0001 = "StationGlobals.Automation.SystemControl.CHMB2.MSA.Ready = False,\nStationGlobals.Automation.SystemControl.CHMB2.MSA.Runn"
 PostExpr Line0002 = "ing = StationGlobals.Automation.SystemControl.MSA.MSA_Counter[RunState.TestSockets.MyIndex] > 1 // Running until end is "
 PostExpr Line0003 = "reached\n// Running will not be set to true if at least once test was not performed because this step will not be reache"
 PostExpr Line0004 = "d (Counter ==50 is not a problem)"
 
-[DEF, SF.Seq[3].Main[84]]
+[DEF, SF.Seq[3].Main[83]]
 %NAME = "Set MSA status CHMB2"
 
-[SF.Seq[3].Main[85].TS]
+[SF.Seq[3].Main[84].TS]
 Id = "ID#:AUjoGrax8RGOIaQctBT8oA"
+
+[DEF, SF.Seq[3].Main[84]]
+%NAME = "End"
+
+[SF.Seq[3].Main[85].TS]
+Id = "ID#:AkjoGrax8RGOIaQctBT8oA"
 
 [DEF, SF.Seq[3].Main[85]]
 %NAME = "End"
 
 [SF.Seq[3].Main[86].TS]
-Id = "ID#:AkjoGrax8RGOIaQctBT8oA"
-
-[DEF, SF.Seq[3].Main[86]]
-%NAME = "End"
-
-[SF.Seq[3].Main[87].TS]
 Id = "ID#:AAuSIdaQ8RGwe0ypVBlBxD"
 Icon = "ni_blank.ico"
 StatusExpr = "\"\""
 %FLG: StatusExpr = 1
 
-[SF.Seq[3].Main[88].TS]
+[SF.Seq[3].Main[87].TS]
 Id = "ID#:dKpM2FQ98BGtmsyCf35SiD"
 IgnoreRTE = True
 %HI: AdditionalResultsHints = [2]
 
-[DEF, SF.Seq[3].Main[88].TS.AdditionalResultsHints]
+[DEF, SF.Seq[3].Main[87].TS.AdditionalResultsHints]
 %[0] = "TYPE, NI_CustomResult"
 %[1] = "TYPE, NI_CustomResult"
 %[2] = "TYPE, NI_CustomResult"
 
-[SF.Seq[3].Main[88].TS.AdditionalResultsHints[0]]
+[SF.Seq[3].Main[87].TS.AdditionalResultsHints[0]]
 Name = "ResStr(\"NI_RENDEZVOUS_STEP_TYPE\", \"ALREADY_EXISTS_HINT\")"
 ValueToLog = "Evaluate(Step.AlreadyExistsExpr)"
 
-[SF.Seq[3].Main[88].TS.AdditionalResultsHints[1]]
+[SF.Seq[3].Main[87].TS.AdditionalResultsHints[1]]
 Name = "ResStr(\"NI_RENDEZVOUS_STEP_TYPE\", \"RENDEZVOUS_REFERENCE_LIFETIME_HINT\")"
 ValueToLog Line0001 = "ResStr(\"NI_RENDEZVOUS_STEP_TYPE\", (Step.Lifetime == 0 ? \"LIFETIME_SEQUENCE\" :\n    Step.Lifetime == 1 ? \"LIFETIME_T"
 ValueToLog Line0002 = "HREAD\" :\n    Step.Lifetime == 2 ? \"LIFETIME_REFERENCE\" :\n    Step.Lifetime == 3 ? \"LIFETIME_EXECUTION\" :\n    \"\"
 ValueToLog Line0003 = ""))"
 
-[SF.Seq[3].Main[88].TS.AdditionalResultsHints[2]]
+[SF.Seq[3].Main[87].TS.AdditionalResultsHints[2]]
 Name = "ResStr(\"NI_RENDEZVOUS_STEP_TYPE\", \"NUMBER_OF_THREADS_PER_RENDEZVOUS_HINT\")"
 ValueToLog = "Evaluate(Step.RendezvousCountExpr)"
 
-[SF.Seq[3].Main[88]]
+[SF.Seq[3].Main[87]]
 NameOrRefExpr = "\"OPEN\"+Locals.CHMB"
 RendezvousCountExpr = "StationGlobals.Automation.SystemControl.CHMB1.NumberOfDUTs"
 Lifetime = 0
 %COMMENT = "Wait for both sockets to get to POST UUT"
 
-[DEF, SF.Seq[3].Main[88]]
+[DEF, SF.Seq[3].Main[87]]
 %NAME = "Create rendezvous for POST UUT"
 
-[SF.Seq[3].Main[89].TS]
+[SF.Seq[3].Main[88].TS]
 Id = "ID#:dapM2FQ98BGtmsyCf35SiD"
 IgnoreRTE = True
 %HI: AdditionalResultsHints = [0]
 
-[DEF, SF.Seq[3].Main[89].TS.AdditionalResultsHints]
+[DEF, SF.Seq[3].Main[88].TS.AdditionalResultsHints]
 %[0] = "TYPE, NI_CustomResult"
 
-[SF.Seq[3].Main[89].TS.AdditionalResultsHints[0]]
+[SF.Seq[3].Main[88].TS.AdditionalResultsHints[0]]
 Name = "ResStr(\"NI_RENDEZVOUS_STEP_TYPE\", \"TIMEOUT\")"
 ValueToLog = "Step.TimeoutEnabled ? Str(Evaluate(Step.TimeoutExpr)) : ResStr(\"NI_RENDEZVOUS_STEP_TYPE\", \"DISABLED\")"
 
-[DEF, SF.Seq[3].Main[89]]
+[DEF, SF.Seq[3].Main[88]]
 Result = Obj
 %NAME = "Wait POST UUT operation"
 
-[DEF, SF.Seq[3].Main[89].Result]
+[DEF, SF.Seq[3].Main[88].Result]
 Error = "TYPE, Error"
 Status = Str
 ReportText = Str
 Common = "TYPE, CommonResults"
 TimeoutOccurred = Bool
 
-[SF.Seq[3].Main[89].Result]
+[SF.Seq[3].Main[88].Result]
 %FLG: Error = 4194304
 %FLG: Status = 4194304
 %FLG: ReportText = 4194304
 %FLG: Common = 0
 
-[SF.Seq[3].Main[89]]
+[SF.Seq[3].Main[88]]
 %FLG: Result = 4194304
 NameOrRefExpr = "\"OPEN\"+Locals.CHMB"
 Operation = 1
 
-[SF.Seq[3].Main[90].TS]
+[SF.Seq[3].Main[89].TS]
 Id = "ID#:vlqRJ9aQ8RGwe0ypVBlBxD"
 Icon = "ni_blank.ico"
 Mode = "Skip"
 StatusExpr = "\"\""
 %FLG: StatusExpr = 1
 
-[SF.Seq[3].Main[91].TS]
+[SF.Seq[3].Main[90].TS]
 Id = "ID#:AQuSIdaQ8RGwe0ypVBlBxD"
 
-[SF.Seq[3].Main[91]]
+[SF.Seq[3].Main[90]]
 ConditionExpr = "Locals.OperationMode == \"MSA\""
 
-[DEF, SF.Seq[3].Main[91]]
+[DEF, SF.Seq[3].Main[90]]
 %NAME = "If"
 
-[SF.Seq[3].Main[92].TS]
+[SF.Seq[3].Main[91].TS]
 Id = "ID#:rhCoLtaQ8RGwe0ypVBlBxD"
 
-[SF.Seq[3].Main[92]]
+[SF.Seq[3].Main[91]]
 ConditionExpr Line0001 = "(StationGlobals.Automation.SystemControl.MSA.MSA_Counter[0] == 1 && StationGlobals.Automation.SystemControl.MSA.MSA_Coun"
 ConditionExpr Line0002 = "ter[1] == 1 && StationGlobals.Automation.SystemControl.MSA.MSA_Counter[2] == 1 && StationGlobals.Automation.SystemContro"
 ConditionExpr Line0003 = "l.MSA.MSA_Counter[3] == 1) || (StationGlobals.Automation.SystemControl.MSA.MSA_Counter[0] == 1 && StationGlobals.Automat"
@@ -13608,32 +13584,32 @@ ConditionExpr Line0009 = "ion.SystemControl.MSA.MSA_Counter[3] == 1) \n&& \n!(St
 ConditionExpr Line0010 = "ionGlobals.Automation.SystemControl.CHMB1.MSA.Running)\n\n// If MSA is finished on both chambers or if it was not starte"
 ConditionExpr Line0011 = "d on other chamber"
 
-[DEF, SF.Seq[3].Main[92]]
+[DEF, SF.Seq[3].Main[91]]
 %NAME = "If"
 
-[SF.Seq[3].Main[93].TS]
+[SF.Seq[3].Main[92].TS]
 Id = "ID#:BSrgO9aQ8RGwe0ypVBlBxD"
 
-[DEF, SF.Seq[3].Main[93]]
+[DEF, SF.Seq[3].Main[92]]
 %NAME = "MSA is Over"
 
-[SF.Seq[3].Main[94].TS]
+[SF.Seq[3].Main[93].TS]
 Id = "ID#:sURRjNaQ8RGwe0ypVBlBxD"
 
-[DEF, SF.Seq[3].Main[94].TS]
+[DEF, SF.Seq[3].Main[93].TS]
 SData = "TYPE, SeqCallStepAdditions"
 
-[SF.Seq[3].Main[94].TS.SData]
+[SF.Seq[3].Main[93].TS.SData]
 SFPath = "Noffz.UTP.TEF.API.seq"
 SeqName = "UI.TestSocket.ShowMessageDialog"
 CustomThreadAffinity = "-1"
 Trace = "Off"
 
-[DEF, SF.Seq[3].Main[94].TS.SData]
+[DEF, SF.Seq[3].Main[93].TS.SData]
 ActualArgs = Arguments
 Prototype = Obj
 
-[DEF, SF.Seq[3].Main[94].TS.SData.ActualArgs]
+[DEF, SF.Seq[3].Main[93].TS.SData.ActualArgs]
 TestSocket = "TYPE, SequenceArgument"
 Message = "TYPE, SequenceArgument"
 Color = "TYPE, SequenceArgument"
@@ -13644,48 +13620,48 @@ DialogTimeout = "TYPE, SequenceArgument"
 OkButtonPressed = "TYPE, SequenceArgument"
 CancelButtonPressed = "TYPE, SequenceArgument"
 
-[SF.Seq[3].Main[94].TS.SData.ActualArgs.TestSocket]
+[SF.Seq[3].Main[93].TS.SData.ActualArgs.TestSocket]
 ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[SF.Seq[3].Main[94].TS.SData.ActualArgs.Message]
+[SF.Seq[3].Main[93].TS.SData.ActualArgs.Message]
 UseDef = False
 Expr = "ResStr(\"UI_CONTROL\", \"MSA_DONE\")"
 ParamType = 2
 Flags = 0
 
-[SF.Seq[3].Main[94].TS.SData.ActualArgs.Color]
+[SF.Seq[3].Main[93].TS.SData.ActualArgs.Color]
 ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[SF.Seq[3].Main[94].TS.SData.ActualArgs.FontSize]
+[SF.Seq[3].Main[93].TS.SData.ActualArgs.FontSize]
 Expr = "40"
 ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[SF.Seq[3].Main[94].TS.SData.ActualArgs.ShowOkButton]
+[SF.Seq[3].Main[93].TS.SData.ActualArgs.ShowOkButton]
 ParamType = 16
 Flags = 0
 
-[SF.Seq[3].Main[94].TS.SData.ActualArgs.ShowCancelButton]
+[SF.Seq[3].Main[93].TS.SData.ActualArgs.ShowCancelButton]
 ParamType = 16
 Flags = 0
 
-[SF.Seq[3].Main[94].TS.SData.ActualArgs.DialogTimeout]
+[SF.Seq[3].Main[93].TS.SData.ActualArgs.DialogTimeout]
 ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[SF.Seq[3].Main[94].TS.SData.ActualArgs.OkButtonPressed]
+[SF.Seq[3].Main[93].TS.SData.ActualArgs.OkButtonPressed]
 ParamType = 16
 
-[SF.Seq[3].Main[94].TS.SData.ActualArgs.CancelButtonPressed]
+[SF.Seq[3].Main[93].TS.SData.ActualArgs.CancelButtonPressed]
 ParamType = 16
 
-[DEF, SF.Seq[3].Main[94].TS.SData.Prototype]
+[DEF, SF.Seq[3].Main[93].TS.SData.Prototype]
 TestSocket = Num
 Message = Str
 Color = Num
@@ -13696,7 +13672,7 @@ DialogTimeout = Num
 OkButtonPressed = Bool
 CancelButtonPressed = Bool
 
-[SF.Seq[3].Main[94].TS.SData.Prototype]
+[SF.Seq[3].Main[93].TS.SData.Prototype]
 TestSocket = Nan
 Color = Nan
 FontSize = Nan
@@ -13704,56 +13680,56 @@ ShowOkButton = True
 %FLG: OkButtonPressed = 4
 %FLG: CancelButtonPressed = 4
 
-[SF.Seq[3].Main[94].TS.SData.Prototype.TestSocket]
+[SF.Seq[3].Main[93].TS.SData.Prototype.TestSocket]
 %COMMENT = "Test Socket number. (Default: Current Test Socket Index)"
 
-[SF.Seq[3].Main[94].TS.SData.Prototype.Message]
+[SF.Seq[3].Main[93].TS.SData.Prototype.Message]
 %COMMENT = "Message to show."
 
-[SF.Seq[3].Main[94].TS.SData.Prototype.Color]
+[SF.Seq[3].Main[93].TS.SData.Prototype.Color]
 %COMMENT = "Background color of the Station Message Area. (Default: StationGlobals.TEF.Colors.DialogWaiting)"
 %NUMFMT = "%#x"
 
-[SF.Seq[3].Main[94].TS.SData.Prototype.FontSize]
+[SF.Seq[3].Main[93].TS.SData.Prototype.FontSize]
 %COMMENT = "Size of the Font. (Default: 'DialogTextBox' from Noffz.UTP.TEF.config)."
 
-[SF.Seq[3].Main[94].TS.SData.Prototype.ShowOkButton]
+[SF.Seq[3].Main[93].TS.SData.Prototype.ShowOkButton]
 %COMMENT = "Show OK button in the dialog. (Default: True)"
 
-[SF.Seq[3].Main[94].TS.SData.Prototype.ShowCancelButton]
+[SF.Seq[3].Main[93].TS.SData.Prototype.ShowCancelButton]
 %COMMENT = "Show Cancel button in the dialog. (Default: False)"
 
-[SF.Seq[3].Main[94].TS.SData.Prototype.DialogTimeout]
+[SF.Seq[3].Main[93].TS.SData.Prototype.DialogTimeout]
 %COMMENT Line0001 = "Optional. Dialog timeout in seconds. If 0, the timeout is not used and the dialog is shown until operator press a button"
 %COMMENT Line0002 = ". (Default: 0)"
 
-[SF.Seq[3].Main[94].TS.SData.Prototype.OkButtonPressed]
+[SF.Seq[3].Main[93].TS.SData.Prototype.OkButtonPressed]
 %COMMENT = "Returns True, if OK button was pressed."
 
-[SF.Seq[3].Main[94].TS.SData.Prototype.CancelButtonPressed]
+[SF.Seq[3].Main[93].TS.SData.Prototype.CancelButtonPressed]
 %COMMENT = "Returns True, if Cancel button was pressed."
 
-[DEF, SF.Seq[3].Main[94]]
+[DEF, SF.Seq[3].Main[93]]
 %NAME = "MSA Over"
 
-[SF.Seq[3].Main[95].TS]
+[SF.Seq[3].Main[94].TS]
 Id = "ID#:dWcKStaQ8RGwe0ypVBlBxD"
 
-[DEF, SF.Seq[3].Main[95].TS]
+[DEF, SF.Seq[3].Main[94].TS]
 SData = "TYPE, SeqCallStepAdditions"
 
-[SF.Seq[3].Main[95].TS.SData]
+[SF.Seq[3].Main[94].TS.SData]
 SFPath = "Station_Interface.seq"
 SeqName = "Production"
 CustomThreadAffinity = "-1"
 
-[DEF, SF.Seq[3].Main[95]]
+[DEF, SF.Seq[3].Main[94]]
 %NAME = "Set Operation Mode to Production"
 
-[SF.Seq[3].Main[96].TS]
+[SF.Seq[3].Main[95].TS]
 Id = "ID#:hkZMbNeQ8RGwe0ypVBlBxD"
 
-[SF.Seq[3].Main[96]]
+[SF.Seq[3].Main[95]]
 ConditionExpr Line0001 = "((StationGlobals.Automation.SystemControl.MSA.MSA_Counter[0] < StationGlobals.Automation.SystemControl.MSA.Target  && St"
 ConditionExpr Line0002 = "ationGlobals.Automation.SystemControl.MSA.MSA_Counter[1] < StationGlobals.Automation.SystemControl.MSA.Target) || (Stati"
 ConditionExpr Line0003 = "onGlobals.Automation.SystemControl.MSA.MSA_Counter[2] < StationGlobals.Automation.SystemControl.MSA.Target && StationGlo"
@@ -13762,272 +13738,272 @@ ConditionExpr Line0005 = "als.Automation.SystemControl.MSA.MSA_Counter[0] >1 && 
 ConditionExpr Line0006 = "(StationGlobals.Automation.SystemControl.MSA.MSA_Counter[2] >1 && StationGlobals.Automation.SystemControl.MSA.MSA_Counte"
 ConditionExpr Line0007 = "r[3] >1))\n\n// if MSA was started and it is not done in some chamber"
 
-[DEF, SF.Seq[3].Main[96]]
+[DEF, SF.Seq[3].Main[95]]
 %NAME = "Else If"
 
-[SF.Seq[3].Main[97].TS]
+[SF.Seq[3].Main[96].TS]
 Id = "ID#:VdLkF9mQ8RGwe0ypVBlBxD"
 
-[SF.Seq[3].Main[97]]
+[SF.Seq[3].Main[96]]
 ConditionExpr Line0001 = "((Locals.CHMB == \"CHMB1\" ) && StationGlobals.Automation.SystemControl.CHMB1.MSA.Running) ||  ((Locals.CHMB == \"CHMB2\"
 ConditionExpr Line0002 = "" ) && StationGlobals.Automation.SystemControl.CHMB2.MSA.Running) // Current chamber is running"
 %COMMENT = "Current chamber is running"
 
-[DEF, SF.Seq[3].Main[97]]
+[DEF, SF.Seq[3].Main[96]]
 %NAME = "If"
 
-[SF.Seq[3].Main[98].TS]
+[SF.Seq[3].Main[97].TS]
 Id = "ID#:QIeYo9aQ8RGwe0ypVBlBxD"
 
-[DEF, SF.Seq[3].Main[98].TS]
+[DEF, SF.Seq[3].Main[97].TS]
 SData = "TYPE, SeqCallStepAdditions"
 
-[SF.Seq[3].Main[98].TS.SData]
+[SF.Seq[3].Main[97].TS.SData]
 SFPath = "Noffz.UTP.TEF.API.seq"
 SeqName = "UI.TestSocket.ShowMessage"
 CustomThreadAffinity = "-1"
 Trace = "Off"
 
-[DEF, SF.Seq[3].Main[98].TS.SData]
+[DEF, SF.Seq[3].Main[97].TS.SData]
 ActualArgs = Arguments
 Prototype = Obj
 
-[DEF, SF.Seq[3].Main[98].TS.SData.ActualArgs]
+[DEF, SF.Seq[3].Main[97].TS.SData.ActualArgs]
 TestSocket = "TYPE, SequenceArgument"
 Message = "TYPE, SequenceArgument"
 Color = "TYPE, SequenceArgument"
 FontSize = "TYPE, SequenceArgument"
 
-[SF.Seq[3].Main[98].TS.SData.ActualArgs.TestSocket]
+[SF.Seq[3].Main[97].TS.SData.ActualArgs.TestSocket]
 ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[SF.Seq[3].Main[98].TS.SData.ActualArgs.Message]
+[SF.Seq[3].Main[97].TS.SData.ActualArgs.Message]
 UseDef = False
 Expr Line0001 = "ResStr(\"UI_CONTROL\", \"MSA_COUNTING\") + Str(StationGlobals.Automation.SystemControl.MSA.MSA_Counter[RunState.TestSock"
 Expr Line0002 = "ets.MyIndex] -1)"
 ParamType = 2
 Flags = 0
 
-[SF.Seq[3].Main[98].TS.SData.ActualArgs.Color]
+[SF.Seq[3].Main[97].TS.SData.ActualArgs.Color]
 ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[SF.Seq[3].Main[98].TS.SData.ActualArgs.FontSize]
+[SF.Seq[3].Main[97].TS.SData.ActualArgs.FontSize]
 Expr = "40"
 ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[DEF, SF.Seq[3].Main[98].TS.SData.Prototype]
+[DEF, SF.Seq[3].Main[97].TS.SData.Prototype]
 TestSocket = Num
 Message = Str
 Color = Num
 FontSize = Num
 
-[SF.Seq[3].Main[98].TS.SData.Prototype]
+[SF.Seq[3].Main[97].TS.SData.Prototype]
 TestSocket = Nan
 Color = Nan
 FontSize = Nan
 
-[SF.Seq[3].Main[98].TS.SData.Prototype.TestSocket]
+[SF.Seq[3].Main[97].TS.SData.Prototype.TestSocket]
 %COMMENT = "Test Socket number. (Default: Current Test Socket Index)"
 
-[SF.Seq[3].Main[98].TS.SData.Prototype.Message]
+[SF.Seq[3].Main[97].TS.SData.Prototype.Message]
 %COMMENT = "Message to show."
 
-[SF.Seq[3].Main[98].TS.SData.Prototype.Color]
+[SF.Seq[3].Main[97].TS.SData.Prototype.Color]
 %COMMENT = "Background color of the Test Socket Message Area. (Default: StationGlobals.TEF.Colors.DialogInfo)"
 %NUMFMT = "%#x"
 
-[SF.Seq[3].Main[98].TS.SData.Prototype.FontSize]
+[SF.Seq[3].Main[97].TS.SData.Prototype.FontSize]
 %COMMENT = "Size of the Font. (Default: Configuration parameter 'DialogTextBox' from Noffz.UTP.TEF.config)"
 
-[DEF, SF.Seq[3].Main[98]]
+[DEF, SF.Seq[3].Main[97]]
 %NAME = "MSA Remaining Tests"
 
-[SF.Seq[3].Main[99].TS]
+[SF.Seq[3].Main[98].TS]
 Id = "ID#:jaLZYr2x8RGOIaQctBT8oA"
 %HI: AdditionalResultsHints = [0]
 
-[DEF, SF.Seq[3].Main[99].TS.AdditionalResultsHints]
+[DEF, SF.Seq[3].Main[98].TS.AdditionalResultsHints]
 %[0] = "TYPE, NI_CustomResult"
 
-[SF.Seq[3].Main[99].TS.AdditionalResultsHints[0]]
+[SF.Seq[3].Main[98].TS.AdditionalResultsHints[0]]
 Name = "ResStr(\"NI_WAIT_STEP_TYPE\", \"TIME_TO_WAIT\")"
 ValueToLog = "Evaluate(Step.TimeExpr)"
 
-[SF.Seq[3].Main[99]]
+[SF.Seq[3].Main[98]]
 SeqCallName = "End"
 TimeExpr = "0.6"
 
-[DEF, SF.Seq[3].Main[99]]
+[DEF, SF.Seq[3].Main[98]]
 %NAME = "Wait"
 
-[SF.Seq[3].Main[100].TS]
+[SF.Seq[3].Main[99].TS]
 Id = "ID#:sPdBT9mQ8RGwe0ypVBlBxD"
 
-[SF.Seq[3].Main[100]]
+[SF.Seq[3].Main[99]]
 ConditionExpr Line0001 = "((Locals.CHMB == \"CHMB1\" ) && StationGlobals.Automation.SystemControl.CHMB2.MSA.Running) ||  ((Locals.CHMB == \"CHMB2\"
 ConditionExpr Line0002 = "" ) && StationGlobals.Automation.SystemControl.CHMB1.MSA.Running) //CHMB 1 should wait for CHMB2 to finish or CHMB2 shou"
 ConditionExpr Line0003 = "ld wait for CHMB1"
 %COMMENT = "Other chamber is running - should wait for it"
 
-[DEF, SF.Seq[3].Main[100]]
+[DEF, SF.Seq[3].Main[99]]
 %NAME = "Else If"
 
-[SF.Seq[3].Main[101].TS]
+[SF.Seq[3].Main[100].TS]
 Id = "ID#:ALMrvdmQ8RGwe0ypVBlBxD"
 PostExpr = "Locals.WaitOtherChamberMSA = True"
 
-[DEF, SF.Seq[3].Main[101]]
+[DEF, SF.Seq[3].Main[100]]
 %NAME = "Wait Other CHMB MSA"
 
-[SF.Seq[3].Main[102].TS]
+[SF.Seq[3].Main[101].TS]
 Id = "ID#:+5DNjdmQ8RGwe0ypVBlBxD"
 
-[DEF, SF.Seq[3].Main[102].TS]
+[DEF, SF.Seq[3].Main[101].TS]
 SData = "TYPE, SeqCallStepAdditions"
 
-[SF.Seq[3].Main[102].TS.SData]
+[SF.Seq[3].Main[101].TS.SData]
 SFPath = "Noffz.UTP.TEF.API.seq"
 SeqName = "UI.TestSocket.ShowMessage"
 CustomThreadAffinity = "-1"
 Trace = "Off"
 
-[DEF, SF.Seq[3].Main[102].TS.SData]
+[DEF, SF.Seq[3].Main[101].TS.SData]
 ActualArgs = Arguments
 Prototype = Obj
 
-[DEF, SF.Seq[3].Main[102].TS.SData.ActualArgs]
+[DEF, SF.Seq[3].Main[101].TS.SData.ActualArgs]
 TestSocket = "TYPE, SequenceArgument"
 Message = "TYPE, SequenceArgument"
 Color = "TYPE, SequenceArgument"
 FontSize = "TYPE, SequenceArgument"
 
-[SF.Seq[3].Main[102].TS.SData.ActualArgs.TestSocket]
+[SF.Seq[3].Main[101].TS.SData.ActualArgs.TestSocket]
 ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[SF.Seq[3].Main[102].TS.SData.ActualArgs.Message]
+[SF.Seq[3].Main[101].TS.SData.ActualArgs.Message]
 UseDef = False
 Expr = "ResStr(\"UI_CONTROL\", \"MSA_WAIT\")"
 ParamType = 2
 Flags = 0
 
-[SF.Seq[3].Main[102].TS.SData.ActualArgs.Color]
+[SF.Seq[3].Main[101].TS.SData.ActualArgs.Color]
 ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[SF.Seq[3].Main[102].TS.SData.ActualArgs.FontSize]
+[SF.Seq[3].Main[101].TS.SData.ActualArgs.FontSize]
 Expr = "40"
 ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[DEF, SF.Seq[3].Main[102].TS.SData.Prototype]
+[DEF, SF.Seq[3].Main[101].TS.SData.Prototype]
 TestSocket = Num
 Message = Str
 Color = Num
 FontSize = Num
 
-[SF.Seq[3].Main[102].TS.SData.Prototype]
+[SF.Seq[3].Main[101].TS.SData.Prototype]
 TestSocket = Nan
 Color = Nan
 FontSize = Nan
 
-[SF.Seq[3].Main[102].TS.SData.Prototype.TestSocket]
+[SF.Seq[3].Main[101].TS.SData.Prototype.TestSocket]
 %COMMENT = "Test Socket number. (Default: Current Test Socket Index)"
 
-[SF.Seq[3].Main[102].TS.SData.Prototype.Message]
+[SF.Seq[3].Main[101].TS.SData.Prototype.Message]
 %COMMENT = "Message to show."
 
-[SF.Seq[3].Main[102].TS.SData.Prototype.Color]
+[SF.Seq[3].Main[101].TS.SData.Prototype.Color]
 %COMMENT = "Background color of the Test Socket Message Area. (Default: StationGlobals.TEF.Colors.DialogInfo)"
 %NUMFMT = "%#x"
 
-[SF.Seq[3].Main[102].TS.SData.Prototype.FontSize]
+[SF.Seq[3].Main[101].TS.SData.Prototype.FontSize]
 %COMMENT = "Size of the Font. (Default: Configuration parameter 'DialogTextBox' from Noffz.UTP.TEF.config)"
 
-[DEF, SF.Seq[3].Main[102]]
+[DEF, SF.Seq[3].Main[101]]
 %NAME = "MSA Wait"
 
-[SF.Seq[3].Main[103].TS]
+[SF.Seq[3].Main[102].TS]
 Id = "ID#:YaIh64M/8BGtm8yCf35SiD"
 %HI: AdditionalResultsHints = [0]
 
-[DEF, SF.Seq[3].Main[103].TS.AdditionalResultsHints]
+[DEF, SF.Seq[3].Main[102].TS.AdditionalResultsHints]
 %[0] = "TYPE, NI_CustomResult"
 
-[SF.Seq[3].Main[103].TS.AdditionalResultsHints[0]]
+[SF.Seq[3].Main[102].TS.AdditionalResultsHints[0]]
 Name = "ResStr(\"NI_WAIT_STEP_TYPE\", \"TIME_TO_WAIT\")"
 ValueToLog = "Evaluate(Step.TimeExpr)"
 
-[SF.Seq[3].Main[103]]
+[SF.Seq[3].Main[102]]
 SeqCallName = "End"
 TimeExpr = "0.6"
 
-[DEF, SF.Seq[3].Main[103]]
+[DEF, SF.Seq[3].Main[102]]
 %NAME = "Wait"
 
-[SF.Seq[3].Main[104].TS]
+[SF.Seq[3].Main[103].TS]
 Id = "ID#:V9LkF9mQ8RGwe0ypVBlBxD"
+
+[DEF, SF.Seq[3].Main[103]]
+%NAME = "End"
+
+[SF.Seq[3].Main[104].TS]
+Id = "ID#:lGBbUNeQ8RGwe0ypVBlBxD"
 
 [DEF, SF.Seq[3].Main[104]]
 %NAME = "End"
 
 [SF.Seq[3].Main[105].TS]
-Id = "ID#:lGBbUNeQ8RGwe0ypVBlBxD"
+Id = "ID#:vVqRJ9aQ8RGwe0ypVBlBxD"
 
 [DEF, SF.Seq[3].Main[105]]
 %NAME = "End"
 
 [SF.Seq[3].Main[106].TS]
-Id = "ID#:vVqRJ9aQ8RGwe0ypVBlBxD"
-
-[DEF, SF.Seq[3].Main[106]]
-%NAME = "End"
-
-[SF.Seq[3].Main[107].TS]
 Id = "ID#:sJy5qLhg8RGN0qQctBT8oA"
 Icon = "ni_blank.ico"
 Mode = "Skip"
 StatusExpr = "\"\""
 %FLG: StatusExpr = 1
 
-[SF.Seq[3].Main[108].TS]
+[SF.Seq[3].Main[107].TS]
 Id = "ID#:I2WzYq/57xG53NQli0T1uC"
 Icon = "ni_blank.ico"
 Mode = "Skip"
 StatusExpr = "\"\""
 %FLG: StatusExpr = 1
 
-[SF.Seq[3].Main[109].TS]
+[SF.Seq[3].Main[108].TS]
 Id = "ID#:3RSBPpJo8RGN16QctBT8oA"
 PostExpr = "StationGlobals.Automation.SystemControl.Light_State = Enums.Light_States.Yellow_Blink_Slow"
 
-[DEF, SF.Seq[3].Main[109]]
+[DEF, SF.Seq[3].Main[108]]
 %NAME = "Set light tower to blinking yellow slow"
 
-[SF.Seq[3].Main[110].TS]
+[SF.Seq[3].Main[109].TS]
 Id = "ID#:cEqK+bdg8RGN0qQctBT8oA"
 PostExpr = "Locals.Automated.FixtureClosed =  (Locals.DI == 1)"
 
-[DEF, SF.Seq[3].Main[110].TS]
+[DEF, SF.Seq[3].Main[109].TS]
 SData = "TYPE, FlexGStepAdditions"
 
-[SF.Seq[3].Main[110].TS.SData.ViCall]
+[SF.Seq[3].Main[109].TS.SData.ViCall]
 ProjectPath = "..\\..\\LabView\\nexteer.lvproj"
 VIPath = "My Computer\\DIO\\DIO.lvlib\\Read Single.vi"
 Namespace = "DIO.lvlib"
 TDChecksum = 1475140127
 %HI: Parms = [5]
 
-[DEF, SF.Seq[3].Main[110].TS.SData.ViCall.Parms]
+[DEF, SF.Seq[3].Main[109].TS.SData.ViCall.Parms]
 %[0] = "TYPE, VIParameter"
 %[1] = "TYPE, VIParameter"
 %[2] = "TYPE, VIParameter"
@@ -14035,7 +14011,7 @@ TDChecksum = 1475140127
 %[4] = "TYPE, VIParameter"
 %[5] = "TYPE, VIParameter"
 
-[SF.Seq[3].Main[110].TS.SData.ViCall.Parms[0]]
+[SF.Seq[3].Main[109].TS.SData.ViCall.Parms[0]]
 Label = "task in"
 ArgVal = "Locals.References.Fixture_Closed.Reference"
 Type = 0
@@ -14044,10 +14020,10 @@ NumType = 4
 DisplayType = "Number (I32)"
 ConnectorNumber = 11
 
-[DEF, SF.Seq[3].Main[110].TS.SData.ViCall.Parms[0]]
+[DEF, SF.Seq[3].Main[109].TS.SData.ViCall.Parms[0]]
 %NAME = "task in"
 
-[SF.Seq[3].Main[110].TS.SData.ViCall.Parms[1]]
+[SF.Seq[3].Main[109].TS.SData.ViCall.Parms[1]]
 Label = "portBit"
 ArgVal = "Locals.References.Fixture_Closed.Channel"
 Type = 0
@@ -14056,10 +14032,10 @@ NumType = 4
 DisplayType = "Number (I32)"
 ConnectorNumber = 10
 
-[DEF, SF.Seq[3].Main[110].TS.SData.ViCall.Parms[1]]
+[DEF, SF.Seq[3].Main[109].TS.SData.ViCall.Parms[1]]
 %NAME = "portBit"
 
-[SF.Seq[3].Main[110].TS.SData.ViCall.Parms[2]]
+[SF.Seq[3].Main[109].TS.SData.ViCall.Parms[2]]
 Label = "error in "
 Type = 3
 WireRequirement = 1
@@ -14068,12 +14044,12 @@ UseDefaultValues = True
 %HI: ArrayClusterEls = [2]
 ConnectorNumber = 8
 
-[DEF, SF.Seq[3].Main[110].TS.SData.ViCall.Parms[2].ArrayClusterEls]
+[DEF, SF.Seq[3].Main[109].TS.SData.ViCall.Parms[2].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
 
-[SF.Seq[3].Main[110].TS.SData.ViCall.Parms[2].ArrayClusterEls[0]]
+[SF.Seq[3].Main[109].TS.SData.ViCall.Parms[2].ArrayClusterEls[0]]
 Label = "status"
 ArgVal = "False"
 Type = 2
@@ -14081,10 +14057,10 @@ WireRequirement = 1
 DisplayType = "Boolean"
 UseDefaultValues = True
 
-[DEF, SF.Seq[3].Main[110].TS.SData.ViCall.Parms[2].ArrayClusterEls[0]]
+[DEF, SF.Seq[3].Main[109].TS.SData.ViCall.Parms[2].ArrayClusterEls[0]]
 %NAME = "status"
 
-[SF.Seq[3].Main[110].TS.SData.ViCall.Parms[2].ArrayClusterEls[1]]
+[SF.Seq[3].Main[109].TS.SData.ViCall.Parms[2].ArrayClusterEls[1]]
 Label = "code"
 ArgVal = "0"
 Type = 0
@@ -14093,10 +14069,10 @@ NumType = 4
 DisplayType = "Number (I32)"
 UseDefaultValues = True
 
-[DEF, SF.Seq[3].Main[110].TS.SData.ViCall.Parms[2].ArrayClusterEls[1]]
+[DEF, SF.Seq[3].Main[109].TS.SData.ViCall.Parms[2].ArrayClusterEls[1]]
 %NAME = "code"
 
-[SF.Seq[3].Main[110].TS.SData.ViCall.Parms[2].ArrayClusterEls[2]]
+[SF.Seq[3].Main[109].TS.SData.ViCall.Parms[2].ArrayClusterEls[2]]
 Label = "source"
 ArgVal = "\"\""
 Type = 1
@@ -14104,13 +14080,13 @@ WireRequirement = 1
 DisplayType = "ASCII String"
 UseDefaultValues = True
 
-[DEF, SF.Seq[3].Main[110].TS.SData.ViCall.Parms[2].ArrayClusterEls[2]]
+[DEF, SF.Seq[3].Main[109].TS.SData.ViCall.Parms[2].ArrayClusterEls[2]]
 %NAME = "source"
 
-[DEF, SF.Seq[3].Main[110].TS.SData.ViCall.Parms[2]]
+[DEF, SF.Seq[3].Main[109].TS.SData.ViCall.Parms[2]]
 %NAME = "error in "
 
-[SF.Seq[3].Main[110].TS.SData.ViCall.Parms[3]]
+[SF.Seq[3].Main[109].TS.SData.ViCall.Parms[3]]
 Label = "task out"
 ArgVal = "Locals.References.Fixture_Closed.Reference"
 Type = 0
@@ -14120,10 +14096,10 @@ DisplayType = "Number (I32)"
 Direction = 1
 ConnectorNumber = 3
 
-[DEF, SF.Seq[3].Main[110].TS.SData.ViCall.Parms[3]]
+[DEF, SF.Seq[3].Main[109].TS.SData.ViCall.Parms[3]]
 %NAME = "task out"
 
-[SF.Seq[3].Main[110].TS.SData.ViCall.Parms[4]]
+[SF.Seq[3].Main[109].TS.SData.ViCall.Parms[4]]
 Label = "data"
 ArgVal = "Locals.DI"
 Type = 0
@@ -14133,10 +14109,10 @@ DisplayType = "Number (U8)"
 Direction = 1
 ConnectorNumber = 2
 
-[DEF, SF.Seq[3].Main[110].TS.SData.ViCall.Parms[4]]
+[DEF, SF.Seq[3].Main[109].TS.SData.ViCall.Parms[4]]
 %NAME = "data"
 
-[SF.Seq[3].Main[110].TS.SData.ViCall.Parms[5]]
+[SF.Seq[3].Main[109].TS.SData.ViCall.Parms[5]]
 Label = "error out"
 ArgVal = "Step.Result.Error"
 Type = 3
@@ -14147,22 +14123,22 @@ Direction = 1
 ConnectorNumber = 0
 LegacyClusterType = 2
 
-[DEF, SF.Seq[3].Main[110].TS.SData.ViCall.Parms[5].ArrayClusterEls]
+[DEF, SF.Seq[3].Main[109].TS.SData.ViCall.Parms[5].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
 
-[SF.Seq[3].Main[110].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+[SF.Seq[3].Main[109].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
 Label = "status"
 ArgVal = "Step.Result.Error.Occurred"
 Type = 2
 WireRequirement = 1
 DisplayType = "Boolean"
 
-[DEF, SF.Seq[3].Main[110].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+[DEF, SF.Seq[3].Main[109].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
 %NAME = "status"
 
-[SF.Seq[3].Main[110].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+[SF.Seq[3].Main[109].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
 Label = "code"
 ArgVal = "Step.Result.Error.Code"
 Type = 0
@@ -14170,128 +14146,128 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[3].Main[110].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+[DEF, SF.Seq[3].Main[109].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
 %NAME = "code"
 
-[SF.Seq[3].Main[110].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+[SF.Seq[3].Main[109].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
 Label = "source"
 ArgVal = "Step.Result.Error.Msg"
 Type = 1
 WireRequirement = 1
 DisplayType = "ASCII String"
 
-[DEF, SF.Seq[3].Main[110].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+[DEF, SF.Seq[3].Main[109].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
 %NAME = "source"
 
-[DEF, SF.Seq[3].Main[110].TS.SData.ViCall.Parms[5]]
+[DEF, SF.Seq[3].Main[109].TS.SData.ViCall.Parms[5]]
 %NAME = "error out"
 
-[DEF, SF.Seq[3].Main[110]]
+[DEF, SF.Seq[3].Main[109]]
 %NAME = "Read Fixture closed for CHMB"
 
-[SF.Seq[3].Main[111].TS]
+[SF.Seq[3].Main[110].TS]
 Id = "ID#:AWdz97Zg8RGN0qQctBT8oA"
 
-[SF.Seq[3].Main[111]]
+[SF.Seq[3].Main[110]]
 ConditionExpr = "Locals.Automated.FixtureClosed"
 
-[DEF, SF.Seq[3].Main[111]]
+[DEF, SF.Seq[3].Main[110]]
 %NAME = "If"
 
-[SF.Seq[3].Main[112].TS]
+[SF.Seq[3].Main[111].TS]
 Id = "ID#:uAyx+MOq8RGODKQctBT8oA"
 
-[DEF, SF.Seq[3].Main[112].TS]
+[DEF, SF.Seq[3].Main[111].TS]
 SData = "TYPE, SeqCallStepAdditions"
 
-[SF.Seq[3].Main[112].TS.SData]
+[SF.Seq[3].Main[111].TS.SData]
 SFPath = "Noffz.UTP.TEF.API.seq"
 SeqName = "UI.TestSocket.ShowMessage"
 CustomThreadAffinity = "-1"
 Trace = "Off"
 
-[DEF, SF.Seq[3].Main[112].TS.SData]
+[DEF, SF.Seq[3].Main[111].TS.SData]
 ActualArgs = Arguments
 Prototype = Obj
 
-[DEF, SF.Seq[3].Main[112].TS.SData.ActualArgs]
+[DEF, SF.Seq[3].Main[111].TS.SData.ActualArgs]
 TestSocket = "TYPE, SequenceArgument"
 Message = "TYPE, SequenceArgument"
 Color = "TYPE, SequenceArgument"
 FontSize = "TYPE, SequenceArgument"
 
-[SF.Seq[3].Main[112].TS.SData.ActualArgs.TestSocket]
+[SF.Seq[3].Main[111].TS.SData.ActualArgs.TestSocket]
 ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[SF.Seq[3].Main[112].TS.SData.ActualArgs.Message]
+[SF.Seq[3].Main[111].TS.SData.ActualArgs.Message]
 UseDef = False
 Expr = "ResStr(\"UI_CONTROL\", \"OPEN_CHMB_TAKE_DUTS\") "
 ParamType = 2
 Flags = 0
 
-[SF.Seq[3].Main[112].TS.SData.ActualArgs.Color]
+[SF.Seq[3].Main[111].TS.SData.ActualArgs.Color]
 ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[SF.Seq[3].Main[112].TS.SData.ActualArgs.FontSize]
+[SF.Seq[3].Main[111].TS.SData.ActualArgs.FontSize]
 ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[DEF, SF.Seq[3].Main[112].TS.SData.Prototype]
+[DEF, SF.Seq[3].Main[111].TS.SData.Prototype]
 TestSocket = Num
 Message = Str
 Color = Num
 FontSize = Num
 
-[SF.Seq[3].Main[112].TS.SData.Prototype]
+[SF.Seq[3].Main[111].TS.SData.Prototype]
 TestSocket = Nan
 Color = Nan
 FontSize = Nan
 
-[SF.Seq[3].Main[112].TS.SData.Prototype.TestSocket]
+[SF.Seq[3].Main[111].TS.SData.Prototype.TestSocket]
 %COMMENT = "Test Socket number. (Default: Current Test Socket Index)"
 
-[SF.Seq[3].Main[112].TS.SData.Prototype.Message]
+[SF.Seq[3].Main[111].TS.SData.Prototype.Message]
 %COMMENT = "Message to show."
 
-[SF.Seq[3].Main[112].TS.SData.Prototype.Color]
+[SF.Seq[3].Main[111].TS.SData.Prototype.Color]
 %COMMENT = "Background color of the Test Socket Message Area. (Default: StationGlobals.TEF.Colors.DialogInfo)"
 %NUMFMT = "%#x"
 
-[SF.Seq[3].Main[112].TS.SData.Prototype.FontSize]
+[SF.Seq[3].Main[111].TS.SData.Prototype.FontSize]
 %COMMENT = "Size of the Font. (Default: Configuration parameter 'DialogTextBox' from Noffz.UTP.TEF.config)"
 
-[DEF, SF.Seq[3].Main[112]]
+[DEF, SF.Seq[3].Main[111]]
 %NAME = "Open Fixture CHMB"
 
-[SF.Seq[3].Main[113].TS]
+[SF.Seq[3].Main[112].TS]
 Id = "ID#:A2dz97Zg8RGN0qQctBT8oA"
 
-[SF.Seq[3].Main[113]]
+[SF.Seq[3].Main[112]]
 ConditionExpr = "Locals.Automated.FixtureClosed"
 
-[DEF, SF.Seq[3].Main[113]]
+[DEF, SF.Seq[3].Main[112]]
 %NAME = "While"
 
-[SF.Seq[3].Main[114].TS]
+[SF.Seq[3].Main[113].TS]
 Id = "ID#:cUqK+bdg8RGN0qQctBT8oA"
 PostExpr = "Locals.Automated.FixtureClosed =  (Locals.DI == 1)"
 
-[DEF, SF.Seq[3].Main[114].TS]
+[DEF, SF.Seq[3].Main[113].TS]
 SData = "TYPE, FlexGStepAdditions"
 
-[SF.Seq[3].Main[114].TS.SData.ViCall]
+[SF.Seq[3].Main[113].TS.SData.ViCall]
 ProjectPath = "..\\..\\LabView\\nexteer.lvproj"
 VIPath = "My Computer\\DIO\\DIO.lvlib\\Read Single.vi"
 Namespace = "DIO.lvlib"
 TDChecksum = 1475140127
 %HI: Parms = [5]
 
-[DEF, SF.Seq[3].Main[114].TS.SData.ViCall.Parms]
+[DEF, SF.Seq[3].Main[113].TS.SData.ViCall.Parms]
 %[0] = "TYPE, VIParameter"
 %[1] = "TYPE, VIParameter"
 %[2] = "TYPE, VIParameter"
@@ -14299,7 +14275,7 @@ TDChecksum = 1475140127
 %[4] = "TYPE, VIParameter"
 %[5] = "TYPE, VIParameter"
 
-[SF.Seq[3].Main[114].TS.SData.ViCall.Parms[0]]
+[SF.Seq[3].Main[113].TS.SData.ViCall.Parms[0]]
 Label = "task in"
 ArgVal = "Locals.References.Fixture_Closed.Reference"
 Type = 0
@@ -14308,10 +14284,10 @@ NumType = 4
 DisplayType = "Number (I32)"
 ConnectorNumber = 11
 
-[DEF, SF.Seq[3].Main[114].TS.SData.ViCall.Parms[0]]
+[DEF, SF.Seq[3].Main[113].TS.SData.ViCall.Parms[0]]
 %NAME = "task in"
 
-[SF.Seq[3].Main[114].TS.SData.ViCall.Parms[1]]
+[SF.Seq[3].Main[113].TS.SData.ViCall.Parms[1]]
 Label = "portBit"
 ArgVal = "Locals.References.Fixture_Closed.Channel"
 Type = 0
@@ -14320,10 +14296,10 @@ NumType = 4
 DisplayType = "Number (I32)"
 ConnectorNumber = 10
 
-[DEF, SF.Seq[3].Main[114].TS.SData.ViCall.Parms[1]]
+[DEF, SF.Seq[3].Main[113].TS.SData.ViCall.Parms[1]]
 %NAME = "portBit"
 
-[SF.Seq[3].Main[114].TS.SData.ViCall.Parms[2]]
+[SF.Seq[3].Main[113].TS.SData.ViCall.Parms[2]]
 Label = "error in "
 Type = 3
 WireRequirement = 1
@@ -14332,12 +14308,12 @@ UseDefaultValues = True
 %HI: ArrayClusterEls = [2]
 ConnectorNumber = 8
 
-[DEF, SF.Seq[3].Main[114].TS.SData.ViCall.Parms[2].ArrayClusterEls]
+[DEF, SF.Seq[3].Main[113].TS.SData.ViCall.Parms[2].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
 
-[SF.Seq[3].Main[114].TS.SData.ViCall.Parms[2].ArrayClusterEls[0]]
+[SF.Seq[3].Main[113].TS.SData.ViCall.Parms[2].ArrayClusterEls[0]]
 Label = "status"
 ArgVal = "False"
 Type = 2
@@ -14345,10 +14321,10 @@ WireRequirement = 1
 DisplayType = "Boolean"
 UseDefaultValues = True
 
-[DEF, SF.Seq[3].Main[114].TS.SData.ViCall.Parms[2].ArrayClusterEls[0]]
+[DEF, SF.Seq[3].Main[113].TS.SData.ViCall.Parms[2].ArrayClusterEls[0]]
 %NAME = "status"
 
-[SF.Seq[3].Main[114].TS.SData.ViCall.Parms[2].ArrayClusterEls[1]]
+[SF.Seq[3].Main[113].TS.SData.ViCall.Parms[2].ArrayClusterEls[1]]
 Label = "code"
 ArgVal = "0"
 Type = 0
@@ -14357,10 +14333,10 @@ NumType = 4
 DisplayType = "Number (I32)"
 UseDefaultValues = True
 
-[DEF, SF.Seq[3].Main[114].TS.SData.ViCall.Parms[2].ArrayClusterEls[1]]
+[DEF, SF.Seq[3].Main[113].TS.SData.ViCall.Parms[2].ArrayClusterEls[1]]
 %NAME = "code"
 
-[SF.Seq[3].Main[114].TS.SData.ViCall.Parms[2].ArrayClusterEls[2]]
+[SF.Seq[3].Main[113].TS.SData.ViCall.Parms[2].ArrayClusterEls[2]]
 Label = "source"
 ArgVal = "\"\""
 Type = 1
@@ -14368,13 +14344,13 @@ WireRequirement = 1
 DisplayType = "ASCII String"
 UseDefaultValues = True
 
-[DEF, SF.Seq[3].Main[114].TS.SData.ViCall.Parms[2].ArrayClusterEls[2]]
+[DEF, SF.Seq[3].Main[113].TS.SData.ViCall.Parms[2].ArrayClusterEls[2]]
 %NAME = "source"
 
-[DEF, SF.Seq[3].Main[114].TS.SData.ViCall.Parms[2]]
+[DEF, SF.Seq[3].Main[113].TS.SData.ViCall.Parms[2]]
 %NAME = "error in "
 
-[SF.Seq[3].Main[114].TS.SData.ViCall.Parms[3]]
+[SF.Seq[3].Main[113].TS.SData.ViCall.Parms[3]]
 Label = "task out"
 ArgVal = "Locals.References.Fixture_Closed.Reference"
 Type = 0
@@ -14384,10 +14360,10 @@ DisplayType = "Number (I32)"
 Direction = 1
 ConnectorNumber = 3
 
-[DEF, SF.Seq[3].Main[114].TS.SData.ViCall.Parms[3]]
+[DEF, SF.Seq[3].Main[113].TS.SData.ViCall.Parms[3]]
 %NAME = "task out"
 
-[SF.Seq[3].Main[114].TS.SData.ViCall.Parms[4]]
+[SF.Seq[3].Main[113].TS.SData.ViCall.Parms[4]]
 Label = "data"
 ArgVal = "Locals.DI"
 Type = 0
@@ -14397,10 +14373,10 @@ DisplayType = "Number (U8)"
 Direction = 1
 ConnectorNumber = 2
 
-[DEF, SF.Seq[3].Main[114].TS.SData.ViCall.Parms[4]]
+[DEF, SF.Seq[3].Main[113].TS.SData.ViCall.Parms[4]]
 %NAME = "data"
 
-[SF.Seq[3].Main[114].TS.SData.ViCall.Parms[5]]
+[SF.Seq[3].Main[113].TS.SData.ViCall.Parms[5]]
 Label = "error out"
 ArgVal = "Step.Result.Error"
 Type = 3
@@ -14411,22 +14387,22 @@ Direction = 1
 ConnectorNumber = 0
 LegacyClusterType = 2
 
-[DEF, SF.Seq[3].Main[114].TS.SData.ViCall.Parms[5].ArrayClusterEls]
+[DEF, SF.Seq[3].Main[113].TS.SData.ViCall.Parms[5].ArrayClusterEls]
 %[0] = "TYPE, VIParameterElement"
 %[1] = "TYPE, VIParameterElement"
 %[2] = "TYPE, VIParameterElement"
 
-[SF.Seq[3].Main[114].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+[SF.Seq[3].Main[113].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
 Label = "status"
 ArgVal = "Step.Result.Error.Occurred"
 Type = 2
 WireRequirement = 1
 DisplayType = "Boolean"
 
-[DEF, SF.Seq[3].Main[114].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+[DEF, SF.Seq[3].Main[113].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
 %NAME = "status"
 
-[SF.Seq[3].Main[114].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+[SF.Seq[3].Main[113].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
 Label = "code"
 ArgVal = "Step.Result.Error.Code"
 Type = 0
@@ -14434,132 +14410,132 @@ WireRequirement = 1
 NumType = 4
 DisplayType = "Number (I32)"
 
-[DEF, SF.Seq[3].Main[114].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+[DEF, SF.Seq[3].Main[113].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
 %NAME = "code"
 
-[SF.Seq[3].Main[114].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+[SF.Seq[3].Main[113].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
 Label = "source"
 ArgVal = "Step.Result.Error.Msg"
 Type = 1
 WireRequirement = 1
 DisplayType = "ASCII String"
 
-[DEF, SF.Seq[3].Main[114].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+[DEF, SF.Seq[3].Main[113].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
 %NAME = "source"
 
-[DEF, SF.Seq[3].Main[114].TS.SData.ViCall.Parms[5]]
+[DEF, SF.Seq[3].Main[113].TS.SData.ViCall.Parms[5]]
 %NAME = "error out"
 
-[DEF, SF.Seq[3].Main[114]]
+[DEF, SF.Seq[3].Main[113]]
 %NAME = "Read Fixture closed for CHMB"
 
-[SF.Seq[3].Main[115].TS]
+[SF.Seq[3].Main[114].TS]
 Id = "ID#:cgS5/sOq8RGODKQctBT8oA"
 
-[DEF, SF.Seq[3].Main[115].TS]
+[DEF, SF.Seq[3].Main[114].TS]
 SData = "TYPE, SeqCallStepAdditions"
 
-[SF.Seq[3].Main[115].TS.SData]
+[SF.Seq[3].Main[114].TS.SData]
 SFPath = "Noffz.UTP.TEF.API.seq"
 SeqName = "UI.TestSocket.ShowMessage"
 CustomThreadAffinity = "-1"
 Trace = "Off"
 
-[DEF, SF.Seq[3].Main[115].TS.SData]
+[DEF, SF.Seq[3].Main[114].TS.SData]
 ActualArgs = Arguments
 Prototype = Obj
 
-[DEF, SF.Seq[3].Main[115].TS.SData.ActualArgs]
+[DEF, SF.Seq[3].Main[114].TS.SData.ActualArgs]
 TestSocket = "TYPE, SequenceArgument"
 Message = "TYPE, SequenceArgument"
 Color = "TYPE, SequenceArgument"
 FontSize = "TYPE, SequenceArgument"
 
-[SF.Seq[3].Main[115].TS.SData.ActualArgs.TestSocket]
+[SF.Seq[3].Main[114].TS.SData.ActualArgs.TestSocket]
 ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[SF.Seq[3].Main[115].TS.SData.ActualArgs.Message]
+[SF.Seq[3].Main[114].TS.SData.ActualArgs.Message]
 UseDef = False
 Expr = "ResStr(\"UI_CONTROL\", \"OPEN_CHMB_TAKE_DUTS\") "
 ParamType = 2
 Flags = 0
 
-[SF.Seq[3].Main[115].TS.SData.ActualArgs.Color]
+[SF.Seq[3].Main[114].TS.SData.ActualArgs.Color]
 ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[SF.Seq[3].Main[115].TS.SData.ActualArgs.FontSize]
+[SF.Seq[3].Main[114].TS.SData.ActualArgs.FontSize]
 ParamType = 4
 ParamRepresentation = 1
 Flags = 0
 
-[DEF, SF.Seq[3].Main[115].TS.SData.Prototype]
+[DEF, SF.Seq[3].Main[114].TS.SData.Prototype]
 TestSocket = Num
 Message = Str
 Color = Num
 FontSize = Num
 
-[SF.Seq[3].Main[115].TS.SData.Prototype]
+[SF.Seq[3].Main[114].TS.SData.Prototype]
 TestSocket = Nan
 Color = Nan
 FontSize = Nan
 
-[SF.Seq[3].Main[115].TS.SData.Prototype.TestSocket]
+[SF.Seq[3].Main[114].TS.SData.Prototype.TestSocket]
 %COMMENT = "Test Socket number. (Default: Current Test Socket Index)"
 
-[SF.Seq[3].Main[115].TS.SData.Prototype.Message]
+[SF.Seq[3].Main[114].TS.SData.Prototype.Message]
 %COMMENT = "Message to show."
 
-[SF.Seq[3].Main[115].TS.SData.Prototype.Color]
+[SF.Seq[3].Main[114].TS.SData.Prototype.Color]
 %COMMENT = "Background color of the Test Socket Message Area. (Default: StationGlobals.TEF.Colors.DialogInfo)"
 %NUMFMT = "%#x"
 
-[SF.Seq[3].Main[115].TS.SData.Prototype.FontSize]
+[SF.Seq[3].Main[114].TS.SData.Prototype.FontSize]
 %COMMENT = "Size of the Font. (Default: Configuration parameter 'DialogTextBox' from Noffz.UTP.TEF.config)"
 
-[DEF, SF.Seq[3].Main[115]]
+[DEF, SF.Seq[3].Main[114]]
 %NAME = "Open Fixture CHMB"
 
-[SF.Seq[3].Main[116].TS]
+[SF.Seq[3].Main[115].TS]
 Id = "ID#:Bmdz97Zg8RGN0qQctBT8oA"
+
+[DEF, SF.Seq[3].Main[115]]
+%NAME = "End"
+
+[SF.Seq[3].Main[116].TS]
+Id = "ID#:B2dz97Zg8RGN0qQctBT8oA"
 
 [DEF, SF.Seq[3].Main[116]]
 %NAME = "End"
 
 [SF.Seq[3].Main[117].TS]
-Id = "ID#:B2dz97Zg8RGN0qQctBT8oA"
-
-[DEF, SF.Seq[3].Main[117]]
-%NAME = "End"
-
-[SF.Seq[3].Main[118].TS]
 Id = "ID#:mr3c1K/57xG53NQli0T1uC"
 Icon = "ni_blank.ico"
 StatusExpr = "\"\""
 %FLG: StatusExpr = 1
 
-[SF.Seq[3].Main[119].TS]
+[SF.Seq[3].Main[118].TS]
 Id = "ID#:cFMprwn57xG52tQli0T1uC"
 
-[SF.Seq[3].Main[119]]
+[SF.Seq[3].Main[118]]
 %COMMENT = "If we had TS ERROR, we will skip processing the ruslts"
 
-[DEF, SF.Seq[3].Main[119]]
+[DEF, SF.Seq[3].Main[118]]
 %NAME = "Else"
 
-[SF.Seq[3].Main[120].TS]
+[SF.Seq[3].Main[119].TS]
 Id = "ID#:cVMprwn57xG52tQli0T1uC"
 
-[DEF, SF.Seq[3].Main[120]]
+[DEF, SF.Seq[3].Main[119]]
 %NAME = "NO ACTION"
 
-[SF.Seq[3].Main[121].TS]
+[SF.Seq[3].Main[120].TS]
 Id = "ID#:clMprwn57xG52tQli0T1uC"
 
-[DEF, SF.Seq[3].Main[121]]
+[DEF, SF.Seq[3].Main[120]]
 %NAME = "End"
 
 [DEF, SF.Seq[3].Setup]

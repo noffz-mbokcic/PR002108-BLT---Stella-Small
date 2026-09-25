@@ -1,0 +1,1218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"><title> Report</title><style type="text/css">
+					body {font-family:VERDANA;color:#161617}
+					img {margin-right:5px;}
+					img.expandCollapseAll{width:26px; height:28px; border-style:none; cursor:pointer;}
+					img.expandCollapse{border-style:none; cursor:pointer}
+					table.uutTable{min-width: 30%; width: auto;font-size: 70%;}
+					table.uutTable td, th, tr{white-space:nowrap;padding:0.5em;vertical-align:text-top}
+					table.batchTable{width:80%;font-size: 70%;border-width:0.13em;border-style:solid;border-color:#D3D5D6;border-collapse:collapse;}
+					table.batchTable td, th, tr{border-width:1px;border-style:solid;border-color:#D3D5D6;white-space:normal;padding:0.5em;vertical-align:text-top;border-collapse:collapse;}
+					table.uutHrefTable{width:80%;font-size: 70%;border-width:0.13em;border-color:#D3D5D6;border-collapse:collapse;border-style:solid;}
+					table.uutHrefTable td, th, tr{border-width:0.13em;border-color:silver;border-collapse:collapse;border-style:solid;padding:0.5em;text-align:center;}
+					table.stepTable{width:auto;max-width:95%;font-size:70%;border-width:0.13em;border-color:#D3D5D6;border-collapse:collapse;border-style:solid;}
+					table.stepTable td, th, tr{width:auto;border-width:0.13em;border-color:#D3D5D6;border-collapse:collapse;border-style:solid;padding:0.5em;text-align:left;}					
+					hr.headerSeparator{text-align:left;height:0px;width:90%;margin-left:0px;border: none; border-bottom: 1px solid #D3D5D6}
+					hr.uutSeparator{text-align:left;height:0px;width:90%;margin-left:0px;color:#D3D5D6; border: none; border-bottom: 1px solid rgb(174, 176, 179)}
+					hr.batchSeparator{text-align:center;height:1px;width:90%;}
+					table.criticalFailureTable{width:50%;font-size: 70%;border-width:1px;border-style:solid;border-color:#D3D5D6;border-collapse:collapse;}
+					table.criticalFailureTable td, th{border-width:1px;border-style:solid;border-color:#D3D5D6;border-collapse:collapse;white-space:nowrap;padding:0.4em;vertical-align:text-top;}
+					table.criticalFailureTable td {text-align:left;}
+					table.criticalFailureTable th {text-align:center;}
+					span.stepText{font-size:94%;}
+					tr.hidden{display:none;}
+					img{margin:0px;padding:0px;}
+					</style><script type="text/javascript">
+					//		
+					var gStylesheetpath = "";	
+					/** A function to initialize the global variable with the stylesheet path**/	
+					setStylesheetPath = function(path)
+					{
+						gStylesheetpath = path;
+					}	
+					/** A function to return the image path depending on whether the file was packed using the XMLPack utility.
+					**/	
+					getImageAbsolutePath = function(imageFileName)
+					{
+						var path ="";	
+						path = gStylesheetpath +  imageFileName;
+						return path;	
+					}
+
+					var gExpandCollapseState = "collapsed";
+
+					/** An array cache of all divs in HTML body, this will calculate all expand collapse divs once and 
+					 store in this global array so that performance is improved for expand/collapse actions from second time**/
+					var gExpandCollapseImagesArray; 
+
+
+					/**Apply Expand/Collapse functionality for image element, this will be called by onClick event of img element
+					**/
+					expandCollapse = function(event)
+					{
+						var imgElem = event.target || event.srcElement;			
+						expandCollapseImageDiv(imgElem);
+					}
+
+					/**Apply Expand/Collapse functionality for div element which contains imgElem
+						imgElem - DOM object of img element
+					**/
+					expandCollapseImageDiv = function(imgElem)
+					{
+						var id = imgElem.className;
+						var expCollDiv = document.getElementById(id);
+						if(expCollDiv)
+						{
+							var imgSrc = imgElem.src;
+							var indexOfLastSlash  = imgSrc.lastIndexOf('/') + 1;
+							var imgPath = imgSrc.slice(0,indexOfLastSlash);
+							var imgName = imgSrc.slice(indexOfLastSlash);
+							if(expCollDiv.className == "expanded")
+							{
+								expCollDiv.className="collapsed";
+								expCollDiv.style.display="none";
+								imgName = imgName.replace("minus","plus");
+							}	
+							else
+							{
+								expCollDiv.className="expanded";
+								expCollDiv.style.display="block";
+								imgName = imgName.replace("plus","minus");
+							}	
+							imgElem.src=imgPath+imgName;
+						}
+					}
+
+					/**Change classname for DIV element, so that it is visible and expanded
+						imgElem - DOM object of img element
+					**/
+					expandImageDiv = function(imgElem)
+					{
+						var id = imgElem.className;
+						var expCollDiv = document.getElementById(id);
+						if(expCollDiv)
+						{
+							var imgSrc = imgElem.src;
+							var indexOfLastSlash  = imgSrc.lastIndexOf('/') + 1;
+							var imgPath = imgSrc.slice(0,indexOfLastSlash);
+							var imgName = imgSrc.slice(indexOfLastSlash);
+							expCollDiv.className="expanded";
+							expCollDiv.style.display="block";
+							imgName = imgName.replace("plus","minus");					
+							imgElem.src=imgPath+imgName;
+						}
+					}
+					/**Change classname for DIV element, so that it is hidden and collapsed
+						imgElem - DOM object of img element
+					**/
+					collapseImageDiv = function(imgElem)
+					{
+						var id = imgElem.className;
+						var expCollDiv = document.getElementById(id);
+						if(expCollDiv)
+						{
+							var imgSrc = imgElem.src;
+							var indexOfLastSlash  = imgSrc.lastIndexOf('/') + 1;
+							var imgPath = imgSrc.slice(0,indexOfLastSlash);
+							var imgName = imgSrc.slice(indexOfLastSlash);
+							expCollDiv.className="collapsed";
+							expCollDiv.style.display="none";
+							imgName = imgName.replace("minus","plus");	
+							imgElem.src=imgPath+imgName;
+						}
+					}
+					/**
+					* @constructor
+					*/
+					ImgCollection = function(imgArray) { this.imgArray= imgArray; 	this.state = "expanded"; };
+					
+					/** A High level expand/collapse function which will expand or collapse all the DIVs in HTML body 
+					**/
+					expandCollapseAll = function(event)
+					{
+						var rootImgElem = event.target || event.srcElement;		
+						var uniqueDivId = 	rootImgElem.className;
+						if(!gExpandCollapseImagesArray)
+						{
+							gExpandCollapseImagesArray =  new Array();
+						}						
+						if(!gExpandCollapseImagesArray[uniqueDivId])
+						{
+							var divElement = document.getElementById(uniqueDivId);						
+							gExpandCollapseImagesArray[uniqueDivId] = new ImgCollection(divElement.getElementsByTagName("img"));
+						}
+						var expandCollapseState = gExpandCollapseImagesArray[uniqueDivId].state;
+						var expandCollapseImagesArray = gExpandCollapseImagesArray[uniqueDivId].imgArray;
+						if (expandCollapseState == "expanded")
+						{
+							for(var i=0; i<expandCollapseImagesArray.length;++i)
+							{
+								var imgElem = expandCollapseImagesArray[i];
+								if (imgElem.className == "trExpanded")
+									collapseTRImg(imgElem);
+								else
+									collapseImageDiv(imgElem);
+							}
+							rootImgElem.src =getImageAbsolutePath("plus.png");
+							collapseImageDiv(rootImgElem);
+							expandCollapseState="collapsed";
+						}
+						else
+						{
+							for(var i=0; i<expandCollapseImagesArray.length;++i)
+							{
+								var imgElem = expandCollapseImagesArray[i];
+								if (imgElem.className == "trExpanded")
+									expandTRImg(imgElem);
+								else
+									expandImageDiv(imgElem);
+							}
+							rootImgElem.src =getImageAbsolutePath("minus.png");
+							expandImageDiv(rootImgElem);
+							expandCollapseState="expanded";
+						}
+						gExpandCollapseImagesArray[uniqueDivId].state = expandCollapseState;
+					}
+					
+					/** A expand function to expand all divisions during PDF Generation
+					**/
+					expandAll = function()
+					{
+						if(!gExpandCollapseImagesArray)
+						{
+							gExpandCollapseImagesArray =  new Array();
+						}
+						
+						var imgElems = document.getElementsByTagName("img");
+						
+						for (var i=0; i<imgElems.length; ++i)
+						{
+							var uniqueDivId = imgElems[i].className;
+							if (uniqueDivId.startsWith("MainSequence_"))
+							{
+								if(!gExpandCollapseImagesArray[uniqueDivId])
+								{
+									var divElement = document.getElementById(uniqueDivId);						
+									gExpandCollapseImagesArray[uniqueDivId] = new ImgCollection(divElement.getElementsByTagName("img"));
+								}
+								
+								var expandCollapseState = imgElems[i].state;
+								var expandCollapseImagesArray = gExpandCollapseImagesArray[uniqueDivId].imgArray;
+								
+								for(var j=0; j<expandCollapseImagesArray.length;++j)
+								{
+									var imgElem = expandCollapseImagesArray[j];
+									if (imgElem.className == "trExpanded")
+										expandTRImg(imgElem);
+									else
+										expandImageDiv(imgElem);
+								}
+								imgElems[i].src =getImageAbsolutePath("minus.png");
+								expandImageDiv(imgElems[i]);
+								expandCollapseState="expanded";
+								imgElems[i].state = expandCollapseState;
+								imgElems[i].alt = "";
+							}
+						}
+					}
+					
+					/** A High level expand function which will expand all the DIVs in HTML body 
+					**/
+					expandAllTables = function(event)
+					{
+						var anchorElement = event.target || event.srcElement;	
+						if (anchorElement)
+						{
+							var anchorHref = anchorElement.href;
+							var uniqueDivId = 	anchorElement.className;
+							var rootImgElem = document.getElementById(uniqueDivId +'img');	
+							if(!gExpandCollapseImagesArray)
+							{
+								gExpandCollapseImagesArray =  new Array();
+							}		
+							if(!gExpandCollapseImagesArray[uniqueDivId])
+							{
+								var divElement = document.getElementById(uniqueDivId);						
+								gExpandCollapseImagesArray[uniqueDivId] = new ImgCollection(divElement.getElementsByTagName("img"));
+							}
+							var expandCollapseImagesArray = gExpandCollapseImagesArray[uniqueDivId].imgArray;
+							for(var i=0; i<expandCollapseImagesArray.length;++i)
+							{
+								var imgElem = expandCollapseImagesArray[i];
+								if (imgElem.className != "trExpanded")
+									expandImageDiv(imgElem);
+							}
+							rootImgElem.src =getImageAbsolutePath("minus.png");
+							expandImageDiv(rootImgElem);		
+							gExpandCollapseImagesArray[uniqueDivId].state = "expanded";
+							window.location.href = anchorHref; 
+						}
+							return false;
+					}	
+
+					expandTable = function(event)
+					{
+						var anchorElement = event.target || event.srcElement;		
+						var anchorHref = anchorElement.href;
+						var indexOfHash = anchorHref.lastIndexOf('#');
+						var id = anchorHref.substring(indexOfHash + 1);
+						var tableElement = document.getElementById(id);
+						var parentElement = tableElement.parentNode;
+						while(parentElement.tagName != "BODY")
+						{
+							if(parentElement.tagName=='DIV' && parentElement.className=='collapsed')
+							{
+								var imgElem = parentElement.parentNode.getElementsByTagName("IMG")[0];
+								var imgSrc = imgElem.src;
+								var indexOfLastSlash  = imgSrc.lastIndexOf('/') + 1;
+								var imgPath = imgSrc.slice(0,indexOfLastSlash);
+								var imgName = imgSrc.slice(indexOfLastSlash);
+								parentElement.className="expanded";
+								imgName = imgName.replace("plus","minus");					
+								imgElem.src=imgPath+imgName;
+							}
+							parentElement = parentElement.parentNode;
+						}
+						window.location.href = anchorHref;
+						return false;
+					}
+					
+				/** Functions to expand collapse tr elements **/
+				var kExpandedState = 1;
+				var kCollapsedState = 0;
+				expandCollapseTR = function(event)
+				{
+					var imgElem = event.target || event.srcElement;			 
+					if (imgElem)
+					{
+						expandCollapseTRImg(imgElem);
+					}
+				}
+				expandCollapseTRImg  = function(imgElem)
+				{
+					var trElem	= imgElem.parentNode.parentNode;
+					if(trElem)
+					{
+						var expCollState = getStateFromTRElement(trElem);
+						if (expCollState == kCollapsedState)
+						{
+							expandNestedRows(trElem);
+							setStateOfTR(trElem, kExpandedState);
+							setImageToMinus(imgElem);
+						}
+						else if (expCollState == kExpandedState)
+						{
+							collapseNestedRows(trElem);
+							setStateOfTR(trElem, kCollapsedState);
+							setImageToPlus(imgElem);
+						}
+					}
+				}
+				expandTRImg  = function(imgElem)
+				{
+					var trElem	= imgElem.parentNode.parentNode;
+					if(trElem)
+					{
+						expandNestedRows(trElem);
+						setStateOfTR(trElem, kExpandedState);
+						setImageToMinus(imgElem)
+					}
+				}
+				collapseTRImg  = function(imgElem)
+				{
+					var trElem	= imgElem.parentNode.parentNode;
+					if(trElem)
+					{
+						collapseNestedRows(trElem);
+						setStateOfTR(trElem, kCollapsedState);
+						setImageToMinus(imgElem);
+					}
+				}
+				getStateFromTRElement = function(trElem)
+				{
+					var className = trElem.className;
+					var state = kExpandedState;
+					var splitData = className.split(' ');
+					if(splitData.length >= 3)
+					{
+						state = parseInt(splitData[2].split(':')[1],10)
+					}
+					return state;
+				}
+				getLevelFromTRElement = function(trElem)
+				{
+					var className = trElem.className;
+					var level = -1;
+					var splitData = className.split(' ');
+					if(splitData.length >= 2)
+					{
+						level = parseInt(splitData[1].split(':')[1],10)
+					}
+					return level;
+				}
+				setVisibiltyOfTR = function(trElem, visibility)
+				{
+					var className = trElem.className;
+					var splitData = className.split(' ');
+					if(splitData.length >= 3)
+					{
+						splitData[0] = visibility;
+						trElem.className = splitData.join(' ');
+					}					
+				}
+				setStateOfTR = function(trElem, state)
+				{
+					var className = trElem.className;
+					var splitData = className.split(' ');
+					if(splitData.length >= 3)
+					{
+						splitData[2] = 'state:' + state;
+						trElem.className = splitData.join(' ');
+					}					
+				}
+				setImageToPlus = function(imgElem)
+				{
+					var imgSrc = imgElem.src;
+					var indexOfLastSlash  = imgSrc.lastIndexOf('/') + 1;
+					var imgPath = imgSrc.slice(0,indexOfLastSlash);
+					var imgName = imgSrc.slice(indexOfLastSlash);
+					imgName = imgName.replace("minus","plus");
+					imgElem.src=imgPath+imgName;
+				}
+				setImageToMinus = function(imgElem)
+				{
+					var imgSrc = imgElem.src;
+					var indexOfLastSlash  = imgSrc.lastIndexOf('/') + 1;
+					var imgPath = imgSrc.slice(0,indexOfLastSlash);
+					var imgName = imgSrc.slice(indexOfLastSlash);
+					imgName = imgName.replace("plus","minus");
+					imgElem.src=imgPath+imgName;
+				}
+				collapseNestedRows = function(trElem)
+				{					
+					var currLevel = getLevelFromTRElement(trElem);
+					trElem = trElem.nextSibling;
+					while (trElem)
+					{
+						if (trElem.nodeName == "TR" || trElem.nodeName == "tr")
+						{
+							var nextLevel = getLevelFromTRElement(trElem);
+							if (nextLevel > currLevel)
+								setVisibiltyOfTR(trElem, "hidden");
+							else
+								break;
+						}
+						trElem =  trElem.nextSibling;
+					}
+				}
+				expandNestedRows = function(trElem)
+				{
+					var currLevel = getLevelFromTRElement(trElem);
+					var makeVisible = true;
+					var level = -1;
+					trElem = trElem.nextSibling;
+					while (trElem)
+					{
+						if (trElem.nodeName == "TR" || trElem.nodeName == "tr")
+						{
+							var nextLevel = getLevelFromTRElement(trElem);
+							if (nextLevel > currLevel)
+							{
+								var state = getStateFromTRElement(trElem);
+								if (makeVisible == true)
+								{
+									if (state == kCollapsedState)
+									{
+										level = nextLevel;
+										makeVisible = false;
+									}
+									setVisibiltyOfTR(trElem, "visible");
+								}
+								else if(nextLevel <= level)
+								{
+									level = -1;
+									makeVisible = true;
+									if (state == kCollapsedState)
+									{
+										level = nextLevel;
+										makeVisible = false;
+									}
+									setVisibiltyOfTR(trElem, "visible");
+								}							 
+							}
+							else
+								break;
+						}
+						trElem = trElem.nextSibling;
+					}
+				}
+				//Perform any initialization in this method and add dynamic event handlers here	
+					init = function(path)
+					{																	
+						setStylesheetPath(path);
+					}
+						//</script>
+<link rel="stylesheet" href="file:///C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/GraphControl/TSGraphStyle.css" />
+<script defer type="text/javascript" src="file:///C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/GraphControl/GraphDataLayout.js"></script>
+<script defer type="text/javascript" src="file:///C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/GraphControl/node_modules/jquery/dist/jquery.min.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/GraphControl/node_modules/engineering-flot/lib/jquery.event.drag.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/GraphControl/node_modules/engineering-flot/lib/jquery.mousewheel.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/GraphControl/node_modules/engineering-flot/dist/es5/jquery.flot.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/GraphControl/node_modules/flot-cursors-plugin/dist/es5/jquery.flot.cursors.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/GraphControl/node_modules/ni-data-types/dist/es5-minified/ni-data-types.min.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/GraphControl/node_modules/flot-charting-plugin/dist/es5/jquery.flot.charting.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/GraphControl/node_modules/flot-intensitygraph-plugin/jquery.flot.intensitygraph.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/GraphControl/node_modules/three/build/three.min.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/GraphControl/node_modules/flot-glplotter-plugin/jquery.flot.glplotter.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/GraphControl/node_modules/webcomponents-lite/webcomponents-lite.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/GraphControl/node_modules/@jqwidgets/jqx-element/source-minified/jqxelement-polyfills.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/GraphControl/node_modules/@jqwidgets/jqx-element/source-minified/jqxelement.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/GraphControl/node_modules/ni-webcharts/dist/es5-minified/element.min.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/GraphControl/node_modules/ni-webcharts/dist/es5-minified/webcharts.min.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/GraphControl/node_modules/ni-webcharts-legends/dist/es5-minified/webcharts-legends.min.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/GraphControl/node_modules/ni-webcharts/dist/es5-minified/element_registration.min.js" ></script>
+</head><body onload=" init('C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/');"><h2 style="font-weight:normal;">UUT REPORT</h2><a name="2-2026-09-25T12:49:34.455"></a><table class="uutTable"><tr><td style="font-weight:normal;">STATION ID</td><td>STELLA-SMALL</td></tr><tr><td style="font-weight:normal;">TEST SOCKET INDEX</td><td>2</td></tr><tr><td style="font-weight:normal;">SERIAL NUMBER</td><td>38334946-008-61910046</td></tr><tr><td style="font-weight:normal;">DATE</td><td>Friday, September 25, 2026</td></tr><tr><td style="font-weight:normal;">TIME</td><td>12:49:34 PM</td></tr><tr><td style="font-weight:normal;">OPERATOR</td><td>Administrator</td></tr><tr><td style="font-weight:normal;">EXECUTION TIME</td><td>15.8784 seconds						
+						</td></tr><tr><td style="font-weight:normal;">NUMBER OF RESULTS</td><td>68</td></tr><tr><td style="font-weight:normal;">UUT RESULT</td><td style="color:#FF0000;">Failed</td></tr><tr><td style="font-weight:normal;">PART NUMBER</td><td>Dual-HI_LHD</td></tr></table><br><br><table class="criticalFailureTable"><tr><th colspan="3">FAILURE CHAIN</th></tr><tr><th>STEP</th><th>SEQUENCE</th><th>SEQUENCE FILE</th></tr><tr><td><a href="#ResultId116593" onclick="expandAllTables(event);" class="IDY3OTPLO1FJFWHH24XYZWER0XGD4NPIHPS4I2L5DHN0LRMZ4O1HQO">2.27. Nexteer Connect</a></td><td>Section 2</td><td>EOL_CHMB2_Dual.seq</td></tr><tr><td><a href="#ResultId115545" onclick="expandAllTables(event);" class="IDY3OTPLO1FJFWHH24XYZWER0XGD4NPIHPS4I2L5DHN0LRMZ4O1HQO">Section 2: System Voltages, Write Calibrations, Check Temperature and Torque Position Signals</a></td><td>MainSequence</td><td>EOL_CHMB2_Dual.seq</td></tr></table><br><hr class="headerSeparator"><span style="font-size:70%;font-weight:normal;"><img onclick="expandCollapseAll(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="MainSequence_IDY3OTPLO1FJFWHH24XYZWER0XGD4NPIHPS4I2L5DHN0LRMZ4O1HQO" id="MainSequence_IDY3OTPLO1FJFWHH24XYZWER0XGD4NPIHPS4I2L5DHN0LRMZ4O1HQOimg"/>
+				Expand / Collapse MainSequence
+				</span><br><br><div class="expanded" id="MainSequence_IDY3OTPLO1FJFWHH24XYZWER0XGD4NPIHPS4I2L5DHN0LRMZ4O1HQO"><span style="margin-left:20px;font-size:70%;font-weight:normal;">
+			Begin Sequence: MainSequence
+			</span><br><span style="margin-left:20px;font-size:70%;font-weight:normal;">C:\UTP\source\ProductSequences\EOL_CHMB2_Dual.seq</span><br><br><table  class="stepTable" style="margin-left:20px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId115522"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="IDMMF1VT3TOLGWMH11HGSQ2UND2ERJFMLOHMIOHEKX2HK40HYZWHED"/>Section 1: Power Up and System Setup</td><td style="color:#008000;text-align:center;">Passed</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div class="expanded" id="IDMMF1VT3TOLGWMH11HGSQ2UND2ERJFMLOHMIOHEKX2HK40HYZWHED"><span style="margin-left:60px;font-size:70%;font-weight:normal;">Begin Sequence: Section 1</span><br><span style="margin-left:60px;font-size:70%;font-weight:normal;">C:\UTP\source\ProductSequences\EOL_CHMB2_Dual.seq</span><br><br><table  class="stepTable" style="margin-left:60px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId115523"></a>1.09 Discharge Capacitance</td><td style="color:#B98028;text-align:center;">Skipped</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId115538"></a>1.10 Place controller in fixture</td><td style="color:#008000;text-align:center;">Passed</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId115539"></a>1.12 Close fixture</td><td style="color:#008000;text-align:center;">Passed</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId115540"></a>1.14 Perform function tester initialization and checks</td><td style="color:#008000;text-align:center;">Passed</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId115541"></a>1.16 Autoscan Barcode</td><td style="color:#008000;text-align:center;">Passed</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:15px;">TestResults/Data</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">SerialNumber</td><td colspan="7">''</td></tr><tr><td><a name="ResultId115542"></a>1.18 Set DC Supply to Level 3</td><td style="color:#B98028;text-align:center;">Skipped</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId115543"></a>1.20 Set Torque inputs to Level 1</td><td style="color:#008000;text-align:center;">Passed</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId115544"></a>1.22 Motor Sense Magnet speed = 0 RPM</td><td style="color:#008000;text-align:center;">Passed</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><span style="margin-left:60px;font-size:70%;font-weight:normal;">End Sequence: Section 1</span><br><br></div><table  class="stepTable" style="margin-left:20px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId115545"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="ID1TXQ3JTPARG1KYXUS4Q2I2RQNEAE2OHY0IRJ5LG3TE3KB0CEG2ZE"/>Section 2: System Voltages, Write Calibrations, Check Temperature and Torque Position Signals</td><td style="color:#FF0000;text-align:center;"><b>Failed</b></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div class="expanded" id="ID1TXQ3JTPARG1KYXUS4Q2I2RQNEAE2OHY0IRJ5LG3TE3KB0CEG2ZE"><span style="margin-left:60px;font-size:70%;font-weight:normal;">Begin Sequence: Section 2</span><br><span style="margin-left:60px;font-size:70%;font-weight:normal;">C:\UTP\source\ProductSequences\EOL_CHMB2_Dual.seq</span><br><br><table  class="stepTable" style="margin-left:60px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId115546"></a>1.18 Set DC Supply to Level 3</td><td style="color:#008000;text-align:center;">Passed</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId115967"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="IDDG13HTEY0ELWOYWDZ2XFDYBPGJND2JCK00VT0ZBDBI0GEB3KOH4G"/>2.22.0 Measure funtion test stand voltage DC Supply +</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">18</td><td>V</td><td></td><td style="text-align:right;">17.7</td><td style="text-align:right;">18.3</td><td style="text-align:center;">GELE(>= <=)</td></tr></table><br><div class="expanded" id="IDDG13HTEY0ELWOYWDZ2XFDYBPGJND2JCK00VT0ZBDBI0GEB3KOH4G"><span style="margin-left:100px;font-size:70%;font-weight:normal;">Begin Sequence: DMM Voltage Measurement</span><br><span style="margin-left:100px;font-size:70%;font-weight:normal;">C:\UTP\source\ProductSequences\EOL_CHMB2_Dual.seq</span><br><br><table  class="stepTable" style="margin-left:100px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId115968"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="IDVJV0SSKXKB4VEGUB4XJV0CPS5OUWGUYZLQCREPOO430K5LKK30TE"/>If{True}</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="IDVJV0SSKXKB4VEGUB4XJV0CPS5OUWGUYZLQCREPOO430K5LKK30TE"><table  class="stepTable" style="margin-left:140px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId116039"></a>Save DMM Configuration</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br></div><table  class="stepTable" style="margin-left:100px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId116040"></a>Get number of relays</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="IDUNNGDUFNIU2ZGIRRAGSUDUIOEAX3RHKMMZ1DHC411ZZNFRGDGNL"><table  class="stepTable" style="margin-left:140px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId116041"></a>Numato Switch ON</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId116042"></a>Numato Switch ON</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br></div><table  class="stepTable" style="margin-left:100px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId116043"></a>Wait</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId116086"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="IDQAOLLYZSDXIQIB2JN3IGONTAQHH4QL5WXGDJTBBJF0DPN41AE1JG"/>For{0}&nbsp;Locals.Counter&nbsp;=&nbsp;0;&nbsp;Locals.Counter&nbsp;&lt;&nbsp;4;&nbsp;Locals.Counter&nbsp;+=&nbsp;1</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="IDQAOLLYZSDXIQIB2JN3IGONTAQHH4QL5WXGDJTBBJF0DPN41AE1JG"><table  class="stepTable" style="margin-left:140px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId116087"></a>Read Measurement</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">18</td><td>variable</td><td></td><td style="text-align:right;">17.7</td><td style="text-align:right;">18.3</td><td style="text-align:center;">GELE(>= <=)</td></tr><tr><td><a name="ResultId116102"></a>Break</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br></div><table  class="stepTable" style="margin-left:100px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId116103"></a>End(For)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="ID0M2KRZ4TWPSYN2SH2FSEBT1QVGMH2CVJ2UQCZKHCOVQRUCTMN4QB"><table  class="stepTable" style="margin-left:140px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId116104"></a>Numato Switch OFF</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId116105"></a>Numato Switch OFF</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br></div><table  class="stepTable" style="margin-left:100px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId116106"></a>Wait</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><span style="margin-left:100px;font-size:70%;font-weight:normal;">End Sequence: DMM Voltage Measurement</span><br><br></div><table  class="stepTable" style="margin-left:60px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId116121"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="IDGCNTTCYJA5QQHH1DWSB3AVOU0LZ402JBC33C3BWAD2KU1UDIHBI"/>2.28.0 Measure DC Supply Current</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">0.0866</td><td>A</td><td></td><td style="text-align:right;">0.08</td><td style="text-align:right;">0.2</td><td style="text-align:center;">GELE(>= <=)</td></tr></table><br><div class="expanded" id="IDGCNTTCYJA5QQHH1DWSB3AVOU0LZ402JBC33C3BWAD2KU1UDIHBI"><span style="margin-left:100px;font-size:70%;font-weight:normal;">Begin Sequence: DMM Current Consumption</span><br><span style="margin-left:100px;font-size:70%;font-weight:normal;">C:\UTP\source\ProductSequences\EOL_CHMB2_Dual.seq</span><br><br><table  class="stepTable" style="margin-left:100px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId116122"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="IDLDUVGPP4OOEZF4SYHJTQUJGARE3K22ENIFYIKQKTC2P22LQ4T35"/>If{True}</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="IDLDUVGPP4OOEZF4SYHJTQUJGARE3K22ENIFYIKQKTC2P22LQ4T35"><table  class="stepTable" style="margin-left:140px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId116207"></a>Save DMM Configuration</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br></div><table  class="stepTable" style="margin-left:100px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId116208"></a>Switch DMM I  to BAT- ON</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId116209"></a>Wait</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId116238"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="ID2RYJNJNWP1OPITGBC5AFXJVZGLJLAVKPU5TQ5AH5M3VRXTWNP4EH"/>For{0}&nbsp;Locals.Counter&nbsp;=&nbsp;0;&nbsp;Locals.Counter&nbsp;&lt;&nbsp;5;&nbsp;Locals.Counter&nbsp;+=&nbsp;1</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="ID2RYJNJNWP1OPITGBC5AFXJVZGLJLAVKPU5TQ5AH5M3VRXTWNP4EH"><table  class="stepTable" style="margin-left:140px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId116239"></a>Read Measurement</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">0.0866</td><td>variable</td><td></td><td style="text-align:right;">0.08</td><td style="text-align:right;">0.2</td><td style="text-align:center;">GELE(>= <=)</td></tr><tr><td><a name="ResultId116254"></a>Break</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br></div><table  class="stepTable" style="margin-left:100px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId116255"></a>End(For)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId116256"></a>Switch DMM I  to BAT- OFF</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId116257"></a>Wait</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><span style="margin-left:100px;font-size:70%;font-weight:normal;">End Sequence: DMM Current Consumption</span><br><br></div><table  class="stepTable" style="margin-left:60px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId116342"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="IDV2NBPZY2DDWDLEY4UGRLFEYQEIPTVLBMMT4YWMJBBNQ2ZMLHUYZK"/>2.30.0. Measure CAN H</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">2.507</td><td>V</td><td></td><td style="text-align:right;">2.4</td><td style="text-align:right;">2.6</td><td style="text-align:center;">GELE(>= <=)</td></tr></table><br><div class="expanded" id="IDV2NBPZY2DDWDLEY4UGRLFEYQEIPTVLBMMT4YWMJBBNQ2ZMLHUYZK"><span style="margin-left:100px;font-size:70%;font-weight:normal;">Begin Sequence: DMM Voltage Measurement</span><br><span style="margin-left:100px;font-size:70%;font-weight:normal;">C:\UTP\source\ProductSequences\EOL_CHMB2_Dual.seq</span><br><br><table  class="stepTable" style="margin-left:100px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId116343"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="IDIUIO5EY2G5XSFLXGSV0ASXSK5CATFD04030HZQPIR1HHCJAGI1MC"/>If{True}</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="IDIUIO5EY2G5XSFLXGSV0ASXSK5CATFD04030HZQPIR1HHCJAGI1MC"><table  class="stepTable" style="margin-left:140px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId116414"></a>Save DMM Configuration</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br></div><table  class="stepTable" style="margin-left:100px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId116415"></a>Get number of relays</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="IDID1XBQL3QLHRPSFWKKU2PF00HMJXUUGP024QRDC4NIHAHTZFAZYJ"><table  class="stepTable" style="margin-left:140px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId116416"></a>Numato Switch ON</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId116417"></a>Numato Switch ON</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br></div><table  class="stepTable" style="margin-left:100px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId116418"></a>Wait</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId116461"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="ID2O2QH3UACV4WO4ABOIR5ZTZT4NXMU05QHZN54BLWDNQIQ5DIG2EM"/>For{0}&nbsp;Locals.Counter&nbsp;=&nbsp;0;&nbsp;Locals.Counter&nbsp;&lt;&nbsp;4;&nbsp;Locals.Counter&nbsp;+=&nbsp;1</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="ID2O2QH3UACV4WO4ABOIR5ZTZT4NXMU05QHZN54BLWDNQIQ5DIG2EM"><table  class="stepTable" style="margin-left:140px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId116462"></a>Read Measurement</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">2.507</td><td>variable</td><td></td><td style="text-align:right;">2.4</td><td style="text-align:right;">2.6</td><td style="text-align:center;">GELE(>= <=)</td></tr><tr><td><a name="ResultId116477"></a>Break</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br></div><table  class="stepTable" style="margin-left:100px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId116478"></a>End(For)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="ID1MDJ2FO5E03WFIOKE0FTRUQHPL5X1NSEDJACS1J14WVH1DL3ZZWB"><table  class="stepTable" style="margin-left:140px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId116479"></a>Numato Switch OFF</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId116480"></a>Numato Switch OFF</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br></div><table  class="stepTable" style="margin-left:100px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId116481"></a>Wait</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><span style="margin-left:100px;font-size:70%;font-weight:normal;">End Sequence: DMM Voltage Measurement</span><br><br></div><table  class="stepTable" style="margin-left:60px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId116496"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="IDLDN2MC5SIMX1JJRQWQEIGOGUBORO2DTCA4TMJXIPEVIO0J5YRB1P"/>2.30.1. Measure CAN L</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">2.507</td><td>V</td><td></td><td style="text-align:right;">2.4</td><td style="text-align:right;">2.6</td><td style="text-align:center;">GELE(>= <=)</td></tr></table><br><div class="expanded" id="IDLDN2MC5SIMX1JJRQWQEIGOGUBORO2DTCA4TMJXIPEVIO0J5YRB1P"><span style="margin-left:100px;font-size:70%;font-weight:normal;">Begin Sequence: DMM Voltage Measurement</span><br><span style="margin-left:100px;font-size:70%;font-weight:normal;">C:\UTP\source\ProductSequences\EOL_CHMB2_Dual.seq</span><br><br><table  class="stepTable" style="margin-left:100px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId116497"></a>If{False}</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId116498"></a>Get number of relays</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="ID2LVREKJ3BNV1DSD4NXQF0XHQLPAZ0XLMNNDYWXJWLBJABM1JSPEB"><table  class="stepTable" style="margin-left:140px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId116499"></a>Numato Switch ON</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId116500"></a>Numato Switch ON</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br></div><table  class="stepTable" style="margin-left:100px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId116501"></a>Wait</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId116544"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="ID2PN2F0SZ0CXT2FGJ2TETFL21DU1DCZ4MFJTY1BPII1DDMM2RYDN"/>For{0}&nbsp;Locals.Counter&nbsp;=&nbsp;0;&nbsp;Locals.Counter&nbsp;&lt;&nbsp;4;&nbsp;Locals.Counter&nbsp;+=&nbsp;1</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="ID2PN2F0SZ0CXT2FGJ2TETFL21DU1DCZ4MFJTY1BPII1DDMM2RYDN"><table  class="stepTable" style="margin-left:140px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId116545"></a>Read Measurement</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">2.507</td><td>variable</td><td></td><td style="text-align:right;">2.4</td><td style="text-align:right;">2.6</td><td style="text-align:center;">GELE(>= <=)</td></tr><tr><td><a name="ResultId116560"></a>Break</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br></div><table  class="stepTable" style="margin-left:100px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId116561"></a>End(For)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="IDFSHQ5ZWPYM23RDMSQ0QRWNCBIPGREYF00YCFRD2CQ4ONDZZJBBD"><table  class="stepTable" style="margin-left:140px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId116562"></a>Numato Switch OFF</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId116563"></a>Numato Switch OFF</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br></div><table  class="stepTable" style="margin-left:100px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId116564"></a>Wait</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><span style="margin-left:100px;font-size:70%;font-weight:normal;">End Sequence: DMM Voltage Measurement</span><br><br></div><table  class="stepTable" style="margin-left:60px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId116593"></a>2.27. Nexteer Connect</td><td style="color:#FF0000;text-align:center;"><b>Failed</b></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:15px;">TestResults/Data</td></tr><tr class="visible level:2 state:0"><td style="vertical-align:top;padding-left:12px;" colspan="8"><img alt="" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/plus.png" onclick="expandCollapseTR(event)" class="trExpanded"/>Communication</td></tr><tr class="hidden level:3 state:0"><td colspan="8" style="vertical-align:top; padding-left:27px;"><img alt="" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/plus.png" onclick="expandCollapseTR(event)" class="trExpanded"/>Communication[0]</td></tr><tr class="hidden level:4 state:1"><td style="vertical-align:top;  padding-left:60px;">ID</td><td colspan="7">1996</td></tr><tr class="hidden level:4 state:1"><td style="vertical-align:top;  padding-left:60px;">MSGTYPE</td><td colspan="7">0</td></tr><tr class="hidden level:4 state:1"><td style="vertical-align:top;  padding-left:60px;">LEN</td><td colspan="7">8</td></tr><tr class="hidden level:4 state:1"><td style="vertical-align:top;  padding-left:60px;">DATA_0_</td><td colspan="7">2</td></tr><tr class="hidden level:4 state:1"><td style="vertical-align:top;  padding-left:60px;">DATA_1_</td><td colspan="7">16</td></tr><tr class="hidden level:4 state:1"><td style="vertical-align:top;  padding-left:60px;">DATA_2_</td><td colspan="7">126</td></tr><tr class="hidden level:4 state:1"><td style="vertical-align:top;  padding-left:60px;">DATA_3_</td><td colspan="7">0</td></tr><tr class="hidden level:4 state:1"><td style="vertical-align:top;  padding-left:60px;">DATA_4_</td><td colspan="7">0</td></tr><tr class="hidden level:4 state:1"><td style="vertical-align:top;  padding-left:60px;">DATA_5_</td><td colspan="7">0</td></tr><tr class="hidden level:4 state:1"><td style="vertical-align:top;  padding-left:60px;">DATA_6_</td><td colspan="7">0</td></tr><tr class="hidden level:4 state:1"><td style="vertical-align:top;  padding-left:60px;">DATA_7_</td><td colspan="7">0</td></tr><tr class="hidden level:3 state:0"><td colspan="8" style="vertical-align:top; padding-left:27px;"><img alt="" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/plus.png" onclick="expandCollapseTR(event)" class="trExpanded"/>Communication[1]</td></tr><tr class="hidden level:4 state:1"><td style="vertical-align:top;  padding-left:60px;">ID</td><td colspan="7">0</td></tr><tr class="hidden level:4 state:1"><td style="vertical-align:top;  padding-left:60px;">MSGTYPE</td><td colspan="7">0</td></tr><tr class="hidden level:4 state:1"><td style="vertical-align:top;  padding-left:60px;">LEN</td><td colspan="7">0</td></tr><tr class="hidden level:4 state:1"><td style="vertical-align:top;  padding-left:60px;">DATA_0_</td><td colspan="7">0</td></tr><tr class="hidden level:4 state:1"><td style="vertical-align:top;  padding-left:60px;">DATA_1_</td><td colspan="7">0</td></tr><tr class="hidden level:4 state:1"><td style="vertical-align:top;  padding-left:60px;">DATA_2_</td><td colspan="7">0</td></tr><tr class="hidden level:4 state:1"><td style="vertical-align:top;  padding-left:60px;">DATA_3_</td><td colspan="7">0</td></tr><tr class="hidden level:4 state:1"><td style="vertical-align:top;  padding-left:60px;">DATA_4_</td><td colspan="7">0</td></tr><tr class="hidden level:4 state:1"><td style="vertical-align:top;  padding-left:60px;">DATA_5_</td><td colspan="7">0</td></tr><tr class="hidden level:4 state:1"><td style="vertical-align:top;  padding-left:60px;">DATA_6_</td><td colspan="7">0</td></tr><tr class="hidden level:4 state:1"><td style="vertical-align:top;  padding-left:60px;">DATA_7_</td><td colspan="7">0</td></tr><tr><td style="padding-left:15px;">Number of Loops</td><td colspan="7;">3</td></tr><tr><td style="padding-left:15px;">Number of Passes</td><td colspan="7;">0</td></tr><tr><td style="padding-left:15px;">Number of Failures</td><td colspan="7;">3</td></tr><tr><td style="padding-left:15px;">Final Loop Index</td><td colspan="7;">3</td></tr><tr><td style="padding-left:15px;">2.27. Nexteer Connect (Loop Indices)
+				</td></tr></table><br><span style="margin-left:60px;font-size:70%;font-weight:normal;">End Sequence: Section 2</span><br><br></div><table  class="stepTable" style="margin-left:20px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId116832"></a>Failure Procedure</td><td style="color:#B98028;text-align:center;">Skipped</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId116833"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files/National Instruments/TestStand 2023/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="ID4CP00HE50XK2BSY4B0L0KTC20DAW4FCM5RZAWNHSKPDHJ4OKOJCC"/>Test Cleanup</td><td style="color:#008000;text-align:center;">Passed</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div class="expanded" id="ID4CP00HE50XK2BSY4B0L0KTC20DAW4FCM5RZAWNHSKPDHJ4OKOJCC"><span style="margin-left:60px;font-size:70%;font-weight:normal;">Begin Sequence: Cleanup_Test</span><br><span style="margin-left:60px;font-size:70%;font-weight:normal;">C:\UTP\source\ProductSequences\EOL_CHMB2_Dual.seq</span><br><br><table  class="stepTable" style="margin-left:60px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId117022"></a>Set state for coil</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId117408"></a>3.54 Measure DC Supply current </td><td style="color:#B98028;text-align:center;">Skipped</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><span style="margin-left:60px;font-size:70%;font-weight:normal;">End Sequence: Cleanup_Test</span><br><br></div><br><span style="margin-left:20px;font-size:70%;font-weight:normal;">
+							
+			End Sequence: MainSequence
+			</span></div><h2 style="font-weight:normal;">END UUT REPORT</h2><hr class="uutSeparator"><script type="text/javascript">
+					try {
+						window.cefQuery({
+							request: 'Expand',
+							onSuccess: function(response) {
+							  expandAll();
+							},
+							onFailure: function(error_code, error_message) {expandAll();}
+						});
+						expandAll();
+					}
+					catch (err) {
+						// Do nothing
+					}
+				</script></body></html>

@@ -1,0 +1,4141 @@
+<?xml version="1.0" encoding="iso-8859-1" ?><?xml-stylesheet type="text/xsl" href="C:\Program Files\National Instruments\TestStand 2023\Components\Models\TestStandModels\StyleSheets\horizontal.xsl"?>
+
+<Reports>
+<Report Type='UUT' Title='UUT Report' Link='2-2026-9-25-13-3-52-95' UUTResult='Terminated' StepCount='58'>
+<Prop Name='UUT' Type='Obj' TypeName='UUT' Flags='0x0'>
+	<Prop Name='SerialNumber' Type='String' Flags='0x0'>
+		<Value>38334946-008-61910046</Value>
+	</Prop>
+	<Prop Name='UUTLoopIndex' Type='Number' Flags='0x0'>
+		<Value>1</Value>
+	</Prop>
+	<Prop Name='CriticalFailureStack' Type='Array' LBound='[0]' HBound='[]' ElementType='Obj' Flags='0x0'>
+		<ArrayElementPrototype Type='Obj' TypeName='NI_CriticalFailureStackEntry' Flags='0x0'>
+			<Prop Name='StepName' Type='String' Flags='0x0'>
+				<Value></Value>
+			</Prop>
+			<Prop Name='SequenceName' Type='String' Flags='0x0'>
+				<Value></Value>
+			</Prop>
+			<Prop Name='SequenceFileName' Type='String' Flags='0x0'>
+				<Value></Value>
+			</Prop>
+			<Prop Name='ResultId' Type='Number' Flags='0x0'>
+				<Value>0</Value>
+			</Prop>
+		</ArrayElementPrototype>
+	</Prop>
+	<Prop Name='BatchSerialNumber' Type='String' Flags='0x0'>
+		<Value></Value>
+	</Prop>
+	<Prop Name='TestSocketIndex' Type='Number' Flags='0x0'>
+		<Value>2</Value>
+	</Prop>
+	<Prop Name='PartNumber' Type='String' Flags='0x0'>
+		<Value>Dual-HI_LHD</Value>
+	</Prop>
+	<Prop Name='AdditionalData' Type='Obj' Flags='0x200000'>
+	</Prop>
+</Prop>
+<Prop Name='ReportOptions' Type='Obj' TypeName='ReportOptions' Flags='0x0'>
+	<Attributes>
+		<Prop Name='NI' Type='Obj' Flags='0x0'>
+			<Prop Name='EnabledExpression' Type='String' TypeName='Expression' Class='ExprValue' Flags='0x0'>
+				<Value>Runstate.Engine.CurrentUserHasPrivilege("Configure.ConfigReport")</Value>
+			</Prop>
+			<Prop Name='Implemented' Type='Boolean' Flags='0x0'>
+				<Value>True</Value>
+			</Prop>
+		</Prop>
+	</Attributes>
+	<Prop Name='IncludeTSExtensionElements' Type='Boolean' Flags='0x0'>
+		<Value>True</Value>
+	</Prop>
+	<Prop Name='IncludeAttributes' Type='Boolean' Flags='0x0'>
+		<Value>False</Value>
+	</Prop>
+	<Prop Name='IncludeLimits' Type='Boolean' Flags='0x0'>
+		<Value>True</Value>
+	</Prop>
+	<Prop Name='IncludeMeasurements' Type='Boolean' Flags='0x0'>
+		<Value>True</Value>
+	</Prop>
+	<Prop Name='IncludeArrayMeasurement' Type='Number' Flags='0x0'>
+		<Value>2</Value>
+	</Prop>
+	<Prop Name='ArrayMeasurementFilter' Type='Number' Flags='0x0'>
+		<Value>3</Value>
+	</Prop>
+	<Prop Name='ArrayMeasurementMax' Type='Number' Flags='0x0'>
+		<Value>100</Value>
+	</Prop>
+	<Prop Name='IncludeTimes' Type='Boolean' Flags='0x0'>
+		<Value>True</Value>
+	</Prop>
+	<Prop Name='Format' Type='String' Flags='0x0'>
+		<Value>xml</Value>
+	</Prop>
+	<Prop Name='NumericFormat' Type='String' Flags='0x0'>
+		<Value>%$.13g</Value>
+	</Prop>
+	<Prop Name='ResultFilterExpression' Type='String' TypeName='Expression' Class='ExprValue' Flags='0x0'>
+		<Value>True</Value>
+	</Prop>
+	<Prop Name='GeneratePath' Type='Boolean' Flags='0x0'>
+		<Value>True</Value>
+	</Prop>
+	<Prop Name='UseTemporaryFile' Type='Boolean' Flags='0x0'>
+		<Value>False</Value>
+	</Prop>
+	<Prop Name='UseSequenceFileNameAsPrefix' Type='Boolean' Flags='0x0'>
+		<Value>True</Value>
+	</Prop>
+	<Prop Name='AddTimeAndDateToFileName' Type='Boolean' Flags='0x0'>
+		<Value>True</Value>
+	</Prop>
+	<Prop Name='NewFileNameForEachUUT' Type='Boolean' Flags='0x0'>
+		<Value>False</Value>
+	</Prop>
+	<Prop Name='ForceFileNameToBeUnique' Type='Boolean' Flags='0x0'>
+		<Value>True</Value>
+	</Prop>
+	<Prop Name='AppendToFileIfItExists' Type='Boolean' Flags='0x0'>
+		<Value>False</Value>
+	</Prop>
+	<Prop Name='DirectoryType' Type='String' Flags='0x0'>
+		<Value>SequenceFileDirectory</Value>
+	</Prop>
+	<Prop Name='Directory' Type='String' Flags='0x0'>
+		<Value></Value>
+	</Prop>
+	<Prop Name='BaseName' Type='String' Flags='0x0'>
+		<Value>Report</Value>
+	</Prop>
+	<Prop Name='UseFormatForExtension' Type='Boolean' Flags='0x0'>
+		<Value>True</Value>
+	</Prop>
+	<Prop Name='Extension' Type='String' Flags='0x0'>
+		<Value></Value>
+	</Prop>
+	<Prop Name='ReportFilePath' Type='String' Flags='0x0'>
+		<Value></Value>
+	</Prop>
+	<Prop Name='DisableReportGeneration' Type='Boolean' Flags='0x0'>
+		<Value>False</Value>
+	</Prop>
+	<Prop Name='IncludeStepResults' Type='Boolean' Flags='0x0'>
+		<Value>True</Value>
+	</Prop>
+	<Prop Name='BodyGenerator' Type='String' Flags='0x0'>
+		<Value>DLL</Value>
+	</Prop>
+	<Prop Name='SaveTransformedHtmlForXmlReport' Type='Boolean' Flags='0x0'>
+		<Value>True</Value>
+	</Prop>
+	<Prop Name='Colors' Type='Obj' Flags='0x0'>
+		<Prop Name='LabelBg' Type='String' Flags='0x0'>
+			<Value>#FFFFFF</Value>
+		</Prop>
+		<Prop Name='ValueBg' Type='String' Flags='0x0'>
+			<Value>#32FFFF</Value>
+		</Prop>
+		<Prop Name='UUTSeparator' Type='String' Flags='0x0'>
+			<Value>#0000E0</Value>
+		</Prop>
+		<Prop Name='HeaderSeparator' Type='String' Flags='0x0'>
+			<Value>#8000CC</Value>
+		</Prop>
+		<Prop Name='TableBorder' Type='String' Flags='0x0'>
+			<Value>#000000</Value>
+		</Prop>
+		<Prop Name='MainBg' Type='String' Flags='0x0'>
+			<Value>#00C4C4</Value>
+		</Prop>
+		<Prop Name='SetupBg' Type='String' Flags='0x0'>
+			<Value>#FF8000</Value>
+		</Prop>
+		<Prop Name='CleanupBg' Type='String' Flags='0x0'>
+			<Value>#ADD8E6</Value>
+		</Prop>
+		<Prop Name='ReportTextBg' Type='String' Flags='0x0'>
+			<Value>#FF32CC</Value>
+		</Prop>
+		<Prop Name='Terminated' Type='String' Flags='0x0'>
+			<Value>#000080</Value>
+		</Prop>
+		<Prop Name='Failed' Type='String' Flags='0x0'>
+			<Value>#FF0000</Value>
+		</Prop>
+		<Prop Name='Error' Type='String' Flags='0x0'>
+			<Value>#FF0000</Value>
+		</Prop>
+		<Prop Name='Passed' Type='String' Flags='0x0'>
+			<Value>#008000</Value>
+		</Prop>
+		<Prop Name='Skipped' Type='String' Flags='0x0'>
+			<Value>#B98028</Value>
+		</Prop>
+		<Prop Name='Done' Type='String' Flags='0x0'>
+			<Value>#008000</Value>
+		</Prop>
+		<Prop Name='Running' Type='String' Flags='0x0'>
+			<Value>#FFCC33</Value>
+		</Prop>
+		<Prop Name='TerminatedBg' Type='String' Flags='0x0'>
+			<Value>#0000FF</Value>
+		</Prop>
+		<Prop Name='FailedBg' Type='String' Flags='0x0'>
+			<Value>#FF0000</Value>
+		</Prop>
+		<Prop Name='ErrorBg' Type='String' Flags='0x0'>
+			<Value>#FF0000</Value>
+		</Prop>
+		<Prop Name='PassedBg' Type='String' Flags='0x0'>
+			<Value>#00FF00</Value>
+		</Prop>
+		<Prop Name='SkippedBg' Type='String' Flags='0x0'>
+			<Value>#FFFF00</Value>
+		</Prop>
+		<Prop Name='DoneBg' Type='String' Flags='0x0'>
+			<Value>#00FFCC</Value>
+		</Prop>
+		<Prop Name='RunningBg' Type='String' Flags='0x0'>
+			<Value>#FFCC33</Value>
+		</Prop>
+		<Prop Name='FailureStackLabelBg' Type='String' Flags='0x0'>
+			<Value>#FF2020</Value>
+		</Prop>
+		<Prop Name='FailureStackValueBg' Type='String' Flags='0x0'>
+			<Value>#D0D0D0</Value>
+		</Prop>
+		<Prop Name='BatchHeadingBg' Type='String' Flags='0x0'>
+			<Value>#00C4C4</Value>
+		</Prop>
+	</Prop>
+	<Prop Name='DateAndTimeFormat' Type='String' Flags='0x0'>
+		<Value>TimeFirst</Value>
+	</Prop>
+	<Prop Name='NewFileNameForEachBatch' Type='Boolean' Flags='0x0'>
+		<Value>False</Value>
+	</Prop>
+	<Prop Name='NewBatchFileNameForEachBatch' Type='Boolean' Flags='0x0'>
+		<Value>False</Value>
+	</Prop>
+	<Prop Name='NewFileNameForEachTestSocket' Type='Boolean' Flags='0x0'>
+		<Value>False</Value>
+	</Prop>
+	<Prop Name='StoreUUTReportWithBatchReport' Type='Boolean' Flags='0x0'>
+		<Value>True</Value>
+	</Prop>
+	<Prop Name='BatchBaseName' Type='String' Flags='0x0'>
+		<Value>BatchReport</Value>
+	</Prop>
+	<Prop Name='LabelSize' Type='Number' Flags='0x0'>
+		<Value>26</Value>
+	</Prop>
+	<Prop Name='RelStylesheetPath' Type='String' Flags='0x0'>
+		<Value>horizontal.xsl</Value>
+	</Prop>
+	<Prop Name='StylesheetPath' Type='String' Flags='0x0'>
+		<Value>C:\Program Files\National Instruments\TestStand 2023\Components\Models\TestStandModels\StyleSheets\horizontal.xsl</Value>
+	</Prop>
+	<Prop Name='StylesheetMRU' Type='Array' LBound='[0]' HBound='[2]' ElementType='String' Flags='0x0'>
+		<Value ID='[0]'>horizontal.xsl</Value>
+		<Value ID='[1]'>report.xsl</Value>
+		<Value ID='[2]'>expand.xsl</Value>
+	</Prop>
+	<Prop Name='ATMLStylesheetMRU' Type='Array' LBound='[0]' HBound='[2]' ElementType='String' Flags='0x0'>
+		<Value ID='[0]'>TR_horizontal.xsl</Value>
+		<Value ID='[1]'>trml.xsl</Value>
+		<Value ID='[2]'></Value>
+	</Prop>
+	<Prop Name='StoreStylesheetAbsolutePath' Type='Boolean' Flags='0x0'>
+		<Value>True</Value>
+	</Prop>
+	<Prop Name='UseOnTheFlyReporting' Type='Boolean' Flags='0x0' IsAlias='true'>
+		<Value>False</Value>
+	</Prop>
+	<Prop Name='PurgeOnTheFlyResults' Type='Boolean' Flags='0x0'>
+		<Value>False</Value>
+	</Prop>
+	<Prop Name='GeneratePDFReport' Type='Boolean' Flags='0x0'>
+		<Value>False</Value>
+	</Prop>
+	<Prop Name='IncludeStepResultComments' Type='Boolean' Flags='0x0'>
+		<Value>True</Value>
+	</Prop>
+	<Prop Name='UseLocalizedDecimalPoint' Type='Boolean' Flags='0x0'>
+		<Value>False</Value>
+	</Prop>
+	<Prop Name='ReportStyle' Type='String' Flags='0x0'>
+		<Value></Value>
+	</Prop>
+	<Prop Name='ReportFileSequentialModelExpression' Type='String' TypeName='Expression' Class='ExprValue' Flags='0x0'>
+		<Value>"$(ClientFileDir)\\$(ClientFileName)_Report[$(FileTime)][$(FileDate)]$(Unique).$(FileExtension)"</Value>
+	</Prop>
+	<Prop Name='ReportFileParallelModelExpression' Type='String' TypeName='Expression' Class='ExprValue' Flags='0x0'>
+		<Value>"$(ClientFileDir)\\$(ClientFileName)_Report[$(FileTime)][$(FileDate)]$(Unique).$(FileExtension)"</Value>
+	</Prop>
+	<Prop Name='ReportFileBatchModelExpression' Type='String' TypeName='Expression' Class='ExprValue' Flags='0x0'>
+		<Value>"$(ClientFileDir)\\$(ClientFileName)_BatchReport[$(FileTime)][$(FileDate)]$(Unique).$(FileExtension)"</Value>
+	</Prop>
+	<Prop Name='BatchFileBatchModelExpression' Type='String' TypeName='Expression' Class='ExprValue' Flags='0x0'>
+		<Value>"$(ClientFileDir)\\$(ClientFileName)_BatchReport[$(FileTime)][$(FileDate)]$(Unique).$(FileExtension)"</Value>
+	</Prop>
+	<Prop Name='NewFileNameForEachUUTStatus' Type='Boolean' Flags='0x0'>
+		<Value>False</Value>
+	</Prop>
+	<Prop Name='ReportPathMacroListString' Type='String' Flags='0x0'>
+		<Value></Value>
+	</Prop>
+	<Prop Name='BatchReportPathMacroListString' Type='String' Flags='0x0'>
+		<Value></Value>
+	</Prop>
+	<Prop Name='CheckIfMacroListIsUnchanged' Type='Boolean' Flags='0x0'>
+		<Value>True</Value>
+	</Prop>
+	<Prop Name='ATML5StylesheetMRU' Type='Array' LBound='[0]' HBound='[2]' ElementType='String' Flags='0x0'>
+		<Value ID='[0]'>tr5_horizontal.xsl</Value>
+		<Value ID='[1]'>tr5_report.xsl</Value>
+		<Value ID='[2]'>tr5_expand.xsl</Value>
+	</Prop>
+	<Prop Name='Atml_Rpt_Options' Type='Obj' TypeName='NI_ATMLReportOptions' Flags='0x0'>
+		<Prop Name='AddReportText' Type='Boolean' Flags='0x0'>
+			<Value>True</Value>
+		</Prop>
+		<Prop Name='ExtensionDLLAbsolutePath' Type='String' Flags='0x0'>
+			<Value></Value>
+		</Prop>
+		<Prop Name='TestResultsSchemaPath' Type='String' Flags='0x0'>
+			<Value></Value>
+		</Prop>
+	</Prop>
+	<Prop Name='ATML6StylesheetMRU' Type='Array' LBound='[0]' HBound='[4]' ElementType='String' Flags='0x0'>
+		<Value ID='[0]'>tr6_horizontal.xsl</Value>
+		<Value ID='[1]'>tr6_report.xsl</Value>
+		<Value ID='[2]'>tr6_expand.xsl</Value>
+		<Value ID='[3]'></Value>
+		<Value ID='[4]'></Value>
+	</Prop>
+</Prop>
+<Prop Name='StartTime' Type='Obj' TypeName='TimeDetails' Flags='0x4'>
+	<Prop Name='Text' Type='String' Flags='0x0'>
+		<Value>1:03:52 PM</Value>
+	</Prop>
+	<Prop Name='Hours' Type='Number' Flags='0x0'>
+		<Value>13</Value>
+	</Prop>
+	<Prop Name='Minutes' Type='Number' Flags='0x0'>
+		<Value>3</Value>
+	</Prop>
+	<Prop Name='Seconds' Type='Number' Flags='0x0'>
+		<Value>52</Value>
+	</Prop>
+	<Prop Name='Milliseconds' Type='Number' Flags='0x0'>
+		<Value>95</Value>
+	</Prop>
+</Prop>
+<Prop Name='StartDate' Type='Obj' TypeName='DateDetails' Flags='0x4'>
+	<Prop Name='Text' Type='String' Flags='0x0'>
+		<Value>Friday, September 25, 2026</Value>
+	</Prop>
+	<Prop Name='ShortText' Type='String' Flags='0x0'>
+		<Value>9/25/2026</Value>
+	</Prop>
+	<Prop Name='Year' Type='Number' Flags='0x0'>
+		<Value>2026</Value>
+	</Prop>
+	<Prop Name='Month' Type='Number' Flags='0x0'>
+		<Value>9</Value>
+	</Prop>
+	<Prop Name='MonthDay' Type='Number' Flags='0x0'>
+		<Value>25</Value>
+	</Prop>
+	<Prop Name='WeekDay' Type='Number' Flags='0x0'>
+		<Value>6</Value>
+	</Prop>
+</Prop>
+<Prop Name='StationInfo' Type='Obj' TypeName='NI_StationInfo' Flags='0x0'>
+	<Prop Name='StationID' Type='String' Flags='0x0'>
+		<Value>STELLA-SMALL</Value>
+	</Prop>
+	<Prop Name='LoginName' Type='String' Flags='0x0'>
+		<Value>Administrator</Value>
+	</Prop>
+	<Prop Name='AdditionalData' Type='Obj' Flags='0x200000'>
+	</Prop>
+</Prop>
+<Prop Type='TEResult' Flags='0x0'>
+	<Prop Name='TS' Type='Obj' Flags='0x0'>
+		<Prop Name='SequenceCall' Type='Obj' Flags='0x0'>
+			<Prop Name='ResultList' Type='Array' LBound='[0]' HBound='[3]' ElementType='Obj' Flags='0x0'>
+				<ArrayElementPrototype Type='TEResult' Flags='0x0'>
+				</ArrayElementPrototype>
+				<Value ID='[0]'>
+					<Prop Type='TEResult' Flags='0x0'>
+						<Prop Name='TS' Type='Obj' Flags='0x0'>
+							<Prop Name='SequenceCall' Type='Obj' Flags='0x0'>
+								<Prop Name='ResultList' Type='Array' LBound='[0]' HBound='[7]' ElementType='Obj' Flags='0x0'>
+									<ArrayElementPrototype Type='TEResult' Flags='0x0'>
+									</ArrayElementPrototype>
+									<Value ID='[0]'>
+										<Prop Type='TEResult' Flags='0x0'>
+											<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+												<Prop Name='Code' Type='Number' Flags='0x400000'>
+													<Value>0</Value>
+												</Prop>
+												<Prop Name='Msg' Type='String' Flags='0x400000'>
+													<Value></Value>
+												</Prop>
+												<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+													<Value>False</Value>
+												</Prop>
+											</Prop>
+											<Prop Name='Status' Type='String' Flags='0x400000'>
+												<Value>Skipped</Value>
+											</Prop>
+											<Prop Name='PassFail' Type='Boolean' Flags='0x0'>
+												<Value>False</Value>
+											</Prop>
+											<Prop Name='ReportText' Type='String' Flags='0x400000'>
+												<Value></Value>
+											</Prop>
+											<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+											</Prop>
+											<Prop Name='TS' Type='Obj' Flags='0x0'>
+												<Prop Name='StartTime' Type='Number' Flags='0x0'>
+													<Value>11963.776242</Value>
+												</Prop>
+												<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+													<Value>2.6e-06</Value>
+												</Prop>
+												<Prop Name='Index' Type='Number' Flags='0x0'>
+													<Value>1</Value>
+												</Prop>
+												<Prop Name='StepName' Type='String' Flags='0x0'>
+													<Value>1.09 Discharge Capacitance</Value>
+												</Prop>
+												<Prop Name='StepGroup' Type='String' Flags='0x0'>
+													<Value>Setup</Value>
+												</Prop>
+												<Prop Name='StepId' Type='String' Flags='0x0'>
+													<Value>ID#:LFYFprmX8BGJ7MyCf5KpWB</Value>
+												</Prop>
+												<Prop Name='Id' Type='Number' Flags='0x0'>
+													<Value>151975</Value>
+												</Prop>
+												<Prop Name='StepType' Type='String' Flags='0x0'>
+													<Value>PassFailTest</Value>
+												</Prop>
+												<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+													<Value>0</Value>
+												</Prop>
+											</Prop>
+										</Prop>
+									</Value>
+									<Value ID='[1]'>
+										<Prop Type='TEResult' Flags='0x0'>
+											<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+												<Prop Name='Code' Type='Number' Flags='0x400000'>
+													<Value>0</Value>
+												</Prop>
+												<Prop Name='Msg' Type='String' Flags='0x400000'>
+													<Value></Value>
+												</Prop>
+												<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+													<Value>False</Value>
+												</Prop>
+											</Prop>
+											<Prop Name='Status' Type='String' Flags='0x400000'>
+												<Value>Passed</Value>
+											</Prop>
+											<Prop Name='PassFail' Type='Boolean' Flags='0x0'>
+												<Value>True</Value>
+											</Prop>
+											<Prop Name='ReportText' Type='String' Flags='0x400000'>
+												<Value></Value>
+											</Prop>
+											<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+											</Prop>
+											<Prop Name='TS' Type='Obj' Flags='0x0'>
+												<Prop Name='StartTime' Type='Number' Flags='0x0'>
+													<Value>11963.8760169</Value>
+												</Prop>
+												<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+													<Value>4.12e-05</Value>
+												</Prop>
+												<Prop Name='Index' Type='Number' Flags='0x0'>
+													<Value>0</Value>
+												</Prop>
+												<Prop Name='StepName' Type='String' Flags='0x0'>
+													<Value>1.10 Place controller in fixture</Value>
+												</Prop>
+												<Prop Name='StepGroup' Type='String' Flags='0x0'>
+													<Value>Main</Value>
+												</Prop>
+												<Prop Name='StepId' Type='String' Flags='0x0'>
+													<Value>ID#:kGEmvXZ+8BGJycyCf5KpWB</Value>
+												</Prop>
+												<Prop Name='Id' Type='Number' Flags='0x0'>
+													<Value>151976</Value>
+												</Prop>
+												<Prop Name='StepType' Type='String' Flags='0x0'>
+													<Value>PassFailTest</Value>
+												</Prop>
+												<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+													<Value>0</Value>
+												</Prop>
+											</Prop>
+										</Prop>
+									</Value>
+									<Value ID='[2]'>
+										<Prop Type='TEResult' Flags='0x0'>
+											<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+												<Prop Name='Code' Type='Number' Flags='0x400000'>
+													<Value>0</Value>
+												</Prop>
+												<Prop Name='Msg' Type='String' Flags='0x400000'>
+													<Value></Value>
+												</Prop>
+												<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+													<Value>False</Value>
+												</Prop>
+											</Prop>
+											<Prop Name='Status' Type='String' Flags='0x400000'>
+												<Value>Passed</Value>
+											</Prop>
+											<Prop Name='PassFail' Type='Boolean' Flags='0x0'>
+												<Value>True</Value>
+											</Prop>
+											<Prop Name='ReportText' Type='String' Flags='0x400000'>
+												<Value></Value>
+											</Prop>
+											<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+											</Prop>
+											<Prop Name='TS' Type='Obj' Flags='0x0'>
+												<Prop Name='StartTime' Type='Number' Flags='0x0'>
+													<Value>11963.8760953</Value>
+												</Prop>
+												<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+													<Value>6.5e-06</Value>
+												</Prop>
+												<Prop Name='Index' Type='Number' Flags='0x0'>
+													<Value>1</Value>
+												</Prop>
+												<Prop Name='StepName' Type='String' Flags='0x0'>
+													<Value>1.12 Close fixture</Value>
+												</Prop>
+												<Prop Name='StepGroup' Type='String' Flags='0x0'>
+													<Value>Main</Value>
+												</Prop>
+												<Prop Name='StepId' Type='String' Flags='0x0'>
+													<Value>ID#:GKSI3nZ+8BGJycyCf5KpWB</Value>
+												</Prop>
+												<Prop Name='Id' Type='Number' Flags='0x0'>
+													<Value>151977</Value>
+												</Prop>
+												<Prop Name='StepType' Type='String' Flags='0x0'>
+													<Value>PassFailTest</Value>
+												</Prop>
+												<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+													<Value>0</Value>
+												</Prop>
+											</Prop>
+										</Prop>
+									</Value>
+									<Value ID='[3]'>
+										<Prop Type='TEResult' Flags='0x0'>
+											<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+												<Prop Name='Code' Type='Number' Flags='0x400000'>
+													<Value>0</Value>
+												</Prop>
+												<Prop Name='Msg' Type='String' Flags='0x400000'>
+													<Value></Value>
+												</Prop>
+												<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+													<Value>False</Value>
+												</Prop>
+											</Prop>
+											<Prop Name='Status' Type='String' Flags='0x400000'>
+												<Value>Passed</Value>
+											</Prop>
+											<Prop Name='PassFail' Type='Boolean' Flags='0x0'>
+												<Value>True</Value>
+											</Prop>
+											<Prop Name='ReportText' Type='String' Flags='0x400000'>
+												<Value></Value>
+											</Prop>
+											<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+											</Prop>
+											<Prop Name='TS' Type='Obj' Flags='0x0'>
+												<Prop Name='StartTime' Type='Number' Flags='0x0'>
+													<Value>11963.8761272</Value>
+												</Prop>
+												<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+													<Value>5.9e-06</Value>
+												</Prop>
+												<Prop Name='Index' Type='Number' Flags='0x0'>
+													<Value>2</Value>
+												</Prop>
+												<Prop Name='StepName' Type='String' Flags='0x0'>
+													<Value>1.14 Perform function tester initialization and checks</Value>
+												</Prop>
+												<Prop Name='StepGroup' Type='String' Flags='0x0'>
+													<Value>Main</Value>
+												</Prop>
+												<Prop Name='StepId' Type='String' Flags='0x0'>
+													<Value>ID#:GaSI3nZ+8BGJycyCf5KpWB</Value>
+												</Prop>
+												<Prop Name='Id' Type='Number' Flags='0x0'>
+													<Value>151978</Value>
+												</Prop>
+												<Prop Name='StepType' Type='String' Flags='0x0'>
+													<Value>PassFailTest</Value>
+												</Prop>
+												<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+													<Value>0</Value>
+												</Prop>
+											</Prop>
+										</Prop>
+									</Value>
+									<Value ID='[4]'>
+										<Prop Type='TEResult' Flags='0x0'>
+											<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+												<Prop Name='Code' Type='Number' Flags='0x400000'>
+													<Value>0</Value>
+												</Prop>
+												<Prop Name='Msg' Type='String' Flags='0x400000'>
+													<Value></Value>
+												</Prop>
+												<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+													<Value>False</Value>
+												</Prop>
+											</Prop>
+											<Prop Name='Status' Type='String' Flags='0x400000'>
+												<Value>Passed</Value>
+											</Prop>
+											<Prop Name='PassFail' Type='Boolean' Flags='0x0'>
+												<Value>True</Value>
+											</Prop>
+											<Prop Name='ReportText' Type='String' Flags='0x400000'>
+												<Value></Value>
+											</Prop>
+											<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+											</Prop>
+											<Prop Name='TS' Type='Obj' Flags='0x0'>
+												<Prop Name='StartTime' Type='Number' Flags='0x0'>
+													<Value>11963.8761563</Value>
+												</Prop>
+												<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+													<Value>1.22e-05</Value>
+												</Prop>
+												<Prop Name='Index' Type='Number' Flags='0x0'>
+													<Value>3</Value>
+												</Prop>
+												<Prop Name='StepName' Type='String' Flags='0x0'>
+													<Value>1.16 Autoscan Barcode</Value>
+												</Prop>
+												<Prop Name='StepGroup' Type='String' Flags='0x0'>
+													<Value>Main</Value>
+												</Prop>
+												<Prop Name='StepId' Type='String' Flags='0x0'>
+													<Value>ID#:GqSI3nZ+8BGJycyCf5KpWB</Value>
+												</Prop>
+												<Prop Name='Id' Type='Number' Flags='0x0'>
+													<Value>151979</Value>
+												</Prop>
+												<Prop Name='StepType' Type='String' Flags='0x0'>
+													<Value>PassFailTest</Value>
+												</Prop>
+												<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+													<Value>0</Value>
+												</Prop>
+											</Prop>
+											<Prop Name='AdditionalResults' Type='Array' LBound='[0]' HBound='[0]' ElementType='Obj' Flags='0x0'>
+												<Value ID='[0]'>
+													<Prop Name='SerialNumber' Type='String' Flags='0x2000'>
+														<Value></Value>
+													</Prop>
+												</Value>
+											</Prop>
+										</Prop>
+									</Value>
+									<Value ID='[5]'>
+										<Prop Type='TEResult' Flags='0x0'>
+											<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+												<Prop Name='Code' Type='Number' Flags='0x400000'>
+													<Value>0</Value>
+												</Prop>
+												<Prop Name='Msg' Type='String' Flags='0x400000'>
+													<Value></Value>
+												</Prop>
+												<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+													<Value>False</Value>
+												</Prop>
+											</Prop>
+											<Prop Name='Status' Type='String' Flags='0x400000'>
+												<Value>Skipped</Value>
+											</Prop>
+											<Prop Name='PassFail' Type='Boolean' Flags='0x0'>
+												<Value>False</Value>
+											</Prop>
+											<Prop Name='ReportText' Type='String' Flags='0x400000'>
+												<Value></Value>
+											</Prop>
+											<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+											</Prop>
+											<Prop Name='TS' Type='Obj' Flags='0x0'>
+												<Prop Name='StartTime' Type='Number' Flags='0x0'>
+													<Value>11963.8762153</Value>
+												</Prop>
+												<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+													<Value>2.6e-06</Value>
+												</Prop>
+												<Prop Name='Index' Type='Number' Flags='0x0'>
+													<Value>4</Value>
+												</Prop>
+												<Prop Name='StepName' Type='String' Flags='0x0'>
+													<Value>1.18 Set DC Supply to Level 3</Value>
+												</Prop>
+												<Prop Name='StepGroup' Type='String' Flags='0x0'>
+													<Value>Main</Value>
+												</Prop>
+												<Prop Name='StepId' Type='String' Flags='0x0'>
+													<Value>ID#:tGJPrDiK8BGJ08yCf5KpWB</Value>
+												</Prop>
+												<Prop Name='Id' Type='Number' Flags='0x0'>
+													<Value>151980</Value>
+												</Prop>
+												<Prop Name='StepType' Type='String' Flags='0x0'>
+													<Value>PassFailTest</Value>
+												</Prop>
+												<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+													<Value>0</Value>
+												</Prop>
+											</Prop>
+										</Prop>
+									</Value>
+									<Value ID='[6]'>
+										<Prop Type='TEResult' Flags='0x0'>
+											<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+												<Prop Name='Code' Type='Number' Flags='0x400000'>
+													<Value>0</Value>
+												</Prop>
+												<Prop Name='Msg' Type='String' Flags='0x400000'>
+													<Value></Value>
+												</Prop>
+												<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+													<Value>False</Value>
+												</Prop>
+											</Prop>
+											<Prop Name='Status' Type='String' Flags='0x400000'>
+												<Value>Passed</Value>
+											</Prop>
+											<Prop Name='PassFail' Type='Boolean' Flags='0x0'>
+												<Value>True</Value>
+											</Prop>
+											<Prop Name='ReportText' Type='String' Flags='0x400000'>
+												<Value></Value>
+											</Prop>
+											<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+											</Prop>
+											<Prop Name='TS' Type='Obj' Flags='0x0'>
+												<Prop Name='StartTime' Type='Number' Flags='0x0'>
+													<Value>11963.8762429</Value>
+												</Prop>
+												<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+													<Value>5.8e-06</Value>
+												</Prop>
+												<Prop Name='Index' Type='Number' Flags='0x0'>
+													<Value>5</Value>
+												</Prop>
+												<Prop Name='StepName' Type='String' Flags='0x0'>
+													<Value>1.20 Set Torque inputs to Level 1</Value>
+												</Prop>
+												<Prop Name='StepGroup' Type='String' Flags='0x0'>
+													<Value>Main</Value>
+												</Prop>
+												<Prop Name='StepId' Type='String' Flags='0x0'>
+													<Value>ID#:PoTa9XZ+8BGJycyCf5KpWB</Value>
+												</Prop>
+												<Prop Name='Id' Type='Number' Flags='0x0'>
+													<Value>151981</Value>
+												</Prop>
+												<Prop Name='StepType' Type='String' Flags='0x0'>
+													<Value>PassFailTest</Value>
+												</Prop>
+												<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+													<Value>0</Value>
+												</Prop>
+											</Prop>
+										</Prop>
+									</Value>
+									<Value ID='[7]'>
+										<Prop Type='TEResult' Flags='0x0'>
+											<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+												<Prop Name='Code' Type='Number' Flags='0x400000'>
+													<Value>0</Value>
+												</Prop>
+												<Prop Name='Msg' Type='String' Flags='0x400000'>
+													<Value></Value>
+												</Prop>
+												<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+													<Value>False</Value>
+												</Prop>
+											</Prop>
+											<Prop Name='Status' Type='String' Flags='0x400000'>
+												<Value>Passed</Value>
+											</Prop>
+											<Prop Name='PassFail' Type='Boolean' Flags='0x0'>
+												<Value>True</Value>
+											</Prop>
+											<Prop Name='ReportText' Type='String' Flags='0x400000'>
+												<Value></Value>
+											</Prop>
+											<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+											</Prop>
+											<Prop Name='TS' Type='Obj' Flags='0x0'>
+												<Prop Name='StartTime' Type='Number' Flags='0x0'>
+													<Value>11963.8762724</Value>
+												</Prop>
+												<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+													<Value>6.1e-06</Value>
+												</Prop>
+												<Prop Name='Index' Type='Number' Flags='0x0'>
+													<Value>6</Value>
+												</Prop>
+												<Prop Name='StepName' Type='String' Flags='0x0'>
+													<Value>1.22 Motor Sense Magnet speed = 0 RPM</Value>
+												</Prop>
+												<Prop Name='StepGroup' Type='String' Flags='0x0'>
+													<Value>Main</Value>
+												</Prop>
+												<Prop Name='StepId' Type='String' Flags='0x0'>
+													<Value>ID#:P4Ta9XZ+8BGJycyCf5KpWB</Value>
+												</Prop>
+												<Prop Name='Id' Type='Number' Flags='0x0'>
+													<Value>151982</Value>
+												</Prop>
+												<Prop Name='StepType' Type='String' Flags='0x0'>
+													<Value>PassFailTest</Value>
+												</Prop>
+												<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+													<Value>0</Value>
+												</Prop>
+											</Prop>
+										</Prop>
+									</Value>
+								</Prop>
+								<Prop Name='SequenceFile' Type='String' Flags='0x0'>
+									<Value>C:\UTP\source\ProductSequences\EOL_CHMB2_Dual.seq</Value>
+								</Prop>
+								<Prop Name='SequenceFileVersion' Type='String' Flags='0x0'>
+									<Value>0.0.0.0</Value>
+								</Prop>
+								<Prop Name='Sequence' Type='String' Flags='0x0'>
+									<Value>Section 1</Value>
+								</Prop>
+								<Prop Name='Status' Type='String' Flags='0x0'>
+									<Value>Passed</Value>
+								</Prop>
+								<Prop Name='ThreadId' Type='Number' Flags='0x0'>
+									<Value>229</Value>
+								</Prop>
+							</Prop>
+							<Prop Name='StartTime' Type='Number' Flags='0x0'>
+								<Value>11963.7756902</Value>
+							</Prop>
+							<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+								<Value>0.1007795</Value>
+							</Prop>
+							<Prop Name='ModuleTime' Type='Number' Flags='0x0'>
+								<Value>0.100733</Value>
+							</Prop>
+							<Prop Name='Index' Type='Number' Flags='0x0'>
+								<Value>2</Value>
+							</Prop>
+							<Prop Name='StepName' Type='String' Flags='0x0'>
+								<Value>Section 1: Power Up and System Setup</Value>
+							</Prop>
+							<Prop Name='StepGroup' Type='String' Flags='0x0'>
+								<Value>Main</Value>
+							</Prop>
+							<Prop Name='StepId' Type='String' Flags='0x0'>
+								<Value>ID#:WlrdWrp98BGJyMyCf5KpWB</Value>
+							</Prop>
+							<Prop Name='Id' Type='Number' Flags='0x0'>
+								<Value>151974</Value>
+							</Prop>
+							<Prop Name='StepType' Type='String' Flags='0x0'>
+								<Value>SequenceCall</Value>
+							</Prop>
+							<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+								<Value>0</Value>
+							</Prop>
+						</Prop>
+						<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+							<Prop Name='Code' Type='Number' Flags='0x400000'>
+								<Value>0</Value>
+							</Prop>
+							<Prop Name='Msg' Type='String' Flags='0x400000'>
+								<Value></Value>
+							</Prop>
+							<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+								<Value>False</Value>
+							</Prop>
+						</Prop>
+						<Prop Name='Status' Type='String' Flags='0x400000'>
+							<Value>Passed</Value>
+						</Prop>
+						<Prop Name='ReportText' Type='String' Flags='0x400000'>
+							<Value></Value>
+						</Prop>
+						<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+						</Prop>
+					</Prop>
+				</Value>
+				<Value ID='[1]'>
+					<Prop Type='TEResult' Flags='0x0'>
+						<Prop Name='TS' Type='Obj' Flags='0x0'>
+							<Prop Name='SequenceCall' Type='Obj' Flags='0x0'>
+								<Prop Name='ResultList' Type='Array' LBound='[0]' HBound='[5]' ElementType='Obj' Flags='0x0'>
+									<ArrayElementPrototype Type='TEResult' Flags='0x0'>
+									</ArrayElementPrototype>
+									<Value ID='[0]'>
+										<Prop Type='TEResult' Flags='0x0'>
+											<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+												<Prop Name='Code' Type='Number' Flags='0x400000'>
+													<Value>0</Value>
+												</Prop>
+												<Prop Name='Msg' Type='String' Flags='0x400000'>
+													<Value></Value>
+												</Prop>
+												<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+													<Value>False</Value>
+												</Prop>
+											</Prop>
+											<Prop Name='Status' Type='String' Flags='0x400000'>
+												<Value>Passed</Value>
+											</Prop>
+											<Prop Name='PassFail' Type='Boolean' Flags='0x0'>
+												<Value>True</Value>
+											</Prop>
+											<Prop Name='ReportText' Type='String' Flags='0x400000'>
+												<Value></Value>
+											</Prop>
+											<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+											</Prop>
+											<Prop Name='TS' Type='Obj' Flags='0x0'>
+												<Prop Name='StartTime' Type='Number' Flags='0x0'>
+													<Value>11967.4101049</Value>
+												</Prop>
+												<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+													<Value>0.0445324</Value>
+												</Prop>
+												<Prop Name='ModuleTime' Type='Number' Flags='0x0'>
+													<Value>0.0443837</Value>
+												</Prop>
+												<Prop Name='Index' Type='Number' Flags='0x0'>
+													<Value>6</Value>
+												</Prop>
+												<Prop Name='StepName' Type='String' Flags='0x0'>
+													<Value>1.18 Set DC Supply to Level 3</Value>
+												</Prop>
+												<Prop Name='StepGroup' Type='String' Flags='0x0'>
+													<Value>Setup</Value>
+												</Prop>
+												<Prop Name='StepId' Type='String' Flags='0x0'>
+													<Value>ID#:TtqNpwW48RGOJ6QctBT8oA</Value>
+												</Prop>
+												<Prop Name='Id' Type='Number' Flags='0x0'>
+													<Value>151984</Value>
+												</Prop>
+												<Prop Name='StepType' Type='String' Flags='0x0'>
+													<Value>PassFailTest</Value>
+												</Prop>
+												<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+													<Value>0</Value>
+												</Prop>
+											</Prop>
+										</Prop>
+									</Value>
+									<Value ID='[1]'>
+										<Prop Type='TEResult' Flags='0x0'>
+											<Prop Name='TS' Type='Obj' Flags='0x0'>
+												<Prop Name='SequenceCall' Type='Obj' Flags='0x0'>
+													<Prop Name='ResultList' Type='Array' LBound='[0]' HBound='[12]' ElementType='Obj' Flags='0x0'>
+														<ArrayElementPrototype Type='TEResult' Flags='0x0'>
+														</ArrayElementPrototype>
+														<Value ID='[0]'>
+															<Prop Type='TEResult' Flags='0x0'>
+																<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+																	<Prop Name='Code' Type='Number' Flags='0x400000'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='Msg' Type='String' Flags='0x400000'>
+																		<Value></Value>
+																	</Prop>
+																	<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+																		<Value>False</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Status' Type='String' Flags='0x400000'>
+																	<Value>Done</Value>
+																</Prop>
+																<Prop Name='ReportText' Type='String' Flags='0x400000'>
+																	<Value>{True}</Value>
+																</Prop>
+																<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+																</Prop>
+																<Prop Name='TS' Type='Obj' Flags='0x0'>
+																	<Prop Name='StartTime' Type='Number' Flags='0x0'>
+																		<Value>11974.2873522</Value>
+																	</Prop>
+																	<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+																		<Value>2.73e-05</Value>
+																	</Prop>
+																	<Prop Name='Index' Type='Number' Flags='0x0'>
+																		<Value>1</Value>
+																	</Prop>
+																	<Prop Name='StepName' Type='String' Flags='0x0'>
+																		<Value>If</Value>
+																	</Prop>
+																	<Prop Name='StepGroup' Type='String' Flags='0x0'>
+																		<Value>Setup</Value>
+																	</Prop>
+																	<Prop Name='StepId' Type='String' Flags='0x0'>
+																		<Value>ID#:4g9X0Y5P8RGwLkypVBlBxD</Value>
+																	</Prop>
+																	<Prop Name='Id' Type='Number' Flags='0x0'>
+																		<Value>151986</Value>
+																	</Prop>
+																	<Prop Name='StepType' Type='String' Flags='0x0'>
+																		<Value>NI_Flow_If</Value>
+																	</Prop>
+																	<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																</Prop>
+															</Prop>
+														</Value>
+														<Value ID='[1]'>
+															<Prop Type='TEResult' Flags='0x0'>
+																<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+																	<Prop Name='Code' Type='Number' Flags='0x400000'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='Msg' Type='String' Flags='0x400000'>
+																		<Value></Value>
+																	</Prop>
+																	<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+																		<Value>False</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Status' Type='String' Flags='0x400000'>
+																	<Value>Done</Value>
+																</Prop>
+																<Prop Name='ReportText' Type='String' Flags='0x400000'>
+																	<Value></Value>
+																</Prop>
+																<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+																</Prop>
+																<Prop Name='TS' Type='Obj' Flags='0x0'>
+																	<Prop Name='StartTime' Type='Number' Flags='0x0'>
+																		<Value>11974.805242</Value>
+																	</Prop>
+																	<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+																		<Value>3.31e-05</Value>
+																	</Prop>
+																	<Prop Name='Index' Type='Number' Flags='0x0'>
+																		<Value>5</Value>
+																	</Prop>
+																	<Prop Name='StepName' Type='String' Flags='0x0'>
+																		<Value>Save DMM Configuration</Value>
+																	</Prop>
+																	<Prop Name='StepGroup' Type='String' Flags='0x0'>
+																		<Value>Setup</Value>
+																	</Prop>
+																	<Prop Name='StepId' Type='String' Flags='0x0'>
+																		<Value>ID#:5g9X0Y5P8RGwLkypVBlBxD</Value>
+																	</Prop>
+																	<Prop Name='Id' Type='Number' Flags='0x0'>
+																		<Value>151987</Value>
+																	</Prop>
+																	<Prop Name='StepType' Type='String' Flags='0x0'>
+																		<Value>Statement</Value>
+																	</Prop>
+																	<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+																		<Value>1</Value>
+																	</Prop>
+																</Prop>
+															</Prop>
+														</Value>
+														<Value ID='[2]'>
+															<Prop Type='TEResult' Flags='0x0'>
+																<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+																	<Prop Name='Code' Type='Number' Flags='0x400000'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='Msg' Type='String' Flags='0x400000'>
+																		<Value></Value>
+																	</Prop>
+																	<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+																		<Value>False</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Status' Type='String' Flags='0x400000'>
+																	<Value>Done</Value>
+																</Prop>
+																<Prop Name='ReportText' Type='String' Flags='0x400000'>
+																	<Value></Value>
+																</Prop>
+																<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+																</Prop>
+																<Prop Name='TS' Type='Obj' Flags='0x0'>
+																	<Prop Name='StartTime' Type='Number' Flags='0x0'>
+																		<Value>11974.8053377</Value>
+																	</Prop>
+																	<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+																		<Value>1.95e-05</Value>
+																	</Prop>
+																	<Prop Name='Index' Type='Number' Flags='0x0'>
+																		<Value>7</Value>
+																	</Prop>
+																	<Prop Name='StepName' Type='String' Flags='0x0'>
+																		<Value>Get number of relays</Value>
+																	</Prop>
+																	<Prop Name='StepGroup' Type='String' Flags='0x0'>
+																		<Value>Setup</Value>
+																	</Prop>
+																	<Prop Name='StepId' Type='String' Flags='0x0'>
+																		<Value>ID#:7rWR2Zxo8RGN16QctBT8oA</Value>
+																	</Prop>
+																	<Prop Name='Id' Type='Number' Flags='0x0'>
+																		<Value>151988</Value>
+																	</Prop>
+																	<Prop Name='StepType' Type='String' Flags='0x0'>
+																		<Value>Statement</Value>
+																	</Prop>
+																	<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																</Prop>
+															</Prop>
+														</Value>
+														<Value ID='[3]'>
+															<Prop Type='TEResult' Flags='0x0'>
+																<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+																	<Prop Name='Code' Type='Number' Flags='0x400000'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='Msg' Type='String' Flags='0x400000'>
+																		<Value></Value>
+																	</Prop>
+																	<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+																		<Value>False</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Status' Type='String' Flags='0x400000'>
+																	<Value>Done</Value>
+																</Prop>
+																<Prop Name='ReportText' Type='String' Flags='0x400000'>
+																	<Value></Value>
+																</Prop>
+																<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+																</Prop>
+																<Prop Name='TS' Type='Obj' Flags='0x0'>
+																	<Prop Name='StartTime' Type='Number' Flags='0x0'>
+																		<Value>11974.8055225</Value>
+																	</Prop>
+																	<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+																		<Value>0.0008542</Value>
+																	</Prop>
+																	<Prop Name='ModuleTime' Type='Number' Flags='0x0'>
+																		<Value>0.0007887</Value>
+																	</Prop>
+																	<Prop Name='Index' Type='Number' Flags='0x0'>
+																		<Value>10</Value>
+																	</Prop>
+																	<Prop Name='StepName' Type='String' Flags='0x0'>
+																		<Value>Numato Switch ON</Value>
+																	</Prop>
+																	<Prop Name='StepGroup' Type='String' Flags='0x0'>
+																		<Value>Setup</Value>
+																	</Prop>
+																	<Prop Name='StepId' Type='String' Flags='0x0'>
+																		<Value>ID#:6g9X0Y5P8RGwLkypVBlBxD</Value>
+																	</Prop>
+																	<Prop Name='Id' Type='Number' Flags='0x0'>
+																		<Value>151989</Value>
+																	</Prop>
+																	<Prop Name='StepType' Type='String' Flags='0x0'>
+																		<Value>Action</Value>
+																	</Prop>
+																	<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+																		<Value>1</Value>
+																	</Prop>
+																</Prop>
+															</Prop>
+														</Value>
+														<Value ID='[4]'>
+															<Prop Type='TEResult' Flags='0x0'>
+																<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+																	<Prop Name='Code' Type='Number' Flags='0x400000'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='Msg' Type='String' Flags='0x400000'>
+																		<Value></Value>
+																	</Prop>
+																	<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+																		<Value>False</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Status' Type='String' Flags='0x400000'>
+																	<Value>Done</Value>
+																</Prop>
+																<Prop Name='ReportText' Type='String' Flags='0x400000'>
+																	<Value></Value>
+																</Prop>
+																<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+																</Prop>
+																<Prop Name='TS' Type='Obj' Flags='0x0'>
+																	<Prop Name='StartTime' Type='Number' Flags='0x0'>
+																		<Value>11974.8066044</Value>
+																	</Prop>
+																	<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+																		<Value>0.0005379</Value>
+																	</Prop>
+																	<Prop Name='ModuleTime' Type='Number' Flags='0x0'>
+																		<Value>0.0005005</Value>
+																	</Prop>
+																	<Prop Name='Index' Type='Number' Flags='0x0'>
+																		<Value>10</Value>
+																	</Prop>
+																	<Prop Name='StepName' Type='String' Flags='0x0'>
+																		<Value>Numato Switch ON</Value>
+																	</Prop>
+																	<Prop Name='StepGroup' Type='String' Flags='0x0'>
+																		<Value>Setup</Value>
+																	</Prop>
+																	<Prop Name='StepId' Type='String' Flags='0x0'>
+																		<Value>ID#:6g9X0Y5P8RGwLkypVBlBxD</Value>
+																	</Prop>
+																	<Prop Name='Id' Type='Number' Flags='0x0'>
+																		<Value>151990</Value>
+																	</Prop>
+																	<Prop Name='StepType' Type='String' Flags='0x0'>
+																		<Value>Action</Value>
+																	</Prop>
+																	<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+																		<Value>1</Value>
+																	</Prop>
+																</Prop>
+															</Prop>
+														</Value>
+														<Value ID='[5]'>
+															<Prop Type='TEResult' Flags='0x0'>
+																<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x0'>
+																	<Prop Name='Code' Type='Number' Flags='0x400000'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='Msg' Type='String' Flags='0x400000'>
+																		<Value></Value>
+																	</Prop>
+																	<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+																		<Value>False</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Status' Type='String' Flags='0x0'>
+																	<Value>Done</Value>
+																</Prop>
+																<Prop Name='ReportText' Type='String' Flags='0x0'>
+																	<Value></Value>
+																</Prop>
+																<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+																</Prop>
+																<Prop Name='TS' Type='Obj' Flags='0x0'>
+																	<Prop Name='StartTime' Type='Number' Flags='0x0'>
+																		<Value>11974.8073183</Value>
+																	</Prop>
+																	<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+																		<Value>0.3000782</Value>
+																	</Prop>
+																	<Prop Name='Index' Type='Number' Flags='0x0'>
+																		<Value>12</Value>
+																	</Prop>
+																	<Prop Name='StepName' Type='String' Flags='0x0'>
+																		<Value>Wait</Value>
+																	</Prop>
+																	<Prop Name='StepGroup' Type='String' Flags='0x0'>
+																		<Value>Setup</Value>
+																	</Prop>
+																	<Prop Name='StepId' Type='String' Flags='0x0'>
+																		<Value>ID#:7A9X0Y5P8RGwLkypVBlBxD</Value>
+																	</Prop>
+																	<Prop Name='Id' Type='Number' Flags='0x0'>
+																		<Value>151991</Value>
+																	</Prop>
+																	<Prop Name='StepType' Type='String' Flags='0x0'>
+																		<Value>NI_Wait</Value>
+																	</Prop>
+																	<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																</Prop>
+															</Prop>
+														</Value>
+														<Value ID='[6]'>
+															<Prop Type='TEResult' Flags='0x0'>
+																<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+																	<Prop Name='Code' Type='Number' Flags='0x400000'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='Msg' Type='String' Flags='0x400000'>
+																		<Value></Value>
+																	</Prop>
+																	<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+																		<Value>False</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Status' Type='String' Flags='0x400000'>
+																	<Value>Done</Value>
+																</Prop>
+																<Prop Name='ReportText' Type='String' Flags='0x400000'>
+																	<Value><![CDATA[{0} Locals.Counter = 0; Locals.Counter < 4; Locals.Counter += 1]]></Value>
+																</Prop>
+																<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+																</Prop>
+																<Prop Name='TS' Type='Obj' Flags='0x0'>
+																	<Prop Name='StartTime' Type='Number' Flags='0x0'>
+																		<Value>11975.1076376</Value>
+																	</Prop>
+																	<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+																		<Value>0.0002169</Value>
+																	</Prop>
+																	<Prop Name='Index' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='StepName' Type='String' Flags='0x0'>
+																		<Value>For</Value>
+																	</Prop>
+																	<Prop Name='StepGroup' Type='String' Flags='0x0'>
+																		<Value>Main</Value>
+																	</Prop>
+																	<Prop Name='StepId' Type='String' Flags='0x0'>
+																		<Value>ID#:UYjHm1u28RGOJaQctBT8oA</Value>
+																	</Prop>
+																	<Prop Name='Id' Type='Number' Flags='0x0'>
+																		<Value>151992</Value>
+																	</Prop>
+																	<Prop Name='StepType' Type='String' Flags='0x0'>
+																		<Value>NI_Flow_For</Value>
+																	</Prop>
+																	<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																</Prop>
+															</Prop>
+														</Value>
+														<Value ID='[7]'>
+															<Prop Type='TEResult' Flags='0x0'>
+																<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+																	<Prop Name='Code' Type='Number' Flags='0x400000'>
+																		<Value>1073676293</Value>
+																	</Prop>
+																	<Prop Name='Msg' Type='String' Flags='0x400000'>
+																		<Value><![CDATA[VISA Read in Aim TTi 1908P DMM.lvlib:Read measurement.vi:1260003->Aim TTi 1908P DMM.lvlib:Read measurement.vi.ProxyCaller]]></Value>
+																	</Prop>
+																	<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+																		<Value>False</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Status' Type='String' Flags='0x400000'>
+																	<Value>Passed</Value>
+																</Prop>
+																<Prop Name='Numeric' Type='Number' Flags='0x2400'>
+																	<Value>18</Value>
+																</Prop>
+																<Prop Name='ReportText' Type='String' Flags='0x400000'>
+																	<Value></Value>
+																</Prop>
+																<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+																</Prop>
+																<Prop Name='Units' Type='String' Flags='0x2000'>
+																	<Value>variable</Value>
+																</Prop>
+																<Prop Name='RawLimits' Type='Obj' Flags='0x3000'>
+																	<Prop Name='Low' Type='Number' Flags='0x0'>
+																		<Value>17.7</Value>
+																	</Prop>
+																	<Prop Name='High' Type='Number' Flags='0x0'>
+																		<Value>18.3</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='TS' Type='Obj' Flags='0x0'>
+																	<Prop Name='StartTime' Type='Number' Flags='0x0'>
+																		<Value>11975.1080336</Value>
+																	</Prop>
+																	<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+																		<Value>0.1222353</Value>
+																	</Prop>
+																	<Prop Name='ModuleTime' Type='Number' Flags='0x0'>
+																		<Value>0.1216667</Value>
+																	</Prop>
+																	<Prop Name='Index' Type='Number' Flags='0x0'>
+																		<Value>1</Value>
+																	</Prop>
+																	<Prop Name='StepName' Type='String' Flags='0x0'>
+																		<Value>Read Measurement</Value>
+																	</Prop>
+																	<Prop Name='StepGroup' Type='String' Flags='0x0'>
+																		<Value>Main</Value>
+																	</Prop>
+																	<Prop Name='StepId' Type='String' Flags='0x0'>
+																		<Value>ID#:7Q9X0Y5P8RGwLkypVBlBxD</Value>
+																	</Prop>
+																	<Prop Name='Id' Type='Number' Flags='0x0'>
+																		<Value>151993</Value>
+																	</Prop>
+																	<Prop Name='StepType' Type='String' Flags='0x0'>
+																		<Value>NumericLimitTest</Value>
+																	</Prop>
+																	<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+																		<Value>1</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Limits' Type='Obj' Flags='0x3000'>
+																	<Prop Name='Low' Type='Number' Flags='0x0'>
+																		<Value>17.7</Value>
+																	</Prop>
+																	<Prop Name='High' Type='Number' Flags='0x0'>
+																		<Value>18.3</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Comp' Type='String' Flags='0x3000'>
+																	<Value>GELE</Value>
+																</Prop>
+															</Prop>
+														</Value>
+														<Value ID='[8]'>
+															<Prop Type='TEResult' Flags='0x0'>
+																<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+																	<Prop Name='Code' Type='Number' Flags='0x400000'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='Msg' Type='String' Flags='0x400000'>
+																		<Value></Value>
+																	</Prop>
+																	<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+																		<Value>False</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Status' Type='String' Flags='0x400000'>
+																	<Value>Done</Value>
+																</Prop>
+																<Prop Name='ReportText' Type='String' Flags='0x400000'>
+																	<Value></Value>
+																</Prop>
+																<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+																</Prop>
+																<Prop Name='TS' Type='Obj' Flags='0x0'>
+																	<Prop Name='StartTime' Type='Number' Flags='0x0'>
+																		<Value>11975.2305263</Value>
+																	</Prop>
+																	<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+																		<Value>7.45e-05</Value>
+																	</Prop>
+																	<Prop Name='Index' Type='Number' Flags='0x0'>
+																		<Value>2</Value>
+																	</Prop>
+																	<Prop Name='StepName' Type='String' Flags='0x0'>
+																		<Value>Break</Value>
+																	</Prop>
+																	<Prop Name='StepGroup' Type='String' Flags='0x0'>
+																		<Value>Main</Value>
+																	</Prop>
+																	<Prop Name='StepId' Type='String' Flags='0x0'>
+																		<Value>ID#:UojHm1u28RGOJaQctBT8oA</Value>
+																	</Prop>
+																	<Prop Name='Id' Type='Number' Flags='0x0'>
+																		<Value>151994</Value>
+																	</Prop>
+																	<Prop Name='StepType' Type='String' Flags='0x0'>
+																		<Value>NI_Flow_Break</Value>
+																	</Prop>
+																	<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+																		<Value>1</Value>
+																	</Prop>
+																</Prop>
+															</Prop>
+														</Value>
+														<Value ID='[9]'>
+															<Prop Type='TEResult' Flags='0x0'>
+																<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+																	<Prop Name='Code' Type='Number' Flags='0x400000'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='Msg' Type='String' Flags='0x400000'>
+																		<Value></Value>
+																	</Prop>
+																	<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+																		<Value>False</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Status' Type='String' Flags='0x400000'>
+																	<Value>Done</Value>
+																</Prop>
+																<Prop Name='ReportText' Type='String' Flags='0x400000'>
+																	<Value>(For)</Value>
+																</Prop>
+																<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+																</Prop>
+																<Prop Name='TS' Type='Obj' Flags='0x0'>
+																	<Prop Name='StartTime' Type='Number' Flags='0x0'>
+																		<Value>11975.2306923</Value>
+																	</Prop>
+																	<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+																		<Value>1.61e-05</Value>
+																	</Prop>
+																	<Prop Name='Index' Type='Number' Flags='0x0'>
+																		<Value>4</Value>
+																	</Prop>
+																	<Prop Name='StepName' Type='String' Flags='0x0'>
+																		<Value>End</Value>
+																	</Prop>
+																	<Prop Name='StepGroup' Type='String' Flags='0x0'>
+																		<Value>Main</Value>
+																	</Prop>
+																	<Prop Name='StepId' Type='String' Flags='0x0'>
+																		<Value>ID#:U4jHm1u28RGOJaQctBT8oA</Value>
+																	</Prop>
+																	<Prop Name='Id' Type='Number' Flags='0x0'>
+																		<Value>151995</Value>
+																	</Prop>
+																	<Prop Name='StepType' Type='String' Flags='0x0'>
+																		<Value>NI_Flow_End</Value>
+																	</Prop>
+																	<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																</Prop>
+															</Prop>
+														</Value>
+														<Value ID='[10]'>
+															<Prop Type='TEResult' Flags='0x0'>
+																<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+																	<Prop Name='Code' Type='Number' Flags='0x400000'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='Msg' Type='String' Flags='0x400000'>
+																		<Value></Value>
+																	</Prop>
+																	<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+																		<Value>False</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Status' Type='String' Flags='0x400000'>
+																	<Value>Done</Value>
+																</Prop>
+																<Prop Name='ReportText' Type='String' Flags='0x400000'>
+																	<Value></Value>
+																</Prop>
+																<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+																</Prop>
+																<Prop Name='TS' Type='Obj' Flags='0x0'>
+																	<Prop Name='StartTime' Type='Number' Flags='0x0'>
+																		<Value>11975.2312662</Value>
+																	</Prop>
+																	<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+																		<Value>0.0022107</Value>
+																	</Prop>
+																	<Prop Name='ModuleTime' Type='Number' Flags='0x0'>
+																		<Value>0.0020091</Value>
+																	</Prop>
+																	<Prop Name='Index' Type='Number' Flags='0x0'>
+																		<Value>2</Value>
+																	</Prop>
+																	<Prop Name='StepName' Type='String' Flags='0x0'>
+																		<Value>Numato Switch OFF</Value>
+																	</Prop>
+																	<Prop Name='StepGroup' Type='String' Flags='0x0'>
+																		<Value>Cleanup</Value>
+																	</Prop>
+																	<Prop Name='StepId' Type='String' Flags='0x0'>
+																		<Value>ID#:8A9X0Y5P8RGwLkypVBlBxD</Value>
+																	</Prop>
+																	<Prop Name='Id' Type='Number' Flags='0x0'>
+																		<Value>151996</Value>
+																	</Prop>
+																	<Prop Name='StepType' Type='String' Flags='0x0'>
+																		<Value>Action</Value>
+																	</Prop>
+																	<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+																		<Value>1</Value>
+																	</Prop>
+																</Prop>
+															</Prop>
+														</Value>
+														<Value ID='[11]'>
+															<Prop Type='TEResult' Flags='0x0'>
+																<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+																	<Prop Name='Code' Type='Number' Flags='0x400000'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='Msg' Type='String' Flags='0x400000'>
+																		<Value></Value>
+																	</Prop>
+																	<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+																		<Value>False</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Status' Type='String' Flags='0x400000'>
+																	<Value>Done</Value>
+																</Prop>
+																<Prop Name='ReportText' Type='String' Flags='0x400000'>
+																	<Value></Value>
+																</Prop>
+																<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+																</Prop>
+																<Prop Name='TS' Type='Obj' Flags='0x0'>
+																	<Prop Name='StartTime' Type='Number' Flags='0x0'>
+																		<Value>11975.2339186</Value>
+																	</Prop>
+																	<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+																		<Value>0.0009951</Value>
+																	</Prop>
+																	<Prop Name='ModuleTime' Type='Number' Flags='0x0'>
+																		<Value>0.0009134</Value>
+																	</Prop>
+																	<Prop Name='Index' Type='Number' Flags='0x0'>
+																		<Value>2</Value>
+																	</Prop>
+																	<Prop Name='StepName' Type='String' Flags='0x0'>
+																		<Value>Numato Switch OFF</Value>
+																	</Prop>
+																	<Prop Name='StepGroup' Type='String' Flags='0x0'>
+																		<Value>Cleanup</Value>
+																	</Prop>
+																	<Prop Name='StepId' Type='String' Flags='0x0'>
+																		<Value>ID#:8A9X0Y5P8RGwLkypVBlBxD</Value>
+																	</Prop>
+																	<Prop Name='Id' Type='Number' Flags='0x0'>
+																		<Value>151997</Value>
+																	</Prop>
+																	<Prop Name='StepType' Type='String' Flags='0x0'>
+																		<Value>Action</Value>
+																	</Prop>
+																	<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+																		<Value>1</Value>
+																	</Prop>
+																</Prop>
+															</Prop>
+														</Value>
+														<Value ID='[12]'>
+															<Prop Type='TEResult' Flags='0x0'>
+																<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x0'>
+																	<Prop Name='Code' Type='Number' Flags='0x400000'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='Msg' Type='String' Flags='0x400000'>
+																		<Value></Value>
+																	</Prop>
+																	<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+																		<Value>False</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Status' Type='String' Flags='0x0'>
+																	<Value>Done</Value>
+																</Prop>
+																<Prop Name='ReportText' Type='String' Flags='0x0'>
+																	<Value></Value>
+																</Prop>
+																<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+																</Prop>
+																<Prop Name='TS' Type='Obj' Flags='0x0'>
+																	<Prop Name='StartTime' Type='Number' Flags='0x0'>
+																		<Value>11975.2352635</Value>
+																	</Prop>
+																	<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+																		<Value>0.1001275</Value>
+																	</Prop>
+																	<Prop Name='Index' Type='Number' Flags='0x0'>
+																		<Value>4</Value>
+																	</Prop>
+																	<Prop Name='StepName' Type='String' Flags='0x0'>
+																		<Value>Wait</Value>
+																	</Prop>
+																	<Prop Name='StepGroup' Type='String' Flags='0x0'>
+																		<Value>Cleanup</Value>
+																	</Prop>
+																	<Prop Name='StepId' Type='String' Flags='0x0'>
+																		<Value>ID#:8g9X0Y5P8RGwLkypVBlBxD</Value>
+																	</Prop>
+																	<Prop Name='Id' Type='Number' Flags='0x0'>
+																		<Value>151998</Value>
+																	</Prop>
+																	<Prop Name='StepType' Type='String' Flags='0x0'>
+																		<Value>NI_Wait</Value>
+																	</Prop>
+																	<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																</Prop>
+															</Prop>
+														</Value>
+													</Prop>
+													<Prop Name='SequenceFile' Type='String' Flags='0x0'>
+														<Value>C:\UTP\source\ProductSequences\EOL_CHMB2_Dual.seq</Value>
+													</Prop>
+													<Prop Name='SequenceFileVersion' Type='String' Flags='0x0'>
+														<Value>0.0.0.0</Value>
+													</Prop>
+													<Prop Name='Sequence' Type='String' Flags='0x0'>
+														<Value>DMM Voltage Measurement</Value>
+													</Prop>
+													<Prop Name='Status' Type='String' Flags='0x0'>
+														<Value>Passed</Value>
+													</Prop>
+													<Prop Name='ThreadId' Type='Number' Flags='0x0'>
+														<Value>229</Value>
+													</Prop>
+												</Prop>
+												<Prop Name='StartTime' Type='Number' Flags='0x0'>
+													<Value>11974.2865275</Value>
+												</Prop>
+												<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+													<Value>1.0492532</Value>
+												</Prop>
+												<Prop Name='ModuleTime' Type='Number' Flags='0x0'>
+													<Value>1.0490843</Value>
+												</Prop>
+												<Prop Name='Index' Type='Number' Flags='0x0'>
+													<Value>1</Value>
+												</Prop>
+												<Prop Name='StepName' Type='String' Flags='0x0'>
+													<Value>2.22.0 Measure funtion test stand voltage DC Supply +</Value>
+												</Prop>
+												<Prop Name='StepGroup' Type='String' Flags='0x0'>
+													<Value>Main</Value>
+												</Prop>
+												<Prop Name='StepId' Type='String' Flags='0x0'>
+													<Value>ID#:PKGIPvOO8BGJ3syCf5KpWB</Value>
+												</Prop>
+												<Prop Name='Id' Type='Number' Flags='0x0'>
+													<Value>151985</Value>
+												</Prop>
+												<Prop Name='StepType' Type='String' Flags='0x0'>
+													<Value>NumericLimitTest</Value>
+												</Prop>
+												<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+													<Value>0</Value>
+												</Prop>
+											</Prop>
+											<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+												<Prop Name='Code' Type='Number' Flags='0x400000'>
+													<Value>0</Value>
+												</Prop>
+												<Prop Name='Msg' Type='String' Flags='0x400000'>
+													<Value></Value>
+												</Prop>
+												<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+													<Value>False</Value>
+												</Prop>
+											</Prop>
+											<Prop Name='Status' Type='String' Flags='0x400000'>
+												<Value>Passed</Value>
+											</Prop>
+											<Prop Name='Numeric' Type='Number' Flags='0x2400'>
+												<Value>18</Value>
+											</Prop>
+											<Prop Name='ReportText' Type='String' Flags='0x400000'>
+												<Value></Value>
+											</Prop>
+											<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+											</Prop>
+											<Prop Name='Units' Type='String' Flags='0x2000'>
+												<Value>V</Value>
+											</Prop>
+											<Prop Name='RawLimits' Type='Obj' Flags='0x3000'>
+												<Prop Name='Low' Type='Number' Flags='0x0'>
+													<Value>17.7</Value>
+												</Prop>
+												<Prop Name='High' Type='Number' Flags='0x0'>
+													<Value>18.3</Value>
+												</Prop>
+											</Prop>
+											<Prop Name='Limits' Type='Obj' Flags='0x3000'>
+												<Prop Name='Low' Type='Number' Flags='0x0'>
+													<Value>17.7</Value>
+												</Prop>
+												<Prop Name='High' Type='Number' Flags='0x0'>
+													<Value>18.3</Value>
+												</Prop>
+											</Prop>
+											<Prop Name='Comp' Type='String' Flags='0x3000'>
+												<Value>GELE</Value>
+											</Prop>
+										</Prop>
+									</Value>
+									<Value ID='[2]'>
+										<Prop Type='TEResult' Flags='0x0'>
+											<Prop Name='TS' Type='Obj' Flags='0x0'>
+												<Prop Name='SequenceCall' Type='Obj' Flags='0x0'>
+													<Prop Name='ResultList' Type='Array' LBound='[0]' HBound='[12]' ElementType='Obj' Flags='0x0'>
+														<ArrayElementPrototype Type='TEResult' Flags='0x0'>
+														</ArrayElementPrototype>
+														<Value ID='[0]'>
+															<Prop Type='TEResult' Flags='0x0'>
+																<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+																	<Prop Name='Code' Type='Number' Flags='0x400000'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='Msg' Type='String' Flags='0x400000'>
+																		<Value></Value>
+																	</Prop>
+																	<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+																		<Value>False</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Status' Type='String' Flags='0x400000'>
+																	<Value>Done</Value>
+																</Prop>
+																<Prop Name='ReportText' Type='String' Flags='0x400000'>
+																	<Value>{True}</Value>
+																</Prop>
+																<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+																</Prop>
+																<Prop Name='TS' Type='Obj' Flags='0x0'>
+																	<Prop Name='StartTime' Type='Number' Flags='0x0'>
+																		<Value>11981.4498239</Value>
+																	</Prop>
+																	<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+																		<Value>1.61e-05</Value>
+																	</Prop>
+																	<Prop Name='Index' Type='Number' Flags='0x0'>
+																		<Value>1</Value>
+																	</Prop>
+																	<Prop Name='StepName' Type='String' Flags='0x0'>
+																		<Value>If</Value>
+																	</Prop>
+																	<Prop Name='StepGroup' Type='String' Flags='0x0'>
+																		<Value>Setup</Value>
+																	</Prop>
+																	<Prop Name='StepId' Type='String' Flags='0x0'>
+																		<Value>ID#:4g9X0Y5P8RGwLkypVBlBxD</Value>
+																	</Prop>
+																	<Prop Name='Id' Type='Number' Flags='0x0'>
+																		<Value>152000</Value>
+																	</Prop>
+																	<Prop Name='StepType' Type='String' Flags='0x0'>
+																		<Value>NI_Flow_If</Value>
+																	</Prop>
+																	<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																</Prop>
+															</Prop>
+														</Value>
+														<Value ID='[1]'>
+															<Prop Type='TEResult' Flags='0x0'>
+																<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+																	<Prop Name='Code' Type='Number' Flags='0x400000'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='Msg' Type='String' Flags='0x400000'>
+																		<Value></Value>
+																	</Prop>
+																	<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+																		<Value>False</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Status' Type='String' Flags='0x400000'>
+																	<Value>Done</Value>
+																</Prop>
+																<Prop Name='ReportText' Type='String' Flags='0x400000'>
+																	<Value></Value>
+																</Prop>
+																<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+																</Prop>
+																<Prop Name='TS' Type='Obj' Flags='0x0'>
+																	<Prop Name='StartTime' Type='Number' Flags='0x0'>
+																		<Value>11981.9545413</Value>
+																	</Prop>
+																	<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+																		<Value>1.76e-05</Value>
+																	</Prop>
+																	<Prop Name='Index' Type='Number' Flags='0x0'>
+																		<Value>5</Value>
+																	</Prop>
+																	<Prop Name='StepName' Type='String' Flags='0x0'>
+																		<Value>Save DMM Configuration</Value>
+																	</Prop>
+																	<Prop Name='StepGroup' Type='String' Flags='0x0'>
+																		<Value>Setup</Value>
+																	</Prop>
+																	<Prop Name='StepId' Type='String' Flags='0x0'>
+																		<Value>ID#:5g9X0Y5P8RGwLkypVBlBxD</Value>
+																	</Prop>
+																	<Prop Name='Id' Type='Number' Flags='0x0'>
+																		<Value>152001</Value>
+																	</Prop>
+																	<Prop Name='StepType' Type='String' Flags='0x0'>
+																		<Value>Statement</Value>
+																	</Prop>
+																	<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+																		<Value>1</Value>
+																	</Prop>
+																</Prop>
+															</Prop>
+														</Value>
+														<Value ID='[2]'>
+															<Prop Type='TEResult' Flags='0x0'>
+																<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+																	<Prop Name='Code' Type='Number' Flags='0x400000'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='Msg' Type='String' Flags='0x400000'>
+																		<Value></Value>
+																	</Prop>
+																	<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+																		<Value>False</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Status' Type='String' Flags='0x400000'>
+																	<Value>Done</Value>
+																</Prop>
+																<Prop Name='ReportText' Type='String' Flags='0x400000'>
+																	<Value></Value>
+																</Prop>
+																<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+																</Prop>
+																<Prop Name='TS' Type='Obj' Flags='0x0'>
+																	<Prop Name='StartTime' Type='Number' Flags='0x0'>
+																		<Value>11981.9546191</Value>
+																	</Prop>
+																	<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+																		<Value>7.7e-06</Value>
+																	</Prop>
+																	<Prop Name='Index' Type='Number' Flags='0x0'>
+																		<Value>7</Value>
+																	</Prop>
+																	<Prop Name='StepName' Type='String' Flags='0x0'>
+																		<Value>Get number of relays</Value>
+																	</Prop>
+																	<Prop Name='StepGroup' Type='String' Flags='0x0'>
+																		<Value>Setup</Value>
+																	</Prop>
+																	<Prop Name='StepId' Type='String' Flags='0x0'>
+																		<Value>ID#:7rWR2Zxo8RGN16QctBT8oA</Value>
+																	</Prop>
+																	<Prop Name='Id' Type='Number' Flags='0x0'>
+																		<Value>152002</Value>
+																	</Prop>
+																	<Prop Name='StepType' Type='String' Flags='0x0'>
+																		<Value>Statement</Value>
+																	</Prop>
+																	<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																</Prop>
+															</Prop>
+														</Value>
+														<Value ID='[3]'>
+															<Prop Type='TEResult' Flags='0x0'>
+																<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+																	<Prop Name='Code' Type='Number' Flags='0x400000'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='Msg' Type='String' Flags='0x400000'>
+																		<Value></Value>
+																	</Prop>
+																	<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+																		<Value>False</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Status' Type='String' Flags='0x400000'>
+																	<Value>Done</Value>
+																</Prop>
+																<Prop Name='ReportText' Type='String' Flags='0x400000'>
+																	<Value></Value>
+																</Prop>
+																<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+																</Prop>
+																<Prop Name='TS' Type='Obj' Flags='0x0'>
+																	<Prop Name='StartTime' Type='Number' Flags='0x0'>
+																		<Value>11981.9547728</Value>
+																	</Prop>
+																	<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+																		<Value>0.0005123</Value>
+																	</Prop>
+																	<Prop Name='ModuleTime' Type='Number' Flags='0x0'>
+																		<Value>0.0004588</Value>
+																	</Prop>
+																	<Prop Name='Index' Type='Number' Flags='0x0'>
+																		<Value>10</Value>
+																	</Prop>
+																	<Prop Name='StepName' Type='String' Flags='0x0'>
+																		<Value>Numato Switch ON</Value>
+																	</Prop>
+																	<Prop Name='StepGroup' Type='String' Flags='0x0'>
+																		<Value>Setup</Value>
+																	</Prop>
+																	<Prop Name='StepId' Type='String' Flags='0x0'>
+																		<Value>ID#:6g9X0Y5P8RGwLkypVBlBxD</Value>
+																	</Prop>
+																	<Prop Name='Id' Type='Number' Flags='0x0'>
+																		<Value>152003</Value>
+																	</Prop>
+																	<Prop Name='StepType' Type='String' Flags='0x0'>
+																		<Value>Action</Value>
+																	</Prop>
+																	<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+																		<Value>1</Value>
+																	</Prop>
+																</Prop>
+															</Prop>
+														</Value>
+														<Value ID='[4]'>
+															<Prop Type='TEResult' Flags='0x0'>
+																<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+																	<Prop Name='Code' Type='Number' Flags='0x400000'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='Msg' Type='String' Flags='0x400000'>
+																		<Value></Value>
+																	</Prop>
+																	<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+																		<Value>False</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Status' Type='String' Flags='0x400000'>
+																	<Value>Done</Value>
+																</Prop>
+																<Prop Name='ReportText' Type='String' Flags='0x400000'>
+																	<Value></Value>
+																</Prop>
+																<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+																</Prop>
+																<Prop Name='TS' Type='Obj' Flags='0x0'>
+																	<Prop Name='StartTime' Type='Number' Flags='0x0'>
+																		<Value>11981.9555038</Value>
+																	</Prop>
+																	<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+																		<Value>0.000338</Value>
+																	</Prop>
+																	<Prop Name='ModuleTime' Type='Number' Flags='0x0'>
+																		<Value>0.0003008</Value>
+																	</Prop>
+																	<Prop Name='Index' Type='Number' Flags='0x0'>
+																		<Value>10</Value>
+																	</Prop>
+																	<Prop Name='StepName' Type='String' Flags='0x0'>
+																		<Value>Numato Switch ON</Value>
+																	</Prop>
+																	<Prop Name='StepGroup' Type='String' Flags='0x0'>
+																		<Value>Setup</Value>
+																	</Prop>
+																	<Prop Name='StepId' Type='String' Flags='0x0'>
+																		<Value>ID#:6g9X0Y5P8RGwLkypVBlBxD</Value>
+																	</Prop>
+																	<Prop Name='Id' Type='Number' Flags='0x0'>
+																		<Value>152004</Value>
+																	</Prop>
+																	<Prop Name='StepType' Type='String' Flags='0x0'>
+																		<Value>Action</Value>
+																	</Prop>
+																	<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+																		<Value>1</Value>
+																	</Prop>
+																</Prop>
+															</Prop>
+														</Value>
+														<Value ID='[5]'>
+															<Prop Type='TEResult' Flags='0x0'>
+																<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x0'>
+																	<Prop Name='Code' Type='Number' Flags='0x400000'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='Msg' Type='String' Flags='0x400000'>
+																		<Value></Value>
+																	</Prop>
+																	<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+																		<Value>False</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Status' Type='String' Flags='0x0'>
+																	<Value>Done</Value>
+																</Prop>
+																<Prop Name='ReportText' Type='String' Flags='0x0'>
+																	<Value></Value>
+																</Prop>
+																<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+																</Prop>
+																<Prop Name='TS' Type='Obj' Flags='0x0'>
+																	<Prop Name='StartTime' Type='Number' Flags='0x0'>
+																		<Value>11981.9560225</Value>
+																	</Prop>
+																	<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+																		<Value>0.3002999</Value>
+																	</Prop>
+																	<Prop Name='Index' Type='Number' Flags='0x0'>
+																		<Value>12</Value>
+																	</Prop>
+																	<Prop Name='StepName' Type='String' Flags='0x0'>
+																		<Value>Wait</Value>
+																	</Prop>
+																	<Prop Name='StepGroup' Type='String' Flags='0x0'>
+																		<Value>Setup</Value>
+																	</Prop>
+																	<Prop Name='StepId' Type='String' Flags='0x0'>
+																		<Value>ID#:7A9X0Y5P8RGwLkypVBlBxD</Value>
+																	</Prop>
+																	<Prop Name='Id' Type='Number' Flags='0x0'>
+																		<Value>152005</Value>
+																	</Prop>
+																	<Prop Name='StepType' Type='String' Flags='0x0'>
+																		<Value>NI_Wait</Value>
+																	</Prop>
+																	<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																</Prop>
+															</Prop>
+														</Value>
+														<Value ID='[6]'>
+															<Prop Type='TEResult' Flags='0x0'>
+																<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+																	<Prop Name='Code' Type='Number' Flags='0x400000'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='Msg' Type='String' Flags='0x400000'>
+																		<Value></Value>
+																	</Prop>
+																	<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+																		<Value>False</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Status' Type='String' Flags='0x400000'>
+																	<Value>Done</Value>
+																</Prop>
+																<Prop Name='ReportText' Type='String' Flags='0x400000'>
+																	<Value><![CDATA[{0} Locals.Counter = 0; Locals.Counter < 4; Locals.Counter += 1]]></Value>
+																</Prop>
+																<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+																</Prop>
+																<Prop Name='TS' Type='Obj' Flags='0x0'>
+																	<Prop Name='StartTime' Type='Number' Flags='0x0'>
+																		<Value>11982.2566503</Value>
+																	</Prop>
+																	<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+																		<Value>0.0001986</Value>
+																	</Prop>
+																	<Prop Name='Index' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='StepName' Type='String' Flags='0x0'>
+																		<Value>For</Value>
+																	</Prop>
+																	<Prop Name='StepGroup' Type='String' Flags='0x0'>
+																		<Value>Main</Value>
+																	</Prop>
+																	<Prop Name='StepId' Type='String' Flags='0x0'>
+																		<Value>ID#:UYjHm1u28RGOJaQctBT8oA</Value>
+																	</Prop>
+																	<Prop Name='Id' Type='Number' Flags='0x0'>
+																		<Value>152006</Value>
+																	</Prop>
+																	<Prop Name='StepType' Type='String' Flags='0x0'>
+																		<Value>NI_Flow_For</Value>
+																	</Prop>
+																	<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																</Prop>
+															</Prop>
+														</Value>
+														<Value ID='[7]'>
+															<Prop Type='TEResult' Flags='0x0'>
+																<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+																	<Prop Name='Code' Type='Number' Flags='0x400000'>
+																		<Value>1073676293</Value>
+																	</Prop>
+																	<Prop Name='Msg' Type='String' Flags='0x400000'>
+																		<Value><![CDATA[VISA Read in Aim TTi 1908P DMM.lvlib:Read measurement.vi:1260003->Aim TTi 1908P DMM.lvlib:Read measurement.vi.ProxyCaller]]></Value>
+																	</Prop>
+																	<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+																		<Value>False</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Status' Type='String' Flags='0x400000'>
+																	<Value>Passed</Value>
+																</Prop>
+																<Prop Name='Numeric' Type='Number' Flags='0x2400'>
+																	<Value>2.507</Value>
+																</Prop>
+																<Prop Name='ReportText' Type='String' Flags='0x400000'>
+																	<Value></Value>
+																</Prop>
+																<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+																</Prop>
+																<Prop Name='Units' Type='String' Flags='0x2000'>
+																	<Value>variable</Value>
+																</Prop>
+																<Prop Name='RawLimits' Type='Obj' Flags='0x3000'>
+																	<Prop Name='Low' Type='Number' Flags='0x0'>
+																		<Value>2.4</Value>
+																	</Prop>
+																	<Prop Name='High' Type='Number' Flags='0x0'>
+																		<Value>2.6</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='TS' Type='Obj' Flags='0x0'>
+																	<Prop Name='StartTime' Type='Number' Flags='0x0'>
+																		<Value>11982.2569504</Value>
+																	</Prop>
+																	<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+																		<Value>0.1231902</Value>
+																	</Prop>
+																	<Prop Name='ModuleTime' Type='Number' Flags='0x0'>
+																		<Value>0.1228867</Value>
+																	</Prop>
+																	<Prop Name='Index' Type='Number' Flags='0x0'>
+																		<Value>1</Value>
+																	</Prop>
+																	<Prop Name='StepName' Type='String' Flags='0x0'>
+																		<Value>Read Measurement</Value>
+																	</Prop>
+																	<Prop Name='StepGroup' Type='String' Flags='0x0'>
+																		<Value>Main</Value>
+																	</Prop>
+																	<Prop Name='StepId' Type='String' Flags='0x0'>
+																		<Value>ID#:7Q9X0Y5P8RGwLkypVBlBxD</Value>
+																	</Prop>
+																	<Prop Name='Id' Type='Number' Flags='0x0'>
+																		<Value>152007</Value>
+																	</Prop>
+																	<Prop Name='StepType' Type='String' Flags='0x0'>
+																		<Value>NumericLimitTest</Value>
+																	</Prop>
+																	<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+																		<Value>1</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Limits' Type='Obj' Flags='0x3000'>
+																	<Prop Name='Low' Type='Number' Flags='0x0'>
+																		<Value>2.4</Value>
+																	</Prop>
+																	<Prop Name='High' Type='Number' Flags='0x0'>
+																		<Value>2.6</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Comp' Type='String' Flags='0x3000'>
+																	<Value>GELE</Value>
+																</Prop>
+															</Prop>
+														</Value>
+														<Value ID='[8]'>
+															<Prop Type='TEResult' Flags='0x0'>
+																<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+																	<Prop Name='Code' Type='Number' Flags='0x400000'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='Msg' Type='String' Flags='0x400000'>
+																		<Value></Value>
+																	</Prop>
+																	<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+																		<Value>False</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Status' Type='String' Flags='0x400000'>
+																	<Value>Done</Value>
+																</Prop>
+																<Prop Name='ReportText' Type='String' Flags='0x400000'>
+																	<Value></Value>
+																</Prop>
+																<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+																</Prop>
+																<Prop Name='TS' Type='Obj' Flags='0x0'>
+																	<Prop Name='StartTime' Type='Number' Flags='0x0'>
+																		<Value>11982.3803777</Value>
+																	</Prop>
+																	<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+																		<Value>0.0001032</Value>
+																	</Prop>
+																	<Prop Name='Index' Type='Number' Flags='0x0'>
+																		<Value>2</Value>
+																	</Prop>
+																	<Prop Name='StepName' Type='String' Flags='0x0'>
+																		<Value>Break</Value>
+																	</Prop>
+																	<Prop Name='StepGroup' Type='String' Flags='0x0'>
+																		<Value>Main</Value>
+																	</Prop>
+																	<Prop Name='StepId' Type='String' Flags='0x0'>
+																		<Value>ID#:UojHm1u28RGOJaQctBT8oA</Value>
+																	</Prop>
+																	<Prop Name='Id' Type='Number' Flags='0x0'>
+																		<Value>152008</Value>
+																	</Prop>
+																	<Prop Name='StepType' Type='String' Flags='0x0'>
+																		<Value>NI_Flow_Break</Value>
+																	</Prop>
+																	<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+																		<Value>1</Value>
+																	</Prop>
+																</Prop>
+															</Prop>
+														</Value>
+														<Value ID='[9]'>
+															<Prop Type='TEResult' Flags='0x0'>
+																<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+																	<Prop Name='Code' Type='Number' Flags='0x400000'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='Msg' Type='String' Flags='0x400000'>
+																		<Value></Value>
+																	</Prop>
+																	<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+																		<Value>False</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Status' Type='String' Flags='0x400000'>
+																	<Value>Done</Value>
+																</Prop>
+																<Prop Name='ReportText' Type='String' Flags='0x400000'>
+																	<Value>(For)</Value>
+																</Prop>
+																<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+																</Prop>
+																<Prop Name='TS' Type='Obj' Flags='0x0'>
+																	<Prop Name='StartTime' Type='Number' Flags='0x0'>
+																		<Value>11982.3807164</Value>
+																	</Prop>
+																	<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+																		<Value>2.2e-05</Value>
+																	</Prop>
+																	<Prop Name='Index' Type='Number' Flags='0x0'>
+																		<Value>4</Value>
+																	</Prop>
+																	<Prop Name='StepName' Type='String' Flags='0x0'>
+																		<Value>End</Value>
+																	</Prop>
+																	<Prop Name='StepGroup' Type='String' Flags='0x0'>
+																		<Value>Main</Value>
+																	</Prop>
+																	<Prop Name='StepId' Type='String' Flags='0x0'>
+																		<Value>ID#:U4jHm1u28RGOJaQctBT8oA</Value>
+																	</Prop>
+																	<Prop Name='Id' Type='Number' Flags='0x0'>
+																		<Value>152009</Value>
+																	</Prop>
+																	<Prop Name='StepType' Type='String' Flags='0x0'>
+																		<Value>NI_Flow_End</Value>
+																	</Prop>
+																	<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																</Prop>
+															</Prop>
+														</Value>
+														<Value ID='[10]'>
+															<Prop Type='TEResult' Flags='0x0'>
+																<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+																	<Prop Name='Code' Type='Number' Flags='0x400000'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='Msg' Type='String' Flags='0x400000'>
+																		<Value></Value>
+																	</Prop>
+																	<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+																		<Value>False</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Status' Type='String' Flags='0x400000'>
+																	<Value>Done</Value>
+																</Prop>
+																<Prop Name='ReportText' Type='String' Flags='0x400000'>
+																	<Value></Value>
+																</Prop>
+																<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+																</Prop>
+																<Prop Name='TS' Type='Obj' Flags='0x0'>
+																	<Prop Name='StartTime' Type='Number' Flags='0x0'>
+																		<Value>11982.3813015</Value>
+																	</Prop>
+																	<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+																		<Value>0.0016415</Value>
+																	</Prop>
+																	<Prop Name='ModuleTime' Type='Number' Flags='0x0'>
+																		<Value>0.0014475</Value>
+																	</Prop>
+																	<Prop Name='Index' Type='Number' Flags='0x0'>
+																		<Value>2</Value>
+																	</Prop>
+																	<Prop Name='StepName' Type='String' Flags='0x0'>
+																		<Value>Numato Switch OFF</Value>
+																	</Prop>
+																	<Prop Name='StepGroup' Type='String' Flags='0x0'>
+																		<Value>Cleanup</Value>
+																	</Prop>
+																	<Prop Name='StepId' Type='String' Flags='0x0'>
+																		<Value>ID#:8A9X0Y5P8RGwLkypVBlBxD</Value>
+																	</Prop>
+																	<Prop Name='Id' Type='Number' Flags='0x0'>
+																		<Value>152010</Value>
+																	</Prop>
+																	<Prop Name='StepType' Type='String' Flags='0x0'>
+																		<Value>Action</Value>
+																	</Prop>
+																	<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+																		<Value>1</Value>
+																	</Prop>
+																</Prop>
+															</Prop>
+														</Value>
+														<Value ID='[11]'>
+															<Prop Type='TEResult' Flags='0x0'>
+																<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+																	<Prop Name='Code' Type='Number' Flags='0x400000'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='Msg' Type='String' Flags='0x400000'>
+																		<Value></Value>
+																	</Prop>
+																	<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+																		<Value>False</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Status' Type='String' Flags='0x400000'>
+																	<Value>Done</Value>
+																</Prop>
+																<Prop Name='ReportText' Type='String' Flags='0x400000'>
+																	<Value></Value>
+																</Prop>
+																<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+																</Prop>
+																<Prop Name='TS' Type='Obj' Flags='0x0'>
+																	<Prop Name='StartTime' Type='Number' Flags='0x0'>
+																		<Value>11982.3836812</Value>
+																	</Prop>
+																	<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+																		<Value>0.0014207</Value>
+																	</Prop>
+																	<Prop Name='ModuleTime' Type='Number' Flags='0x0'>
+																		<Value>0.0012676</Value>
+																	</Prop>
+																	<Prop Name='Index' Type='Number' Flags='0x0'>
+																		<Value>2</Value>
+																	</Prop>
+																	<Prop Name='StepName' Type='String' Flags='0x0'>
+																		<Value>Numato Switch OFF</Value>
+																	</Prop>
+																	<Prop Name='StepGroup' Type='String' Flags='0x0'>
+																		<Value>Cleanup</Value>
+																	</Prop>
+																	<Prop Name='StepId' Type='String' Flags='0x0'>
+																		<Value>ID#:8A9X0Y5P8RGwLkypVBlBxD</Value>
+																	</Prop>
+																	<Prop Name='Id' Type='Number' Flags='0x0'>
+																		<Value>152011</Value>
+																	</Prop>
+																	<Prop Name='StepType' Type='String' Flags='0x0'>
+																		<Value>Action</Value>
+																	</Prop>
+																	<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+																		<Value>1</Value>
+																	</Prop>
+																</Prop>
+															</Prop>
+														</Value>
+														<Value ID='[12]'>
+															<Prop Type='TEResult' Flags='0x0'>
+																<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x0'>
+																	<Prop Name='Code' Type='Number' Flags='0x400000'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='Msg' Type='String' Flags='0x400000'>
+																		<Value></Value>
+																	</Prop>
+																	<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+																		<Value>False</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Status' Type='String' Flags='0x0'>
+																	<Value>Done</Value>
+																</Prop>
+																<Prop Name='ReportText' Type='String' Flags='0x0'>
+																	<Value></Value>
+																</Prop>
+																<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+																</Prop>
+																<Prop Name='TS' Type='Obj' Flags='0x0'>
+																	<Prop Name='StartTime' Type='Number' Flags='0x0'>
+																		<Value>11982.3858253</Value>
+																	</Prop>
+																	<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+																		<Value>0.1007679</Value>
+																	</Prop>
+																	<Prop Name='Index' Type='Number' Flags='0x0'>
+																		<Value>4</Value>
+																	</Prop>
+																	<Prop Name='StepName' Type='String' Flags='0x0'>
+																		<Value>Wait</Value>
+																	</Prop>
+																	<Prop Name='StepGroup' Type='String' Flags='0x0'>
+																		<Value>Cleanup</Value>
+																	</Prop>
+																	<Prop Name='StepId' Type='String' Flags='0x0'>
+																		<Value>ID#:8g9X0Y5P8RGwLkypVBlBxD</Value>
+																	</Prop>
+																	<Prop Name='Id' Type='Number' Flags='0x0'>
+																		<Value>152012</Value>
+																	</Prop>
+																	<Prop Name='StepType' Type='String' Flags='0x0'>
+																		<Value>NI_Wait</Value>
+																	</Prop>
+																	<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																</Prop>
+															</Prop>
+														</Value>
+													</Prop>
+													<Prop Name='SequenceFile' Type='String' Flags='0x0'>
+														<Value>C:\UTP\source\ProductSequences\EOL_CHMB2_Dual.seq</Value>
+													</Prop>
+													<Prop Name='SequenceFileVersion' Type='String' Flags='0x0'>
+														<Value>0.0.0.0</Value>
+													</Prop>
+													<Prop Name='Sequence' Type='String' Flags='0x0'>
+														<Value>DMM Voltage Measurement</Value>
+													</Prop>
+													<Prop Name='Status' Type='String' Flags='0x0'>
+														<Value>Passed</Value>
+													</Prop>
+													<Prop Name='ThreadId' Type='Number' Flags='0x0'>
+														<Value>229</Value>
+													</Prop>
+												</Prop>
+												<Prop Name='StartTime' Type='Number' Flags='0x0'>
+													<Value>11981.4491948</Value>
+												</Prop>
+												<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+													<Value>1.0382103</Value>
+												</Prop>
+												<Prop Name='ModuleTime' Type='Number' Flags='0x0'>
+													<Value>1.0379201</Value>
+												</Prop>
+												<Prop Name='Index' Type='Number' Flags='0x0'>
+													<Value>6</Value>
+												</Prop>
+												<Prop Name='StepName' Type='String' Flags='0x0'>
+													<Value>2.30.0. Measure CAN H</Value>
+												</Prop>
+												<Prop Name='StepGroup' Type='String' Flags='0x0'>
+													<Value>Main</Value>
+												</Prop>
+												<Prop Name='StepId' Type='String' Flags='0x0'>
+													<Value>ID#:I+5zVetN8RGwIEypVBlBxD</Value>
+												</Prop>
+												<Prop Name='Id' Type='Number' Flags='0x0'>
+													<Value>151999</Value>
+												</Prop>
+												<Prop Name='StepType' Type='String' Flags='0x0'>
+													<Value>NumericLimitTest</Value>
+												</Prop>
+												<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+													<Value>0</Value>
+												</Prop>
+											</Prop>
+											<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+												<Prop Name='Code' Type='Number' Flags='0x400000'>
+													<Value>0</Value>
+												</Prop>
+												<Prop Name='Msg' Type='String' Flags='0x400000'>
+													<Value></Value>
+												</Prop>
+												<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+													<Value>False</Value>
+												</Prop>
+											</Prop>
+											<Prop Name='Status' Type='String' Flags='0x400000'>
+												<Value>Passed</Value>
+											</Prop>
+											<Prop Name='Numeric' Type='Number' Flags='0x2400'>
+												<Value>2.507</Value>
+											</Prop>
+											<Prop Name='ReportText' Type='String' Flags='0x400000'>
+												<Value></Value>
+											</Prop>
+											<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+											</Prop>
+											<Prop Name='Units' Type='String' Flags='0x2000'>
+												<Value>V</Value>
+											</Prop>
+											<Prop Name='RawLimits' Type='Obj' Flags='0x3000'>
+												<Prop Name='Low' Type='Number' Flags='0x0'>
+													<Value>2.4</Value>
+												</Prop>
+												<Prop Name='High' Type='Number' Flags='0x0'>
+													<Value>2.6</Value>
+												</Prop>
+											</Prop>
+											<Prop Name='Limits' Type='Obj' Flags='0x3000'>
+												<Prop Name='Low' Type='Number' Flags='0x0'>
+													<Value>2.4</Value>
+												</Prop>
+												<Prop Name='High' Type='Number' Flags='0x0'>
+													<Value>2.6</Value>
+												</Prop>
+											</Prop>
+											<Prop Name='Comp' Type='String' Flags='0x3000'>
+												<Value>GELE</Value>
+											</Prop>
+										</Prop>
+									</Value>
+									<Value ID='[3]'>
+										<Prop Type='TEResult' Flags='0x0'>
+											<Prop Name='TS' Type='Obj' Flags='0x0'>
+												<Prop Name='SequenceCall' Type='Obj' Flags='0x0'>
+													<Prop Name='ResultList' Type='Array' LBound='[0]' HBound='[11]' ElementType='Obj' Flags='0x0'>
+														<ArrayElementPrototype Type='TEResult' Flags='0x0'>
+														</ArrayElementPrototype>
+														<Value ID='[0]'>
+															<Prop Type='TEResult' Flags='0x0'>
+																<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+																	<Prop Name='Code' Type='Number' Flags='0x400000'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='Msg' Type='String' Flags='0x400000'>
+																		<Value></Value>
+																	</Prop>
+																	<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+																		<Value>False</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Status' Type='String' Flags='0x400000'>
+																	<Value>Done</Value>
+																</Prop>
+																<Prop Name='ReportText' Type='String' Flags='0x400000'>
+																	<Value>{False}</Value>
+																</Prop>
+																<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+																</Prop>
+																<Prop Name='TS' Type='Obj' Flags='0x0'>
+																	<Prop Name='StartTime' Type='Number' Flags='0x0'>
+																		<Value>11982.9886796</Value>
+																	</Prop>
+																	<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+																		<Value>1.38e-05</Value>
+																	</Prop>
+																	<Prop Name='Index' Type='Number' Flags='0x0'>
+																		<Value>1</Value>
+																	</Prop>
+																	<Prop Name='StepName' Type='String' Flags='0x0'>
+																		<Value>If</Value>
+																	</Prop>
+																	<Prop Name='StepGroup' Type='String' Flags='0x0'>
+																		<Value>Setup</Value>
+																	</Prop>
+																	<Prop Name='StepId' Type='String' Flags='0x0'>
+																		<Value>ID#:4g9X0Y5P8RGwLkypVBlBxD</Value>
+																	</Prop>
+																	<Prop Name='Id' Type='Number' Flags='0x0'>
+																		<Value>152014</Value>
+																	</Prop>
+																	<Prop Name='StepType' Type='String' Flags='0x0'>
+																		<Value>NI_Flow_If</Value>
+																	</Prop>
+																	<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																</Prop>
+															</Prop>
+														</Value>
+														<Value ID='[1]'>
+															<Prop Type='TEResult' Flags='0x0'>
+																<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+																	<Prop Name='Code' Type='Number' Flags='0x400000'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='Msg' Type='String' Flags='0x400000'>
+																		<Value></Value>
+																	</Prop>
+																	<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+																		<Value>False</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Status' Type='String' Flags='0x400000'>
+																	<Value>Done</Value>
+																</Prop>
+																<Prop Name='ReportText' Type='String' Flags='0x400000'>
+																	<Value></Value>
+																</Prop>
+																<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+																</Prop>
+																<Prop Name='TS' Type='Obj' Flags='0x0'>
+																	<Prop Name='StartTime' Type='Number' Flags='0x0'>
+																		<Value>11982.9887508</Value>
+																	</Prop>
+																	<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+																		<Value>8.4e-06</Value>
+																	</Prop>
+																	<Prop Name='Index' Type='Number' Flags='0x0'>
+																		<Value>7</Value>
+																	</Prop>
+																	<Prop Name='StepName' Type='String' Flags='0x0'>
+																		<Value>Get number of relays</Value>
+																	</Prop>
+																	<Prop Name='StepGroup' Type='String' Flags='0x0'>
+																		<Value>Setup</Value>
+																	</Prop>
+																	<Prop Name='StepId' Type='String' Flags='0x0'>
+																		<Value>ID#:7rWR2Zxo8RGN16QctBT8oA</Value>
+																	</Prop>
+																	<Prop Name='Id' Type='Number' Flags='0x0'>
+																		<Value>152015</Value>
+																	</Prop>
+																	<Prop Name='StepType' Type='String' Flags='0x0'>
+																		<Value>Statement</Value>
+																	</Prop>
+																	<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																</Prop>
+															</Prop>
+														</Value>
+														<Value ID='[2]'>
+															<Prop Type='TEResult' Flags='0x0'>
+																<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+																	<Prop Name='Code' Type='Number' Flags='0x400000'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='Msg' Type='String' Flags='0x400000'>
+																		<Value></Value>
+																	</Prop>
+																	<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+																		<Value>False</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Status' Type='String' Flags='0x400000'>
+																	<Value>Done</Value>
+																</Prop>
+																<Prop Name='ReportText' Type='String' Flags='0x400000'>
+																	<Value></Value>
+																</Prop>
+																<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+																</Prop>
+																<Prop Name='TS' Type='Obj' Flags='0x0'>
+																	<Prop Name='StartTime' Type='Number' Flags='0x0'>
+																		<Value>11982.9888957</Value>
+																	</Prop>
+																	<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+																		<Value>0.0006476</Value>
+																	</Prop>
+																	<Prop Name='ModuleTime' Type='Number' Flags='0x0'>
+																		<Value>0.0005407</Value>
+																	</Prop>
+																	<Prop Name='Index' Type='Number' Flags='0x0'>
+																		<Value>10</Value>
+																	</Prop>
+																	<Prop Name='StepName' Type='String' Flags='0x0'>
+																		<Value>Numato Switch ON</Value>
+																	</Prop>
+																	<Prop Name='StepGroup' Type='String' Flags='0x0'>
+																		<Value>Setup</Value>
+																	</Prop>
+																	<Prop Name='StepId' Type='String' Flags='0x0'>
+																		<Value>ID#:6g9X0Y5P8RGwLkypVBlBxD</Value>
+																	</Prop>
+																	<Prop Name='Id' Type='Number' Flags='0x0'>
+																		<Value>152016</Value>
+																	</Prop>
+																	<Prop Name='StepType' Type='String' Flags='0x0'>
+																		<Value>Action</Value>
+																	</Prop>
+																	<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+																		<Value>1</Value>
+																	</Prop>
+																</Prop>
+															</Prop>
+														</Value>
+														<Value ID='[3]'>
+															<Prop Type='TEResult' Flags='0x0'>
+																<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+																	<Prop Name='Code' Type='Number' Flags='0x400000'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='Msg' Type='String' Flags='0x400000'>
+																		<Value></Value>
+																	</Prop>
+																	<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+																		<Value>False</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Status' Type='String' Flags='0x400000'>
+																	<Value>Done</Value>
+																</Prop>
+																<Prop Name='ReportText' Type='String' Flags='0x400000'>
+																	<Value></Value>
+																</Prop>
+																<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+																</Prop>
+																<Prop Name='TS' Type='Obj' Flags='0x0'>
+																	<Prop Name='StartTime' Type='Number' Flags='0x0'>
+																		<Value>11982.9897718</Value>
+																	</Prop>
+																	<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+																		<Value>0.0003484</Value>
+																	</Prop>
+																	<Prop Name='ModuleTime' Type='Number' Flags='0x0'>
+																		<Value>0.0003064</Value>
+																	</Prop>
+																	<Prop Name='Index' Type='Number' Flags='0x0'>
+																		<Value>10</Value>
+																	</Prop>
+																	<Prop Name='StepName' Type='String' Flags='0x0'>
+																		<Value>Numato Switch ON</Value>
+																	</Prop>
+																	<Prop Name='StepGroup' Type='String' Flags='0x0'>
+																		<Value>Setup</Value>
+																	</Prop>
+																	<Prop Name='StepId' Type='String' Flags='0x0'>
+																		<Value>ID#:6g9X0Y5P8RGwLkypVBlBxD</Value>
+																	</Prop>
+																	<Prop Name='Id' Type='Number' Flags='0x0'>
+																		<Value>152017</Value>
+																	</Prop>
+																	<Prop Name='StepType' Type='String' Flags='0x0'>
+																		<Value>Action</Value>
+																	</Prop>
+																	<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+																		<Value>1</Value>
+																	</Prop>
+																</Prop>
+															</Prop>
+														</Value>
+														<Value ID='[4]'>
+															<Prop Type='TEResult' Flags='0x0'>
+																<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x0'>
+																	<Prop Name='Code' Type='Number' Flags='0x400000'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='Msg' Type='String' Flags='0x400000'>
+																		<Value></Value>
+																	</Prop>
+																	<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+																		<Value>False</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Status' Type='String' Flags='0x0'>
+																	<Value>Done</Value>
+																</Prop>
+																<Prop Name='ReportText' Type='String' Flags='0x0'>
+																	<Value></Value>
+																</Prop>
+																<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+																</Prop>
+																<Prop Name='TS' Type='Obj' Flags='0x0'>
+																	<Prop Name='StartTime' Type='Number' Flags='0x0'>
+																		<Value>11982.9903277</Value>
+																	</Prop>
+																	<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+																		<Value>0.3003718</Value>
+																	</Prop>
+																	<Prop Name='Index' Type='Number' Flags='0x0'>
+																		<Value>12</Value>
+																	</Prop>
+																	<Prop Name='StepName' Type='String' Flags='0x0'>
+																		<Value>Wait</Value>
+																	</Prop>
+																	<Prop Name='StepGroup' Type='String' Flags='0x0'>
+																		<Value>Setup</Value>
+																	</Prop>
+																	<Prop Name='StepId' Type='String' Flags='0x0'>
+																		<Value>ID#:7A9X0Y5P8RGwLkypVBlBxD</Value>
+																	</Prop>
+																	<Prop Name='Id' Type='Number' Flags='0x0'>
+																		<Value>152018</Value>
+																	</Prop>
+																	<Prop Name='StepType' Type='String' Flags='0x0'>
+																		<Value>NI_Wait</Value>
+																	</Prop>
+																	<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																</Prop>
+															</Prop>
+														</Value>
+														<Value ID='[5]'>
+															<Prop Type='TEResult' Flags='0x0'>
+																<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+																	<Prop Name='Code' Type='Number' Flags='0x400000'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='Msg' Type='String' Flags='0x400000'>
+																		<Value></Value>
+																	</Prop>
+																	<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+																		<Value>False</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Status' Type='String' Flags='0x400000'>
+																	<Value>Done</Value>
+																</Prop>
+																<Prop Name='ReportText' Type='String' Flags='0x400000'>
+																	<Value><![CDATA[{0} Locals.Counter = 0; Locals.Counter < 4; Locals.Counter += 1]]></Value>
+																</Prop>
+																<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+																</Prop>
+																<Prop Name='TS' Type='Obj' Flags='0x0'>
+																	<Prop Name='StartTime' Type='Number' Flags='0x0'>
+																		<Value>11983.2910247</Value>
+																	</Prop>
+																	<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+																		<Value>0.0001995</Value>
+																	</Prop>
+																	<Prop Name='Index' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='StepName' Type='String' Flags='0x0'>
+																		<Value>For</Value>
+																	</Prop>
+																	<Prop Name='StepGroup' Type='String' Flags='0x0'>
+																		<Value>Main</Value>
+																	</Prop>
+																	<Prop Name='StepId' Type='String' Flags='0x0'>
+																		<Value>ID#:UYjHm1u28RGOJaQctBT8oA</Value>
+																	</Prop>
+																	<Prop Name='Id' Type='Number' Flags='0x0'>
+																		<Value>152019</Value>
+																	</Prop>
+																	<Prop Name='StepType' Type='String' Flags='0x0'>
+																		<Value>NI_Flow_For</Value>
+																	</Prop>
+																	<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																</Prop>
+															</Prop>
+														</Value>
+														<Value ID='[6]'>
+															<Prop Type='TEResult' Flags='0x0'>
+																<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+																	<Prop Name='Code' Type='Number' Flags='0x400000'>
+																		<Value>1073676293</Value>
+																	</Prop>
+																	<Prop Name='Msg' Type='String' Flags='0x400000'>
+																		<Value><![CDATA[VISA Read in Aim TTi 1908P DMM.lvlib:Read measurement.vi:1260003->Aim TTi 1908P DMM.lvlib:Read measurement.vi.ProxyCaller]]></Value>
+																	</Prop>
+																	<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+																		<Value>False</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Status' Type='String' Flags='0x400000'>
+																	<Value>Passed</Value>
+																</Prop>
+																<Prop Name='Numeric' Type='Number' Flags='0x2400'>
+																	<Value>2.507</Value>
+																</Prop>
+																<Prop Name='ReportText' Type='String' Flags='0x400000'>
+																	<Value></Value>
+																</Prop>
+																<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+																</Prop>
+																<Prop Name='Units' Type='String' Flags='0x2000'>
+																	<Value>variable</Value>
+																</Prop>
+																<Prop Name='RawLimits' Type='Obj' Flags='0x3000'>
+																	<Prop Name='Low' Type='Number' Flags='0x0'>
+																		<Value>2.4</Value>
+																	</Prop>
+																	<Prop Name='High' Type='Number' Flags='0x0'>
+																		<Value>2.6</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='TS' Type='Obj' Flags='0x0'>
+																	<Prop Name='StartTime' Type='Number' Flags='0x0'>
+																		<Value>11983.2913297</Value>
+																	</Prop>
+																	<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+																		<Value>0.1220034</Value>
+																	</Prop>
+																	<Prop Name='ModuleTime' Type='Number' Flags='0x0'>
+																		<Value>0.1217258</Value>
+																	</Prop>
+																	<Prop Name='Index' Type='Number' Flags='0x0'>
+																		<Value>1</Value>
+																	</Prop>
+																	<Prop Name='StepName' Type='String' Flags='0x0'>
+																		<Value>Read Measurement</Value>
+																	</Prop>
+																	<Prop Name='StepGroup' Type='String' Flags='0x0'>
+																		<Value>Main</Value>
+																	</Prop>
+																	<Prop Name='StepId' Type='String' Flags='0x0'>
+																		<Value>ID#:7Q9X0Y5P8RGwLkypVBlBxD</Value>
+																	</Prop>
+																	<Prop Name='Id' Type='Number' Flags='0x0'>
+																		<Value>152020</Value>
+																	</Prop>
+																	<Prop Name='StepType' Type='String' Flags='0x0'>
+																		<Value>NumericLimitTest</Value>
+																	</Prop>
+																	<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+																		<Value>1</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Limits' Type='Obj' Flags='0x3000'>
+																	<Prop Name='Low' Type='Number' Flags='0x0'>
+																		<Value>2.4</Value>
+																	</Prop>
+																	<Prop Name='High' Type='Number' Flags='0x0'>
+																		<Value>2.6</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Comp' Type='String' Flags='0x3000'>
+																	<Value>GELE</Value>
+																</Prop>
+															</Prop>
+														</Value>
+														<Value ID='[7]'>
+															<Prop Type='TEResult' Flags='0x0'>
+																<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+																	<Prop Name='Code' Type='Number' Flags='0x400000'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='Msg' Type='String' Flags='0x400000'>
+																		<Value></Value>
+																	</Prop>
+																	<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+																		<Value>False</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Status' Type='String' Flags='0x400000'>
+																	<Value>Done</Value>
+																</Prop>
+																<Prop Name='ReportText' Type='String' Flags='0x400000'>
+																	<Value></Value>
+																</Prop>
+																<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+																</Prop>
+																<Prop Name='TS' Type='Obj' Flags='0x0'>
+																	<Prop Name='StartTime' Type='Number' Flags='0x0'>
+																		<Value>11983.413517</Value>
+																	</Prop>
+																	<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+																		<Value>3.08e-05</Value>
+																	</Prop>
+																	<Prop Name='Index' Type='Number' Flags='0x0'>
+																		<Value>2</Value>
+																	</Prop>
+																	<Prop Name='StepName' Type='String' Flags='0x0'>
+																		<Value>Break</Value>
+																	</Prop>
+																	<Prop Name='StepGroup' Type='String' Flags='0x0'>
+																		<Value>Main</Value>
+																	</Prop>
+																	<Prop Name='StepId' Type='String' Flags='0x0'>
+																		<Value>ID#:UojHm1u28RGOJaQctBT8oA</Value>
+																	</Prop>
+																	<Prop Name='Id' Type='Number' Flags='0x0'>
+																		<Value>152021</Value>
+																	</Prop>
+																	<Prop Name='StepType' Type='String' Flags='0x0'>
+																		<Value>NI_Flow_Break</Value>
+																	</Prop>
+																	<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+																		<Value>1</Value>
+																	</Prop>
+																</Prop>
+															</Prop>
+														</Value>
+														<Value ID='[8]'>
+															<Prop Type='TEResult' Flags='0x0'>
+																<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+																	<Prop Name='Code' Type='Number' Flags='0x400000'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='Msg' Type='String' Flags='0x400000'>
+																		<Value></Value>
+																	</Prop>
+																	<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+																		<Value>False</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Status' Type='String' Flags='0x400000'>
+																	<Value>Done</Value>
+																</Prop>
+																<Prop Name='ReportText' Type='String' Flags='0x400000'>
+																	<Value>(For)</Value>
+																</Prop>
+																<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+																</Prop>
+																<Prop Name='TS' Type='Obj' Flags='0x0'>
+																	<Prop Name='StartTime' Type='Number' Flags='0x0'>
+																		<Value>11983.4136095</Value>
+																	</Prop>
+																	<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+																		<Value>9.8e-06</Value>
+																	</Prop>
+																	<Prop Name='Index' Type='Number' Flags='0x0'>
+																		<Value>4</Value>
+																	</Prop>
+																	<Prop Name='StepName' Type='String' Flags='0x0'>
+																		<Value>End</Value>
+																	</Prop>
+																	<Prop Name='StepGroup' Type='String' Flags='0x0'>
+																		<Value>Main</Value>
+																	</Prop>
+																	<Prop Name='StepId' Type='String' Flags='0x0'>
+																		<Value>ID#:U4jHm1u28RGOJaQctBT8oA</Value>
+																	</Prop>
+																	<Prop Name='Id' Type='Number' Flags='0x0'>
+																		<Value>152022</Value>
+																	</Prop>
+																	<Prop Name='StepType' Type='String' Flags='0x0'>
+																		<Value>NI_Flow_End</Value>
+																	</Prop>
+																	<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																</Prop>
+															</Prop>
+														</Value>
+														<Value ID='[9]'>
+															<Prop Type='TEResult' Flags='0x0'>
+																<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+																	<Prop Name='Code' Type='Number' Flags='0x400000'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='Msg' Type='String' Flags='0x400000'>
+																		<Value></Value>
+																	</Prop>
+																	<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+																		<Value>False</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Status' Type='String' Flags='0x400000'>
+																	<Value>Done</Value>
+																</Prop>
+																<Prop Name='ReportText' Type='String' Flags='0x400000'>
+																	<Value></Value>
+																</Prop>
+																<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+																</Prop>
+																<Prop Name='TS' Type='Obj' Flags='0x0'>
+																	<Prop Name='StartTime' Type='Number' Flags='0x0'>
+																		<Value>11983.4143054</Value>
+																	</Prop>
+																	<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+																		<Value>0.0011093</Value>
+																	</Prop>
+																	<Prop Name='ModuleTime' Type='Number' Flags='0x0'>
+																		<Value>0.0009244</Value>
+																	</Prop>
+																	<Prop Name='Index' Type='Number' Flags='0x0'>
+																		<Value>2</Value>
+																	</Prop>
+																	<Prop Name='StepName' Type='String' Flags='0x0'>
+																		<Value>Numato Switch OFF</Value>
+																	</Prop>
+																	<Prop Name='StepGroup' Type='String' Flags='0x0'>
+																		<Value>Cleanup</Value>
+																	</Prop>
+																	<Prop Name='StepId' Type='String' Flags='0x0'>
+																		<Value>ID#:8A9X0Y5P8RGwLkypVBlBxD</Value>
+																	</Prop>
+																	<Prop Name='Id' Type='Number' Flags='0x0'>
+																		<Value>152023</Value>
+																	</Prop>
+																	<Prop Name='StepType' Type='String' Flags='0x0'>
+																		<Value>Action</Value>
+																	</Prop>
+																	<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+																		<Value>1</Value>
+																	</Prop>
+																</Prop>
+															</Prop>
+														</Value>
+														<Value ID='[10]'>
+															<Prop Type='TEResult' Flags='0x0'>
+																<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+																	<Prop Name='Code' Type='Number' Flags='0x400000'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='Msg' Type='String' Flags='0x400000'>
+																		<Value></Value>
+																	</Prop>
+																	<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+																		<Value>False</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Status' Type='String' Flags='0x400000'>
+																	<Value>Done</Value>
+																</Prop>
+																<Prop Name='ReportText' Type='String' Flags='0x400000'>
+																	<Value></Value>
+																</Prop>
+																<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+																</Prop>
+																<Prop Name='TS' Type='Obj' Flags='0x0'>
+																	<Prop Name='StartTime' Type='Number' Flags='0x0'>
+																		<Value>11983.4159493</Value>
+																	</Prop>
+																	<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+																		<Value>0.0007366</Value>
+																	</Prop>
+																	<Prop Name='ModuleTime' Type='Number' Flags='0x0'>
+																		<Value>0.0005571</Value>
+																	</Prop>
+																	<Prop Name='Index' Type='Number' Flags='0x0'>
+																		<Value>2</Value>
+																	</Prop>
+																	<Prop Name='StepName' Type='String' Flags='0x0'>
+																		<Value>Numato Switch OFF</Value>
+																	</Prop>
+																	<Prop Name='StepGroup' Type='String' Flags='0x0'>
+																		<Value>Cleanup</Value>
+																	</Prop>
+																	<Prop Name='StepId' Type='String' Flags='0x0'>
+																		<Value>ID#:8A9X0Y5P8RGwLkypVBlBxD</Value>
+																	</Prop>
+																	<Prop Name='Id' Type='Number' Flags='0x0'>
+																		<Value>152024</Value>
+																	</Prop>
+																	<Prop Name='StepType' Type='String' Flags='0x0'>
+																		<Value>Action</Value>
+																	</Prop>
+																	<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+																		<Value>1</Value>
+																	</Prop>
+																</Prop>
+															</Prop>
+														</Value>
+														<Value ID='[11]'>
+															<Prop Type='TEResult' Flags='0x0'>
+																<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x0'>
+																	<Prop Name='Code' Type='Number' Flags='0x400000'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='Msg' Type='String' Flags='0x400000'>
+																		<Value></Value>
+																	</Prop>
+																	<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+																		<Value>False</Value>
+																	</Prop>
+																</Prop>
+																<Prop Name='Status' Type='String' Flags='0x0'>
+																	<Value>Done</Value>
+																</Prop>
+																<Prop Name='ReportText' Type='String' Flags='0x0'>
+																	<Value></Value>
+																</Prop>
+																<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+																</Prop>
+																<Prop Name='TS' Type='Obj' Flags='0x0'>
+																	<Prop Name='StartTime' Type='Number' Flags='0x0'>
+																		<Value>11983.4171578</Value>
+																	</Prop>
+																	<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+																		<Value>0.1008064</Value>
+																	</Prop>
+																	<Prop Name='Index' Type='Number' Flags='0x0'>
+																		<Value>4</Value>
+																	</Prop>
+																	<Prop Name='StepName' Type='String' Flags='0x0'>
+																		<Value>Wait</Value>
+																	</Prop>
+																	<Prop Name='StepGroup' Type='String' Flags='0x0'>
+																		<Value>Cleanup</Value>
+																	</Prop>
+																	<Prop Name='StepId' Type='String' Flags='0x0'>
+																		<Value>ID#:8g9X0Y5P8RGwLkypVBlBxD</Value>
+																	</Prop>
+																	<Prop Name='Id' Type='Number' Flags='0x0'>
+																		<Value>152025</Value>
+																	</Prop>
+																	<Prop Name='StepType' Type='String' Flags='0x0'>
+																		<Value>NI_Wait</Value>
+																	</Prop>
+																	<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																</Prop>
+															</Prop>
+														</Value>
+													</Prop>
+													<Prop Name='SequenceFile' Type='String' Flags='0x0'>
+														<Value>C:\UTP\source\ProductSequences\EOL_CHMB2_Dual.seq</Value>
+													</Prop>
+													<Prop Name='SequenceFileVersion' Type='String' Flags='0x0'>
+														<Value>0.0.0.0</Value>
+													</Prop>
+													<Prop Name='Sequence' Type='String' Flags='0x0'>
+														<Value>DMM Voltage Measurement</Value>
+													</Prop>
+													<Prop Name='Status' Type='String' Flags='0x0'>
+														<Value>Passed</Value>
+													</Prop>
+													<Prop Name='ThreadId' Type='Number' Flags='0x0'>
+														<Value>229</Value>
+													</Prop>
+												</Prop>
+												<Prop Name='StartTime' Type='Number' Flags='0x0'>
+													<Value>11982.9881762</Value>
+												</Prop>
+												<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+													<Value>0.5300689</Value>
+												</Prop>
+												<Prop Name='ModuleTime' Type='Number' Flags='0x0'>
+													<Value>0.5299508</Value>
+												</Prop>
+												<Prop Name='Index' Type='Number' Flags='0x0'>
+													<Value>7</Value>
+												</Prop>
+												<Prop Name='StepName' Type='String' Flags='0x0'>
+													<Value>2.30.1. Measure CAN L</Value>
+												</Prop>
+												<Prop Name='StepGroup' Type='String' Flags='0x0'>
+													<Value>Main</Value>
+												</Prop>
+												<Prop Name='StepId' Type='String' Flags='0x0'>
+													<Value>ID#:THZeaetN8RGwIEypVBlBxD</Value>
+												</Prop>
+												<Prop Name='Id' Type='Number' Flags='0x0'>
+													<Value>152013</Value>
+												</Prop>
+												<Prop Name='StepType' Type='String' Flags='0x0'>
+													<Value>NumericLimitTest</Value>
+												</Prop>
+												<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+													<Value>0</Value>
+												</Prop>
+											</Prop>
+											<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+												<Prop Name='Code' Type='Number' Flags='0x400000'>
+													<Value>0</Value>
+												</Prop>
+												<Prop Name='Msg' Type='String' Flags='0x400000'>
+													<Value></Value>
+												</Prop>
+												<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+													<Value>False</Value>
+												</Prop>
+											</Prop>
+											<Prop Name='Status' Type='String' Flags='0x400000'>
+												<Value>Passed</Value>
+											</Prop>
+											<Prop Name='Numeric' Type='Number' Flags='0x2400'>
+												<Value>2.507</Value>
+											</Prop>
+											<Prop Name='ReportText' Type='String' Flags='0x400000'>
+												<Value></Value>
+											</Prop>
+											<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+											</Prop>
+											<Prop Name='Units' Type='String' Flags='0x2000'>
+												<Value>V</Value>
+											</Prop>
+											<Prop Name='RawLimits' Type='Obj' Flags='0x3000'>
+												<Prop Name='Low' Type='Number' Flags='0x0'>
+													<Value>2.4</Value>
+												</Prop>
+												<Prop Name='High' Type='Number' Flags='0x0'>
+													<Value>2.6</Value>
+												</Prop>
+											</Prop>
+											<Prop Name='Limits' Type='Obj' Flags='0x3000'>
+												<Prop Name='Low' Type='Number' Flags='0x0'>
+													<Value>2.4</Value>
+												</Prop>
+												<Prop Name='High' Type='Number' Flags='0x0'>
+													<Value>2.6</Value>
+												</Prop>
+											</Prop>
+											<Prop Name='Comp' Type='String' Flags='0x3000'>
+												<Value>GELE</Value>
+											</Prop>
+										</Prop>
+									</Value>
+									<Value ID='[4]'>
+										<Prop Type='TEResult' Flags='0x0'>
+											<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+												<Prop Name='Code' Type='Number' Flags='0x400000'>
+													<Value>0</Value>
+												</Prop>
+												<Prop Name='Msg' Type='String' Flags='0x400000'>
+													<Value></Value>
+												</Prop>
+												<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+													<Value>False</Value>
+												</Prop>
+											</Prop>
+											<Prop Name='Status' Type='String' Flags='0x400000'>
+												<Value>Failed</Value>
+											</Prop>
+											<Prop Name='PassFail' Type='Boolean' Flags='0x0'>
+												<Value>False</Value>
+											</Prop>
+											<Prop Name='ReportText' Type='String' Flags='0x400000'>
+												<Value></Value>
+											</Prop>
+											<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+											</Prop>
+											<Prop Name='TS' Type='Obj' Flags='0x0'>
+												<Prop Name='StartTime' Type='Number' Flags='0x0'>
+													<Value>11984.8529753</Value>
+												</Prop>
+												<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+													<Value>2.6231591</Value>
+												</Prop>
+												<Prop Name='ModuleTime' Type='Number' Flags='0x0'>
+													<Value>1.4088988</Value>
+												</Prop>
+												<Prop Name='Index' Type='Number' Flags='0x0'>
+													<Value>9</Value>
+												</Prop>
+												<Prop Name='StepName' Type='String' Flags='0x0'>
+													<Value>2.27. Nexteer Connect</Value>
+												</Prop>
+												<Prop Name='StepGroup' Type='String' Flags='0x0'>
+													<Value>Main</Value>
+												</Prop>
+												<Prop Name='StepId' Type='String' Flags='0x0'>
+													<Value>ID#:n/kzF7t98BGJyMyCf5KpWB</Value>
+												</Prop>
+												<Prop Name='Id' Type='Number' Flags='0x0'>
+													<Value>152026</Value>
+												</Prop>
+												<Prop Name='StepType' Type='String' Flags='0x0'>
+													<Value>PassFailTest</Value>
+												</Prop>
+												<Prop Name='StepCausedSequenceFailure' Type='Boolean' Flags='0x0'>
+													<Value>True</Value>
+												</Prop>
+												<Prop Name='NumLoops' Type='Number' Flags='0x0'>
+													<Value>3</Value>
+												</Prop>
+												<Prop Name='EndingLoopIndex' Type='Number' Flags='0x0'>
+													<Value>3</Value>
+												</Prop>
+												<Prop Name='NumPassed' Type='Number' Flags='0x0'>
+													<Value>0</Value>
+												</Prop>
+												<Prop Name='NumFailed' Type='Number' Flags='0x0'>
+													<Value>3</Value>
+												</Prop>
+												<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+													<Value>0</Value>
+												</Prop>
+											</Prop>
+											<Prop Name='AdditionalResults' Type='Array' LBound='[0]' HBound='[0]' ElementType='Obj' Flags='0x0'>
+												<Value ID='[0]'>
+													<Prop Name='Parameters' Type='Array' LBound='[0]' HBound='[0]' ElementType='Obj' Flags='0x0'>
+														<Value ID='[0]'>
+															<Prop Name='Communication [Out]' Type='Array' LBound='[0]' HBound='[1]' ElementType='Obj' Flags='0x2000'>
+																<ArrayElementPrototype Type='Obj' TypeName='Message' Flags='0x0'>
+																	<Prop Name='ID' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='MSGTYPE' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='LEN' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='DATA_0_' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='DATA_1_' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='DATA_2_' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='DATA_3_' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='DATA_4_' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='DATA_5_' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='DATA_6_' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='DATA_7_' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																</ArrayElementPrototype>
+																<Value ID='[0]'>
+																	<Prop Type='Obj' TypeName='Message' Flags='0x0'>
+																		<Prop Name='ID' Type='Number' Flags='0x0'>
+																			<Value>1996</Value>
+																		</Prop>
+																		<Prop Name='MSGTYPE' Type='Number' Flags='0x0'>
+																			<Value>0</Value>
+																		</Prop>
+																		<Prop Name='LEN' Type='Number' Flags='0x0'>
+																			<Value>8</Value>
+																		</Prop>
+																		<Prop Name='DATA_0_' Type='Number' Flags='0x0'>
+																			<Value>2</Value>
+																		</Prop>
+																		<Prop Name='DATA_1_' Type='Number' Flags='0x0'>
+																			<Value>16</Value>
+																		</Prop>
+																		<Prop Name='DATA_2_' Type='Number' Flags='0x0'>
+																			<Value>126</Value>
+																		</Prop>
+																		<Prop Name='DATA_3_' Type='Number' Flags='0x0'>
+																			<Value>0</Value>
+																		</Prop>
+																		<Prop Name='DATA_4_' Type='Number' Flags='0x0'>
+																			<Value>0</Value>
+																		</Prop>
+																		<Prop Name='DATA_5_' Type='Number' Flags='0x0'>
+																			<Value>0</Value>
+																		</Prop>
+																		<Prop Name='DATA_6_' Type='Number' Flags='0x0'>
+																			<Value>0</Value>
+																		</Prop>
+																		<Prop Name='DATA_7_' Type='Number' Flags='0x0'>
+																			<Value>0</Value>
+																		</Prop>
+																	</Prop>
+																</Value>
+																<Value ID='[1]'>
+																	<Prop Type='Obj' TypeName='Message' Flags='0x0'>
+																		<Prop Name='ID' Type='Number' Flags='0x0'>
+																			<Value>0</Value>
+																		</Prop>
+																		<Prop Name='MSGTYPE' Type='Number' Flags='0x0'>
+																			<Value>0</Value>
+																		</Prop>
+																		<Prop Name='LEN' Type='Number' Flags='0x0'>
+																			<Value>0</Value>
+																		</Prop>
+																		<Prop Name='DATA_0_' Type='Number' Flags='0x0'>
+																			<Value>0</Value>
+																		</Prop>
+																		<Prop Name='DATA_1_' Type='Number' Flags='0x0'>
+																			<Value>0</Value>
+																		</Prop>
+																		<Prop Name='DATA_2_' Type='Number' Flags='0x0'>
+																			<Value>0</Value>
+																		</Prop>
+																		<Prop Name='DATA_3_' Type='Number' Flags='0x0'>
+																			<Value>0</Value>
+																		</Prop>
+																		<Prop Name='DATA_4_' Type='Number' Flags='0x0'>
+																			<Value>0</Value>
+																		</Prop>
+																		<Prop Name='DATA_5_' Type='Number' Flags='0x0'>
+																			<Value>0</Value>
+																		</Prop>
+																		<Prop Name='DATA_6_' Type='Number' Flags='0x0'>
+																			<Value>0</Value>
+																		</Prop>
+																		<Prop Name='DATA_7_' Type='Number' Flags='0x0'>
+																			<Value>0</Value>
+																		</Prop>
+																	</Prop>
+																</Value>
+															</Prop>
+														</Value>
+													</Prop>
+												</Value>
+											</Prop>
+										</Prop>
+									</Value>
+									<Value ID='[5]'>
+										<Prop Type='TEResult' Flags='0x0'>
+											<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+												<Prop Name='Code' Type='Number' Flags='0x400000'>
+													<Value>0</Value>
+												</Prop>
+												<Prop Name='Msg' Type='String' Flags='0x400000'>
+													<Value></Value>
+												</Prop>
+												<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+													<Value>False</Value>
+												</Prop>
+											</Prop>
+											<Prop Name='Status' Type='String' Flags='0x400000'>
+												<Value>Terminated</Value>
+											</Prop>
+											<Prop Name='PassFail' Type='Boolean' Flags='0x0'>
+												<Value>False</Value>
+											</Prop>
+											<Prop Name='ReportText' Type='String' Flags='0x400000'>
+												<Value></Value>
+											</Prop>
+											<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+											</Prop>
+											<Prop Name='TS' Type='Obj' Flags='0x0'>
+												<Prop Name='StartTime' Type='Number' Flags='0x0'>
+													<Value>12008.800321</Value>
+												</Prop>
+												<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+													<Value>54.5199703</Value>
+												</Prop>
+												<Prop Name='ModuleTime' Type='Number' Flags='0x0'>
+													<Value>6.0857789</Value>
+												</Prop>
+												<Prop Name='Index' Type='Number' Flags='0x0'>
+													<Value>9</Value>
+												</Prop>
+												<Prop Name='StepName' Type='String' Flags='0x0'>
+													<Value>2.27. Nexteer Connect</Value>
+												</Prop>
+												<Prop Name='StepGroup' Type='String' Flags='0x0'>
+													<Value>Main</Value>
+												</Prop>
+												<Prop Name='StepId' Type='String' Flags='0x0'>
+													<Value>ID#:n/kzF7t98BGJyMyCf5KpWB</Value>
+												</Prop>
+												<Prop Name='Id' Type='Number' Flags='0x0'>
+													<Value>152027</Value>
+												</Prop>
+												<Prop Name='StepType' Type='String' Flags='0x0'>
+													<Value>PassFailTest</Value>
+												</Prop>
+												<Prop Name='StepCausedSequenceFailure' Type='Boolean' Flags='0x0'>
+													<Value>False</Value>
+												</Prop>
+												<Prop Name='NumLoops' Type='Number' Flags='0x0'>
+													<Value>1</Value>
+												</Prop>
+												<Prop Name='EndingLoopIndex' Type='Number' Flags='0x0'>
+													<Value>1</Value>
+												</Prop>
+												<Prop Name='NumPassed' Type='Number' Flags='0x0'>
+													<Value>0</Value>
+												</Prop>
+												<Prop Name='NumFailed' Type='Number' Flags='0x0'>
+													<Value>1</Value>
+												</Prop>
+												<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+													<Value>0</Value>
+												</Prop>
+											</Prop>
+											<Prop Name='AdditionalResults' Type='Array' LBound='[0]' HBound='[0]' ElementType='Obj' Flags='0x0'>
+												<Value ID='[0]'>
+													<Prop Name='Parameters' Type='Array' LBound='[0]' HBound='[0]' ElementType='Obj' Flags='0x0'>
+														<Value ID='[0]'>
+															<Prop Name='Communication [Out]' Type='Array' LBound='[0]' HBound='[1]' ElementType='Obj' Flags='0x2000'>
+																<ArrayElementPrototype Type='Obj' TypeName='Message' Flags='0x0'>
+																	<Prop Name='ID' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='MSGTYPE' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='LEN' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='DATA_0_' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='DATA_1_' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='DATA_2_' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='DATA_3_' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='DATA_4_' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='DATA_5_' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='DATA_6_' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																	<Prop Name='DATA_7_' Type='Number' Flags='0x0'>
+																		<Value>0</Value>
+																	</Prop>
+																</ArrayElementPrototype>
+																<Value ID='[0]'>
+																	<Prop Type='Obj' TypeName='Message' Flags='0x0'>
+																		<Prop Name='ID' Type='Number' Flags='0x0'>
+																			<Value>1996</Value>
+																		</Prop>
+																		<Prop Name='MSGTYPE' Type='Number' Flags='0x0'>
+																			<Value>0</Value>
+																		</Prop>
+																		<Prop Name='LEN' Type='Number' Flags='0x0'>
+																			<Value>8</Value>
+																		</Prop>
+																		<Prop Name='DATA_0_' Type='Number' Flags='0x0'>
+																			<Value>2</Value>
+																		</Prop>
+																		<Prop Name='DATA_1_' Type='Number' Flags='0x0'>
+																			<Value>16</Value>
+																		</Prop>
+																		<Prop Name='DATA_2_' Type='Number' Flags='0x0'>
+																			<Value>126</Value>
+																		</Prop>
+																		<Prop Name='DATA_3_' Type='Number' Flags='0x0'>
+																			<Value>0</Value>
+																		</Prop>
+																		<Prop Name='DATA_4_' Type='Number' Flags='0x0'>
+																			<Value>0</Value>
+																		</Prop>
+																		<Prop Name='DATA_5_' Type='Number' Flags='0x0'>
+																			<Value>0</Value>
+																		</Prop>
+																		<Prop Name='DATA_6_' Type='Number' Flags='0x0'>
+																			<Value>0</Value>
+																		</Prop>
+																		<Prop Name='DATA_7_' Type='Number' Flags='0x0'>
+																			<Value>0</Value>
+																		</Prop>
+																	</Prop>
+																</Value>
+																<Value ID='[1]'>
+																	<Prop Type='Obj' TypeName='Message' Flags='0x0'>
+																		<Prop Name='ID' Type='Number' Flags='0x0'>
+																			<Value>0</Value>
+																		</Prop>
+																		<Prop Name='MSGTYPE' Type='Number' Flags='0x0'>
+																			<Value>0</Value>
+																		</Prop>
+																		<Prop Name='LEN' Type='Number' Flags='0x0'>
+																			<Value>0</Value>
+																		</Prop>
+																		<Prop Name='DATA_0_' Type='Number' Flags='0x0'>
+																			<Value>0</Value>
+																		</Prop>
+																		<Prop Name='DATA_1_' Type='Number' Flags='0x0'>
+																			<Value>0</Value>
+																		</Prop>
+																		<Prop Name='DATA_2_' Type='Number' Flags='0x0'>
+																			<Value>0</Value>
+																		</Prop>
+																		<Prop Name='DATA_3_' Type='Number' Flags='0x0'>
+																			<Value>0</Value>
+																		</Prop>
+																		<Prop Name='DATA_4_' Type='Number' Flags='0x0'>
+																			<Value>0</Value>
+																		</Prop>
+																		<Prop Name='DATA_5_' Type='Number' Flags='0x0'>
+																			<Value>0</Value>
+																		</Prop>
+																		<Prop Name='DATA_6_' Type='Number' Flags='0x0'>
+																			<Value>0</Value>
+																		</Prop>
+																		<Prop Name='DATA_7_' Type='Number' Flags='0x0'>
+																			<Value>0</Value>
+																		</Prop>
+																	</Prop>
+																</Value>
+															</Prop>
+														</Value>
+													</Prop>
+												</Value>
+											</Prop>
+										</Prop>
+									</Value>
+								</Prop>
+								<Prop Name='SequenceFile' Type='String' Flags='0x0'>
+									<Value>C:\UTP\source\ProductSequences\EOL_CHMB2_Dual.seq</Value>
+								</Prop>
+								<Prop Name='SequenceFileVersion' Type='String' Flags='0x0'>
+									<Value>0.0.0.0</Value>
+								</Prop>
+								<Prop Name='Sequence' Type='String' Flags='0x0'>
+									<Value>Section 2</Value>
+								</Prop>
+								<Prop Name='Status' Type='String' Flags='0x0'>
+									<Value>Failed</Value>
+								</Prop>
+								<Prop Name='ThreadId' Type='Number' Flags='0x0'>
+									<Value>229</Value>
+								</Prop>
+							</Prop>
+							<Prop Name='StartTime' Type='Number' Flags='0x0'>
+								<Value>11965.2830838</Value>
+							</Prop>
+							<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+								<Value>98.3441713</Value>
+							</Prop>
+							<Prop Name='ModuleTime' Type='Number' Flags='0x0'>
+								<Value>98.3440909</Value>
+							</Prop>
+							<Prop Name='Index' Type='Number' Flags='0x0'>
+								<Value>3</Value>
+							</Prop>
+							<Prop Name='StepName' Type='String' Flags='0x0'>
+								<Value>Section 2: System Voltages, Write Calibrations, Check Temperature and Torque Position Signals</Value>
+							</Prop>
+							<Prop Name='StepGroup' Type='String' Flags='0x0'>
+								<Value>Main</Value>
+							</Prop>
+							<Prop Name='StepId' Type='String' Flags='0x0'>
+								<Value>ID#:XFrdWrp98BGJyMyCf5KpWB</Value>
+							</Prop>
+							<Prop Name='Id' Type='Number' Flags='0x0'>
+								<Value>151983</Value>
+							</Prop>
+							<Prop Name='StepType' Type='String' Flags='0x0'>
+								<Value>SequenceCall</Value>
+							</Prop>
+							<Prop Name='StepCausedSequenceFailure' Type='Boolean' Flags='0x0'>
+								<Value>True</Value>
+							</Prop>
+							<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+								<Value>0</Value>
+							</Prop>
+						</Prop>
+						<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+							<Prop Name='Code' Type='Number' Flags='0x400000'>
+								<Value>0</Value>
+							</Prop>
+							<Prop Name='Msg' Type='String' Flags='0x400000'>
+								<Value></Value>
+							</Prop>
+							<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+								<Value>False</Value>
+							</Prop>
+						</Prop>
+						<Prop Name='Status' Type='String' Flags='0x400000'>
+							<Value>Terminated</Value>
+						</Prop>
+						<Prop Name='ReportText' Type='String' Flags='0x400000'>
+							<Value></Value>
+						</Prop>
+						<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+						</Prop>
+					</Prop>
+				</Value>
+				<Value ID='[2]'>
+					<Prop Type='TEResult' Flags='0x0'>
+						<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+							<Prop Name='Code' Type='Number' Flags='0x400000'>
+								<Value>0</Value>
+							</Prop>
+							<Prop Name='Msg' Type='String' Flags='0x400000'>
+								<Value></Value>
+							</Prop>
+							<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+								<Value>False</Value>
+							</Prop>
+						</Prop>
+						<Prop Name='Status' Type='String' Flags='0x400000'>
+							<Value>Skipped</Value>
+						</Prop>
+						<Prop Name='ReportText' Type='String' Flags='0x400000'>
+							<Value></Value>
+						</Prop>
+						<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+						</Prop>
+						<Prop Name='TS' Type='Obj' Flags='0x0'>
+							<Prop Name='StartTime' Type='Number' Flags='0x0'>
+								<Value>12063.6275181</Value>
+							</Prop>
+							<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+								<Value>1.59e-05</Value>
+							</Prop>
+							<Prop Name='Index' Type='Number' Flags='0x0'>
+								<Value>0</Value>
+							</Prop>
+							<Prop Name='StepName' Type='String' Flags='0x0'>
+								<Value>Failure Procedure</Value>
+							</Prop>
+							<Prop Name='StepGroup' Type='String' Flags='0x0'>
+								<Value>Cleanup</Value>
+							</Prop>
+							<Prop Name='StepId' Type='String' Flags='0x0'>
+								<Value>ID#:Rx+/8ZJ+8BGJycyCf5KpWB</Value>
+							</Prop>
+							<Prop Name='Id' Type='Number' Flags='0x0'>
+								<Value>152028</Value>
+							</Prop>
+							<Prop Name='StepType' Type='String' Flags='0x0'>
+								<Value>SequenceCall</Value>
+							</Prop>
+							<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+								<Value>0</Value>
+							</Prop>
+						</Prop>
+					</Prop>
+				</Value>
+				<Value ID='[3]'>
+					<Prop Type='TEResult' Flags='0x0'>
+						<Prop Name='TS' Type='Obj' Flags='0x0'>
+							<Prop Name='SequenceCall' Type='Obj' Flags='0x0'>
+								<Prop Name='ResultList' Type='Array' LBound='[0]' HBound='[1]' ElementType='Obj' Flags='0x0'>
+									<ArrayElementPrototype Type='TEResult' Flags='0x0'>
+									</ArrayElementPrototype>
+									<Value ID='[0]'>
+										<Prop Type='TEResult' Flags='0x0'>
+											<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+												<Prop Name='Code' Type='Number' Flags='0x400000'>
+													<Value>0</Value>
+												</Prop>
+												<Prop Name='Msg' Type='String' Flags='0x400000'>
+													<Value></Value>
+												</Prop>
+												<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+													<Value>False</Value>
+												</Prop>
+											</Prop>
+											<Prop Name='Status' Type='String' Flags='0x400000'>
+												<Value>Done</Value>
+											</Prop>
+											<Prop Name='ReportText' Type='String' Flags='0x400000'>
+												<Value></Value>
+											</Prop>
+											<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+											</Prop>
+											<Prop Name='TS' Type='Obj' Flags='0x0'>
+												<Prop Name='StartTime' Type='Number' Flags='0x0'>
+													<Value>12064.8705137</Value>
+												</Prop>
+												<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+													<Value>0.0001072</Value>
+												</Prop>
+												<Prop Name='Index' Type='Number' Flags='0x0'>
+													<Value>5</Value>
+												</Prop>
+												<Prop Name='StepName' Type='String' Flags='0x0'>
+													<Value>Set state for coil</Value>
+												</Prop>
+												<Prop Name='StepGroup' Type='String' Flags='0x0'>
+													<Value>Cleanup</Value>
+												</Prop>
+												<Prop Name='StepId' Type='String' Flags='0x0'>
+													<Value>ID#:JhPwRh2i8RGN+aQctBT8oA</Value>
+												</Prop>
+												<Prop Name='Id' Type='Number' Flags='0x0'>
+													<Value>152036</Value>
+												</Prop>
+												<Prop Name='StepType' Type='String' Flags='0x0'>
+													<Value>Statement</Value>
+												</Prop>
+												<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+													<Value>0</Value>
+												</Prop>
+											</Prop>
+										</Prop>
+									</Value>
+									<Value ID='[1]'>
+										<Prop Type='TEResult' Flags='0x0'>
+											<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+												<Prop Name='Code' Type='Number' Flags='0x400000'>
+													<Value>0</Value>
+												</Prop>
+												<Prop Name='Msg' Type='String' Flags='0x400000'>
+													<Value></Value>
+												</Prop>
+												<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+													<Value>False</Value>
+												</Prop>
+											</Prop>
+											<Prop Name='Status' Type='String' Flags='0x400000'>
+												<Value>Skipped</Value>
+											</Prop>
+											<Prop Name='Numeric' Type='Number' Flags='0x2400'>
+												<Value>0</Value>
+											</Prop>
+											<Prop Name='ReportText' Type='String' Flags='0x400000'>
+												<Value></Value>
+											</Prop>
+											<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+											</Prop>
+											<Prop Name='TS' Type='Obj' Flags='0x0'>
+												<Prop Name='StartTime' Type='Number' Flags='0x0'>
+													<Value>12067.6513814</Value>
+												</Prop>
+												<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+													<Value>1.16e-05</Value>
+												</Prop>
+												<Prop Name='Index' Type='Number' Flags='0x0'>
+													<Value>12</Value>
+												</Prop>
+												<Prop Name='StepName' Type='String' Flags='0x0'>
+													<Value>3.54 Measure DC Supply current </Value>
+												</Prop>
+												<Prop Name='StepGroup' Type='String' Flags='0x0'>
+													<Value>Cleanup</Value>
+												</Prop>
+												<Prop Name='StepId' Type='String' Flags='0x0'>
+													<Value>ID#:NBPwRh2i8RGN+aQctBT8oA</Value>
+												</Prop>
+												<Prop Name='Id' Type='Number' Flags='0x0'>
+													<Value>152044</Value>
+												</Prop>
+												<Prop Name='StepType' Type='String' Flags='0x0'>
+													<Value>NumericLimitTest</Value>
+												</Prop>
+												<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+													<Value>0</Value>
+												</Prop>
+											</Prop>
+											<Prop Name='Limits' Type='Obj' Flags='0x3000'>
+												<Prop Name='ThresholdType' Type='String' Flags='0x0'>
+													<Value>PERCENTAGE</Value>
+												</Prop>
+												<Prop Name='Nominal' Type='Number' Flags='0x0'>
+													<Value>100</Value>
+												</Prop>
+												<Prop Name='Low' Type='Number' Flags='0x0'>
+													<Value>0</Value>
+												</Prop>
+												<Prop Name='High' Type='Number' Flags='0x0'>
+													<Value>0.03</Value>
+												</Prop>
+											</Prop>
+											<Prop Name='Comp' Type='String' Flags='0x3000'>
+												<Value>GELE</Value>
+											</Prop>
+										</Prop>
+									</Value>
+								</Prop>
+								<Prop Name='SequenceFile' Type='String' Flags='0x0'>
+									<Value>C:\UTP\source\ProductSequences\EOL_CHMB2_Dual.seq</Value>
+								</Prop>
+								<Prop Name='SequenceFileVersion' Type='String' Flags='0x0'>
+									<Value>0.0.0.0</Value>
+								</Prop>
+								<Prop Name='Sequence' Type='String' Flags='0x0'>
+									<Value>Cleanup_Test</Value>
+								</Prop>
+								<Prop Name='Status' Type='String' Flags='0x0'>
+									<Value>Passed</Value>
+								</Prop>
+								<Prop Name='ThreadId' Type='Number' Flags='0x0'>
+									<Value>229</Value>
+								</Prop>
+							</Prop>
+							<Prop Name='StartTime' Type='Number' Flags='0x0'>
+								<Value>12063.627626</Value>
+							</Prop>
+							<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+								<Value>4.2810425</Value>
+							</Prop>
+							<Prop Name='ModuleTime' Type='Number' Flags='0x0'>
+								<Value>4.280989</Value>
+							</Prop>
+							<Prop Name='Index' Type='Number' Flags='0x0'>
+								<Value>1</Value>
+							</Prop>
+							<Prop Name='StepName' Type='String' Flags='0x0'>
+								<Value>Test Cleanup</Value>
+							</Prop>
+							<Prop Name='StepGroup' Type='String' Flags='0x0'>
+								<Value>Cleanup</Value>
+							</Prop>
+							<Prop Name='StepId' Type='String' Flags='0x0'>
+								<Value>ID#:hPtYKh6i8RGN+aQctBT8oA</Value>
+							</Prop>
+							<Prop Name='Id' Type='Number' Flags='0x0'>
+								<Value>152029</Value>
+							</Prop>
+							<Prop Name='StepType' Type='String' Flags='0x0'>
+								<Value>SequenceCall</Value>
+							</Prop>
+							<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+								<Value>0</Value>
+							</Prop>
+						</Prop>
+						<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+							<Prop Name='Code' Type='Number' Flags='0x400000'>
+								<Value>0</Value>
+							</Prop>
+							<Prop Name='Msg' Type='String' Flags='0x400000'>
+								<Value></Value>
+							</Prop>
+							<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+								<Value>False</Value>
+							</Prop>
+						</Prop>
+						<Prop Name='Status' Type='String' Flags='0x400000'>
+							<Value>Passed</Value>
+						</Prop>
+						<Prop Name='ReportText' Type='String' Flags='0x400000'>
+							<Value></Value>
+						</Prop>
+						<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+						</Prop>
+					</Prop>
+				</Value>
+			</Prop>
+			<Prop Name='SequenceFile' Type='String' Flags='0x0'>
+				<Value>C:\UTP\source\ProductSequences\EOL_CHMB2_Dual.seq</Value>
+			</Prop>
+			<Prop Name='SequenceFileVersion' Type='String' Flags='0x0'>
+				<Value>0.0.0.0</Value>
+			</Prop>
+			<Prop Name='Sequence' Type='String' Flags='0x0'>
+				<Value>MainSequence</Value>
+			</Prop>
+			<Prop Name='Status' Type='String' Flags='0x0'>
+				<Value>Failed</Value>
+			</Prop>
+			<Prop Name='ThreadId' Type='Number' Flags='0x0'>
+				<Value>229</Value>
+			</Prop>
+		</Prop>
+		<Prop Name='StartTime' Type='Number' Flags='0x0'>
+			<Value>11949.1954191</Value>
+		</Prop>
+		<Prop Name='TotalTime' Type='Number' Flags='0x0'>
+			<Value>119.4813969</Value>
+		</Prop>
+		<Prop Name='ModuleTime' Type='Number' Flags='0x0'>
+			<Value>119.4813506</Value>
+		</Prop>
+		<Prop Name='Index' Type='Number' Flags='0x0'>
+			<Value>4</Value>
+		</Prop>
+		<Prop Name='StepName' Type='String' Flags='0x0'>
+			<Value>MainSequence Callback</Value>
+		</Prop>
+		<Prop Name='StepGroup' Type='String' Flags='0x0'>
+			<Value>Cleanup</Value>
+		</Prop>
+		<Prop Name='StepId' Type='String' Flags='0x0'>
+			<Value>ID#:A5WCMslDwUm04+xJ0a/cNA</Value>
+		</Prop>
+		<Prop Name='Id' Type='Number' Flags='0x0'>
+			<Value>151972</Value>
+		</Prop>
+		<Prop Name='StepType' Type='String' Flags='0x0'>
+			<Value>SequenceCall</Value>
+		</Prop>
+		<Prop Name='StepCausedSequenceFailure' Type='Boolean' Flags='0x0'>
+			<Value>True</Value>
+		</Prop>
+		<Prop Name='BlockLevel' Type='Number' Flags='0x0'>
+			<Value>1</Value>
+		</Prop>
+	</Prop>
+	<Prop Name='Error' Type='Obj' TypeName='Error' Flags='0x400000'>
+		<Prop Name='Code' Type='Number' Flags='0x400000'>
+			<Value>0</Value>
+		</Prop>
+		<Prop Name='Msg' Type='String' Flags='0x400000'>
+			<Value></Value>
+		</Prop>
+		<Prop Name='Occurred' Type='Boolean' Flags='0x400000'>
+			<Value>False</Value>
+		</Prop>
+	</Prop>
+	<Prop Name='Status' Type='String' Flags='0x400000'>
+		<Value>Terminated</Value>
+	</Prop>
+	<Prop Name='ReportText' Type='String' Flags='0x400000'>
+		<Value></Value>
+	</Prop>
+	<Prop Name='Common' Type='Obj' TypeName='CommonResults' Flags='0x0'>
+	</Prop>
+</Prop>
+</Report>
+</Reports>

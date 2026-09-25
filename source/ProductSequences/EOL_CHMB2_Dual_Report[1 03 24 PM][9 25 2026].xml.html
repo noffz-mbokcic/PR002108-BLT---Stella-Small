@@ -1,0 +1,541 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Test Report</title><style type="text/css">
+					body{font-family:Verdana;color:#161617;font-size:100%;}
+					img{margin:0px;padding:0px;margin-right:5px;}
+					img.expandCollapseAll{width:26px; height:28px; border-style:none; cursor:pointer;}
+					img.expandCollapse{border-style:none; cursor:pointer}
+					table.uutTable{min-width: 30%; width: auto;font-size: 70%;}
+					table.uutTable td, th, tr{white-space:nowrap;padding:0.5em;vertical-align:text-top}
+					table.batchTable{width:80%;font-size: 70%;border-width:0.13em;border-style:solid;border-color:#D3D5D6;border-collapse:collapse;}
+					table.batchTable td, th, tr{border-width:1px;border-style:solid;border-color:#D3D5D6;white-space:normal;padding:0.5em;vertical-align:text-top;border-collapse:collapse;}
+					table.uutHrefTable{width:80%;font-size: 70%;border-width:0.13em;border-color:#D3D5D6;border-collapse:collapse;border-style:solid;}
+					table.uutHrefTable td, th, tr{border-width:0.13em;border-color:silver;border-collapse:collapse;border-style:solid;padding:0.5em;}
+					table.stepTable{width:auto;max-width:95%;font-size:70%;border-width:0.13em;border-color:#D3D5D6;border-collapse:collapse;border-style:solid}
+					table.stepTable td, th, tr{width:auto;border-width:0.13em;border-color:#D3D5D6;border-collapse:collapse;border-style:solid;padding:0.5em;}
+					hr.headerSeparator{text-align:left;height:0px;width:90%;margin-left:0px;border: none; border-bottom: 1px solid #D3D5D6}
+					hr.uutSeparator{text-align:left;height:0px;width:90%;margin-left:0px;color:#D3D5D6; border: none; border-bottom: 1px solid rgb(174, 176, 179)}
+					table.criticalFailureTable{width:50%;font-size: 70%;border-width:1px;border-style:solid;border-color:#D3D5D6;border-collapse:collapse;}
+					table.criticalFailureTable td, th{border-width:1px;border-style:solid;border-color:#D3D5D6;border-collapse:collapse;white-space:nowrap;padding:0.4em;vertical-align:text-top;}
+					table.criticalFailureTable td {text-align:left;}
+					table.criticalFailureTable th {text-align:center;}
+					span.stepText{font-size:94%;}
+					tr.hidden{display:none;}
+				</style>
+<link rel="stylesheet" href="C:\Program Files\National Instruments\TestStand 2023\Components\Models\TestStandModels\GraphControl/TSGraphStyle.css" />
+<script defer type="text/javascript" src="C:\Program Files\National Instruments\TestStand 2023\Components\Models\TestStandModels\GraphControl/GraphDataLayout.js"></script>
+<script defer type="text/javascript" src="C:\Program Files\National Instruments\TestStand 2023\Components\Models\TestStandModels\GraphControl/node_modules/jquery/dist/jquery.min.js" ></script>
+<script defer type="text/javascript" src="C:\Program Files\National Instruments\TestStand 2023\Components\Models\TestStandModels\GraphControl/node_modules/engineering-flot/lib/jquery.event.drag.js" ></script>
+<script defer type="text/javascript" src="C:\Program Files\National Instruments\TestStand 2023\Components\Models\TestStandModels\GraphControl/node_modules/engineering-flot/lib/jquery.mousewheel.js" ></script>
+<script defer type="text/javascript" src="C:\Program Files\National Instruments\TestStand 2023\Components\Models\TestStandModels\GraphControl/node_modules/engineering-flot/dist/es5/jquery.flot.js" ></script>
+<script defer type="text/javascript" src="C:\Program Files\National Instruments\TestStand 2023\Components\Models\TestStandModels\GraphControl/node_modules/flot-cursors-plugin/dist/es5/jquery.flot.cursors.js" ></script>
+<script defer type="text/javascript" src="C:\Program Files\National Instruments\TestStand 2023\Components\Models\TestStandModels\GraphControl/node_modules/ni-data-types/dist/es5-minified/ni-data-types.min.js" ></script>
+<script defer type="text/javascript" src="C:\Program Files\National Instruments\TestStand 2023\Components\Models\TestStandModels\GraphControl/node_modules/flot-charting-plugin/dist/es5/jquery.flot.charting.js" ></script>
+<script defer type="text/javascript" src="C:\Program Files\National Instruments\TestStand 2023\Components\Models\TestStandModels\GraphControl/node_modules/flot-intensitygraph-plugin/jquery.flot.intensitygraph.js" ></script>
+<script defer type="text/javascript" src="C:\Program Files\National Instruments\TestStand 2023\Components\Models\TestStandModels\GraphControl/node_modules/three/build/three.min.js" ></script>
+<script defer type="text/javascript" src="C:\Program Files\National Instruments\TestStand 2023\Components\Models\TestStandModels\GraphControl/node_modules/flot-glplotter-plugin/jquery.flot.glplotter.js" ></script>
+<script defer type="text/javascript" src="C:\Program Files\National Instruments\TestStand 2023\Components\Models\TestStandModels\GraphControl/node_modules/webcomponents-lite/webcomponents-lite.js" ></script>
+<script defer type="text/javascript" src="C:\Program Files\National Instruments\TestStand 2023\Components\Models\TestStandModels\GraphControl/node_modules/@jqwidgets/jqx-element/source-minified/jqxelement-polyfills.js" ></script>
+<script defer type="text/javascript" src="C:\Program Files\National Instruments\TestStand 2023\Components\Models\TestStandModels\GraphControl/node_modules/@jqwidgets/jqx-element/source-minified/jqxelement.js" ></script>
+<script defer type="text/javascript" src="C:\Program Files\National Instruments\TestStand 2023\Components\Models\TestStandModels\GraphControl/node_modules/ni-webcharts/dist/es5-minified/element.min.js" ></script>
+<script defer type="text/javascript" src="C:\Program Files\National Instruments\TestStand 2023\Components\Models\TestStandModels\GraphControl/node_modules/ni-webcharts/dist/es5-minified/webcharts.min.js" ></script>
+<script defer type="text/javascript" src="C:\Program Files\National Instruments\TestStand 2023\Components\Models\TestStandModels\GraphControl/node_modules/ni-webcharts-legends/dist/es5-minified/webcharts-legends.min.js" ></script>
+<script defer type="text/javascript" src="C:\Program Files\National Instruments\TestStand 2023\Components\Models\TestStandModels\GraphControl/node_modules/ni-webcharts/dist/es5-minified/element_registration.min.js" ></script>
+</head><body><a name="2-2026-9-25-13-3-52-95"></a><h2 style="font-weight:normal;">
+            UUT REPORT
+        </h2><table class="uutTable"><tr valign="top"><td style="font-weight:normal;">STATION ID</td><td style="font-weight:normal;">STELLA-SMALL</td></tr><tr valign="top"><td style="white-space:nowrap">
+					TEST SOCKET INDEX
+				</td><td style="white-space:nowrap">2</td></tr><tr valign="top"><td style="font-weight:normal;">SERIAL NUMBER</td><td>38334946-008-61910046</td></tr><tr valign="top"><td style="font-weight:normal;">DATE</td><td>Friday, September 25, 2026</td></tr><tr valign="top"><td style="font-weight:normal;">TIME</td><td>1:03:52 PM</td></tr><tr valign="top"><td style="font-weight:normal;">OPERATOR</td><td>Administrator</td></tr><tr valign="top"><td style="font-weight:normal;">EXECUTION TIME</td><td style="white-space:nowrap">119.4813969
+                            seconds
+                        </td></tr><tr valign="top"><td style="font-weight:normal;">NUMBER OF RESULTS</td><td style="white-space:nowrap">58</td></tr><tr valign="top"><td style="font-weight:normal;">UUT RESULT</td><td style="font-weight:normal;color:#000080">Terminated</td></tr><tr valign="top"><td style="white-space:nowrap">
+					PART NUMBER
+				</td><td style="white-space:nowrap">Dual-HI_LHD</td></tr></table><br><hr class="headerSeparator"><br><br><h4 style="margin-left:20px;"><span style="font-size:70%;font-weight:normal;">
+						Begin Sequence: MainSequence<br>C:\UTP\source\ProductSequences\EOL_CHMB2_Dual.seq</span></h4>
+<table class='stepTable' style='margin-left:20px;' border='1' cellpadding='2' cellspacing='0' width='70%'><tr><td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STEP</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STATUS</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>MEASUREMENT</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>UNITS</td>
+<td colspan='4' style='text-align:center;white-space:nowrap'>LIMITS</td>
+</tr>
+<tr><td style='text-align:center;white-space:nowrap'>NOMINAL VALUE</td>
+<td style='text-align:center;white-space:nowrap'>LOW LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>HIGH LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>COMPARISON TYPE</td>
+</tr>
+
+<tr><td>Section 1: Power Up and System Setup </td><td valign="middle" align="center" style="color:#008000">Passed</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table><br><br><h4 style="margin-left:40px;"><span style="font-size:70%;font-weight:normal;">
+						Begin Sequence: Section 1<br>C:\UTP\source\ProductSequences\EOL_CHMB2_Dual.seq</span></h4>
+<table class='stepTable' style='margin-left:40px;' border='1' cellpadding='2' cellspacing='0' width='70%'><tr><td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STEP</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STATUS</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>MEASUREMENT</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>UNITS</td>
+<td colspan='4' style='text-align:center;white-space:nowrap'>LIMITS</td>
+</tr>
+<tr><td style='text-align:center;white-space:nowrap'>NOMINAL VALUE</td>
+<td style='text-align:center;white-space:nowrap'>LOW LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>HIGH LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>COMPARISON TYPE</td>
+</tr>
+
+<tr><td>1.09 Discharge Capacitance </td><td valign="middle" align="center" style="color:#B98028">Skipped</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>1.10 Place controller in fixture </td><td valign="middle" align="center" style="color:#008000">Passed</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>1.12 Close fixture </td><td valign="middle" align="center" style="color:#008000">Passed</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>1.14 Perform function tester initialization and checks </td><td valign="middle" align="center" style="color:#008000">Passed</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>1.16 Autoscan Barcode </td><td valign="middle" align="center" style="color:#008000">Passed</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td valign="middle" style="white-space:nowrap">&nbsp;&nbsp;SerialNumber</td><td valign="middle" style="white-space:wrap" colspan="7"><a></a></td></tr>
+<tr><td>1.18 Set DC Supply to Level 3 </td><td valign="middle" align="center" style="color:#B98028">Skipped</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>1.20 Set Torque inputs to Level 1 </td><td valign="middle" align="center" style="color:#008000">Passed</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>1.22 Motor Sense Magnet speed = 0 RPM </td><td valign="middle" align="center" style="color:#008000">Passed</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table><br><h4 style="margin-left:40px;"><span style="font-size:70%;font-weight:normal;">
+						End Sequence: Section 1</span></h4><br>
+<table class='stepTable' style='margin-left:20px;' border='1' cellpadding='2' cellspacing='0' width='70%'><tr><td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STEP</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STATUS</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>MEASUREMENT</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>UNITS</td>
+<td colspan='4' style='text-align:center;white-space:nowrap'>LIMITS</td>
+</tr>
+<tr><td style='text-align:center;white-space:nowrap'>NOMINAL VALUE</td>
+<td style='text-align:center;white-space:nowrap'>LOW LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>HIGH LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>COMPARISON TYPE</td>
+</tr>
+
+<tr><td><a name="ResultId151983">Section 2: System Voltages, Write Calibrations, Check Temperature and Torque Position Signals </a></td><td valign="middle" align="center" style="color:#000080">Terminated</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table><br><br><h4 style="margin-left:40px;"><span style="font-size:70%;font-weight:normal;">
+						Begin Sequence: Section 2<br>C:\UTP\source\ProductSequences\EOL_CHMB2_Dual.seq</span></h4>
+<table class='stepTable' style='margin-left:40px;' border='1' cellpadding='2' cellspacing='0' width='70%'><tr><td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STEP</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STATUS</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>MEASUREMENT</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>UNITS</td>
+<td colspan='4' style='text-align:center;white-space:nowrap'>LIMITS</td>
+</tr>
+<tr><td style='text-align:center;white-space:nowrap'>NOMINAL VALUE</td>
+<td style='text-align:center;white-space:nowrap'>LOW LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>HIGH LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>COMPARISON TYPE</td>
+</tr>
+
+<tr><td>1.18 Set DC Supply to Level 3 </td><td valign="middle" align="center" style="color:#008000">Passed</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>2.22.0 Measure funtion test stand voltage DC Supply + </td><td valign="middle" align="center" style="color:#008000">Passed</td><td style="text-align:right;"><span style="white-space:nowrap">18</span></td><td align="left">V</td><td style="text-align:right;">&nbsp;</td><td style="text-align:right;"><span style="white-space:nowrap">17.7</span></td><td style="text-align:right;"><span style="white-space:nowrap">18.3</span></td><td align="center">GELE(>= <=)</td></tr></table><br><br><h4 style="margin-left:60px;"><span style="font-size:70%;font-weight:normal;">
+						Begin Sequence: DMM Voltage Measurement<br>C:\UTP\source\ProductSequences\EOL_CHMB2_Dual.seq</span></h4>
+<table class='stepTable' style='margin-left:60px;' border='1' cellpadding='2' cellspacing='0' width='70%'><tr><td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STEP</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STATUS</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>MEASUREMENT</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>UNITS</td>
+<td colspan='4' style='text-align:center;white-space:nowrap'>LIMITS</td>
+</tr>
+<tr><td style='text-align:center;white-space:nowrap'>NOMINAL VALUE</td>
+<td style='text-align:center;white-space:nowrap'>LOW LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>HIGH LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>COMPARISON TYPE</td>
+</tr>
+
+<tr><td>If {True}</td><td valign="middle" align="center" style="color:#008000">Done</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table><br>
+<table class='stepTable' style='margin-left:80px;' border='1' cellpadding='2' cellspacing='0' width='70%'><tr><td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STEP</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STATUS</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>MEASUREMENT</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>UNITS</td>
+<td colspan='4' style='text-align:center;white-space:nowrap'>LIMITS</td>
+</tr>
+<tr><td style='text-align:center;white-space:nowrap'>NOMINAL VALUE</td>
+<td style='text-align:center;white-space:nowrap'>LOW LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>HIGH LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>COMPARISON TYPE</td>
+</tr>
+
+<tr><td>Save DMM Configuration </td><td valign="middle" align="center" style="color:#008000">Done</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table><br>
+<table class='stepTable' style='margin-left:60px;' border='1' cellpadding='2' cellspacing='0' width='70%'><tr><td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STEP</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STATUS</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>MEASUREMENT</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>UNITS</td>
+<td colspan='4' style='text-align:center;white-space:nowrap'>LIMITS</td>
+</tr>
+<tr><td style='text-align:center;white-space:nowrap'>NOMINAL VALUE</td>
+<td style='text-align:center;white-space:nowrap'>LOW LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>HIGH LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>COMPARISON TYPE</td>
+</tr>
+
+<tr><td>Get number of relays </td><td valign="middle" align="center" style="color:#008000">Done</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table><br>
+<table class='stepTable' style='margin-left:80px;' border='1' cellpadding='2' cellspacing='0' width='70%'><tr><td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STEP</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STATUS</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>MEASUREMENT</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>UNITS</td>
+<td colspan='4' style='text-align:center;white-space:nowrap'>LIMITS</td>
+</tr>
+<tr><td style='text-align:center;white-space:nowrap'>NOMINAL VALUE</td>
+<td style='text-align:center;white-space:nowrap'>LOW LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>HIGH LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>COMPARISON TYPE</td>
+</tr>
+
+<tr><td>Numato Switch ON </td><td valign="middle" align="center" style="color:#008000">Done</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Numato Switch ON </td><td valign="middle" align="center" style="color:#008000">Done</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table><br>
+<table class='stepTable' style='margin-left:60px;' border='1' cellpadding='2' cellspacing='0' width='70%'><tr><td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STEP</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STATUS</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>MEASUREMENT</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>UNITS</td>
+<td colspan='4' style='text-align:center;white-space:nowrap'>LIMITS</td>
+</tr>
+<tr><td style='text-align:center;white-space:nowrap'>NOMINAL VALUE</td>
+<td style='text-align:center;white-space:nowrap'>LOW LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>HIGH LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>COMPARISON TYPE</td>
+</tr>
+
+<tr><td>Wait </td><td valign="middle" align="center" style="color:#008000">Done</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>For {0} Locals.Counter = 0; Locals.Counter &lt; 4; Locals.Counter += 1</td><td valign="middle" align="center" style="color:#008000">Done</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table><br>
+<table class='stepTable' style='margin-left:80px;' border='1' cellpadding='2' cellspacing='0' width='70%'><tr><td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STEP</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STATUS</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>MEASUREMENT</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>UNITS</td>
+<td colspan='4' style='text-align:center;white-space:nowrap'>LIMITS</td>
+</tr>
+<tr><td style='text-align:center;white-space:nowrap'>NOMINAL VALUE</td>
+<td style='text-align:center;white-space:nowrap'>LOW LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>HIGH LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>COMPARISON TYPE</td>
+</tr>
+
+<tr><td>Read Measurement </td><td valign="middle" align="center" style="color:#008000">Passed</td><td style="text-align:right;"><span style="white-space:nowrap">18</span></td><td align="left">variable</td><td style="text-align:right;">&nbsp;</td><td style="text-align:right;"><span style="white-space:nowrap">17.7</span></td><td style="text-align:right;"><span style="white-space:nowrap">18.3</span></td><td align="center">GELE(>= <=)</td></tr>
+<tr><td>Break </td><td valign="middle" align="center" style="color:#008000">Done</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table><br>
+<table class='stepTable' style='margin-left:60px;' border='1' cellpadding='2' cellspacing='0' width='70%'><tr><td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STEP</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STATUS</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>MEASUREMENT</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>UNITS</td>
+<td colspan='4' style='text-align:center;white-space:nowrap'>LIMITS</td>
+</tr>
+<tr><td style='text-align:center;white-space:nowrap'>NOMINAL VALUE</td>
+<td style='text-align:center;white-space:nowrap'>LOW LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>HIGH LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>COMPARISON TYPE</td>
+</tr>
+
+<tr><td>End For</td><td valign="middle" align="center" style="color:#008000">Done</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table><br>
+<table class='stepTable' style='margin-left:80px;' border='1' cellpadding='2' cellspacing='0' width='70%'><tr><td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STEP</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STATUS</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>MEASUREMENT</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>UNITS</td>
+<td colspan='4' style='text-align:center;white-space:nowrap'>LIMITS</td>
+</tr>
+<tr><td style='text-align:center;white-space:nowrap'>NOMINAL VALUE</td>
+<td style='text-align:center;white-space:nowrap'>LOW LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>HIGH LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>COMPARISON TYPE</td>
+</tr>
+
+<tr><td>Numato Switch OFF </td><td valign="middle" align="center" style="color:#008000">Done</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Numato Switch OFF </td><td valign="middle" align="center" style="color:#008000">Done</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table><br>
+<table class='stepTable' style='margin-left:60px;' border='1' cellpadding='2' cellspacing='0' width='70%'><tr><td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STEP</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STATUS</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>MEASUREMENT</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>UNITS</td>
+<td colspan='4' style='text-align:center;white-space:nowrap'>LIMITS</td>
+</tr>
+<tr><td style='text-align:center;white-space:nowrap'>NOMINAL VALUE</td>
+<td style='text-align:center;white-space:nowrap'>LOW LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>HIGH LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>COMPARISON TYPE</td>
+</tr>
+
+<tr><td>Wait </td><td valign="middle" align="center" style="color:#008000">Done</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table><br><h4 style="margin-left:60px;"><span style="font-size:70%;font-weight:normal;">
+						End Sequence: DMM Voltage Measurement</span></h4><br>
+<table class='stepTable' style='margin-left:40px;' border='1' cellpadding='2' cellspacing='0' width='70%'><tr><td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STEP</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STATUS</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>MEASUREMENT</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>UNITS</td>
+<td colspan='4' style='text-align:center;white-space:nowrap'>LIMITS</td>
+</tr>
+<tr><td style='text-align:center;white-space:nowrap'>NOMINAL VALUE</td>
+<td style='text-align:center;white-space:nowrap'>LOW LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>HIGH LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>COMPARISON TYPE</td>
+</tr>
+
+<tr><td>2.30.0. Measure CAN H </td><td valign="middle" align="center" style="color:#008000">Passed</td><td style="text-align:right;"><span style="white-space:nowrap">2.507</span></td><td align="left">V</td><td style="text-align:right;">&nbsp;</td><td style="text-align:right;"><span style="white-space:nowrap">2.4</span></td><td style="text-align:right;"><span style="white-space:nowrap">2.6</span></td><td align="center">GELE(>= <=)</td></tr></table><br><br><h4 style="margin-left:60px;"><span style="font-size:70%;font-weight:normal;">
+						Begin Sequence: DMM Voltage Measurement<br>C:\UTP\source\ProductSequences\EOL_CHMB2_Dual.seq</span></h4>
+<table class='stepTable' style='margin-left:60px;' border='1' cellpadding='2' cellspacing='0' width='70%'><tr><td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STEP</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STATUS</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>MEASUREMENT</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>UNITS</td>
+<td colspan='4' style='text-align:center;white-space:nowrap'>LIMITS</td>
+</tr>
+<tr><td style='text-align:center;white-space:nowrap'>NOMINAL VALUE</td>
+<td style='text-align:center;white-space:nowrap'>LOW LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>HIGH LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>COMPARISON TYPE</td>
+</tr>
+
+<tr><td>If {True}</td><td valign="middle" align="center" style="color:#008000">Done</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table><br>
+<table class='stepTable' style='margin-left:80px;' border='1' cellpadding='2' cellspacing='0' width='70%'><tr><td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STEP</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STATUS</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>MEASUREMENT</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>UNITS</td>
+<td colspan='4' style='text-align:center;white-space:nowrap'>LIMITS</td>
+</tr>
+<tr><td style='text-align:center;white-space:nowrap'>NOMINAL VALUE</td>
+<td style='text-align:center;white-space:nowrap'>LOW LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>HIGH LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>COMPARISON TYPE</td>
+</tr>
+
+<tr><td>Save DMM Configuration </td><td valign="middle" align="center" style="color:#008000">Done</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table><br>
+<table class='stepTable' style='margin-left:60px;' border='1' cellpadding='2' cellspacing='0' width='70%'><tr><td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STEP</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STATUS</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>MEASUREMENT</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>UNITS</td>
+<td colspan='4' style='text-align:center;white-space:nowrap'>LIMITS</td>
+</tr>
+<tr><td style='text-align:center;white-space:nowrap'>NOMINAL VALUE</td>
+<td style='text-align:center;white-space:nowrap'>LOW LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>HIGH LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>COMPARISON TYPE</td>
+</tr>
+
+<tr><td>Get number of relays </td><td valign="middle" align="center" style="color:#008000">Done</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table><br>
+<table class='stepTable' style='margin-left:80px;' border='1' cellpadding='2' cellspacing='0' width='70%'><tr><td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STEP</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STATUS</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>MEASUREMENT</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>UNITS</td>
+<td colspan='4' style='text-align:center;white-space:nowrap'>LIMITS</td>
+</tr>
+<tr><td style='text-align:center;white-space:nowrap'>NOMINAL VALUE</td>
+<td style='text-align:center;white-space:nowrap'>LOW LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>HIGH LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>COMPARISON TYPE</td>
+</tr>
+
+<tr><td>Numato Switch ON </td><td valign="middle" align="center" style="color:#008000">Done</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Numato Switch ON </td><td valign="middle" align="center" style="color:#008000">Done</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table><br>
+<table class='stepTable' style='margin-left:60px;' border='1' cellpadding='2' cellspacing='0' width='70%'><tr><td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STEP</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STATUS</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>MEASUREMENT</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>UNITS</td>
+<td colspan='4' style='text-align:center;white-space:nowrap'>LIMITS</td>
+</tr>
+<tr><td style='text-align:center;white-space:nowrap'>NOMINAL VALUE</td>
+<td style='text-align:center;white-space:nowrap'>LOW LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>HIGH LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>COMPARISON TYPE</td>
+</tr>
+
+<tr><td>Wait </td><td valign="middle" align="center" style="color:#008000">Done</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>For {0} Locals.Counter = 0; Locals.Counter &lt; 4; Locals.Counter += 1</td><td valign="middle" align="center" style="color:#008000">Done</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table><br>
+<table class='stepTable' style='margin-left:80px;' border='1' cellpadding='2' cellspacing='0' width='70%'><tr><td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STEP</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STATUS</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>MEASUREMENT</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>UNITS</td>
+<td colspan='4' style='text-align:center;white-space:nowrap'>LIMITS</td>
+</tr>
+<tr><td style='text-align:center;white-space:nowrap'>NOMINAL VALUE</td>
+<td style='text-align:center;white-space:nowrap'>LOW LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>HIGH LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>COMPARISON TYPE</td>
+</tr>
+
+<tr><td>Read Measurement </td><td valign="middle" align="center" style="color:#008000">Passed</td><td style="text-align:right;"><span style="white-space:nowrap">2.507</span></td><td align="left">variable</td><td style="text-align:right;">&nbsp;</td><td style="text-align:right;"><span style="white-space:nowrap">2.4</span></td><td style="text-align:right;"><span style="white-space:nowrap">2.6</span></td><td align="center">GELE(>= <=)</td></tr>
+<tr><td>Break </td><td valign="middle" align="center" style="color:#008000">Done</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table><br>
+<table class='stepTable' style='margin-left:60px;' border='1' cellpadding='2' cellspacing='0' width='70%'><tr><td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STEP</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STATUS</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>MEASUREMENT</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>UNITS</td>
+<td colspan='4' style='text-align:center;white-space:nowrap'>LIMITS</td>
+</tr>
+<tr><td style='text-align:center;white-space:nowrap'>NOMINAL VALUE</td>
+<td style='text-align:center;white-space:nowrap'>LOW LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>HIGH LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>COMPARISON TYPE</td>
+</tr>
+
+<tr><td>End For</td><td valign="middle" align="center" style="color:#008000">Done</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table><br>
+<table class='stepTable' style='margin-left:80px;' border='1' cellpadding='2' cellspacing='0' width='70%'><tr><td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STEP</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STATUS</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>MEASUREMENT</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>UNITS</td>
+<td colspan='4' style='text-align:center;white-space:nowrap'>LIMITS</td>
+</tr>
+<tr><td style='text-align:center;white-space:nowrap'>NOMINAL VALUE</td>
+<td style='text-align:center;white-space:nowrap'>LOW LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>HIGH LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>COMPARISON TYPE</td>
+</tr>
+
+<tr><td>Numato Switch OFF </td><td valign="middle" align="center" style="color:#008000">Done</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Numato Switch OFF </td><td valign="middle" align="center" style="color:#008000">Done</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table><br>
+<table class='stepTable' style='margin-left:60px;' border='1' cellpadding='2' cellspacing='0' width='70%'><tr><td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STEP</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STATUS</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>MEASUREMENT</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>UNITS</td>
+<td colspan='4' style='text-align:center;white-space:nowrap'>LIMITS</td>
+</tr>
+<tr><td style='text-align:center;white-space:nowrap'>NOMINAL VALUE</td>
+<td style='text-align:center;white-space:nowrap'>LOW LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>HIGH LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>COMPARISON TYPE</td>
+</tr>
+
+<tr><td>Wait </td><td valign="middle" align="center" style="color:#008000">Done</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table><br><h4 style="margin-left:60px;"><span style="font-size:70%;font-weight:normal;">
+						End Sequence: DMM Voltage Measurement</span></h4><br>
+<table class='stepTable' style='margin-left:40px;' border='1' cellpadding='2' cellspacing='0' width='70%'><tr><td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STEP</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STATUS</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>MEASUREMENT</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>UNITS</td>
+<td colspan='4' style='text-align:center;white-space:nowrap'>LIMITS</td>
+</tr>
+<tr><td style='text-align:center;white-space:nowrap'>NOMINAL VALUE</td>
+<td style='text-align:center;white-space:nowrap'>LOW LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>HIGH LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>COMPARISON TYPE</td>
+</tr>
+
+<tr><td>2.30.1. Measure CAN L </td><td valign="middle" align="center" style="color:#008000">Passed</td><td style="text-align:right;"><span style="white-space:nowrap">2.507</span></td><td align="left">V</td><td style="text-align:right;">&nbsp;</td><td style="text-align:right;"><span style="white-space:nowrap">2.4</span></td><td style="text-align:right;"><span style="white-space:nowrap">2.6</span></td><td align="center">GELE(>= <=)</td></tr></table><br><br><h4 style="margin-left:60px;"><span style="font-size:70%;font-weight:normal;">
+						Begin Sequence: DMM Voltage Measurement<br>C:\UTP\source\ProductSequences\EOL_CHMB2_Dual.seq</span></h4>
+<table class='stepTable' style='margin-left:60px;' border='1' cellpadding='2' cellspacing='0' width='70%'><tr><td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STEP</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STATUS</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>MEASUREMENT</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>UNITS</td>
+<td colspan='4' style='text-align:center;white-space:nowrap'>LIMITS</td>
+</tr>
+<tr><td style='text-align:center;white-space:nowrap'>NOMINAL VALUE</td>
+<td style='text-align:center;white-space:nowrap'>LOW LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>HIGH LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>COMPARISON TYPE</td>
+</tr>
+
+<tr><td>If {False}</td><td valign="middle" align="center" style="color:#008000">Done</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Get number of relays </td><td valign="middle" align="center" style="color:#008000">Done</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table><br>
+<table class='stepTable' style='margin-left:80px;' border='1' cellpadding='2' cellspacing='0' width='70%'><tr><td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STEP</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STATUS</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>MEASUREMENT</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>UNITS</td>
+<td colspan='4' style='text-align:center;white-space:nowrap'>LIMITS</td>
+</tr>
+<tr><td style='text-align:center;white-space:nowrap'>NOMINAL VALUE</td>
+<td style='text-align:center;white-space:nowrap'>LOW LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>HIGH LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>COMPARISON TYPE</td>
+</tr>
+
+<tr><td>Numato Switch ON </td><td valign="middle" align="center" style="color:#008000">Done</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Numato Switch ON </td><td valign="middle" align="center" style="color:#008000">Done</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table><br>
+<table class='stepTable' style='margin-left:60px;' border='1' cellpadding='2' cellspacing='0' width='70%'><tr><td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STEP</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STATUS</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>MEASUREMENT</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>UNITS</td>
+<td colspan='4' style='text-align:center;white-space:nowrap'>LIMITS</td>
+</tr>
+<tr><td style='text-align:center;white-space:nowrap'>NOMINAL VALUE</td>
+<td style='text-align:center;white-space:nowrap'>LOW LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>HIGH LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>COMPARISON TYPE</td>
+</tr>
+
+<tr><td>Wait </td><td valign="middle" align="center" style="color:#008000">Done</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>For {0} Locals.Counter = 0; Locals.Counter &lt; 4; Locals.Counter += 1</td><td valign="middle" align="center" style="color:#008000">Done</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table><br>
+<table class='stepTable' style='margin-left:80px;' border='1' cellpadding='2' cellspacing='0' width='70%'><tr><td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STEP</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STATUS</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>MEASUREMENT</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>UNITS</td>
+<td colspan='4' style='text-align:center;white-space:nowrap'>LIMITS</td>
+</tr>
+<tr><td style='text-align:center;white-space:nowrap'>NOMINAL VALUE</td>
+<td style='text-align:center;white-space:nowrap'>LOW LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>HIGH LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>COMPARISON TYPE</td>
+</tr>
+
+<tr><td>Read Measurement </td><td valign="middle" align="center" style="color:#008000">Passed</td><td style="text-align:right;"><span style="white-space:nowrap">2.507</span></td><td align="left">variable</td><td style="text-align:right;">&nbsp;</td><td style="text-align:right;"><span style="white-space:nowrap">2.4</span></td><td style="text-align:right;"><span style="white-space:nowrap">2.6</span></td><td align="center">GELE(>= <=)</td></tr>
+<tr><td>Break </td><td valign="middle" align="center" style="color:#008000">Done</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table><br>
+<table class='stepTable' style='margin-left:60px;' border='1' cellpadding='2' cellspacing='0' width='70%'><tr><td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STEP</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STATUS</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>MEASUREMENT</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>UNITS</td>
+<td colspan='4' style='text-align:center;white-space:nowrap'>LIMITS</td>
+</tr>
+<tr><td style='text-align:center;white-space:nowrap'>NOMINAL VALUE</td>
+<td style='text-align:center;white-space:nowrap'>LOW LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>HIGH LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>COMPARISON TYPE</td>
+</tr>
+
+<tr><td>End For</td><td valign="middle" align="center" style="color:#008000">Done</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table><br>
+<table class='stepTable' style='margin-left:80px;' border='1' cellpadding='2' cellspacing='0' width='70%'><tr><td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STEP</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STATUS</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>MEASUREMENT</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>UNITS</td>
+<td colspan='4' style='text-align:center;white-space:nowrap'>LIMITS</td>
+</tr>
+<tr><td style='text-align:center;white-space:nowrap'>NOMINAL VALUE</td>
+<td style='text-align:center;white-space:nowrap'>LOW LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>HIGH LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>COMPARISON TYPE</td>
+</tr>
+
+<tr><td>Numato Switch OFF </td><td valign="middle" align="center" style="color:#008000">Done</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Numato Switch OFF </td><td valign="middle" align="center" style="color:#008000">Done</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table><br>
+<table class='stepTable' style='margin-left:60px;' border='1' cellpadding='2' cellspacing='0' width='70%'><tr><td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STEP</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STATUS</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>MEASUREMENT</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>UNITS</td>
+<td colspan='4' style='text-align:center;white-space:nowrap'>LIMITS</td>
+</tr>
+<tr><td style='text-align:center;white-space:nowrap'>NOMINAL VALUE</td>
+<td style='text-align:center;white-space:nowrap'>LOW LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>HIGH LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>COMPARISON TYPE</td>
+</tr>
+
+<tr><td>Wait </td><td valign="middle" align="center" style="color:#008000">Done</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table><br><h4 style="margin-left:60px;"><span style="font-size:70%;font-weight:normal;">
+						End Sequence: DMM Voltage Measurement</span></h4><br>
+<table class='stepTable' style='margin-left:40px;' border='1' cellpadding='2' cellspacing='0' width='70%'><tr><td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STEP</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STATUS</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>MEASUREMENT</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>UNITS</td>
+<td colspan='4' style='text-align:center;white-space:nowrap'>LIMITS</td>
+</tr>
+<tr><td style='text-align:center;white-space:nowrap'>NOMINAL VALUE</td>
+<td style='text-align:center;white-space:nowrap'>LOW LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>HIGH LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>COMPARISON TYPE</td>
+</tr>
+
+<tr><td><a name="ResultId152026">2.27. Nexteer Connect </a></td><td valign="middle" align="center" style="color:#FF0000">Failed</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td style="white-space:nowrap">&nbsp;&nbsp;
+					Number of Loops 
+						</td><td style="white-space:nowrap" colspan="7">3</td></tr><tr><td style="white-space:nowrap">&nbsp;&nbsp;
+					Number of Passes 
+						</td><td style="white-space:nowrap" colspan="7">0</td></tr><tr><td style="white-space:nowrap">&nbsp;&nbsp;
+					Number of Failures 
+					</td><td style="white-space:nowrap" colspan="7">3</td></tr><tr><td style="white-space:nowrap">&nbsp;&nbsp;
+					Final Loop Index
+			  
+			</td><td style="white-space:nowrap" colspan="7">3</td></tr><tr><td colspan="8">&nbsp;&nbsp;Communication [Out]</td></tr><tr><td style="white-space:nowrap" colspan="9">&nbsp;&nbsp;&nbsp;&nbsp;Communication [Out][0]</td></tr><tr><td valign="middle" style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ID</td><td valign="middle" style="white-space:wrap" colspan="7"><a>1996</a></td></tr><tr><td valign="middle" style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MSGTYPE</td><td valign="middle" style="white-space:wrap" colspan="7"><a>0</a></td></tr><tr><td valign="middle" style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LEN</td><td valign="middle" style="white-space:wrap" colspan="7"><a>8</a></td></tr><tr><td valign="middle" style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DATA_0_</td><td valign="middle" style="white-space:wrap" colspan="7"><a>2</a></td></tr><tr><td valign="middle" style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DATA_1_</td><td valign="middle" style="white-space:wrap" colspan="7"><a>16</a></td></tr><tr><td valign="middle" style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DATA_2_</td><td valign="middle" style="white-space:wrap" colspan="7"><a>126</a></td></tr><tr><td valign="middle" style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DATA_3_</td><td valign="middle" style="white-space:wrap" colspan="7"><a>0</a></td></tr><tr><td valign="middle" style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DATA_4_</td><td valign="middle" style="white-space:wrap" colspan="7"><a>0</a></td></tr><tr><td valign="middle" style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DATA_5_</td><td valign="middle" style="white-space:wrap" colspan="7"><a>0</a></td></tr><tr><td valign="middle" style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DATA_6_</td><td valign="middle" style="white-space:wrap" colspan="7"><a>0</a></td></tr><tr><td valign="middle" style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DATA_7_</td><td valign="middle" style="white-space:wrap" colspan="7"><a>0</a></td></tr><tr><td style="white-space:nowrap" colspan="9">&nbsp;&nbsp;&nbsp;&nbsp;Communication [Out][1]</td></tr><tr><td valign="middle" style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ID</td><td valign="middle" style="white-space:wrap" colspan="7"><a>0</a></td></tr><tr><td valign="middle" style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MSGTYPE</td><td valign="middle" style="white-space:wrap" colspan="7"><a>0</a></td></tr><tr><td valign="middle" style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LEN</td><td valign="middle" style="white-space:wrap" colspan="7"><a>0</a></td></tr><tr><td valign="middle" style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DATA_0_</td><td valign="middle" style="white-space:wrap" colspan="7"><a>0</a></td></tr><tr><td valign="middle" style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DATA_1_</td><td valign="middle" style="white-space:wrap" colspan="7"><a>0</a></td></tr><tr><td valign="middle" style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DATA_2_</td><td valign="middle" style="white-space:wrap" colspan="7"><a>0</a></td></tr><tr><td valign="middle" style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DATA_3_</td><td valign="middle" style="white-space:wrap" colspan="7"><a>0</a></td></tr><tr><td valign="middle" style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DATA_4_</td><td valign="middle" style="white-space:wrap" colspan="7"><a>0</a></td></tr><tr><td valign="middle" style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DATA_5_</td><td valign="middle" style="white-space:wrap" colspan="7"><a>0</a></td></tr><tr><td valign="middle" style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DATA_6_</td><td valign="middle" style="white-space:wrap" colspan="7"><a>0</a></td></tr><tr><td valign="middle" style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DATA_7_</td><td valign="middle" style="white-space:wrap" colspan="7"><a>0</a></td></tr>
+<tr><td>2.27. Nexteer Connect </td><td valign="middle" align="center" style="color:#000080">Terminated</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table><br><h4 style="margin-left:40px;"><span style="font-size:70%;font-weight:normal;">
+						End Sequence: Section 2</span></h4><br>
+<table class='stepTable' style='margin-left:20px;' border='1' cellpadding='2' cellspacing='0' width='70%'><tr><td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STEP</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STATUS</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>MEASUREMENT</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>UNITS</td>
+<td colspan='4' style='text-align:center;white-space:nowrap'>LIMITS</td>
+</tr>
+<tr><td style='text-align:center;white-space:nowrap'>NOMINAL VALUE</td>
+<td style='text-align:center;white-space:nowrap'>LOW LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>HIGH LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>COMPARISON TYPE</td>
+</tr>
+
+<tr><td>Failure Procedure </td><td valign="middle" align="center" style="color:#B98028">Skipped</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Test Cleanup </td><td valign="middle" align="center" style="color:#008000">Passed</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table><br><br><h4 style="margin-left:40px;"><span style="font-size:70%;font-weight:normal;">
+						Begin Sequence: Cleanup_Test<br>C:\UTP\source\ProductSequences\EOL_CHMB2_Dual.seq</span></h4>
+<table class='stepTable' style='margin-left:40px;' border='1' cellpadding='2' cellspacing='0' width='70%'><tr><td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STEP</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>STATUS</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>MEASUREMENT</td>
+<td rowspan='2' valign='bottom' style='text-align:center;white-space:nowrap'>UNITS</td>
+<td colspan='4' style='text-align:center;white-space:nowrap'>LIMITS</td>
+</tr>
+<tr><td style='text-align:center;white-space:nowrap'>NOMINAL VALUE</td>
+<td style='text-align:center;white-space:nowrap'>LOW LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>HIGH LIMIT</td>
+<td style='text-align:center;white-space:nowrap'>COMPARISON TYPE</td>
+</tr>
+
+<tr><td>Set state for coil </td><td valign="middle" align="center" style="color:#008000">Done</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>3.54 Measure DC Supply current </td><td valign="middle" align="center" style="color:#B98028">Skipped</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table><br><h4 style="margin-left:40px;"><span style="font-size:70%;font-weight:normal;">
+						End Sequence: Cleanup_Test</span></h4><br><h4 style="margin-left:20px;"><span style="font-size:70%;font-weight:normal;">
+						End Sequence: MainSequence</span></h4><br><h2 style="font-weight:normal;">END UUT REPORT</h2><hr class="uutSeparator"></body></html>

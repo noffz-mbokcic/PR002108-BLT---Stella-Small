@@ -13958,7 +13958,7 @@ SData = "TYPE, FlexGStepAdditions"
 ProjectPath = "..\\..\\LabView\\nexteer.lvproj"
 VIPath = "My Computer\\AimTTi1908P\\Aim TTi 1908P DMM.lvlib\\Configure and read.vi"
 Namespace = "Aim TTi 1908P DMM.lvlib"
-TDChecksum = -1621027023
+TDChecksum = 1750189190
 %HI: Parms = [5]
 
 [DEF, SF.Seq[4].Setup[15].TS.SData.ViCall.Parms]
@@ -18934,7 +18934,7 @@ ConnectorNumber = 1
 
 [SF.Seq[11].Main[9].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
 Label = "Torque1"
-ArgVal = "StationGlobals.Testing.Parameters.XCP_Addresses.T1"
+ArgVal = "StationGlobals.Testing.Parameters.XCP_Addresses.Torque1"
 Type = 5
 WireRequirement = 1
 NumType = 1
@@ -18945,7 +18945,7 @@ DisplayType = "1D Array (U8)"
 
 [SF.Seq[11].Main[9].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
 Label = "Torque2"
-ArgVal = "StationGlobals.Testing.Parameters.XCP_Addresses.T2"
+ArgVal = "StationGlobals.Testing.Parameters.XCP_Addresses.Torque2"
 Type = 5
 WireRequirement = 1
 NumType = 1
@@ -18967,6 +18967,7 @@ DisplayType = "1D Array (U8)"
 
 [SF.Seq[11].Main[9].TS.SData.ViCall.Parms[5].ArrayClusterEls[3]]
 Label = "Temperature"
+ArgVal = "StationGlobals.Testing.Parameters.XCP_Addresses.Temperature"
 Type = 5
 WireRequirement = 1
 NumType = 1
@@ -18977,6 +18978,7 @@ DisplayType = "1D Array (U8)"
 
 [SF.Seq[11].Main[9].TS.SData.ViCall.Parms[5].ArrayClusterEls[4]]
 Label = "BatteryVoltage"
+ArgVal = "StationGlobals.Testing.Parameters.XCP_Addresses.BatteryVoltage"
 Type = 5
 WireRequirement = 1
 NumType = 1
@@ -18987,6 +18989,7 @@ DisplayType = "1D Array (U8)"
 
 [SF.Seq[11].Main[9].TS.SData.ViCall.Parms[5].ArrayClusterEls[5]]
 Label = "MotorCurrent"
+ArgVal = "StationGlobals.Testing.Parameters.XCP_Addresses.MotorCurrent"
 Type = 5
 WireRequirement = 1
 NumType = 1
@@ -19658,6 +19661,7 @@ DisplayType = "Number (DBL)"
 
 [SF.Seq[11].Main[11].TS.SData.ViCall.Parms[2].ArrayClusterEls[11]]
 Label = "DC_Voltage"
+ArgVal = "StationGlobals.Testing.Parameters.Section2.DC_Voltage"
 Type = 3
 WireRequirement = 1
 DisplayType = "Container"
@@ -19670,6 +19674,7 @@ DisplayType = "Container"
 
 [SF.Seq[11].Main[11].TS.SData.ViCall.Parms[2].ArrayClusterEls[11].ArrayClusterEls[0]]
 Label = "Low"
+ArgVal = "StationGlobals.Testing.Parameters.Section2.DC_Voltage.Low"
 Type = 0
 WireRequirement = 1
 DisplayType = "Number (DBL)"
@@ -19679,6 +19684,7 @@ DisplayType = "Number (DBL)"
 
 [SF.Seq[11].Main[11].TS.SData.ViCall.Parms[2].ArrayClusterEls[11].ArrayClusterEls[1]]
 Label = "High"
+ArgVal = "StationGlobals.Testing.Parameters.Section2.DC_Voltage.High"
 Type = 0
 WireRequirement = 1
 DisplayType = "Number (DBL)"
@@ -19688,6 +19694,7 @@ DisplayType = "Number (DBL)"
 
 [SF.Seq[11].Main[11].TS.SData.ViCall.Parms[2].ArrayClusterEls[11].ArrayClusterEls[2]]
 Label = "Offset"
+ArgVal = "StationGlobals.Testing.Parameters.Section2.DC_Voltage.Offset"
 Type = 0
 WireRequirement = 1
 DisplayType = "Number (DBL)"
@@ -20437,7 +20444,7 @@ DisplayType = "Number (DBL)"
 
 [SF.Seq[11].Main[11].TS.SData.ViCall.Parms[4].ArrayClusterEls[6]]
 Label = "Motor_Current"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.Polarity"
+ArgVal = "StationGlobals.Testing.Parameters.Section5.Motor_Current"
 Type = 3
 WireRequirement = 1
 DisplayType = "Container"
@@ -20450,7 +20457,7 @@ DisplayType = "Container"
 
 [SF.Seq[11].Main[11].TS.SData.ViCall.Parms[4].ArrayClusterEls[6].ArrayClusterEls[0]]
 Label = "Low"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.Polarity.Low"
+ArgVal = "StationGlobals.Testing.Parameters.Section5.Motor_Current.Low"
 Type = 0
 WireRequirement = 1
 DisplayType = "Number (DBL)"
@@ -20460,7 +20467,7 @@ DisplayType = "Number (DBL)"
 
 [SF.Seq[11].Main[11].TS.SData.ViCall.Parms[4].ArrayClusterEls[6].ArrayClusterEls[1]]
 Label = "High"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.Polarity.High"
+ArgVal = "StationGlobals.Testing.Parameters.Section5.Motor_Current.High"
 Type = 0
 WireRequirement = 1
 DisplayType = "Number (DBL)"
@@ -20470,7 +20477,7 @@ DisplayType = "Number (DBL)"
 
 [SF.Seq[11].Main[11].TS.SData.ViCall.Parms[4].ArrayClusterEls[6].ArrayClusterEls[2]]
 Label = "Offset"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.Polarity.Offset"
+ArgVal = "StationGlobals.Testing.Parameters.Section5.Motor_Current.Offset"
 Type = 0
 WireRequirement = 1
 DisplayType = "Number (DBL)"
@@ -20483,7 +20490,7 @@ DisplayType = "Number (DBL)"
 
 [SF.Seq[11].Main[11].TS.SData.ViCall.Parms[4].ArrayClusterEls[7]]
 Label = "DC_Current_Motor"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.MEC_Counter"
+ArgVal = "StationGlobals.Testing.Parameters.Section5.DC_Current_Motor"
 Type = 3
 WireRequirement = 1
 DisplayType = "Container"
@@ -20496,7 +20503,7 @@ DisplayType = "Container"
 
 [SF.Seq[11].Main[11].TS.SData.ViCall.Parms[4].ArrayClusterEls[7].ArrayClusterEls[0]]
 Label = "Low"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.MEC_Counter.Low"
+ArgVal = "StationGlobals.Testing.Parameters.Section5.DC_Current_Motor.Low"
 Type = 0
 WireRequirement = 1
 DisplayType = "Number (DBL)"
@@ -20506,7 +20513,7 @@ DisplayType = "Number (DBL)"
 
 [SF.Seq[11].Main[11].TS.SData.ViCall.Parms[4].ArrayClusterEls[7].ArrayClusterEls[1]]
 Label = "High"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.MEC_Counter.High"
+ArgVal = "StationGlobals.Testing.Parameters.Section5.DC_Current_Motor.High"
 Type = 0
 WireRequirement = 1
 DisplayType = "Number (DBL)"
@@ -20516,7 +20523,7 @@ DisplayType = "Number (DBL)"
 
 [SF.Seq[11].Main[11].TS.SData.ViCall.Parms[4].ArrayClusterEls[7].ArrayClusterEls[2]]
 Label = "Offset"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.MEC_Counter.Offset"
+ArgVal = "StationGlobals.Testing.Parameters.Section5.DC_Current_Motor.Offset"
 Type = 0
 WireRequirement = 1
 DisplayType = "Number (DBL)"
@@ -23635,8 +23642,8 @@ SData = "TYPE, FlexGStepAdditions"
 [SF.Seq[18].Main[3].TS.SData.ViCall]
 ProjectPath = "..\\..\\LabView\\nexteer.lvproj"
 VIPath = "My Computer\\Station\\Get Test Limits.vi"
-TDChecksum = 257494079
-%HI: Parms = [4]
+TDChecksum = 200557941
+%HI: Parms = [5]
 
 [DEF, SF.Seq[18].Main[3].TS.SData.ViCall.Parms]
 %[0] = "TYPE, VIParameter"
@@ -23644,6 +23651,7 @@ TDChecksum = 257494079
 %[2] = "TYPE, VIParameter"
 %[3] = "TYPE, VIParameter"
 %[4] = "TYPE, VIParameter"
+%[5] = "TYPE, VIParameter"
 
 [SF.Seq[18].Main[3].TS.SData.ViCall.Parms[0]]
 Label = "Variant"
@@ -23673,7 +23681,7 @@ ArgVal = "StationGlobals.Testing.Parameters.Section2"
 Type = 3
 WireRequirement = 1
 DisplayType = "Container"
-%HI: ArrayClusterEls = [10]
+%HI: ArrayClusterEls = [11]
 Direction = 1
 ConnectorNumber = 3
 
@@ -23689,6 +23697,7 @@ ConnectorNumber = 3
 %[8] = "TYPE, VIParameterElement"
 %[9] = "TYPE, VIParameterElement"
 %[10] = "TYPE, VIParameterElement"
+%[11] = "TYPE, VIParameterElement"
 
 [SF.Seq[18].Main[3].TS.SData.ViCall.Parms[2].ArrayClusterEls[0]]
 Label = "DC_Current"
@@ -24196,6 +24205,52 @@ DisplayType = "Number (DBL)"
 [DEF, SF.Seq[18].Main[3].TS.SData.ViCall.Parms[2].ArrayClusterEls[10]]
 %NAME = "FirstMotorPosition"
 
+[SF.Seq[18].Main[3].TS.SData.ViCall.Parms[2].ArrayClusterEls[11]]
+Label = "DC_Voltage"
+ArgVal = "StationGlobals.Testing.Parameters.Section2.DC_Voltage"
+Type = 3
+WireRequirement = 1
+DisplayType = "Container"
+%HI: ArrayClusterEls = [2]
+
+[DEF, SF.Seq[18].Main[3].TS.SData.ViCall.Parms[2].ArrayClusterEls[11].ArrayClusterEls]
+%[0] = "TYPE, VIParameterElement"
+%[1] = "TYPE, VIParameterElement"
+%[2] = "TYPE, VIParameterElement"
+
+[SF.Seq[18].Main[3].TS.SData.ViCall.Parms[2].ArrayClusterEls[11].ArrayClusterEls[0]]
+Label = "Low"
+ArgVal = "StationGlobals.Testing.Parameters.Section2.DC_Voltage.Low"
+Type = 0
+WireRequirement = 1
+DisplayType = "Number (DBL)"
+
+[DEF, SF.Seq[18].Main[3].TS.SData.ViCall.Parms[2].ArrayClusterEls[11].ArrayClusterEls[0]]
+%NAME = "Low"
+
+[SF.Seq[18].Main[3].TS.SData.ViCall.Parms[2].ArrayClusterEls[11].ArrayClusterEls[1]]
+Label = "High"
+ArgVal = "StationGlobals.Testing.Parameters.Section2.DC_Voltage.High"
+Type = 0
+WireRequirement = 1
+DisplayType = "Number (DBL)"
+
+[DEF, SF.Seq[18].Main[3].TS.SData.ViCall.Parms[2].ArrayClusterEls[11].ArrayClusterEls[1]]
+%NAME = "High"
+
+[SF.Seq[18].Main[3].TS.SData.ViCall.Parms[2].ArrayClusterEls[11].ArrayClusterEls[2]]
+Label = "Offset"
+ArgVal = "StationGlobals.Testing.Parameters.Section2.DC_Voltage.Offset"
+Type = 0
+WireRequirement = 1
+DisplayType = "Number (DBL)"
+
+[DEF, SF.Seq[18].Main[3].TS.SData.ViCall.Parms[2].ArrayClusterEls[11].ArrayClusterEls[2]]
+%NAME = "Offset"
+
+[DEF, SF.Seq[18].Main[3].TS.SData.ViCall.Parms[2].ArrayClusterEls[11]]
+%NAME = "DC_Voltage"
+
 [DEF, SF.Seq[18].Main[3].TS.SData.ViCall.Parms[2]]
 %NAME = "Section2"
 
@@ -24643,7 +24698,7 @@ ArgVal = "StationGlobals.Testing.Parameters.Section5"
 Type = 3
 WireRequirement = 1
 DisplayType = "Container"
-%HI: ArrayClusterEls = [9]
+%HI: ArrayClusterEls = [7]
 Direction = 1
 ConnectorNumber = 1
 
@@ -24656,8 +24711,6 @@ ConnectorNumber = 1
 %[5] = "TYPE, VIParameterElement"
 %[6] = "TYPE, VIParameterElement"
 %[7] = "TYPE, VIParameterElement"
-%[8] = "TYPE, VIParameterElement"
-%[9] = "TYPE, VIParameterElement"
 
 [SF.Seq[18].Main[3].TS.SData.ViCall.Parms[4].ArrayClusterEls[0]]
 Label = "Temperature"
@@ -24936,8 +24989,8 @@ DisplayType = "Number (DBL)"
 %NAME = "DC_SupplyCurrent"
 
 [SF.Seq[18].Main[3].TS.SData.ViCall.Parms[4].ArrayClusterEls[6]]
-Label = "Polarity"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.Polarity"
+Label = "Motor_Current"
+ArgVal = "StationGlobals.Testing.Parameters.Section5.Motor_Current"
 Type = 3
 WireRequirement = 1
 DisplayType = "Container"
@@ -24950,7 +25003,7 @@ DisplayType = "Container"
 
 [SF.Seq[18].Main[3].TS.SData.ViCall.Parms[4].ArrayClusterEls[6].ArrayClusterEls[0]]
 Label = "Low"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.Polarity.Low"
+ArgVal = "StationGlobals.Testing.Parameters.Section5.Motor_Current.Low"
 Type = 0
 WireRequirement = 1
 DisplayType = "Number (DBL)"
@@ -24960,7 +25013,7 @@ DisplayType = "Number (DBL)"
 
 [SF.Seq[18].Main[3].TS.SData.ViCall.Parms[4].ArrayClusterEls[6].ArrayClusterEls[1]]
 Label = "High"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.Polarity.High"
+ArgVal = "StationGlobals.Testing.Parameters.Section5.Motor_Current.High"
 Type = 0
 WireRequirement = 1
 DisplayType = "Number (DBL)"
@@ -24970,7 +25023,7 @@ DisplayType = "Number (DBL)"
 
 [SF.Seq[18].Main[3].TS.SData.ViCall.Parms[4].ArrayClusterEls[6].ArrayClusterEls[2]]
 Label = "Offset"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.Polarity.Offset"
+ArgVal = "StationGlobals.Testing.Parameters.Section5.Motor_Current.Offset"
 Type = 0
 WireRequirement = 1
 DisplayType = "Number (DBL)"
@@ -24979,11 +25032,11 @@ DisplayType = "Number (DBL)"
 %NAME = "Offset"
 
 [DEF, SF.Seq[18].Main[3].TS.SData.ViCall.Parms[4].ArrayClusterEls[6]]
-%NAME = "Polarity"
+%NAME = "Motor_Current"
 
 [SF.Seq[18].Main[3].TS.SData.ViCall.Parms[4].ArrayClusterEls[7]]
-Label = "MEC_Counter"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.MEC_Counter"
+Label = "DC_Current_Motor"
+ArgVal = "StationGlobals.Testing.Parameters.Section5.DC_Current_Motor"
 Type = 3
 WireRequirement = 1
 DisplayType = "Container"
@@ -24996,7 +25049,7 @@ DisplayType = "Container"
 
 [SF.Seq[18].Main[3].TS.SData.ViCall.Parms[4].ArrayClusterEls[7].ArrayClusterEls[0]]
 Label = "Low"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.MEC_Counter.Low"
+ArgVal = "StationGlobals.Testing.Parameters.Section5.DC_Current_Motor.Low"
 Type = 0
 WireRequirement = 1
 DisplayType = "Number (DBL)"
@@ -25006,7 +25059,7 @@ DisplayType = "Number (DBL)"
 
 [SF.Seq[18].Main[3].TS.SData.ViCall.Parms[4].ArrayClusterEls[7].ArrayClusterEls[1]]
 Label = "High"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.MEC_Counter.High"
+ArgVal = "StationGlobals.Testing.Parameters.Section5.DC_Current_Motor.High"
 Type = 0
 WireRequirement = 1
 DisplayType = "Number (DBL)"
@@ -25016,7 +25069,7 @@ DisplayType = "Number (DBL)"
 
 [SF.Seq[18].Main[3].TS.SData.ViCall.Parms[4].ArrayClusterEls[7].ArrayClusterEls[2]]
 Label = "Offset"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.MEC_Counter.Offset"
+ArgVal = "StationGlobals.Testing.Parameters.Section5.DC_Current_Motor.Offset"
 Type = 0
 WireRequirement = 1
 DisplayType = "Number (DBL)"
@@ -25025,102 +25078,166 @@ DisplayType = "Number (DBL)"
 %NAME = "Offset"
 
 [DEF, SF.Seq[18].Main[3].TS.SData.ViCall.Parms[4].ArrayClusterEls[7]]
-%NAME = "MEC_Counter"
-
-[SF.Seq[18].Main[3].TS.SData.ViCall.Parms[4].ArrayClusterEls[8]]
-Label = "IgnitionCurrent"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.IgnitionCurrent"
-Type = 3
-WireRequirement = 1
-DisplayType = "Container"
-%HI: ArrayClusterEls = [2]
-
-[DEF, SF.Seq[18].Main[3].TS.SData.ViCall.Parms[4].ArrayClusterEls[8].ArrayClusterEls]
-%[0] = "TYPE, VIParameterElement"
-%[1] = "TYPE, VIParameterElement"
-%[2] = "TYPE, VIParameterElement"
-
-[SF.Seq[18].Main[3].TS.SData.ViCall.Parms[4].ArrayClusterEls[8].ArrayClusterEls[0]]
-Label = "Low"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.IgnitionCurrent.Low"
-Type = 0
-WireRequirement = 1
-DisplayType = "Number (DBL)"
-
-[DEF, SF.Seq[18].Main[3].TS.SData.ViCall.Parms[4].ArrayClusterEls[8].ArrayClusterEls[0]]
-%NAME = "Low"
-
-[SF.Seq[18].Main[3].TS.SData.ViCall.Parms[4].ArrayClusterEls[8].ArrayClusterEls[1]]
-Label = "High"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.IgnitionCurrent.High"
-Type = 0
-WireRequirement = 1
-DisplayType = "Number (DBL)"
-
-[DEF, SF.Seq[18].Main[3].TS.SData.ViCall.Parms[4].ArrayClusterEls[8].ArrayClusterEls[1]]
-%NAME = "High"
-
-[SF.Seq[18].Main[3].TS.SData.ViCall.Parms[4].ArrayClusterEls[8].ArrayClusterEls[2]]
-Label = "Offset"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.IgnitionCurrent.Offset"
-Type = 0
-WireRequirement = 1
-DisplayType = "Number (DBL)"
-
-[DEF, SF.Seq[18].Main[3].TS.SData.ViCall.Parms[4].ArrayClusterEls[8].ArrayClusterEls[2]]
-%NAME = "Offset"
-
-[DEF, SF.Seq[18].Main[3].TS.SData.ViCall.Parms[4].ArrayClusterEls[8]]
-%NAME = "IgnitionCurrent"
-
-[SF.Seq[18].Main[3].TS.SData.ViCall.Parms[4].ArrayClusterEls[9]]
-Label = "DC_Voltage"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.DC_Voltage"
-Type = 3
-WireRequirement = 1
-DisplayType = "Container"
-%HI: ArrayClusterEls = [2]
-
-[DEF, SF.Seq[18].Main[3].TS.SData.ViCall.Parms[4].ArrayClusterEls[9].ArrayClusterEls]
-%[0] = "TYPE, VIParameterElement"
-%[1] = "TYPE, VIParameterElement"
-%[2] = "TYPE, VIParameterElement"
-
-[SF.Seq[18].Main[3].TS.SData.ViCall.Parms[4].ArrayClusterEls[9].ArrayClusterEls[0]]
-Label = "Low"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.DC_Voltage.Low"
-Type = 0
-WireRequirement = 1
-DisplayType = "Number (DBL)"
-
-[DEF, SF.Seq[18].Main[3].TS.SData.ViCall.Parms[4].ArrayClusterEls[9].ArrayClusterEls[0]]
-%NAME = "Low"
-
-[SF.Seq[18].Main[3].TS.SData.ViCall.Parms[4].ArrayClusterEls[9].ArrayClusterEls[1]]
-Label = "High"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.DC_Voltage.High"
-Type = 0
-WireRequirement = 1
-DisplayType = "Number (DBL)"
-
-[DEF, SF.Seq[18].Main[3].TS.SData.ViCall.Parms[4].ArrayClusterEls[9].ArrayClusterEls[1]]
-%NAME = "High"
-
-[SF.Seq[18].Main[3].TS.SData.ViCall.Parms[4].ArrayClusterEls[9].ArrayClusterEls[2]]
-Label = "Offset"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.DC_Voltage.Offset"
-Type = 0
-WireRequirement = 1
-DisplayType = "Number (DBL)"
-
-[DEF, SF.Seq[18].Main[3].TS.SData.ViCall.Parms[4].ArrayClusterEls[9].ArrayClusterEls[2]]
-%NAME = "Offset"
-
-[DEF, SF.Seq[18].Main[3].TS.SData.ViCall.Parms[4].ArrayClusterEls[9]]
-%NAME = "DC_Voltage"
+%NAME = "DC_Current_Motor"
 
 [DEF, SF.Seq[18].Main[3].TS.SData.ViCall.Parms[4]]
 %NAME = "Section5"
+
+[SF.Seq[18].Main[3].TS.SData.ViCall.Parms[5]]
+Label = "Section6"
+ArgVal = "StationGlobals.Testing.Parameters.Section6"
+Type = 3
+WireRequirement = 1
+DisplayType = "Container"
+%HI: ArrayClusterEls = [2]
+Direction = 1
+ConnectorNumber = 0
+
+[DEF, SF.Seq[18].Main[3].TS.SData.ViCall.Parms[5].ArrayClusterEls]
+%[0] = "TYPE, VIParameterElement"
+%[1] = "TYPE, VIParameterElement"
+%[2] = "TYPE, VIParameterElement"
+
+[SF.Seq[18].Main[3].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+Label = "MEC_Counter"
+ArgVal = "StationGlobals.Testing.Parameters.Section6.MEC_Counter"
+Type = 3
+WireRequirement = 1
+DisplayType = "Container"
+%HI: ArrayClusterEls = [2]
+
+[DEF, SF.Seq[18].Main[3].TS.SData.ViCall.Parms[5].ArrayClusterEls[0].ArrayClusterEls]
+%[0] = "TYPE, VIParameterElement"
+%[1] = "TYPE, VIParameterElement"
+%[2] = "TYPE, VIParameterElement"
+
+[SF.Seq[18].Main[3].TS.SData.ViCall.Parms[5].ArrayClusterEls[0].ArrayClusterEls[0]]
+Label = "Low"
+ArgVal = "StationGlobals.Testing.Parameters.Section6.MEC_Counter.Low"
+Type = 0
+WireRequirement = 1
+DisplayType = "Number (DBL)"
+
+[DEF, SF.Seq[18].Main[3].TS.SData.ViCall.Parms[5].ArrayClusterEls[0].ArrayClusterEls[0]]
+%NAME = "Low"
+
+[SF.Seq[18].Main[3].TS.SData.ViCall.Parms[5].ArrayClusterEls[0].ArrayClusterEls[1]]
+Label = "High"
+ArgVal = "StationGlobals.Testing.Parameters.Section6.MEC_Counter.High"
+Type = 0
+WireRequirement = 1
+DisplayType = "Number (DBL)"
+
+[DEF, SF.Seq[18].Main[3].TS.SData.ViCall.Parms[5].ArrayClusterEls[0].ArrayClusterEls[1]]
+%NAME = "High"
+
+[SF.Seq[18].Main[3].TS.SData.ViCall.Parms[5].ArrayClusterEls[0].ArrayClusterEls[2]]
+Label = "Offset"
+ArgVal = "StationGlobals.Testing.Parameters.Section6.MEC_Counter.Offset"
+Type = 0
+WireRequirement = 1
+DisplayType = "Number (DBL)"
+
+[DEF, SF.Seq[18].Main[3].TS.SData.ViCall.Parms[5].ArrayClusterEls[0].ArrayClusterEls[2]]
+%NAME = "Offset"
+
+[DEF, SF.Seq[18].Main[3].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+%NAME = "MEC_Counter"
+
+[SF.Seq[18].Main[3].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+Label = "Ignition_Current"
+ArgVal = "StationGlobals.Testing.Parameters.Section6.Ignition_Current"
+Type = 3
+WireRequirement = 1
+DisplayType = "Container"
+%HI: ArrayClusterEls = [2]
+
+[DEF, SF.Seq[18].Main[3].TS.SData.ViCall.Parms[5].ArrayClusterEls[1].ArrayClusterEls]
+%[0] = "TYPE, VIParameterElement"
+%[1] = "TYPE, VIParameterElement"
+%[2] = "TYPE, VIParameterElement"
+
+[SF.Seq[18].Main[3].TS.SData.ViCall.Parms[5].ArrayClusterEls[1].ArrayClusterEls[0]]
+Label = "Low"
+ArgVal = "StationGlobals.Testing.Parameters.Section6.Ignition_Current.Low"
+Type = 0
+WireRequirement = 1
+DisplayType = "Number (DBL)"
+
+[DEF, SF.Seq[18].Main[3].TS.SData.ViCall.Parms[5].ArrayClusterEls[1].ArrayClusterEls[0]]
+%NAME = "Low"
+
+[SF.Seq[18].Main[3].TS.SData.ViCall.Parms[5].ArrayClusterEls[1].ArrayClusterEls[1]]
+Label = "High"
+ArgVal = "StationGlobals.Testing.Parameters.Section6.Ignition_Current.High"
+Type = 0
+WireRequirement = 1
+DisplayType = "Number (DBL)"
+
+[DEF, SF.Seq[18].Main[3].TS.SData.ViCall.Parms[5].ArrayClusterEls[1].ArrayClusterEls[1]]
+%NAME = "High"
+
+[SF.Seq[18].Main[3].TS.SData.ViCall.Parms[5].ArrayClusterEls[1].ArrayClusterEls[2]]
+Label = "Offset"
+ArgVal = "StationGlobals.Testing.Parameters.Section6.Ignition_Current.Offset"
+Type = 0
+WireRequirement = 1
+DisplayType = "Number (DBL)"
+
+[DEF, SF.Seq[18].Main[3].TS.SData.ViCall.Parms[5].ArrayClusterEls[1].ArrayClusterEls[2]]
+%NAME = "Offset"
+
+[DEF, SF.Seq[18].Main[3].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+%NAME = "Ignition_Current"
+
+[SF.Seq[18].Main[3].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+Label = "DC_Voltage"
+ArgVal = "StationGlobals.Testing.Parameters.Section6.DC_Voltage"
+Type = 3
+WireRequirement = 1
+DisplayType = "Container"
+%HI: ArrayClusterEls = [2]
+
+[DEF, SF.Seq[18].Main[3].TS.SData.ViCall.Parms[5].ArrayClusterEls[2].ArrayClusterEls]
+%[0] = "TYPE, VIParameterElement"
+%[1] = "TYPE, VIParameterElement"
+%[2] = "TYPE, VIParameterElement"
+
+[SF.Seq[18].Main[3].TS.SData.ViCall.Parms[5].ArrayClusterEls[2].ArrayClusterEls[0]]
+Label = "Low"
+ArgVal = "StationGlobals.Testing.Parameters.Section6.DC_Voltage.Low"
+Type = 0
+WireRequirement = 1
+DisplayType = "Number (DBL)"
+
+[DEF, SF.Seq[18].Main[3].TS.SData.ViCall.Parms[5].ArrayClusterEls[2].ArrayClusterEls[0]]
+%NAME = "Low"
+
+[SF.Seq[18].Main[3].TS.SData.ViCall.Parms[5].ArrayClusterEls[2].ArrayClusterEls[1]]
+Label = "High"
+ArgVal = "StationGlobals.Testing.Parameters.Section6.DC_Voltage.High"
+Type = 0
+WireRequirement = 1
+DisplayType = "Number (DBL)"
+
+[DEF, SF.Seq[18].Main[3].TS.SData.ViCall.Parms[5].ArrayClusterEls[2].ArrayClusterEls[1]]
+%NAME = "High"
+
+[SF.Seq[18].Main[3].TS.SData.ViCall.Parms[5].ArrayClusterEls[2].ArrayClusterEls[2]]
+Label = "Offset"
+ArgVal = "StationGlobals.Testing.Parameters.Section6.DC_Voltage.Offset"
+Type = 0
+WireRequirement = 1
+DisplayType = "Number (DBL)"
+
+[DEF, SF.Seq[18].Main[3].TS.SData.ViCall.Parms[5].ArrayClusterEls[2].ArrayClusterEls[2]]
+%NAME = "Offset"
+
+[DEF, SF.Seq[18].Main[3].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+%NAME = "DC_Voltage"
+
+[DEF, SF.Seq[18].Main[3].TS.SData.ViCall.Parms[5]]
+%NAME = "Section6"
 
 [DEF, SF.Seq[18].Main[3]]
 %NAME = "Get Testing Limits"
@@ -26177,8 +26294,8 @@ SData = "TYPE, FlexGStepAdditions"
 [SF.Seq[19].Main[6].TS.SData.ViCall]
 ProjectPath = "..\\..\\LabView\\nexteer.lvproj"
 VIPath = "My Computer\\Station\\Get Test Limits.vi"
-TDChecksum = 257494079
-%HI: Parms = [4]
+TDChecksum = 200557941
+%HI: Parms = [5]
 
 [DEF, SF.Seq[19].Main[6].TS.SData.ViCall.Parms]
 %[0] = "TYPE, VIParameter"
@@ -26186,6 +26303,7 @@ TDChecksum = 257494079
 %[2] = "TYPE, VIParameter"
 %[3] = "TYPE, VIParameter"
 %[4] = "TYPE, VIParameter"
+%[5] = "TYPE, VIParameter"
 
 [SF.Seq[19].Main[6].TS.SData.ViCall.Parms[0]]
 Label = "Variant"
@@ -26215,7 +26333,7 @@ ArgVal = "StationGlobals.Testing.Parameters.Section2"
 Type = 3
 WireRequirement = 1
 DisplayType = "Container"
-%HI: ArrayClusterEls = [10]
+%HI: ArrayClusterEls = [11]
 Direction = 1
 ConnectorNumber = 3
 
@@ -26231,6 +26349,7 @@ ConnectorNumber = 3
 %[8] = "TYPE, VIParameterElement"
 %[9] = "TYPE, VIParameterElement"
 %[10] = "TYPE, VIParameterElement"
+%[11] = "TYPE, VIParameterElement"
 
 [SF.Seq[19].Main[6].TS.SData.ViCall.Parms[2].ArrayClusterEls[0]]
 Label = "DC_Current"
@@ -26738,6 +26857,52 @@ DisplayType = "Number (DBL)"
 [DEF, SF.Seq[19].Main[6].TS.SData.ViCall.Parms[2].ArrayClusterEls[10]]
 %NAME = "FirstMotorPosition"
 
+[SF.Seq[19].Main[6].TS.SData.ViCall.Parms[2].ArrayClusterEls[11]]
+Label = "DC_Voltage"
+ArgVal = "StationGlobals.Testing.Parameters.Section2.DC_Voltage"
+Type = 3
+WireRequirement = 1
+DisplayType = "Container"
+%HI: ArrayClusterEls = [2]
+
+[DEF, SF.Seq[19].Main[6].TS.SData.ViCall.Parms[2].ArrayClusterEls[11].ArrayClusterEls]
+%[0] = "TYPE, VIParameterElement"
+%[1] = "TYPE, VIParameterElement"
+%[2] = "TYPE, VIParameterElement"
+
+[SF.Seq[19].Main[6].TS.SData.ViCall.Parms[2].ArrayClusterEls[11].ArrayClusterEls[0]]
+Label = "Low"
+ArgVal = "StationGlobals.Testing.Parameters.Section2.DC_Voltage.Low"
+Type = 0
+WireRequirement = 1
+DisplayType = "Number (DBL)"
+
+[DEF, SF.Seq[19].Main[6].TS.SData.ViCall.Parms[2].ArrayClusterEls[11].ArrayClusterEls[0]]
+%NAME = "Low"
+
+[SF.Seq[19].Main[6].TS.SData.ViCall.Parms[2].ArrayClusterEls[11].ArrayClusterEls[1]]
+Label = "High"
+ArgVal = "StationGlobals.Testing.Parameters.Section2.DC_Voltage.High"
+Type = 0
+WireRequirement = 1
+DisplayType = "Number (DBL)"
+
+[DEF, SF.Seq[19].Main[6].TS.SData.ViCall.Parms[2].ArrayClusterEls[11].ArrayClusterEls[1]]
+%NAME = "High"
+
+[SF.Seq[19].Main[6].TS.SData.ViCall.Parms[2].ArrayClusterEls[11].ArrayClusterEls[2]]
+Label = "Offset"
+ArgVal = "StationGlobals.Testing.Parameters.Section2.DC_Voltage.Offset"
+Type = 0
+WireRequirement = 1
+DisplayType = "Number (DBL)"
+
+[DEF, SF.Seq[19].Main[6].TS.SData.ViCall.Parms[2].ArrayClusterEls[11].ArrayClusterEls[2]]
+%NAME = "Offset"
+
+[DEF, SF.Seq[19].Main[6].TS.SData.ViCall.Parms[2].ArrayClusterEls[11]]
+%NAME = "DC_Voltage"
+
 [DEF, SF.Seq[19].Main[6].TS.SData.ViCall.Parms[2]]
 %NAME = "Section2"
 
@@ -27185,7 +27350,7 @@ ArgVal = "StationGlobals.Testing.Parameters.Section5"
 Type = 3
 WireRequirement = 1
 DisplayType = "Container"
-%HI: ArrayClusterEls = [9]
+%HI: ArrayClusterEls = [7]
 Direction = 1
 ConnectorNumber = 1
 
@@ -27198,8 +27363,6 @@ ConnectorNumber = 1
 %[5] = "TYPE, VIParameterElement"
 %[6] = "TYPE, VIParameterElement"
 %[7] = "TYPE, VIParameterElement"
-%[8] = "TYPE, VIParameterElement"
-%[9] = "TYPE, VIParameterElement"
 
 [SF.Seq[19].Main[6].TS.SData.ViCall.Parms[4].ArrayClusterEls[0]]
 Label = "Temperature"
@@ -27478,8 +27641,8 @@ DisplayType = "Number (DBL)"
 %NAME = "DC_SupplyCurrent"
 
 [SF.Seq[19].Main[6].TS.SData.ViCall.Parms[4].ArrayClusterEls[6]]
-Label = "Polarity"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.Polarity"
+Label = "Motor_Current"
+ArgVal = "StationGlobals.Testing.Parameters.Section5.Motor_Current"
 Type = 3
 WireRequirement = 1
 DisplayType = "Container"
@@ -27492,7 +27655,7 @@ DisplayType = "Container"
 
 [SF.Seq[19].Main[6].TS.SData.ViCall.Parms[4].ArrayClusterEls[6].ArrayClusterEls[0]]
 Label = "Low"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.Polarity.Low"
+ArgVal = "StationGlobals.Testing.Parameters.Section5.Motor_Current.Low"
 Type = 0
 WireRequirement = 1
 DisplayType = "Number (DBL)"
@@ -27502,7 +27665,7 @@ DisplayType = "Number (DBL)"
 
 [SF.Seq[19].Main[6].TS.SData.ViCall.Parms[4].ArrayClusterEls[6].ArrayClusterEls[1]]
 Label = "High"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.Polarity.High"
+ArgVal = "StationGlobals.Testing.Parameters.Section5.Motor_Current.High"
 Type = 0
 WireRequirement = 1
 DisplayType = "Number (DBL)"
@@ -27512,7 +27675,7 @@ DisplayType = "Number (DBL)"
 
 [SF.Seq[19].Main[6].TS.SData.ViCall.Parms[4].ArrayClusterEls[6].ArrayClusterEls[2]]
 Label = "Offset"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.Polarity.Offset"
+ArgVal = "StationGlobals.Testing.Parameters.Section5.Motor_Current.Offset"
 Type = 0
 WireRequirement = 1
 DisplayType = "Number (DBL)"
@@ -27521,11 +27684,11 @@ DisplayType = "Number (DBL)"
 %NAME = "Offset"
 
 [DEF, SF.Seq[19].Main[6].TS.SData.ViCall.Parms[4].ArrayClusterEls[6]]
-%NAME = "Polarity"
+%NAME = "Motor_Current"
 
 [SF.Seq[19].Main[6].TS.SData.ViCall.Parms[4].ArrayClusterEls[7]]
-Label = "MEC_Counter"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.MEC_Counter"
+Label = "DC_Current_Motor"
+ArgVal = "StationGlobals.Testing.Parameters.Section5.DC_Current_Motor"
 Type = 3
 WireRequirement = 1
 DisplayType = "Container"
@@ -27538,7 +27701,7 @@ DisplayType = "Container"
 
 [SF.Seq[19].Main[6].TS.SData.ViCall.Parms[4].ArrayClusterEls[7].ArrayClusterEls[0]]
 Label = "Low"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.MEC_Counter.Low"
+ArgVal = "StationGlobals.Testing.Parameters.Section5.DC_Current_Motor.Low"
 Type = 0
 WireRequirement = 1
 DisplayType = "Number (DBL)"
@@ -27548,7 +27711,7 @@ DisplayType = "Number (DBL)"
 
 [SF.Seq[19].Main[6].TS.SData.ViCall.Parms[4].ArrayClusterEls[7].ArrayClusterEls[1]]
 Label = "High"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.MEC_Counter.High"
+ArgVal = "StationGlobals.Testing.Parameters.Section5.DC_Current_Motor.High"
 Type = 0
 WireRequirement = 1
 DisplayType = "Number (DBL)"
@@ -27558,7 +27721,7 @@ DisplayType = "Number (DBL)"
 
 [SF.Seq[19].Main[6].TS.SData.ViCall.Parms[4].ArrayClusterEls[7].ArrayClusterEls[2]]
 Label = "Offset"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.MEC_Counter.Offset"
+ArgVal = "StationGlobals.Testing.Parameters.Section5.DC_Current_Motor.Offset"
 Type = 0
 WireRequirement = 1
 DisplayType = "Number (DBL)"
@@ -27567,102 +27730,166 @@ DisplayType = "Number (DBL)"
 %NAME = "Offset"
 
 [DEF, SF.Seq[19].Main[6].TS.SData.ViCall.Parms[4].ArrayClusterEls[7]]
-%NAME = "MEC_Counter"
-
-[SF.Seq[19].Main[6].TS.SData.ViCall.Parms[4].ArrayClusterEls[8]]
-Label = "IgnitionCurrent"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.IgnitionCurrent"
-Type = 3
-WireRequirement = 1
-DisplayType = "Container"
-%HI: ArrayClusterEls = [2]
-
-[DEF, SF.Seq[19].Main[6].TS.SData.ViCall.Parms[4].ArrayClusterEls[8].ArrayClusterEls]
-%[0] = "TYPE, VIParameterElement"
-%[1] = "TYPE, VIParameterElement"
-%[2] = "TYPE, VIParameterElement"
-
-[SF.Seq[19].Main[6].TS.SData.ViCall.Parms[4].ArrayClusterEls[8].ArrayClusterEls[0]]
-Label = "Low"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.IgnitionCurrent.Low"
-Type = 0
-WireRequirement = 1
-DisplayType = "Number (DBL)"
-
-[DEF, SF.Seq[19].Main[6].TS.SData.ViCall.Parms[4].ArrayClusterEls[8].ArrayClusterEls[0]]
-%NAME = "Low"
-
-[SF.Seq[19].Main[6].TS.SData.ViCall.Parms[4].ArrayClusterEls[8].ArrayClusterEls[1]]
-Label = "High"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.IgnitionCurrent.High"
-Type = 0
-WireRequirement = 1
-DisplayType = "Number (DBL)"
-
-[DEF, SF.Seq[19].Main[6].TS.SData.ViCall.Parms[4].ArrayClusterEls[8].ArrayClusterEls[1]]
-%NAME = "High"
-
-[SF.Seq[19].Main[6].TS.SData.ViCall.Parms[4].ArrayClusterEls[8].ArrayClusterEls[2]]
-Label = "Offset"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.IgnitionCurrent.Offset"
-Type = 0
-WireRequirement = 1
-DisplayType = "Number (DBL)"
-
-[DEF, SF.Seq[19].Main[6].TS.SData.ViCall.Parms[4].ArrayClusterEls[8].ArrayClusterEls[2]]
-%NAME = "Offset"
-
-[DEF, SF.Seq[19].Main[6].TS.SData.ViCall.Parms[4].ArrayClusterEls[8]]
-%NAME = "IgnitionCurrent"
-
-[SF.Seq[19].Main[6].TS.SData.ViCall.Parms[4].ArrayClusterEls[9]]
-Label = "DC_Voltage"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.DC_Voltage"
-Type = 3
-WireRequirement = 1
-DisplayType = "Container"
-%HI: ArrayClusterEls = [2]
-
-[DEF, SF.Seq[19].Main[6].TS.SData.ViCall.Parms[4].ArrayClusterEls[9].ArrayClusterEls]
-%[0] = "TYPE, VIParameterElement"
-%[1] = "TYPE, VIParameterElement"
-%[2] = "TYPE, VIParameterElement"
-
-[SF.Seq[19].Main[6].TS.SData.ViCall.Parms[4].ArrayClusterEls[9].ArrayClusterEls[0]]
-Label = "Low"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.DC_Voltage.Low"
-Type = 0
-WireRequirement = 1
-DisplayType = "Number (DBL)"
-
-[DEF, SF.Seq[19].Main[6].TS.SData.ViCall.Parms[4].ArrayClusterEls[9].ArrayClusterEls[0]]
-%NAME = "Low"
-
-[SF.Seq[19].Main[6].TS.SData.ViCall.Parms[4].ArrayClusterEls[9].ArrayClusterEls[1]]
-Label = "High"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.DC_Voltage.High"
-Type = 0
-WireRequirement = 1
-DisplayType = "Number (DBL)"
-
-[DEF, SF.Seq[19].Main[6].TS.SData.ViCall.Parms[4].ArrayClusterEls[9].ArrayClusterEls[1]]
-%NAME = "High"
-
-[SF.Seq[19].Main[6].TS.SData.ViCall.Parms[4].ArrayClusterEls[9].ArrayClusterEls[2]]
-Label = "Offset"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.DC_Voltage.Offset"
-Type = 0
-WireRequirement = 1
-DisplayType = "Number (DBL)"
-
-[DEF, SF.Seq[19].Main[6].TS.SData.ViCall.Parms[4].ArrayClusterEls[9].ArrayClusterEls[2]]
-%NAME = "Offset"
-
-[DEF, SF.Seq[19].Main[6].TS.SData.ViCall.Parms[4].ArrayClusterEls[9]]
-%NAME = "DC_Voltage"
+%NAME = "DC_Current_Motor"
 
 [DEF, SF.Seq[19].Main[6].TS.SData.ViCall.Parms[4]]
 %NAME = "Section5"
+
+[SF.Seq[19].Main[6].TS.SData.ViCall.Parms[5]]
+Label = "Section6"
+ArgVal = "StationGlobals.Testing.Parameters.Section6"
+Type = 3
+WireRequirement = 1
+DisplayType = "Container"
+%HI: ArrayClusterEls = [2]
+Direction = 1
+ConnectorNumber = 0
+
+[DEF, SF.Seq[19].Main[6].TS.SData.ViCall.Parms[5].ArrayClusterEls]
+%[0] = "TYPE, VIParameterElement"
+%[1] = "TYPE, VIParameterElement"
+%[2] = "TYPE, VIParameterElement"
+
+[SF.Seq[19].Main[6].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+Label = "MEC_Counter"
+ArgVal = "StationGlobals.Testing.Parameters.Section6.MEC_Counter"
+Type = 3
+WireRequirement = 1
+DisplayType = "Container"
+%HI: ArrayClusterEls = [2]
+
+[DEF, SF.Seq[19].Main[6].TS.SData.ViCall.Parms[5].ArrayClusterEls[0].ArrayClusterEls]
+%[0] = "TYPE, VIParameterElement"
+%[1] = "TYPE, VIParameterElement"
+%[2] = "TYPE, VIParameterElement"
+
+[SF.Seq[19].Main[6].TS.SData.ViCall.Parms[5].ArrayClusterEls[0].ArrayClusterEls[0]]
+Label = "Low"
+ArgVal = "StationGlobals.Testing.Parameters.Section6.MEC_Counter.Low"
+Type = 0
+WireRequirement = 1
+DisplayType = "Number (DBL)"
+
+[DEF, SF.Seq[19].Main[6].TS.SData.ViCall.Parms[5].ArrayClusterEls[0].ArrayClusterEls[0]]
+%NAME = "Low"
+
+[SF.Seq[19].Main[6].TS.SData.ViCall.Parms[5].ArrayClusterEls[0].ArrayClusterEls[1]]
+Label = "High"
+ArgVal = "StationGlobals.Testing.Parameters.Section6.MEC_Counter.High"
+Type = 0
+WireRequirement = 1
+DisplayType = "Number (DBL)"
+
+[DEF, SF.Seq[19].Main[6].TS.SData.ViCall.Parms[5].ArrayClusterEls[0].ArrayClusterEls[1]]
+%NAME = "High"
+
+[SF.Seq[19].Main[6].TS.SData.ViCall.Parms[5].ArrayClusterEls[0].ArrayClusterEls[2]]
+Label = "Offset"
+ArgVal = "StationGlobals.Testing.Parameters.Section6.MEC_Counter.Offset"
+Type = 0
+WireRequirement = 1
+DisplayType = "Number (DBL)"
+
+[DEF, SF.Seq[19].Main[6].TS.SData.ViCall.Parms[5].ArrayClusterEls[0].ArrayClusterEls[2]]
+%NAME = "Offset"
+
+[DEF, SF.Seq[19].Main[6].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+%NAME = "MEC_Counter"
+
+[SF.Seq[19].Main[6].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+Label = "Ignition_Current"
+ArgVal = "StationGlobals.Testing.Parameters.Section6.Ignition_Current"
+Type = 3
+WireRequirement = 1
+DisplayType = "Container"
+%HI: ArrayClusterEls = [2]
+
+[DEF, SF.Seq[19].Main[6].TS.SData.ViCall.Parms[5].ArrayClusterEls[1].ArrayClusterEls]
+%[0] = "TYPE, VIParameterElement"
+%[1] = "TYPE, VIParameterElement"
+%[2] = "TYPE, VIParameterElement"
+
+[SF.Seq[19].Main[6].TS.SData.ViCall.Parms[5].ArrayClusterEls[1].ArrayClusterEls[0]]
+Label = "Low"
+ArgVal = "StationGlobals.Testing.Parameters.Section6.Ignition_Current.Low"
+Type = 0
+WireRequirement = 1
+DisplayType = "Number (DBL)"
+
+[DEF, SF.Seq[19].Main[6].TS.SData.ViCall.Parms[5].ArrayClusterEls[1].ArrayClusterEls[0]]
+%NAME = "Low"
+
+[SF.Seq[19].Main[6].TS.SData.ViCall.Parms[5].ArrayClusterEls[1].ArrayClusterEls[1]]
+Label = "High"
+ArgVal = "StationGlobals.Testing.Parameters.Section6.Ignition_Current.High"
+Type = 0
+WireRequirement = 1
+DisplayType = "Number (DBL)"
+
+[DEF, SF.Seq[19].Main[6].TS.SData.ViCall.Parms[5].ArrayClusterEls[1].ArrayClusterEls[1]]
+%NAME = "High"
+
+[SF.Seq[19].Main[6].TS.SData.ViCall.Parms[5].ArrayClusterEls[1].ArrayClusterEls[2]]
+Label = "Offset"
+ArgVal = "StationGlobals.Testing.Parameters.Section6.Ignition_Current.Offset"
+Type = 0
+WireRequirement = 1
+DisplayType = "Number (DBL)"
+
+[DEF, SF.Seq[19].Main[6].TS.SData.ViCall.Parms[5].ArrayClusterEls[1].ArrayClusterEls[2]]
+%NAME = "Offset"
+
+[DEF, SF.Seq[19].Main[6].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+%NAME = "Ignition_Current"
+
+[SF.Seq[19].Main[6].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+Label = "DC_Voltage"
+ArgVal = "StationGlobals.Testing.Parameters.Section6.DC_Voltage"
+Type = 3
+WireRequirement = 1
+DisplayType = "Container"
+%HI: ArrayClusterEls = [2]
+
+[DEF, SF.Seq[19].Main[6].TS.SData.ViCall.Parms[5].ArrayClusterEls[2].ArrayClusterEls]
+%[0] = "TYPE, VIParameterElement"
+%[1] = "TYPE, VIParameterElement"
+%[2] = "TYPE, VIParameterElement"
+
+[SF.Seq[19].Main[6].TS.SData.ViCall.Parms[5].ArrayClusterEls[2].ArrayClusterEls[0]]
+Label = "Low"
+ArgVal = "StationGlobals.Testing.Parameters.Section6.DC_Voltage.Low"
+Type = 0
+WireRequirement = 1
+DisplayType = "Number (DBL)"
+
+[DEF, SF.Seq[19].Main[6].TS.SData.ViCall.Parms[5].ArrayClusterEls[2].ArrayClusterEls[0]]
+%NAME = "Low"
+
+[SF.Seq[19].Main[6].TS.SData.ViCall.Parms[5].ArrayClusterEls[2].ArrayClusterEls[1]]
+Label = "High"
+ArgVal = "StationGlobals.Testing.Parameters.Section6.DC_Voltage.High"
+Type = 0
+WireRequirement = 1
+DisplayType = "Number (DBL)"
+
+[DEF, SF.Seq[19].Main[6].TS.SData.ViCall.Parms[5].ArrayClusterEls[2].ArrayClusterEls[1]]
+%NAME = "High"
+
+[SF.Seq[19].Main[6].TS.SData.ViCall.Parms[5].ArrayClusterEls[2].ArrayClusterEls[2]]
+Label = "Offset"
+ArgVal = "StationGlobals.Testing.Parameters.Section6.DC_Voltage.Offset"
+Type = 0
+WireRequirement = 1
+DisplayType = "Number (DBL)"
+
+[DEF, SF.Seq[19].Main[6].TS.SData.ViCall.Parms[5].ArrayClusterEls[2].ArrayClusterEls[2]]
+%NAME = "Offset"
+
+[DEF, SF.Seq[19].Main[6].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+%NAME = "DC_Voltage"
+
+[DEF, SF.Seq[19].Main[6].TS.SData.ViCall.Parms[5]]
+%NAME = "Section6"
 
 [DEF, SF.Seq[19].Main[6]]
 %NAME = "Get Testing Limits"
@@ -28984,8 +29211,8 @@ SData = "TYPE, FlexGStepAdditions"
 [SF.Seq[20].Main[4].TS.SData.ViCall]
 ProjectPath = "..\\..\\LabView\\nexteer.lvproj"
 VIPath = "My Computer\\Station\\Get Test Limits.vi"
-TDChecksum = 257494079
-%HI: Parms = [4]
+TDChecksum = 200557941
+%HI: Parms = [5]
 
 [DEF, SF.Seq[20].Main[4].TS.SData.ViCall.Parms]
 %[0] = "TYPE, VIParameter"
@@ -28993,6 +29220,7 @@ TDChecksum = 257494079
 %[2] = "TYPE, VIParameter"
 %[3] = "TYPE, VIParameter"
 %[4] = "TYPE, VIParameter"
+%[5] = "TYPE, VIParameter"
 
 [SF.Seq[20].Main[4].TS.SData.ViCall.Parms[0]]
 Label = "Variant"
@@ -29022,7 +29250,7 @@ ArgVal = "StationGlobals.Testing.Parameters.Section2"
 Type = 3
 WireRequirement = 1
 DisplayType = "Container"
-%HI: ArrayClusterEls = [10]
+%HI: ArrayClusterEls = [11]
 Direction = 1
 ConnectorNumber = 3
 
@@ -29038,6 +29266,7 @@ ConnectorNumber = 3
 %[8] = "TYPE, VIParameterElement"
 %[9] = "TYPE, VIParameterElement"
 %[10] = "TYPE, VIParameterElement"
+%[11] = "TYPE, VIParameterElement"
 
 [SF.Seq[20].Main[4].TS.SData.ViCall.Parms[2].ArrayClusterEls[0]]
 Label = "DC_Current"
@@ -29545,6 +29774,52 @@ DisplayType = "Number (DBL)"
 [DEF, SF.Seq[20].Main[4].TS.SData.ViCall.Parms[2].ArrayClusterEls[10]]
 %NAME = "FirstMotorPosition"
 
+[SF.Seq[20].Main[4].TS.SData.ViCall.Parms[2].ArrayClusterEls[11]]
+Label = "DC_Voltage"
+ArgVal = "StationGlobals.Testing.Parameters.Section2.DC_Voltage"
+Type = 3
+WireRequirement = 1
+DisplayType = "Container"
+%HI: ArrayClusterEls = [2]
+
+[DEF, SF.Seq[20].Main[4].TS.SData.ViCall.Parms[2].ArrayClusterEls[11].ArrayClusterEls]
+%[0] = "TYPE, VIParameterElement"
+%[1] = "TYPE, VIParameterElement"
+%[2] = "TYPE, VIParameterElement"
+
+[SF.Seq[20].Main[4].TS.SData.ViCall.Parms[2].ArrayClusterEls[11].ArrayClusterEls[0]]
+Label = "Low"
+ArgVal = "StationGlobals.Testing.Parameters.Section2.DC_Voltage.Low"
+Type = 0
+WireRequirement = 1
+DisplayType = "Number (DBL)"
+
+[DEF, SF.Seq[20].Main[4].TS.SData.ViCall.Parms[2].ArrayClusterEls[11].ArrayClusterEls[0]]
+%NAME = "Low"
+
+[SF.Seq[20].Main[4].TS.SData.ViCall.Parms[2].ArrayClusterEls[11].ArrayClusterEls[1]]
+Label = "High"
+ArgVal = "StationGlobals.Testing.Parameters.Section2.DC_Voltage.High"
+Type = 0
+WireRequirement = 1
+DisplayType = "Number (DBL)"
+
+[DEF, SF.Seq[20].Main[4].TS.SData.ViCall.Parms[2].ArrayClusterEls[11].ArrayClusterEls[1]]
+%NAME = "High"
+
+[SF.Seq[20].Main[4].TS.SData.ViCall.Parms[2].ArrayClusterEls[11].ArrayClusterEls[2]]
+Label = "Offset"
+ArgVal = "StationGlobals.Testing.Parameters.Section2.DC_Voltage.Offset"
+Type = 0
+WireRequirement = 1
+DisplayType = "Number (DBL)"
+
+[DEF, SF.Seq[20].Main[4].TS.SData.ViCall.Parms[2].ArrayClusterEls[11].ArrayClusterEls[2]]
+%NAME = "Offset"
+
+[DEF, SF.Seq[20].Main[4].TS.SData.ViCall.Parms[2].ArrayClusterEls[11]]
+%NAME = "DC_Voltage"
+
 [DEF, SF.Seq[20].Main[4].TS.SData.ViCall.Parms[2]]
 %NAME = "Section2"
 
@@ -29992,7 +30267,7 @@ ArgVal = "StationGlobals.Testing.Parameters.Section5"
 Type = 3
 WireRequirement = 1
 DisplayType = "Container"
-%HI: ArrayClusterEls = [9]
+%HI: ArrayClusterEls = [7]
 Direction = 1
 ConnectorNumber = 1
 
@@ -30005,8 +30280,6 @@ ConnectorNumber = 1
 %[5] = "TYPE, VIParameterElement"
 %[6] = "TYPE, VIParameterElement"
 %[7] = "TYPE, VIParameterElement"
-%[8] = "TYPE, VIParameterElement"
-%[9] = "TYPE, VIParameterElement"
 
 [SF.Seq[20].Main[4].TS.SData.ViCall.Parms[4].ArrayClusterEls[0]]
 Label = "Temperature"
@@ -30285,8 +30558,8 @@ DisplayType = "Number (DBL)"
 %NAME = "DC_SupplyCurrent"
 
 [SF.Seq[20].Main[4].TS.SData.ViCall.Parms[4].ArrayClusterEls[6]]
-Label = "Polarity"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.Polarity"
+Label = "Motor_Current"
+ArgVal = "StationGlobals.Testing.Parameters.Section5.Motor_Current"
 Type = 3
 WireRequirement = 1
 DisplayType = "Container"
@@ -30299,7 +30572,7 @@ DisplayType = "Container"
 
 [SF.Seq[20].Main[4].TS.SData.ViCall.Parms[4].ArrayClusterEls[6].ArrayClusterEls[0]]
 Label = "Low"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.Polarity.Low"
+ArgVal = "StationGlobals.Testing.Parameters.Section5.Motor_Current.Low"
 Type = 0
 WireRequirement = 1
 DisplayType = "Number (DBL)"
@@ -30309,7 +30582,7 @@ DisplayType = "Number (DBL)"
 
 [SF.Seq[20].Main[4].TS.SData.ViCall.Parms[4].ArrayClusterEls[6].ArrayClusterEls[1]]
 Label = "High"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.Polarity.High"
+ArgVal = "StationGlobals.Testing.Parameters.Section5.Motor_Current.High"
 Type = 0
 WireRequirement = 1
 DisplayType = "Number (DBL)"
@@ -30319,7 +30592,7 @@ DisplayType = "Number (DBL)"
 
 [SF.Seq[20].Main[4].TS.SData.ViCall.Parms[4].ArrayClusterEls[6].ArrayClusterEls[2]]
 Label = "Offset"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.Polarity.Offset"
+ArgVal = "StationGlobals.Testing.Parameters.Section5.Motor_Current.Offset"
 Type = 0
 WireRequirement = 1
 DisplayType = "Number (DBL)"
@@ -30328,11 +30601,11 @@ DisplayType = "Number (DBL)"
 %NAME = "Offset"
 
 [DEF, SF.Seq[20].Main[4].TS.SData.ViCall.Parms[4].ArrayClusterEls[6]]
-%NAME = "Polarity"
+%NAME = "Motor_Current"
 
 [SF.Seq[20].Main[4].TS.SData.ViCall.Parms[4].ArrayClusterEls[7]]
-Label = "MEC_Counter"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.MEC_Counter"
+Label = "DC_Current_Motor"
+ArgVal = "StationGlobals.Testing.Parameters.Section5.DC_Current_Motor"
 Type = 3
 WireRequirement = 1
 DisplayType = "Container"
@@ -30345,7 +30618,7 @@ DisplayType = "Container"
 
 [SF.Seq[20].Main[4].TS.SData.ViCall.Parms[4].ArrayClusterEls[7].ArrayClusterEls[0]]
 Label = "Low"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.MEC_Counter.Low"
+ArgVal = "StationGlobals.Testing.Parameters.Section5.DC_Current_Motor.Low"
 Type = 0
 WireRequirement = 1
 DisplayType = "Number (DBL)"
@@ -30355,7 +30628,7 @@ DisplayType = "Number (DBL)"
 
 [SF.Seq[20].Main[4].TS.SData.ViCall.Parms[4].ArrayClusterEls[7].ArrayClusterEls[1]]
 Label = "High"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.MEC_Counter.High"
+ArgVal = "StationGlobals.Testing.Parameters.Section5.DC_Current_Motor.High"
 Type = 0
 WireRequirement = 1
 DisplayType = "Number (DBL)"
@@ -30365,7 +30638,7 @@ DisplayType = "Number (DBL)"
 
 [SF.Seq[20].Main[4].TS.SData.ViCall.Parms[4].ArrayClusterEls[7].ArrayClusterEls[2]]
 Label = "Offset"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.MEC_Counter.Offset"
+ArgVal = "StationGlobals.Testing.Parameters.Section5.DC_Current_Motor.Offset"
 Type = 0
 WireRequirement = 1
 DisplayType = "Number (DBL)"
@@ -30374,102 +30647,166 @@ DisplayType = "Number (DBL)"
 %NAME = "Offset"
 
 [DEF, SF.Seq[20].Main[4].TS.SData.ViCall.Parms[4].ArrayClusterEls[7]]
-%NAME = "MEC_Counter"
-
-[SF.Seq[20].Main[4].TS.SData.ViCall.Parms[4].ArrayClusterEls[8]]
-Label = "IgnitionCurrent"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.IgnitionCurrent"
-Type = 3
-WireRequirement = 1
-DisplayType = "Container"
-%HI: ArrayClusterEls = [2]
-
-[DEF, SF.Seq[20].Main[4].TS.SData.ViCall.Parms[4].ArrayClusterEls[8].ArrayClusterEls]
-%[0] = "TYPE, VIParameterElement"
-%[1] = "TYPE, VIParameterElement"
-%[2] = "TYPE, VIParameterElement"
-
-[SF.Seq[20].Main[4].TS.SData.ViCall.Parms[4].ArrayClusterEls[8].ArrayClusterEls[0]]
-Label = "Low"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.IgnitionCurrent.Low"
-Type = 0
-WireRequirement = 1
-DisplayType = "Number (DBL)"
-
-[DEF, SF.Seq[20].Main[4].TS.SData.ViCall.Parms[4].ArrayClusterEls[8].ArrayClusterEls[0]]
-%NAME = "Low"
-
-[SF.Seq[20].Main[4].TS.SData.ViCall.Parms[4].ArrayClusterEls[8].ArrayClusterEls[1]]
-Label = "High"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.IgnitionCurrent.High"
-Type = 0
-WireRequirement = 1
-DisplayType = "Number (DBL)"
-
-[DEF, SF.Seq[20].Main[4].TS.SData.ViCall.Parms[4].ArrayClusterEls[8].ArrayClusterEls[1]]
-%NAME = "High"
-
-[SF.Seq[20].Main[4].TS.SData.ViCall.Parms[4].ArrayClusterEls[8].ArrayClusterEls[2]]
-Label = "Offset"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.IgnitionCurrent.Offset"
-Type = 0
-WireRequirement = 1
-DisplayType = "Number (DBL)"
-
-[DEF, SF.Seq[20].Main[4].TS.SData.ViCall.Parms[4].ArrayClusterEls[8].ArrayClusterEls[2]]
-%NAME = "Offset"
-
-[DEF, SF.Seq[20].Main[4].TS.SData.ViCall.Parms[4].ArrayClusterEls[8]]
-%NAME = "IgnitionCurrent"
-
-[SF.Seq[20].Main[4].TS.SData.ViCall.Parms[4].ArrayClusterEls[9]]
-Label = "DC_Voltage"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.DC_Voltage"
-Type = 3
-WireRequirement = 1
-DisplayType = "Container"
-%HI: ArrayClusterEls = [2]
-
-[DEF, SF.Seq[20].Main[4].TS.SData.ViCall.Parms[4].ArrayClusterEls[9].ArrayClusterEls]
-%[0] = "TYPE, VIParameterElement"
-%[1] = "TYPE, VIParameterElement"
-%[2] = "TYPE, VIParameterElement"
-
-[SF.Seq[20].Main[4].TS.SData.ViCall.Parms[4].ArrayClusterEls[9].ArrayClusterEls[0]]
-Label = "Low"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.DC_Voltage.Low"
-Type = 0
-WireRequirement = 1
-DisplayType = "Number (DBL)"
-
-[DEF, SF.Seq[20].Main[4].TS.SData.ViCall.Parms[4].ArrayClusterEls[9].ArrayClusterEls[0]]
-%NAME = "Low"
-
-[SF.Seq[20].Main[4].TS.SData.ViCall.Parms[4].ArrayClusterEls[9].ArrayClusterEls[1]]
-Label = "High"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.DC_Voltage.High"
-Type = 0
-WireRequirement = 1
-DisplayType = "Number (DBL)"
-
-[DEF, SF.Seq[20].Main[4].TS.SData.ViCall.Parms[4].ArrayClusterEls[9].ArrayClusterEls[1]]
-%NAME = "High"
-
-[SF.Seq[20].Main[4].TS.SData.ViCall.Parms[4].ArrayClusterEls[9].ArrayClusterEls[2]]
-Label = "Offset"
-ArgVal = "StationGlobals.Testing.Parameters.Section5.DC_Voltage.Offset"
-Type = 0
-WireRequirement = 1
-DisplayType = "Number (DBL)"
-
-[DEF, SF.Seq[20].Main[4].TS.SData.ViCall.Parms[4].ArrayClusterEls[9].ArrayClusterEls[2]]
-%NAME = "Offset"
-
-[DEF, SF.Seq[20].Main[4].TS.SData.ViCall.Parms[4].ArrayClusterEls[9]]
-%NAME = "DC_Voltage"
+%NAME = "DC_Current_Motor"
 
 [DEF, SF.Seq[20].Main[4].TS.SData.ViCall.Parms[4]]
 %NAME = "Section5"
+
+[SF.Seq[20].Main[4].TS.SData.ViCall.Parms[5]]
+Label = "Section6"
+ArgVal = "StationGlobals.Testing.Parameters.Section6"
+Type = 3
+WireRequirement = 1
+DisplayType = "Container"
+%HI: ArrayClusterEls = [2]
+Direction = 1
+ConnectorNumber = 0
+
+[DEF, SF.Seq[20].Main[4].TS.SData.ViCall.Parms[5].ArrayClusterEls]
+%[0] = "TYPE, VIParameterElement"
+%[1] = "TYPE, VIParameterElement"
+%[2] = "TYPE, VIParameterElement"
+
+[SF.Seq[20].Main[4].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+Label = "MEC_Counter"
+ArgVal = "StationGlobals.Testing.Parameters.Section6.MEC_Counter"
+Type = 3
+WireRequirement = 1
+DisplayType = "Container"
+%HI: ArrayClusterEls = [2]
+
+[DEF, SF.Seq[20].Main[4].TS.SData.ViCall.Parms[5].ArrayClusterEls[0].ArrayClusterEls]
+%[0] = "TYPE, VIParameterElement"
+%[1] = "TYPE, VIParameterElement"
+%[2] = "TYPE, VIParameterElement"
+
+[SF.Seq[20].Main[4].TS.SData.ViCall.Parms[5].ArrayClusterEls[0].ArrayClusterEls[0]]
+Label = "Low"
+ArgVal = "StationGlobals.Testing.Parameters.Section6.MEC_Counter.Low"
+Type = 0
+WireRequirement = 1
+DisplayType = "Number (DBL)"
+
+[DEF, SF.Seq[20].Main[4].TS.SData.ViCall.Parms[5].ArrayClusterEls[0].ArrayClusterEls[0]]
+%NAME = "Low"
+
+[SF.Seq[20].Main[4].TS.SData.ViCall.Parms[5].ArrayClusterEls[0].ArrayClusterEls[1]]
+Label = "High"
+ArgVal = "StationGlobals.Testing.Parameters.Section6.MEC_Counter.High"
+Type = 0
+WireRequirement = 1
+DisplayType = "Number (DBL)"
+
+[DEF, SF.Seq[20].Main[4].TS.SData.ViCall.Parms[5].ArrayClusterEls[0].ArrayClusterEls[1]]
+%NAME = "High"
+
+[SF.Seq[20].Main[4].TS.SData.ViCall.Parms[5].ArrayClusterEls[0].ArrayClusterEls[2]]
+Label = "Offset"
+ArgVal = "StationGlobals.Testing.Parameters.Section6.MEC_Counter.Offset"
+Type = 0
+WireRequirement = 1
+DisplayType = "Number (DBL)"
+
+[DEF, SF.Seq[20].Main[4].TS.SData.ViCall.Parms[5].ArrayClusterEls[0].ArrayClusterEls[2]]
+%NAME = "Offset"
+
+[DEF, SF.Seq[20].Main[4].TS.SData.ViCall.Parms[5].ArrayClusterEls[0]]
+%NAME = "MEC_Counter"
+
+[SF.Seq[20].Main[4].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+Label = "Ignition_Current"
+ArgVal = "StationGlobals.Testing.Parameters.Section6.Ignition_Current"
+Type = 3
+WireRequirement = 1
+DisplayType = "Container"
+%HI: ArrayClusterEls = [2]
+
+[DEF, SF.Seq[20].Main[4].TS.SData.ViCall.Parms[5].ArrayClusterEls[1].ArrayClusterEls]
+%[0] = "TYPE, VIParameterElement"
+%[1] = "TYPE, VIParameterElement"
+%[2] = "TYPE, VIParameterElement"
+
+[SF.Seq[20].Main[4].TS.SData.ViCall.Parms[5].ArrayClusterEls[1].ArrayClusterEls[0]]
+Label = "Low"
+ArgVal = "StationGlobals.Testing.Parameters.Section6.Ignition_Current.Low"
+Type = 0
+WireRequirement = 1
+DisplayType = "Number (DBL)"
+
+[DEF, SF.Seq[20].Main[4].TS.SData.ViCall.Parms[5].ArrayClusterEls[1].ArrayClusterEls[0]]
+%NAME = "Low"
+
+[SF.Seq[20].Main[4].TS.SData.ViCall.Parms[5].ArrayClusterEls[1].ArrayClusterEls[1]]
+Label = "High"
+ArgVal = "StationGlobals.Testing.Parameters.Section6.Ignition_Current.High"
+Type = 0
+WireRequirement = 1
+DisplayType = "Number (DBL)"
+
+[DEF, SF.Seq[20].Main[4].TS.SData.ViCall.Parms[5].ArrayClusterEls[1].ArrayClusterEls[1]]
+%NAME = "High"
+
+[SF.Seq[20].Main[4].TS.SData.ViCall.Parms[5].ArrayClusterEls[1].ArrayClusterEls[2]]
+Label = "Offset"
+ArgVal = "StationGlobals.Testing.Parameters.Section6.Ignition_Current.Offset"
+Type = 0
+WireRequirement = 1
+DisplayType = "Number (DBL)"
+
+[DEF, SF.Seq[20].Main[4].TS.SData.ViCall.Parms[5].ArrayClusterEls[1].ArrayClusterEls[2]]
+%NAME = "Offset"
+
+[DEF, SF.Seq[20].Main[4].TS.SData.ViCall.Parms[5].ArrayClusterEls[1]]
+%NAME = "Ignition_Current"
+
+[SF.Seq[20].Main[4].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+Label = "DC_Voltage"
+ArgVal = "StationGlobals.Testing.Parameters.Section6.DC_Voltage"
+Type = 3
+WireRequirement = 1
+DisplayType = "Container"
+%HI: ArrayClusterEls = [2]
+
+[DEF, SF.Seq[20].Main[4].TS.SData.ViCall.Parms[5].ArrayClusterEls[2].ArrayClusterEls]
+%[0] = "TYPE, VIParameterElement"
+%[1] = "TYPE, VIParameterElement"
+%[2] = "TYPE, VIParameterElement"
+
+[SF.Seq[20].Main[4].TS.SData.ViCall.Parms[5].ArrayClusterEls[2].ArrayClusterEls[0]]
+Label = "Low"
+ArgVal = "StationGlobals.Testing.Parameters.Section6.DC_Voltage.Low"
+Type = 0
+WireRequirement = 1
+DisplayType = "Number (DBL)"
+
+[DEF, SF.Seq[20].Main[4].TS.SData.ViCall.Parms[5].ArrayClusterEls[2].ArrayClusterEls[0]]
+%NAME = "Low"
+
+[SF.Seq[20].Main[4].TS.SData.ViCall.Parms[5].ArrayClusterEls[2].ArrayClusterEls[1]]
+Label = "High"
+ArgVal = "StationGlobals.Testing.Parameters.Section6.DC_Voltage.High"
+Type = 0
+WireRequirement = 1
+DisplayType = "Number (DBL)"
+
+[DEF, SF.Seq[20].Main[4].TS.SData.ViCall.Parms[5].ArrayClusterEls[2].ArrayClusterEls[1]]
+%NAME = "High"
+
+[SF.Seq[20].Main[4].TS.SData.ViCall.Parms[5].ArrayClusterEls[2].ArrayClusterEls[2]]
+Label = "Offset"
+ArgVal = "StationGlobals.Testing.Parameters.Section6.DC_Voltage.Offset"
+Type = 0
+WireRequirement = 1
+DisplayType = "Number (DBL)"
+
+[DEF, SF.Seq[20].Main[4].TS.SData.ViCall.Parms[5].ArrayClusterEls[2].ArrayClusterEls[2]]
+%NAME = "Offset"
+
+[DEF, SF.Seq[20].Main[4].TS.SData.ViCall.Parms[5].ArrayClusterEls[2]]
+%NAME = "DC_Voltage"
+
+[DEF, SF.Seq[20].Main[4].TS.SData.ViCall.Parms[5]]
+%NAME = "Section6"
 
 [DEF, SF.Seq[20].Main[4]]
 %NAME = "Get Testing Limits"
